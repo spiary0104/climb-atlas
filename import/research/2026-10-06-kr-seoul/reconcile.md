@@ -1,7 +1,7 @@
 # Regional research: Korea: Seoul coverage gap (2026-10-06-kr-seoul)
 
 Scope: KR / SEOUL
-Index: 2438 gyms, sha256 27073d25c2df… | staged batches compared: none | other sections compared: 2026-10-05-korea-gwangju-jeollanam, 2026-10-05-korea-holds, 2026-10-05-korea-owner-checks
+Index: 3294 gyms, sha256 2f47cb53e74b… | staged batches compared: none | other sections compared: 2026-10-05-korea-gwangju-jeollanam, 2026-10-05-korea-holds, 2026-10-05-korea-owner-checks
 Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
 
 ## Summary

@@ -10,12 +10,12 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 - Batches: 2026-10-13-fixes (13 AU pins + Boulderdash), 2026-10-13-cn-pin-fixes (35 CN pins, Amap entrance coordinates), then new gyms:
   us-ny-boston-metros 6, us-central-metros 6, italy-cities 23, uk-cities 21, australia 24, jp-remaining 22, brazil 6. California and the
   big US metros turned out almost fully covered already. Independent of the Korea/China PR. Owner checks: `import/research/MANUAL-CHECKS-wave-2026-10-13.md`.
-- China 2026-11-09: PRs 99-104 merged; 31 new gyms (14 cities) + 11 city info fills awaiting apply. Round-2 PR: 14 fills across 9 cities (cn-mixed-info). ~270 gyms still lack a Chinese name: mostly kids' or sports-centre walls with no account, or brands whose accounts list no stores (RedNote reads 30 s apart avoid captchas).
-### Coverage-gap sprint 2026-10-06 — 19/20 APPLIED + verified (+856 gyms, live 3,294); kr-seoul (40) NOT applied
-- The 2026-10-06 apply run stopped at kr-seoul with nothing written for it; it plans and dry-runs clean (2026-10-07). Owner re-runs:
-  `powershell -ExecutionPolicy Bypass -File scripts\apply-batch.ps1 2026-10-06-kr-seoul`
-- `docs/research/coverage-gap-2026-10/REPORT.md` (country/city gap rankings, next wave, tooling notes). 187 owner checks: `MANUAL-CHECKS.md`.
-  Follow-ups (pin fixes, Seoul duplicates): `STATUS.md`. Next wave: Korea outside Seoul, US covered-state metros, FR/DE long tail, Italy, UK cities.
+- China 2026-11-09: PRs 99-105 merged; 31 new gyms (14 cities) + 12 info-fill batches awaiting apply (last: 2026-11-09-cn-mixed-info, 14 gyms). ~270 gyms still lack a Chinese name: mostly kids' or sports-centre walls with no account, or brands whose accounts list no stores (RedNote reads 30 s apart avoid captchas).
+### Korea 2026-10-12 — merged (PR #83), NOT applied: +120 gyms, 28 pin fixes, 4 duplicate retirements
+- Apply order: kr-fixes, 2026-10-06-kr-seoul (39), kr-incheon, kr-busan-gyeongnam, kr-daegu-gyeongbuk, kr-gyeonggi-west/south/north,
+  kr-central-regions. Plans date from 2026-10-12: re-plan before applying. 73 owner checks: `import/research/MANUAL-CHECKS-korea-2026-10-12.md`.
+- PR #83 also holds 2026-10-12-cn-* (25 China gyms), planned before the Nov China imports: re-plan for duplicates first.
+- Coverage-gap sprint 2026-10-06: 19/20 applied; reports and owner checks in `docs/research/coverage-gap-2026-10/`.
 
 ### China (Chengdu) pilot — Gate 0 done 2026-10-31; Gate 1 approved 2026-11-01
 - Network (Gate 0): no mainland hosting now (Supabase ~28% reachable on mainland networks; ICP needs a Chinese entity); roaming/eSIM

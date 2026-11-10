@@ -1,0 +1,390 @@
+{
+ "schema_version": 1,
+ "sources": {
+  "KAKAO": {
+   "kind": "directory",
+   "title": "Kakao Map place search (pin cross-check, category, openoff status)",
+   "url": "https://map.kakao.com/",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1581527334": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Awake Climbing Timeworld",
+   "url": "https://m.place.naver.com/place/1581527334/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1503912790": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Hana Climbing Gym",
+   "url": "https://m.place.naver.com/place/1503912790/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_34284076": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Daejeon Climbing Center",
+   "url": "https://m.place.naver.com/place/34284076/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_36465789": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Climbing Zim Lead Yuseong",
+   "url": "https://m.place.naver.com/place/36465789/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_34139548": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Climbing Zim Lead Chungdae",
+   "url": "https://m.place.naver.com/place/34139548/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1667067418": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Star Climbing Sejong",
+   "url": "https://m.place.naver.com/place/1667067418/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1625014966": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Sports Island Climbing Ochang",
+   "url": "https://m.place.naver.com/place/1625014966/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_46236410": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Cheongju Rock Climbing Center",
+   "url": "https://m.place.naver.com/place/46236410/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_11633101": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Cheongju Tagi Climbing Center",
+   "url": "https://m.place.naver.com/place/11633101/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1339478910": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Neongkul Climbing Center",
+   "url": "https://m.place.naver.com/place/1339478910/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_355927800": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Orarak Climbing Gym",
+   "url": "https://m.place.naver.com/place/355927800/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_37944308": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Tokha Climbing Center",
+   "url": "https://m.place.naver.com/place/37944308/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1358927731": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Daoreum Climbing",
+   "url": "https://m.place.naver.com/place/1358927731/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_21232776": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Maru Climbing Center",
+   "url": "https://m.place.naver.com/place/21232776/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1523006192": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Cheongju International Sport Climbing Center",
+   "url": "https://m.place.naver.com/place/1523006192/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_36925121": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: ClimbMax Cheonan",
+   "url": "https://m.place.naver.com/place/36925121/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_36793238": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Rocktree Climbing Center",
+   "url": "https://m.place.naver.com/place/36793238/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_2015503308": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Wa Climbing Asan",
+   "url": "https://m.place.naver.com/place/2015503308/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1017266338": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Wa Climbing Cheonan",
+   "url": "https://m.place.naver.com/place/1017266338/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_36900673": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Seosan Climbing",
+   "url": "https://m.place.naver.com/place/36900673/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_2061808749": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Edgewalk Climbing Gym",
+   "url": "https://m.place.naver.com/place/2061808749/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_38426172": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Hongseong Climbing Center",
+   "url": "https://m.place.naver.com/place/38426172/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1892701909": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Gongju Forest Climbing Gym",
+   "url": "https://m.place.naver.com/place/1892701909/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_37766140": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Nonsan Climbing",
+   "url": "https://m.place.naver.com/place/37766140/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1605360087": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Kiclimb",
+   "url": "https://m.place.naver.com/place/1605360087/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_2081518977": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Dangjin Artificial Climbing Wall",
+   "url": "https://m.place.naver.com/place/2081518977/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1087265776": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Climb House Chuncheon",
+   "url": "https://m.place.naver.com/place/1087265776/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_35451957": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Chuncheon Climbing Center",
+   "url": "https://m.place.naver.com/place/35451957/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_35408024": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Nam-Chuncheon Climbing",
+   "url": "https://m.place.naver.com/place/35408024/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1169127207": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Climb Together Wonju",
+   "url": "https://m.place.naver.com/place/1169127207/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1348239080": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Climbing Amigo",
+   "url": "https://m.place.naver.com/place/1348239080/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1846498429": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Gogo Climbing Musildangu",
+   "url": "https://m.place.naver.com/place/1846498429/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_31664842": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Gogo Climbing Ilsan",
+   "url": "https://m.place.naver.com/place/31664842/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1542481918": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Cha Climbing Dangye",
+   "url": "https://m.place.naver.com/place/1542481918/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1306416069": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: The Sen Climbing",
+   "url": "https://m.place.naver.com/place/1306416069/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1745374020": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Imnotboulder",
+   "url": "https://m.place.naver.com/place/1745374020/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1406186254": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: A-Gym Climbing",
+   "url": "https://m.place.naver.com/place/1406186254/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1348640418": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Sokcho Climbing Gym",
+   "url": "https://m.place.naver.com/place/1348640418/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_37126660": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Gangneung Climbing",
+   "url": "https://m.place.naver.com/place/37126660/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1132009379": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Hongcheon Sport Climbing Center",
+   "url": "https://m.place.naver.com/place/1132009379/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1611587224": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Ascent Climbing Manseong",
+   "url": "https://m.place.naver.com/place/1611587224/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1599962061": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Ascent Climbing Jeonbuk National University",
+   "url": "https://m.place.naver.com/place/1599962061/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_2095931317": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Boulder Den",
+   "url": "https://m.place.naver.com/place/2095931317/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1993573137": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Hard Rock Climbing Center",
+   "url": "https://m.place.naver.com/place/1993573137/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1717159476": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Han's Climbing Center",
+   "url": "https://m.place.naver.com/place/1717159476/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1964313835": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Jeonju Bawi Oreum Climbing",
+   "url": "https://m.place.naver.com/place/1964313835/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1320755118": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: BK Climbing Gym",
+   "url": "https://m.place.naver.com/place/1320755118/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1775653895": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Climb Farm",
+   "url": "https://m.place.naver.com/place/1775653895/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1911851636": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Hold On Climbing",
+   "url": "https://m.place.naver.com/place/1911851636/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_36416921": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Gunsan Sport Climbing Center",
+   "url": "https://m.place.naver.com/place/36416921/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1617720149": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Iksan Sport Climbing Hall",
+   "url": "https://m.place.naver.com/place/1617720149/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1390754428": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Fix Boulder Yeondong",
+   "url": "https://m.place.naver.com/place/1390754428/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_2038064669": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Fix Boulder Ara",
+   "url": "https://m.place.naver.com/place/2038064669/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  },
+  "NP_1728182845": {
+   "kind": "official-social",
+   "title": "Naver Place, the gym's own listing: Jeju Climbing School",
+   "url": "https://m.place.naver.com/place/1728182845/home",
+   "language": "ko",
+   "accessed": "2026-10-12"
+  }
+ }
+}

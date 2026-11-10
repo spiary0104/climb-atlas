@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-12-kr-central-regions",
+  "description": "Regional research \"Korea: Daejeon, Sejong, Chungcheong, Gangwon, Jeonbuk, Jeju\": 15 new gym(s) accepted of 54 candidate(s)",
+  "created": "2026-10-12",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-12-kr-central-regions",
+    "section_sha256": "7c8818d424c4b960d8488bb6f88574b75689d8a0fedc7e9f72209a7ecd947941",
+    "sources_sha256": "0a80ce15b50c952145f7a13e542c8627b4ff8e13fc5845b886c459746fb49890",
+    "candidates_sha256": "f1ead80b85b213b6da4769a405e31791433e1aacf86264a3f402969cefc3e469",
+    "reconcile_sha256": "4be81fe6455703bd0d573ef460d09c35035d35f6c2eaa353a967f4b5f4e67cf2",
+    "review_sha256": "d00de08379785ab592c75e07539ca56929682f5e6ea8a821c9d5bcf7d02698b2",
+    "candidates": 54,
+    "staged": 15,
+    "decisions": {
+      "accept": 15,
+      "defer": 14,
+      "same-as": 25
+    }
+  },
+  "index_at_staging": {
+    "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+    "count": 3294
+  }
+}

@@ -1,0 +1,144 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-10-12-cn-beijing-chengdu",
+ "index": {
+  "sha256": "39a2073843434f86764687342310f4cb7d0ff6d410fe2e798bd4ddd1635fd537",
+  "count": 3457,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-06-kr-seoul",
+  "2026-10-12-cn-kunming-changsha",
+  "2026-10-12-cn-shanghai",
+  "2026-10-12-kr-busan-gyeongnam",
+  "2026-10-12-kr-central-regions",
+  "2026-10-12-kr-daegu-gyeongbuk",
+  "2026-10-12-kr-gyeonggi-north",
+  "2026-10-12-kr-gyeonggi-south",
+  "2026-10-12-kr-gyeonggi-west",
+  "2026-10-12-kr-incheon",
+  "2026-11-08-cn-changzhou",
+  "2026-11-08-cn-dalian",
+  "2026-11-08-cn-fuzhou",
+  "2026-11-08-cn-guiyang",
+  "2026-11-08-cn-harbin",
+  "2026-11-08-cn-hefei",
+  "2026-11-08-cn-nanchang",
+  "2026-11-08-cn-nanning",
+  "2026-11-08-cn-shenyang",
+  "2026-11-08-cn-xining",
+  "2026-11-08-cn-yinchuan",
+  "2026-11-08-cn-zhengzhou",
+  "2026-11-08-cn-zhongshan",
+  "2026-11-08-cn-zhuhai"
+ ],
+ "counts": {
+  "records": 9,
+  "new": 8,
+  "existing": 1,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 1,
+  "new_id_not_frozen": 0,
+  "warnings": 1
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "7fc55b69264928050c0456470b730f5468dc3bfc085ab1fb756fc962635cb841",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-d38f2a5e4d",
+   "id_frozen": true,
+   "name": "BLOC1 Climbing [BLOC1攀岩]",
+   "country": "CN"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-474e548220",
+   "id_frozen": true,
+   "name": "EDGE Climbing (Sanyuanqiao) [EDGE一直攀岩]",
+   "country": "CN"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-1ea116bacd",
+   "id_frozen": true,
+   "name": "Superbox Climbing (Happy Valley) [SUPERBOX超级秀场攀岩馆欢乐谷店]",
+   "country": "CN"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-894e6ef315",
+   "id_frozen": true,
+   "name": "ZOO Climb [ZOO攀岩馆]",
+   "country": "CN"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-1d927b2104",
+   "id_frozen": true,
+   "name": "Qingshan Climbing Stone (Weigongcun) [青山攀石魏公村店]",
+   "country": "CN"
+  },
+  {
+   "line": 6,
+   "class": "existing",
+   "id": "seed-679",
+   "name": "Wo Pan Climbing (Guangqu) [我攀攀岩广渠东路店]",
+   "country": "CN",
+   "match": {
+    "id": "seed-679",
+    "name": "I Climb Climbing",
+    "reason": "human-reviewed: co-located",
+    "dist_m": 0
+   },
+   "same_content": false,
+   "differing": [
+    "name",
+    "address",
+    "types"
+   ],
+   "warnings": [
+    {
+     "code": "content-differs",
+     "field": null,
+     "message": "matches existing seed-679 but content differs (name, address, types); NOT applied. Use an explicit update record if this change is intended."
+    }
+   ]
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-fde5f38e02",
+   "id_frozen": true,
+   "name": "Qingteng Climbing [青藤攀岩]",
+   "country": "CN"
+  },
+  {
+   "line": 8,
+   "class": "new",
+   "id": "g-eefe533a0f",
+   "id_frozen": true,
+   "name": "Feline Climbing (Jijiamiao) [飞猫攀岩纪家庙店]",
+   "country": "CN"
+  },
+  {
+   "line": 9,
+   "class": "new",
+   "id": "g-fb88f1ad7d",
+   "id_frozen": true,
+   "name": "SOFA Climbing [SOFA攀岩]",
+   "country": "CN"
+  }
+ ]
+}

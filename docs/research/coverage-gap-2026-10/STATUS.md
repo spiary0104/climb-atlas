@@ -1,11 +1,11 @@
 # Coverage-gap sprint 2026-10-06: status and follow-ups
 
 **Applied 2026-10-06 (23:12-23:18), verified per batch:** all except kr-seoul, i.e. 19 batches, +856 gyms (production 3,294). The run
-stopped at kr-seoul before writing it; on 2026-10-07 it still plans clean (40 new, 0 duplicates) and the dry run passes. Re-run that batch alone.
+stopped at kr-seoul before writing it; on 2026-10-07 it still plans clean (now 39 new, 0 duplicates: kr-se-020 Seonyu became same-as seed-1200 on 2026-10-12) and the dry run passes. Re-run that batch alone.
 
 Branch `research/2026-10-06-coverage-gap` (PR #79). Rankings: `ranking-countries.md`, `ranking-cities.md`; estimates: the four JSON files.
 
-Merged here (staged, validated, planned, read-only dry-run passed): de-south 67, us-south 60, us-midwest 58, us-west 53, jp-kansai 32, france-cities 60, us-northeast 76, jp-chubu 54, canada 85, spain-cities 38, jp-kyushu-hokkaido 47, jp-kanto 51, de-west-north 66, kr-seoul 40, poland 10, netherlands 35, belgium 17, austria 23, czechia-gap 6, london 18 = 896 new gyms.
+Merged here (staged, validated, planned, read-only dry-run passed): de-south 67, us-south 60, us-midwest 58, us-west 53, jp-kansai 32, france-cities 60, us-northeast 76, jp-chubu 54, canada 85, spain-cities 38, jp-kyushu-hokkaido 47, jp-kanto 51, de-west-north 66, kr-seoul 39, poland 10, netherlands 35, belgium 17, austria 23, czechia-gap 6, london 18 = 895 new gyms.
 
 All 20 worker branches merged; final combined check done (see REPORT.md).
 
@@ -22,3 +22,6 @@ Pin-fix follow-ups (DE): seed-1060 "Stuntwerk Köln" (central-Köln placeholder)
 KR follow-ups: pin fixes seed-1199 Peakers Jongno (453 m), seed-1168 Climb Works (326 m), seed-1188 Route Climbing (283 m); probable existing duplicates to check/retire: Alé Gangdong g-707b731ba7 vs g-7e30006a3e (801 m), The Climb Hongdae vs Yeonnam (~290 m), SEOULBOULDERS Mokdong g-97ac649c15 vs Seoul Boulders Mokdong g-f975eb0b04; Gangdong Climbing Gym (Cheonho) vs seed-1202.
 Combined check (15 batches, 805 new): all plan clean together; close pairs checked: Montreal Allez Up Mile End/Shakti, Eugene Crux/Elevation, Portland Movement/Tomo = separate addresses; Seoul Groot/Euljiro Damjang = distinct gyms; Boulderplanet Köln deferred (186 m from Einstein Köln).
 CZ follow-up: seed-1451 "Boulder Bar" is Jungle Holešovice (name correction).
+KR follow-ups batched 2026-10-12 as `import/batches/2026-10-12-kr-fixes` (5 pins: seed-1199, 1168, 1188, 1202 = Gangdong Climbing Gym, 1200 = Seoul Boulders Seonyu; 3 retirements: g-7e30006a3e, g-97ac649c15, seed-1191; planned + dry-run PARTIAL, not applied). seed-1200 (same address as Seoul Boulders Seonyu, pin 1.9 km off) was resolved by changing kr-se-020 to same-as seed-1200 and restaging kr-seoul (39 new). Still to do AFTER kr-fixes is applied and `build-index --live` is re-run: stage a name correction for seed-1200 to "Seoul Boulders Seonyu (서울볼더스 선유)" (batch 2026-10-12-kr-names; its expect_h must be the post-kr-fixes index hash, which the planner cannot express before then).
+kr-fixes extended 2026-10-12 (branch data/2026-10-12-kr-fixes-2): +18 pins from the regional Korea sections (Incheon 4, Busan/Gyeongnam 3, Daegu 3, Gyeonggi south 6, Gyeonggi north 2) and +1 retirement (g-5eec475af0 Climb A Clock, duplicate of g-e227233b91). Total 23 pins + 4 retirements; planned clean, dry-run PARTIAL, not applied. Left out: seed-1186 Rock Odyssey Hadan (Otter identity unconfirmed), Climbing The Hagi g-ea8068fbd1 (165 m), Freewall seed-1177 (name only).
+kr-fixes extended again 2026-10-12 (branch data/2026-10-12-kr-fixes-3): +5 pins from kr-central-regions (g-10ab743a85 Neongkul, seed-1209 Awake Timeworld, seed-1187 Rocktree Asan, seed-1212 Fix Boulder Yeondong, seed-1214 Jeju Climbing School incl. address); total 28 pins + 4 retirements, planned clean, dry-run PARTIAL, not applied.

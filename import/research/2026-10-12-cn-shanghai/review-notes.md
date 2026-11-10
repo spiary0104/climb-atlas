@@ -1,0 +1,24 @@
+# Review notes: China Shanghai coverage gap (2026-10-12-cn-shanghai)
+
+Reviewer: Claude (AI) on the owner's instruction; owner sign-off pending. Tally: accept 16 | same-as 0 | defer 0 | reject 1 (17 candidates).
+
+## Method
+Same as the Kunming and Changsha section (`2026-10-12-cn-kunming-changsha/review-notes.md`): the Amap listing list for Shanghai (queries 攀岩馆, 抱石馆, 攀岩, 抱石, 攀岩俱乐部, 岩馆, 室内攀岩, about 120 climbing-named listings) was compared with the 78 Shanghai gyms already in Bouldeer by name, address and approximate position; every listing that is not in Bouldeer, is not a children's school, public wall or school wall and has an own RedNote account (or visitor notes) was examined. Accept rule: the gym's own RedNote account has a 2026 post about this gym, bouldering is shown in the gym's own text (bio, V-graded route posts, bouldering zones, resets) and the Amap listing is live. Note dates come from the note id timestamp. Names: `English (Branch) [中文]` as in the Kunming section. Pins: see below.
+
+## accept (16)
+- New bouldering gyms with a clear own account: CAMP4 Shanghai (8 Hao Qiao), YS Climbing Xintiandi Dongtai Li and Luyue Tiandi (YS = 岩时; the rope gym YS Gate M is already seed-541), Banana Longfeng PRSCO (opened 2026-09-28, the fourth Shanghai Banana), Roc811, Pink Bouldering (sister of HEY BOULDERING), Wo Pan Shanghai (Moon Bay, beta opening 2026-06), DOME Qianwan MEGA (own account posts the "攀石区ABC" zones of this store), HEY BOULDERING MixC (the Bund store is seed-561), BLOC (Changning), Cishan Longfor Hongqiao Tiandi (1/F 85 m bouldering wall), Cishan FFC Binjiang Yueli (the brand's own note of 2026-09-15 says the store has been open for almost a month and lists 30 designated bouldering routes per store; street-level pin), SIZER Kangheng Lu, AOB Chuangzhi Tiandi (second Academy of Bouldering, official opening 2026-09-05).
+- Weaker accepts: Benchmark 3.0 Livat (the own account is brand-wide; bio lists this store and posts carry the bouldering hashtag; eight visitor notes about this store), Infinite Climbing Changning (lead-centred gym; the own notice of 2026-09-17 says the bouldering area stays open), Wo Pan (account last posted 2026-09-19), Banana Longfeng (new gym; bouldering from route-setting posts and hashtags, not from a wall photo).
+
+## reject (1)
+- ViperClimb Minhang (cn-sh-016): rope-only (two visitor notes, 15 m wall, auto-belay, speed, lead, top rope): reject no-bouldering.
+
+## Pins (read the Kunming notes first)
+Amap returns POI pins jittered by about 100 m (different in different reading sessions) but the listing's entrance coordinate is fixed. Rule used: entrance coordinate where the listing has one (`coord_precision: building`, 11 of 17 candidates), otherwise the single Amap pin reading, `coord_precision: street` (flagged weak-coordinates in reconcile, accepted with the reason in the decision): Banana Longfeng, Roc811, Wo Pan, AOB Chuangzhi Tiandi and Cishan FFC (accepted, so five street-level pins in the staged batch) and ViperClimb (not staged). With one reading only the error of a street-level pin can be up to about 150 m.
+
+## Follow-ups (not part of this section)
+- Retire: seed-605 Jibi Storm Climbing (Bailian Xijiao) is most likely the Amap listing "极壁风暴攀岩馆(长宁店)(暂停营业)" (business suspended), 仙霞西路88号 (Bailian Xijiao Shopping Mall address), about 1.3 km from the stored pin. Verify before retiring.
+- Existing Shanghai pins are approximate (many have 3 decimals): matched against the entrance coordinate of the same Amap listing, these differ by more than 500 m and the match is by name and address (location-update candidates): seed-539 Dayan Yuedong (Changfeng Joy City) 2.6 km, seed-563 Upward Climbing 2.4 km, seed-549 GOAT TopOne 2.3 km, seed-533 Banana Kerry Centre 2.1 km, seed-544 DOME Xuhui Vanke 2.0 km, seed-555 LAPUTA 1.8 km, seed-538 Benchmark Climbing Gym 1.6 km, seed-571 GYM Climbing 1.5 km, seed-535 Banana Jinhongqiao 1.3 km, seed-605 1.3 km, seed-552 5+ Songjiang 1.3 km, seed-576 Red Climb 1.3 km, seed-536 Yanwu Kongjian (Hongkou; Amap name 啸岩馆 at the same address) 1.2 km, seed-589 1778 Sanlin 1.0 km, seed-534 Banana West Yan'an 1.0 km, seed-596, 574, 556, 561, 542 (0.7 to 0.9 km). Name matches that need a check before use: seed-543 Lingang Wanda 8.7 km, seed-564 (High Five Jing'an vs Panjing Jing'an) 5.7 km, seed-583 4.2 km, seed-566 4.2 km, seed-573 3.6 km, seed-540 3.3 km, seed-550 2.5 km, seed-599 1.6 km.
+- The Hongqiao hall of the 1778 chain: a guide (2026-07) says the Huangpu store came back "3 times larger" at its old site; seed-1762 may need an update.
+
+## Brain review (2026-10-12)
+Street-level pins (no Amap entrance coordinate) moved from accept to defer: cn-sh-004, cn-sh-005, cn-sh-007, cn-sh-014, cn-sh-015. Owner rule: no reliable pin = defer; each is on MANUAL-CHECK.md with "drop a pin".

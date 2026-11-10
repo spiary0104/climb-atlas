@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-12-kr-gyeonggi-north",
+  "description": "Regional research \"Korea: Gyeonggi north and east\": 13 new gym(s) accepted of 23 candidate(s)",
+  "created": "2026-10-12",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-12-kr-gyeonggi-north",
+    "section_sha256": "34f04b8175c2ed1d140ddfda754a78724c3bcdf6123bb1d2c01ab5f17f78e88d",
+    "sources_sha256": "e57cc954f75fb7a1e0474f17d9cdf049cbd3e227d4e5500aff418158937351b4",
+    "candidates_sha256": "708251f8989853c6999c022124830c9fba8762568a02f5318365b04505d1c93f",
+    "reconcile_sha256": "ae890663fc98f6657dcfa16243f73e9a7cc579a396324ac9da1b0d4449859304",
+    "review_sha256": "006c0bbb9b1f51580edb42e297308147ba1e8d85d7944a3915504168cb1d2f4a",
+    "candidates": 23,
+    "staged": 13,
+    "decisions": {
+      "accept": 13,
+      "defer": 6,
+      "same-as": 4
+    }
+  },
+  "index_at_staging": {
+    "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+    "count": 3294
+  }
+}

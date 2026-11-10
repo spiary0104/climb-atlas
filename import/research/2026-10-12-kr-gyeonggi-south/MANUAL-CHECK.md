@@ -1,0 +1,25 @@
+# Manual check list: Korea Gyeonggi south (2026-10-12-kr-gyeonggi-south)
+
+Eleven gyms I could not settle; all stay `defer` in review.json and are not in the staged batch. Instagram is not readable without a login, so any "check Instagram" step needs your own logged-in browser. Naver Place pages are `https://m.place.naver.com/place/<id>/home` (Photos tab for owner uploads); Kakao pages are `https://place.map.kakao.com/<id>`. The three public facilities are deferred with the honest category `other` (never `commercial-gym`).
+
+| Gym | City | Open these | The ONE question | Found so far |
+|---|---|---|---|---|
+| Cruxzone Climbing (크럭스존, kr-gs-008) | Suwon, Paldal-gu (인계로 63 중앙빌딩 3F) | https://m.place.naver.com/place/11688241/home ; https://cafe.daum.net/cruxzonesuwon | Is it still open in 2026? | Bouldering is clear from the owner photos (mat-floored walls). Newest gym post 2025-06-14, newest visitor review 2025-03-25, no booking, price list of two items. |
+| Suwon Raon Climbing (수원라온클라이밍, kr-gs-009) | Suwon, Gwonseon-gu (정조로 538 3F) | https://m.place.naver.com/place/1744373816/home ; https://cafe.daum.net/suwonlaoncimbing | Is it a walk-in gym or a class and club group? | Owner photos: mat-floored boulder walls plus outdoor rock trips. No price list or booking; posts stop 2024-11; newest visitor review 2026-04-02 (a child's class). |
+| Gwanggyo Sports Climbing Center (광교스포츠클라이밍장, kr-gs-013) | Suwon, Yeongtong-gu (광교호수공원로 102) | https://m.place.naver.com/place/1442096693/home ; https://www.suwonsports.or.kr:449/mp10_facility/fac_other.php | Public (Suwon sports foundation) facility: does it have a bouldering wall open to walk-ins? | Listing has hours and a phone only; no photos, price list or reviews. |
+| The Boulder (더볼더, kr-gs-022) | Seongnam, Bundang-gu (미금일로90번길 36-5 더프라자 5F 501호) | https://place.map.kakao.com/1145248071 ; https://www.instagram.com/the_boulder_official | Is there a Naver Place listing (for the gym's own Naver pin)? | Kakao only: bouldering gym by name and photos (231 Kakao photos, newest 2026-08-02), blog reviews 2026-08, open per Kakao. Naver search finds nothing, so the pin rule is not met. If a Naver pin or a trusted pin is confirmed it can be accepted. |
+| Yongin Sports Climbing Center (용인시스포츠클라이밍장, kr-gs-029) | Yongin, Cheoin-gu (고림로 59) | https://m.place.naver.com/place/2145686435/home | Municipal facility: does it have a bouldering wall open to the public, and on what terms? | Naver listing without photos or price list; a 2026-08-08 review mentions weekend trial lessons at 10,000. |
+| Osan Climbing (오산클라이밍, kr-gs-039) | Osan (오산로 336) | https://m.place.naver.com/place/404900145/home ; https://map.kakao.com/ (search 오산클라이밍센터) | Is it still open in 2026? | Owner photos show mat-floored boulder walls. One price item (100,000), no booking, no posts, newest visitor review 2025-09-02. The only gym found in Osan. |
+| Hong Jong-yeol Climbing Pyeongtaek Bijeon (홍종열클라이밍짐 평택비전점, kr-gs-042) | Pyeongtaek (비전2로 216 로얄프라자 403호) | https://m.place.naver.com/place/17994704/home ; https://cafe.daum.net/ptkclimbing | Is it still open in 2026? | Owner photos show mat-floored boulder walls; a 2025-08 review praises its bouldering. Newest review 2025-11-01, newest post 2020-06, no booking. A different branch from existing seed-1177 (now Freewall). |
+| Climb One (클라임원, kr-gs-048) | Icheon (이섭대천로 1458 소당빌딩 2F) | https://m.place.naver.com/place/1667264795/home | Is it still open in 2026? | Own posts show boulder walls and a 2024 bouldering festival. Newest gym post 2025-05-31; newest visitor review 2026-05-16; no price list or booking. |
+| Yeoju Climbing Center (여주클라이밍센터, kr-gs-052) | Yeoju (세종로 85 여주종합터미널 2F) | https://place.map.kakao.com/1126819711 | Is there a Naver listing, and does it have bouldering? | Kakao only (25 photos from 2025-06, four blog reviews, one titled "beginner-safe bouldering"). No Naver listing found; Instagram not readable. The only gym found in Yeoju. |
+| Gwangju-si Sports Climbing Stadium (광주시스포츠클라이밍경기장, kr-gs-054) | Gwangju-si (양벌동 8-37) | https://place.map.kakao.com/657222577 | Municipal competition stadium: open to the public, and does it have bouldering? | Kakao pin only; no Naver listing, no photos read. |
+| Eight Peaks Climbing (에잇 픽스 클라이밍, kr-gs-055) | Uiwang (계원대학로 22 오남프라자 6F) | https://m.place.naver.com/place/38322574/home ; https://cafe.daum.net/eightpeaksclimbing | Is it still open in 2026? | Owner photos show mat-floored boulder walls and a price table with day passes. Newest post 2019-08, newest visitor review 2025-03-03, no booking. The only gym found in Uiwang. |
+
+Weakest of the 18 accepts (veto if you want extra confidence): see review-notes.md "Weaker accepts".
+
+## Added by the brain review (2026-10-12): accepts moved to defer
+
+| Gym | City | Question |
+|---|---|---|
+| Grippick Climbing Gym (그립픽클라이밍짐) | Seongnam | Is it open in 2026? No gym post since 2023 and only one visitor review since 2025-11. |

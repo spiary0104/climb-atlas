@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-10-12-kr-incheon",
+  "description": "Regional research \"Korea: Incheon\": 6 new gym(s) accepted of 15 candidate(s)",
+  "created": "2026-10-12",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-10-12-kr-incheon",
+    "section_sha256": "74415b48a071c13379eff11185e831e1eae5b1be3f534d3c004b00682270de10",
+    "sources_sha256": "979268f2c3fefa51a7963dfd24e65f76d64b5a6626be4db51ed54ff1bf9d29a3",
+    "candidates_sha256": "129e7abc9b5c9703ba61feab40224d8297dfd412a61aab2f3a9379dfc819f089",
+    "reconcile_sha256": "11b824f44725196ef9d644acbcbe5f696e686334e91868e75c672480b52ce412",
+    "review_sha256": "ee9dfcfe4f2d17d6fb98220298bac5836eba458e480a90129c71f31e7b1299d0",
+    "candidates": 15,
+    "staged": 6,
+    "decisions": {
+      "accept": 6,
+      "defer": 4,
+      "reject": 1,
+      "same-as": 4
+    }
+  },
+  "index_at_staging": {
+    "sha256": "2f47cb53e74baad075735b5b57fc02cdc2619b9144c64855c5e1ba801322a52f",
+    "count": 3294
+  }
+}

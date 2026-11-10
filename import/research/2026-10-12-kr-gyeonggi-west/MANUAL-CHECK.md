@@ -1,0 +1,21 @@
+# Manual check list: Korea Gyeonggi west (2026-10-12-kr-gyeonggi-west)
+
+Seven gyms I could not settle; all stay `defer` in review.json and are not in the staged batch. Instagram is not readable without a login, so any "check Instagram" step needs your own logged-in browser. Naver Place pages are `https://m.place.naver.com/place/<id>/home` (Photos tab, filter "업체" for owner uploads).
+
+| Gym | City | Open these | The ONE question | Found so far |
+|---|---|---|---|---|
+| World Climbing (월드클라이밍, kr-gw-010) | Bucheon (원미구 상동로 90) | https://m.place.naver.com/place/37296734/home | Is it still open in 2026 (any gym post, booking or recent visit)? | Owner photos show mat-floored bouldering walls. No gym post, no booking; price list (free trial lesson, 10-visit passes); newest visitor review 2025-11-16; Kakao says open. |
+| Climbholic Indeogwon (실내암벽 클라임홀릭, kr-gw-011) | Anyang (동안구 인덕원로30번길 18 B1) | https://m.place.naver.com/place/37450215/home ; https://www.instagram.com/climbholic_indeogwon/ | Is it still open in 2026 (any Instagram post)? | Owner photos show mat-floored bouldering walls. Price list and booking item; no gym post; newest visitor review 2025-12-28. |
+| Ansan Basecamp Climbing (안산베이스캠프클라이밍, kr-gw-012) | Ansan (단원구 광덕2로 185-20 골드프라자 701호) | https://m.place.naver.com/place/33283991/home ; http://cafe.daum.net/sanbase | Does it have a bouldering wall and is it open in 2026? | Only a logo and one coloured-wall photo (no mat); no price list, booking or gym post; visitor reviews to 2026-10-08 (155 total). |
+| Ansan Seonbu Climbing (안산 선부 클라이밍, kr-gw-013) | Ansan (단원구 선부광장1로 124 대준빌딩 5F) | https://m.place.naver.com/place/38511385/home ; https://cafe.daum.net/climbing-gym | Is it still open in 2026? | Owner photos show mat-floored bouldering walls. Booking item; no price list or gym post; newest visitor review 2025-10-09; Kakao says open. |
+| Siheung Catch Climbing Gym (시흥캐치클라이밍짐, kr-gw-014) | Siheung (장현장곡로 2 메디프라자 701호) | https://m.place.naver.com/place/1007149389/home ; https://cafe.naver.com/catchclimbing | Is it still open in 2026? | Owner photos show mat-floored bouldering walls. Newest gym post 2023-06, newest visitor review 2024-07; no price list. |
+| Anyang Kim Jong-heon Climbing (안양김종헌클라이밍, kr-gw-015) | Anyang (동안구 경수대로 715 화성빌딩 502-503) | https://m.place.naver.com/place/2026756441/home ; https://cafe.daum.net/jhclimbing | Does it offer walk-in bouldering (or only instructor-led rope training), and is it open in 2026? | Owner photos: green-mat walls indoors plus outdoor rope courses with harnessed groups; no posts, reviews or price list. |
+| Siheung Sports Climbing Center (시흥스포츠클라이밍센터, kr-gw-016) | Siheung (소래산길 11) | https://m.place.naver.com/place/985209367/home ; https://www.shsports.or.kr/ | Does this municipal centre have a bouldering wall (photos show only tall rope walls)? If yes it could be added as a public facility (category other), not a commercial gym. | Open in 2026 (posts 2026-06-29); day entry 3,000 weekdays / 4,000 holidays for 4 hours. |
+
+Weaker accepts among the nine staged gyms (veto if you want extra confidence): see review-notes.md "Weaker accepts" (Catchstone Bucheon, Club Climbing Ansan, The Ledge).
+
+## Added by the brain review (2026-10-12): accepts moved to defer
+
+| Gym | City | Question |
+|---|---|---|
+| Club Climbing Ansan (클럽클라이밍) | Ansan | Does it have mat-floored bouldering walls open to day visitors (photos show no clear crash mats; one rope wall)? |

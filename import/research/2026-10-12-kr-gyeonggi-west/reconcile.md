@@ -1,0 +1,337 @@
+# Regional research: Korea: Gyeonggi west (2026-10-12-kr-gyeonggi-west)
+
+Scope: KR / GYEONGGI
+Index: 3294 gyms, sha256 2f47cb53e74b… | staged batches compared: 2026-10-06-kr-seoul, 2026-10-12-kr-busan-gyeongnam, 2026-10-12-kr-daegu-gyeongbuk, 2026-10-12-kr-incheon | other sections compared: 2026-10-05-korea-gwangju-jeollanam, 2026-10-05-korea-holds, 2026-10-05-korea-owner-checks, 2026-10-06-kr-seoul, 2026-10-12-kr-busan-gyeongnam, 2026-10-12-kr-daegu-gyeongbuk, 2026-10-12-kr-gyeonggi-north, 2026-10-12-kr-gyeonggi-south, 2026-10-12-kr-incheon
+Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
+
+## Summary
+21 candidate(s): ready 0 | review 9 | blocked 10 | already in Bouldeer 2 | invalid 0
+
+## Already in Bouldeer (suggested: same-as; never inserted) (2)
+- kr-gw-018 "Bucheon Climbing Center (부천클라이밍센터)" -> g-0606bbe517 "Bucheon Climbing Center (부천클라이밍센터)" (same-name, 0 m) | also: status-not-open, insufficient-evidence, bouldering-unknown
+- kr-gw-019 "Pax Climbing Center (팍스클라이밍)" -> g-0aa5185dd5 "Pax Climbing Center (팍스클라이밍)" (same-name, 3 m) | also: status-not-open, insufficient-evidence, bouldering-unknown
+
+## Needs review (accept needs a reason and reviewed_against covering every listed id) (9)
+- kr-gw-001 "Catchstone Climbing Bucheon Station (캐치스톤클라이밍짐 부천역점)" [g-d6c02f8b81] reviewed_against must include: 2026-10-06-kr-seoul#kr-se-003, 2026-10-06-kr-seoul#kr-se-008, 2026-10-06-kr-seoul#kr-se-009, 2026-10-06-kr-seoul#kr-se-018, 2026-10-06-kr-seoul#kr-se-020, 2026-10-06-kr-seoul#kr-se-022, 2026-10-06-kr-seoul#kr-se-023, 2026-10-06-kr-seoul#kr-se-037, 2026-10-06-kr-seoul#kr-se-043, 2026-10-06-kr-seoul#kr-se-053, 2026-10-06-kr-seoul#kr-se-055, 2026-10-06-kr-seoul#kr-se-056, 2026-10-06-kr-seoul#kr-se-057, 2026-10-06-kr-seoul#kr-se-061, 2026-10-06-kr-seoul#kr-se-063, 2026-10-06-kr-seoul#kr-se-065, 2026-10-06-kr-seoul#kr-se-066, 2026-10-12-kr-gyeonggi-north#kr-gn-019, 2026-10-12-kr-incheon#kr-ic-002, 2026-10-12-kr-incheon#kr-ic-005, 2026-10-12-kr-incheon#kr-ic-006, 2026-10-12-kr-incheon#kr-ic-007, 2026-10-12-kr-incheon#kr-ic-008, 2026-10-12-kr-incheon#kr-ic-009, 2026-10-12-kr-incheon#kr-ic-011, 2026-10-12-kr-incheon#kr-ic-012, 2026-10-12-kr-incheon#kr-ic-013, 2026-10-12-kr-incheon#kr-ic-014, 2026-10-12-kr-incheon#kr-ic-015, g-0606bbe517, kr-gw-010, kr-gw-014, kr-gw-016, kr-gw-017, kr-gw-018, kr-gw-019, kr-gw-020, kr-gw-021
+  - other-section: 2026-10-06-kr-seoul#kr-se-003 "The Climb Mullae (더클라임 문래점)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "더클라임 문래점" 10674 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-008 "Seoul Forest Climbing Guro (서울숲클라이밍 구로점)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "서울숲클라이밍 구로점" 10056 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-009 "Seoul Forest Climbing Yeongdeungpo (서울숲클라이밍 영등포점)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "서울숲클라이밍 영등포점" 10946 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-018 "Alé Climbing Yeongdeungpo (알레클라이밍 영등포점)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "알레클라이밍 영등포점" 11362 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-020 "Seoul Boulders Seonyu (서울볼더스 선유)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "서울볼더스 선유" 11470 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-022 "Gangseo Climbing Center (강서클라이밍센터)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "강서클라이밍센터" 9499 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-023 "August Climbing (어거스트클라이밍)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "어거스트클라이밍" 10599 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-037 "Mokdong Climbing Center (목동클라이밍센터)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "목동클라이밍센터" 10404 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-043 "2 Years Climb House (투이얼즈클라임하우스)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "투이얼즈클라임하우스" 10842 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-053 "Seoul Boulders Mokdong (서울볼더스 클라이밍 목동점)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "서울볼더스 클라이밍 목동점" 8871 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-055 "The Climb Magok (더클라임 마곡점)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "더클라임 마곡점" 9499 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-056 "The Climb Sillim (더클라임 신림점)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "더클라임 신림점" 12952 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-057 "The Climb Yeonnam (더클라임 연남점)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "더클라임 연남점" 14988 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-061 "Ace Climbing Center (에이스클라이밍센터)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "에이스클라이밍센터" 9748 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-063 "Climb Works Yeongdeungpo (클라임웍스 클라이밍 영등포)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "클라임웍스 클라이밍 영등포" 12030 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-065 "Seoul Mountain Culture Experience Center (서울특별시산악문화체험센터)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "서울특별시산악문화체험센터" 12681 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-066 "Koala Climbing Sangam (코알라클라이밍 상암)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "코알라클라이밍 상암" 14193 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-north#kr-gn-019 "Kikl Climbing Pungmu (키클 클라이밍 풍무점)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "키클 클라이밍 풍무점" 14463 m apart
+  - other-section: 2026-10-12-kr-incheon#kr-ic-002 "Discovery Climb Square Cheongna (디스커버리클라이밍 클라임스퀘어 청라점)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "디스커버리클라이밍 클라임스퀘어 청라점" 12618 m apart
+  - other-section: 2026-10-12-kr-incheon#kr-ic-005 "Climbing Zoom (클라이밍줌)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "클라이밍줌" 12284 m apart
+  - other-section: 2026-10-12-kr-incheon#kr-ic-006 "Hub Climbing (허브클라이밍)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "허브클라이밍" 10693 m apart
+  - other-section: 2026-10-12-kr-incheon#kr-ic-007 "Boly Climbing (볼리 클라이밍)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "볼리 클라이밍" 7563 m apart
+  - other-section: 2026-10-12-kr-incheon#kr-ic-008 "Bupyeong Climbing Center (부평클라이밍센터)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "부평클라이밍센터" 6844 m apart
+  - other-section: 2026-10-12-kr-incheon#kr-ic-009 "Ganseok Climbing (간석클라이밍)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "간석클라이밍" 8012 m apart
+  - other-section: 2026-10-12-kr-incheon#kr-ic-011 "Incheon Best Climbing Center (인천베스트클라이밍센타)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "인천베스트클라이밍센타" 6100 m apart
+  - other-section: 2026-10-12-kr-incheon#kr-ic-012 "Seo-Incheon Climbing (서인천 클라이밍)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "서인천 클라이밍" 10289 m apart
+  - other-section: 2026-10-12-kr-incheon#kr-ic-013 "Incheon Gyeyang Climbing Center (인천계양클라이밍센터)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "인천계양클라이밍센터" 7646 m apart
+  - other-section: 2026-10-12-kr-incheon#kr-ic-014 "Incheon Munhak Stadium Climbing Wall (인천문학경기장암벽장)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "인천문학경기장암벽장" 9731 m apart
+  - other-section: 2026-10-12-kr-incheon#kr-ic-015 "Incheon Indoor Climbing Wall (인천실내암장)": related-name-nearby related names "캐치스톤클라이밍짐 부천역점" / "인천실내암장" 9946 m apart
+  - related-name-nearby: g-0606bbe517 "Bucheon Climbing Center (부천클라이밍센터)": related names "Catchstone Climbing Bucheon Station (캐치스톤클라이밍짐 부천역점)" / "Bucheon Climbing Center (부천클라이밍센터)" 1683 m apart
+  - related-name-nearby: candidate kr-gw-010 "World Climbing (월드클라이밍)": related names "캐치스톤클라이밍짐 부천역점" / "월드클라이밍" 3306 m apart
+  - related-name-nearby: candidate kr-gw-014 "Siheung Catch Climbing Gym (시흥캐치클라이밍짐)": related names "캐치스톤클라이밍짐 부천역점" / "시흥캐치클라이밍짐" 11880 m apart
+  - related-name-nearby: candidate kr-gw-016 "Siheung Sports Climbing Center (시흥스포츠클라이밍센터)": related names "캐치스톤클라이밍짐 부천역점" / "시흥스포츠클라이밍센터" 4187 m apart
+  - related-name-nearby: candidate kr-gw-017 "Bouldergarden Siheung (볼더가든클라이밍)": related names "캐치스톤클라이밍짐 부천역점" / "볼더가든클라이밍" 4743 m apart
+  - related-name-nearby: candidate kr-gw-018 "Bucheon Climbing Center (부천클라이밍센터)": related names "Catchstone Climbing Bucheon Station (캐치스톤클라이밍짐 부천역점)" / "Bucheon Climbing Center (부천클라이밍센터)" 1683 m apart
+  - related-name-nearby: candidate kr-gw-019 "Pax Climbing Center (팍스클라이밍)": related names "캐치스톤클라이밍짐 부천역점" / "팍스클라이밍" 3964 m apart
+  - related-name-nearby: candidate kr-gw-020 "ClimbIt Climbing Mokgam (클라임잇 클라이밍 목감점)": related names "캐치스톤클라이밍짐 부천역점" / "클라임잇 클라이밍 목감점" 13318 m apart
+  - related-name-nearby: candidate kr-gw-021 "Just Climbing Center (저스트클라이밍센타)": related names "캐치스톤클라이밍짐 부천역점" / "저스트클라이밍센타" 4336 m apart
+- kr-gw-002 "Climbing Treackle (클라이밍 트리클)" [g-4fe255bb99] reviewed_against must include: 2026-10-12-kr-gyeonggi-south#kr-gs-011, 2026-10-12-kr-gyeonggi-south#kr-gs-012, 2026-10-12-kr-gyeonggi-south#kr-gs-037, 2026-10-12-kr-gyeonggi-south#kr-gs-055, 2026-10-12-kr-incheon#kr-ic-006, 2026-10-12-kr-incheon#kr-ic-007, kr-gw-003, kr-gw-004, kr-gw-005, kr-gw-006, kr-gw-007, kr-gw-008, kr-gw-009, kr-gw-012, kr-gw-013, kr-gw-014, kr-gw-015, kr-gw-016, kr-gw-017, kr-gw-020, kr-gw-021
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-011 "Seosuwon Climbing Center (서수원클라이밍센터)": related-name-nearby related names "클라이밍 트리클" / "서수원클라이밍센터" 12700 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-012 "Triplaying (트리플레잉)": related-name-nearby related names "클라이밍 트리클" / "트리플레잉" 14673 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-037 "Hold & Rock Climbing (홀드앤락클라이밍)": related-name-nearby related names "클라이밍 트리클" / "홀드앤락클라이밍" 13452 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-055 "Eight Peaks Climbing (에잇 픽스 클라이밍)": related-name-nearby related names "클라이밍 트리클" / "에잇 픽스 클라이밍" 14085 m apart
+  - other-section: 2026-10-12-kr-incheon#kr-ic-006 "Hub Climbing (허브클라이밍)": related-name-nearby related names "클라이밍 트리클" / "허브클라이밍" 13202 m apart
+  - other-section: 2026-10-12-kr-incheon#kr-ic-007 "Boly Climbing (볼리 클라이밍)": related-name-nearby related names "클라이밍 트리클" / "볼리 클라이밍" 13529 m apart
+  - related-name-nearby: candidate kr-gw-003 "Club Climbing Ansan (클럽클라이밍)": related names "클라이밍 트리클" / "클럽클라이밍" 299 m apart
+  - related-name-nearby: candidate kr-gw-004 "Ayers Rock Climbing Beomgye (에어즈락 클라이밍 범계점)": related names "클라이밍 트리클" / "에어즈락 클라이밍 범계점" 12902 m apart
+  - related-name-nearby: candidate kr-gw-005 "The Ledge Climbing (더렛지 클라이밍)": related names "클라이밍 트리클" / "더렛지 클라이밍" 12430 m apart
+  - related-name-nearby: candidate kr-gw-006 "Fun Climb Gym (펀클라임짐)": related names "클라이밍 트리클" / "펀클라임짐 클라이밍" 14577 m apart
+  - related-name-nearby: candidate kr-gw-007 "Sanbon Climbing Center (산본클라이밍센터)": related names "클라이밍 트리클" / "산본클라이밍센터" 10739 m apart
+  - related-name-nearby: candidate kr-gw-008 "Rock Climbing Sanbon (락클라이밍 산본)": related names "클라이밍 트리클" / "락클라이밍 산본" 9662 m apart
+  - related-name-nearby: candidate kr-gw-009 "Spicy Climbing (스파이시 클라이밍)": related names "클라이밍 트리클" / "스파이시클라이밍" 11581 m apart
+  - related-name-nearby: candidate kr-gw-012 "Ansan Basecamp Climbing (안산베이스캠프클라이밍)": related names "클라이밍 트리클" / "안산베이스캠프클라이밍" 1016 m apart
+  - related-name-nearby: candidate kr-gw-013 "Ansan Seonbu Climbing (안산 선부 클라이밍)": related names "클라이밍 트리클" / "안산 선부 클라이밍" 2266 m apart
+  - related-name-nearby: candidate kr-gw-014 "Siheung Catch Climbing Gym (시흥캐치클라이밍짐)": related names "클라이밍 트리클" / "시흥캐치클라이밍짐" 7496 m apart
+  - related-name-nearby: candidate kr-gw-015 "Anyang Kim Jong-heon Climbing (안양김종헌클라이밍)": related names "클라이밍 트리클" / "안양김종헌클라이밍" 12692 m apart
+  - related-name-nearby: candidate kr-gw-016 "Siheung Sports Climbing Center (시흥스포츠클라이밍센터)": related names "클라이밍 트리클" / "시흥스포츠클라이밍센터" 14747 m apart
+  - related-name-nearby: candidate kr-gw-017 "Bouldergarden Siheung (볼더가든클라이밍)": related names "클라이밍 트리클" / "볼더가든클라이밍" 14161 m apart
+  - related-name-nearby: candidate kr-gw-020 "ClimbIt Climbing Mokgam (클라임잇 클라이밍 목감점)": related names "클라이밍 트리클" / "클라임잇 클라이밍 목감점" 7594 m apart
+  - related-name-nearby: candidate kr-gw-021 "Just Climbing Center (저스트클라이밍센타)": related names "클라이밍 트리클" / "저스트클라이밍센타" 14513 m apart
+- kr-gw-003 "Club Climbing Ansan (클럽클라이밍)" [g-0502c72bc6] reviewed_against must include: 2026-10-12-kr-gyeonggi-south#kr-gs-011, 2026-10-12-kr-gyeonggi-south#kr-gs-012, 2026-10-12-kr-gyeonggi-south#kr-gs-037, 2026-10-12-kr-gyeonggi-south#kr-gs-055, 2026-10-12-kr-incheon#kr-ic-006, 2026-10-12-kr-incheon#kr-ic-007, g-db1f15e7dc, kr-gw-002, kr-gw-004, kr-gw-005, kr-gw-006, kr-gw-007, kr-gw-008, kr-gw-009, kr-gw-012, kr-gw-013, kr-gw-014, kr-gw-015, kr-gw-017, kr-gw-020, kr-gw-021
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-011 "Seosuwon Climbing Center (서수원클라이밍센터)": related-name-nearby related names "클럽클라이밍" / "서수원클라이밍센터" 12461 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-012 "Triplaying (트리플레잉)": related-name-nearby related names "클럽클라이밍" / "트리플레잉" 14399 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-037 "Hold & Rock Climbing (홀드앤락클라이밍)": related-name-nearby related names "클럽클라이밍" / "홀드앤락클라이밍" 13246 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-055 "Eight Peaks Climbing (에잇 픽스 클라이밍)": related-name-nearby related names "클럽클라이밍" / "에잇 픽스 클라이밍" 14001 m apart
+  - other-section: 2026-10-12-kr-incheon#kr-ic-006 "Hub Climbing (허브클라이밍)": related-name-nearby related names "클럽클라이밍" / "허브클라이밍" 13501 m apart
+  - other-section: 2026-10-12-kr-incheon#kr-ic-007 "Boly Climbing (볼리 클라이밍)": related-name-nearby related names "클럽클라이밍" / "볼리 클라이밍" 13823 m apart
+  - related-name-nearby: g-db1f15e7dc "Ansan Climbing (안산클라이밍)": related names "Club Climbing Ansan (클럽클라이밍)" / "Ansan Climbing (안산클라이밍)" 1115 m apart
+  - related-name-nearby: candidate kr-gw-002 "Climbing Treackle (클라이밍 트리클)": related names "클럽클라이밍" / "클라이밍 트리클" 299 m apart
+  - related-name-nearby: candidate kr-gw-004 "Ayers Rock Climbing Beomgye (에어즈락 클라이밍 범계점)": related names "클럽클라이밍" / "에어즈락 클라이밍 범계점" 12866 m apart
+  - related-name-nearby: candidate kr-gw-005 "The Ledge Climbing (더렛지 클라이밍)": related names "클럽클라이밍" / "더렛지 클라이밍" 12393 m apart
+  - related-name-nearby: candidate kr-gw-006 "Fun Climb Gym (펀클라임짐)": related names "클럽클라이밍" / "펀클라임짐 클라이밍" 14533 m apart
+  - related-name-nearby: candidate kr-gw-007 "Sanbon Climbing Center (산본클라이밍센터)": related names "클럽클라이밍" / "산본클라이밍센터" 10680 m apart
+  - related-name-nearby: candidate kr-gw-008 "Rock Climbing Sanbon (락클라이밍 산본)": related names "클럽클라이밍" / "락클라이밍 산본" 9572 m apart
+  - related-name-nearby: candidate kr-gw-009 "Spicy Climbing (스파이시 클라이밍)": related names "클럽클라이밍" / "스파이시클라이밍" 11515 m apart
+  - related-name-nearby: candidate kr-gw-012 "Ansan Basecamp Climbing (안산베이스캠프클라이밍)": related names "Club Climbing Ansan (클럽클라이밍)" / "Ansan Basecamp Climbing (안산베이스캠프클라이밍)" 850 m apart
+  - related-name-nearby: candidate kr-gw-013 "Ansan Seonbu Climbing (안산 선부 클라이밍)": related names "Club Climbing Ansan (클럽클라이밍)" / "Ansan Seonbu Climbing (안산 선부 클라이밍)" 2560 m apart
+  - related-name-nearby: candidate kr-gw-014 "Siheung Catch Climbing Gym (시흥캐치클라이밍짐)": related names "클럽클라이밍" / "시흥캐치클라이밍짐" 7787 m apart
+  - related-name-nearby: candidate kr-gw-015 "Anyang Kim Jong-heon Climbing (안양김종헌클라이밍)": related names "클럽클라이밍" / "안양김종헌클라이밍" 12645 m apart
+  - related-name-nearby: candidate kr-gw-017 "Bouldergarden Siheung (볼더가든클라이밍)": related names "클럽클라이밍" / "볼더가든클라이밍" 14411 m apart
+  - related-name-nearby: candidate kr-gw-020 "ClimbIt Climbing Mokgam (클라임잇 클라이밍 목감점)": related names "클럽클라이밍" / "클라임잇 클라이밍 목감점" 7723 m apart
+  - related-name-nearby: candidate kr-gw-021 "Just Climbing Center (저스트클라이밍센타)": related names "클럽클라이밍" / "저스트클라이밍센타" 14773 m apart
+- kr-gw-004 "Ayers Rock Climbing Beomgye (에어즈락 클라이밍 범계점)" [g-cbf5ff6963] reviewed_against must include: 2026-10-06-kr-seoul#kr-se-001, 2026-10-06-kr-seoul#kr-se-002, 2026-10-06-kr-seoul#kr-se-004, 2026-10-06-kr-seoul#kr-se-006, 2026-10-06-kr-seoul#kr-se-007, 2026-10-06-kr-seoul#kr-se-008, 2026-10-06-kr-seoul#kr-se-009, 2026-10-06-kr-seoul#kr-se-012, 2026-10-06-kr-seoul#kr-se-014, 2026-10-06-kr-seoul#kr-se-026, 2026-10-06-kr-seoul#kr-se-027, 2026-10-06-kr-seoul#kr-se-032, 2026-10-06-kr-seoul#kr-se-034, 2026-10-06-kr-seoul#kr-se-047, 2026-10-06-kr-seoul#kr-se-051, 2026-10-06-kr-seoul#kr-se-056, 2026-10-06-kr-seoul#kr-se-061, 2026-10-12-kr-gyeonggi-south#kr-gs-001, 2026-10-12-kr-gyeonggi-south#kr-gs-007, 2026-10-12-kr-gyeonggi-south#kr-gs-011, 2026-10-12-kr-gyeonggi-south#kr-gs-012, 2026-10-12-kr-gyeonggi-south#kr-gs-014, 2026-10-12-kr-gyeonggi-south#kr-gs-017, 2026-10-12-kr-gyeonggi-south#kr-gs-021, 2026-10-12-kr-gyeonggi-south#kr-gs-022, 2026-10-12-kr-gyeonggi-south#kr-gs-055, kr-gw-002, kr-gw-003, kr-gw-005, kr-gw-006, kr-gw-007, kr-gw-008, kr-gw-009, kr-gw-011, kr-gw-012, kr-gw-013, kr-gw-014, kr-gw-015, kr-gw-017, kr-gw-020
+  - other-section: 2026-10-06-kr-seoul#kr-se-001 "The Climb Gangnam (더클라임 강남점)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "더클라임 강남점" 13976 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-002 "The Climb Nonhyeon (더클라임 논현점)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "더클라임 논현점" 14590 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-004 "The Climb Sadang (더클라임 사당점)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "더클라임 사당점" 9754 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-006 "The Climb Yangjae (더클라임 양재점)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "더클라임 양재점" 13017 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-007 "The Climb Isu (더클라임 이수점)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "더클라임 이수점" 10567 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-008 "Seoul Forest Climbing Guro (서울숲클라이밍 구로점)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "서울숲클라이밍 구로점" 11458 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-009 "Seoul Forest Climbing Yeongdeungpo (서울숲클라이밍 영등포점)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "서울숲클라이밍 영등포점" 14784 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-012 "Climbing Park Gangnam (클라이밍파크 강남점)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "클라이밍파크 강남점" 13642 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-014 "Son Sang-won Climbing Gangnam Station (손상원 클라이밍짐 강남역점)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "손상원 클라이밍짐 강남역점" 13396 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-026 "In Climbing Center (인클라이밍센터)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "인클라이밍센터" 9757 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-027 "Stonz Climbing (스톤즈클라이밍)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "스톤즈클라이밍" 9579 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-032 "Boulder Life Climbing Gym (볼더생활 클라이밍짐)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "볼더생활 클라이밍짐" 11184 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-034 "One Bailey Invite Climbing (원베일리 인바이트 클라이밍)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "원베일리 인바이트 클라이밍" 13610 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-047 "The Climbing Gym (더클라이밍짐 서초)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "더클라이밍짐" 12359 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-051 "Climbing Park Sinnonhyeon (클라이밍파크 신논현점)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "클라이밍파크 신논현점" 14307 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-056 "The Climb Sillim (더클라임 신림점)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "더클라임 신림점" 10363 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-061 "Ace Climbing Center (에이스클라이밍센터)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "에이스클라이밍센터" 12955 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-001 "Kindy Climbing (킨디클라이밍)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "킨디클라이밍" 14745 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-007 "King Kong Climbing (킹콩클라이밍)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "킹콩클라이밍" 14568 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-011 "Seosuwon Climbing Center (서수원클라이밍센터)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "서수원클라이밍센터" 10007 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-012 "Triplaying (트리플레잉)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "트리플레잉" 13731 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-014 "Rocktree Climbing Bundang (락트리클라이밍 분당)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "락트리클라이밍 분당" 14542 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-017 "Son Climbing Gym Pangyo (손상원 클라이밍짐 판교점)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "손상원 클라이밍짐 판교점" 13970 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-021 "B Climbing": related-name-nearby related names "에어즈락 클라이밍 범계점" / "비클라이밍" 14561 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-022 "The Boulder Bundang (더볼더)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "더볼더" 14972 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-055 "Eight Peaks Climbing (에잇 픽스 클라이밍)": related-name-nearby related names "에어즈락 클라이밍 범계점" / "에잇 픽스 클라이밍" 2521 m apart
+  - related-name-nearby: candidate kr-gw-002 "Climbing Treackle (클라이밍 트리클)": related names "에어즈락 클라이밍 범계점" / "클라이밍 트리클" 12902 m apart
+  - related-name-nearby: candidate kr-gw-003 "Club Climbing Ansan (클럽클라이밍)": related names "에어즈락 클라이밍 범계점" / "클럽클라이밍" 12866 m apart
+  - related-name-nearby: candidate kr-gw-005 "The Ledge Climbing (더렛지 클라이밍)": related names "에어즈락 클라이밍 범계점" / "더렛지 클라이밍" 480 m apart
+  - related-name-nearby: candidate kr-gw-006 "Fun Climb Gym (펀클라임짐)": related names "에어즈락 클라이밍 범계점" / "펀클라임짐 클라이밍" 1716 m apart
+  - related-name-nearby: candidate kr-gw-007 "Sanbon Climbing Center (산본클라이밍센터)": related names "에어즈락 클라이밍 범계점" / "산본클라이밍센터" 2379 m apart
+  - related-name-nearby: candidate kr-gw-008 "Rock Climbing Sanbon (락클라이밍 산본)": related names "에어즈락 클라이밍 범계점" / "락클라이밍 산본" 3889 m apart
+  - related-name-nearby: candidate kr-gw-009 "Spicy Climbing (스파이시 클라이밍)": related names "에어즈락 클라이밍 범계점" / "스파이시클라이밍" 1841 m apart
+  - related-name-nearby: candidate kr-gw-011 "Climbholic Indeogwon (실내암벽 클라임홀릭)": related names "에어즈락 클라이밍 범계점" / "실내암벽 클라임홀릭" 2632 m apart
+  - related-name-nearby: candidate kr-gw-012 "Ansan Basecamp Climbing (안산베이스캠프클라이밍)": related names "에어즈락 클라이밍 범계점" / "안산베이스캠프클라이밍" 13597 m apart
+  - related-name-nearby: candidate kr-gw-013 "Ansan Seonbu Climbing (안산 선부 클라이밍)": related names "에어즈락 클라이밍 범계점" / "안산 선부 클라이밍" 13764 m apart
+  - related-name-nearby: candidate kr-gw-014 "Siheung Catch Climbing Gym (시흥캐치클라이밍짐)": related names "에어즈락 클라이밍 범계점" / "시흥캐치클라이밍짐" 14186 m apart
+  - related-name-nearby: candidate kr-gw-015 "Anyang Kim Jong-heon Climbing (안양김종헌클라이밍)": related names "에어즈락 클라이밍 범계점" / "안양김종헌클라이밍" 574 m apart
+  - related-name-nearby: candidate kr-gw-017 "Bouldergarden Siheung (볼더가든클라이밍)": related names "에어즈락 클라이밍 범계점" / "볼더가든클라이밍" 14379 m apart
+  - related-name-nearby: candidate kr-gw-020 "ClimbIt Climbing Mokgam (클라임잇 클라이밍 목감점)": related names "에어즈락 클라이밍 범계점" / "클라임잇 클라이밍 목감점" 7609 m apart
+- kr-gw-005 "The Ledge Climbing (더렛지 클라이밍)" [g-0a9469872d] reviewed_against must include: 2026-10-06-kr-seoul#kr-se-001, 2026-10-06-kr-seoul#kr-se-004, 2026-10-06-kr-seoul#kr-se-006, 2026-10-06-kr-seoul#kr-se-007, 2026-10-06-kr-seoul#kr-se-008, 2026-10-06-kr-seoul#kr-se-012, 2026-10-06-kr-seoul#kr-se-014, 2026-10-06-kr-seoul#kr-se-026, 2026-10-06-kr-seoul#kr-se-027, 2026-10-06-kr-seoul#kr-se-032, 2026-10-06-kr-seoul#kr-se-034, 2026-10-06-kr-seoul#kr-se-047, 2026-10-06-kr-seoul#kr-se-051, 2026-10-06-kr-seoul#kr-se-056, 2026-10-06-kr-seoul#kr-se-061, 2026-10-12-kr-gyeonggi-south#kr-gs-001, 2026-10-12-kr-gyeonggi-south#kr-gs-007, 2026-10-12-kr-gyeonggi-south#kr-gs-008, 2026-10-12-kr-gyeonggi-south#kr-gs-011, 2026-10-12-kr-gyeonggi-south#kr-gs-012, 2026-10-12-kr-gyeonggi-south#kr-gs-014, 2026-10-12-kr-gyeonggi-south#kr-gs-017, 2026-10-12-kr-gyeonggi-south#kr-gs-021, 2026-10-12-kr-gyeonggi-south#kr-gs-055, kr-gw-002, kr-gw-003, kr-gw-004, kr-gw-006, kr-gw-007, kr-gw-008, kr-gw-009, kr-gw-011, kr-gw-012, kr-gw-013, kr-gw-014, kr-gw-015, kr-gw-017, kr-gw-020
+  - other-section: 2026-10-06-kr-seoul#kr-se-001 "The Climb Gangnam (더클라임 강남점)": related-name-nearby related names "더렛지 클라이밍" / "더클라임 강남점" 14448 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-004 "The Climb Sadang (더클라임 사당점)": related-name-nearby related names "더렛지 클라이밍" / "더클라임 사당점" 10189 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-006 "The Climb Yangjae (더클라임 양재점)": related-name-nearby related names "더렛지 클라이밍" / "더클라임 양재점" 13495 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-007 "The Climb Isu (더클라임 이수점)": related-name-nearby related names "더렛지 클라이밍" / "더클라임 이수점" 10998 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-008 "Seoul Forest Climbing Guro (서울숲클라이밍 구로점)": related-name-nearby related names "더렛지 클라이밍" / "서울숲클라이밍 구로점" 11658 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-012 "Climbing Park Gangnam (클라이밍파크 강남점)": related-name-nearby related names "더렛지 클라이밍" / "클라이밍파크 강남점" 14113 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-014 "Son Sang-won Climbing Gangnam Station (손상원 클라이밍짐 강남역점)": related-name-nearby related names "더렛지 클라이밍" / "손상원 클라이밍짐 강남역점" 13869 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-026 "In Climbing Center (인클라이밍센터)": related-name-nearby related names "더렛지 클라이밍" / "인클라이밍센터" 10154 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-027 "Stonz Climbing (스톤즈클라이밍)": related-name-nearby related names "더렛지 클라이밍" / "스톤즈클라이밍" 9993 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-032 "Boulder Life Climbing Gym (볼더생활 클라이밍짐)": related-name-nearby related names "더렛지 클라이밍" / "볼더생활 클라이밍짐" 11606 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-034 "One Bailey Invite Climbing (원베일리 인바이트 클라이밍)": related-name-nearby related names "더렛지 클라이밍" / "원베일리 인바이트 클라이밍" 14053 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-047 "The Climbing Gym (더클라이밍짐 서초)": related-name-nearby related names "더렛지 클라이밍" / "더클라이밍짐" 12822 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-051 "Climbing Park Sinnonhyeon (클라이밍파크 신논현점)": related-name-nearby related names "더렛지 클라이밍" / "클라이밍파크 신논현점" 14773 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-056 "The Climb Sillim (더클라임 신림점)": related-name-nearby related names "더렛지 클라이밍" / "더클라임 신림점" 10663 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-061 "Ace Climbing Center (에이스클라이밍센터)": related-name-nearby related names "더렛지 클라이밍" / "에이스클라이밍센터" 13162 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-001 "Kindy Climbing (킨디클라이밍)": related-name-nearby related names "더렛지 클라이밍" / "킨디클라이밍" 14511 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-007 "King Kong Climbing (킹콩클라이밍)": related-name-nearby related names "더렛지 클라이밍" / "킹콩클라이밍" 14429 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-008 "Cruxzone Climbing (크럭스존)": related-name-nearby related names "더렛지 클라이밍" / "크럭스존" 14889 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-011 "Seosuwon Climbing Center (서수원클라이밍센터)": related-name-nearby related names "더렛지 클라이밍" / "서수원클라이밍센터" 9742 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-012 "Triplaying (트리플레잉)": related-name-nearby related names "더렛지 클라이밍" / "트리플레잉" 13469 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-014 "Rocktree Climbing Bundang (락트리클라이밍 분당)": related-name-nearby related names "더렛지 클라이밍" / "락트리클라이밍 분당" 14839 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-017 "Son Climbing Gym Pangyo (손상원 클라이밍짐 판교점)": related-name-nearby related names "더렛지 클라이밍" / "손상원 클라이밍짐 판교점" 14329 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-021 "B Climbing": related-name-nearby related names "더렛지 클라이밍" / "비클라이밍" 14836 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-055 "Eight Peaks Climbing (에잇 픽스 클라이밍)": related-name-nearby related names "더렛지 클라이밍" / "에잇 픽스 클라이밍" 2666 m apart
+  - related-name-nearby: candidate kr-gw-002 "Climbing Treackle (클라이밍 트리클)": related names "더렛지 클라이밍" / "클라이밍 트리클" 12430 m apart
+  - related-name-nearby: candidate kr-gw-003 "Club Climbing Ansan (클럽클라이밍)": related names "더렛지 클라이밍" / "클럽클라이밍" 12393 m apart
+  - related-name-nearby: candidate kr-gw-004 "Ayers Rock Climbing Beomgye (에어즈락 클라이밍 범계점)": related names "더렛지 클라이밍" / "에어즈락 클라이밍 범계점" 480 m apart
+  - related-name-nearby: candidate kr-gw-006 "Fun Climb Gym (펀클라임짐)": related names "더렛지 클라이밍" / "펀클라임짐 클라이밍" 2163 m apart
+  - related-name-nearby: candidate kr-gw-007 "Sanbon Climbing Center (산본클라이밍센터)": related names "더렛지 클라이밍" / "산본클라이밍센터" 1911 m apart
+  - related-name-nearby: candidate kr-gw-008 "Rock Climbing Sanbon (락클라이밍 산본)": related names "더렛지 클라이밍" / "락클라이밍 산본" 3435 m apart
+  - related-name-nearby: candidate kr-gw-009 "Spicy Climbing (스파이시 클라이밍)": related names "더렛지 클라이밍" / "스파이시클라이밍" 1448 m apart
+  - related-name-nearby: candidate kr-gw-011 "Climbholic Indeogwon (실내암벽 클라임홀릭)": related names "더렛지 클라이밍" / "실내암벽 클라임홀릭" 3090 m apart
+  - related-name-nearby: candidate kr-gw-012 "Ansan Basecamp Climbing (안산베이스캠프클라이밍)": related names "더렛지 클라이밍" / "안산베이스캠프클라이밍" 13120 m apart
+  - related-name-nearby: candidate kr-gw-013 "Ansan Seonbu Climbing (안산 선부 클라이밍)": related names "더렛지 클라이밍" / "안산 선부 클라이밍" 13313 m apart
+  - related-name-nearby: candidate kr-gw-014 "Siheung Catch Climbing Gym (시흥캐치클라이밍짐)": related names "더렛지 클라이밍" / "시흥캐치클라이밍짐" 13834 m apart
+  - related-name-nearby: candidate kr-gw-015 "Anyang Kim Jong-heon Climbing (안양김종헌클라이밍)": related names "더렛지 클라이밍" / "안양김종헌클라이밍" 508 m apart
+  - related-name-nearby: candidate kr-gw-017 "Bouldergarden Siheung (볼더가든클라이밍)": related names "더렛지 클라이밍" / "볼더가든클라이밍" 14245 m apart
+  - related-name-nearby: candidate kr-gw-020 "ClimbIt Climbing Mokgam (클라임잇 클라이밍 목감점)": related names "더렛지 클라이밍" / "클라임잇 클라이밍 목감점" 7262 m apart
+- kr-gw-006 "Fun Climb Gym (펀클라임짐)" [g-a26b8e9715] reviewed_against must include: 2026-10-06-kr-seoul#kr-se-001, 2026-10-06-kr-seoul#kr-se-002, 2026-10-06-kr-seoul#kr-se-004, 2026-10-06-kr-seoul#kr-se-006, 2026-10-06-kr-seoul#kr-se-007, 2026-10-06-kr-seoul#kr-se-008, 2026-10-06-kr-seoul#kr-se-009, 2026-10-06-kr-seoul#kr-se-012, 2026-10-06-kr-seoul#kr-se-014, 2026-10-06-kr-seoul#kr-se-026, 2026-10-06-kr-seoul#kr-se-027, 2026-10-06-kr-seoul#kr-se-032, 2026-10-06-kr-seoul#kr-se-034, 2026-10-06-kr-seoul#kr-se-047, 2026-10-06-kr-seoul#kr-se-051, 2026-10-06-kr-seoul#kr-se-056, 2026-10-06-kr-seoul#kr-se-061, 2026-10-12-kr-gyeonggi-south#kr-gs-007, 2026-10-12-kr-gyeonggi-south#kr-gs-011, 2026-10-12-kr-gyeonggi-south#kr-gs-012, 2026-10-12-kr-gyeonggi-south#kr-gs-014, 2026-10-12-kr-gyeonggi-south#kr-gs-016, 2026-10-12-kr-gyeonggi-south#kr-gs-017, 2026-10-12-kr-gyeonggi-south#kr-gs-019, 2026-10-12-kr-gyeonggi-south#kr-gs-020, 2026-10-12-kr-gyeonggi-south#kr-gs-021, 2026-10-12-kr-gyeonggi-south#kr-gs-022, 2026-10-12-kr-gyeonggi-south#kr-gs-024, 2026-10-12-kr-gyeonggi-south#kr-gs-027, 2026-10-12-kr-gyeonggi-south#kr-gs-055, kr-gw-002, kr-gw-003, kr-gw-004, kr-gw-005, kr-gw-007, kr-gw-008, kr-gw-009, kr-gw-011, kr-gw-015, kr-gw-020
+  - other-section: 2026-10-06-kr-seoul#kr-se-001 "The Climb Gangnam (더클라임 강남점)": related-name-nearby related names "펀클라임짐 클라이밍" / "더클라임 강남점" 12606 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-002 "The Climb Nonhyeon (더클라임 논현점)": related-name-nearby related names "펀클라임짐 클라이밍" / "더클라임 논현점" 13327 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-004 "The Climb Sadang (더클라임 사당점)": related-name-nearby related names "펀클라임짐 클라이밍" / "더클라임 사당점" 8736 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-006 "The Climb Yangjae (더클라임 양재점)": related-name-nearby related names "펀클라임짐 클라이밍" / "더클라임 양재점" 11570 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-007 "The Climb Isu (더클라임 이수점)": related-name-nearby related names "펀클라임짐 클라이밍" / "더클라임 이수점" 9575 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-008 "Seoul Forest Climbing Guro (서울숲클라이밍 구로점)": related-name-nearby related names "펀클라임짐 클라이밍" / "서울숲클라이밍 구로점" 11599 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-009 "Seoul Forest Climbing Yeongdeungpo (서울숲클라이밍 영등포점)": related-name-nearby related names "펀클라임짐 클라이밍" / "서울숲클라이밍 영등포점" 14691 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-012 "Climbing Park Gangnam (클라이밍파크 강남점)": related-name-nearby related names "펀클라임짐 클라이밍" / "클라이밍파크 강남점" 12281 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-014 "Son Sang-won Climbing Gangnam Station (손상원 클라이밍짐 강남역점)": related-name-nearby related names "펀클라임짐 클라이밍" / "손상원 클라이밍짐 강남역점" 12020 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-026 "In Climbing Center (인클라이밍센터)": related-name-nearby related names "펀클라임짐 클라이밍" / "인클라이밍센터" 8997 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-027 "Stonz Climbing (스톤즈클라이밍)": related-name-nearby related names "펀클라임짐 클라이밍" / "스톤즈클라이밍" 8716 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-032 "Boulder Life Climbing Gym (볼더생활 클라이밍짐)": related-name-nearby related names "펀클라임짐 클라이밍" / "볼더생활 클라이밍짐" 10249 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-034 "One Bailey Invite Climbing (원베일리 인바이트 클라이밍)": related-name-nearby related names "펀클라임짐 클라이밍" / "원베일리 인바이트 클라이밍" 12507 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-047 "The Climbing Gym (더클라이밍짐 서초)": related-name-nearby related names "펀클라임짐 클라이밍" / "더클라이밍짐" 11099 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-051 "Climbing Park Sinnonhyeon (클라이밍파크 신논현점)": related-name-nearby related names "펀클라임짐 클라이밍" / "클라이밍파크 신논현점" 13008 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-056 "The Climb Sillim (더클라임 신림점)": related-name-nearby related names "펀클라임짐 클라이밍" / "더클라임 신림점" 10094 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-061 "Ace Climbing Center (에이스클라이밍센터)": related-name-nearby related names "펀클라임짐 클라이밍" / "에이스클라이밍센터" 13052 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-007 "King Kong Climbing (킹콩클라이밍)": related-name-nearby related names "펀클라임짐 클라이밍" / "킹콩클라이밍" 14485 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-011 "Seosuwon Climbing Center (서수원클라이밍센터)": related-name-nearby related names "펀클라임짐 클라이밍" / "서수원클라이밍센터" 10465 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-012 "Triplaying (트리플레잉)": related-name-nearby related names "펀클라임짐 클라이밍" / "트리플레잉" 14128 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-014 "Rocktree Climbing Bundang (락트리클라이밍 분당)": related-name-nearby related names "펀클라임짐 클라이밍" / "락트리클라이밍 분당" 13063 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-016 "Climb Us Moran (클라임 어스 모란점)": related-name-nearby related names "펀클라임짐 클라이밍" / "클라임 어스 모란점" 14864 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-017 "Son Climbing Gym Pangyo (손상원 클라이밍짐 판교점)": related-name-nearby related names "펀클라임짐 클라이밍" / "손상원 클라이밍짐 판교점" 12352 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-019 "Spider Climbing Seongnam (성남스파이더클라이밍)": related-name-nearby related names "펀클라임짐 클라이밍" / "성남스파이더클라이밍" 14902 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-020 "Seongnam Sports Climbing (성남스포츠클라이밍)": related-name-nearby related names "펀클라임짐 클라이밍" / "성남스포츠클라이밍" 14750 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-021 "B Climbing": related-name-nearby related names "펀클라임짐 클라이밍" / "비클라이밍" 13135 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-022 "The Boulder Bundang (더볼더)": related-name-nearby related names "펀클라임짐 클라이밍" / "더볼더" 13731 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-024 "Boulder Mate Suji (볼더메이트 클라이밍 수지점)": related-name-nearby related names "펀클라임짐 클라이밍" / "볼더메이트 클라이밍 수지점" 14112 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-027 "Suji Climbing (수지클라이밍)": related-name-nearby related names "펀클라임짐 클라이밍" / "수지클라이밍" 14566 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-055 "Eight Peaks Climbing (에잇 픽스 클라이밍)": related-name-nearby related names "펀클라임짐 클라이밍" / "에잇 픽스 클라이밍" 2039 m apart
+  - related-name-nearby: candidate kr-gw-002 "Climbing Treackle (클라이밍 트리클)": related names "펀클라임짐 클라이밍" / "클라이밍 트리클" 14577 m apart
+  - related-name-nearby: candidate kr-gw-003 "Club Climbing Ansan (클럽클라이밍)": related names "펀클라임짐 클라이밍" / "클럽클라이밍" 14533 m apart
+  - related-name-nearby: candidate kr-gw-004 "Ayers Rock Climbing Beomgye (에어즈락 클라이밍 범계점)": related names "펀클라임짐 클라이밍" / "에어즈락 클라이밍 범계점" 1716 m apart
+  - related-name-nearby: candidate kr-gw-005 "The Ledge Climbing (더렛지 클라이밍)": related names "펀클라임짐 클라이밍" / "더렛지 클라이밍" 2163 m apart
+  - related-name-nearby: candidate kr-gw-007 "Sanbon Climbing Center (산본클라이밍센터)": related names "펀클라임짐 클라이밍" / "산본클라이밍센터" 3904 m apart
+  - related-name-nearby: candidate kr-gw-008 "Rock Climbing Sanbon (락클라이밍 산본)": related names "펀클라임짐 클라이밍" / "락클라이밍 산본" 5294 m apart
+  - related-name-nearby: candidate kr-gw-009 "Spicy Climbing (스파이시 클라이밍)": related names "펀클라임짐 클라이밍" / "스파이시클라이밍" 3162 m apart
+  - related-name-nearby: candidate kr-gw-011 "Climbholic Indeogwon (실내암벽 클라임홀릭)": related names "펀클라임짐 클라이밍" / "실내암벽 클라임홀릭" 935 m apart
+  - related-name-nearby: candidate kr-gw-015 "Anyang Kim Jong-heon Climbing (안양김종헌클라이밍)": related names "펀클라임짐 클라이밍" / "안양김종헌클라이밍" 1895 m apart
+  - related-name-nearby: candidate kr-gw-020 "ClimbIt Climbing Mokgam (클라임잇 클라이밍 목감점)": related names "펀클라임짐 클라이밍" / "클라임잇 클라이밍 목감점" 9251 m apart
+- kr-gw-007 "Sanbon Climbing Center (산본클라이밍센터)" [g-a6212892f0] reviewed_against must include: 2026-10-06-kr-seoul#kr-se-004, 2026-10-06-kr-seoul#kr-se-007, 2026-10-06-kr-seoul#kr-se-008, 2026-10-06-kr-seoul#kr-se-026, 2026-10-06-kr-seoul#kr-se-027, 2026-10-06-kr-seoul#kr-se-032, 2026-10-06-kr-seoul#kr-se-047, 2026-10-06-kr-seoul#kr-se-056, 2026-10-06-kr-seoul#kr-se-061, 2026-10-12-kr-gyeonggi-south#kr-gs-001, 2026-10-12-kr-gyeonggi-south#kr-gs-007, 2026-10-12-kr-gyeonggi-south#kr-gs-008, 2026-10-12-kr-gyeonggi-south#kr-gs-009, 2026-10-12-kr-gyeonggi-south#kr-gs-010, 2026-10-12-kr-gyeonggi-south#kr-gs-011, 2026-10-12-kr-gyeonggi-south#kr-gs-012, 2026-10-12-kr-gyeonggi-south#kr-gs-055, kr-gw-002, kr-gw-003, kr-gw-004, kr-gw-005, kr-gw-006, kr-gw-008, kr-gw-009, kr-gw-011, kr-gw-012, kr-gw-013, kr-gw-014, kr-gw-015, kr-gw-017, kr-gw-020
+  - other-section: 2026-10-06-kr-seoul#kr-se-004 "The Climb Sadang (더클라임 사당점)": related-name-nearby related names "산본클라이밍센터" / "더클라임 사당점" 12077 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-007 "The Climb Isu (더클라임 이수점)": related-name-nearby related names "산본클라이밍센터" / "더클라임 이수점" 12878 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-008 "Seoul Forest Climbing Guro (서울숲클라이밍 구로점)": related-name-nearby related names "산본클라이밍센터" / "서울숲클라이밍 구로점" 12974 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-026 "In Climbing Center (인클라이밍센터)": related-name-nearby related names "산본클라이밍센터" / "인클라이밍센터" 11977 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-027 "Stonz Climbing (스톤즈클라이밍)": related-name-nearby related names "산본클라이밍센터" / "스톤즈클라이밍" 11846 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-032 "Boulder Life Climbing Gym (볼더생활 클라이밍짐)": related-name-nearby related names "산본클라이밍센터" / "볼더생활 클라이밍짐" 13471 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-047 "The Climbing Gym (더클라이밍짐 서초)": related-name-nearby related names "산본클라이밍센터" / "더클라이밍짐" 14732 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-056 "The Climb Sillim (더클라임 신림점)": related-name-nearby related names "산본클라이밍센터" / "더클라임 신림점" 12265 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-061 "Ace Climbing Center (에이스클라이밍센터)": related-name-nearby related names "산본클라이밍센터" / "에이스클라이밍센터" 14487 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-001 "Kindy Climbing (킨디클라이밍)": related-name-nearby related names "산본클라이밍센터" / "킨디클라이밍" 13283 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-007 "King Kong Climbing (킹콩클라이밍)": related-name-nearby related names "산본클라이밍센터" / "킹콩클라이밍" 13558 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-008 "Cruxzone Climbing (크럭스존)": related-name-nearby related names "산본클라이밍센터" / "크럭스존" 13910 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-009 "Suwon Raon Climbing (수원라온클라이밍)": related-name-nearby related names "산본클라이밍센터" / "수원라온클라이밍" 14461 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-010 "Climb Up Suwon (클라임업 수원점)": related-name-nearby related names "산본클라이밍센터" / "클라임업 수원점" 14490 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-011 "Seosuwon Climbing Center (서수원클라이밍센터)": related-name-nearby related names "산본클라이밍센터" / "서수원클라이밍센터" 8446 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-012 "Triplaying (트리플레잉)": related-name-nearby related names "산본클라이밍센터" / "트리플레잉" 12148 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-055 "Eight Peaks Climbing (에잇 픽스 클라이밍)": related-name-nearby related names "산본클라이밍센터" / "에잇 픽스 클라이밍" 3491 m apart
+  - related-name-nearby: candidate kr-gw-002 "Climbing Treackle (클라이밍 트리클)": related names "산본클라이밍센터" / "클라이밍 트리클" 10739 m apart
+  - related-name-nearby: candidate kr-gw-003 "Club Climbing Ansan (클럽클라이밍)": related names "산본클라이밍센터" / "클럽클라이밍" 10680 m apart
+  - related-name-nearby: candidate kr-gw-004 "Ayers Rock Climbing Beomgye (에어즈락 클라이밍 범계점)": related names "산본클라이밍센터" / "에어즈락 클라이밍 범계점" 2379 m apart
+  - related-name-nearby: candidate kr-gw-005 "The Ledge Climbing (더렛지 클라이밍)": related names "산본클라이밍센터" / "더렛지 클라이밍" 1911 m apart
+  - related-name-nearby: candidate kr-gw-006 "Fun Climb Gym (펀클라임짐)": related names "산본클라이밍센터" / "펀클라임짐 클라이밍" 3904 m apart
+  - related-name-nearby: candidate kr-gw-008 "Rock Climbing Sanbon (락클라이밍 산본)": related names "Sanbon Climbing Center (산본클라이밍센터)" / "Rock Climbing Sanbon (락클라이밍 산본)" 1545 m apart
+  - related-name-nearby: candidate kr-gw-009 "Spicy Climbing (스파이시 클라이밍)": related names "산본클라이밍센터" / "스파이시클라이밍" 873 m apart
+  - related-name-nearby: candidate kr-gw-011 "Climbholic Indeogwon (실내암벽 클라임홀릭)": related names "산본클라이밍센터" / "실내암벽 클라임홀릭" 4834 m apart
+  - related-name-nearby: candidate kr-gw-012 "Ansan Basecamp Climbing (안산베이스캠프클라이밍)": related names "산본클라이밍센터" / "안산베이스캠프클라이밍" 11376 m apart
+  - related-name-nearby: candidate kr-gw-013 "Ansan Seonbu Climbing (안산 선부 클라이밍)": related names "산본클라이밍센터" / "안산 선부 클라이밍" 11797 m apart
+  - related-name-nearby: candidate kr-gw-014 "Siheung Catch Climbing Gym (시흥캐치클라이밍짐)": related names "산본클라이밍센터" / "시흥캐치클라이밍짐" 12932 m apart
+  - related-name-nearby: candidate kr-gw-015 "Anyang Kim Jong-heon Climbing (안양김종헌클라이밍)": related names "산본클라이밍센터" / "안양김종헌클라이밍" 2015 m apart
+  - related-name-nearby: candidate kr-gw-017 "Bouldergarden Siheung (볼더가든클라이밍)": related names "산본클라이밍센터" / "볼더가든클라이밍" 14351 m apart
+  - related-name-nearby: candidate kr-gw-020 "ClimbIt Climbing Mokgam (클라임잇 클라이밍 목감점)": related names "산본클라이밍센터" / "클라임잇 클라이밍 목감점" 6511 m apart
+- kr-gw-008 "Rock Climbing Sanbon (락클라이밍 산본)" [g-de2d4ade41] reviewed_against must include: 2026-10-06-kr-seoul#kr-se-004, 2026-10-06-kr-seoul#kr-se-007, 2026-10-06-kr-seoul#kr-se-008, 2026-10-06-kr-seoul#kr-se-026, 2026-10-06-kr-seoul#kr-se-027, 2026-10-06-kr-seoul#kr-se-056, 2026-10-12-kr-gyeonggi-south#kr-gs-001, 2026-10-12-kr-gyeonggi-south#kr-gs-002, 2026-10-12-kr-gyeonggi-south#kr-gs-007, 2026-10-12-kr-gyeonggi-south#kr-gs-008, 2026-10-12-kr-gyeonggi-south#kr-gs-009, 2026-10-12-kr-gyeonggi-south#kr-gs-010, 2026-10-12-kr-gyeonggi-south#kr-gs-011, 2026-10-12-kr-gyeonggi-south#kr-gs-012, 2026-10-12-kr-gyeonggi-south#kr-gs-013, 2026-10-12-kr-gyeonggi-south#kr-gs-055, kr-gw-002, kr-gw-003, kr-gw-004, kr-gw-005, kr-gw-006, kr-gw-007, kr-gw-009, kr-gw-011, kr-gw-012, kr-gw-013, kr-gw-014, kr-gw-015, kr-gw-017, kr-gw-020
+  - other-section: 2026-10-06-kr-seoul#kr-se-004 "The Climb Sadang (더클라임 사당점)": related-name-nearby related names "락클라이밍 산본" / "더클라임 사당점" 13618 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-007 "The Climb Isu (더클라임 이수점)": related-name-nearby related names "락클라이밍 산본" / "더클라임 이수점" 14421 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-008 "Seoul Forest Climbing Guro (서울숲클라이밍 구로점)": related-name-nearby related names "락클라이밍 산본" / "서울숲클라이밍 구로점" 14326 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-026 "In Climbing Center (인클라이밍센터)": related-name-nearby related names "락클라이밍 산본" / "인클라이밍센터" 13519 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-027 "Stonz Climbing (스톤즈클라이밍)": related-name-nearby related names "락클라이밍 산본" / "스톤즈클라이밍" 13391 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-056 "The Climb Sillim (더클라임 신림점)": related-name-nearby related names "락클라이밍 산본" / "더클라임 신림점" 13745 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-001 "Kindy Climbing (킨디클라이밍)": related-name-nearby related names "락클라이밍 산본" / "킨디클라이밍" 12147 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-002 "Picnic Climbing (피크닉클라이밍)": related-name-nearby related names "락클라이밍 산본" / "피크닉클라이밍" 14093 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-007 "King Kong Climbing (킹콩클라이밍)": related-name-nearby related names "락클라이밍 산본" / "킹콩클라이밍" 12705 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-008 "Cruxzone Climbing (크럭스존)": related-name-nearby related names "락클라이밍 산본" / "크럭스존" 12967 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-009 "Suwon Raon Climbing (수원라온클라이밍)": related-name-nearby related names "락클라이밍 산본" / "수원라온클라이밍" 13372 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-010 "Climb Up Suwon (클라임업 수원점)": related-name-nearby related names "락클라이밍 산본" / "클라임업 수원점" 13571 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-011 "Seosuwon Climbing Center (서수원클라이밍센터)": related-name-nearby related names "락클라이밍 산본" / "서수원클라이밍센터" 7314 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-012 "Triplaying (트리플레잉)": related-name-nearby related names "락클라이밍 산본" / "트리플레잉" 10948 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-013 "Gwanggyo Sports Climbing Center (광교스포츠클라이밍장)": related-name-nearby related names "락클라이밍 산본" / "광교스포츠클라이밍장" 14726 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-055 "Eight Peaks Climbing (에잇 픽스 클라이밍)": related-name-nearby related names "락클라이밍 산본" / "에잇 픽스 클라이밍" 4435 m apart
+  - related-name-nearby: candidate kr-gw-002 "Climbing Treackle (클라이밍 트리클)": related names "락클라이밍 산본" / "클라이밍 트리클" 9662 m apart
+  - related-name-nearby: candidate kr-gw-003 "Club Climbing Ansan (클럽클라이밍)": related names "락클라이밍 산본" / "클럽클라이밍" 9572 m apart
+  - related-name-nearby: candidate kr-gw-004 "Ayers Rock Climbing Beomgye (에어즈락 클라이밍 범계점)": related names "락클라이밍 산본" / "에어즈락 클라이밍 범계점" 3889 m apart
+  - related-name-nearby: candidate kr-gw-005 "The Ledge Climbing (더렛지 클라이밍)": related names "락클라이밍 산본" / "더렛지 클라이밍" 3435 m apart
+  - related-name-nearby: candidate kr-gw-006 "Fun Climb Gym (펀클라임짐)": related names "락클라이밍 산본" / "펀클라임짐 클라이밍" 5294 m apart
+  - related-name-nearby: candidate kr-gw-007 "Sanbon Climbing Center (산본클라이밍센터)": related names "Rock Climbing Sanbon (락클라이밍 산본)" / "Sanbon Climbing Center (산본클라이밍센터)" 1545 m apart
+  - related-name-nearby: candidate kr-gw-009 "Spicy Climbing (스파이시 클라이밍)": related names "락클라이밍 산본" / "스파이시클라이밍" 2133 m apart
+  - related-name-nearby: candidate kr-gw-011 "Climbholic Indeogwon (실내암벽 클라임홀릭)": related names "락클라이밍 산본" / "실내암벽 클라임홀릭" 6201 m apart
+  - related-name-nearby: candidate kr-gw-012 "Ansan Basecamp Climbing (안산베이스캠프클라이밍)": related names "락클라이밍 산본" / "안산베이스캠프클라이밍" 10215 m apart
+  - related-name-nearby: candidate kr-gw-013 "Ansan Seonbu Climbing (안산 선부 클라이밍)": related names "락클라이밍 산본" / "안산 선부 클라이밍" 10937 m apart
+  - related-name-nearby: candidate kr-gw-014 "Siheung Catch Climbing Gym (시흥캐치클라이밍짐)": related names "락클라이밍 산본" / "시흥캐치클라이밍짐" 12706 m apart
+  - related-name-nearby: candidate kr-gw-015 "Anyang Kim Jong-heon Climbing (안양김종헌클라이밍)": related names "락클라이밍 산본" / "안양김종헌클라이밍" 3461 m apart
+  - related-name-nearby: candidate kr-gw-017 "Bouldergarden Siheung (볼더가든클라이밍)": related names "락클라이밍 산본" / "볼더가든클라이밍" 14943 m apart
+  - related-name-nearby: candidate kr-gw-020 "ClimbIt Climbing Mokgam (클라임잇 클라이밍 목감점)": related names "락클라이밍 산본" / "클라임잇 클라이밍 목감점" 6615 m apart
+- kr-gw-009 "Spicy Climbing (스파이시 클라이밍)" [g-8e8ec7ad2c] reviewed_against must include: 2026-10-06-kr-seoul#kr-se-004, 2026-10-06-kr-seoul#kr-se-006, 2026-10-06-kr-seoul#kr-se-007, 2026-10-06-kr-seoul#kr-se-008, 2026-10-06-kr-seoul#kr-se-026, 2026-10-06-kr-seoul#kr-se-027, 2026-10-06-kr-seoul#kr-se-032, 2026-10-06-kr-seoul#kr-se-047, 2026-10-06-kr-seoul#kr-se-056, 2026-10-06-kr-seoul#kr-se-061, 2026-10-12-kr-gyeonggi-south#kr-gs-001, 2026-10-12-kr-gyeonggi-south#kr-gs-002, 2026-10-12-kr-gyeonggi-south#kr-gs-007, 2026-10-12-kr-gyeonggi-south#kr-gs-008, 2026-10-12-kr-gyeonggi-south#kr-gs-009, 2026-10-12-kr-gyeonggi-south#kr-gs-010, 2026-10-12-kr-gyeonggi-south#kr-gs-011, 2026-10-12-kr-gyeonggi-south#kr-gs-012, 2026-10-12-kr-gyeonggi-south#kr-gs-013, 2026-10-12-kr-gyeonggi-south#kr-gs-014, 2026-10-12-kr-gyeonggi-south#kr-gs-017, 2026-10-12-kr-gyeonggi-south#kr-gs-021, 2026-10-12-kr-gyeonggi-south#kr-gs-022, 2026-10-12-kr-gyeonggi-south#kr-gs-024, 2026-10-12-kr-gyeonggi-south#kr-gs-055, kr-gw-002, kr-gw-003, kr-gw-004, kr-gw-005, kr-gw-006, kr-gw-007, kr-gw-008, kr-gw-011, kr-gw-012, kr-gw-013, kr-gw-014, kr-gw-015, kr-gw-017, kr-gw-020
+  - other-section: 2026-10-06-kr-seoul#kr-se-004 "The Climb Sadang (더클라임 사당점)": related-name-nearby related names "스파이시클라이밍" / "더클라임 사당점" 11588 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-006 "The Climb Yangjae (더클라임 양재점)": related-name-nearby related names "스파이시클라이밍" / "더클라임 양재점" 14717 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-007 "The Climb Isu (더클라임 이수점)": related-name-nearby related names "스파이시클라이밍" / "더클라임 이수점" 12405 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-008 "Seoul Forest Climbing Guro (서울숲클라이밍 구로점)": related-name-nearby related names "스파이시클라이밍" / "서울숲클라이밍 구로점" 12994 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-026 "In Climbing Center (인클라이밍센터)": related-name-nearby related names "스파이시클라이밍" / "인클라이밍센터" 11593 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-027 "Stonz Climbing (스톤즈클라이밍)": related-name-nearby related names "스파이시클라이밍" / "스톤즈클라이밍" 11420 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-032 "Boulder Life Climbing Gym (볼더생활 클라이밍짐)": related-name-nearby related names "스파이시클라이밍" / "볼더생활 클라이밍짐" 13025 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-047 "The Climbing Gym (더클라이밍짐 서초)": related-name-nearby related names "스파이시클라이밍" / "더클라이밍짐" 14149 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-056 "The Climb Sillim (더클라임 신림점)": related-name-nearby related names "스파이시클라이밍" / "더클라임 신림점" 12092 m apart
+  - other-section: 2026-10-06-kr-seoul#kr-se-061 "Ace Climbing Center (에이스클라이밍센터)": related-name-nearby related names "스파이시클라이밍" / "에이스클라이밍센터" 14503 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-001 "Kindy Climbing (킨디클라이밍)": related-name-nearby related names "스파이시클라이밍" / "킨디클라이밍" 13172 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-002 "Picnic Climbing (피크닉클라이밍)": related-name-nearby related names "스파이시클라이밍" / "피크닉클라이밍" 14779 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-007 "King Kong Climbing (킹콩클라이밍)": related-name-nearby related names "스파이시클라이밍" / "킹콩클라이밍" 13249 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-008 "Cruxzone Climbing (크럭스존)": related-name-nearby related names "스파이시클라이밍" / "크럭스존" 13657 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-009 "Suwon Raon Climbing (수원라온클라이밍)": related-name-nearby related names "스파이시클라이밍" / "수원라온클라이밍" 14309 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-010 "Climb Up Suwon (클라임업 수원점)": related-name-nearby related names "스파이시클라이밍" / "클라임업 수원점" 14219 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-011 "Seosuwon Climbing Center (서수원클라이밍센터)": related-name-nearby related names "스파이시클라이밍" / "서수원클라이밍센터" 8370 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-012 "Triplaying (트리플레잉)": related-name-nearby related names "스파이시클라이밍" / "트리플레잉" 12096 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-013 "Gwanggyo Sports Climbing Center (광교스포츠클라이밍장)": related-name-nearby related names "스파이시클라이밍" / "광교스포츠클라이밍장" 14801 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-014 "Rocktree Climbing Bundang (락트리클라이밍 분당)": related-name-nearby related names "스파이시클라이밍" / "락트리클라이밍 분당" 14872 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-017 "Son Climbing Gym Pangyo (손상원 클라이밍짐 판교점)": related-name-nearby related names "스파이시클라이밍" / "손상원 클라이밍짐 판교점" 14621 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-021 "B Climbing": related-name-nearby related names "스파이시클라이밍" / "비클라이밍" 14792 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-022 "The Boulder Bundang (더볼더)": related-name-nearby related names "스파이시클라이밍" / "더볼더" 14896 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-024 "Boulder Mate Suji (볼더메이트 클라이밍 수지점)": related-name-nearby related names "스파이시클라이밍" / "볼더메이트 클라이밍 수지점" 14574 m apart
+  - other-section: 2026-10-12-kr-gyeonggi-south#kr-gs-055 "Eight Peaks Climbing (에잇 픽스 클라이밍)": related-name-nearby related names "스파이시클라이밍" / "에잇 픽스 클라이밍" 2620 m apart
+  - related-name-nearby: candidate kr-gw-002 "Climbing Treackle (클라이밍 트리클)": related names "스파이시클라이밍" / "클라이밍 트리클" 11581 m apart
+  - related-name-nearby: candidate kr-gw-003 "Club Climbing Ansan (클럽클라이밍)": related names "스파이시클라이밍" / "클럽클라이밍" 11515 m apart
+  - related-name-nearby: candidate kr-gw-004 "Ayers Rock Climbing Beomgye (에어즈락 클라이밍 범계점)": related names "스파이시클라이밍" / "에어즈락 클라이밍 범계점" 1841 m apart
+  - related-name-nearby: candidate kr-gw-005 "The Ledge Climbing (더렛지 클라이밍)": related names "스파이시클라이밍" / "더렛지 클라이밍" 1448 m apart
+  - related-name-nearby: candidate kr-gw-006 "Fun Climb Gym (펀클라임짐)": related names "스파이시클라이밍" / "펀클라임짐 클라이밍" 3162 m apart
+  - related-name-nearby: candidate kr-gw-007 "Sanbon Climbing Center (산본클라이밍센터)": related names "스파이시클라이밍" / "산본클라이밍센터" 873 m apart
+  - related-name-nearby: candidate kr-gw-008 "Rock Climbing Sanbon (락클라이밍 산본)": related names "스파이시클라이밍" / "락클라이밍 산본" 2133 m apart
+  - related-name-nearby: candidate kr-gw-011 "Climbholic Indeogwon (실내암벽 클라임홀릭)": related names "스파이시클라이밍" / "실내암벽 클라임홀릭" 4075 m apart
+  - related-name-nearby: candidate kr-gw-012 "Ansan Basecamp Climbing (안산베이스캠프클라이밍)": related names "스파이시클라이밍" / "안산베이스캠프클라이밍" 12200 m apart
+  - related-name-nearby: candidate kr-gw-013 "Ansan Seonbu Climbing (안산 선부 클라이밍)": related names "스파이시클라이밍" / "안산 선부 클라이밍" 12667 m apart
+  - related-name-nearby: candidate kr-gw-014 "Siheung Catch Climbing Gym (시흥캐치클라이밍짐)": related names "스파이시클라이밍" / "시흥캐치클라이밍짐" 13758 m apart
+  - related-name-nearby: candidate kr-gw-015 "Anyang Kim Jong-heon Climbing (안양김종헌클라이밍)": related names "스파이시클라이밍" / "안양김종헌클라이밍" 1350 m apart
+  - related-name-nearby: candidate kr-gw-017 "Bouldergarden Siheung (볼더가든클라이밍)": related names "스파이시클라이밍" / "볼더가든클라이밍" 14917 m apart
+  - related-name-nearby: candidate kr-gw-020 "ClimbIt Climbing Mokgam (클라임잇 클라이밍 목감점)": related names "스파이시클라이밍" / "클라임잇 클라이밍 목감점" 7291 m apart
+
+## Blocked: cannot be accepted (10)
+- kr-gw-010 "World Climbing (월드클라이밍)": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
+- kr-gw-011 "Climbholic Indeogwon (실내암벽 클라임홀릭)": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
+- kr-gw-012 "Ansan Basecamp Climbing (안산베이스캠프클라이밍)": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- kr-gw-013 "Ansan Seonbu Climbing (안산 선부 클라이밍)": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
+- kr-gw-014 "Siheung Catch Climbing Gym (시흥캐치클라이밍짐)": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: defer
+- kr-gw-015 "Anyang Kim Jong-heon Climbing (안양김종헌클라이밍)": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- kr-gw-016 "Siheung Sports Climbing Center (시흥스포츠클라이밍센터)": not-a-gym (category other); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: reject not-a-gym
+- kr-gw-017 "Bouldergarden Siheung (볼더가든클라이밍)": closed (status_claim is closed); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough) -> suggested: reject closed
+- kr-gw-020 "ClimbIt Climbing Mokgam (클라임잇 클라이밍 목감점)": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- kr-gw-021 "Just Climbing Center (저스트클라이밍센타)": status-not-open (status_claim is unknown); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+
+## Next
+Write review.json with one decision per candidate (docs/import-workflow.md, "Regional research"), then `node scripts/gym-import.js research stage 2026-10-12-kr-gyeonggi-west`.
+Nothing here touches production.
