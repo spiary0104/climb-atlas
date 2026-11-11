@@ -55,14 +55,14 @@ const GOOD_REVIEW = {
   'au-013': { decision: 'accept', reason: 'two gyms in one building, both sites checked', reviewed_against: ['au-012'] },
 };
 
-async function world({ candidates = CANDIDATES, slug = 'au-test', date = '2026-10-01' } = {}) {
+async function world({ candidates = CANDIDATES, slug = 'au-test', date = '2026-10-01', sources = SOURCES } = {}) {
   const root = tmp();
   fs.mkdirSync(path.join(root, 'js'));
   fs.copyFileSync(path.join(ROOT, 'js', 'supabase-init.js'), path.join(root, 'js', 'supabase-init.js'));   // public URL/key only
   S.write(PROD, path.join(root, 'import', 'index'), { source: 'test' });
   fs.mkdirSync(path.join(root, 'import', 'batches'), { recursive: true });
   const { id, dir } = await RS.newSection({ root, slug, date, country: 'AU', states: null, bbox: null, title: 'Synthetic AU', description: 'synthetic research section for tests' });
-  fs.writeFileSync(path.join(dir, 'sources.json'), JSON.stringify(SOURCES, null, 2));
+  fs.writeFileSync(path.join(dir, 'sources.json'), JSON.stringify(sources, null, 2));
   fs.writeFileSync(path.join(dir, 'candidates.ndjson'), candidates.map(c => JSON.stringify(c)).join('\n') + '\n');
   return { root, dir, id, index: S.load(path.join(root, 'import', 'index')), indexDir: path.join(root, 'import', 'index') };
 }
@@ -269,4 +269,39 @@ test('research types: bouldering unknown or no may have an empty type list; such
   const recs = fs.readFileSync(path.join(r.dir, 'records.ndjson'), 'utf8').trim().split('\n').map(l => JSON.parse(l));
   assert.deepEqual(recs.map(x => x.source.split('#')[1]), ['au-001']);
   assert.ok(recs.every(x => x.types.includes('indoor-bouldering')), 'nothing with an empty or unconfirmed type list is ever staged');
+});
+
+test('research evidence: 2+ recent visitor notes by different authors plus a map listing stand in for a primary source, always flagged (owner decision 2026-11-11)', async () => {
+  const note = (author, posted) => ({ kind: 'visitor-note', title: 'RedNote note', url: 'https://www.xiaohongshu.com/explore/x', language: 'zh', accessed: '2026-10-01', author, posted });
+  const sources = { schema_version: 1, sources: { ...SOURCES.sources, V1: note('alice', '2026-09-01'), V2: note('bob', '2026-08-15'), V3: note('alice', '2026-07-01'), V4: note('carol', '2024-06-01') } };
+  const vn = (src, supports = ['exists', 'open', 'bouldering']) => ({ source: src, url: 'https://www.xiaohongshu.com/explore/' + src, accessed: '2026-10-01', supports });
+  const map = { source: 'S3', url: 'https://www.openstreetmap.org/node/1', accessed: '2026-10-01', supports: ['exists', 'location'] };
+  const at = (cid, name, lat, evidence) => cand(cid, { name, suburb: 'Kogarah', lat, lng: 151.1, address: cid + ' St', evidence });
+  const w = await world({ sources, candidates: [
+    at('au-030', 'Two Notes Gym', -33.95, [vn('V1'), vn('V2'), map]),                       // passes, flagged
+    at('au-031', 'Same Author Gym', -33.96, [vn('V1'), vn('V3'), map]),                      // one author twice
+    at('au-032', 'Old Note Gym', -33.97, [vn('V1'), vn('V4'), map]),                         // one note older than 365 days
+    at('au-033', 'No Map Gym', -33.98, [vn('V1'), vn('V2')]),                                // no map listing
+    at('au-034', 'Closure Seen Gym', -33.99, [vn('V1'), vn('V2'), map, ev(['closed'], 'S2')]), // closure evidence
+    at('au-035', 'Notes Without Boulders', -34.0, [vn('V1', ['exists', 'open']), vn('V2', ['exists', 'open']), map]),
+  ] });
+  const rc = await reconcile(w);
+  const c30 = byCid(rc, 'au-030');
+  assert.notEqual(c30.class, 'blocked'); assert.ok(c30.flags.some(f => f.code === 'visitor-evidence'), 'visitor evidence is never silent');
+  for (const cid of ['au-031', 'au-032', 'au-033', 'au-034']) { assert.equal(byCid(rc, cid).class, 'blocked', cid); assert.ok(codes(byCid(rc, cid)).includes('insufficient-evidence'), cid); }
+  assert.ok(codes(byCid(rc, 'au-035')).includes('no-bouldering-evidence'), 'bouldering needs its own notes');
+  const bad = { schema_version: 1, sources: { ...SOURCES.sources, V9: { kind: 'visitor-note', title: 't', url: 'https://x.example/', accessed: '2026-10-01' } } };
+  const w2 = await world({ sources: bad, candidates: [cand('au-001')] });
+  assert.match(JSON.stringify(await RS.reconcile(w2.dir, w2).catch(e => ({ problems: [e.message] }))), /needs its author|needs posted/);
+});
+
+test('research category: kids-only, members-only and appointment-only venues are always blocked as not-public (owner decision 2026-11-11)', async () => {
+  const w = await world({ candidates: [
+    cand('au-040', { name: 'Kids Walls', suburb: 'Kogarah', lat: -33.95, lng: 151.1, category: 'kids-only' }),
+    cand('au-041', { name: 'Members Wall', suburb: 'Hornsby', lat: -33.7, lng: 151.1, category: 'members-only' }),
+    cand('au-042', { name: 'By Appointment', suburb: 'Manly', lat: -33.8, lng: 151.28, category: 'appointment-only' }),
+  ] });
+  const rc = await reconcile(w);
+  for (const cid of ['au-040', 'au-041', 'au-042']) { assert.equal(byCid(rc, cid).class, 'blocked', cid); assert.ok(codes(byCid(rc, cid)).includes('not-public'), cid); }
+  assert.ok(RS.REJECT_CODES.has('not-public'));
 });

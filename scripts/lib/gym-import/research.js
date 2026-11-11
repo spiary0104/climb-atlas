@@ -44,15 +44,20 @@ const CID = /^[a-z0-9][a-z0-9-]{1,59}$/;
 const RESERVED_CID = /^(seed-|community-|g-)/;   // could be confused with a production id in reviewed_against
 const SOURCE_ID = /^[A-Za-z0-9_-]{1,40}$/;
 const PRIMARY_KINDS = new Set(['official-site', 'official-social', 'chain-store-list']);
-const SOURCE_KINDS = new Set([...PRIMARY_KINDS, 'federation', 'directory', 'map-data', 'news', 'other']);
+// 'visitor-note': one visitor's own post (e.g. a RedNote note), one source per note with its author. Owner decision 2026-11-11: two or
+// more recent notes by different authors plus a map listing stand in for a primary source (see VISITOR below); always flagged for review.
+const SOURCE_KINDS = new Set([...PRIMARY_KINDS, 'visitor-note', 'federation', 'directory', 'map-data', 'news', 'other']);
+const VISITOR = Object.freeze({ MIN_NOTES: 2, MAX_AGE_DAYS: 365 });
 const SUPPORTS = new Set(['exists', 'open', 'name', 'address', 'location', 'bouldering', 'ropes', 'closed', 'relocated', 'chain']);
-const CATEGORIES = new Set(['commercial-gym', 'university', 'club', 'outdoor-area', 'shop', 'other']);
+// kids-only, members-only and appointment-only venues are never listed (owner decision 2026-11-11): always blocked as not-public.
+const NOT_PUBLIC = new Set(['kids-only', 'members-only', 'appointment-only']);
+const CATEGORIES = new Set(['commercial-gym', 'university', 'club', 'outdoor-area', 'shop', 'other', ...NOT_PUBLIC]);
 const STATUSES = new Set(['open', 'closed', 'opening-soon', 'temporary', 'unknown']);
 const BOULDERING = new Set(['yes', 'no', 'unknown']);
 const PRECISIONS = new Set(['entrance', 'building', 'street', 'area']);
 const COORD_METHODS = new Set(['osm', 'official-map', 'chain-store-list', 'geocoded-address', 'map-service-pin']);
 const DECISIONS = new Set(['accept', 'same-as', 'reject', 'defer']);
-const REJECT_CODES = new Set(['duplicate', 'closed', 'temporary', 'outdoor-area', 'no-bouldering', 'not-a-gym', 'insufficient-evidence', 'out-of-scope']);
+const REJECT_CODES = new Set(['duplicate', 'closed', 'temporary', 'outdoor-area', 'no-bouldering', 'not-a-gym', 'not-public', 'insufficient-evidence', 'out-of-scope']);
 const DUP_FLAGS = new Set(['importer-probable-duplicate', 'alias-match', 'name-match', 'related-name-nearby', 'nearby-gym', 'other-country-nearby', 'same-website', 'other-section']);
 // A blocker means "cannot be accepted"; the suggestion is what the reviewer most likely records instead.
 const SUGGEST = { 'out-of-scope': 'reject out-of-scope', 'outdoor-area': 'reject outdoor-area', 'not-a-gym': 'reject not-a-gym', closed: 'reject closed', temporary: 'reject temporary', 'no-bouldering': 'reject no-bouldering' };
@@ -117,6 +122,8 @@ function checkSources(src) {
     if (!isHttpUrl(s.url)) out.push(`source ${id}: url must be a plain http(s) URL`);
     if (!isDate(s.accessed)) out.push(`source ${id}: accessed must be YYYY-MM-DD`);
     if (s.language !== undefined && !/^[a-z]{2,3}(-[A-Za-z0-9]{2,8})?$/.test(s.language)) out.push(`source ${id}: language must be a language tag like "en" or "ja"`);
+    if (s.kind === 'visitor-note' && !isStr(s.author)) out.push(`source ${id}: a visitor-note source needs its author (the account that posted it)`);
+    if (s.kind === 'visitor-note' && !isDate(s.posted)) out.push(`source ${id}: a visitor-note source needs posted (YYYY-MM-DD, the note's own date)`);
   }
   return out;
 }
@@ -173,15 +180,27 @@ async function checkCandidate(c, { section, sources, sectionId }) {
   if (Array.isArray(sc.bbox) && !(c.lng >= sc.bbox[0] && c.lng <= sc.bbox[2] && c.lat >= sc.bbox[1] && c.lat <= sc.bbox[3])) block('out-of-scope', 'the pin is outside the section bbox');
   if (c.category === 'outdoor-area') block('outdoor-area', 'outdoor climbing areas are not gyms');
   else if (c.category === 'shop' || c.category === 'other') block('not-a-gym', `category ${c.category}`);
+  else if (NOT_PUBLIC.has(c.category)) block('not-public', `${c.category} venue: not open to the general public, never listed`);
   else if (c.category !== 'commercial-gym') flag('limited-access', `${c.category} wall: check it is open to the public`);
   if (c.status_claim !== 'open') block(c.status_claim === 'closed' ? 'closed' : c.status_claim === 'temporary' ? 'temporary' : 'status-not-open', `status_claim is ${c.status_claim}`);
   // ---- evidence ------------------------------------------------------------------------------------------------------
   const primary = ev.filter(e => PRIMARY_KINDS.has(known[e.source].kind));
   const says = (list, what) => list.some(e => e.supports.includes(what));
-  if (!says(primary, 'exists') || !says(primary, 'open')) block('insufficient-evidence', 'needs a primary source (official site/social, chain store list) confirming it exists and is open; a directory or search result alone is not enough');
+  // Visitor notes (owner decision 2026-11-11): >= 2 notes by different authors, each posted within 365 days before it was read, each
+  // confirming the point, plus a map listing confirming the gym exists, and no evidence of closure. Provisional: flagged, never silent.
+  const days = (a, b) => (Date.parse(b + 'T00:00:00Z') - Date.parse(a + 'T00:00:00Z')) / 864e5;
+  const notes = what => ev.filter(e => { const s = known[e.source]; return s.kind === 'visitor-note' && e.supports.includes(what) && isDate(s.posted) && days(s.posted, e.accessed) >= 0 && days(s.posted, e.accessed) <= VISITOR.MAX_AGE_DAYS; });
+  const enough = list => new Set(list.map(e => known[e.source].author.trim().toLowerCase())).size >= VISITOR.MIN_NOTES && new Set(list.map(e => e.url)).size >= VISITOR.MIN_NOTES;
+  const visitorOK = what => !says(ev, 'closed') && says(ev.filter(e => known[e.source].kind === 'map-data'), 'exists') && enough(notes(what));
+  let visitorUsed = false;
+  if (!says(primary, 'exists') || !says(primary, 'open')) {
+    if (visitorOK('exists') && visitorOK('open')) visitorUsed = true;
+    else block('insufficient-evidence', 'needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough');
+  }
   if (c.bouldering === 'no') block('no-bouldering', 'confirmed rope-only (new additions need a bouldering offering)');
   else if (c.bouldering === 'unknown') block('bouldering-unknown', 'bouldering offering not established (never assumed)');
-  else if (!says(primary, 'bouldering')) block('no-bouldering-evidence', 'bouldering is "yes" but no primary source confirms it');
+  else if (!says(primary, 'bouldering')) { if (visitorOK('bouldering')) visitorUsed = true; else block('no-bouldering-evidence', 'bouldering is "yes" but no primary source (or 2+ recent visitor notes by different authors) confirms it'); }
+  if (visitorUsed) flag('visitor-evidence', 'rests on visitor notes (2+ recent, different authors) plus a map listing, not on a gym-controlled source: provisional, check the notes');
   if (c.coord_precision === 'area') block('coarse-coordinates', 'coordinates only locate the area, not the gym');
   else if (c.coord_precision === 'street') flag('weak-coordinates', 'coordinates are street-level, not the building');
   if (new Set(ev.map(e => e.source)).size < 2) flag('single-source', 'all evidence comes from one source');
@@ -489,4 +508,4 @@ async function newSection({ root, slug, date, country, states = null, bbox = nul
   return { id, dir };
 }
 
-module.exports = { SCHEMA_VERSION, MAX_STAGED, FILES, R, PRIMARY_KINDS, REJECT_CODES, toImportRecord, checkCandidate, reconcile, renderReconcile, stage, verifyStagedBatch, newSection, sectionPath, loadSection };
+module.exports = { SCHEMA_VERSION, MAX_STAGED, FILES, R, PRIMARY_KINDS, VISITOR, NOT_PUBLIC, REJECT_CODES, toImportRecord, checkCandidate, reconcile, renderReconcile, stage, verifyStagedBatch, newSection, sectionPath, loadSection };
