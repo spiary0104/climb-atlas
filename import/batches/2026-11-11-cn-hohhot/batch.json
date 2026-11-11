@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-11-cn-hohhot",
+  "description": "Regional research \"China: Hohhot\": 1 new gym(s) accepted of 2 candidate(s)",
+  "created": "2026-11-11",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-11-11-cn-hohhot",
+    "section_sha256": "89287dc8fa72118bb318e66de84fd62c1855d6ae03297570d56ae53f811052b8",
+    "sources_sha256": "59b40574a2d8429b5c33425d053ef28aaf26c31edba19be9628de8c5956a95e3",
+    "candidates_sha256": "2fc97f61aaafdeede726c65099065ef1792ac7f4a3b86ef07dbb8fdc1db37fd9",
+    "reconcile_sha256": "277a696cd87bdbbdc96d07336d6e824337d575a7215a6adf11caef8cfd5e84bc",
+    "review_sha256": "c3a8bf4241176fe4ecbe5f89f55e4e4367c76fde0fd0df24edff9a4ce8ef2fbc",
+    "candidates": 2,
+    "staged": 1,
+    "decisions": {
+      "accept": 1,
+      "defer": 1
+    }
+  },
+  "index_at_staging": {
+    "sha256": "fb2af3b217bd169c384ebb1039a7aad5cc5b3d8869165218ff0023a3c2ee2e78",
+    "count": 3612
+  }
+}

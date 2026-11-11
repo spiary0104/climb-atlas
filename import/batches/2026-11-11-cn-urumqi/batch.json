@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-11-cn-urumqi",
+  "description": "Regional research \"China: Urumqi\": 1 new gym(s) accepted of 4 candidate(s)",
+  "created": "2026-11-11",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-11-11-cn-urumqi",
+    "section_sha256": "8078bb8ee8484b83fa30249b642eaf2c21659941de7c5ddeed7415bd3077b2de",
+    "sources_sha256": "3a3558f4254da9af6e8de4d5000e9d68472a311937d1b33a4a1e584b2e97eee5",
+    "candidates_sha256": "8a27121f65d292fd3326fad230ad67bdda105a1d6261b76065599d9915c0eec5",
+    "reconcile_sha256": "ec56def417f9cd007f32029c3ccf166ca1777625f2e365c33691a467c0c9b4d0",
+    "review_sha256": "5658fe48ef5ada1d7a5eb29946393acc20883d4da7f2dae3712c9ada61ff6559",
+    "candidates": 4,
+    "staged": 1,
+    "decisions": {
+      "accept": 1,
+      "defer": 3
+    }
+  },
+  "index_at_staging": {
+    "sha256": "fb2af3b217bd169c384ebb1039a7aad5cc5b3d8869165218ff0023a3c2ee2e78",
+    "count": 3612
+  }
+}

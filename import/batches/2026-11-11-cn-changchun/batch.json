@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-11-cn-changchun",
+  "description": "Regional research \"China: Changchun\": 1 new gym(s) accepted of 5 candidate(s)",
+  "created": "2026-11-11",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-11-11-cn-changchun",
+    "section_sha256": "564f38267f8c881d8b674a60926243fb5d01a089947ba550d19a6943db0ac4a2",
+    "sources_sha256": "029409edcbda68a9b8cf1fa27c9113a8bf5d78274a222559df5969637a0e51b6",
+    "candidates_sha256": "c592c2018b0af457b424fad7695f5e1507572d4fff0d13f35548e841e3fe54ba",
+    "reconcile_sha256": "31ddc8f2a8105f682e24b13622740a5f483ea013e5e8253f7099f0336870bc3b",
+    "review_sha256": "de0b6320d5830b34d6e6672572a9a50031a29045a4c2fd5794cee34a1c1010d8",
+    "candidates": 5,
+    "staged": 1,
+    "decisions": {
+      "accept": 1,
+      "defer": 3,
+      "reject": 1
+    }
+  },
+  "index_at_staging": {
+    "sha256": "fb2af3b217bd169c384ebb1039a7aad5cc5b3d8869165218ff0023a3c2ee2e78",
+    "count": 3612
+  }
+}
