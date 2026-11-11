@@ -40,3 +40,16 @@ Low-confidence gyms are kept out of the batch. The first table is three candidat
 | Gym | City | Question |
 |---|---|---|
 | Eleva Escalada | Brasília | Can a visitor buy a day pass to boulder, or is entry only through the R$30 trial class / membership? |
+
+
+## Follow-up 2026-11-11 (public-source verification)
+
+Checked by Claude (AI) on public sources; ChatGPT leads re-verified; nothing written to production.
+
+- **TreeLab (br-008)**: STATUS: OPEN (confidence L). Own site shows only a "Conheca nossos planos" line, no address, hours or bouldering text; only the 2025 guide mentions bouldering. Sources: https://www.treelab.com.br (checked 2026-11-11). Next: owner check of its Instagram.
+- **Republica dos Macacos (br-009)**: STATUS: OPEN (confidence L). Own site lists hours and day passes (R$50 weekday, R$60 weekend, "O que e boulder?" link) but shows copyright 2022 and no 2026 content. Sources: https://republicadosmacacos.com.br (checked 2026-11-11). Next: owner check of its Instagram/WhatsApp (11 91729-8165) for a 2026 sign of life.
+- **Meru C3 (br-010)**: STATUS: OPEN (confidence L). Not re-fetched this pass. Sources: none new (checked 2026-11-11). Next: owner check.
+- **Eleva Escalada, Brasilia**: STATUS: OPEN (confidence L). A Correio Braziliense issue of 1 Feb 2026 (third party) lists Eleva among Brasilia's three established climbing gyms; no day-pass information found. Sources: https://edicao.correiobraziliense.com.br/correiobraziliense/2026/02/01/17177b/pdf/R15-REV-0102-DIG.pdf (checked 2026-11-11). Next: owner check of Eleva's own page for a day-pass price; keep deferred.
+- **Vertice Escalada (pin)**: STATUS: NEEDS HUMAN (confidence M). Strong gym evidence (earlier note) but the address does not geocode; a street address alone does not fix a pin. Sources: none new (checked 2026-11-11). Next: owner pin from the gym's map.
+- **Apus (Maringa), Suba, Ibex, Vertical Escalada, Granito, Muro, Primata, Quero Escalar, QG da Escalada, Academia Omni**: STATUS: OPEN (confidence L). Not re-researched; each still needs its pin, a 2026 sign of life or a bouldering statement as listed above. Sources: none new (checked 2026-11-11). Next: later pass.
+- **Instagram-only / unreadable list**: STATUS: OPEN (confidence L). Not researched (no logins). Sources: none (checked 2026-11-11). Next: none now.

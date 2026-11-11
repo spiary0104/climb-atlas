@@ -13,3 +13,11 @@ For the owner before applying: the street-level pins (one Amap pin reading, no e
 | Wo Pan Shanghai (Moon Bay) [我攀上海月亮湾店] | Drop a pin on the entrance (its Amap listing has no entrance coordinate; the search pin is only street-level, ±150 m). Gym itself passes: open in 2026 with bouldering. |
 | Academy of Bouldering (AOB Chuangzhi Tiandi) [AOB攀研学院创智天地店] | Drop a pin on the entrance (its Amap listing has no entrance coordinate; the search pin is only street-level, ±150 m). Gym itself passes: open in 2026 with bouldering. |
 | Cishan Climbing (FFC Binjiang Yueli) [此山攀岩FFC滨江悦里店] | Drop a pin on the entrance (its Amap listing has no entrance coordinate; the search pin is only street-level, ±150 m). Gym itself passes: open in 2026 with bouldering. |
+
+## Follow-up 2026-11-11 (public-source verification)
+Method: checked by Claude (AI) on public sources; ChatGPT leads re-verified; nothing written to production. bananaclimbing.com returns only a page title to a fetch (client-rendered), so ChatGPT's Banana claims could not be re-verified.
+- **Banana Climbing Longfeng PRSCO (CN-049)**: STATUS: NEEDS HUMAN (pin) (confidence Low). ChatGPT says the Banana site lists it as opened 2026-09-28 at 4F Units 01-03, 728 Huaihai Middle Rd, with bouldering; not re-verifiable, and a unit address is not an entrance anyway. Sources: https://www.bananaclimbing.com/ (checked 2026-11-11). Next: map look.
+- **Roc811 Climbing**: STATUS: NEEDS HUMAN (pin) (confidence Low). No operator-published entrance found. Sources: none reachable. Next: map look.
+- **Wo Pan Shanghai (Moon Bay)**: STATUS: NEEDS HUMAN (pin) (confidence Low). Same. Next: map look.
+- **Academy of Bouldering (AOB Chuangzhi Tiandi)**: STATUS: NEEDS HUMAN (pin) (confidence Low). Same. Next: map look.
+- **Cishan Climbing (FFC Binjiang Yueli)**: STATUS: NEEDS HUMAN (pin) (confidence Low). Same. Next: map look.

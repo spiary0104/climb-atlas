@@ -19,3 +19,13 @@ Gyms I could not settle from a readable primary source (all kept as `defer`, non
 
 ## Follow-up for the owner (existing gym, not a question)
 - Boulderdash Thousand Oaks (existing seed-322, stored as Westlake Village at 34.1361,-118.8059): location-update to 34.1545321,-118.8315087 (880 Hampshire Rd), 3.1 km away. See review.json.
+
+## Follow-up 2026-11-11 (public-source verification)
+
+Method: checked by Claude (AI) on public sources; ChatGPT leads re-verified; nothing written to production. No row was settled by a later commit or review file (only the section commit itself mentions these gyms), so none is ALREADY RESOLVED unless stated.
+
+- **Aisle 19 (Touchstone), San Francisco**: STATUS: OPEN (confidence L). Touchstone's Aisle 19 page returned HTTP 503 (Retry-After 3600), so no opening date or post could be read. Sources: https://touchstoneclimbing.com/aisle-19/ (checked 2026-11-11). Next: retry later; DATE-GATED if it shows a future opening.
+- **Touchstone Team Training Center, Berkeley**: STATUS: OPEN (confidence M). Operator's page calls it 'A Touchstone Members-Only Climbing Gym' but also 'Open to non-Team Touchstone members during select hours', with check-in at Ironworks across the street; listed hours Mon-Fri 6-9:30, Sat-Sun 9-6:30 and closures on a Public Calendar. Day-pass terms are on a separate membership-and-passes page not read. Phone 510-981-9900. Sources: https://touchstoneclimbing.com/team-training-center/ (checked 2026-11-11). Next: read the membership-and-passes page; keep as members/limited access until then.
+- **Desert Rocks Indoor Climbing Gym, North Palm Springs**: STATUS: RESOLVED: keep out (confidence M). KESQ (12 Jun 2020) quotes the owners: 'After five wonderful years, we are sad to announce that the gym is closing due to Covid-19 factors' and says it will permanently close. The report is a news story quoting the owners, not the gym's own site, and no later reopening was found. Sources: https://kesq.com/?p=228190 (checked 2026-11-11). Next: none.
+- **Bladium Sports & Fitness Club, Alameda**: STATUS: OPEN (confidence L). bladiumalameda.com refused the connection (ECONNREFUSED); not verified. Sources: https://www.bladiumalameda.com/ (checked 2026-11-11). Next: owner opens in a browser.
+- **Rock City Climbing, Huntington Beach (accepted)**: STATUS: OPEN (confidence M). Gym's own pass page confirms a $27 single visit 'valid for a single visit for one person during open hours', but does not mention bouldering and links the open hours to another page. Optional check; accepted record stands. Sources: https://www.rockcityclimbing.com/purchaseapass (checked 2026-11-11). Next: none required.

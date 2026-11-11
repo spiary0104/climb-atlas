@@ -17,3 +17,16 @@ Gyms that could NOT be settled from a readable primary source. All four candidat
 | Dyno Climbing Centre, Buckfastleigh (accepted, street-level pin) | https://www.dynoclimbingcentre.co.uk/Contact-Us | Does the pin (50.48076, -3.76874, the site's own map marker) sit on Dart Mills, Old Totnes Road? | The site prints no street address; "Dart Mills, Unit 8, Old Totnes Road, TQ11 0LG" comes from the company register. The marker is 215 m from the postcode centroid. |
 
 The Ridge (Marple) is not on this list: it is settled (closed 25 July 2026 per its own site) and rejected.
+
+
+## Follow-up 2026-11-11 (public-source verification)
+
+Checked by Claude (AI) on public sources; ChatGPT leads re-verified; nothing written to production.
+
+- **Northern Problems (`northern-problems-whitehaven`)**: STATUS: ALREADY RESOLVED (confidence H). Owner confirmed it is a bouldering wall on 2026-10-06; added as uko-001 via batch 2026-10-05-uk-owner-checks. Sources: owner answers 2026-10-06, import/research/MANUAL-CHECKS-2026-10-06.md; batch 2026-10-05-uk-owner-checks, commit b274b33; import/research/2026-10-05-uk-owner-checks/candidates.ndjson (checked 2026-11-11). Next: none.
+- **Street Rocks (`street-rocks-scarborough`)**: STATUS: ALREADY RESOLVED (confidence M). Not listed (lead only): the owner-checks reconcile flagged rope-only evidence and coarse coordinates, and the commit records it as rejected. Note that CaVCA's own page, quoted above, states a bouldering room; this was not reopened. Sources: import/research/2026-10-05-uk-owner-checks/reconcile.md, commit b274b33 (checked 2026-11-11). Next: only if the owner wants it reconsidered with a pin.
+- **The Adventure Hub (`adventure-hub-bamford`)**: STATUS: ALREADY RESOLVED (confidence H). Added as uko-002 with the owner-confirmed address and hours (pin from OSM way 4101345). Sources: owner answers 2026-10-06, import/research/MANUAL-CHECKS-2026-10-06.md; batch 2026-10-05-uk-owner-checks, commit b274b33 (checked 2026-11-11). Next: none.
+- **Granite Planet, Penryn**: STATUS: ALREADY RESOLVED (confidence H). Owner: closed; not listed. Sources: import/research/MANUAL-CHECKS-2026-10-06.md (checked 2026-11-11). Next: none.
+- **Live For Today Harrogate (seed-878) pin**: STATUS: NEEDS HUMAN (confidence M). Earlier note: pin 1.9 km from the HG2 8QT postcode centroid, location-update follow-up; not re-verified (map inspection). Sources: none new (checked 2026-11-11). Next: owner map check unless a later batch applied it.
+- **The Climbing Experience Maidstone (seed-893) pin**: STATUS: NEEDS HUMAN (confidence M). OSM node 853 m from the existing pin and 35 m from the postcode centroid; map inspection. Sources: none new (checked 2026-11-11). Next: owner map check unless a later batch applied it.
+- **Dyno Climbing Centre, Buckfastleigh pin**: STATUS: NEEDS HUMAN (confidence L). Site marker is 215 m from the postcode centroid; a street address alone does not fix a pin. Sources: none new (checked 2026-11-11). Next: owner map check.
