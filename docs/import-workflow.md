@@ -81,14 +81,14 @@ node scripts/gym-import.js research stage <section>       # needs a current reco
 | File | Content |
 |---|---|
 | `section.json` | `{schema_version, section_id, title, description, created, scope:{country, states\|null, bbox\|null}}`; country must be supported by the app |
-| `sources.json` | `{schema_version, sources:{S1:{kind, title, url, language, accessed}}}`. Primary kinds: `official-site`, `official-social`, `chain-store-list`; others (`federation`, `directory`, `map-data`, `news`, `other`) only support |
+| `sources.json` | `{schema_version, sources:{S1:{kind, title, url, language, accessed}}}`. Primary kinds: `official-site`, `official-social`, `chain-store-list`; `visitor-note` (one visitor's own post, e.g. a RedNote note; needs `author` and `posted`) counts only as set out under Reconcile; others (`federation`, `directory`, `map-data`, `news`, `other`) only support |
 | `candidates.ndjson` | one candidate per line, **including** places that will be rejected (the audit trail) |
 | `reconcile.json` / `.md` | generated, deterministic; bound to the hashes of section/sources/candidates, the index, staged batches and the other research sections **of the same country** (another country's section never makes it stale) |
 | `review.json` | `{schema_version, section_id, reviewer, reviewed, decisions:{<cid>: {...}}}`, written by a human |
 
 **Candidate:** `cid` (unique, not `seed-`/`community-`/`g-`), `name`, `name_local`, `address_local`, `aliases[]`, `chain`, `country`, `state`, `suburb`, `address`,
 `lat`, `lng`, `coord_source{source, method: osm|official-map|chain-store-list|geocoded-address|map-service-pin, ref}`, `coord_precision`
-(`entrance|building|street|area`), `types`, `website`, `category` (`commercial-gym|university|club|outdoor-area|shop|other`), `status_claim`
+(`entrance|building|street|area`), `types`, `website`, `category` (`commercial-gym|university|club|outdoor-area|shop|other|kids-only|members-only|appointment-only`; the last three are never listed: blocked `not-public`, owner decision 2026-11-11), `status_claim`
 (`open|closed|opening-soon|temporary|unknown`), `bouldering` (`yes|no|unknown`), `evidence[{source, url, accessed, supports[]}]`, `research_notes`, `notes`,
 `photo`. Coordinates always come from an identified source; `website`, evidence and notes stay in the research files; a gym's website, hours, day pass and facilities reach production only through a separate fill batch (see "Filling gym information (website, hours, day pass, facilities, notes)").
 `types` includes `indoor-bouldering` exactly when `bouldering` is `yes`; a candidate whose bouldering is `unknown` or `no` may have an empty `types`
@@ -96,7 +96,7 @@ list (never a placeholder). Such a candidate is always blocked, so nothing with 
 
 **Reconcile** classes every candidate: `invalid` (fix it), `existing` (the importer's own match says it is already in Bouldeer; never inserted),
 `blocked` (cannot be accepted), `review` (flags), `ready`. Blockers: out of scope; outdoor area / not a gym; not `open`; no primary source
-confirming it exists and is open (a directory or search result alone never is); `bouldering` not `yes` or no primary source for it (new
+confirming it exists and is open (a directory or search result alone never is; **visitor notes**, owner decision 2026-11-11: two or more `visitor-note` sources by different authors, each posted within 365 days before it was read and each confirming the point, plus a `map-data` source confirming the gym exists and no evidence of closure, stand in for the primary source for exists/open and for bouldering; such a candidate is always flagged `visitor-evidence`, so accepting it needs a reason); `bouldering` not `yes` or no primary source for it (new
 additions need a bouldering offering; it is never assumed; the 24 existing rope-only gyms are untouched); `coord_precision: area`.
 Duplicate detection is the importer's `planBatch`/`match.js` (thresholds unchanged, including 60 m), **plus** stricter review flags that can
 only add review: names/aliases/`name_local` through the same `evaluatePair`; a related name within 15 km (chain branches, rebrands); any gym
@@ -105,7 +105,7 @@ a single source, university/club walls, importer warnings. The report suggests a
 
 **Review decisions** (every candidate, no wildcards): `accept` (only `ready`/`review`; a flagged one needs `reason` and `reviewed_against`
 listing every id in its `review_ids`); `same-as` (`same_as`: a Bouldeer id; optional `followup:"location-update"` = a separate update batch);
-`reject` + `reason_code` (`duplicate|closed|temporary|outdoor-area|no-bouldering|not-a-gym|insufficient-evidence|out-of-scope`; a confirmed
+`reject` + `reason_code` (`duplicate|closed|temporary|outdoor-area|no-bouldering|not-a-gym|not-public|insufficient-evidence|out-of-scope`; a confirmed
 rope-only candidate is always `no-bouldering`, and only it); `defer` + `reason`. Existing gyms are never removed or changed from here.
 
 **Stage** refuses unless `reconcile.json` equals a fresh reconcile and every decision is valid; 1–1,000 accepted. It writes
@@ -434,7 +434,7 @@ node scripts/gym-import.js import <batch> --verify     # afterwards; then build-
 A closed gym, a confirmed duplicate, or a gym whose listing a re-check could not support (`insufficient-evidence`, e.g. bouldering unconfirmed) is **retired** by an explicit record, through the same updater and the same gates as a location update:
 `PATCH status='rejected', rejection_reason=<reason>` (the moderator UI's own decision format, `moderation.js rejectSpot`). The row is kept, never deleted; nothing else about it changes.
 
-Record: `{"intent":"retire","id":"seed-433","expect_h":"<16 hex>","reason_code":"closed"|"duplicate"|"insufficient-evidence","reason":"<8..200 chars, becomes rejection_reason>","source":"<where the evidence is>","duplicate_of":"<id>"}`
+Record: `{"intent":"retire","id":"seed-433","expect_h":"<16 hex>","reason_code":"closed"|"duplicate"|"insufficient-evidence"|"not-public","reason":"<8..200 chars, becomes rejection_reason>","source":"<where the evidence is>","duplicate_of":"<id>"}`
 - `duplicate_of` is required for `duplicate` and forbidden otherwise; no other keys. `expect_h` and `source` are required. `reason` is plain trimmed one-line text, stored verbatim.
 - A batch in which **every** record is an `update` or a `retire` is a *maintenance* batch (`updater.js`); at most 100 records, one record per gym (a gym cannot be both
   updated and retired). Any mix with new/insert records is refused on the insert path.

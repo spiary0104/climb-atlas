@@ -51,7 +51,8 @@ test('validation: a retire record -- good shapes pass; every bad shape gets a sp
     assert.ok(codes(r).includes(code), `${JSON.stringify(over)} should give ${code}, got ${codes(r)}`);
     assert.ok(r.errors.every(e => e.message.length > 10), 'messages are descriptive');
   }
-  assert.deepEqual(V.REASON_CODES, ['closed', 'duplicate', 'insufficient-evidence']);
+  assert.deepEqual(V.REASON_CODES, ['closed', 'duplicate', 'insufficient-evidence', 'not-public']);
+  assert.deepEqual((await V.validateRetireRecord(RETIRE({ reason_code: 'not-public', reason: 'kids-only venue: not open to the general public' }))).errors, []);
 });
 
 test('validation: photo must be a plain http(s) URL (same rule as the app: safeUrl)', async () => {

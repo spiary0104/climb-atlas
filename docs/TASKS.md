@@ -27,6 +27,10 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 ## Gym data
 ### Owner manual checks
 - Wave 3A: 17 gyms (`import/research/MANUAL-CHECKS-wave-3a.md`).
+- Follow-up 2026-11-11: 592 checks verified on public sources (42 resolved, 26 already resolved, 115 need a human, 393 open), index
+  `import/research/MANUAL-CHECKS-followup-2026-11-11.md`. Later: the ~70 pin/entrance checks (owner, map inspection); Korea + small EU files not covered.
+- Owner policy 2026-11-11: RedNote visitor notes count (2+ authors, 12 months, + map listing; flagged); kids-only, members-only municipal and
+  appointment-only venues are not listed. Next: retire existing ones (reason `not-public`), starting with the China kids-only list in the follow-up.
 - Done: 8 gyms added, 1 tag fix, the rest declined (`import/research/MANUAL-CHECKS-2026-10-06.md`). Open: CAT Torino (bouldering for day visitors?);
   re-check later: Kletterhütte Ilmenau (not open yet), Hwang Pyeong-ju (unsure).
 - Decisions: the merged Jeonnam-Gwangju region name in Korean addresses.

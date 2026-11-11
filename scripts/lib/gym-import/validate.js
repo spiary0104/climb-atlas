@@ -51,7 +51,7 @@ const EXPECT_H = /^[0-9a-f]{16}$/;
 // A retire record ({"intent":"retire"}) marks an approved gym closed / a confirmed duplicate / no longer supported by evidence (insufficient-evidence: e.g. a bouldering offer that a re-check could not confirm): updater.js sets status 'rejected' and
 // rejection_reason (the moderator UI's own decision format); the row is kept, never deleted.
 const RETIRE_KEYS = new Set(['id', 'intent', 'expect_h', 'reason_code', 'reason', 'source', 'duplicate_of']);
-const REASON_CODES = ['closed', 'duplicate', 'insufficient-evidence'];
+const REASON_CODES = ['closed', 'duplicate', 'insufficient-evidence', 'not-public'];   // not-public: kids-only / members-only / appointment-only (owner decision 2026-11-11)
 const REASON_MIN = 8, REASON_MAX = 200;   // spots_rejection_reason_check allows 200; moderation.js rejectSpot slices to 200
 
 // ---- sources of information fills --------------------------------------------------------------------------------------------------------------
