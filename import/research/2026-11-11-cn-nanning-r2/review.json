@@ -1,0 +1,46 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-11-11-cn-nanning-r2",
+ "reviewer": "Claude (AI) research worker; decisions drafted 2026-11-11, pending owner sign-off",
+ "reviewed": "2026-11-11",
+ "decisions": {
+  "cn-nanning-r2-001": {
+   "decision": "accept",
+   "reason": "Two visitor notes by different authors (2026-10-19 and 2026-11-10) name the 航洋 store and show boulder problems; a third note tags #云起攀岩航洋店 (2026-10-26, 冰淇淋). Mini program tags bouldering with 17 diaries. Flags reviewed: nearby/related-name flags are other gyms at distinct addresses unless noted.",
+   "reviewed_against": [
+    "cn-nanning-r2-003",
+    "cn-nanning-r2-004",
+    "2026-11-08-cn-nanning#cn-nn-101",
+    "2026-11-08-cn-nanning#cn-nn-102",
+    "2026-11-08-cn-nanning#cn-nn-103",
+    "2026-11-08-cn-nanning#cn-nn-104",
+    "cn-nanning-r2-002"
+   ]
+  },
+  "cn-nanning-r2-002": {
+   "decision": "defer",
+   "reason": "Open (visitor notes 2026-10-18 and 2026-11-03 name the 西大 store) but neither states bouldering; hashtags like #100条线路攀岩日记 and the mini program tag do not count alone. Need two notes at this store that describe boulder problems."
+  },
+  "cn-nanning-r2-003": {
+   "decision": "reject",
+   "reason_code": "closed",
+   "reason": "Two visitor notes (2026-04-26 and 04-30) show the Yunqi Taoyuan store permanently closed in April 2026 (2019.3-2026.4), and the mini program no longer lists it. Closed is not one of the two standard reject codes; use 'closed' or drop the gym."
+  },
+  "cn-nanning-r2-004": {
+   "decision": "defer",
+   "reason": "A 2026-10-13 note says a new Yunqi gym was in beta test, but does not name the store; no note names the Wuyue (吾悦) store, and it is not in the mini program list. Not confirmed open or bouldering."
+  },
+  "cn-nanning-r2-005": {
+   "decision": "defer",
+   "reason": "氧攀 has at least two stores (青秀天街 and 华丰爱琴海 in the mini program); visitor notes in 2026 (e.g. 2026-04-18, 2026-02-22) do not say which store, and the 'Datang Tiancheng' pin matches neither address on file. Store identity and a store-specific bouldering note are not established."
+  },
+  "cn-nanning-r2-006": {
+   "decision": "defer",
+   "reason": "No 2026 RedNote note naming 攀达 found; only the mini program lists it (with bouldering). Mini program tag alone does not count; opening not confirmed."
+  },
+  "cn-nanning-r2-007": {
+   "decision": "defer",
+   "reason": "Open (two visitor notes Jul and Oct 2026 and one 2026-03 note name the store), and the mini program tags bouldering, but the only bouldering signal in the notes is the #室内抱石 hashtag; no note's text states bouldering at the store. A text-level statement is needed. Likely accept on recheck."
+  }
+ }
+}

@@ -1,0 +1,84 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-11-cn-ningbo-r2",
+ "index": {
+  "sha256": "fb2af3b217bd169c384ebb1039a7aad5cc5b3d8869165218ff0023a3c2ee2e78",
+  "count": 3612,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha",
+  "2026-11-11-cn-beijing-r2",
+  "2026-11-11-cn-changchun",
+  "2026-11-11-cn-changsha-r2",
+  "2026-11-11-cn-changzhou-r2",
+  "2026-11-11-cn-chengdu-r2",
+  "2026-11-11-cn-dalian-r2",
+  "2026-11-11-cn-dongguan-r2",
+  "2026-11-11-cn-foshan-r2",
+  "2026-11-11-cn-harbin-r2",
+  "2026-11-11-cn-hefei-r2",
+  "2026-11-11-cn-hohhot",
+  "2026-11-11-cn-jinan-r2",
+  "2026-11-11-cn-kunming-r2",
+  "2026-11-11-cn-lanzhou",
+  "2026-11-11-cn-lhasa",
+  "2026-11-11-cn-nanchang-r2",
+  "2026-11-11-cn-nanning-r2",
+  "2026-11-11-cn-shenyang-r2",
+  "2026-11-11-cn-shijiazhuang",
+  "2026-11-11-cn-taiyuan",
+  "2026-11-11-cn-urumqi",
+  "2026-11-11-cn-wuxi-r2",
+  "2026-11-11-cn-yinchuan-r2",
+  "2026-11-11-cn-zhengzhou-r2"
+ ],
+ "counts": {
+  "records": 3,
+  "new": 3,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "4b3ebf89f569ba245be945a885874de7e37aeabc18de64420f7f7c2b93fdd8f3",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-66ae435e65",
+   "id_frozen": true,
+   "name": "ROCKPLUS Climbing (Global Harbor)",
+   "country": "CN",
+   "reviewed_distinct": {
+    "reason": "Two visitor notes by different authors (Oct 2026) name the 环宇城 store and give V-grade counts; the chain's own account lists this store and tags bouldering in the mini program. Based on note titles. Flags reviewed: nearby/related-name flags are other gyms at distinct addresses unless noted.",
+    "reviewer": "Claude (AI) research worker; decisions drafted 2026-11-11, pending owner sign-off"
+   }
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-063aec0ab8",
+   "id_frozen": true,
+   "name": "XTALE Climbing",
+   "country": "CN"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-d6d700ad0a",
+   "id_frozen": true,
+   "name": "Yiyi Gaosheng Climbing",
+   "country": "CN"
+  }
+ ]
+}
