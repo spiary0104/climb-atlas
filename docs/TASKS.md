@@ -6,12 +6,9 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 (delete them; git keeps history). Keep this file under 60 lines.
 
 ## In progress
-### Apply queue (checked 2026-11-10 by dry run; index = production, 3,457 gyms) — owner runs scriptsapply-batch.ps1
-- Korea: 2026-10-12-kr-fixes (28 pins, 4 retirements) first, then 2026-10-06-kr-seoul 39, kr-incheon 6, kr-busan-gyeongnam 10,
-  kr-daegu-gyeongbuk 12, kr-gyeonggi-west 8, kr-gyeonggi-south 17, kr-gyeonggi-north 13, kr-central-regions 15 (+120). Owner checks: 73 (`import/research/MANUAL-CHECKS-korea-2026-10-12.md`).
-- China new gyms: 2026-10-12-cn-kunming-changsha 3, cn-shanghai 11, cn-beijing-chengdu 8 (3 same-as decisions drafted 2026-11-10, owner sign-off
-  pending); 2026-11-08 cn-{changzhou,dalian,fuzhou,guiyang,harbin,hefei,nanchang,nanning,shenyang,xining,yinchuan,zhengzhou,zhongshan,zhuhai} (+31).
-- China info fills: 2026-11-08-cn-{chongqing,nanjing,tianjin,wuhan,xian}-info, 2026-11-09-cn-{suzhou,shanghai,beijing,shenzhen,guangzhou,hangzhou,mixed}-info.
+### Apply queue — owner runs scriptsapply-batch.ps1
+- Applied 2026-11-11 (36 batches, verified): Korea 8 sections, cn-shanghai, 14 cn 2026-11-08 cities, 12 China info fills, retire seed-713/499;
+  production 3,612 gyms. Still held: 2026-10-12-cn-kunming-changsha and cn-beijing-chengdu (re-review: 3 gyms already exist).
 - apply-batch.ps1 rebuilds the index and re-plans each batch itself, so committed plan.json files going stale is expected.
 ### China data
 - ~270 gyms still lack a Chinese name: mostly kids' or sports-centre walls with no account, or brands whose accounts list no stores
