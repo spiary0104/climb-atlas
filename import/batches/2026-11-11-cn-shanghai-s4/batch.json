@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-11-cn-shanghai-s4",
+  "description": "Regional research \"China: Shanghai\": 1 new gym(s) accepted of 26 candidate(s)",
+  "created": "2026-11-11",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-11-11-cn-shanghai-s4",
+    "section_sha256": "00981bfb5204755d7827c941b3706b1f756138d2b6993d516224b30514d19a0a",
+    "sources_sha256": "203b104b6852a05686851546654c7e433930ea903875a241f5cfdd29b1a2d55e",
+    "candidates_sha256": "992175edf22e217522862ea92666a4a57ca7f24fdfc75966f5fa377ce5953589",
+    "reconcile_sha256": "6510430187bef811af4907b599e4fa202f992d4dc95fb5da1eccb0ab85eef9fa",
+    "review_sha256": "bb3b824be5eca4328c00c36363fbd7daab5d2c28264c79aa6b9dee8efabb5263",
+    "candidates": 26,
+    "staged": 1,
+    "decisions": {
+      "accept": 1,
+      "defer": 18,
+      "reject": 7
+    }
+  },
+  "index_at_staging": {
+    "sha256": "fb2af3b217bd169c384ebb1039a7aad5cc5b3d8869165218ff0023a3c2ee2e78",
+    "count": 3612
+  }
+}

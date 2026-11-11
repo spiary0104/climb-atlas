@@ -1,0 +1,69 @@
+# Regional research: China: Beijing (2026-11-11-cn-beijing-s4)
+
+Scope: CN / BEIJING
+Index: 3612 gyms, sha256 fb2af3b217bd… | staged batches compared: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha, 2026-11-11-cn-beijing-r2, 2026-11-11-cn-changchun, 2026-11-11-cn-changsha-r2, 2026-11-11-cn-changzhou-r2, 2026-11-11-cn-chengdu-r2, 2026-11-11-cn-dalian-r2, 2026-11-11-cn-dongguan-r2, 2026-11-11-cn-foshan-r2, 2026-11-11-cn-hangzhou-s4, 2026-11-11-cn-harbin-r2, 2026-11-11-cn-hefei-r2, 2026-11-11-cn-hohhot, 2026-11-11-cn-jinan-r2, 2026-11-11-cn-kunming-r2, 2026-11-11-cn-lanzhou, 2026-11-11-cn-lhasa, 2026-11-11-cn-nanchang-r2, 2026-11-11-cn-nanning-r2, 2026-11-11-cn-ningbo-r2, 2026-11-11-cn-shenyang-r2, 2026-11-11-cn-shijiazhuang, 2026-11-11-cn-taiyuan, 2026-11-11-cn-urumqi, 2026-11-11-cn-wuxi-r2, 2026-11-11-cn-yinchuan-r2, 2026-11-11-cn-zhengzhou-r2 | other sections compared: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha, 2026-10-12-cn-shanghai, 2026-11-01-cn-guangzhou, 2026-11-01-cn-jinan, 2026-11-02-cn-hangzhou, 2026-11-06-cn-changsha, 2026-11-06-cn-dali, 2026-11-06-cn-kunming, 2026-11-06-cn-qingdao, 2026-11-06-cn-wenzhou, 2026-11-06-cn-xiamen, 2026-11-08-cn-changzhou, 2026-11-08-cn-dalian, 2026-11-08-cn-dongguan, 2026-11-08-cn-foshan, 2026-11-08-cn-fuzhou, 2026-11-08-cn-guiyang, 2026-11-08-cn-harbin, 2026-11-08-cn-hefei, 2026-11-08-cn-nanchang, 2026-11-08-cn-nanning, 2026-11-08-cn-ningbo, 2026-11-08-cn-shenyang, 2026-11-08-cn-wuxi, 2026-11-08-cn-xining, 2026-11-08-cn-yinchuan, 2026-11-08-cn-zhengzhou, 2026-11-08-cn-zhongshan, 2026-11-08-cn-zhuhai, 2026-11-11-cn-beijing-r2, 2026-11-11-cn-changchun, 2026-11-11-cn-changsha-r2, 2026-11-11-cn-changzhou-r2, 2026-11-11-cn-chengdu-r2, 2026-11-11-cn-dalian-r2, 2026-11-11-cn-dongguan-r2, 2026-11-11-cn-foshan-r2, 2026-11-11-cn-guiyang-r2, 2026-11-11-cn-haikou, 2026-11-11-cn-hangzhou-s4, 2026-11-11-cn-harbin-r2, 2026-11-11-cn-hefei-r2, 2026-11-11-cn-hohhot, 2026-11-11-cn-jinan-r2, 2026-11-11-cn-kunming-r2, 2026-11-11-cn-lanzhou, 2026-11-11-cn-lhasa, 2026-11-11-cn-nanchang-r2, 2026-11-11-cn-nanning-r2, 2026-11-11-cn-ningbo-r2, 2026-11-11-cn-sanya, 2026-11-11-cn-shenyang-r2, 2026-11-11-cn-shijiazhuang, 2026-11-11-cn-taiyuan, 2026-11-11-cn-urumqi, 2026-11-11-cn-wuxi-r2, 2026-11-11-cn-yinchuan-r2, 2026-11-11-cn-zhengzhou-r2
+Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
+
+## Summary
+27 candidate(s): ready 0 | review 10 | blocked 17 | already in Bouldeer 0 | invalid 0
+
+## Needs review (accept needs a reason and reviewed_against covering every listed id) (10)
+- cn-beijing-s4-001 "Aopan Climbing (Beiyuan)" [g-da54e01dfb] reviewed_against must include: seed-675, seed-685
+  - importer-probable-duplicate: seed-675 same-name-but-pin-differs 9591 m
+  - name-match: seed-675 "Aopan Climbing (Beijing Sport University)": same-name-but-pin-differs ("Aopan Climbing (Beiyuan)" / "Aopan Climbing (Beijing Sport University)", 9591 m)
+  - related-name-nearby: seed-685 "Manhe Aopan Climbing": related names "Aopan Climbing (Beiyuan)" / "Manhe Aopan Climbing" 10442 m apart
+  - visitor-evidence: rests on visitor notes (2+ recent, different authors) plus a map listing, not on a gym-controlled source: provisional, check the notes
+- cn-beijing-s4-005 "Climb On Gym (Huiju)" [g-bfcb8fa67b]
+  - visitor-evidence: rests on visitor notes (2+ recent, different authors) plus a map listing, not on a gym-controlled source: provisional, check the notes
+- cn-beijing-s4-006 "V.ONE Climbing" [g-6e23401f1e]
+  - visitor-evidence: rests on visitor notes (2+ recent, different authors) plus a map listing, not on a gym-controlled source: provisional, check the notes
+- cn-beijing-s4-009 "SURMOUNT Climbing (Landianchang)" [g-239a7fd55b] reviewed_against must include: 2026-10-12-cn-beijing-chengdu#cn-bj-010
+  - other-section: 2026-10-12-cn-beijing-chengdu#cn-bj-010 "Surmount Climbing [SURMOUNT山迈攀岩]": name-match similar-name-nearby ("SURMOUNT Climbing (Landianchang)" / "Surmount Climbing [SURMOUNT山迈攀岩]", 206 m)
+  - visitor-evidence: rests on visitor notes (2+ recent, different authors) plus a map listing, not on a gym-controlled source: provisional, check the notes
+- cn-beijing-s4-010 "Qingshan Bouldering (Weigongcun)" [g-ee6d2dd8f9] reviewed_against must include: 2026-10-12-cn-beijing-chengdu#cn-bj-005, g-1d927b2104, seed-682
+  - importer-probable-duplicate: g-1d927b2104 renamed-or-related-name-nearby 0 m
+  - other-section: 2026-10-12-cn-beijing-chengdu#cn-bj-005 "Qingshan Climbing Stone (Weigongcun) [青山攀石魏公村店]": name-match renamed-or-related-name-nearby ("Qingshan Bouldering (Weigongcun)" / "Qingshan Climbing Stone (Weigongcun) [青山攀石魏公村店]", 0 m)
+  - related-name-nearby: seed-682 "Qingshan Climbing Stone (Qinghe)": related names "Qingshan Bouldering (Weigongcun)" / "Qingshan Climbing Stone (Qinghe)" 9066 m apart
+  - visitor-evidence: rests on visitor notes (2+ recent, different authors) plus a map listing, not on a gym-controlled source: provisional, check the notes
+- cn-beijing-s4-011 "Yiqi Climbing (Zhongguancun)" [g-ac07de0dc0]
+  - visitor-evidence: rests on visitor notes (2+ recent, different authors) plus a map listing, not on a gym-controlled source: provisional, check the notes
+- cn-beijing-s4-012 "SUPERBOX Climbing (Chengshousi)" [g-a7fa584722] reviewed_against must include: 2026-10-12-cn-beijing-chengdu#cn-bj-003, cn-beijing-s4-017
+  - name-match: candidate cn-beijing-s4-017 "SUPERBOX Climbing (Happy Valley)": same-name-but-pin-differs ("SUPERBOX Climbing (Chengshousi)" / "SUPERBOX Climbing (Happy Valley)", 4997 m)
+  - other-section: 2026-10-12-cn-beijing-chengdu#cn-bj-003 "Superbox Climbing (Happy Valley) [SUPERBOX超级秀场攀岩馆欢乐谷店]": related-name-nearby related names "SUPERBOX Climbing (Chengshousi)" / "Superbox Climbing (Happy Valley) [SUPERBOX超级秀场攀岩馆欢乐谷店]" 4856 m apart
+  - visitor-evidence: rests on visitor notes (2+ recent, different authors) plus a map listing, not on a gym-controlled source: provisional, check the notes
+- cn-beijing-s4-013 "Banana Climbing (Xiaoyuehe)" [g-f8f909d28a] reviewed_against must include: 2026-10-12-cn-beijing-chengdu#cn-bj-006, seed-637
+  - importer-probable-duplicate: seed-637 same-name-but-pin-differs 7712 m
+  - name-match: seed-637 "Banana Climbing (Shangdi)": same-name-but-pin-differs ("Banana Climbing (Xiaoyuehe)" / "Banana Climbing (Shangdi)", 7712 m)
+  - other-section: 2026-10-12-cn-beijing-chengdu#cn-bj-006 "Banana Climbing (Xiaoyuehe) [香蕉攀岩小月河店]": name-match similar-name-nearby ("Banana Climbing (Xiaoyuehe)" / "Banana Climbing (Xiaoyuehe) [香蕉攀岩小月河店]", 196 m)
+  - visitor-evidence: rests on visitor notes (2+ recent, different authors) plus a map listing, not on a gym-controlled source: provisional, check the notes
+- cn-beijing-s4-014 "ZOO Climbing" [g-7f034c5a77] reviewed_against must include: 2026-10-12-cn-beijing-chengdu#cn-bj-004, g-894e6ef315
+  - importer-probable-duplicate: g-894e6ef315 renamed-or-related-name-nearby 0 m
+  - other-section: 2026-10-12-cn-beijing-chengdu#cn-bj-004 "ZOO Climb [ZOO攀岩馆]": name-match renamed-or-related-name-nearby ("ZOO Climbing" / "ZOO Climb [ZOO攀岩馆]", 0 m)
+  - visitor-evidence: rests on visitor notes (2+ recent, different authors) plus a map listing, not on a gym-controlled source: provisional, check the notes
+- cn-beijing-s4-017 "SUPERBOX Climbing (Happy Valley)" [g-b2f5581203] reviewed_against must include: 2026-10-12-cn-beijing-chengdu#cn-bj-003, cn-beijing-s4-012, g-1ea116bacd
+  - importer-probable-duplicate: g-1ea116bacd similar-name-nearby 168 m
+  - name-match: candidate cn-beijing-s4-012 "SUPERBOX Climbing (Chengshousi)": same-name-but-pin-differs ("SUPERBOX Climbing (Happy Valley)" / "SUPERBOX Climbing (Chengshousi)", 4997 m)
+  - other-section: 2026-10-12-cn-beijing-chengdu#cn-bj-003 "Superbox Climbing (Happy Valley) [SUPERBOX超级秀场攀岩馆欢乐谷店]": name-match similar-name-nearby ("SUPERBOX Climbing (Happy Valley)" / "Superbox Climbing (Happy Valley) [SUPERBOX超级秀场攀岩馆欢乐谷店]", 168 m)
+
+## Blocked: cannot be accepted (17)
+- cn-beijing-s4-002 "National Mountaineering Training Base Climbing Gym (Huairou)": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-beijing-s4-003 "MAX12 Fitness (Tiantongyuan) Climbing": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough); no-bouldering-evidence (bouldering is "yes" but no primary source (or 2+ recent visitor notes by different authors) confirms it) -> suggested: defer
+- cn-beijing-s4-004 "Climb On Gym (Poly Shiguangli)": bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-beijing-s4-007 "Aopan Climbing (Sijiqing)": bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-beijing-s4-008 "Lanshan Climbing (Tiangongyuan Kerry Mall)": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-beijing-s4-015 "Yanshi Climbing (Datun)": bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-beijing-s4-016 "Shougang Extreme Park Climbing Area": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-beijing-s4-018 "UniClimb": bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-beijing-s4-019 "Qu Climbing (Longyue City)": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-beijing-s4-020 "Bloc1 Climbing": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-beijing-s4-021 "Cishan Climbing (Yizhuang Xinwan Plaza)": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-beijing-s4-022 "Flying Cat Climbing (Jijiamiao)": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-beijing-s4-023 "Mowang Climbing (Xihongmen)": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-beijing-s4-024 "Yaoyan Climbing (Houshayu)": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-beijing-s4-025 "EDGE Climbing": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-beijing-s4-026 "Ritan Climbing Gym (Ritan International Trade Center)": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-beijing-s4-027 "Qingteng Climbing": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+
+## Next
+Write review.json with one decision per candidate (docs/import-workflow.md, "Regional research"), then `node scripts/gym-import.js research stage 2026-11-11-cn-beijing-s4`.
+Nothing here touches production.

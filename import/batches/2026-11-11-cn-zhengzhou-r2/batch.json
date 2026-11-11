@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-11-cn-zhengzhou-r2",
+  "description": "Regional research \"China: Zhengzhou\": 5 new gym(s) accepted of 7 candidate(s)",
+  "created": "2026-11-11",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-11-11-cn-zhengzhou-r2",
+    "section_sha256": "67581e811520a78fc12ecff28004d41bda973a041149d3ec4187b1ee6e3c685a",
+    "sources_sha256": "532d5b488d75d8b9c67cc88ea5b31d4764eaddf42bf52dfd5eff7d8b80900980",
+    "candidates_sha256": "e8364702731412b51ac65c5fe5cc45c117f70bfb2c7a8bafc57ee3ce1a0e51cb",
+    "reconcile_sha256": "565e45210abcdb3d1a76d59744b405ad95b38aa145b14a26cc888f23c96d806e",
+    "review_sha256": "61d0bb91f439e185ba8c571d674271cdabf49fe37937db8fe328afd2ccac5690",
+    "candidates": 7,
+    "staged": 5,
+    "decisions": {
+      "accept": 5,
+      "defer": 2
+    }
+  },
+  "index_at_staging": {
+    "sha256": "fb2af3b217bd169c384ebb1039a7aad5cc5b3d8869165218ff0023a3c2ee2e78",
+    "count": 3612
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-11-08-cn-chongqing-info",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "e0f8e92274fec919d68bc06df0dd05ce68b4b0428f55e99ed9fe0294d4563bd1",
+  "payload_sha256": "bf7dac9b1f6aacaa2409115228f65d1822efcbb86274388c500df551ade606ee",
+  "confirm_token": "88c826fb6106e881",
+  "live_state_sha256": "3a8436eec4e869d28a1f21465866a2c862c0a634ab954354d8605106bfba4eff",
+  "rows_updated": 0,
+  "approved_before": 3614,
+  "approved_after": 3614,
+  "changes": [],
+  "rows_info_filled": 10,
+  "info_filled": [
+    {
+      "id": "seed-820",
+      "fields": [
+        "name_local",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "bad8a72926b16b2a",
+      "after_h": "bad8a72926b16b2a"
+    },
+    {
+      "id": "seed-830",
+      "fields": [
+        "name_local",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "ae27a901b6554fd7",
+      "after_h": "ae27a901b6554fd7"
+    },
+    {
+      "id": "seed-840",
+      "fields": [
+        "name_local",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "c1a00a1c97d7e882",
+      "after_h": "c1a00a1c97d7e882"
+    },
+    {
+      "id": "seed-793",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "35cf560f08b3b1c9",
+      "after_h": "35cf560f08b3b1c9"
+    },
+    {
+      "id": "seed-826",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "a5d071680e876f3b",
+      "after_h": "a5d071680e876f3b"
+    },
+    {
+      "id": "seed-845",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "eaabaf6179940309",
+      "after_h": "eaabaf6179940309"
+    },
+    {
+      "id": "seed-829",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "481c3507ac25f53f",
+      "after_h": "481c3507ac25f53f"
+    },
+    {
+      "id": "seed-825",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "fbe0c0b819823ff9",
+      "after_h": "fbe0c0b819823ff9"
+    },
+    {
+      "id": "seed-822",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "5fa88fe596ea4965",
+      "after_h": "5fa88fe596ea4965"
+    },
+    {
+      "id": "seed-844",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "9c195fa0de9d9600",
+      "after_h": "9c195fa0de9d9600"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 10,
+    "problems": []
+  },
+  "started_at": "2026-11-11T00:50:54.893Z",
+  "finished_at": "2026-11-11T00:50:59.953Z",
+  "ids": [
+    "seed-820",
+    "seed-830",
+    "seed-840",
+    "seed-793",
+    "seed-826",
+    "seed-845",
+    "seed-829",
+    "seed-825",
+    "seed-822",
+    "seed-844"
+  ]
+}

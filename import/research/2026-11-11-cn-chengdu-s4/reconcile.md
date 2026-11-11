@@ -1,0 +1,42 @@
+# Regional research: China: Chengdu (2026-11-11-cn-chengdu-s4)
+
+Scope: CN / CHENGDU
+Index: 3612 gyms, sha256 fb2af3b217bd… | staged batches compared: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha, 2026-11-11-cn-beijing-r2, 2026-11-11-cn-beijing-s4, 2026-11-11-cn-beijing-s4b, 2026-11-11-cn-changchun, 2026-11-11-cn-changsha-r2, 2026-11-11-cn-changzhou-r2, 2026-11-11-cn-chengdu-r2, 2026-11-11-cn-dalian-r2, 2026-11-11-cn-dongguan-r2, 2026-11-11-cn-foshan-r2, 2026-11-11-cn-hangzhou-s4, 2026-11-11-cn-harbin-r2, 2026-11-11-cn-hefei-r2, 2026-11-11-cn-hohhot, 2026-11-11-cn-jinan-r2, 2026-11-11-cn-kunming-r2, 2026-11-11-cn-lanzhou, 2026-11-11-cn-lhasa, 2026-11-11-cn-nanchang-r2, 2026-11-11-cn-nanning-r2, 2026-11-11-cn-ningbo-r2, 2026-11-11-cn-shenyang-r2, 2026-11-11-cn-shijiazhuang, 2026-11-11-cn-taiyuan, 2026-11-11-cn-urumqi, 2026-11-11-cn-wuxi-r2, 2026-11-11-cn-yinchuan-r2, 2026-11-11-cn-zhengzhou-r2 | other sections compared: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha, 2026-10-12-cn-shanghai, 2026-11-01-cn-guangzhou, 2026-11-01-cn-jinan, 2026-11-02-cn-hangzhou, 2026-11-06-cn-changsha, 2026-11-06-cn-dali, 2026-11-06-cn-kunming, 2026-11-06-cn-qingdao, 2026-11-06-cn-wenzhou, 2026-11-06-cn-xiamen, 2026-11-08-cn-changzhou, 2026-11-08-cn-dalian, 2026-11-08-cn-dongguan, 2026-11-08-cn-foshan, 2026-11-08-cn-fuzhou, 2026-11-08-cn-guiyang, 2026-11-08-cn-harbin, 2026-11-08-cn-hefei, 2026-11-08-cn-nanchang, 2026-11-08-cn-nanning, 2026-11-08-cn-ningbo, 2026-11-08-cn-shenyang, 2026-11-08-cn-wuxi, 2026-11-08-cn-xining, 2026-11-08-cn-yinchuan, 2026-11-08-cn-zhengzhou, 2026-11-08-cn-zhongshan, 2026-11-08-cn-zhuhai, 2026-11-11-cn-beijing-r2, 2026-11-11-cn-beijing-s4, 2026-11-11-cn-beijing-s4b, 2026-11-11-cn-changchun, 2026-11-11-cn-changsha-r2, 2026-11-11-cn-changzhou-r2, 2026-11-11-cn-chengdu-r2, 2026-11-11-cn-dalian-r2, 2026-11-11-cn-dongguan-r2, 2026-11-11-cn-foshan-r2, 2026-11-11-cn-guiyang-r2, 2026-11-11-cn-haikou, 2026-11-11-cn-hangzhou-s4, 2026-11-11-cn-harbin-r2, 2026-11-11-cn-hefei-r2, 2026-11-11-cn-hohhot, 2026-11-11-cn-jinan-r2, 2026-11-11-cn-kunming-r2, 2026-11-11-cn-lanzhou, 2026-11-11-cn-lhasa, 2026-11-11-cn-nanchang-r2, 2026-11-11-cn-nanning-r2, 2026-11-11-cn-ningbo-r2, 2026-11-11-cn-sanya, 2026-11-11-cn-shanghai-s4, 2026-11-11-cn-shenyang-r2, 2026-11-11-cn-shijiazhuang, 2026-11-11-cn-taiyuan, 2026-11-11-cn-urumqi, 2026-11-11-cn-wuxi-r2, 2026-11-11-cn-yinchuan-r2, 2026-11-11-cn-zhengzhou-r2
+Review radii (stricter than the importer): any gym 150 m, related name 15 km, other country 2 km
+
+## Summary
+16 candidate(s): ready 0 | review 4 | blocked 11 | already in Bouldeer 1 | invalid 0
+
+## Already in Bouldeer (suggested: same-as; never inserted) (1)
+- cn-chengdu-s4-014 "Climbing Panda (Tianfu Joy City)" -> seed-619 "Climbing Panda (Tianfu Joy City)" (same-name, 82 m)
+
+## Needs review (accept needs a reason and reviewed_against covering every listed id) (4)
+- cn-chengdu-s4-006 "Supernatural Climbing" [g-9c1c0f835b]
+  - visitor-evidence: rests on visitor notes (2+ recent, different authors) plus a map listing, not on a gym-controlled source: provisional, check the notes
+- cn-chengdu-s4-012 "SOFA Climbing" [g-4e90075982] reviewed_against must include: 2026-10-12-cn-beijing-chengdu#cn-cd-001, g-fb88f1ad7d
+  - importer-probable-duplicate: g-fb88f1ad7d renamed-or-related-name-nearby 0 m
+  - other-section: 2026-10-12-cn-beijing-chengdu#cn-cd-001 "SOFA Climbing [SOFA攀岩]": name-match renamed-or-related-name-nearby ("SOFA Climbing" / "SOFA Climbing [SOFA攀岩]", 0 m)
+- cn-chengdu-s4-015 "Qiushan Climbing (CyPARK)" [g-52fb25f1d5]
+  - visitor-evidence: rests on visitor notes (2+ recent, different authors) plus a map listing, not on a gym-controlled source: provisional, check the notes
+- cn-chengdu-s4-016 "Climbing Panda (Tianfu Art Park)" [g-d9209049e2] reviewed_against must include: seed-611, seed-622
+  - importer-probable-duplicate: seed-622 same-name-but-pin-differs 6737 m; seed-611 same-name-but-pin-differs 9160 m
+  - name-match: seed-611 "Climbing Panda (Wuhou Joy City)": same-name-but-pin-differs ("Climbing Panda (Tianfu Art Park)" / "Climbing Panda (Wuhou Joy City)", 9160 m)
+  - name-match: seed-622 "Climbing Panda (R&F Tianhui)": same-name-but-pin-differs ("Climbing Panda (Tianfu Art Park)" / "Climbing Panda (R&F Tianhui)", 6737 m)
+  - visitor-evidence: rests on visitor notes (2+ recent, different authors) plus a map listing, not on a gym-controlled source: provisional, check the notes
+
+## Blocked: cannot be accepted (11)
+- cn-chengdu-s4-001 "成都领攀综合训练基地": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-chengdu-s4-002 "成都体育学院(东部新区校区)-攀岩馆": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-chengdu-s4-003 "熊熊攀岩": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-chengdu-s4-004 "RORO Climbing(火荣核攀岩)": no-bouldering-evidence (bouldering is "yes" but no primary source (or 2+ recent visitor notes by different authors) confirms it) -> suggested: defer
+- cn-chengdu-s4-005 "攀登侠儿童攀岩馆(双流万达店3号...)": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-chengdu-s4-007 "攀登侠攀岩馆(蜀都万达影城店)": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-chengdu-s4-008 "南湖梦幻岛攀岩": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-chengdu-s4-009 "趣锐攀岩馆(人民北路店)": insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-chengdu-s4-010 "攀登侠儿童攀岩馆(王府井店)": not-public (kids-only venue: not open to the general public, never listed); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-chengdu-s4-011 "攀登侠儿童攀岩馆(新都保利广场店)": not-public (kids-only venue: not open to the general public, never listed); insufficient-evidence (needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough); bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+- cn-chengdu-s4-013 "石屿攀岩": bouldering-unknown (bouldering offering not established (never assumed)) -> suggested: defer
+
+## Next
+Write review.json with one decision per candidate (docs/import-workflow.md, "Regional research"), then `node scripts/gym-import.js research stage 2026-11-11-cn-chengdu-s4`.
+Nothing here touches production.

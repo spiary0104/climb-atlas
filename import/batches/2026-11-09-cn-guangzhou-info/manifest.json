@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-11-09-cn-guangzhou-info",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "1158b14eedc8257ce59fca650e658762f22ca5642c92e2ef2656acb4b40cb177",
+  "payload_sha256": "debcb64b2b9d462f714d97a25cafe423aa5b5f90787fe48584059513fe0ae57d",
+  "confirm_token": "74f2759ec084780b",
+  "live_state_sha256": "3a8436eec4e869d28a1f21465866a2c862c0a634ab954354d8605106bfba4eff",
+  "rows_updated": 0,
+  "approved_before": 3614,
+  "approved_after": 3614,
+  "changes": [],
+  "rows_info_filled": 2,
+  "info_filled": [
+    {
+      "id": "seed-750",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "a1ea796ef1ee8bfd",
+      "after_h": "a1ea796ef1ee8bfd"
+    },
+    {
+      "id": "seed-741",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "68994cebaf334b55",
+      "after_h": "68994cebaf334b55"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 2,
+    "problems": []
+  },
+  "started_at": "2026-11-11T00:54:12.936Z",
+  "finished_at": "2026-11-11T00:54:16.497Z",
+  "ids": [
+    "seed-750",
+    "seed-741"
+  ]
+}

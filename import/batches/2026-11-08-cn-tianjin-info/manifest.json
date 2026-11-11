@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-11-08-cn-tianjin-info",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "757bdcf93b36c3718f4a886403f5c523d2d45217db41fcb9ee393f3c69cf054c",
+  "payload_sha256": "2b31bff61a28e8ef9ee3333c4bfc33d886ef957fc0089f01f45f0ee4b59a8e41",
+  "confirm_token": "178accab30c1139d",
+  "live_state_sha256": "3a8436eec4e869d28a1f21465866a2c862c0a634ab954354d8605106bfba4eff",
+  "rows_updated": 0,
+  "approved_before": 3614,
+  "approved_after": 3614,
+  "changes": [],
+  "rows_info_filled": 1,
+  "info_filled": [
+    {
+      "id": "seed-784",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "77d61b49b8f697ff",
+      "after_h": "77d61b49b8f697ff"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 1,
+    "problems": []
+  },
+  "started_at": "2026-11-11T00:51:39.872Z",
+  "finished_at": "2026-11-11T00:51:43.297Z",
+  "ids": [
+    "seed-784"
+  ]
+}
