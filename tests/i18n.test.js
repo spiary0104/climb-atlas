@@ -109,3 +109,25 @@ test('i18n: shell wiring: pickers in the top bar and on /me, the locale cached o
   assert.ok(!/fonts\.googleapis\.com\/[^"]*(Noto|CJK|SC)/i.test(html), 'no downloaded CJK font');
   assert.match(read('js/main.js'), /await initI18n\(\);/);
 });
+
+test('i18n Explore: label tables follow the language (countries, types, continents, moods), hours and distance wording', async () => {
+  globalThis.window = globalThis.window || {}; globalThis.window.matchMedia = () => ({ matches: false });
+  const C = await import('../js/modules/constants.js');
+  const H = await import('../js/modules/hours.js');
+  const G = await import('../js/modules/geo.js');
+  for(const code of Object.keys(C.COUNTRY_LABELS)) assert.ok(('country.' + code) in EN && ('country.' + code) in ZH, 'country.' + code);
+  for(const k of Object.keys(C.TYPE_LABELS)) assert.ok(C.TYPE_LABELS[k] && !C.TYPE_LABELS[k].startsWith('type.'), k);
+  assert.equal(C.COUNTRY_LABELS.CN, 'China'); assert.equal(C.REGION_LABELS.asia, 'Asia'); assert.equal(C.MOODS.great.label, 'Great');
+  assert.equal(H.statusLine({ state: 'closed', next: { day: 'sat', open: 600, inDays: 3 } }).text, 'Closed · opens Sat 10am');
+  assert.equal(G.formatDistance(4.26), '4.3 km');
+  await I.setLocale('zh-CN');
+  assert.equal(C.COUNTRY_LABELS.CN, '中国'); assert.equal(C.COUNTRY_LABELS.KR, '韩国'); assert.equal(C.TYPE_LABELS['top-rope'], '顶绳');
+  assert.equal(C.REGION_LABELS['north-america'], '北美洲'); assert.equal(C.countryEnglish('JP'), 'Japan');
+  assert.equal(H.statusLine({ state: 'open', until: 22 * 60 }).text, '营业中 · 22:00打烊');
+  assert.equal(H.statusLine({ state: 'open', h24: true }).text, '24 小时营业');
+  assert.equal(H.statusLine({ state: 'closed', next: { day: 'sat', open: 390, inDays: 3 } }).text, '已打烊 · 周六 6:30开门');
+  assert.equal(H.statusLine({ state: 'closed', next: { day: 'sat', open: 360, inDays: 1 } }).text, '已打烊 · 明天 6:00开门');
+  assert.equal(G.formatDistance(0.35), '350 米'); assert.equal(G.formatDistance(12.7), '13 公里');
+  assert.equal(I.t('explore.inView', { count: 84 }), '家岩馆在地图范围内');
+  assert.equal(I.t('filters.showCount', { count: 1204 }), '显示 1,204 家岩馆');
+});

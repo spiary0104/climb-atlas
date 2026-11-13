@@ -11,6 +11,7 @@ import { provenanceState } from './provenance.js';
 import { filtersActive } from './filters.js';
 import { status, statusLine } from './hours.js';
 import { firstRunArt } from './brand.js';
+import { currentLocale, formatNumber, t, th } from './i18n.js';
 import { appState } from './state.js';
 
 export const LIST_VIEW_KEY = 'bouldeer_list_view';
@@ -76,14 +77,14 @@ function dominantRegion(list){
 
 function renderStatus(zoomedIn){
   const n = appState.inView.length;
-  $('countNum').textContent = n.toLocaleString('en-US');
-  $('countLabel').textContent = n === 1 ? 'gym in view' : 'gyms in view';
+  $('countNum').textContent = formatNumber(n);
+  $('countLabel').textContent = t('explore.inView', { count: n });
   const place = appState.placeFilter ? appState.placeFilter.label : zoomedIn ? dominantRegion(appState.inView) : '';
   $('statusPlace').textContent = place ? ' · ' + place : '';
   const sort = $('sortSelect');
   const nearest = sort.querySelector('option[value="distance"]');
   nearest.hidden = false;
-  nearest.textContent = appState.userLocation ? 'Nearest to you' : 'Nearest to centre';
+  nearest.textContent = t(appState.userLocation ? 'sort.nearYou' : 'sort.nearCentre');
   sort.value = effectiveSort();
 }
 
@@ -91,14 +92,17 @@ function renderStatus(zoomedIn){
 // device. Shown at start-up, before the data, with fixed wording: inserting it when the gyms arrive pushed the list down
 // (a measured layout shift). Dismissed with its button.
 export const INTRO_KEY = 'bouldeer_intro_seen';
+function showIntro(el){
+  el.innerHTML = introHtml();
+  el.querySelector('[data-intro-close]').addEventListener('click', () => { el.hidden = true; });
+}
 function renderIntro(){
   const el = $('exploreIntro');
   let seen = false;
   try{ seen = localStorage.getItem(INTRO_KEY) === '1'; }catch(err){ /* private mode: show it */ }
   if(seen) return;
-  el.innerHTML = introHtml();
+  showIntro(el);
   el.hidden = false;
-  el.querySelector('[data-intro-close]').addEventListener('click', () => { el.hidden = true; });
   // Counted as seen only once Explore is actually on screen: a first visit that lands on a shared gym page (Explore
   // hidden behind it) must still get the line when the person reaches the map.
   const markSeen = () => { try{ localStorage.setItem(INTRO_KEY, '1'); }catch(err){ /* private mode */ } };
@@ -122,8 +126,11 @@ function renderFirstRun(zoom){
   const el = $('exploreFirstRun');
   const show = appState.exploreFirstRun && zoom < 4 && !appState.placeFilter && !appState.searchTerm;
   if(appState.exploreFirstRun && !show) appState.exploreFirstRun = false;
-  if(show && !el.firstChild) el.innerHTML = firstRunArt('explore') + '<p class="empty-title">Where are you climbing?</p>'
-    + '<button type="button" class="btn btn-secondary btn-sm" data-list-action="search-city">Search a city</button>';
+  if(show && (!el.firstChild || el.dataset.lang !== currentLocale())){      // rebuilt when the language changes
+    el.dataset.lang = currentLocale();
+    el.innerHTML = firstRunArt('explore') + `<p class="empty-title">${th('explore.whereClimbing')}</p>`
+      + `<button type="button" class="btn btn-secondary btn-sm" data-list-action="search-city">${th('explore.searchCity')}</button>`;
+  }
   el.hidden = !show;
 }
 
@@ -210,6 +217,7 @@ function moveFocus(from, delta){
 
 export function initList(callbacks){
   renderIntro();
+  window.addEventListener('bouldeer:locale', () => { const el = $('exploreIntro'); if(!el.hidden && el.firstChild) showIntro(el); });
   cb = callbacks;
   try{ const v = localStorage.getItem(LIST_VIEW_KEY); if(v === 'rows' || v === 'cards') appState.listView = v; }catch(err){ /* ignore */ }
   syncViewToggle();

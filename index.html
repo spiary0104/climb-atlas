@@ -40,7 +40,7 @@
 </head>
 <body class="app-body">
 
-<a class="skip-link" href="#gymList">Skip to content</a>
+<a class="skip-link" href="#gymList" data-i18n="explore.skip">Skip to content</a>
 <div class="app">
   <header class="topbar" data-theme="paper">
     <a class="wordmark" href="/" data-link><img class="wordmark-mark" src="assets/mascot/head.svg" alt="" width="28" height="28">Bouldeer</a>
@@ -53,10 +53,10 @@
     <div class="topbar-search" id="topbarSearchSlot">
       <div class="search" id="search" role="search">
         <div class="search-field">
-          <button type="button" class="btn btn-tertiary btn-icon search-back" id="searchBack" aria-label="Close search"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-arrow-left"/></svg></button>
+          <button type="button" class="btn btn-tertiary btn-icon search-back" id="searchBack" aria-label="Close search" data-i18n-attr="aria-label:search.back"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-arrow-left"/></svg></button>
           <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-magnifying-glass"/></svg>
-          <input id="searchInput" type="search" role="combobox" aria-expanded="false" aria-controls="searchPanel" aria-autocomplete="list" aria-label="Search gyms, cities, regions and countries" placeholder="Search gyms, cities, regions" autocomplete="off" enterkeyhint="search">
-          <button type="button" class="btn btn-tertiary btn-icon btn-sm search-clear" id="searchClear" aria-label="Clear search" hidden><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-x"/></svg></button>
+          <input id="searchInput" type="search" role="combobox" aria-expanded="false" aria-controls="searchPanel" aria-autocomplete="list" aria-label="Search gyms, cities, regions and countries" placeholder="Search gyms, cities, regions" data-i18n-attr="aria-label:search.aria;placeholder:search.placeholder" autocomplete="off" enterkeyhint="search">
+          <button type="button" class="btn btn-tertiary btn-icon btn-sm search-clear" id="searchClear" aria-label="Clear search" data-i18n-attr="aria-label:search.clear" hidden><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-x"/></svg></button>
         </div>
         <div class="search-panel" id="searchPanel" hidden></div>
       </div>
@@ -70,78 +70,78 @@
   <div class="offline-banner alert alert-warning hidden" id="offlineBanner" role="status"></div>
 
   <div class="layout explore" id="explore">
-    <section class="list-pane" id="listPane" data-theme="paper" aria-label="Gyms">
+    <section class="list-pane" id="listPane" data-theme="paper" aria-label="Gyms" data-i18n-attr="aria-label:explore.paneAria">
       <div class="sheet-inner">
         <div class="sheet-handle" id="sheetHandle">
-          <button type="button" class="sheet-grabber-btn" id="sheetGrabber" aria-label="Resize the gym list"><span class="sheet-grabber"></span></button>
+          <button type="button" class="sheet-grabber-btn" id="sheetGrabber" aria-label="Resize the gym list" data-i18n-attr="aria-label:explore.resize"><span class="sheet-grabber"></span></button>
           <div class="filter-slot" id="listFilterSlot">
             <div class="filter-bar" id="filterBar">
-              <div class="chip-scroll" role="group" aria-label="Filters">
-                <button type="button" class="chip" data-filter-type="indoor-bouldering" aria-pressed="false"><span class="type-dot type-dot--boulder" aria-hidden="true"></span>Boulder</button>
-                <button type="button" class="chip" data-filter-type="top-rope" aria-pressed="false"><span class="type-dot type-dot--toprope" aria-hidden="true"></span>Top rope</button>
-                <button type="button" class="chip" data-filter-type="lead-climbing" aria-pressed="false"><span class="type-dot type-dot--lead" aria-hidden="true"></span>Lead</button>
-                <button type="button" class="chip" data-filter-flag="saved" aria-pressed="false">Saved</button>
-                <button type="button" class="chip" data-filter-flag="climbed" aria-pressed="false">Climbed</button>
-                <button type="button" class="chip" data-filter-flag="open" aria-pressed="false" hidden>Open now</button>
-                <button type="button" class="chip" data-filter-flag="photos" aria-pressed="false">Has photos</button>
+              <div class="chip-scroll" role="group" aria-label="Filters" data-i18n-attr="aria-label:filters.groupAria">
+                <button type="button" class="chip" data-filter-type="indoor-bouldering" aria-pressed="false"><span class="type-dot type-dot--boulder" aria-hidden="true"></span><span data-i18n="filters.boulder">Boulder</span></button>
+                <button type="button" class="chip" data-filter-type="top-rope" aria-pressed="false"><span class="type-dot type-dot--toprope" aria-hidden="true"></span><span data-i18n="filters.topRope">Top rope</span></button>
+                <button type="button" class="chip" data-filter-type="lead-climbing" aria-pressed="false"><span class="type-dot type-dot--lead" aria-hidden="true"></span><span data-i18n="filters.lead">Lead</span></button>
+                <button type="button" class="chip" data-filter-flag="saved" aria-pressed="false" data-i18n="filters.saved">Saved</button>
+                <button type="button" class="chip" data-filter-flag="climbed" aria-pressed="false" data-i18n="filters.climbed">Climbed</button>
+                <button type="button" class="chip" data-filter-flag="open" aria-pressed="false" data-i18n="filters.open" hidden>Open now</button>
+                <button type="button" class="chip" data-filter-flag="photos" aria-pressed="false" data-i18n="filters.photos">Has photos</button>
                 <span class="applied-pills" id="appliedPills"></span>
-                <button type="button" class="chip chip-more" id="allFiltersBtn" aria-haspopup="dialog"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-sliders-horizontal"/></svg>All filters</button>
+                <button type="button" class="chip chip-more" id="allFiltersBtn" aria-haspopup="dialog"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-sliders-horizontal"/></svg><span data-i18n="filters.all">All filters</span></button>
               </div>
             </div>
           </div>
           <div class="list-status">
-            <p class="list-count" aria-live="polite"><strong class="tnum" id="countNum">…</strong> <span id="countLabel">gyms in view</span><span id="statusPlace"></span></p>
+            <p class="list-count" aria-live="polite"><strong class="tnum" id="countNum">…</strong> <span id="countLabel" data-i18n="explore.inView">gyms in view</span><span id="statusPlace"></span></p>
             <div class="list-tools">
-              <label class="visually-hidden" for="sortSelect">Sort by</label>
+              <label class="visually-hidden" for="sortSelect" data-i18n="explore.sortBy">Sort by</label>
               <select class="select select-sm" id="sortSelect">
-                <option value="distance" hidden>Distance</option>
-                <option value="name">Name</option>
-                <option value="recent">Recently added</option>
+                <option value="distance" data-i18n="sort.distance" hidden>Distance</option>
+                <option value="name" data-i18n="sort.name">Name</option>
+                <option value="recent" data-i18n="sort.recent">Recently added</option>
               </select>
-              <div class="seg" id="viewToggle" role="group" aria-label="List view">
-                <button type="button" class="seg-btn" data-view="rows" aria-pressed="true" aria-label="Rows"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-list"/></svg></button>
-                <button type="button" class="seg-btn" data-view="cards" aria-pressed="false" aria-label="Photo cards"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-squares-four"/></svg></button>
+              <div class="seg" id="viewToggle" role="group" aria-label="List view" data-i18n-attr="aria-label:explore.listViewAria">
+                <button type="button" class="seg-btn" data-view="rows" aria-pressed="true" aria-label="Rows" data-i18n-attr="aria-label:explore.rows"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-list"/></svg></button>
+                <button type="button" class="seg-btn" data-view="cards" aria-pressed="false" aria-label="Photo cards" data-i18n-attr="aria-label:explore.cards"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-squares-four"/></svg></button>
               </div>
             </div>
           </div>
-          <div class="carousel" id="carousel" role="group" aria-label="Gyms at this spot" hidden></div>
+          <div class="carousel" id="carousel" role="group" aria-label="Gyms at this spot" data-i18n-attr="aria-label:explore.carouselAria" hidden></div>
         </div>
         <div class="explore-intro" id="exploreIntro" hidden></div>
         <div class="empty-state explore-first-run" id="exploreFirstRun" hidden></div>
         <div class="featured-destinations" id="featuredDestinations" hidden>
-          <div class="section-label">Worth traveling for</div>
+          <div class="section-label" data-i18n="explore.worth">Worth traveling for</div>
           <div class="featured-row">
-            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="CN">China</button>
-            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="JP">Japan</button>
-            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="KR">South Korea</button>
-            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="US">United States</button>
-            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="DE">Germany</button>
-            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="GB">United Kingdom</button>
+            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="CN" data-i18n="country.CN">China</button>
+            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="JP" data-i18n="country.JP">Japan</button>
+            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="KR" data-i18n="country.KR">South Korea</button>
+            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="US" data-i18n="country.US">United States</button>
+            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="DE" data-i18n="country.DE">Germany</button>
+            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="GB" data-i18n="country.GB">United Kingdom</button>
           </div>
         </div>
-        <div class="gym-list" id="gymList" role="list" aria-label="Gyms in view" tabindex="-1" aria-busy="true"></div>
+        <div class="gym-list" id="gymList" role="list" aria-label="Gyms in view" data-i18n-attr="aria-label:explore.listAria" tabindex="-1" aria-busy="true"></div>
         <div class="list-footer">
           <div class="footer-links">
-            <a class="link link-quiet" href="/about.html">About</a>
-            <a class="link link-quiet" href="/privacy">Privacy</a>
-            <a class="link link-quiet" href="/terms">Terms</a>
+            <a class="link link-quiet" href="/about.html" data-i18n="me.about">About</a>
+            <a class="link link-quiet" href="/privacy" data-i18n="me.privacy">Privacy</a>
+            <a class="link link-quiet" href="/terms" data-i18n="me.terms">Terms</a>
           </div>
         </div>
       </div>
-      <button type="button" class="btn btn-tertiary btn-icon sheet-close" id="sheetClose" aria-label="Collapse the gym list"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-down"/></svg></button>
+      <button type="button" class="btn btn-tertiary btn-icon sheet-close" id="sheetClose" aria-label="Collapse the gym list" data-i18n-attr="aria-label:explore.collapse"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-down"/></svg></button>
     </section>
 
-    <main class="map-wrap" id="main" tabindex="-1" data-theme="paper" aria-label="Map">
+    <main class="map-wrap" id="main" tabindex="-1" data-theme="paper" aria-label="Map" data-i18n-attr="aria-label:explore.mapAria">
       <div id="map"></div>
       <div class="map-top" data-theme="paper">
         <div class="map-search-slot" id="mapSearchSlot"></div>
         <div class="map-filter-slot" id="mapFilterSlot"></div>
       </div>
       <div class="map-move-controls">
-        <button type="button" class="map-toggle map-float" data-theme="paper" id="searchAsMove" aria-pressed="true"><span class="map-toggle-box"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-check"/></svg></span>Search as I move the map</button>
-        <button type="button" class="btn btn-secondary btn-sm map-float" data-theme="paper" id="searchThisArea" hidden>Search this area</button>
+        <button type="button" class="map-toggle map-float" data-theme="paper" id="searchAsMove" aria-pressed="true"><span class="map-toggle-box"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-check"/></svg></span><span data-i18n="explore.searchAsMove">Search as I move the map</span></button>
+        <button type="button" class="btn btn-secondary btn-sm map-float" data-theme="paper" id="searchThisArea" data-i18n="explore.searchArea" hidden>Search this area</button>
       </div>
-      <div class="placing-banner map-float" data-theme="paper" id="placingBanner">Click anywhere on the map to drop a pin for the gym</div>
+      <div class="placing-banner map-float" data-theme="paper" id="placingBanner" data-i18n="explore.placing">Click anywhere on the map to drop a pin for the gym</div>
     </main>
     <section class="peek map-float" id="peek" data-theme="paper" aria-labelledby="peekTitle" hidden></section>
     <p class="visually-hidden" id="liveRegion" aria-live="polite"></p>
@@ -451,32 +451,32 @@
 <div class="modal-backdrop hidden" id="filterSheetBackdrop">
   <div class="modal filter-sheet" role="dialog" aria-modal="true" aria-labelledby="dlg-all-filters" id="filterSheet">
     <div class="filter-sheet-head">
-      <h2 id="dlg-all-filters">All filters</h2>
-      <button type="button" class="btn btn-tertiary btn-icon btn-sm" id="filterSheetClose" data-modal-close aria-label="Close"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-x"/></svg></button>
+      <h2 id="dlg-all-filters" data-i18n="filters.sheetTitle">All filters</h2>
+      <button type="button" class="btn btn-tertiary btn-icon btn-sm" id="filterSheetClose" data-modal-close aria-label="Close" data-i18n-attr="aria-label:common.close"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-x"/></svg></button>
     </div>
     <fieldset class="filter-section">
-      <legend class="section-label">Type</legend>
-      <label class="check-row"><input type="checkbox" data-sheet-type="indoor-bouldering"><span class="type-dot type-dot--boulder" aria-hidden="true"></span>Indoor bouldering</label>
-      <label class="check-row"><input type="checkbox" data-sheet-type="top-rope"><span class="type-dot type-dot--toprope" aria-hidden="true"></span>Top rope</label>
-      <label class="check-row"><input type="checkbox" data-sheet-type="lead-climbing"><span class="type-dot type-dot--lead" aria-hidden="true"></span>Lead climbing</label>
+      <legend class="section-label" data-i18n="filters.type">Type</legend>
+      <label class="check-row"><input type="checkbox" data-sheet-type="indoor-bouldering"><span class="type-dot type-dot--boulder" aria-hidden="true"></span><span data-i18n="type.indoorBouldering">Indoor bouldering</span></label>
+      <label class="check-row"><input type="checkbox" data-sheet-type="top-rope"><span class="type-dot type-dot--toprope" aria-hidden="true"></span><span data-i18n="type.topRope">Top rope</span></label>
+      <label class="check-row"><input type="checkbox" data-sheet-type="lead-climbing"><span class="type-dot type-dot--lead" aria-hidden="true"></span><span data-i18n="type.leadClimbing">Lead climbing</span></label>
     </fieldset>
     <fieldset class="filter-section">
-      <legend class="section-label">Marks</legend>
-      <label class="check-row"><input type="checkbox" data-sheet-flag="saved">Saved</label>
-      <label class="check-row"><input type="checkbox" data-sheet-flag="climbed">Climbed</label>
-      <p class="form-hint" id="filterSheetMarksHint">Sign in to filter by the gyms you saved or climbed.</p>
+      <legend class="section-label" data-i18n="filters.marks">Marks</legend>
+      <label class="check-row"><input type="checkbox" data-sheet-flag="saved"><span data-i18n="filters.saved">Saved</span></label>
+      <label class="check-row"><input type="checkbox" data-sheet-flag="climbed"><span data-i18n="filters.climbed">Climbed</span></label>
+      <p class="form-hint" id="filterSheetMarksHint" data-i18n="filters.marksHint">Sign in to filter by the gyms you saved or climbed.</p>
     </fieldset>
     <fieldset class="filter-section" id="filterSheetHours" hidden>
-      <legend class="section-label">Hours</legend>
-      <label class="check-row"><input type="checkbox" data-sheet-flag="open">Open now</label>
+      <legend class="section-label" data-i18n="filters.hours">Hours</legend>
+      <label class="check-row"><input type="checkbox" data-sheet-flag="open"><span data-i18n="filters.open">Open now</span></label>
     </fieldset>
     <fieldset class="filter-section" id="filterSheetPhotos">
-      <legend class="section-label">Photos</legend>
-      <label class="check-row"><input type="checkbox" data-sheet-flag="photos">Has photos</label>
+      <legend class="section-label" data-i18n="filters.photosSection">Photos</legend>
+      <label class="check-row"><input type="checkbox" data-sheet-flag="photos"><span data-i18n="filters.photos">Has photos</span></label>
     </fieldset>
     <div class="modal-actions filter-sheet-actions">
-      <button type="button" class="btn btn-tertiary" id="resetFiltersBtn">Reset</button>
-      <button type="button" class="btn btn-primary" id="applyFiltersBtn">Show gyms</button>
+      <button type="button" class="btn btn-tertiary" id="resetFiltersBtn" data-i18n="filters.reset">Reset</button>
+      <button type="button" class="btn btn-primary" id="applyFiltersBtn" data-i18n="filters.showGyms">Show gyms</button>
     </div>
   </div>
 </div>

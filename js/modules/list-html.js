@@ -6,6 +6,7 @@ import { TYPE_LABELS } from './constants.js';
 import { escapeHtml, safeUrl } from './html-safe.js';
 import { directionsUrl } from './utils.js';
 import { icon } from './icons.js';
+import { t, th } from './i18n.js';
 import { PROVENANCE_LABELS, publicNotes } from './provenance.js';
 
 const TYPE_CLASS = { 'indoor-bouldering': 'boulder', 'top-rope': 'toprope', 'lead-climbing': 'lead' };
@@ -45,10 +46,12 @@ const typeText = types => knownTypes(types).map(t => TYPE_LABELS[t]).join(', ');
 
 // Provenance mark after the name (sec. 10.2): grey ring-dot for community-added (the default), forest for
 // community-verified, nothing for verified. The state comes from provenance.js via ctx; labels are fixed strings.
-const MARKS = { 'listed': ['community', 'Listed by Bouldeer'], 'community-added': ['community', 'Community-added'], 'community-verified': ['verified', 'Community-verified'] };
+const MARKS = { 'listed': ['community', 'provenance.listed'], 'community-added': ['community', 'provenance.communityAdded'], 'community-verified': ['verified', 'provenance.communityVerified'] };
 export function provenanceMarkHtml(state = 'community-added'){
   const m = MARKS[state];
-  return m ? `<span class="provenance-mark provenance-mark--${m[0]}" title="${m[1]}"></span><span class="visually-hidden">, ${m[1].toLowerCase()}</span>` : '';
+  if(!m) return '';
+  const label = escapeHtml(t(m[1]));
+  return `<span class="provenance-mark provenance-mark--${m[0]}" title="${label}"></span><span class="visually-hidden">, ${escapeHtml(t(m[1]).toLowerCase())}</span>`;
 }
 
 const placeLine = (g, ctx) => [g.suburb, ctx.region].filter(Boolean).join(' · ');
@@ -60,7 +63,7 @@ const hoursOf = ctx => (ctx.hours && (ctx.hours.state === 'open' || ctx.hours.st
 // "Open · until 10pm" -> word "Open" + detail " · until 10pm". On phones the row shows only the word (css/explore.css), so the
 // status never squeezes the place name; cards, the peek card and the gym page keep the full line. explore.js writes the same split.
 export function hoursParts(state, text){
-  const word = state === 'open' ? 'Open' : 'Closed';
+  const word = t(state === 'open' ? 'hours.open' : 'hours.closed');
   return text.startsWith(word) ? { word, detail: text.slice(word.length) } : { word: text, detail: '' };
 }
 export function hoursHtml(g, ctx, tag, cls){
@@ -73,7 +76,7 @@ export function hoursHtml(g, ctx, tag, cls){
 
 function saveButton(g, saved, extraClass){
   return `<button type="button" class="btn btn-tertiary btn-icon btn-sm save-toggle ${extraClass}" data-gym-action="save" data-spot-id="${escapeHtml(g.id)}"`
-    + ` aria-pressed="${saved ? 'true' : 'false'}" aria-label="Save ${escapeHtml(g.name)}">${icon('bookmark-simple', {size:'sm'})}</button>`;
+    + ` aria-pressed="${saved ? 'true' : 'false'}" aria-label="${th('gym.saveAria', {name: g.name})}">${icon('bookmark-simple', {size:'sm'})}</button>`;
 }
 
 // Dense row (56px): thumb · name + provenance · type dots + "Suburb · Region" · distance + save toggle.
@@ -114,7 +117,7 @@ export function peekHtml(g, ctx = {}){
   // The public description (in the list read); legacy research notes only when the whole row has been loaded.
   const notes = (typeof g.description === 'string' && g.description.trim()) || publicNotes(g.notes);
   return `<div class="peek-head"><h2 class="peek-name" id="peekTitle">${escapeHtml(g.name)}${localNameHtml(g, 'local-name--block local-name--heading')}</h2>`
-    + `<button type="button" class="btn btn-tertiary btn-icon btn-sm peek-close" data-gym-action="close" aria-label="Close">${icon('x', {size:'sm'})}</button></div>`
+    + `<button type="button" class="btn btn-tertiary btn-icon btn-sm peek-close" data-gym-action="close" aria-label="${th('common.close')}">${icon('x', {size:'sm'})}</button></div>`
     + `${photo ? `<img class="gym-photo peek-photo" src="${escapeHtml(photo)}" alt="${escapeHtml(g.name)}" loading="lazy" referrerpolicy="no-referrer">` : ''}`
     + `<div class="peek-tags">${typeTagsHtml(g.types)}</div>`
     + `<p class="peek-meta">${escapeHtml(where)}${ctx.distance ? ` · <span class="tnum">${escapeHtml(ctx.distance)}</span>` : ''}</p>`
@@ -123,44 +126,43 @@ export function peekHtml(g, ctx = {}){
     + `${g.address ? `<p class="peek-address">${escapeHtml(g.address)}</p>` : ''}`
     + `${notes ? `<p class="peek-notes">${escapeHtml(notes)}</p>` : ''}`
     + `<div class="peek-actions">`
-    + `<button type="button" class="btn btn-secondary btn-sm" data-gym-action="save" data-spot-id="${id}" aria-pressed="${ctx.saved ? 'true' : 'false'}">${icon('bookmark-simple', {size:'sm'})}Save</button>`
-    + `<button type="button" class="btn btn-secondary btn-sm" data-gym-action="climbed" data-spot-id="${id}" aria-pressed="${ctx.climbed ? 'true' : 'false'}">${icon('check', {size:'sm'})}Climbed</button>`
-    + `<a class="btn btn-secondary btn-sm peek-directions" href="${escapeHtml(directionsUrl(g))}" target="_blank" rel="noopener noreferrer">${icon('navigation-arrow', {size:'sm'})}Directions</a></div>`
-    + `<div class="peek-more">${ctx.href ? `<a class="btn btn-tertiary btn-sm" href="${escapeHtml(ctx.href)}" data-link>${icon('caret-right', {size:'sm'})}Open gym page</a>` : ''}`
-    + `<button type="button" class="btn btn-tertiary btn-sm" data-gym-action="edit" data-spot-id="${id}">${icon('pencil-simple', {size:'sm'})}Suggest an edit</button>`
-    + `<button type="button" class="btn btn-tertiary btn-sm" data-gym-action="report" data-spot-id="${id}">${icon('flag', {size:'sm'})}Report a problem</button></div>`;
+    + `<button type="button" class="btn btn-secondary btn-sm" data-gym-action="save" data-spot-id="${id}" aria-pressed="${ctx.saved ? 'true' : 'false'}">${icon('bookmark-simple', {size:'sm'})}${th('peek.save')}</button>`
+    + `<button type="button" class="btn btn-secondary btn-sm" data-gym-action="climbed" data-spot-id="${id}" aria-pressed="${ctx.climbed ? 'true' : 'false'}">${icon('check', {size:'sm'})}${th('peek.climbed')}</button>`
+    + `<a class="btn btn-secondary btn-sm peek-directions" href="${escapeHtml(directionsUrl(g))}" target="_blank" rel="noopener noreferrer">${icon('navigation-arrow', {size:'sm'})}${th('peek.directions')}</a></div>`
+    + `<div class="peek-more">${ctx.href ? `<a class="btn btn-tertiary btn-sm" href="${escapeHtml(ctx.href)}" data-link>${icon('caret-right', {size:'sm'})}${th('peek.openPage')}</a>` : ''}`
+    + `<button type="button" class="btn btn-tertiary btn-sm" data-gym-action="edit" data-spot-id="${id}">${icon('pencil-simple', {size:'sm'})}${th('peek.suggestEdit')}</button>`
+    + `<button type="button" class="btn btn-tertiary btn-sm" data-gym-action="report" data-spot-id="${id}">${icon('flag', {size:'sm'})}${th('peek.report')}</button></div>`;
 }
 
 // The one-line orientation shown to a first-time visitor (list.js renderIntro), before the data loads: fixed wording, no
 // character here.
 export function introHtml(){
-  return `<p class="explore-intro-text"><strong>Bouldeer</strong> maps thousands of climbing gyms in 80+ countries, `
-    + `researched gym by gym and kept current by climbers. <a class="link" href="/about.html">About</a></p>`
-    + `<button type="button" class="btn btn-tertiary btn-icon btn-sm" data-intro-close aria-label="Dismiss">${icon('x', {size:'sm'})}</button>`;
+  return `<p class="explore-intro-text"><strong>Bouldeer</strong> ${th('explore.intro')} <a class="link" href="/about.html">${th('me.about')}</a></p>`
+    + `<button type="button" class="btn btn-tertiary btn-icon btn-sm" data-intro-close aria-label="${th('common.dismiss')}">${icon('x', {size:'sm'})}</button>`;
 }
 
 // The three list empty states (sec. 7.10). No character in any of them (it is reserved for the first-run empties).
 export function emptyHtml(kind, term = ''){
-  if(kind === 'search') return `<div class="empty-state"><p class="empty-title">Nothing for “${escapeHtml(term)}”</p>`
-    + `<button type="button" class="btn btn-secondary" data-list-action="search-city">Search a city instead</button></div>`;
-  if(kind === 'filters') return '<div class="empty-state"><p class="empty-title">No gyms match</p>'
-    + '<button type="button" class="btn btn-secondary" data-list-action="clear-filters">Clear filters</button></div>';
-  return '<div class="empty-state"><p class="empty-title">No gyms in this area yet</p><div class="empty-actions">'
-    + '<button type="button" class="btn btn-secondary" data-list-action="zoom-out">Zoom out</button>'
-    + '<button type="button" class="btn btn-secondary" data-list-action="add-gym">Add a gym</button></div></div>';
+  if(kind === 'search') return `<div class="empty-state"><p class="empty-title">${th('empty.searchTitle', {term})}</p>`
+    + `<button type="button" class="btn btn-secondary" data-list-action="search-city">${th('empty.searchCity')}</button></div>`;
+  if(kind === 'filters') return `<div class="empty-state"><p class="empty-title">${th('empty.noMatch')}</p>`
+    + `<button type="button" class="btn btn-secondary" data-list-action="clear-filters">${th('empty.clearFilters')}</button></div>`;
+  return `<div class="empty-state"><p class="empty-title">${th('empty.area')}</p><div class="empty-actions">`
+    + `<button type="button" class="btn btn-secondary" data-list-action="zoom-out">${th('empty.zoomOut')}</button>`
+    + `<button type="button" class="btn btn-secondary" data-list-action="add-gym">${th('topbar.addGym')}</button></div></div>`;
 }
 
 // "Zoom in to see all 1,204": the list never dumps more than the cap (sec. 7.2).
 export function capRowHtml(total){
   return `<div class="list-cap" role="listitem"><button type="button" class="btn btn-tertiary btn-sm" data-list-action="zoom-in">`
-    + `Zoom in to see all <span class="tnum">${escapeHtml(Number(total).toLocaleString('en-US'))}</span></button></div>`;
+    + `${th('list.zoomIn', {count: Number(total)})}</button></div>`;
 }
 
 // Removable pill for an applied place or text filter, shown after the fixed chips (sec. 7.5, 7.6).
 export function appliedPillHtml(kind, label){
   const which = kind === 'place' ? 'place' : 'text';
   const shown = which === 'text' ? '“' + label + '”' : label;
-  return `<button type="button" class="chip chip-applied" data-remove-filter="${which}" aria-label="Remove filter ${escapeHtml(shown)}">`
+  return `<button type="button" class="chip chip-applied" data-remove-filter="${which}" aria-label="${th('filters.removeAria', {label: shown})}">`
     + `<span class="chip-label">${escapeHtml(shown)}</span>${icon('x', {size:'sm'})}</button>`;
 }
 
@@ -169,7 +171,7 @@ export function appliedPillHtml(kind, label){
 const KIND_ICON = { city: 'buildings', region: 'map-trifold', country: 'globe-hemisphere-west', gym: 'map-pin', recent: 'clock-counter-clockwise' };
 export function searchOptionHtml(entry, index, { recent = false } = {}){
   const kind = recent ? 'recent' : KIND_ICON[entry.kind] ? entry.kind : 'gym';
-  const count = !recent && entry.kind !== 'gym' && entry.count ? `<span class="search-option-count tnum">${escapeHtml(entry.count === 1 ? '1 gym' : entry.count.toLocaleString('en-US') + ' gyms')}</span>` : '';
+  const count = !recent && entry.kind !== 'gym' && entry.count ? `<span class="search-option-count tnum">${escapeHtml(t('common.gymCount', {count: entry.count}))}</span>` : '';
   return `<div class="search-option" role="option" id="search-opt-${Number(index)}" data-index="${Number(index)}" aria-selected="false">`
     + icon(KIND_ICON[kind], {size:'sm'})
     + `<span class="search-option-text"><span class="search-option-label">${escapeHtml(entry.label)}</span>`

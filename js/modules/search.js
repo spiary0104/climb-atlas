@@ -3,7 +3,8 @@
 //   Empty field: recent searches (up to 5, this device only) and the "Worth traveling for" destinations.
 //   Browse (the Regions tab): every country with gyms, grouped by continent, so no place is reachable only by typing.
 //   Keyboard: arrows move, Enter selects (or applies the text as a list filter), Escape closes.
-import { COUNTRY_LABELS, COUNTRY_TO_REGION, REGION_LABELS } from './constants.js';
+import { COUNTRY_LABELS, COUNTRY_TO_REGION, REGION_LABELS, countryEnglish } from './constants.js';
+import { t, th } from './i18n.js';
 import { searchGroupHtml, searchOptionHtml } from './list-html.js';
 import { stateLabel } from './map.js';
 import { fold } from './geo.js';
@@ -20,7 +21,7 @@ let timer = null;
 let mode = 'query';        // 'query' | 'browse'
 
 export function rebuildSearchIndex(){
-  appState.searchIndex = buildSearchIndex(appState.spots, { countryLabels: COUNTRY_LABELS, stateLabel });
+  appState.searchIndex = buildSearchIndex(appState.spots, { countryLabels: COUNTRY_LABELS, countryAlt: countryEnglish, stateLabel });
 }
 
 function readRecent(){
@@ -55,7 +56,7 @@ function setOpen(open){
   if(!open){ active = -1; input().removeAttribute('aria-activedescendant'); }
 }
 
-const listbox = html => `<div role="listbox" id="searchListbox" aria-label="Search results">${html}</div>`;
+const listbox = html => `<div role="listbox" id="searchListbox" aria-label="${th('search.results')}">${html}</div>`;
 
 function renderGroups(groups){
   results = [];
@@ -72,18 +73,18 @@ function render(){
   const q = input().value.trim();
   $('searchClear').hidden = !q;
   const idx = appState.searchIndex;
-  if(!idx){ panel().innerHTML = '<p class="search-note">Loading gyms…</p>'; return; }
+  if(!idx){ panel().innerHTML = `<p class="search-note">${th('search.loading')}</p>`; return; }
   if(!q){
     const countries = idx.places.filter(p => p.kind === 'country');
-    const groups = [{ title: 'Recent', items: readRecent().map(resolve).filter(Boolean).map(entry => ({ entry, recent: true })) }];
+    const groups = [{ title: t('search.recent'), items: readRecent().map(resolve).filter(Boolean).map(entry => ({ entry, recent: true })) }];
     if(mode === 'browse'){
       const byRegion = {};
       countries.forEach(c => { const r = COUNTRY_TO_REGION[c.country] || 'other'; (byRegion[r] = byRegion[r] || []).push(c); });
       Object.keys(REGION_LABELS).concat('other').forEach(r => {
-        if(byRegion[r]) groups.push({ title: REGION_LABELS[r] || 'Other', items: byRegion[r].sort((a, b) => a.label.localeCompare(b.label)) });
+        if(byRegion[r]) groups.push({ title: REGION_LABELS[r] || t('search.other'), items: byRegion[r].sort((a, b) => a.label.localeCompare(b.label)) });
       });
     } else {
-      groups.push({ title: 'Worth traveling for', items: FEATURED.map(code => countries.find(c => c.country === code)).filter(Boolean) });
+      groups.push({ title: t('explore.worth'), items: FEATURED.map(code => countries.find(c => c.country === code)).filter(Boolean) });
     }
     panel().innerHTML = listbox(renderGroups(groups));
     return;
@@ -91,13 +92,12 @@ function render(){
   const r = querySearchIndex(idx, q);
   if(!r.total){
     results = [];
-    panel().innerHTML = '<p class="search-note">Nothing for “<span class="search-note-term"></span>” — try a city or country.</p>';
-    panel().querySelector('.search-note-term').textContent = q;
+    panel().innerHTML = `<p class="search-note">${th('search.nothing', { term: q })}</p>`;
     return;
   }
   panel().innerHTML = listbox(renderGroups([
-    { title: 'Cities', items: r.city }, { title: 'Regions', items: r.region },
-    { title: 'Countries', items: r.country }, { title: 'Gyms', items: r.gym },
+    { title: t('search.cities'), items: r.city }, { title: t('search.regions'), items: r.region },
+    { title: t('search.countries'), items: r.country }, { title: t('search.gyms'), items: r.gym },
   ]));
 }
 

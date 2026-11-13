@@ -1,7 +1,19 @@
 // Static config: type labels, country labels + fly targets, zoom thresholds.
+// The label tables below are read like plain objects (TYPE_LABELS[t], COUNTRY_LABELS[code], Object.keys(...)) but each value
+// is a getter into the interface language (i18n.js), so every caller shows the current language and a language switch needs
+// no re-wiring. English names for matching (search by "china" while in Chinese): countryEnglish().
+import EN from './i18n-en.js';
+import { t } from './i18n.js';
 
-export const TYPE_LABELS = {'indoor-bouldering':'Indoor bouldering','top-rope':'Top rope','lead-climbing':'Lead climbing'};
-export const COUNTRY_LABELS = {AU:'Australia', US:'United States', JP:'Japan', CA:'Canada', NZ:'New Zealand', CN:'China', GB:'United Kingdom', DE:'Germany', FR:'France', SE:'Sweden', NL:'Netherlands', IT:'Italy', BE:'Belgium', KR:'South Korea', ES:'Spain', PT:'Portugal', AT:'Austria', CH:'Switzerland', PL:'Poland', DK:'Denmark', FI:'Finland', IE:'Ireland', NO:'Norway', MX:'Mexico', BR:'Brazil', HU:'Hungary', GR:'Greece', CZ:'Czech Republic', IS:'Iceland', RO:'Romania', HR:'Croatia', RU:'Russia', BG:'Bulgaria', AR:'Argentina', PH:'Philippines', CO:'Colombia', CL:'Chile', VE:'Venezuela', IN:'India', IL:'Israel', ID:'Indonesia', TW:'Taiwan', ZA:'South Africa', EC:'Ecuador', VN:'Vietnam', LT:'Lithuania', RS:'Serbia', BO:'Bolivia', IR:'Iran', EE:'Estonia', MY:'Malaysia', TH:'Thailand', UA:'Ukraine', SK:'Slovakia', CY:'Cyprus', PA:'Panama', PE:'Peru', TR:'Turkey', LV:'Latvia', SG:'Singapore', BA:'Bosnia and Herzegovina', AD:'Andorra', AE:'United Arab Emirates', GE:'Georgia', LU:'Luxembourg', SI:'Slovenia', KZ:'Kazakhstan', CR:'Costa Rica', BY:'Belarus', UY:'Uruguay', SA:'Saudi Arabia', HK:'Hong Kong', EG:'Egypt', KE:'Kenya', QA:'Qatar', AM:'Armenia', LB:'Lebanon', JO:'Jordan', NP:'Nepal', GT:'Guatemala', ME:'Montenegro', MN:'Mongolia', OM:'Oman', PY:'Paraguay'};
+const localized = (prefix, keys) => {
+  const o = {};
+  for(const [k, id] of Object.entries(keys)) Object.defineProperty(o, k, { enumerable: true, get: () => t(prefix + id) });
+  return o;
+};
+export const TYPE_LABELS = localized('type.', {'indoor-bouldering':'indoorBouldering','top-rope':'topRope','lead-climbing':'leadClimbing'});
+const COUNTRY_CODES = ['AU', 'US', 'JP', 'CA', 'NZ', 'CN', 'GB', 'DE', 'FR', 'SE', 'NL', 'IT', 'BE', 'KR', 'ES', 'PT', 'AT', 'CH', 'PL', 'DK', 'FI', 'IE', 'NO', 'MX', 'BR', 'HU', 'GR', 'CZ', 'IS', 'RO', 'HR', 'RU', 'BG', 'AR', 'PH', 'CO', 'CL', 'VE', 'IN', 'IL', 'ID', 'TW', 'ZA', 'EC', 'VN', 'LT', 'RS', 'BO', 'IR', 'EE', 'MY', 'TH', 'UA', 'SK', 'CY', 'PA', 'PE', 'TR', 'LV', 'SG', 'BA', 'AD', 'AE', 'GE', 'LU', 'SI', 'KZ', 'CR', 'BY', 'UY', 'SA', 'HK', 'EG', 'KE', 'QA', 'AM', 'LB', 'JO', 'NP', 'GT', 'ME', 'MN', 'OM', 'PY'];
+export const COUNTRY_LABELS = localized('country.', Object.fromEntries(COUNTRY_CODES.map(c => [c, c])));
+export const countryEnglish = code => EN['country.' + code] || '';
 // Fixed camera target per country for the "fly to this country" click on
 // its sidebar label -- picked to frame that country's actual spread of
 // seed spots (e.g. US needs a wide zoom to fit both NY and CA), not a
@@ -110,7 +122,7 @@ export const COUNTRY_TO_REGION = {
   EC:'south-america', BO:'south-america', PE:'south-america', UY:'south-america', PY:'south-america',
   ZA:'africa', EG:'africa', KE:'africa'
 };
-export const REGION_LABELS = {asia:'Asia', europe:'Europe', 'north-america':'North America', oceania:'Oceania', 'south-america':'South America', africa:'Africa'};
+export const REGION_LABELS = localized('continent.', {asia:'asia', europe:'europe', 'north-america':'northAmerica', oceania:'oceania', 'south-america':'southAmerica', africa:'africa'});
 // Same idea as COUNTRY_FLY_TARGETS, one tier coarser -- framing every
 // country currently in that region, not just one. Africa currently has
 // only South Africa, so this matches ZA's own fly target for now -- widen
@@ -146,7 +158,5 @@ export const CONTINENT_LABEL_ZOOM = 3.5;
 const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 export const motion = ms => REDUCED_MOTION ? 0 : ms;
 // Session mood: an icon from the one icon system plus a text label (no emoji; DESIGN.md sec. 1.3).
-export const MOODS = {
-  great:{label:'Great', icon:'smiley-wink'}, good:{label:'Good', icon:'smiley'}, ok:{label:'OK', icon:'smiley-meh'},
-  tired:{label:'Tired', icon:'smiley-nervous'}, rough:{label:'Rough', icon:'smiley-sad'}
-};
+const MOOD_ICONS = {great:'smiley-wink', good:'smiley', ok:'smiley-meh', tired:'smiley-nervous', rough:'smiley-sad'};
+export const MOODS = Object.fromEntries(Object.entries(MOOD_ICONS).map(([k, icon]) => [k, { icon, get label(){ return t(`mood.${k}`); } }]));

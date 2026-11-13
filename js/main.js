@@ -19,7 +19,7 @@ import { initPassportPage } from './modules/passport-page.js';
 import { initNavigation } from './modules/nav.js';
 import { initRegionPages } from './modules/region-page.js';
 import { initRouter, refreshPage } from './modules/router.js';
-import { currentLocale, initI18n, setLocale } from './modules/i18n.js';
+import { currentLocale, initI18n, setLocale, t } from './modules/i18n.js';
 import { appState } from './modules/state.js';
 import { showActionToast } from './modules/utils.js';
 
@@ -42,6 +42,8 @@ document.addEventListener('change', (e) => {
 });
 window.addEventListener('bouldeer:locale', () => {
   syncLangPickers();
+  const banner = document.getElementById('offlineBanner');
+  if(appState.usingFallback && banner) banner.textContent = t('explore.offline');
   renderAuthUI(window.auth && window.auth.user);
   if(appState.loaded) render();
   refreshPage();
@@ -108,7 +110,7 @@ async function init(){
   if(appState.usingFallback){
     // The text lives here, not in the static shell: a crawler or reader mode must never pick up a warning that is not true.
     const banner = document.getElementById('offlineBanner');
-    banner.textContent = 'Can’t reach Bouldeer right now. Showing a saved list of gyms; sign-in, saving and check-ins come back when you’re online.';
+    banner.textContent = t('explore.offline');
     banner.classList.remove('hidden');
   }
 }

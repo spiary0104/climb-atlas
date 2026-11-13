@@ -2,6 +2,7 @@
 // Who shows the change (row, card, pin, peek) is explore.js's business: it registers a listener.
 import { openAuthModal } from './auth-ui.js';
 import { appState } from './state.js';
+import { t } from './i18n.js';
 import { showToast } from './utils.js';
 
 let listener = () => {};
@@ -41,7 +42,7 @@ export async function toggleMark(spotId, markType){
   }catch(err){
     if(wasActive) set.add(spotId); else set.delete(spotId);
     listener(spotId);
-    showToast('Could not save — try again');
+    showToast(t('marks.saveFailed'));
     console.error(err);
   }finally{
     inFlight.delete(key);

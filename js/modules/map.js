@@ -6,6 +6,7 @@
 // queues event listeners; from then on every call goes to the real map.
 import { CONTINENT_LABEL_ZOOM, COUNTRY_FLY_TARGETS, COUNTRY_LABELS, COUNTRY_LABEL_ZOOM, COUNTRY_TO_REGION, HOLD_ICON_ZOOM, PIN_DOT_MAX_ZOOM, REGION_FLY_TARGETS, REGION_LABELS, TYPE_LABELS, motion } from './constants.js';
 import { boundsOf, decodeExploreState, fitCamera, stackOffsets, viewBox } from './geo.js';
+import { t } from './i18n.js';
 import { pinSvg } from './pin-html.js';
 import { STATES_BY_COUNTRY } from './regions.js';
 import { appState } from './state.js';
@@ -259,7 +260,7 @@ function buildClusterMarker(clusterId, count, lngLat){
   el.className = count > 99 ? 'cluster-marker is-large' : 'cluster-marker';
   el.textContent = count;
   el.setAttribute('role', 'img');
-  el.setAttribute('aria-label', count + ' gyms');
+  el.setAttribute('aria-label', t('common.gymCount', { count }));
   el.addEventListener('click', ()=> handlers.onClusterClick({clusterId, lngLat, count}));
   return new maplibregl.Marker({element: el}).setLngLat(lngLat).addTo(gl);
 }
@@ -373,7 +374,24 @@ export function paperBasemap(target){
 }
 
 // Listeners that do not need the real map yet: pins repaint on every move, an empty-map click clears the selection.
+// MapLibre's own controls (zoom, locate, attribution) take their button labels from the map's locale; a language switch
+// retitles the buttons that exist and repaints the markers (cluster labels, continent and country names).
+const mapLocale = () => ({
+  'NavigationControl.ZoomIn': t('map.zoomIn'), 'NavigationControl.ZoomOut': t('map.zoomOut'),
+  'GeolocateControl.FindMyLocation': t('map.locate'), 'GeolocateControl.LocationNotAvailable': t('map.locateUnavailable'),
+  'AttributionControl.ToggleAttribution': t('map.attribution'),
+});
+function onLocale(){
+  if(!gl) return;
+  const retitle = (sel, text) => document.querySelectorAll('#map ' + sel).forEach(el => { el.title = text; el.setAttribute('aria-label', text); });
+  retitle('.maplibregl-ctrl-zoom-in', t('map.zoomIn')); retitle('.maplibregl-ctrl-zoom-out', t('map.zoomOut'));
+  retitle('.maplibregl-ctrl-geolocate', t('map.locate')); retitle('.maplibregl-ctrl-attrib-button', t('map.attribution'));
+  clearPaintedMarkers();
+  paintMarkers();
+}
+
 export function initMap(){
+  window.addEventListener('bouldeer:locale', onLocale);
   map.on('moveend', paintMarkers);
   // A click on empty map clears the selection (sec. 7.3). Clicks on pins/clusters/labels bubble here too: ignore them.
   map.on('click', (e)=>{
@@ -393,7 +411,8 @@ export function startMap(){
       style: BASEMAP_STYLE,
       center: [cam.lng, cam.lat],
       zoom: camZoom(),
-      attributionControl: {compact: true}
+      attributionControl: {compact: true},
+      locale: mapLocale()
     });
     setUpMap(lib);
     listeners.forEach(([type, fn]) => gl.on(type, fn));

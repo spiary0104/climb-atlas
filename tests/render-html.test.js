@@ -168,7 +168,7 @@ test('explore builders: behaviour the popup had is preserved in the peek card, a
   assert.ok(/provenance-mark--verified/.test(list.rowHtml(benignSpot, { ...ctxBenign, provenance: 'community-verified' })), 'community-verified is the forest ring-dot');
   assert.ok(!/provenance-mark/.test(list.rowHtml(benignSpot, { ...ctxBenign, provenance: 'verified' })), 'no mark on a verified gym (sec. 10.2)');
   assert.ok(!/provenance-mark/.test(list.rowHtml(benignSpot, { ...ctxBenign, provenance: '"><script>' })), 'an unknown state renders nothing');
-  assert.match(list.capRowHtml(1204), /Zoom in to see all <span class="tnum">1,204<\/span>/);
+  assert.match(list.capRowHtml(1204), /Zoom in to see all 1,204/);
   assert.deepEqual(['area', 'filters', 'search'].map(k => tags(list.emptyHtml(k, 'x')).filter(t => t.attrs['data-list-action']).map(t => t.attrs['data-list-action']).join(',')),
     ['zoom-out,add-gym', 'clear-filters', 'search-city']);
 });
