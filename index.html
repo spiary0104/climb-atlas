@@ -44,11 +44,11 @@
 <div class="app">
   <header class="topbar" data-theme="paper">
     <a class="wordmark" href="/" data-link><img class="wordmark-mark" src="assets/mascot/head.svg" alt="" width="28" height="28">Bouldeer</a>
-    <nav class="topbar-nav" aria-label="Primary">
-      <button type="button" class="tab" data-nav="explore" aria-current="page">Explore</button>
-      <button type="button" class="tab" data-nav="regions">Regions</button>
-      <button type="button" class="tab" data-nav="log">Log</button>
-      <button type="button" class="tab" data-nav="me">Me</button>
+    <nav class="topbar-nav" aria-label="Primary" data-i18n-attr="aria-label:nav.primary">
+      <button type="button" class="tab" data-nav="explore" aria-current="page"><span data-i18n="nav.explore">Explore</span></button>
+      <button type="button" class="tab" data-nav="regions"><span data-i18n="nav.regions">Regions</span></button>
+      <button type="button" class="tab" data-nav="log"><span data-i18n="nav.log">Log</span></button>
+      <button type="button" class="tab" data-nav="me"><span data-i18n="nav.me">Me</span></button>
     </nav>
     <div class="topbar-search" id="topbarSearchSlot">
       <div class="search" id="search" role="search">
@@ -62,8 +62,9 @@
       </div>
     </div>
     <div class="topbar-actions">
-      <button type="button" class="btn btn-secondary" id="addBtn"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg><span class="add-label-long">Add a gym</span><span class="add-label-short">Add</span></button>
-      <div class="account-slot" id="accountSlot"><button type="button" class="btn btn-tertiary" id="topSignInBtn">Sign in</button></div>
+      <label class="lang-picker"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-globe-hemisphere-west"/></svg><select data-lang-picker aria-label="Language" data-i18n-attr="aria-label:lang.pickerAria"><option value="en" lang="en" selected>English</option><option value="zh-CN" lang="zh-Hans-CN">简体中文</option></select></label>
+      <button type="button" class="btn btn-secondary" id="addBtn"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg><span class="add-label-long" data-i18n="topbar.addGym">Add a gym</span><span class="add-label-short" data-i18n="topbar.addShort">Add</span></button>
+      <div class="account-slot" id="accountSlot"><button type="button" class="btn btn-tertiary" id="topSignInBtn" data-i18n="auth.signIn">Sign in</button></div>
     </div>
   </header>
   <div class="offline-banner alert alert-warning hidden" id="offlineBanner" role="status"></div>
@@ -148,12 +149,12 @@
   <main class="page-view" id="view" data-theme="paper" tabindex="-1" hidden></main>
   <!-- In the shell, not in #explore: Explore is hidden while a page shows, and its toasts went with it. -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <nav class="tabbar" aria-label="Primary" data-theme="paper">
-    <button type="button" class="tabbar-item" data-nav="explore" aria-current="page"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-map-trifold"/></svg><span>Explore</span></button>
-    <button type="button" class="tabbar-item" data-nav="regions"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-squares-four"/></svg><span>Regions</span></button>
-    <button type="button" class="start-btn" data-nav="start" aria-label="Start: check in at a gym or log a session" aria-haspopup="dialog"><span class="start-disc"><span class="mascot mascot--start" data-mascot-slot="start" aria-hidden="true"><img src="assets/mascot/head.svg" alt=""></span><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg></span><span>Check in</span></button>
-    <button type="button" class="tabbar-item" data-nav="log"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-book-open"/></svg><span>Log</span></button>
-    <button type="button" class="tabbar-item" data-nav="me"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-user"/></svg><span>Me</span></button>
+  <nav class="tabbar" aria-label="Primary" data-theme="paper" data-i18n-attr="aria-label:nav.primary">
+    <button type="button" class="tabbar-item" data-nav="explore" aria-current="page"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-map-trifold"/></svg><span data-i18n="nav.explore">Explore</span></button>
+    <button type="button" class="tabbar-item" data-nav="regions"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-squares-four"/></svg><span data-i18n="nav.regions">Regions</span></button>
+    <button type="button" class="start-btn" data-nav="start" aria-label="Start: check in at a gym or log a session" data-i18n-attr="aria-label:nav.start.aria" aria-haspopup="dialog"><span class="start-disc"><span class="mascot mascot--start" data-mascot-slot="start" aria-hidden="true"><img src="assets/mascot/head.svg" alt=""></span><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg></span><span data-i18n="nav.checkin">Check in</span></button>
+    <button type="button" class="tabbar-item" data-nav="log"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-book-open"/></svg><span data-i18n="nav.log">Log</span></button>
+    <button type="button" class="tabbar-item" data-nav="me"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-user"/></svg><span data-i18n="nav.me">Me</span></button>
   </nav>
 </div>
 
@@ -492,6 +493,8 @@
      above, so the gym-list read (spots-prefetch.js) is requested first (tests/perf-load.test.js keeps this list equal to
      what js/main.js imports). -->
 <link rel="modulepreload" href="js/main.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/i18n.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/i18n-en.js" fetchpriority="low">
 <link rel="modulepreload" href="js/modules/auth-ui.js" fetchpriority="low">
 <link rel="modulepreload" href="js/modules/state.js" fetchpriority="low">
 <link rel="modulepreload" href="js/modules/utils.js" fetchpriority="low">

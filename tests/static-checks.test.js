@@ -59,6 +59,8 @@ test('destructive buttons (Reject / Dismiss / Delete) carry .btn-danger and are 
 // Every ${...} inside these HTML-building templates must be escapeHtml(...) or one of the reviewed-safe expressions below.
 const SAFE_EXPR = [
   /^escapeHtml\(/,
+  /^th\('[a-zA-Z0-9_.]+'(, \{[^}]*\})?\)$/,                                  // i18n.th(): the translation, HTML-escaped (params too)
+  /^languageOptionsHtml\(\)$/,                                               // i18n.js: endonyms from the fixed LOCALES table, escaped
   /^(climbed|bookmarked|c\.sent|active)\s*\?\s*'[^']*'\s*:\s*''$/,            // boolean -> fixed class / attribute strings
   /^c\.climb_type===['"][\w-]+['"]\?'selected':''$/,                          // <option selected> for a fixed value
   /^(g|s)\.(community|edited)\s*\?\s*'[^']*'\s*:\s*''$/,
@@ -106,7 +108,7 @@ const SAFE_EXPR = [
   // calendar/log/me: assembled in the same builder from numbers, fixed names and escaped labels; p.sessions is
   // logbook.js sessionsHtml() (itself in this review), p.calendar is calendarHtml()
   /^(head|links)$/, /^rows\.join\(''\)$/, /^p\.(sessions|calendar)$/,
-  /^key$/, /^tab\('(saved|climbed)', '(Saved|Climbed)', p\.(saved|climbed)\.length\)$/, /^pending$/,   // me page: tab keys are literals
+  /^key$/, /^tab\('(saved|climbed)', t\('me\.(saved|climbed)'\), p\.(saved|climbed)\.length\)$/, /^pending$/,   // tab() escapes its label;   // me page: tab keys are literals
   // Phase 4 provenance: m comes from the fixed MARKS table; the mark builder takes a state name and emits fixed markup
   /^m\[[01]\](\.toLowerCase\(\))?$/, /^provenanceMarkHtml\((ctx\.provenance|prov\.state)\)$/, /^subs$/,
   // moderation-html.js (/mod): label comes from the fixed FIELDS table, k is forced to a KIND_LABEL key by kindOf(),
@@ -247,7 +249,7 @@ test('privacy policy names every service the app contacts and what the app store
   assert.match(html, /30 days/);
   // The storage keys the app really uses, so the "Stored in your browser" list cannot drift from the code.
   const code = moduleFiles.map(read).join('\n');
-  for (const k of ['bouldeer_add_draft', 'bouldeer_list_view', 'bouldeer_last_camera', 'bouldeer_recent_searches']) assert.ok(code.includes(k), k + ' is no longer used: update the policy');
+  for (const k of ['bouldeer_add_draft', 'bouldeer_list_view', 'bouldeer_last_camera', 'bouldeer_recent_searches', 'bouldeer_lang']) assert.ok(code.includes(k), k + ' is no longer used: update the policy');
   assert.ok(!/document\.cookie/.test(code), 'the app now sets cookies: update the policy');
   assert.ok(!/gtag|googletagmanager|plausible|posthog|mixpanel|hotjar|sentry/i.test(code + read('index.html')), 'analytics added: update the policy');
 });

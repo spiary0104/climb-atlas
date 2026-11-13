@@ -71,6 +71,8 @@ Supercluster → `modulepreload` of main.js's whole graph (`fetchpriority="low"`
   `data-gym-action` / `data-list-action` / `data-spot-id` + delegated listeners. No inline handlers, no `window.__*`.
 - map.js does not import the list; explore.js registers map handlers (`setMapHandlers`). Import cycles
   (explore ↔ modals ↔ map) are safe because top-level code only does DOM lookups (no map is made at import).
+- Interface text: `t('area.key', {count})`/`th()` (escaped) from `i18n.js`, strings in `i18n-<code>.js` (English = fallback; enabled
+  languages need every key, tests/i18n.test.js); markup `data-i18n(-attr)`; a switch fires `bouldeer:locale`. Gym data never translated.
 
 ## Data model (`supabase/migrations/`; `schema.sql` is stale)
 `moderators`, `spots` (status pending/approved/rejected; insert needs sign-in + rate limit), `pending_edits` and `reports` (sign-in + 20/day each, `submitted_by` pinned; migrations 20261002*), `routes` (unused, read-only),
@@ -127,8 +129,7 @@ Buttons: `.btn` + exactly one of `.btn-primary` (one per surface) / `-secondary`
 `ICON_NAMES`. After editing tokens.css run `node scripts/build-tokens-json.js`.
 
 ## Offline / PWA (`sw.js`, v39)
-Shell precached (`SHELL_FILES`). Page loads (`mode: navigate`) of every app route share one cached shell (keyed `/`),
-whatever the path or query; other pages (about.html, privacy.html, terms.html) are cached per path. Tiles cache-first; other same-origin + CDN files stale-while-revalidate;
+Shell precached (`SHELL_FILES`). App routes (`mode: navigate`) share one cached shell (`/`); static pages per path. Tiles cache-first; other same-origin + CDN files stale-while-revalidate;
 CDN tags carry `crossorigin="anonymous"`. Supabase: ONLY the public `GET /rest/v1/spots?...status=eq.approved` read
 is cached (network-first); marks/sessions/moderator/pending/auth and every write are never intercepted (the Cache
 API ignores `Authorization`, so caching them would leak across users). Escape only clicks `[data-modal-close]`.
@@ -138,8 +139,7 @@ API ignores `Authorization`, so caching them would leak across users). Escape on
 escaping/URL safety, hostile-input rendering of every Explore builder, /mod panel and /add step, pure Explore modules
 (`explore-pure.test.js`: bounds, URL state, search index, pins, slugs, routes), page builders, service-worker caching (vm sandbox), static checks
 (no inline handlers, modal-close markers, reviewed template interpolations), design system (`design-system.test.js`).
-RLS: `node scripts/test-rls-local.js` against the local stack (`supabase start`, then `supabase db reset --local`), check-ins included.
-Artwork: `design/tools/` (Python, dev-only) regenerates the traced poses and static seals byte for byte (README there).
+RLS: `node scripts/test-rls-local.js` on the local stack (`supabase start`, `db reset --local`). Artwork: `design/tools/` (README there).
 
 ## Querying the gym data
 ```

@@ -43,7 +43,7 @@
 // v39: MapLibre is no longer in the shell: map.js loads it after the first list render; modulepreload; parallel gym pages.
 // v42: a region page that lists exactly one city's gyms names that city page as its canonical (place-canonical.js).
 // v44: 16 more China city regions (regions.js) for the China research.
-const CACHE_VERSION = 'v45';
+const CACHE_VERSION = 'v47';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
@@ -85,6 +85,9 @@ const SHELL_FILES = [
   'js/modules/icons.js',
   'js/modules/nav.js',
   'js/modules/html-safe.js',
+  'js/modules/i18n.js',
+  'js/modules/i18n-en.js',
+  'js/modules/i18n-zh-CN.js',
   'js/modules/list-html.js',
   'js/modules/pin-html.js',
   'js/modules/geo.js',

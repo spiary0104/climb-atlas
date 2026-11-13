@@ -1,4 +1,5 @@
 // Sign-in widget + sign-in modal (the auth session itself is window.auth, js/auth.js).
+import { th } from './i18n.js';
 import { appState } from './state.js';
 import { showToast } from './utils.js';
 
@@ -12,7 +13,7 @@ const authEmailInput = document.getElementById('authEmail');
 export function renderAuthUI(user){
   accountSlot.innerHTML = user
     ? `<button type="button" class="avatar-btn" data-nav="me" aria-label="Me: your gyms and account"><span class="avatar mascot mascot--avatar" aria-hidden="true"><img src="assets/mascot/head.svg" alt=""></span></button>`
-    : '<button type="button" class="btn btn-tertiary" id="topSignInBtn">Sign in</button>';
+    : `<button type="button" class="btn btn-tertiary" id="topSignInBtn">${th('auth.signIn')}</button>`;
   updateMarksFilterAvailability();
 }
 
