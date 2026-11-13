@@ -131,3 +131,45 @@ test('i18n Explore: label tables follow the language (countries, types, continen
   assert.equal(I.t('explore.inView', { count: 84 }), '家岩馆在地图范围内');
   assert.equal(I.t('filters.showCount', { count: 1204 }), '显示 1,204 家岩馆');
 });
+
+test('i18n pages (PR 2B): gym page, region pages, provenance and share follow the language; gym data stays as stored', async () => {
+  globalThis.window = globalThis.window || {}; globalThis.window.matchMedia = () => ({ matches: false });
+  const P = await import('../js/modules/page-html.js');
+  const GI = await import('../js/modules/gym-info.js');
+  const PR = await import('../js/modules/provenance.js');
+  const SH = await import('../js/modules/share.js');
+  const g = { id: 'g1', name: 'Test <Gym>', suburb: 'Xuhui', types: ['indoor-bouldering'], lat: 31.2, lng: 121.4, day_pass: 'RMB 88 / 单次', hours: { mon: '10:00–22:00' }, facilities: ['shoe-hire', 'cafe'] };
+  const en = P.gymPageHtml(g, { history: { count: 2, last: '2026-09-01' }, metroLink: { name: 'Shanghai', total: 22, href: '/in/cn/shanghai/shanghai' } });
+  assert.match(en, />Directions</); assert.match(en, /All 22 gyms in Shanghai/); assert.match(en, /2 sessions · last on Sep 1, 2026/);
+  const bare = P.gymPageHtml({ ...g, day_pass: '', hours: null, facilities: [] }, {});
+  assert.equal((bare.match(/Not confirmed yet/g) || []).length, 3, 'day pass, hours and facilities say so when unknown');
+  await I.setLocale('zh-CN');
+  const zh = P.gymPageHtml(g, { history: { count: 2, last: '2026-09-01' }, metroLink: { name: '上海', total: 22, href: '/x' } });
+  for(const s of ['导航', '收藏', '去过', '基本信息', '设施', '租鞋', '咖啡厅', '上海的全部 22 家攀岩馆', '2 次攀岩', '2026年9月1日']) assert.ok(zh.includes(s), s);
+  assert.ok(zh.includes('RMB 88 / 单次') && zh.includes('10:00–22:00'), 'gym-supplied day pass and hours are shown exactly as stored');
+  assert.ok(zh.includes('Test &lt;Gym&gt;'), 'gym names are not translated, and stay escaped');
+  const zhBare = P.gymPageHtml({ ...g, day_pass: '', hours: null, facilities: [] }, {});
+  assert.equal((zhBare.match(/尚未确认/g) || []).length, 3);
+  assert.ok(!/Not confirmed|Day pass|Facilities|Directions/.test(zhBare), 'no English left on the gym page chrome');
+  assert.equal(GI.facilityLabel('shoe-hire'), '租鞋'); assert.equal(GI.dayLabel('sat'), '周六');
+  assert.equal(P.regionMeta({ gyms: 28, cities: 1, areas: 6 }), '28 家岩馆 · 1 个城市 · 6 个其他区域');
+  assert.equal(PR.provenanceLine({ submitted_by: 'u' }, { added_by: 'mika', contributors: 3, last_edited: '2026-09-23T12:00:00Z' }, new Date('2026-10-03T12:00:00Z')).text, '社区已核实 · 由mika添加 · 最近修改：10 天前 · 3 位贡献者');
+  assert.match(SH.gymShareText({ name: 'A', suburb: 'B', types: ['indoor-bouldering'] }, { region: 'C' }).text, /A · 抱石 · B, C/);
+  assert.equal(P.regionSearchResultsHtml('zzz', []).includes('没有与“zzz”匹配'), true);
+  await I.setLocale('en');
+  assert.equal(P.regionMeta({ gyms: 1, cities: 0, areas: 3 }), '1 gym · 3 areas');
+  assert.equal(PR.formatRelative('2026-10-02T00:00:00Z', new Date('2026-10-03T12:00:00Z')), 'yesterday');
+});
+
+test('i18n SEO: seo-meta.js has no imports and stays English without a translator (api/seo.mjs runs with no locale)', async () => {
+  const S = await import('../js/modules/seo-meta.js');
+  assert.ok(!/^\s*import\b/m.test(read('js/modules/seo-meta.js')), 'api/seo.mjs loads it from a data: URL: no imports');
+  await I.setLocale('zh-CN');
+  const g = { name: 'Block', suburb: 'Xuhui', types: ['indoor-bouldering'] };
+  assert.equal(S.gymSeo(g, { region: 'Shanghai', country: 'China' }).title, 'Block · Bouldering gym in Xuhui, Shanghai, China', 'no translator: English even when the app is in Chinese');
+  assert.equal(S.placeSeo({ kind: 'country', name: 'China', count: 3 }).title, 'Climbing gyms in China');
+  assert.equal(S.gymSeo(g, { region: '上海', country: '中国', tr: I.t }).title, 'Block · Xuhui, 上海, 中国的抱石馆');
+  assert.equal(S.placeSeo({ kind: 'country', name: '中国', count: 3, tr: I.t }).title, '中国的攀岩馆');
+  await I.setLocale('en');
+  assert.equal(S.gymSeo(g, { region: 'Shanghai', country: 'China', tr: I.t }).title, 'Block · Bouldering gym in Xuhui, Shanghai, China');
+});

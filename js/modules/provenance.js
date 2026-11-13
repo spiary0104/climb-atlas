@@ -32,18 +32,19 @@ export function levelFor(points){
 }
 export const isContributor = points => levelFor(points) >= 3;
 
-// "today", "yesterday", "3 days ago", "2 weeks ago", "5 months ago", "2 years ago"; '' for missing/invalid dates.
+// "today", "yesterday", "3 days ago", "2 weeks ago", "5 months ago", "2 years ago" (in the interface language, i18n.js
+// rel.* keys); '' for missing/invalid dates.
 export function formatRelative(date, now = new Date()){
   if(date == null || date === '') return '';           // new Date(null) is 1970, not "unknown"
-  const t = new Date(date).getTime();
-  if(!Number.isFinite(t)) return '';
-  const days = Math.floor((new Date(now).getTime() - t) / 86400000);
-  if(days <= 0) return 'today';
-  if(days === 1) return 'yesterday';
-  if(days < 14) return days + ' days ago';
-  if(days < 60) return Math.floor(days / 7) + ' weeks ago';
-  if(days < 730) return Math.floor(days / 30) + ' months ago';
-  return Math.floor(days / 365) + ' years ago';
+  const ms = new Date(date).getTime();
+  if(!Number.isFinite(ms)) return '';
+  const days = Math.floor((new Date(now).getTime() - ms) / 86400000);
+  if(days <= 0) return t('rel.today');
+  if(days === 1) return t('rel.yesterday');
+  if(days < 14) return t('rel.days', { count: days });
+  if(days < 60) return t('rel.weeks', { count: Math.floor(days / 7) });
+  if(days < 730) return t('rel.months', { count: Math.floor(days / 30) });
+  return t('rel.years', { count: Math.floor(days / 365) });
 }
 
 // The page line (sec. 10.2): "{state} · added by {name or "a climber"} · last edited {relative} · {n} contributors".
@@ -52,11 +53,11 @@ export function provenanceLine(g, p = {}, now = new Date()){
   p = p || {};                                        // a failed lookup is cached as null
   const state = provenanceState(g, p.contributors);
   const parts = [PROVENANCE_LABELS[state]];
-  if(g && g.submitted_by) parts.push('added by ' + (p.added_by || 'a climber'));
+  if(g && g.submitted_by) parts.push(t('provenance.addedBy', { name: p.added_by || t('provenance.aClimber') }));
   const edited = formatRelative(p.last_edited, now);
-  if(edited) parts.push('last edited ' + edited);
+  if(edited) parts.push(t('provenance.lastEdited', { when: edited }));
   const n = Number(p.contributors) || 0;
-  if(n >= 1) parts.push(n === 1 ? '1 contributor' : n + ' contributors');
+  if(n >= 1) parts.push(t('provenance.contributors', { count: n }));
   return { state, text: parts.join(' · ') };
 }
 

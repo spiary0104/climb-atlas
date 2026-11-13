@@ -205,7 +205,7 @@ test('gym page: the minimum page renders no empty sections; the photo page shows
   assert.equal((html.match(/contribute-prompt/g) || []).length, 1, 'exactly one contribution prompt');
   assert.ok(/essentialsTitle/.test(html) && /data-mini-map/.test(html), 'Essentials with the map thumbnail is always there');
   assert.ok(text.includes('Somewhere, NSW'), 'address row falls back to the place when there is no street address');
-  assert.equal(headings, 3, 'h1 + Community + Essentials only');
+  assert.equal(headings, 4, 'h1 + Community + Facilities ("Not confirmed yet") + Essentials only');
   assert.ok(!/—<|>—|undefined|null|NaN/.test(html), 'no dash placeholders or leaked empties');
   const withPhoto = page.gymPageHtml({ ...minimal, photo: 'https://example.com/wall.jpg', notes: 'Great setting' }, pageCtx());
   const hero = tags(withPhoto).find(t => /\bgym-hero\b/.test(t.attrs.class || ''));

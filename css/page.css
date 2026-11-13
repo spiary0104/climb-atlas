@@ -39,6 +39,7 @@
   font-family:var(--font-display);font-size:var(--type-display-sm-size);line-height:var(--type-display-sm-line);font-weight:var(--type-display-sm-weight);
 }
 .panel-row{margin:0;font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);}
+.essentials-unknown{color:var(--color-text-secondary);}   /* an unknown fact: "Not confirmed yet" (i18n common.notConfirmed) */
 
 /* Static map thumbnail: the light basemap, the gym's pin in the middle */
 .map-thumb-figure{margin:0;flex:none;}

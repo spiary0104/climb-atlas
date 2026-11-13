@@ -6,7 +6,7 @@
 import { firstRunArt, sealSvg } from './brand.js';
 import { essentialsRowsHtml, facilitiesHtml, hasPracticalInfo } from './gym-info.js';
 import { escapeHtml, safeUrl } from './html-safe.js';
-import { languageOptionsHtml, t, th } from './i18n.js';
+import { formatDate, formatNumber, languageOptionsHtml, t, th } from './i18n.js';
 import { directionsUrl } from './utils.js';
 import { icon } from './icons.js';
 import { localLang, localNameHtml, provenanceMarkHtml, thumbHtml, typeTagsHtml } from './list-html.js';
@@ -27,7 +27,7 @@ const link = (href, text, cls = 'link link-quiet') => `<a class="${cls}" href="$
 export function breadcrumbHtml(crumbs){
   const items = crumbs.filter(c => c && c.label).map(c => c.href && !c.current
     ? `<li>${link(c.href, c.label)}</li>` : `<li aria-current="page">${escapeHtml(c.label)}</li>`);
-  return `<nav class="breadcrumb" aria-label="Breadcrumb"><ol>${items.join('')}</ol></nav>`;
+  return `<nav class="breadcrumb" aria-label="${th('nav.breadcrumb')}"><ol>${items.join('')}</ol></nav>`;
 }
 
 // A static map: a slot the page fills with a small non-interactive map (mini-map.js; the same light basemap as
@@ -68,24 +68,25 @@ export function gymPageHtml(g, ctx = {}){
   const id = escapeHtml(g.id);
   const where = [g.suburb, ctx.region].filter(Boolean).join(', ');
   // One quiet line (sec. 10.2) + the editor-only note about their own latest proposal (sec. 10.4).
-  const prov = ctx.provenance || { state: 'community-added', text: 'Community-added' };
+  const prov = ctx.provenance || { state: 'community-added', text: t('provenance.communityAdded') };
   const provenance = `<p class="provenance-line">${provenanceMarkHtml(prov.state)}${escapeHtml(prov.text)}</p>`
-    + (ctx.myEdit && ctx.myEdit.status === 'pending' ? '<p class="provenance-line provenance-pending">Your edit is awaiting review.</p>' : '')
-    + (ctx.myEdit && ctx.myEdit.status === 'rejected' ? `<p class="provenance-line provenance-rejected">Your last edit wasn’t accepted${ctx.myEdit.rejection_reason ? `: ${escapeHtml(ctx.myEdit.rejection_reason)}` : '.'}</p>` : '');
+    + (ctx.myEdit && ctx.myEdit.status === 'pending' ? `<p class="provenance-line provenance-pending">${th('gym.editPending')}</p>` : '')
+    + (ctx.myEdit && ctx.myEdit.status === 'rejected' ? `<p class="provenance-line provenance-rejected">${ctx.myEdit.rejection_reason ? th('gym.editRejectedReason', { reason: ctx.myEdit.rejection_reason }) : th('gym.editRejected')}</p>` : '');
   // Check in is the primary action (sec. 8.2, 11.1); after a check-in it reads "Checked in today" until 12 hours pass.
   const checkin = ctx.checkedIn
-    ? `<button type="button" class="btn btn-secondary" disabled>${icon('check-circle', {size:'sm'})}<span class="label-long">Checked in today</span><span class="label-short">Checked in</span></button>`
-    : `<button type="button" class="btn btn-primary" data-page-action="checkin" data-spot-id="${id}">${icon('map-pin', {size:'sm'})}Check in</button>`;
-  const actions = `<div class="gym-actions" role="group" aria-label="Gym actions">${checkin}`
-    + `<button type="button" class="btn btn-secondary" data-page-action="save" data-spot-id="${id}" aria-pressed="${ctx.saved ? 'true' : 'false'}">${icon('bookmark-simple', {size:'sm'})}Save</button>`
-    + `<button type="button" class="btn btn-secondary" data-page-action="climbed" data-spot-id="${id}" aria-pressed="${ctx.climbed ? 'true' : 'false'}">${icon('check', {size:'sm'})}Climbed</button>`
-    + `<a class="btn btn-secondary" href="${escapeHtml(directionsUrl(g))}" target="_blank" rel="noopener noreferrer">${icon('navigation-arrow', {size:'sm'})}Directions</a></div>`;
+    ? `<button type="button" class="btn btn-secondary" disabled>${icon('check-circle', {size:'sm'})}<span class="label-long">${th('gym.checkedInToday')}</span><span class="label-short">${th('gym.checkedInShort')}</span></button>`
+    : `<button type="button" class="btn btn-primary" data-page-action="checkin" data-spot-id="${id}">${icon('map-pin', {size:'sm'})}${th('nav.checkin')}</button>`;
+  const actions = `<div class="gym-actions" role="group" aria-label="${th('gym.actionsAria')}">${checkin}`
+    + `<button type="button" class="btn btn-secondary" data-page-action="save" data-spot-id="${id}" aria-pressed="${ctx.saved ? 'true' : 'false'}">${icon('bookmark-simple', {size:'sm'})}${th('gym.save')}</button>`
+    + `<button type="button" class="btn btn-secondary" data-page-action="climbed" data-spot-id="${id}" aria-pressed="${ctx.climbed ? 'true' : 'false'}">${icon('check', {size:'sm'})}${th('gym.climbed')}</button>`
+    + `<a class="btn btn-secondary" href="${escapeHtml(directionsUrl(g))}" target="_blank" rel="noopener noreferrer">${icon('navigation-arrow', {size:'sm'})}${th('gym.directions')}</a></div>`;
   // The one contribution prompt (sec. 8.2): only while the page has no photo and none of hours, website or day pass.
   // It opens the edit dialog at the hours field, so every field it names can be filled in there.
-  const prompt = photo || hasPracticalInfo(g) ? '' : `<p class="contribute-prompt">Been here? <button type="button" class="link" data-page-action="edit" data-edit-focus="hours" data-spot-id="${id}">Add the hours, website, day-pass price or a photo.</button></p>`;
-  const history = ctx.history && ctx.history.count ? `<section class="panel history-panel" aria-labelledby="historyTitle"><h2 class="panel-title" id="historyTitle">Your history here</h2>`
-    + `<p class="panel-row tnum">${escapeHtml(ctx.history.count === 1 ? '1 session' : ctx.history.count + ' sessions')}${ctx.history.last ? ` · last on ${escapeHtml(ctx.history.last)}` : ''}</p></section>` : '';
-  const nearby = (ctx.nearby || []).length >= 1 ? `<section class="page-section" aria-labelledby="nearbyTitle"><h2 class="section-title" id="nearbyTitle">Nearby</h2>`
+  const prompt = photo || hasPracticalInfo(g) ? '' : `<p class="contribute-prompt">${th('gym.promptLead')} <button type="button" class="link" data-page-action="edit" data-edit-focus="hours" data-spot-id="${id}">${th('gym.promptAction')}</button></p>`;
+  const lastOn = ctx.history && ctx.history.last ? formatDate(ctx.history.last, { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' }) : '';   // session_date is a plain date
+  const history = ctx.history && ctx.history.count ? `<section class="panel history-panel" aria-labelledby="historyTitle"><h2 class="panel-title" id="historyTitle">${th('gym.history')}</h2>`
+    + `<p class="panel-row tnum">${th('gym.sessions', { count: Number(ctx.history.count) })}${lastOn ? ` · ${th('gym.lastOn', { date: lastOn })}` : ''}</p></section>` : '';
+  const nearby = (ctx.nearby || []).length >= 1 ? `<section class="page-section" aria-labelledby="nearbyTitle"><h2 class="section-title" id="nearbyTitle">${th('gym.nearby')}</h2>`
     // Photo cards only when a nearby gym has a photo; four identical placeholders read as "nothing here" (audit).
     + (ctx.nearby.some(n => safeUrl(n.g.photo))
       ? `<div class="card-strip">${ctx.nearby.map(n => pageCardHtml(n.g, n.ctx)).join('')}</div>`
@@ -95,35 +96,35 @@ export function gymPageHtml(g, ctx = {}){
   // when the gym is in a metro that lists other gyms; the count is the metro page's own (gym-page.js metroLinkOf).
   const ml = ctx.metroLink;
   const metroLink = ml && ml.total >= 2 && ml.href && ml.name
-    ? `<p class="metro-link"><a class="link" href="${escapeHtml(ml.href)}" data-link>${escapeHtml(ml.total === 2 ? 'Both gyms in ' + ml.name : 'All ' + ml.total + ' gyms in ' + ml.name)}</a></p>` : '';
+    ? `<p class="metro-link"><a class="link" href="${escapeHtml(ml.href)}" data-link>${escapeHtml(ml.total === 2 ? t('gym.metroBoth', { name: ml.name }) : t('gym.metroAll', { count: ml.total, name: ml.name }))}</a></p>` : '';
   return `<article class="page gym-page">`
     + breadcrumbHtml(ctx.crumbs || [])
     // Share sits beside the name, not in the action row: four actions are what fits a phone (the tab bar's round Check in
     // covers a fifth, middle one). A compact icon button with the 44px hit area .btn-icon carries; no sign-in needed.
     + `<header class="gym-header"><div class="gym-heading"><div class="gym-title-row"><h1 class="page-title">${escapeHtml(g.name)}${localNameHtml(g, 'local-name--block local-name--title')}</h1>`
-    + `<button type="button" class="btn btn-secondary btn-icon gym-share" data-page-action="share" data-spot-id="${id}" aria-label="Share ${escapeHtml(g.name)}" title="Share">${icon('share-network', {size:'sm'})}</button></div>`
+    + `<button type="button" class="btn btn-secondary btn-icon gym-share" data-page-action="share" data-spot-id="${id}" aria-label="${th('gym.shareAria', { name: g.name })}" title="${th('gym.share')}">${icon('share-network', {size:'sm'})}</button></div>`
     + `<p class="gym-meta"><span class="gym-meta-tags">${typeTagsHtml(g.types)}</span><span>${escapeHtml(where)}</span>${ctx.distance ? `<span class="tnum">${escapeHtml(ctx.distance)}</span>` : ''}</p>`
     + provenance + prompt + `</div></header>`
     + `${photo ? `<img class="gym-hero gym-photo" src="${escapeHtml(photo)}" alt="${escapeHtml(g.name)}" referrerpolicy="no-referrer">` : ''}`
     + `<div class="gym-layout"><div class="gym-main">`
-    + `${about ? `<section class="page-section" aria-labelledby="aboutTitle"><h2 class="section-title" id="aboutTitle">About</h2><p class="prose">${escapeHtml(about)}</p></section>` : ''}`
+    + `${about ? `<section class="page-section" aria-labelledby="aboutTitle"><h2 class="section-title" id="aboutTitle">${th('gym.about')}</h2><p class="prose">${escapeHtml(about)}</p></section>` : ''}`
     + facilitiesHtml(g)
     + nearby + metroLink
-    + `<section class="page-section" aria-labelledby="communityTitle"><h2 class="section-title" id="communityTitle">Community</h2>`
-    + `<p class="section-note">${g.community ? 'Added by a Bouldeer climber and checked by a moderator.' : 'From the Bouldeer dataset, kept current by climbers.'} Every edit is checked by a moderator before it goes live. Spotted something out of date?</p>`
-    + `<div class="community-actions"><button type="button" class="btn btn-secondary btn-sm" data-page-action="edit" data-spot-id="${id}">${icon('pencil-simple', {size:'sm'})}Suggest an edit</button>`
-    + `<button type="button" class="btn btn-tertiary btn-sm" data-page-action="report" data-spot-id="${id}">${icon('flag', {size:'sm'})}Report a problem</button>`
+    + `<section class="page-section" aria-labelledby="communityTitle"><h2 class="section-title" id="communityTitle">${th('gym.community')}</h2>`
+    + `<p class="section-note">${escapeHtml(t(g.community ? 'gym.communityAdded' : 'gym.communityListed'))} ${th('gym.communityNote')}</p>`
+    + `<div class="community-actions"><button type="button" class="btn btn-secondary btn-sm" data-page-action="edit" data-spot-id="${id}">${icon('pencil-simple', {size:'sm'})}${th('gym.suggestEdit')}</button>`
+    + `<button type="button" class="btn btn-tertiary btn-sm" data-page-action="report" data-spot-id="${id}">${icon('flag', {size:'sm'})}${th('gym.report')}</button>`
     // Moderators only: "Verified" = confirmed by a moderator (sec. 10.1). RLS enforces it; this only shows the control.
-    + `${ctx.isModerator ? `<button type="button" class="btn btn-tertiary btn-sm" data-page-action="${g.verified_at ? 'unverify' : 'verify'}" data-spot-id="${id}">${icon('check-circle', {size:'sm'})}${g.verified_at ? 'Remove verification' : 'Mark verified'}</button>` : ''}</div></section>`
-    + `</div><aside class="gym-aside"><section class="panel essentials" aria-labelledby="essentialsTitle"><h2 class="panel-title" id="essentialsTitle">Essentials</h2>`
+    + `${ctx.isModerator ? `<button type="button" class="btn btn-tertiary btn-sm" data-page-action="${g.verified_at ? 'unverify' : 'verify'}" data-spot-id="${id}">${icon('check-circle', {size:'sm'})}${escapeHtml(t(g.verified_at ? 'gym.unverify' : 'gym.verify'))}</button>` : ''}</div></section>`
+    + `</div><aside class="gym-aside"><section class="panel essentials" aria-labelledby="essentialsTitle"><h2 class="panel-title" id="essentialsTitle">${th('gym.essentials')}</h2>`
     + essentialsRowsHtml(g, ctx.hours || {})
     + `<div class="essentials-address">${localAddressHtml(g)}<p class="panel-row">${escapeHtml(g.address || where)}</p>`
-    + mapThumbHtml({ lat: g.lat, lng: g.lng, zoom: 14, size: 120, href: ctx.exploreHref || '/', label: 'Show ' + (g.name || 'this gym') + ' on the map', types: g.types })
+    + mapThumbHtml({ lat: g.lat, lng: g.lng, zoom: 14, size: 120, href: ctx.exploreHref || '/', label: t('map.showOn', { name: g.name || t('map.thisGym') }), types: g.types })
     + `</div></section>${history}</aside></div>${actions}</article>`;   // actions last: beside the title on desktop, sticky at the bottom on phones
 }
 
 // ===== Regions (sec. 6.1: countries -> regions -> cities, each a page) =================================================
-const countLabel = n => n === 1 ? '1 gym' : Number(n).toLocaleString('en-US') + ' gyms';
+const countLabel = n => t('common.gymCount', { count: Number(n) });
 
 // Tiles: a place name with its gym count (countries on /in, regions on a country page, cities on a region page).
 export function tileGridHtml(items){
@@ -152,34 +153,34 @@ export function pageArtHtml(name){
 // summary says how many countries and gyms it holds. groups: [{title, items: tiles}]
 export function regionsIndexHtml(groups, total){
   const countries = groups.reduce((n, g) => n + g.items.length, 0);
-  return `<article class="page place-page regions-page">${pageArtHtml('regions-wall')}<header class="place-header"><h1 class="page-title">Regions</h1>`
-    + `<p class="place-meta tnum">${escapeHtml(countLabel(total))} in ${escapeHtml(countries)} countries</p></header>`
-    + `<form class="regions-search" role="search" data-page-form="region-search"><label class="visually-hidden" for="regionSearch">Search countries, regions, cities and gyms</label>`
-    + `${icon('magnifying-glass', {size:'sm'})}<input class="input" type="search" id="regionSearch" autocomplete="off" enterkeyhint="search" placeholder="Search a country, region, city or gym"></form>`
+  return `<article class="page place-page regions-page">${pageArtHtml('regions-wall')}<header class="place-header"><h1 class="page-title">${th('nav.regions')}</h1>`
+    + `<p class="place-meta tnum">${escapeHtml(t('regions.metaLine', { gyms: countLabel(total), countries: t('regions.countryCount', { count: countries }) }))}</p></header>`
+    + `<form class="regions-search" role="search" data-page-form="region-search"><label class="visually-hidden" for="regionSearch">${th('regions.searchLabel')}</label>`
+    + `${icon('magnifying-glass', {size:'sm'})}<input class="input" type="search" id="regionSearch" autocomplete="off" enterkeyhint="search" placeholder="${th('regions.searchPlaceholder')}"></form>`
     + `<div class="regions-results" id="regionResults" aria-live="polite"></div>`
     + `<div class="regions-browse" id="regionBrowse">`
     + groups.map(g => `<details class="page-section region-continent"><summary class="region-continent-summary">${icon('caret-right', {size:'sm'})}`
-      + `<h2 class="section-title">${escapeHtml(g.title)}</h2><span class="region-continent-count tnum">${escapeHtml(g.items.length === 1 ? '1 country' : g.items.length + ' countries')} · ${escapeHtml(countLabel(g.items.reduce((n, t) => n + t.count, 0)))}</span></summary>`
+      + `<h2 class="section-title">${escapeHtml(g.title)}</h2><span class="region-continent-count tnum">${escapeHtml(t('regions.continentLine', { countries: t('regions.countryCount', { count: g.items.length }), gyms: countLabel(g.items.reduce((n, x) => n + x.count, 0)) }))}</span></summary>`
       + `${tileGridHtml(g.items)}</details>`).join('')
     + `</div></article>`;
 }
 
 // /in search results. items: [{kind: country|region|city|gym, label, secondary, href, count}] (region-page.js ranks them).
-const PLACE_KIND = { country: 'Country', region: 'Region', city: 'City', gym: 'Gym' };
+const PLACE_KIND = { country: 'place.country', region: 'place.region', city: 'place.city', gym: 'place.gym' };
+const placeKind = kind => (PLACE_KIND[kind] ? t(PLACE_KIND[kind]) : '');
 export function regionSearchResultsHtml(query, items){
   if(!String(query || '').trim()) return '';
-  if(!items.length) return `<p class="empty-state regions-empty">No places or gyms match “${escapeHtml(String(query).trim())}”. Check the spelling, or browse by continent below.</p>`;
+  if(!items.length) return `<p class="empty-state regions-empty">${th('regions.empty', { query: String(query).trim() })}</p>`;
   return `<ul class="page-list regions-hits">` + items.map(i => `<li><a class="page-row regions-hit" href="${escapeHtml(i.href)}" data-link>`
-    + `<span class="gym-row-text"><span class="gym-row-title">${escapeHtml(i.label)}</span><span class="gym-row-meta">${escapeHtml([PLACE_KIND[i.kind] || '', i.secondary].filter(Boolean).join(' · '))}</span></span>`
+    + `<span class="gym-row-text"><span class="gym-row-title">${escapeHtml(i.label)}</span><span class="gym-row-meta">${escapeHtml([placeKind(i.kind), i.secondary].filter(Boolean).join(' · '))}</span></span>`
     + (i.kind === 'gym' ? '' : `<span class="gym-row-distance tnum">${escapeHtml(countLabel(i.count))}</span>`) + `</a></li>`).join('') + `</ul>`;
 }
 
 // A region page's meta line: each kind counted as what it is. Metros are cities; the suburbs of gyms outside every metro are
 // "areas" ("other areas" once there are cities), never cities: "28 gyms · 1 city · 6 other areas".
 export function regionMeta({ gyms, cities = 0, areas = 0 }){
-  const n = (c, one, many) => c === 1 ? '1 ' + one : Number(c).toLocaleString('en-US') + ' ' + many;
-  return [n(gyms, 'gym', 'gyms'), cities ? n(cities, 'city', 'cities') : '',
-    areas ? (cities ? n(areas, 'other area', 'other areas') : n(areas, 'area', 'areas')) : ''].filter(Boolean).join(' · ');
+  return [t('common.gymCount', { count: gyms }), cities ? t('place.cityCount', { count: cities }) : '',
+    areas ? t(cities ? 'place.otherAreaCount' : 'place.areaCount', { count: areas }) : ''].filter(Boolean).join(' · ');
 }
 
 // Country / region / city page. p: {crumbs, title, meta, tilesTitle, tiles | tileSections: [{title, tiles}], gymsTitle,
@@ -190,12 +191,12 @@ export function placePageHtml(p){
     const id = escapeHtml('tilesTitle' + (i || ''));
     return `<section class="page-section" aria-labelledby="${id}"><h2 class="section-title" id="${id}">${escapeHtml(s.title)}</h2>${tileGridHtml(s.tiles)}</section>`;
   }).join('');
-  const gyms = p.gyms && p.gyms.length ? `<section class="page-section" aria-labelledby="gymsTitle"><h2 class="section-title" id="gymsTitle">${escapeHtml(p.gymsTitle || 'Gyms')}</h2>${gymCollectionHtml(p.gyms)}</section>` : '';
+  const gyms = p.gyms && p.gyms.length ? `<section class="page-section" aria-labelledby="gymsTitle"><h2 class="section-title" id="gymsTitle">${escapeHtml(p.gymsTitle || t('place.gyms'))}</h2>${gymCollectionHtml(p.gyms)}</section>` : '';
   return `<article class="page place-page">${breadcrumbHtml(p.crumbs || [])}`
     + `<header class="place-header"><h1 class="page-title">${escapeHtml(p.title)}</h1><p class="place-meta tnum">${escapeHtml(p.meta)}</p></header>`
     + `<div class="place-layout"><div class="place-main">${tiles}${gyms}</div>`
     + `<aside class="place-aside">${p.map ? mapThumbHtml({ ...p.map, wide: true, points: true }) : ''}`
-    + `${p.map ? `<p class="place-map-link"><a class="btn btn-secondary btn-sm" href="${escapeHtml(p.map.href)}" data-link>${icon('map-trifold', {size:'sm'})}Browse on the map</a></p>` : ''}</aside></div></article>`;
+    + `${p.map ? `<p class="place-map-link"><a class="btn btn-secondary btn-sm" href="${escapeHtml(p.map.href)}" data-link>${icon('map-trifold', {size:'sm'})}${th('place.browseMap')}</a></p>` : ''}</aside></div></article>`;
 }
 
 // ===== Log (/log) and Me (/me) =========================================================================================
@@ -270,7 +271,7 @@ export function mePageHtml(p){
     + (items.length ? `<div class="page-list">${items.map(i => pageRowHtml(i.g, i.ctx)).join('')}</div>` : `<div class="empty-state me-empty">${art}<p>${escapeHtml(empty)}</p></div>`)
     + contributions
     + `<section class="page-section" aria-labelledby="accountTitle"><h2 class="section-title" id="accountTitle">${th('me.account')}</h2><div class="me-actions">`
-    + `<button type="button" class="btn btn-secondary" data-page-action="add-gym">${icon('plus', {size:'sm'})}Add a gym</button>${pending}`
+    + `<button type="button" class="btn btn-secondary" data-page-action="add-gym">${icon('plus', {size:'sm'})}${th('topbar.addGym')}</button>${pending}`
     + `<button type="button" class="btn btn-tertiary" data-page-action="sign-out">${th('auth.signOut')}</button></div></section>${links}</article>`;
 }
 
@@ -293,9 +294,9 @@ export function meContributionsHtml(c){
 }
 
 export function notFoundHtml(what = 'page'){
-  const w = what === 'gym' ? 'gym' : what === 'place' ? 'place' : 'page';
-  return `<article class="page page-empty"><h1 class="page-title">We couldn’t find that ${w}</h1>`
-    + `<p class="section-note">It may have moved or been removed.</p><p><a class="btn btn-secondary" href="/" data-link>Back to the map</a></p></article>`;
+  const title = t(what === 'gym' ? 'notFound.gym' : what === 'place' ? 'notFound.place' : 'notFound.page');
+  return `<article class="page page-empty"><h1 class="page-title">${escapeHtml(title)}</h1>`
+    + `<p class="section-note">${th('notFound.hint')}</p><p><a class="btn btn-secondary" href="/" data-link>${th('notFound.back')}</a></p></article>`;
 }
 
 export function pageSkeletonHtml(){
