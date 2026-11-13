@@ -72,6 +72,9 @@
   --font-display-soft:"SOFT" 50;     /* Fraunces SOFT axis: rounder terminals that sit with the deer (display text) */
   --font-wordmark-soft:"SOFT" 100;   /* the wordmark: fully soft */
   --font-text:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* System CJK faces (never downloaded: no external font in mainland China). Fraunces and Inter have no Han glyphs. */
+  --font-cjk-hans:"PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC";
+  --font-cjk-hant:"PingFang TC", "Microsoft JhengHei", "Noto Sans CJK TC", "Noto Sans TC", "Source Han Sans TC";
   --font-features-numeric:"tnum" 1, "lnum" 1;
   --font-weight-regular:400;
   --font-weight-medium:500;

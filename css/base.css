@@ -69,3 +69,8 @@ a:hover{color:var(--color-accent-hover);}
     scroll-behavior:auto !important;
   }
 }
+
+/* Chinese text (the interface in zh-CN, or a gym's local name with lang="zh-Hans"): Latin from the brand faces, Han from
+   the system's CJK face, never a downloaded font. */
+:lang(zh-Hans){--font-text:"Inter", var(--font-cjk-hans), system-ui, sans-serif;--font-display:"Fraunces", var(--font-cjk-hans), serif;}
+:lang(zh-Hant){--font-text:"Inter", var(--font-cjk-hant), system-ui, sans-serif;--font-display:"Fraunces", var(--font-cjk-hant), serif;}
