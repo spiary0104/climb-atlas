@@ -15,6 +15,7 @@ import { setVerified } from './moderation.js';
 import { openEditModal, openReportModal } from './modals.js';
 import { gymPageHtml, notFoundHtml, pageSkeletonHtml } from './page-html.js';
 import { gymDayKey, status } from './hours.js';
+import { t } from './i18n.js';
 import { currentRoute, refreshPage, registerView, setPageTitle } from './router.js';
 import { provenanceLine, publicNotes } from './provenance.js';
 import { gymSeo } from './seo-meta.js';
@@ -53,7 +54,7 @@ function nearbyOf(g){
     .filter(x => x.d <= NEARBY_KM)
     .sort((a, b) => a.d - b.d)
     .slice(0, 4)
-    .map(({ o, d }) => ({ g: o, ctx: { region: regionOf(o), href: gymPath(o), distance: formatDistance(d) + ' away' } }));
+    .map(({ o, d }) => ({ g: o, ctx: { region: regionOf(o), href: gymPath(o), distance: t('gym.away', { distance: formatDistance(d) }) } }));
 }
 
 // "All 22 gyms in Sydney": the gym's metro page and how many gyms it lists, counted with the metro page's own rule
@@ -91,9 +92,9 @@ function refreshIfShowing(g){
 
 function enter({ slug }, view){
   destroyMiniMaps();
-  if(!appState.loaded){ view.innerHTML = pageSkeletonHtml(); setPageTitle('Loading'); return; }
+  if(!appState.loaded){ view.innerHTML = pageSkeletonHtml(); setPageTitle(t('page.loading')); return; }
   const g = findGym(slug);
-  if(!g){ view.innerHTML = notFoundHtml('gym'); setPageTitle('Gym not found'); return; }
+  if(!g){ view.innerHTML = notFoundHtml('gym'); setPageTitle(t('page.gymNotFound')); return; }
   // An id or an outdated URL resolves to the canonical slug without adding a history entry.
   if(g.slug && slug !== g.slug) history.replaceState(null, '', gymPath(g));
   // The list read carries only Explore's columns: fetch the whole row once, then re-render if this page is still showing.
@@ -120,7 +121,7 @@ function enter({ slug }, view){
     checkedIn: !!window.auth.user && checkedInRecently(g.id),
     hours: hoursContext(g),
   });
-  setPageTitle(gymSeo(g, { region: regionOf(g), country: COUNTRY_LABELS[g.country] || g.country }).title);
+  setPageTitle(gymSeo(g, { region: regionOf(g), country: COUNTRY_LABELS[g.country] || g.country, tr: t }).title);
   mountMiniMaps(view);
   // Provenance (added by / contributors / last edited) and, for the signed-in editor, their own latest proposal.
   const late = [];
@@ -138,7 +139,7 @@ function enter({ slug }, view){
 
 export function initGymPage(){
   registerView('gym', { enter, leave: destroyMiniMaps });
-  registerView('notfound', { enter(params, view){ view.innerHTML = notFoundHtml(); setPageTitle('Page not found'); } });
+  registerView('notfound', { enter(params, view){ view.innerHTML = notFoundHtml(); setPageTitle(t('page.notFound')); } });
   document.getElementById('view').addEventListener('click', (e)=>{
     const btn = e.target.closest('[data-page-action]');
     if(!btn) return;
