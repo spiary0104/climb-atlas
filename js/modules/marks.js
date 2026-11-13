@@ -20,7 +20,7 @@ export function markAdded(spotId, markType){
 // the opposite write, leaving the screen and the table disagreeing until the next load.
 const inFlight = new Set();
 export async function toggleMark(spotId, markType){
-  if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
+  if(!window.sb){ showToast(t('common.notConfigured')); return; }
   const user = window.auth.user;
   if(!user){ openAuthModal(); return; }
   const key = spotId + '\u0000' + markType;

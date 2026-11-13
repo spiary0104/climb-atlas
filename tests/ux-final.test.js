@@ -60,8 +60,8 @@ test('gym page: Nearby is dense rows while no nearby gym has a photo, photo card
 
 test('START: a signed-out visitor is told what check-in is and offered sign-in; the signed-in actions are separate', () => {
   const html = read('index.html'), src = read('js/modules/checkin.js');
-  assert.match(html, /<p class="sub" id="startSignedOut" hidden>Check in at a gym to collect a stamp in your passport/);
-  assert.match(html, /id="startSignedOutActions" hidden><button type="button" class="btn btn-secondary btn-block" data-start-action="signin">Sign in to start<\/button>/);
+  assert.match(html, /<p class="sub" id="startSignedOut" hidden data-i18n="start.intro">Check in at a gym to collect a stamp in your passport/);
+  assert.match(html, /id="startSignedOutActions" hidden><button type="button" class="btn btn-secondary btn-block" data-start-action="signin" data-i18n="auth.signInToStart">Sign in to start<\/button>/);
   assert.match(src, /\$\('startSignedOut'\)\.hidden = \$\('startSignedOutActions'\)\.hidden = signedIn;/);
   assert.match(src, /if\(btn\.dataset\.startAction === 'signin'\) openAuthModal\(\);/);
   assert.ok(!/mark spots as climbed/.test(html), 'sign-in copy says gyms, and names check-ins');

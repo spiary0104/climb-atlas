@@ -2,6 +2,8 @@
 import { openAuthModal } from './auth-ui.js';
 import { infoFieldsHtml, readInfoFields } from './gym-info.js';
 import { loadFullSpot } from './data-load.js';
+import { COUNTRY_LABELS, REGION_LABELS } from './constants.js';
+import { t } from './i18n.js';
 import { map } from './map.js';
 import { STATES_BY_COUNTRY } from './regions.js';
 import { appState } from './state.js';
@@ -17,6 +19,15 @@ import { escapeHtml, safeUrl, showToast } from './utils.js';
 // cancel/close button so each modal's existing close logic still runs.
 const DESTRUCTIVE = '.btn-danger, .pending-reject, .pending-dismiss, .pending-approve, .session-delete, [data-destructive]';
 const FOCUSABLE = 'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+// The edit form's country list is static markup: its option and group names follow the interface language (the same
+// getter-backed tables as everywhere else). "Other" and the state names are handled by data-i18n / regions.js.
+function localizeCountrySelect(){
+  const sel = document.getElementById('eCountry');
+  if(!sel) return;
+  for(const o of sel.querySelectorAll('option[value]')) if(COUNTRY_LABELS[o.value] && COUNTRY_LABELS[o.value] !== o.value) o.textContent = COUNTRY_LABELS[o.value];
+  for(const g of sel.querySelectorAll('optgroup[data-region]')) if(REGION_LABELS[g.dataset.region]) g.label = REGION_LABELS[g.dataset.region];
+}
 
 // --- country/state dropdowns (shared by add + edit forms) ---
 function populateStateSelect(stateSelectId, country){
@@ -76,13 +87,13 @@ function stopPlacing(){
 // the person filling the form knows why. Cleared once nothing is.
 function renderFormHint(hintId, missing){
   const el = document.getElementById(hintId);
-  el.textContent = missing.length ? 'Still needed: ' + missing.join(', ') + '.' : '';
+  el.textContent = missing.length ? t('form.stillNeeded', { items: missing.join(t('common.listSep')) }) : '';
 }
 // --- edit spot flow ---
 export async function openEditModal(id, { focus = '' } = {}){
   const g = appState.spots.find(x=>x.id===id);
   if(!g) return;
-  if(!requireSignIn('Sign in to suggest an edit')) return;
+  if(!requireSignIn(t('edit.signIn'))) return;
   await loadFullSpot(g);            // the form shows (and an edit carries) the whole row, not just Explore's columns
   appState.currentEditId = id;
   appState.currentEditPin = {lat: g.lat, lng: g.lng};
@@ -109,7 +120,8 @@ export async function openEditModal(id, { focus = '' } = {}){
   document.getElementById('eTypeIndoor').checked = g.types.includes('indoor-bouldering');
   document.getElementById('eTypeTopRope').checked = g.types.includes('top-rope');
   document.getElementById('eTypeLead').checked = g.types.includes('lead-climbing');
-  editPinStatus.textContent = `Current pin: ${g.lat.toFixed(4)}, ${g.lng.toFixed(4)}`;
+  localizeCountrySelect();
+  editPinStatus.textContent = t('edit.pinCurrent', { lat: g.lat.toFixed(4), lng: g.lng.toFixed(4) });
   editPinStatus.classList.remove('set');
   checkEditFormReady();
   editModalBackdrop.classList.remove('hidden');
@@ -134,11 +146,11 @@ function checkEditFormReady(){
   const suburb = document.getElementById('eSuburb').value.trim();
   const {country, state} = getCountryState('e');
   const missing = [];
-  if(!appState.currentEditPin) missing.push('a pin on the map');
-  if(!name) missing.push('a name');
-  if(!suburb) missing.push('a suburb');
-  if(!country || !state) missing.push('a country and state');
-  if(selectedEditTypes().length === 0) missing.push('at least one climbing type');
+  if(!appState.currentEditPin) missing.push(t('edit.need.pin'));
+  if(!name) missing.push(t('edit.need.name'));
+  if(!suburb) missing.push(t('edit.need.suburb'));
+  if(!country || !state) missing.push(t('edit.need.countryState'));
+  if(selectedEditTypes().length === 0) missing.push(t('edit.need.type'));
   renderFormHint('eFormHint', missing);
   document.getElementById('eSaveBtn').disabled = missing.length > 0;
 }
@@ -151,7 +163,7 @@ const rSubmitBtn = document.getElementById('rSubmitBtn');
 export function openReportModal(id){
   const g = appState.spots.find(x=>x.id===id);
   if(!g) return;
-  if(!requireSignIn('Sign in to report a problem')) return;
+  if(!requireSignIn(t('report.signIn'))) return;
   appState.currentReportId = id;
   document.getElementById('reportSpotName').textContent = g.name;
   rMessage.value = '';
@@ -202,6 +214,8 @@ export function initModalKeyboard(){
 export function startAddGym(){ navigate('/add'); }
 
 export function initForms(){
+  localizeCountrySelect();
+  window.addEventListener('bouldeer:locale', localizeCountrySelect);
   document.getElementById('eCountry').addEventListener('change', (e)=>{ toggleOtherCountryFields('e', e.target.value); checkEditFormReady(); });
 
   document.getElementById('addBtn').addEventListener('click', startAddGym);
@@ -212,7 +226,7 @@ export function initForms(){
     stopPlacing();
     appState.placingMode = null;
     appState.currentEditPin = pt;
-    editPinStatus.textContent = `Pin set at ${pt.lat.toFixed(4)}, ${pt.lng.toFixed(4)}`;
+    editPinStatus.textContent = t('edit.pinSet', { lat: pt.lat.toFixed(4), lng: pt.lng.toFixed(4) });
     editPinStatus.classList.add('set');
     editModalBackdrop.classList.remove('hidden');
     checkEditFormReady();
@@ -236,16 +250,16 @@ export function initForms(){
 
   document.getElementById('eSaveBtn').addEventListener('click', async ()=>{
     if(!appState.currentEditId || !appState.currentEditPin) return;
-    if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
-    if(!requireSignIn('Sign in to submit your edit')) return;     // the session may have ended while the form was open
+    if(!window.sb){ showToast(t('common.notConfigured')); return; }
+    if(!requireSignIn(t('edit.signInSubmit'))) return;     // the session may have ended while the form was open
     const {country, state} = getCountryState('e');
     const ePhotoRaw = document.getElementById('ePhoto').value.trim();
-    if(ePhotoRaw && !safeUrl(ePhotoRaw)){ showToast('Photo link must be a full http:// or https:// address'); return; }
+    if(ePhotoRaw && !safeUrl(ePhotoRaw)){ showToast(t('edit.photoLink')); return; }
     const info = readInfoFields('e', id => document.getElementById(id), {
       hourInputs: [...document.querySelectorAll('#eInfoFields [data-hours-day]')],
       facilityInputs: [...document.querySelectorAll('#eInfoFields [data-facility]')],
     });
-    if(info.website && !safeUrl(info.website)){ showToast('Website must be a full http:// or https:// address'); document.getElementById('e-website').focus(); return; }
+    if(info.website && !safeUrl(info.website)){ showToast(t('edit.websiteLink')); document.getElementById('e-website').focus(); return; }
     const proposal = {
       spot_id: appState.currentEditId,
       name: document.getElementById('eName').value.trim(),
@@ -264,19 +278,19 @@ export function initForms(){
     };
     const saveBtn = document.getElementById('eSaveBtn');
     saveBtn.disabled = true;
-    saveBtn.textContent = 'Saving…';
+    saveBtn.textContent = t('edit.saving');
     try{
       const {error} = await window.sb.from('pending_edits').insert(proposal);
       if(error) throw error;
-      showToast('Edit submitted — a moderator will review it before it goes live.');
-      saveBtn.textContent = 'Save changes';
+      showToast(t('edit.submitted'));
+      saveBtn.textContent = t('edit.saveBtn');
       appState.myEditCache.delete(proposal.spot_id);   // the gym page shows "Your edit is awaiting review"
       closeEditModal();
       refreshPage();
     }catch(err){
-      showToast(submitErrorMessage(err, 'Could not save — try again'));
+      showToast(submitErrorMessage(err, t('common.saveFailed')));
       console.error(err);
-      saveBtn.textContent = 'Save changes';
+      saveBtn.textContent = t('edit.saveBtn');
       saveBtn.disabled = false;
     }
   });
@@ -289,23 +303,23 @@ export function initForms(){
 
   rSubmitBtn.addEventListener('click', async ()=>{
     if(!appState.currentReportId || !rMessage.value.trim()) return;
-    if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
-    if(!requireSignIn('Sign in to send your report')) return;
+    if(!window.sb){ showToast(t('common.notConfigured')); return; }
+    if(!requireSignIn(t('report.signInSend'))) return;
     rSubmitBtn.disabled = true;
-    rSubmitBtn.textContent = 'Sending…';
+    rSubmitBtn.textContent = t('report.sending');
     try{
       const {error} = await window.sb.from('reports').insert({
         spot_id: appState.currentReportId,
         message: rMessage.value.trim()
       });
       if(error) throw error;
-      showToast('Report sent — thanks for the heads up.');
-      rSubmitBtn.textContent = 'Send report';
+      showToast(t('report.sent'));
+      rSubmitBtn.textContent = t('report.send');
       closeReportModal();
     }catch(err){
-      showToast(submitErrorMessage(err, 'Could not send report — try again'));
+      showToast(submitErrorMessage(err, t('report.failed')));
       console.error(err);
-      rSubmitBtn.textContent = 'Send report';
+      rSubmitBtn.textContent = t('report.send');
       rSubmitBtn.disabled = false;
     }
   });

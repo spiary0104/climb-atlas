@@ -200,8 +200,9 @@ export function placePageHtml(p){
 }
 
 // ===== Log (/log) and Me (/me) =========================================================================================
-const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+// Month and weekday names come from Intl in the interface language (UTC dates: no time-zone drift); 1 Jan 2024 is a Monday.
+const monthName = (y, m, opts = {}) => formatDate(new Date(Date.UTC(y, m, 1)), { month: 'long', timeZone: 'UTC', ...opts });
+const weekdayName = (i, weekday) => formatDate(new Date(Date.UTC(2024, 0, 1 + i)), { weekday, timeZone: 'UTC' });
 const pad = n => String(n).padStart(2, '0');
 
 // Month calendar (weeks start on Monday); days with sessions are marked. counts: Map('YYYY-MM-DD' -> sessions).
@@ -216,28 +217,28 @@ export function calendarHtml(year, month, counts = new Map(), today = ''){
     const key = y + '-' + pad(m + 1) + '-' + pad(d);
     const n = Number(counts.get(key)) || 0;
     const cls = ['cal-day', n ? 'has-session' : '', key === today ? 'is-today' : ''].filter(Boolean).join(' ');
-    const label = d + ' ' + MONTHS[m] + (n ? ', ' + (n === 1 ? '1 session' : n + ' sessions') : '');
+    const label = formatDate(new Date(Date.UTC(y, m, d)), { month: 'long', day: 'numeric', timeZone: 'UTC' }) + (n ? t('common.listSep') + t('log.count', { count: n }) : '');
     cells.push('<td><span class="' + cls + '" aria-label="' + escapeHtml(label) + '">' + d + '</span></td>');
   }
   while(cells.length % 7) cells.push('<td></td>');
   const rows = [];
   for(let i = 0; i < cells.length; i += 7) rows.push('<tr>' + cells.slice(i, i + 7).join('') + '</tr>');
-  const head = DAYS.map(n => '<th scope="col" abbr="' + n + '">' + n.charAt(0) + '</th>').join('');
-  return `<section class="panel calendar" aria-labelledby="calTitle"><div class="calendar-head"><h2 class="panel-title" id="calTitle">${escapeHtml(MONTHS[m] + ' ' + y)}</h2>`
-    + `<div class="calendar-nav"><button type="button" class="btn btn-tertiary btn-icon btn-sm" data-page-action="cal-prev" aria-label="Previous month">${icon('arrow-left', {size:'sm'})}</button>`
-    + `<button type="button" class="btn btn-tertiary btn-icon btn-sm" data-page-action="cal-next" aria-label="Next month">${icon('caret-right', {size:'sm'})}</button></div></div>`
+  const head = Array.from({ length: 7 }, (_, i) => '<th scope="col" abbr="' + escapeHtml(weekdayName(i, 'long')) + '">' + escapeHtml(weekdayName(i, 'narrow')) + '</th>').join('');
+  return `<section class="panel calendar" aria-labelledby="calTitle"><div class="calendar-head"><h2 class="panel-title" id="calTitle">${escapeHtml(monthName(y, m, { year: 'numeric' }))}</h2>`
+    + `<div class="calendar-nav"><button type="button" class="btn btn-tertiary btn-icon btn-sm" data-page-action="cal-prev" aria-label="${th('log.prevMonth')}">${icon('arrow-left', {size:'sm'})}</button>`
+    + `<button type="button" class="btn btn-tertiary btn-icon btn-sm" data-page-action="cal-next" aria-label="${th('log.nextMonth')}">${icon('caret-right', {size:'sm'})}</button></div></div>`
     + `<table class="calendar-grid"><thead><tr>${head}</tr></thead><tbody>${rows.join('')}</tbody></table></section>`;
 }
 
 // /log. p: {signedIn, count, calendar (calendarHtml), sessions (logbook.js sessionsHtml)}
 export function logPageHtml(p){
-  if(!p.signedIn) return `<article class="page log-page">${pageArtHtml('log-still-life')}<header class="place-header"><h1 class="page-title">Log</h1>`
-    + `<p class="place-meta">Keep a diary of your sessions: where you climbed, what you sent and how it felt.</p></header>`
-    + `<p class="page-cta"><button type="button" class="btn btn-primary" data-page-action="sign-in">Sign in to start your log</button></p></article>`;
-  return `<article class="page log-page"><header class="page-header-row"><div><h1 class="page-title">Log</h1>`
-    + `<p class="place-meta tnum">${escapeHtml(p.count === 1 ? '1 session' : Number(p.count).toLocaleString('en-US') + ' sessions')}</p></div>`
-    + `<button type="button" class="btn btn-primary" data-page-action="log-session">${icon('plus', {size:'sm'})}Log a session</button></header>`
-    + `<div class="log-layout"><section class="log-sessions" aria-label="Sessions"><div class="session-list">${p.sessions}</div></section>${p.calendar}</div></article>`;
+  if(!p.signedIn) return `<article class="page log-page">${pageArtHtml('log-still-life')}<header class="place-header"><h1 class="page-title">${th('nav.log')}</h1>`
+    + `<p class="place-meta">${th('log.intro')}</p></header>`
+    + `<p class="page-cta"><button type="button" class="btn btn-primary" data-page-action="sign-in">${th('log.signInCta')}</button></p></article>`;
+  return `<article class="page log-page"><header class="page-header-row"><div><h1 class="page-title">${th('nav.log')}</h1>`
+    + `<p class="place-meta tnum">${th('log.count', { count: Number(p.count) })}</p></div>`
+    + `<button type="button" class="btn btn-primary" data-page-action="log-session">${icon('plus', {size:'sm'})}${th('log.title')}</button></header>`
+    + `<div class="log-layout"><section class="log-sessions" aria-label="${th('log.sessionsAria')}"><div class="session-list">${p.sessions}</div></section>${p.calendar}</div></article>`;
 }
 
 // /me and /me/saved, /me/climbed. p: {signedIn, section, saved: [{g, ctx}], climbed: [...], isModerator, pendingCount}
@@ -279,17 +280,17 @@ export function mePageHtml(p){
 // accepted (with the moderator's reason). c: {displayName, points|null, level, contributor, submissions: [{kind, name, status, reason}]}
 export function meContributionsHtml(c){
   if(!c) return '';
-  const points = c.points === null ? '' : `<p class="me-points tnum"><strong>${Number(c.points)}</strong> points · level ${Number(c.level)}${c.contributor ? ' · Contributor' : ''}</p>`;
+  const points = c.points === null ? '' : `<p class="me-points tnum"><strong>${escapeHtml(formatNumber(Number(c.points)))}</strong> ${th('me.pointsLevel', { level: Number(c.level) })}${escapeHtml(c.contributor ? ' · ' + t('me.contributor') : '')}</p>`;
   // Before the profiles table exists (migration 20260926084510 not applied) the name cannot be saved: say so, disabled.
   const unavailable = c.profilesAvailable === false;
-  const form = `<form class="me-name" data-page-form="display-name" novalidate><label class="field-label" for="displayName">Display name</label>`
+  const form = `<form class="me-name" data-page-form="display-name" novalidate><label class="field-label" for="displayName">${th('me.displayName')}</label>`
     + `<div class="me-name-row"><input class="input" id="displayName" name="displayName" maxlength="40" autocomplete="nickname" value="${escapeHtml(c.displayName)}"${unavailable ? ' disabled' : ''}>`
-    + `<button type="submit" class="btn btn-secondary"${unavailable ? ' disabled' : ''}>Save</button></div>`
-    + `<p class="form-hint" id="displayNameHint" aria-live="polite">${unavailable ? 'Display names aren’t switched on yet. You can set yours once they are.' : 'Shown as “added by …” on gyms you add or edit. Never your email.'}</p></form>`;
-  const subs = (c.submissions || []).map(s => `<li class="me-submission"><span class="me-submission-name">${escapeHtml((s.kind === 'edit' ? 'Edit to ' : 'New gym: ') + s.name)}</span>`
-    + ` <span class="${s.status === 'pending' ? 'provenance-pending' : 'provenance-rejected'}">${s.status === 'pending' ? 'In review' : 'Not accepted'}</span>`
+    + `<button type="submit" class="btn btn-secondary"${unavailable ? ' disabled' : ''}>${th('common.save')}</button></div>`
+    + `<p class="form-hint" id="displayNameHint" aria-live="polite">${escapeHtml(t(unavailable ? 'me.nameHintOff' : 'me.nameHint'))}</p></form>`;
+  const subs = (c.submissions || []).map(s => `<li class="me-submission"><span class="me-submission-name">${escapeHtml(t(s.kind === 'edit' ? 'me.subEdit' : 'me.subNew', { name: s.name }))}</span>`
+    + ` <span class="${s.status === 'pending' ? 'provenance-pending' : 'provenance-rejected'}">${escapeHtml(t(s.status === 'pending' ? 'me.inReview' : 'me.notAccepted'))}</span>`
     + `${s.status === 'rejected' && s.reason ? `<span class="me-submission-reason">${escapeHtml(s.reason)}</span>` : ''}</li>`).join('');
-  return `<section class="page-section" aria-labelledby="contribTitle"><h2 class="section-title" id="contribTitle">Your contributions</h2>`
+  return `<section class="page-section" aria-labelledby="contribTitle"><h2 class="section-title" id="contribTitle">${th('me.contributions')}</h2>`
     + points + form + (subs ? `<ul class="me-submissions">${subs}</ul>` : '') + `</section>`;
 }
 

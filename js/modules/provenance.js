@@ -73,11 +73,11 @@ export const isMissingTable = err => !!err && (err.code === 'PGRST205' || err.co
 // What to tell someone whose display name did not save. The profiles table arrives with migration 20260926084510; until
 // then every save 404s, and "try again" would never work.
 export function displayNameSaveMessage(err){
-  if(isMissingTable(err)) return 'Display names aren’t switched on yet. Your name will be saved once they are.';
+  if(isMissingTable(err)) return t('me.namesOff');
   const why = String((err && err.message) || '');
-  if((err && err.code === '23514') || /check constraint/i.test(why)) return 'Use 2 to 40 characters, without @ or < >.';
-  if(/JWT|row-level security|permission denied|Not signed in/i.test(why)) return 'Your sign-in has expired. Sign in again to save.';
-  return 'Could not save — try again.';
+  if((err && err.code === '23514') || /check constraint/i.test(why)) return t('me.nameInvalid');
+  if(/JWT|row-level security|permission denied|Not signed in/i.test(why)) return t('me.signInExpiredSave');
+  return t('me.saveFailed');
 }
 
 // Internal research notes. Imported gyms carry the remarks written while the data was researched: where the entry was

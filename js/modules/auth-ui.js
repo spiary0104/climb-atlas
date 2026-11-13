@@ -1,5 +1,5 @@
 // Sign-in widget + sign-in modal (the auth session itself is window.auth, js/auth.js).
-import { th } from './i18n.js';
+import { t, th } from './i18n.js';
 import { appState } from './state.js';
 import { showToast } from './utils.js';
 
@@ -12,7 +12,7 @@ const authEmailInput = document.getElementById('authEmail');
 // Signed in: the default avatar (the deer head) opens /me. Signed out: a "Sign in" text button (sec. 6.4).
 export function renderAuthUI(user){
   accountSlot.innerHTML = user
-    ? `<button type="button" class="avatar-btn" data-nav="me" aria-label="Me: your gyms and account"><span class="avatar mascot mascot--avatar" aria-hidden="true"><img src="assets/mascot/head.svg" alt=""></span></button>`
+    ? `<button type="button" class="avatar-btn" data-nav="me" aria-label="${th('auth.avatarAria')}"><span class="avatar mascot mascot--avatar" aria-hidden="true"><img src="assets/mascot/head.svg" alt=""></span></button>`
     : `<button type="button" class="btn btn-tertiary" id="topSignInBtn">${th('auth.signIn')}</button>`;
   updateMarksFilterAvailability();
 }
@@ -24,7 +24,7 @@ function updateMarksFilterAvailability(){
 }
 
 export function openAuthModal(){
-  if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
+  if(!window.sb){ showToast(t('common.notConfigured')); return; }
   authStatus.textContent = '';
   authStatus.className = 'auth-status';
   authEmailInput.value = '';
@@ -45,7 +45,7 @@ export function initAuthUI(){
     try{
       await window.auth.signInWithGoogle();
     }catch(err){
-      authStatus.textContent = 'Could not start Google sign-in.';
+      authStatus.textContent = t('auth.googleFailed');
       authStatus.className = 'auth-status err';
       console.error(err);
     }
@@ -54,7 +54,7 @@ export function initAuthUI(){
   document.getElementById('sendMagicLinkBtn').addEventListener('click', async ()=>{
     const email = authEmailInput.value.trim();
     if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-      authStatus.textContent = email ? 'That doesn’t look like an email address.' : 'Enter your email first.';
+      authStatus.textContent = email ? t('auth.badEmail') : t('auth.enterEmail');
       authStatus.className = 'auth-status err';
       authEmailInput.setAttribute('aria-invalid', 'true');
       authEmailInput.focus();
@@ -65,10 +65,10 @@ export function initAuthUI(){
     btn.disabled = true;
     try{
       await window.auth.signInWithEmail(email);
-      authStatus.textContent = 'Check your email for a sign-in link.';
+      authStatus.textContent = t('auth.checkEmail');
       authStatus.className = 'auth-status ok';
     }catch(err){
-      authStatus.textContent = 'Could not send the link — try again.';
+      authStatus.textContent = t('auth.sendFailed');
       authStatus.className = 'auth-status err';
       console.error(err);
     }

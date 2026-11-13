@@ -123,7 +123,7 @@ const SAFE_EXPR = [
   // add-html.js (/add): extra is a literal attribute string at every textField() call site; opts/other/submit/signIn are
   // assembled in the same builder from escaped values and literals; the helpers escape internally
   /^(extra|opts|other|submit|signIn)$/, /^(countrySelect\(d\)|typeChecks\(d\.types\))$/, /^d\.country === 'OTHER' \? '' : regionSelect\(d\)$/,
-  /^textField\('[a-zA-Z]+', '[A-Za-z ]+', d\.[a-zA-Z]+(, ' maxlength="\d+"')?\)$/,
+  /^textField\('[a-zA-Z]+', (?:'[A-Za-z ]+'|t\('[a-zA-Z0-9_.]+'\)), d\.[a-zA-Z]+(, ' maxlength="\d+"')?\)$/,   // the label is a literal or a translation (textField escapes it)
   // brand.js: the seal builder takes only literal options and escapes its label
   /^sealSvg\(\)$/, /^(arc|clip|head|CREST|pose|art)$/,
   // page-html.js page header art (sec. 13A): literal names only; pageArtHtml renders `name` only when it is in the PAGE_ART set

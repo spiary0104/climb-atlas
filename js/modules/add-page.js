@@ -5,6 +5,7 @@
 import { addDoneHtml, addPageHtml, addStepHtml, areaFor, areaMissing, countryState, nearHtml, PIN_ZOOM, stepOneMissing } from './add-html.js';
 import { openAuthModal } from './auth-ui.js';
 import { ALL_TYPES } from './geo.js';
+import { t } from './i18n.js';
 import { BASEMAP_STYLE, map as exploreMap, mapLibrary, paperBasemap } from './map.js';
 import { currentRoute, registerView, setPageTitle } from './router.js';
 import { gymPath } from './slug.js';
@@ -59,7 +60,7 @@ function updateHint(){
   if(!hint) return;
   const missing = stepOneMissing(draft, zoomNow());
   if(draft.step === 2) missing.push(...areaMissing(draft));      // the table needs the area; usually pre-filled
-  hint.textContent = missing.length ? 'Still needed: ' + missing.join(', ') + '.' : '';
+  hint.textContent = missing.length ? t('form.stillNeeded', { items: missing.join(t('common.listSep')) }) : '';
 }
 
 function renderStep(){
@@ -89,7 +90,7 @@ function mountPinMap(el){
   destroyPinMap();
   const mine = pinMapToken;
   mapLibrary().then(maplibregl => { if(mine === pinMapToken && el.isConnected) makePinMap(maplibregl, el); })
-    .catch(err => { console.warn('MapLibre could not load', err); showToast("The map couldn't load — check your connection"); });
+    .catch(err => { console.warn('MapLibre could not load', err); showToast(t('add.mapFail')); });
 }
 function makePinMap(maplibregl, el){
   const c = exploreMap.getCenter();
@@ -106,10 +107,10 @@ function makePinMap(maplibregl, el){
 function destroyPinMap(){ pinMapToken++; if(pinMap){ pinMap.remove(); pinMap = null; } }
 
 function locate(){
-  if(!navigator.geolocation){ showToast('Location is not available in this browser'); return; }
+  if(!navigator.geolocation){ showToast(t('add.noLocation')); return; }
   navigator.geolocation.getCurrentPosition(
     pos => { if(pinMap) pinMap.jumpTo({ center: [pos.coords.longitude, pos.coords.latitude], zoom: Math.max(pinMap.getZoom(), 16) }); },
-    () => showToast("Couldn't get your location — move the map instead"),
+    () => showToast(t('add.locFail')),
     { enableHighAccuracy: true, timeout: 10000 });
 }
 
@@ -127,29 +128,29 @@ async function submit(){
   if(missing.length){
     if(draft.step !== 1){ draft.step = 1; renderStep(); }
     updateHint(); focusFirstMissing();
-    showToast('Still needed: ' + missing.join(', '));
+    showToast(t('form.stillNeededToast', { items: missing.join(t('common.listSep')) }));
     return;
   }
   const area = areaMissing(draft);
   if(area.length){
     draft.step = 2; renderStep(); saveDraft();
-    showToast('Still needed: ' + area.join(', '));
+    showToast(t('form.stillNeededToast', { items: area.join(t('common.listSep')) }));
     const s = $('add-suburb'); if(s) s.focus();
     return;
   }
   const photo = draft.photo.trim();
-  if(photo && !safeUrl(photo)){ showToast('Photo link must be a full http:// or https:// address'); return; }
+  if(photo && !safeUrl(photo)){ showToast(t('edit.photoLink')); return; }
   const website = draft.website.trim();
-  if(website && !safeUrl(website)){ showToast('Website must be a full http:// or https:// address'); return; }
+  if(website && !safeUrl(website)){ showToast(t('edit.websiteLink')); return; }
   const user = window.auth && window.auth.user;
-  if(!user){ saveDraft(); showToast('Sign in to submit — your draft stays on this device'); openAuthModal(); return; }
-  if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
+  if(!user){ saveDraft(); showToast(t('add.signInSubmit')); openAuthModal(); return; }
+  if(!window.sb){ showToast(t('common.notConfigured')); return; }
   busy = true; renderStep();
   try{
     // A friendlier message in front of the RLS limit (10 a day), which is the real enforcement.
     const dayAgo = new Date(Date.now() - 24*60*60*1000).toISOString();
     const { count, error: countError } = await window.sb.from('spots').select('id', { count: 'exact', head: true }).eq('submitted_by', user.id).gte('created_at', dayAgo);
-    if(!countError && count >= 10){ showToast("You've reached today's limit of 10 submissions — try again tomorrow."); return; }
+    if(!countError && count >= 10){ showToast(t('add.limit')); return; }
     const { country, state } = countryState(draft);
     const { error } = await window.sb.from('spots').insert({
       id: 'community-' + (window.crypto && crypto.randomUUID ? crypto.randomUUID() : Date.now()),
@@ -166,7 +167,7 @@ async function submit(){
     appState.myCommunity = null;          // /me reloads the submissions list
   }catch(err){
     const rlsRejected = /row-level security|permission denied/i.test((err && err.message) || '');
-    showToast(rlsRejected ? "Couldn't save — you may have reached today's submission limit." : submitErrorMessage(err, 'Could not save — try again'));
+    showToast(rlsRejected ? t('add.rlsLimit') : submitErrorMessage(err, t('common.saveFailed')));
     console.error(err);
   }finally{
     busy = false;
@@ -175,7 +176,7 @@ async function submit(){
 }
 
 function enter(params, view){
-  setPageTitle('Add a gym');
+  setPageTitle(t('topbar.addGym'));
   view.innerHTML = addPageHtml();
   mountPinMap(view.querySelector('[data-add-map]'));
   renderStep();
