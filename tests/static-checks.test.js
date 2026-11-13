@@ -237,8 +237,8 @@ test('legal pages are real pages: dated, no "draft / not legal advice" banner, n
   assert.match(read('terms.html'), /governed by the laws of New South Wales, Australia/);
   const idx = read('index.html');
   assert.ok(!/privacyModalBackdrop|termsModalBackdrop|id="openPrivacy"|id="openTerms"/.test(idx), 'the Privacy/Terms dialogs are gone from index.html');
-  assert.match(idx, /<a class="link link-quiet" href="\/privacy">Privacy<\/a>/);
-  assert.match(idx, /<a class="link link-quiet" href="\/terms">Terms<\/a>/);
+  assert.match(idx, /<a class="link link-quiet" href="\/privacy" data-i18n="me\.privacy">Privacy<\/a>/);   // the English stays in the markup; data-i18n translates it
+  assert.match(idx, /<a class="link link-quiet" href="\/terms" data-i18n="me\.terms">Terms<\/a>/);
   for (const f of moduleFiles) assert.ok(!/openPrivacy|openTerms|privacyModalBackdrop|termsModalBackdrop|initInfoModals/.test(read(f)), f + ' still wires the old dialogs');
 });
 
@@ -296,8 +296,8 @@ test('Open now: chip between Climbed and All filters (hidden until the 10% rule 
   const chips = [...html.matchAll(/<button type="button" class="chip[^"]*"[^>]*>(?:<[^>]*>)*([^<]+)<\/button>/g)].map((m) => m[1].trim());
   const iClimbed = chips.indexOf('Climbed'), iOpen = chips.indexOf('Open now'), iAll = chips.indexOf('All filters');
   assert.ok(iClimbed >= 0 && iOpen === iClimbed + 1 || (iOpen > iClimbed && iOpen < iAll), 'Open now follows Climbed and precedes All filters: ' + chips.join(' | '));
-  assert.match(html, /<button type="button" class="chip" data-filter-flag="open" aria-pressed="false" hidden>Open now<\/button>/);
-  assert.match(html, /<fieldset class="filter-section" id="filterSheetHours" hidden>\s*<legend class="section-label">Hours<\/legend>\s*<label class="check-row"><input type="checkbox" data-sheet-flag="open">Open now<\/label>/);
+  assert.match(html, /<button type="button" class="chip" data-filter-flag="open" aria-pressed="false" data-i18n="filters\.open" hidden>Open now<\/button>/);
+  assert.match(html, /<fieldset class="filter-section" id="filterSheetHours" hidden>\s*<legend class="section-label" data-i18n="filters\.hours">Hours<\/legend>\s*<label class="check-row"><input type="checkbox" data-sheet-flag="open"><span data-i18n="filters\.open">Open now<\/span><\/label>/);
   const f = read('js/modules/filters.js');
   assert.match(f, /if\(f\.open && status\(g\)\.state !== 'open'\) return false;/, 'only open gyms match; unknown never does');
   assert.match(f, /NEEDS_SIGN_IN = new Set\(\['saved', 'climbed'\]\)/, 'Open now (like Has photos) is not behind sign-in');

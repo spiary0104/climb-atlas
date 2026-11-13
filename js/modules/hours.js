@@ -7,10 +7,11 @@
 // and sits within 300 km of the visitor's located position.
 import { distanceKm } from './geo.js';
 import { cleanHours } from './gym-info.js';
+import { t } from './i18n.js';
 import { appState } from './state.js';
 
 export const DAY_KEYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-const DAY_NAMES = { mon: 'Mon', tue: 'Tue', wed: 'Wed', thu: 'Thu', fri: 'Fri', sat: 'Sat', sun: 'Sun' };
+const dayName = key => t(`day.${key}`);
 const DAY = 1440;
 
 // ===== parsing one day's text =========================================================================================
@@ -277,7 +278,7 @@ export function todayLabel(g, now = new Date(), { userLocation = appState.userLo
   const raw = clock && hours[clock.day];
   if(!raw) return '';
   const parsed = parseDay(raw);
-  return parsed && parsed.length === 0 ? 'Closed today' : 'Today ' + raw;
+  return parsed && parsed.length === 0 ? t('hours.closedToday') : t('hours.today', { hours: raw });
 }
 
 // The gym's own weekday key (mon..sun) when its clock is known; null otherwise (the gym page then uses the visitor's day).
@@ -290,15 +291,16 @@ export function gymDayKey(g, now = new Date(), { userLocation = appState.userLoc
 // 390 -> "6:30am", 600 -> "10am", 0 -> "12am", 720 -> "12pm".
 export function formatMinutes(m){
   const x = ((m % DAY) + DAY) % DAY, h = Math.floor(x / 60), min = x % 60;
+  if(t('hours.clock') === '24h') return h + ':' + String(min).padStart(2, '0');   // Chinese: 6:30, 22:00
   return `${h % 12 === 0 ? 12 : h % 12}${min ? ':' + String(min).padStart(2, '0') : ''}${h < 12 ? 'am' : 'pm'}`;
 }
 
 // {state, text} for rows, cards, the peek card and the gym page; null when the status is unknown (nothing renders).
 export function statusLine(st){
   if(!st || st.state === 'unknown') return null;
-  if(st.state === 'open') return { state: 'open', text: st.h24 ? 'Open 24 hours' : 'Open · until ' + (st.until === 0 ? 'midnight' : formatMinutes(st.until)) };
-  if(!st.next) return { state: 'closed', text: 'Closed' };
-  const when = st.next.inDays === 0 ? '' : st.next.inDays === 1 ? 'tomorrow ' : DAY_NAMES[st.next.day] + ' ';
-  return { state: 'closed', text: 'Closed · opens ' + when + formatMinutes(st.next.open) };
+  if(st.state === 'open') return { state: 'open', text: st.h24 ? t('hours.open24') : t('hours.open') + t('hours.untilDetail', { time: st.until === 0 ? t('hours.midnight') : formatMinutes(st.until) }) };
+  if(!st.next) return { state: 'closed', text: t('hours.closed') };
+  const time = formatMinutes(st.next.open), { inDays, day } = st.next;
+  return { state: 'closed', text: t('hours.closed') + (inDays === 0 ? t('hours.opensAt', { time }) : inDays === 1 ? t('hours.opensTomorrow', { time }) : t('hours.opensDay', { day: dayName(day), time })) };
 }
 export const hoursLine = (g, now) => statusLine(status(g, now));

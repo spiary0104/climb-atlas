@@ -33,14 +33,16 @@ function extend(b, g){
 // Place keys double as the ?place= URL value and the filter key: "AU", "AU:NSW", "AU:NSW:Marrickville".
 export const placeKey = (country, state, suburb) => [country, state, suburb].filter(v => v != null && v !== '').join(':');
 
-export function buildSearchIndex(spots, { countryLabels = {}, stateLabel = (c, s) => s } = {}){
+export function buildSearchIndex(spots, { countryLabels = {}, countryAlt = () => '', stateLabel = (c, s) => s } = {}){
   const countries = new Map(), regions = new Map(), cities = new Map(), metros = new Map(), gyms = [];
   const secondaryOf = (region, country) => region === country ? country : region + ' · ' + country;
   for(const g of spots){
     if(!g || !Number.isFinite(g.lat) || !Number.isFinite(g.lng)) continue;
     const ck = placeKey(g.country), rk = placeKey(g.country, g.state), sk = placeKey(g.country, g.state, (g.suburb || '').trim());
     const country = countryLabels[g.country] || g.country, region = stateLabel(g.country, g.state) || g.state;
-    if(!countries.has(ck)) countries.set(ck, { kind: 'country', key: ck, label: country, secondary: '', codes: [fold(g.country)], count: 0, bounds: null, country: g.country });
+    // countryAlt: the English name, so "china" still finds the country while its label is 中国 (and vice versa for the code)
+    const alt = countryAlt(g.country);
+    if(!countries.has(ck)) countries.set(ck, { kind: 'country', key: ck, label: country, secondary: '', codes: [fold(g.country), ...(alt && fold(alt) !== fold(country) ? [fold(alt)] : [])], alt: alt || '', count: 0, bounds: null, country: g.country });
     if(!regions.has(rk)) regions.set(rk, { kind: 'region', key: rk, label: region, secondary: country, codes: [fold(g.state)], count: 0, bounds: null, country: g.country, state: g.state });
     const metro = metroOf(g);
     if(metro && !metros.has(metro)){
@@ -59,7 +61,7 @@ export function buildSearchIndex(spots, { countryLabels = {}, stateLabel = (c, s
       words: [...wordStarts(g.name), ...wordStarts(g.suburb), ...wordStarts(g.address), ...cjkStarts(g.name_local)], codes: [], count: 0, lat: g.lat, lng: g.lng });
   }
   const places = [...metros.values(), ...cities.values(), ...regions.values(), ...countries.values()];
-  for(const e of places) e.words = wordStarts([e.label, ...(e.metro ? e.codes : [])].join(' '));   // a metro's aliases match like its name
+  for(const e of places) e.words = wordStarts([e.label, e.alt || '', ...(e.metro ? e.codes : [])].join(' '));   // a metro's aliases match like its name
   for(const e of gyms){ e.nameWords = [...wordStarts(e.label), ...cjkStarts(e.local)]; delete e.local; }
   return { places, gyms };
 }

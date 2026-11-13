@@ -5,6 +5,8 @@
 //   verified            a moderator marked it verified (spots.verified_at)
 // Marks: grey ring-dot, forest ring-dot, nothing. Levels (sec. 10.6): thresholds are ours, the spec fixes only the points.
 
+import { t } from './i18n.js';
+
 export function provenanceState(g, contributors = 0){
   if(g && g.verified_at) return 'verified';
   if(Number(contributors) >= 2) return 'community-verified';
@@ -12,11 +14,12 @@ export function provenanceState(g, contributors = 0){
   return 'community-added';
 }
 
+// Getters into the interface language (i18n.js): read like a plain table, always the current language.
 export const PROVENANCE_LABELS = Object.freeze({
-  'listed': 'Listed by Bouldeer',
-  'community-added': 'Community-added',
-  'community-verified': 'Community-verified',
-  'verified': 'Verified',
+  get 'listed'(){ return t('provenance.listed'); },
+  get 'community-added'(){ return t('provenance.communityAdded'); },
+  get 'community-verified'(){ return t('provenance.communityVerified'); },
+  get 'verified'(){ return t('provenance.verified'); },
 });
 
 // Points: 15 per approved gym, 5 per approved edit (computed server-side); levels 1-5; "Contributor" from level 3.

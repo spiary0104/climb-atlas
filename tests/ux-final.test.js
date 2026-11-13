@@ -17,7 +17,7 @@ test('list: nearest first by default, to the visitor when located and to the are
   assert.match(src, /export const effectiveSort = \(\) => appState\.sortBy \|\| 'distance';/);
   assert.match(src, /if\(appState\.userLocation\) return appState\.userLocation;/);
   assert.match(src, /b\.east < b\.west \? b\.east \+ 360 : b\.east/, 'the centre works across the antimeridian');
-  assert.match(src, /appState\.userLocation \? 'Nearest to you' : 'Nearest to centre'/);
+  assert.match(src, /appState\.userLocation \? 'sort\.nearYou' : 'sort\.nearCentre'/);
   assert.ok(!/option\[value="distance"\]'\)\.hidden = !appState\.userLocation/.test(src), 'the option is no longer hidden until located');
 });
 
