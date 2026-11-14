@@ -376,7 +376,8 @@ export function paperBasemap(target){
 // Listeners that do not need the real map yet: pins repaint on every move, an empty-map click clears the selection.
 // MapLibre's own controls (zoom, locate, attribution) take their button labels from the map's locale; a language switch
 // retitles the buttons that exist and repaints the markers (cluster labels, continent and country names).
-const mapLocale = () => ({
+export const mapLocale = () => ({
+  'Map.Title': t('explore.mapAria'), 'Marker.Title': t('map.marker'),
   'NavigationControl.ZoomIn': t('map.zoomIn'), 'NavigationControl.ZoomOut': t('map.zoomOut'),
   'GeolocateControl.FindMyLocation': t('map.locate'), 'GeolocateControl.LocationNotAvailable': t('map.locateUnavailable'),
   'AttributionControl.ToggleAttribution': t('map.attribution'),

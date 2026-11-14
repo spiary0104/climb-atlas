@@ -45,6 +45,7 @@ export default {
 
   'explore.skip': 'Skip to content',
   'explore.paneAria': 'Gyms',
+  'site.title': 'Bouldeer — community-sourced climbing map',
   'explore.mapAria': 'Map',
   'explore.listAria': 'Gyms in view',
   'explore.carouselAria': 'Gyms at this spot',
@@ -133,6 +134,7 @@ export default {
   'map.locate': 'Show my location',
   'map.locateUnavailable': 'Location not available',
   'map.attribution': 'Toggle attribution',
+  'map.marker': 'Map marker',
 
   'type.indoorBouldering': 'Indoor bouldering',
   'type.topRope': 'Top rope',
