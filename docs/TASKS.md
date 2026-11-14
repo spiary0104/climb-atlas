@@ -49,6 +49,7 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 - Apply `supabase/migrations/20261114000100_gym_aliases.sql` (untested locally: Docker was off), then add `aliases` to LIST_COLUMNS in
   data-load.js AND spots-prefetch.js (a test keeps them identical) and regenerate the fallback; search-index.js already reads it.
 - Import pipeline: write only verified aliases (own signage/site/social). Visitor i18n model: `visitor` stays the original; optional `visitor_lang`, `visitor_i18n` jsonb {en:{...}}.
+### i18n (docs/i18n.md): place names (cities/regions) still English in zh-CN; legal pages English only; unify 岩馆/攀岩馆; zh-TW (convert + review), ja/ko (place-names.js labels); SEO per-language URLs and Play/TWA are owner decisions.
 ### Welcome / account deletion / community publishing
 - One-time welcome after first email confirmation (owner 2026-10-05). Self-serve account deletion (legal pages promise 30 days).
 - Phase 4: publish-then-review for edits, photos and confirm points are not built.
