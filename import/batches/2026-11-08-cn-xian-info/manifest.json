@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-11-08-cn-xian-info",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "2bea93159c5c41384cd26016654433892e6393f5f3c79199154fc9770875bfde",
+  "payload_sha256": "4f98306e474a508d2e91209b801ee4dbd33b5ccac131611d3bf76fa3e6500e96",
+  "confirm_token": "f3d387cfee457d98",
+  "live_state_sha256": "3a8436eec4e869d28a1f21465866a2c862c0a634ab954354d8605106bfba4eff",
+  "rows_updated": 0,
+  "approved_before": 3614,
+  "approved_after": 3614,
+  "changes": [],
+  "rows_info_filled": 6,
+  "info_filled": [
+    {
+      "id": "seed-809",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "7093f9353d606d97",
+      "after_h": "7093f9353d606d97"
+    },
+    {
+      "id": "seed-797",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "25010552dcec1ede",
+      "after_h": "25010552dcec1ede"
+    },
+    {
+      "id": "seed-798",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "e62a58094283889d",
+      "after_h": "e62a58094283889d"
+    },
+    {
+      "id": "seed-806",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "0a5fb25390cb0331",
+      "after_h": "0a5fb25390cb0331"
+    },
+    {
+      "id": "seed-812",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "959e5a49c94761b5",
+      "after_h": "959e5a49c94761b5"
+    },
+    {
+      "id": "seed-813",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "7e025bb97544e86b",
+      "after_h": "7e025bb97544e86b"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 6,
+    "problems": []
+  },
+  "started_at": "2026-11-11T00:52:23.276Z",
+  "finished_at": "2026-11-11T00:52:28.038Z",
+  "ids": [
+    "seed-809",
+    "seed-797",
+    "seed-798",
+    "seed-806",
+    "seed-812",
+    "seed-813"
+  ]
+}
