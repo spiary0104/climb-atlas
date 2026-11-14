@@ -37,17 +37,18 @@ export function sourceLineHtml(g){
 
 export function visitorHtml(g){
   const v = cleanVisitor(g.visitor), lang = localLang(g);
-  const unknown = `<dd class="essentials-unknown">${th('common.notConfirmed')}</dd>`;
-  const rows = (v ? VISITOR_FIELDS.filter(([k]) => v[k]) : VISITOR_FIELDS).map(([k, label]) => {
+  const head = `<section class="page-section visitor-info" aria-labelledby="visitorTitle"><h2 class="section-title" id="visitorTitle">${th('gym.visitorInfo')}</h2>`;
+  // Nothing recorded (most gyms): one line naming what is unknown, not six "Not confirmed yet" rows.
+  if(!v) return head + `<p class="section-note essentials-unknown">${th('gym.visitor.noneConfirmed')}</p></section>`;
+  const rows = VISITOR_FIELDS.filter(([k]) => v[k]).map(([k, label]) => {
     // Free text: tag it with the local language only when it visibly is in that script.
-    const attr = v && lang && CJK.test(v[k]) ? ` lang="${lang}"` : '';
-    return `<div class="visitor-row"><dt class="visitor-label">${th(label)}</dt>${v ? `<dd${attr}>${escapeHtml(v[k])}</dd>` : unknown}</div>`;
+    const attr = lang && CJK.test(v[k]) ? ` lang="${lang}"` : '';
+    return `<div class="visitor-row"><dt class="visitor-label">${th(label)}</dt><dd${attr}>${escapeHtml(v[k])}</dd></div>`;
   });
-  const partial = v && FACTS.some(k => !v[k]);
-  return `<section class="page-section visitor-info" aria-labelledby="visitorTitle"><h2 class="section-title" id="visitorTitle">${th('gym.visitorInfo')}</h2>`
-    + `<dl class="visitor-list">${rows.join('')}</dl>`
+  const partial = FACTS.some(k => !v[k]);
+  return head + `<dl class="visitor-list">${rows.join('')}</dl>`
     + (partial ? `<p class="section-note essentials-unknown">${th('gym.visitor.otherUnconfirmed')}</p>` : '')
-    + (v ? sourceLineHtml(g) : '') + `</section>`;
+    + sourceLineHtml(g) + `</section>`;
 }
 
 // What "Copy address" copies: the local-script address when there is one (for a taxi driver), else the address.

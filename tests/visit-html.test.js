@@ -11,12 +11,15 @@ const gym = { id: 'g1', name: 'Panda Climbing', name_local: '熊猫攀岩', coun
   address: '388 Tianren Rd', address_local: '天仁路388号天府凯德L5-15号', types: ['indoor-bouldering'] };
 const full = { booking: 'WeChat mini-program', payment: 'WeChat Pay, Alipay', english_help: '一些员工会说英语', id_required: 'Passport', shoe_hire: 'Yes, 15 RMB', note: 'Bring socks' };
 
-test('visitor info: no data lists the six facts as "Not confirmed yet" and shows no source', async () => {
+test('visitor info: no data is one "not confirmed yet" line naming the facts, no rows and no source', async () => {
   const [V, I] = await load(); await I.setLocale('en');
   const html = V.visitorHtml(gym);
-  assert.equal((html.match(/Not confirmed yet/g) || []).length, 6);
-  for(const l of ['Booking', 'Payment', 'English help', 'ID required', 'Shoe hire', 'Note']) assert.ok(html.includes('>' + l + '<'), l);
-  assert.ok(!/visitor-source|Other visitor details/.test(html));
+  assert.equal((html.match(/not confirmed yet/g) || []).length, 1);
+  for(const l of ['Booking', 'payment', 'English help', 'ID', 'shoe hire']) assert.ok(html.includes(l), l);
+  assert.ok(!/visitor-row|visitor-source|Other visitor details/.test(html));
+  await I.setLocale('zh-CN');
+  assert.match(V.visitorHtml(gym), /预约、付款、英文服务、证件和租鞋：尚未确认/);
+  await I.setLocale('en');
 });
 
 test('visitor info: partial data shows only the present fields plus one "other details" line; full data has no such line', async () => {

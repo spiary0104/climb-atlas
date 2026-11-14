@@ -208,6 +208,7 @@ export default {
   'gym.visitor.booking': 'Booking', 'gym.visitor.payment': 'Payment', 'gym.visitor.englishHelp': 'English help',
   'gym.visitor.idRequired': 'ID required', 'gym.visitor.shoeHire': 'Shoe hire', 'gym.visitor.note': 'Note',
   'gym.visitor.otherUnconfirmed': 'Other visitor details not confirmed yet',
+  'gym.visitor.noneConfirmed': 'Booking, payment, English help, ID and shoe hire: not confirmed yet',
   'gym.visitor.source': 'Source: {source}, checked {date}',
   'gym.visitor.sourceSite': 'official site', 'gym.visitor.sourceSocial': 'official account',
   'gym.copyAddress': 'Copy address', 'gym.openAmap': 'Open in Amap',

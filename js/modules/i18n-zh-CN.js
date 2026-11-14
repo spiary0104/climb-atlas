@@ -208,6 +208,7 @@ export default {
   'gym.visitor.booking': '预订', 'gym.visitor.payment': '支付方式', 'gym.visitor.englishHelp': '英语服务',
   'gym.visitor.idRequired': '是否需要证件', 'gym.visitor.shoeHire': '租鞋', 'gym.visitor.note': '备注',
   'gym.visitor.otherUnconfirmed': '其他到访信息尚未确认',
+  'gym.visitor.noneConfirmed': '预约、付款、英文服务、证件和租鞋：尚未确认',
   'gym.visitor.source': '来源：{source}，核实于 {date}',
   'gym.visitor.sourceSite': '官方网站', 'gym.visitor.sourceSocial': '官方账号',
   'gym.copyAddress': '复制地址', 'gym.openAmap': '在高德地图中打开',
