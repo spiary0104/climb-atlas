@@ -1,6 +1,7 @@
 // /me, /me/saved, /me/climbed (DESIGN.md sec. 6.1): the account area as a page, replacing the Me menu. Saved and Climbed
 // gyms as dense rows linking to their pages; Add a gym, Pending review (moderators), Sign out; About / Privacy / Terms.
 // No email address is shown (sec. 18 Provenance: "no email addresses visible anywhere").
+import { t } from './i18n.js';
 import { openAuthModal } from './auth-ui.js';
 import { loadMyCommunity, saveDisplayName } from './community.js';
 import { displayNameSaveMessage, isContributor, isMissingTable, levelFor, validDisplayName } from './provenance.js';
@@ -26,9 +27,9 @@ function communityCtx(){
 }
 
 function enter({ section }, view){
-  if(!window.auth.user){ setPageTitle('Me'); view.innerHTML = mePageHtml({ signedIn: false }); return; }
-  if(!appState.loaded){ setPageTitle('Me'); view.innerHTML = pageSkeletonHtml(); return; }
-  setPageTitle(section === 'climbed' ? 'Climbed' : 'Saved');
+  if(!window.auth.user){ setPageTitle(t('me.title')); view.innerHTML = mePageHtml({ signedIn: false }); return; }
+  if(!appState.loaded){ setPageTitle(t('me.title')); view.innerHTML = pageSkeletonHtml(); return; }
+  setPageTitle(t(section === 'climbed' ? 'me.climbed' : 'me.saved'));
   view.innerHTML = mePageHtml({
     signedIn: true, section,
     saved: gymsFor(appState.bookmarkedIds), climbed: gymsFor(appState.climbedIds),
@@ -52,7 +53,7 @@ export function initMePage(){
     const name = input.value.trim();
     if(!validDisplayName(name)){
       input.setAttribute('aria-invalid', 'true');
-      hint.textContent = 'Use 2 to 40 characters, without @ or < >.';
+      hint.textContent = t('me.nameInvalid');
       input.focus();
       return;
     }
@@ -61,7 +62,7 @@ export function initMePage(){
       await saveDisplayName(name);
       if(appState.myCommunity) appState.myCommunity.displayName = name;
       appState.provenanceCache.clear();             // "added by" lines pick up the new name
-      showToast('Display name saved');
+      showToast(t('me.nameSaved'));
       refreshPage();
     }catch(err){
       hint.textContent = displayNameSaveMessage(err);      // the real reason, not always "try again"
@@ -75,7 +76,7 @@ export function initMePage(){
     if(!btn) return;
     switch(btn.dataset.pageAction){
       case 'sign-in': openAuthModal(); break;
-      case 'sign-out': window.auth.signOut(); showToast('Signed out'); break;
+      case 'sign-out': window.auth.signOut(); showToast(t('me.signedOut')); break;
       case 'add-gym': startAddGym(); break;
     }
   });

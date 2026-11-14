@@ -61,7 +61,7 @@ test('Log a session: Date and Mood share one height; iOS drops the date input\'s
   assert.ok(block.includes('.field input[type="date"]{-webkit-appearance:none;appearance:none;'), block);
   assert.ok(block.includes('::-webkit-date-and-time-value{margin:0;text-align:left;}'), 'iOS centres the value otherwise');
   const html = read('index.html');
-  assert.match(html, /<div class="field field-row">\s*<div>\s*<label for="sDate">Date<\/label>\s*<input id="sDate" type="date">[\s\S]*?<select id="sMood">/, 'the pair this guards');
+  assert.match(html, /<div class="field field-row">\s*<div>\s*<label for="sDate"[^>]*>Date<\/label>\s*<input id="sDate" type="date">[\s\S]*?<select id="sMood">/, 'the pair this guards');
 });
 
 // ----- 2/3. the gym picker -----------------------------------------------------------------------------------------

@@ -9,6 +9,7 @@
 import { openAuthModal } from './auth-ui.js';
 import { COUNTRY_LABELS } from './constants.js';
 import { distanceKm, formatDistance } from './geo.js';
+import { t } from './i18n.js';
 import { startLogSession } from './logbook.js';
 import { markAdded } from './marks.js';
 import { showMilestones } from './milestone-sheet.js';
@@ -61,19 +62,19 @@ function open(html){ body.innerHTML = html; backdrop.classList.remove('hidden');
 
 export async function startCheckin(spotId){
   const g = appState.spots.find(s => s.id === spotId);
-  if(!g){ showToast('This gym is still loading. Try again in a moment.'); return; }
-  if(!window.auth.user){ showToast('Sign in to check in and collect stamps'); openAuthModal(); return; }
-  if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
+  if(!g){ showToast(t('ck.loading')); return; }
+  if(!window.auth.user){ showToast(t('ck.signIn')); openAuthModal(); return; }
+  if(!window.sb){ showToast(t('common.notConfigured')); return; }
   if(!appState.checkinsLoaded) await loadCheckins();
-  if(appState.checkinsAvailable === false){ showToast('Check-ins are not switched on yet'); return; }
-  if(checkedInRecently(g.id)){ showToast('Already checked in here today'); return; }
+  if(appState.checkinsAvailable === false){ showToast(t('ck.notOn')); return; }
+  if(checkedInRecently(g.id)){ showToast(t('ck.already')); return; }
   let mode = 'confirm', distance = '';
   if(coarsePointer()){
-    showToast('Checking your location…');   // GPS can take seconds: say something is happening
+    showToast(t('ck.locating'));   // GPS can take seconds: say something is happening
     const here = await locate();
     if(here){
       const km = distanceKm(here, g);
-      if(km > GEOFENCE_KM){ showToast(`You’re ${formatDistance(km)} from ${g.name}. Check in when you get there.`); return; }
+      if(km > GEOFENCE_KM){ showToast(t('ck.tooFar', { distance: formatDistance(km), name: g.name })); return; }
       mode = 'near'; distance = formatDistance(km);
     }
   }
@@ -87,23 +88,23 @@ async function stamp(btn){
   const here = $('ciHere');
   if(mode === 'confirm' && here && !here.checked){
     here.setAttribute('aria-invalid', 'true'); here.focus();
-    showToast('Confirm you’re at the gym to check in');
+    showToast(t('ck.confirmHere'));
     return;
   }
   const note = ($('ciNote').value || '').trim().slice(0, 140) || null;
-  btn.disabled = true; btn.textContent = 'Stamping…';
+  btn.disabled = true; btn.textContent = t('ck.stamping');
   const { data, error } = await window.sb.from('checkins').insert({ spot_id: g.id, note }).select('id, spot_id, checked_at, note').single();
   const stillOpen = current === session;
   if(error){
-    if(stillOpen){ btn.disabled = false; btn.textContent = 'Stamp it'; }
+    if(stillOpen){ btn.disabled = false; btn.textContent = t('ck.stamp'); }
     // The server names the reason (migration 20260927090000); a bare RLS refusal is not assumed to be the daily limit.
     const why = error.message || '';
-    if(missingTable(error)){ appState.checkinsAvailable = false; showToast('Check-ins are not switched on yet'); }
-    else if(/already checked in/i.test(why)) showToast('Already checked in here today');
-    else if(/not open for check-ins/i.test(why)) showToast(`${g.name} isn’t open for check-ins any more`);
-    else if(/daily check-in limit/i.test(why)) showToast('That’s 30 check-ins in 24 hours, the most allowed. Try again later.');
-    else if(/sign in to check in|JWT/i.test(why)) showToast('Your sign-in has expired. Sign in again to check in.');
-    else { showToast('Could not check in — try again'); console.error(error); }
+    if(missingTable(error)){ appState.checkinsAvailable = false; showToast(t('ck.notOn')); }
+    else if(/already checked in/i.test(why)) showToast(t('ck.already'));
+    else if(/not open for check-ins/i.test(why)) showToast(t('ck.notOpen', { name: g.name }));
+    else if(/daily check-in limit/i.test(why)) showToast(t('ck.limit'));
+    else if(/sign in to check in|JWT/i.test(why)) showToast(t('ck.expired'));
+    else { showToast(t('ck.failed')); console.error(error); }
     return;
   }
   appState.checkins.unshift(data);
@@ -115,7 +116,7 @@ async function stamp(btn){
     // Closed while saving: the check-in and the climbed mark stand. Say so, and still show a milestone it earned
     // (close() ran before there was a check-in, so it could not).
     refreshPage();
-    showToast('Checked in at ' + g.name);
+    showToast(t('ck.checkedInAt', { name: g.name }));
     showMilestones(session.milestones, cardFor(session));
     return;
   }
@@ -150,17 +151,17 @@ export function openStartSheet(){
   const signedIn = !!window.auth.user;
   $('startSignedOut').hidden = $('startSignedOutActions').hidden = signedIn;
   $('startSignedInActions').hidden = !signedIn;
-  $('startCheckinLabel').textContent = g ? 'Check in at ' + g.name : 'Check in nearby';
+  $('startCheckinLabel').textContent = g ? t('start.checkinAt', { name: g.name }) : t('start.checkinNearby');
   startBackdrop.dataset.spotId = g ? g.id : '';
   startBackdrop.classList.remove('hidden');
 }
 async function checkInNearby(){
-  showToast('Checking your location…');
+  showToast(t('ck.locating'));
   const here = await locate();
-  if(!here){ showToast('Open a gym’s page to check in there'); return; }
+  if(!here){ showToast(t('ck.openGym')); return; }
   let best = null;
   for(const s of appState.spots){ const d = distanceKm(here, s); if(!best || d < best.d) best = { s, d }; }
-  if(!best || best.d > GEOFENCE_KM){ showToast('No gym within 500 m. Open a gym’s page to check in.'); return; }
+  if(!best || best.d > GEOFENCE_KM){ showToast(t('ck.noneNear')); return; }
   startCheckin(best.s.id);
 }
 

@@ -160,28 +160,28 @@
 
 <div class="modal-backdrop hidden" id="editModalBackdrop">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="dlg-edit-this-spot">
-    <h2 id="dlg-edit-this-spot">Edit this spot</h2>
-    <div class="sub">Submitted as a proposed change — the spot keeps showing its current info until a moderator approves it.</div>
+    <h2 id="dlg-edit-this-spot" data-i18n="edit.title">Edit this spot</h2>
+    <div class="sub" data-i18n="edit.sub">Submitted as a proposed change — the spot keeps showing its current info until a moderator approves it.</div>
     <div class="pin-status" id="editPinStatus">Current pin: —</div>
-    <button class="btn btn-secondary btn-block u-mb-4" id="eDropPinBtn">Move pin</button>
+    <button class="btn btn-secondary btn-block u-mb-4" id="eDropPinBtn" data-i18n="edit.movePin">Move pin</button>
     <div class="field">
-      <label for="eName">Name</label>
+      <label for="eName" data-i18n="edit.name">Name</label>
       <input id="eName" type="text" maxlength="200" aria-required="true">
     </div>
     <div class="field">
-      <label for="eSuburb">Suburb / nearest town</label>
+      <label for="eSuburb" data-i18n="edit.suburb">Suburb / nearest town</label>
       <input id="eSuburb" type="text" maxlength="200" aria-required="true">
     </div>
     <div class="field field-row">
       <div>
-        <label for="eCountry">Country</label>
+        <label for="eCountry" data-i18n="edit.country">Country</label>
         <select id="eCountry">
-          <optgroup label="Africa">
+          <optgroup label="Africa" data-region="africa">
             <option value="EG">Egypt</option>
             <option value="KE">Kenya</option>
             <option value="ZA">South Africa</option>
           </optgroup>
-          <optgroup label="Asia">
+          <optgroup label="Asia" data-region="asia">
             <option value="AM">Armenia</option>
             <option value="CN">China</option>
             <option value="GE">Georgia</option>
@@ -208,7 +208,7 @@
             <option value="AE">United Arab Emirates</option>
             <option value="VN">Vietnam</option>
           </optgroup>
-          <optgroup label="Europe">
+          <optgroup label="Europe" data-region="europe">
             <option value="AD">Andorra</option>
             <option value="AT">Austria</option>
             <option value="BY">Belarus</option>
@@ -248,7 +248,7 @@
             <option value="GB">United Kingdom</option>
             <option value="UA">Ukraine</option>
           </optgroup>
-          <optgroup label="North America">
+          <optgroup label="North America" data-region="north-america">
             <option value="CA">Canada</option>
             <option value="CR">Costa Rica</option>
             <option value="GT">Guatemala</option>
@@ -256,11 +256,11 @@
             <option value="PA">Panama</option>
             <option value="US">United States</option>
           </optgroup>
-          <optgroup label="Oceania">
+          <optgroup label="Oceania" data-region="oceania">
             <option value="AU">Australia</option>
             <option value="NZ">New Zealand</option>
           </optgroup>
-          <optgroup label="South America">
+          <optgroup label="South America" data-region="south-america">
             <option value="AR">Argentina</option>
             <option value="BO">Bolivia</option>
             <option value="BR">Brazil</option>
@@ -272,11 +272,11 @@
             <option value="UY">Uruguay</option>
             <option value="VE">Venezuela</option>
           </optgroup>
-          <option value="OTHER">Other (not listed)</option>
+          <option value="OTHER" data-i18n="edit.other">Other (not listed)</option>
         </select>
       </div>
       <div>
-        <label for="eState">State</label>
+        <label for="eState" data-i18n="edit.state">State</label>
         <select id="eState">
           <option value="NSW">NSW</option>
           <option value="VIC">VIC</option>
@@ -291,85 +291,85 @@
     </div>
     <div class="field field-row init-hidden" id="eOtherCountryFields">
       <div>
-        <label for="eCountryOther">Country name</label>
-        <input id="eCountryOther" type="text" maxlength="100" placeholder="e.g. France">
+        <label for="eCountryOther" data-i18n="edit.countryName">Country name</label>
+        <input id="eCountryOther" type="text" maxlength="100" placeholder="e.g. France" data-i18n-attr="placeholder:edit.countryNamePh">
       </div>
       <div>
-        <label for="eStateOther">State / region</label>
-        <input id="eStateOther" type="text" maxlength="100" placeholder="e.g. Île-de-France or a nearby city">
+        <label for="eStateOther" data-i18n="edit.stateRegion">State / region</label>
+        <input id="eStateOther" type="text" maxlength="100" placeholder="e.g. Île-de-France or a nearby city" data-i18n-attr="placeholder:edit.stateRegionPh">
       </div>
     </div>
     <div class="field">
-      <label for="eAddress">Street address (optional)</label>
-      <input id="eAddress" type="text" maxlength="300" placeholder="e.g. 12 Chalk St, Marrickville NSW 2204">
+      <label for="eAddress" data-i18n="edit.address">Street address (optional)</label>
+      <input id="eAddress" type="text" maxlength="300" placeholder="e.g. 12 Chalk St, Marrickville NSW 2204" data-i18n-attr="placeholder:edit.addressPh">
     </div>
     <div class="field">
-      <div class="field-label">Type (select all that apply)</div>
+      <div class="field-label" data-i18n="edit.typeLegend">Type (select all that apply)</div>
       <div class="type-filter u-flush-top">
         <label class="type-check">
           <input type="checkbox" class="chk-indoor" id="eTypeIndoor">
           <span class="type-dot type-dot--boulder" aria-hidden="true"></span>
-          Indoor bouldering
+          <span data-i18n="type.indoorBouldering">Indoor bouldering</span>
         </label>
         <label class="type-check">
           <input type="checkbox" class="chk-toprope" id="eTypeTopRope">
           <span class="type-dot type-dot--toprope" aria-hidden="true"></span>
-          Top rope
+          <span data-i18n="type.topRope">Top rope</span>
         </label>
         <label class="type-check">
           <input type="checkbox" class="chk-lead" id="eTypeLead">
           <span class="type-dot type-dot--lead" aria-hidden="true"></span>
-          Lead climbing
+          <span data-i18n="type.leadClimbing">Lead climbing</span>
         </label>
       </div>
     </div>
     <div id="eInfoFields"></div>
     <div class="field">
-      <label for="ePhoto">Photo link (optional)</label>
-      <input id="ePhoto" type="text" maxlength="1000" placeholder="Link to a photo — their site, Instagram, Google Maps">
+      <label for="ePhoto" data-i18n="edit.photoLabel">Photo link (optional)</label>
+      <input id="ePhoto" type="text" maxlength="1000" placeholder="Link to a photo — their site, Instagram, Google Maps" data-i18n-attr="placeholder:edit.photoPh">
     </div>
     <div class="field">
-      <label for="eNote">Anything we should know? (optional)</label>
-      <input id="eNote" type="text" maxlength="200" placeholder="e.g. Moved to a new building in 2026, per their website">
+      <label for="eNote" data-i18n="edit.note">Anything we should know? (optional)</label>
+      <input id="eNote" type="text" maxlength="200" placeholder="e.g. Moved to a new building in 2026, per their website" data-i18n-attr="placeholder:edit.notePh">
     </div>
-    <label class="check-row"><input type="checkbox" id="eReview">Please double-check this</label>
+    <label class="check-row"><input type="checkbox" id="eReview"><span data-i18n="edit.review">Please double-check this</span></label>
     <p class="form-hint" id="eFormHint" aria-live="polite"></p>
     <div class="modal-actions">
-      <button class="btn btn-secondary" id="eCancelBtn" data-modal-close>Cancel</button>
-      <button class="btn btn-primary" id="eSaveBtn">Save changes</button>
+      <button class="btn btn-secondary" id="eCancelBtn" data-modal-close data-i18n="common.cancel">Cancel</button>
+      <button class="btn btn-primary" id="eSaveBtn" data-i18n="edit.saveBtn">Save changes</button>
     </div>
   </div>
 </div>
 
 <div class="modal-backdrop hidden" id="reportModalBackdrop">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="dlg-report-incorrect-information">
-    <h2 id="dlg-report-incorrect-information">Report incorrect information</h2>
-    <div class="sub">Not for full corrections — if you know the right details, use "Edit this spot" instead. This just flags something for a moderator to look into: <span id="reportSpotName"></span></div>
+    <h2 id="dlg-report-incorrect-information" data-i18n="report.title">Report incorrect information</h2>
+    <div class="sub"><span data-i18n="report.sub">Not for full corrections — if you know the right details, use “Edit this spot” instead. This just flags something for a moderator to look into:</span> <span id="reportSpotName"></span></div>
     <div class="field">
-      <label for="rMessage">What's wrong?</label>
-      <textarea id="rMessage" maxlength="2000" placeholder="e.g. This gym closed down in 2025 / wrong suburb / name is misspelled"></textarea>
+      <label for="rMessage" data-i18n="report.label">What’s wrong?</label>
+      <textarea id="rMessage" maxlength="2000" placeholder="e.g. This gym closed down in 2025 / wrong suburb / name is misspelled" data-i18n-attr="placeholder:report.placeholder"></textarea>
     </div>
     <div class="modal-actions">
-      <button class="btn btn-secondary" id="rCancelBtn" data-modal-close>Cancel</button>
-      <button class="btn btn-primary" id="rSubmitBtn" disabled>Send report</button>
+      <button class="btn btn-secondary" id="rCancelBtn" data-modal-close data-i18n="common.cancel">Cancel</button>
+      <button class="btn btn-primary" id="rSubmitBtn" disabled data-i18n="report.send">Send report</button>
     </div>
   </div>
 </div>
 
 <div class="modal-backdrop hidden" id="authModalBackdrop">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="dlg-sign-in">
-    <h2 id="dlg-sign-in">Sign in</h2>
-    <div class="sub">Sign in to save gyms, mark the ones you’ve climbed, check in for passport stamps, keep a log of your sessions and suggest edits.</div>
-    <button class="btn btn-secondary btn-block u-mb-4" id="googleSignInBtn">Continue with Google</button>
-    <div class="auth-divider"><span>or</span></div>
+    <h2 id="dlg-sign-in" data-i18n="auth.signIn">Sign in</h2>
+    <div class="sub" data-i18n="auth.intro">Sign in to save gyms, mark the ones you’ve climbed, check in for passport stamps, keep a log of your sessions and suggest edits.</div>
+    <button class="btn btn-secondary btn-block u-mb-4" id="googleSignInBtn" data-i18n="auth.google">Continue with Google</button>
+    <div class="auth-divider"><span data-i18n="auth.or">or</span></div>
     <div class="field">
-      <label for="authEmail">Email</label>
-      <input id="authEmail" type="email" placeholder="you@example.com">
+      <label for="authEmail" data-i18n="auth.email">Email</label>
+      <input id="authEmail" type="email" placeholder="you@example.com" data-i18n-attr="placeholder:auth.emailPlaceholder">
     </div>
     <div id="authStatus" class="auth-status"></div>
     <div class="modal-actions">
-      <button class="btn btn-secondary" id="authCancelBtn" data-modal-close>Cancel</button>
-      <button class="btn btn-primary" id="sendMagicLinkBtn">Send magic link</button>
+      <button class="btn btn-secondary" id="authCancelBtn" data-modal-close data-i18n="common.cancel">Cancel</button>
+      <button class="btn btn-primary" id="sendMagicLinkBtn" data-i18n="auth.sendLink">Send magic link</button>
     </div>
   </div>
 </div>
@@ -377,73 +377,73 @@
 <!-- Phase 5: check-in sheet, milestone sheet, START sheet (bodies rendered by js/modules/checkin.js, milestone-sheet.js) -->
 <div class="modal-backdrop hidden" id="checkinModalBackdrop">
   <div class="modal checkin-modal" role="dialog" aria-modal="true" aria-labelledby="dlg-check-in">
-    <button type="button" class="btn btn-tertiary btn-icon btn-sm modal-x" id="checkinClose" data-modal-close aria-label="Close"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-x"/></svg></button>
+    <button type="button" class="btn btn-tertiary btn-icon btn-sm modal-x" id="checkinClose" data-modal-close aria-label="Close" data-i18n-attr="aria-label:common.close"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-x"/></svg></button>
     <div id="checkinBody"></div>
   </div>
 </div>
 
 <div class="modal-backdrop hidden" id="milestoneModalBackdrop">
   <div class="modal milestone-modal" role="dialog" aria-modal="true" aria-labelledby="dlg-milestone">
-    <button type="button" class="btn btn-tertiary btn-icon btn-sm modal-x" id="milestoneClose" data-modal-close aria-label="Close"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-x"/></svg></button>
+    <button type="button" class="btn btn-tertiary btn-icon btn-sm modal-x" id="milestoneClose" data-modal-close aria-label="Close" data-i18n-attr="aria-label:common.close"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-x"/></svg></button>
     <div id="milestoneBody"></div>
   </div>
 </div>
 
 <div class="modal-backdrop hidden" id="startModalBackdrop">
   <div class="modal start-modal" role="dialog" aria-modal="true" aria-labelledby="dlg-start">
-    <h2 id="dlg-start">Start</h2>
-    <p class="sub" id="startSignedOut" hidden>Check in at a gym to collect a stamp in your passport, and keep a log of your sessions. Both need an account.</p>
-    <div class="start-actions" id="startSignedOutActions" hidden><button type="button" class="btn btn-secondary btn-block" data-start-action="signin">Sign in to start</button></div>
+    <h2 id="dlg-start" data-i18n="start.title">Start</h2>
+    <p class="sub" id="startSignedOut" hidden data-i18n="start.intro">Check in at a gym to collect a stamp in your passport, and keep a log of your sessions. Both need an account.</p>
+    <div class="start-actions" id="startSignedOutActions" hidden><button type="button" class="btn btn-secondary btn-block" data-start-action="signin" data-i18n="auth.signInToStart">Sign in to start</button></div>
     <div class="start-actions" id="startSignedInActions">
-      <button type="button" class="btn btn-secondary btn-block" data-start-action="checkin"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-map-pin"/></svg><span id="startCheckinLabel">Check in here</span></button>
-      <button type="button" class="btn btn-primary btn-block" data-start-action="log"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg>Log a session</button>
+      <button type="button" class="btn btn-secondary btn-block" data-start-action="checkin"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-map-pin"/></svg><span id="startCheckinLabel" data-i18n="start.checkinHere">Check in here</span></button>
+      <button type="button" class="btn btn-primary btn-block" data-start-action="log"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg><span data-i18n="log.title">Log a session</span></button>
     </div>
-    <div class="modal-actions"><button type="button" class="btn btn-tertiary" id="startClose" data-modal-close>Close</button></div>
+    <div class="modal-actions"><button type="button" class="btn btn-tertiary" id="startClose" data-modal-close data-i18n="common.close">Close</button></div>
   </div>
 </div>
 
 <div class="modal-backdrop hidden" id="addSessionModalBackdrop">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="dlg-log-a-session">
-    <h2 id="dlg-log-a-session">Log a session</h2>
-    <div class="sub">Private to your account — not shown on the public map.</div>
+    <h2 id="dlg-log-a-session" data-i18n="log.title">Log a session</h2>
+    <div class="sub" data-i18n="log.sub">Private to your account — not shown on the public map.</div>
     <div class="field field-row">
       <div>
-        <label for="sDate">Date</label>
+        <label for="sDate" data-i18n="log.date">Date</label>
         <input id="sDate" type="date">
       </div>
       <div>
-        <label for="sMood">Mood</label>
+        <label for="sMood" data-i18n="log.mood">Mood</label>
         <select id="sMood">
-          <option value="great">Great</option>
-          <option value="good" selected>Good</option>
-          <option value="ok">OK</option>
-          <option value="tired">Tired</option>
-          <option value="rough">Rough</option>
+          <option value="great" data-i18n="mood.great">Great</option>
+          <option value="good" selected data-i18n="mood.good">Good</option>
+          <option value="ok" data-i18n="mood.ok">OK</option>
+          <option value="tired" data-i18n="mood.tired">Tired</option>
+          <option value="rough" data-i18n="mood.rough">Rough</option>
         </select>
       </div>
     </div>
     <div class="field gym-picker">
       <!-- Search or browse instead of a 2,000-option select (logbook.js + gym-picker.js). #sGym holds the chosen id. -->
-      <label for="sGymSearch" id="sGymLabel">Gym (optional)</label>
+      <label for="sGymSearch" id="sGymLabel" data-i18n="log.gymOptional">Gym (optional)</label>
       <div class="gym-picker-current" id="sGymCurrent"></div>
       <div class="gym-picker-panel" id="sGymPanel" hidden>
-        <input type="search" id="sGymSearch" role="combobox" aria-expanded="false" aria-autocomplete="list" autocomplete="off" enterkeyhint="search" placeholder="Search by gym, city or country">
+        <input type="search" id="sGymSearch" role="combobox" aria-expanded="false" aria-autocomplete="list" autocomplete="off" enterkeyhint="search" placeholder="Search by gym, city or country" data-i18n-attr="placeholder:log.searchPh">
         <div class="gym-picker-results" id="sGymResults"></div>
       </div>
       <input type="hidden" id="sGym" value="">
     </div>
     <div class="field">
-      <div class="field-label">Climbs logged</div>
+      <div class="field-label" data-i18n="log.climbs">Climbs logged</div>
       <div id="sClimbsList" class="climb-rows"></div>
-      <button class="btn btn-secondary btn-block u-mt-2" id="sAddClimbBtn"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg>Add a climb</button>
+      <button class="btn btn-secondary btn-block u-mt-2" id="sAddClimbBtn"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg><span data-i18n="log.addClimb">Add a climb</span></button>
     </div>
     <div class="field">
-      <label for="sNotes">Notes (optional)</label>
-      <textarea id="sNotes" placeholder="How did it feel? Anything to remember for next time?"></textarea>
+      <label for="sNotes" data-i18n="log.notes">Notes (optional)</label>
+      <textarea id="sNotes" placeholder="How did it feel? Anything to remember for next time?" data-i18n-attr="placeholder:log.notesPh"></textarea>
     </div>
     <div class="modal-actions">
-      <button class="btn btn-secondary" id="sCancelBtn" data-modal-close>Cancel</button>
-      <button class="btn btn-primary" id="sSaveBtn">Save session</button>
+      <button class="btn btn-secondary" id="sCancelBtn" data-modal-close data-i18n="common.cancel">Cancel</button>
+      <button class="btn btn-primary" id="sSaveBtn" data-i18n="log.save">Save session</button>
     </div>
   </div>
 </div>

@@ -4,6 +4,7 @@
 import { loadContributorCounts } from './community.js';
 import { loadPending, loadSpots } from './data-load.js';
 import { render } from './explore.js';
+import { t } from './i18n.js';
 import { refreshPage } from './router.js';
 import { appState } from './state.js';
 import { showToast } from './utils.js';
@@ -36,19 +37,19 @@ function corrections(fields = {}){
 
 async function run(label, fn){
   try{ await fn(); showToast(label); return true; }
-  catch(err){ showToast('Could not save — try again'); console.error(err); return false; }
+  catch(err){ showToast(t('common.saveFailed')); console.error(err); return false; }
   finally{ await refreshAfterModeration(); }
 }
 
 export function approveSpot(id, fields){
-  return run('Gym approved', async () => {
+  return run(t('mod.toast.gymApproved'), async () => {
     const {error} = await window.sb.from('spots').update({ ...corrections(fields), status: 'approved', verified_at: null }).eq('id', id);   // approving is not verifying (the gym page has its own control); never keep a value a submitter tried to set
     if(error) throw error;
   });
 }
 
 export function rejectSpot(id, reason){
-  return run('Gym rejected', async () => {
+  return run(t('mod.toast.gymRejected'), async () => {
     const {error} = await window.sb.from('spots').update({ status: 'rejected', rejection_reason: String(reason || '').trim().slice(0, 200) || null }).eq('id', id);
     if(error) throw error;
   });
@@ -57,7 +58,7 @@ export function rejectSpot(id, reason){
 export function approveEdit(pendingEditId, fields){
   const pe = appState.pendingEdits.find(p => p.id === pendingEditId);
   if(!pe) return Promise.resolve(false);
-  return run('Edit approved', async () => {
+  return run(t('mod.toast.editApproved'), async () => {
     const {error: e1} = await window.sb.from('spots').update({
       name: pe.name, suburb: pe.suburb, state: pe.state, country: pe.country,
       types: pe.types, address: pe.address, photo: pe.photo, lat: pe.lat, lng: pe.lng,
@@ -73,7 +74,7 @@ export function approveEdit(pendingEditId, fields){
 }
 
 export function rejectEdit(pendingEditId, reason){
-  return run('Edit rejected', async () => {
+  return run(t('mod.toast.editRejected'), async () => {
     const {error} = await window.sb.from('pending_edits').update({
       status: 'rejected', rejection_reason: String(reason || '').trim().slice(0, 200) || null, decided_at: new Date().toISOString(),
     }).eq('id', pendingEditId);
@@ -82,7 +83,7 @@ export function rejectEdit(pendingEditId, reason){
 }
 
 export function dismissReport(id){
-  return run('Report dismissed', async () => {
+  return run(t('mod.toast.reportDismissed'), async () => {
     const {error} = await window.sb.from('reports').delete().eq('id', id);
     if(error) throw error;
   });
@@ -90,7 +91,7 @@ export function dismissReport(id){
 
 // "Verified" (sec. 10.1): confirmed by a moderator; shown as no mark on cards and "Verified" on the page.
 export function setVerified(spotId, on){
-  return run(on ? 'Marked verified' : 'Verification removed', async () => {
+  return run(t(on ? 'mod.toast.verified' : 'mod.toast.unverified'), async () => {
     const {error} = await window.sb.from('spots').update({ verified_at: on ? new Date().toISOString() : null }).eq('id', spotId);
     if(error) throw error;
   });

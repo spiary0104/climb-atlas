@@ -25,7 +25,7 @@ import { showActionToast } from './modules/utils.js';
 
 // sw-register.js (a classic script) announces a newer service worker; the person chooses when to reload, never us.
 window.addEventListener('bouldeer:sw-updated', () => {
-  showActionToast('Bouldeer has finished a climb, please refresh the page', 'Refresh', () => location.reload());
+  showActionToast(t('sw.updated'), t('sw.refresh'), () => location.reload());
 });
 
 // Interface language before anything renders (English needs no fetch). A picker change switches in place: the open

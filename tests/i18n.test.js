@@ -173,3 +173,94 @@ test('i18n SEO: seo-meta.js has no imports and stays English without a translato
   await I.setLocale('en');
   assert.equal(S.gymSeo(g, { region: 'Shanghai', country: 'China', tr: I.t }).title, 'Block · Bouldering gym in Xuhui, Shanghai, China');
 });
+
+// ===== PR 2C: forms, dialogs, check-in, passport, log, add, moderation, account ==========================================
+test('i18n 2C: ordinals, passport sentences, stamp dates and error messages follow the language', async () => {
+  const P = await import('../js/modules/passport.js');
+  const ST = await import('../js/modules/stamp-html.js');
+  const SE = await import('../js/modules/submit-errors.js');
+  assert.deepEqual([1, 2, 3, 4, 11, 12, 13, 21, 22, 101].map(P.ordinal), ['1st', '2nd', '3rd', '4th', '11th', '12th', '13th', '21st', '22nd', '101st']);
+  assert.equal(ST.niceDate('2026-09-12T10:00:00'), '12 Sep 2026');
+  assert.equal(ST.stampDate('2026-09-12T10:00:00'), '12 SEP 2026');
+  assert.equal(P.statsLine({ gyms: 1, cities: 4, countries: 2 }), '1 gym · 4 cities · 2 countries');
+  assert.equal(SE.submitErrorMessage({ message: 'Daily edit limit reached' }, 'x'), 'You’ve reached today’s limit of 20 edits. Try again tomorrow.');
+  await I.setLocale('zh-CN');
+  assert.equal(P.ordinal(3), '第3');
+  assert.equal(P.statsLine({ gyms: 11, cities: 4, countries: 2 }), '11 家岩馆 · 4 个城市 · 2 个国家和地区');
+  assert.equal(ST.niceDate('2026-09-12T10:00:00'), '2026年9月12日');
+  assert.match(SE.submitErrorMessage({ message: 'new row violates check constraint "spots_name_len_check"' }, 'x'), /名称太长（最多 200 个字符）/);
+  assert.equal(SE.submitErrorMessage({ message: 'boom' }, I.t('common.saveFailed')), '保存失败，请重试', 'unknown database text never reaches the screen');
+  const g = (id, country, suburb) => ({ id, name: 'Gym ' + id, suburb, state: 'X', country });
+  const spotById = new Map([g('a', 'AU', 'Sydney'), g('b', 'AU', 'Sydney'), g('c', 'JP', 'Tokyo')].map(s => [s.id, s]));
+  const all = [{ id: 1, spot_id: 'a', checked_at: '2026-01-01T00:00:00Z' }, { id: 2, spot_id: 'b', checked_at: '2026-01-02T00:00:00Z' }];
+  assert.equal(P.passportLine(all, all[0], spotById), '这是你的第一枚印章。');
+  assert.equal(P.passportLine(all, all[1], spotById), '这是你的第2家攀岩馆。');
+  await I.setLocale('en');
+  assert.equal(P.passportLine(all, all[1], spotById), 'Your 2nd gym.');
+});
+
+test('i18n 2C: calendar month and weekday names, add-page and moderation wording come from the dictionaries', async () => {
+  const page = await import('../js/modules/page-html.js');
+  const add = await import('../js/modules/add-html.js');
+  const mod = await import('../js/modules/moderation-html.js');
+  const cal = () => page.calendarHtml(2026, 8, new Map([['2026-09-26', 2]]), '2026-09-26');
+  assert.match(cal(), />September 2026</);
+  assert.match(cal(), /aria-label="September 26, 2 sessions"/);
+  await I.setLocale('zh-CN');
+  assert.match(cal(), />2026年9月</);
+  assert.match(cal(), /aria-label="9月26日、2 次攀岩"/);
+  assert.match(cal(), /<th scope="col" abbr="星期一">一<\/th>/);
+  assert.equal(add.stepOneMissing({ name: '', types: [] }, 3).join('|'), '标记（请放大到街道级别）|名称|至少一种攀岩类型');
+  assert.match(add.addStepHtml({ step: 1, name: '', types: [] }, { signedIn: false }), /提交审核/);
+  assert.match(mod.modQueueHtml([], []), /没有待审核的内容/);
+  assert.match(mod.modPageHtml({ queue: '', panel: '', count: 3 }), /3 项待处理/);
+  await I.setLocale('en');
+});
+
+// How the "no hardcoded English" guard works. A scan for "any English word" would be brittle (class names, dev-only
+// console text, gym data), so it is two narrow checks that fail the moment a former hardcoded string comes back:
+//   1. a curated list of the strings these builders used to contain (every one is now a dictionary entry) must not appear
+//      inside any quoted/template string of the builder files;
+//   2. in index.html, every text-bearing element of the dialogs (edit, report, sign-in, check-in, START, log) must carry
+//      data-i18n, so a new English label added there without a key is caught.
+// Add a string to FORMER when a new key replaces literal text in a builder; no entry is needed for new code that already
+// uses t()/th(). (Gym data, user text, the legal pages and console messages are out of scope.)
+const FORMER = ['Sign in to', 'Still needed', 'Could not save', 'Could not send', 'Could not delete', 'Could not check in', 'Check in at ', 'Check in nearby',
+  'Log a session', 'Session saved', 'Session deleted', 'No sessions yet', 'No specific gym', 'Choose a gym', 'Add a climb', 'Stamp it', 'Stamping', 'Your first stamp',
+  'Your first gym', 'Recent check-ins', 'Find a gym', 'Show all', 'Submit for review', 'Submitting…', 'Step 1 of 2', 'Step 2 of 2', 'Use my location',
+  'Moderators only', 'Nothing to review', 'Double-check', 'Reject</', 'Approve</', 'Edit approved', 'Gym approved', 'Report dismissed', 'Display name',
+  'Your contributions', 'In review', 'Not accepted', 'Signed out', 'First stamp', 'Share card', 'Continue with Google', 'Send magic link', 'Check your email',
+  'Enter your email', 'finished a climb', 'Report sent', 'Edit submitted', 'Save changes', 'Send report', 'Unknown gym', 'Previous month', 'Next month',
+  'Notes (optional)', 'Photo link', 'items waiting', 'item waiting', 'fields unchanged', 'Supabase is not configured'];
+const BUILDERS = ['logbook', 'log-page', 'gym-picker', 'checkin', 'passport', 'passport-page', 'stamp-html', 'milestone-sheet', 'share-card', 'auth-ui', 'modals',
+  'submit-errors', 'add-page', 'add-html', 'moderation-html', 'mod-page', 'moderation', 'me-page', 'page-html', 'marks'].map(f => 'js/modules/' + f + '.js').concat(['js/main.js']);
+const noComments = s => s.replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|\s)\/\/.*$/gm, '$1');
+
+test('i18n 2C guard: the former hardcoded English of the builders is gone (it lives in the dictionaries)', () => {
+  const hits = [];
+  for(const f of BUILDERS){
+    for(const line of noComments(read(f)).split('\n')){
+      if(/^\s*import\b|console\.|new Error/.test(line)) continue;
+      for(const m of line.matchAll(/(['"`])((?:\\.|(?!\1).)*?)\1/g)) for(const w of FORMER) if(m[2].includes(w)) hits.push(f + ': ' + w);
+    }
+  }
+  assert.deepEqual(hits, [], 'hardcoded English is back: use t()/th() and add the key to both dictionaries');
+  for(const w of ['Sign in to save', 'Check in at', 'Log a session', 'Moderators only', 'Submit for review']) assert.ok(Object.values(EN).some(v => String(v).includes(w)), w + ' is a dictionary entry');
+});
+
+test('i18n 2C guard: every text element in the dialogs of index.html is translatable (data-i18n)', () => {
+  const html = read('index.html').replace(/\r\n/g, '\n');
+  const dialogs = html.slice(html.indexOf('id="editModalBackdrop"'), html.indexOf('id="filterSheetBackdrop"'));
+  const SKIP = /id="(editPinStatus|reportSpotName)"/;           // filled from JS (coordinates, the gym's own name)
+  const bad = [];
+  for(const m of dialogs.matchAll(/<(label|button|h2|p|span|legend|div)\b([^>]*)>([^<]*[A-Za-z]{3}[^<]*)</g)){
+    if(/data-i18n/.test(m[2]) || SKIP.test(m[2])) continue;
+    bad.push(m[1] + ' ' + m[3].trim().slice(0, 40));
+  }
+  assert.deepEqual(bad, [], 'untranslatable text in the dialogs');
+});
+
+test('i18n 2C: the language switch re-renders in place: log/passport/mod/add pages are rebuilt on bouldeer:locale (main.js refreshPage)', () => {
+  assert.match(read('js/main.js'), /window\.addEventListener\('bouldeer:locale'[\s\S]*?refreshPage\(\);/);
+  assert.match(read('js/modules/modals.js'), /addEventListener\('bouldeer:locale', localizeCountrySelect\)/, 'the edit form country list follows the language');
+});

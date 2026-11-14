@@ -6,12 +6,12 @@
 //   newTopGrade     a new highest sent grade in the log, within one grade system
 // A check-in row: {id, spot_id, checked_at, note}. spotById: Map id -> gym {id, name, suburb, state, country}.
 
+import { t, tOrdinal } from './i18n.js';
+
 export const cityKey = g => [g.country || '', g.state || '', (g.suburb || '').trim().toLowerCase()].join(':');
 
-export function ordinal(n){
-  const k = n % 100, e = { 1: 'st', 2: 'nd', 3: 'rd' }[n % 10];
-  return n + ((k >= 11 && k <= 13) || !e ? 'th' : e);
-}
+// "11th" / "第11" (i18n.js tOrdinal: the language's own ordinal forms)
+export const ordinal = n => tOrdinal('passport.ordinal', n);
 
 // Check-ins joined to their gyms, oldest first; rows whose gym is unknown (deleted) are dropped.
 function joined(checkins, spotById){
@@ -44,8 +44,7 @@ export function passportStats(checkins, spotById){
   };
 }
 
-const plural = (n, one, many) => n + ' ' + (n === 1 ? one : many);
-export const statsLine = s => [plural(s.gyms, 'gym', 'gyms'), plural(s.cities, 'city', 'cities'), plural(s.countries, 'country', 'countries')].join(' · ');
+export const statsLine = s => [t('common.gymCount', { count: s.gyms }), t('place.cityCount', { count: s.cities }), t('regions.countryCount', { count: s.countries })].join(' · ');
 
 // The sentence for the newest check-in (the last element once `all` includes it). countryName: code -> label.
 export function passportLine(all, newest, spotById, countryName = c => c){
@@ -53,16 +52,17 @@ export function passportLine(all, newest, spotById, countryName = c => c){
   const g = spotById.get(newest.spot_id);
   if(!g) return '';
   const before = rows.filter(x => x.c.id !== newest.id && String(x.c.checked_at) <= String(newest.checked_at));
-  if(!before.length) return 'Your first stamp.';
-  if(!before.some(x => x.g.country === g.country)) return 'Your first gym in ' + countryName(g.country) + '.';
+  if(!before.length) return t('passport.firstStamp');
+  if(!before.some(x => x.g.country === g.country)) return t('passport.firstInCountry', { country: countryName(g.country) });
   if(!before.some(x => cityKey(x.g) === cityKey(g))){
     const year = String(newest.checked_at).slice(0, 4);
     const cities = new Set([...before.filter(x => String(x.c.checked_at).slice(0, 4) === year).map(x => cityKey(x.g)), cityKey(g)]).size;
-    return 'Your first gym in ' + (g.suburb || g.name) + (cities > 1 ? ', your ' + ordinal(cities) + ' city this year.' : '.');
+    const city = g.suburb || g.name;
+    return cities > 1 ? t('passport.firstInCityNth', { city, nth: ordinal(cities) }) : t('passport.firstInCity', { city });
   }
   const visits = before.filter(x => x.g.id === g.id).length + 1;
-  if(visits > 1) return 'Your ' + ordinal(visits) + ' visit here.';
-  return 'Your ' + ordinal(new Set([...before.map(x => x.g.id), g.id]).size) + ' gym.';
+  if(visits > 1) return t('passport.visitNth', { nth: ordinal(visits) });
+  return t('passport.gymNth', { nth: ordinal(new Set([...before.map(x => x.g.id), g.id]).size) });
 }
 
 // Milestones earned by the newest check-in, highest first (sec. 12.3). home: the person's home country code or ''.
@@ -76,14 +76,14 @@ export function milestonesFor(all, newest, spotById, { home = '', countryName = 
   if(!before.some(x => x.g.country === g.country) && before.length && (!home || g.country !== home)){
     const abroadBefore = home ? before.some(x => x.g.country !== home) : true;
     out.push(abroadBefore || !home
-      ? { kind: 'country', title: 'First gym in ' + countryName(g.country), sentence: plural(new Set([...before.map(x => x.g.country), g.country]).size, 'country', 'countries') + ' in your passport.', pose: 'fresh-stamp' }
-      : { kind: 'abroad', title: 'First stamp abroad', sentence: g.name + ', ' + countryName(g.country) + '.', pose: 'fresh-stamp' });
+      ? { kind: 'country', title: t('ms.countryTitle', { country: countryName(g.country) }), sentence: t('ms.countriesIn', { count: new Set([...before.map(x => x.g.country), g.country]).size }), pose: 'fresh-stamp' }
+      : { kind: 'abroad', title: t('ms.abroadTitle'), sentence: t('ms.abroadSentence', { name: g.name, country: countryName(g.country) }), pose: 'fresh-stamp' });
   }
   const gymsBefore = new Set(before.map(x => x.g.id)), gymsNow = new Set([...gymsBefore, g.id]).size;
   if(gymsNow > gymsBefore.size && gymsNow % 5 === 0){
-    out.push({ kind: 'gyms', title: gymsNow + ' gyms', sentence: 'Your ' + ordinal(gymsNow) + ' different gym: ' + g.name + '.', pose: 'fresh-stamp' });
+    out.push({ kind: 'gyms', title: t('common.gymCount', { count: gymsNow }), sentence: t('ms.gymsSentence', { nth: ordinal(gymsNow), name: g.name }), pose: 'fresh-stamp' });
   }
-  if(!before.length) out.push({ kind: 'first', title: 'First stamp', sentence: g.name + ' is the first stamp in your passport.', pose: 'topped-out' });
+  if(!before.length) out.push({ kind: 'first', title: t('ms.firstTitle'), sentence: t('ms.firstSentence', { name: g.name }), pose: 'topped-out' });
   return out;
 }
 
@@ -116,7 +116,7 @@ export function newTopGrade(prev, next){
     const climb = (next || []).find(c => c.sent !== false && c.grade_system === system && gradeRank(c.grade, system) === now);
     if(!best || now - before > best.gain) best = { gain: now - before, system, grade: String(climb.grade).trim() };
   }
-  return best && { kind: 'grade', title: 'First ' + best.grade, sentence: 'A new highest grade in your log.', pose: 'dyno' };
+  return best && { kind: 'grade', title: t('ms.gradeTitle', { grade: best.grade }), sentence: t('ms.gradeSentence'), pose: 'dyno' };
 }
 
 // The person's home country for "abroad": the region of the browser locale (en-AU -> AU), else ''.

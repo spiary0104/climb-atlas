@@ -1,6 +1,7 @@
 // /me/passport (DESIGN.md sec. 11.3): the stat line, one stamp per city (most recent first) and the recent check-ins;
 // tapping a stamp filters the rows to that city. Empty: the traveller and "Your first stamp is one check-in away."
 // Markup is stamp-html.js (pure); rules are passport.js (pure).
+import { t } from './i18n.js';
 import { openAuthModal } from './auth-ui.js';
 import { loadCheckins } from './checkin.js';
 import { cityKey, passportStats, stamps, statsLine } from './passport.js';
@@ -14,7 +15,7 @@ const ROW_LIMIT = 60;
 let filter = '';
 
 function enter(params, view){
-  setPageTitle('Passport');
+  setPageTitle(t('me.passport'));
   if(!appState.loaded){ view.innerHTML = pageSkeletonHtml(); return; }
   if(!window.auth.user){ view.innerHTML = passportPageHtml({ signedIn: false }); return; }
   if(!appState.checkinsLoaded){

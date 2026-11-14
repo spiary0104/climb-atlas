@@ -122,6 +122,20 @@ export function t(key, params){
   });
 }
 
+// "1st / 2nd / 3rd / 11th" (English) or "第3" (Chinese): the message picks its form by the ORDINAL plural rule of the
+// language ({one, two, few, other} in English, {other} in Chinese); {n} is the number.
+export function tOrdinal(key, n){
+  let msg = dict[key], lang = locale;
+  if(msg === undefined){ msg = EN[key]; lang = 'en'; }
+  if(msg === undefined) return String(n);
+  if(typeof msg === 'object'){
+    let cat = 'other';
+    try { cat = new Intl.PluralRules(lang === 'zh-CN' ? 'zh' : lang, { type: 'ordinal' }).select(n); } catch(e){ /* other */ }
+    msg = msg[cat] ?? msg.other ?? '';
+  }
+  return msg.replace(/\{n\}/g, String(n));
+}
+
 // The same, HTML-escaped, for markup templates (translations and parameters are never trusted as HTML).
 export const th = (key, params) => escapeHtml(t(key, params));
 
