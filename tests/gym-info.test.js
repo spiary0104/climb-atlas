@@ -33,8 +33,8 @@ test('gym page: a minimum gym shows no empty rows, and the one prompt names ever
   const html = gymPageHtml(base, {});
   // PR 2B: an unknown day pass, hours or facility list says "Not confirmed yet" instead of vanishing; nothing else is invented.
   assert.ok(!/facility-chip|id="aboutTitle"/.test(html), 'no facility chips or About');
-  assert.equal((html.match(/essentials-unknown/g) || []).length, 3, 'day pass, hours and facilities each say so');
-  assert.equal((html.match(/Not confirmed yet/g) || []).length, 3);
+  assert.equal((html.match(/essentials-unknown/g) || []).length, 9, 'day pass, hours, facilities and the six visitor facts each say so');
+  assert.equal((html.match(/Not confirmed yet/g) || []).length, 9);
   assert.ok(!/<h3 class="essentials-label">Website/.test(html), 'no empty website row');
   assert.match(html, /data-edit-focus="hours"[^>]*>Add the hours, website, day-pass price or a photo\.<\/button>/);
   assert.match(html, /class="essentials-address"/, 'the address and map are always there');

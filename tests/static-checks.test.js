@@ -134,6 +134,8 @@ const SAFE_EXPR = [
   // list-html.js / page-html.js local-script names: localNameHtml and localAddressHtml escape the value themselves and take
   // only literal class names; `lang` is read from the fixed LOCAL_LANG country table, never from the database
   /^localNameHtml\(g, '[a-z -]+'\)$/, /^localAddressHtml\(g\)$/, /^lang$/,
+  // visit-html.js: addressActionsHtml escapes every database value itself (tests/visit-html.test.js)
+  /^addressActionsHtml\(g\)$/,
 ];
 // A conditional is safe when every branch that can be rendered is safe: a fixed string literal, a template whose own
 // interpolations are all safe, or a nested conditional (checked recursively). The condition itself is never rendered.

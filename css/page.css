@@ -242,3 +242,10 @@
 @media (max-width:599px){
   .gym-actions{padding-bottom:var(--space-2);}
 }
+/* Visitor info and address actions (gym page): label above value, like the essentials rows. */
+.essentials-address-text{min-width:0;overflow-wrap:anywhere;}
+.address-actions{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:var(--space-2);}
+.visitor-list{margin:0 0 var(--space-3);}
+.visitor-row{padding-bottom:var(--space-3);margin-bottom:var(--space-3);border-bottom:var(--border-width) solid var(--color-border-divider);overflow-wrap:anywhere;}
+.visitor-label{margin:0 0 var(--space-1);font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);font-weight:var(--font-weight-medium);color:var(--color-text-secondary);}
+.visitor-list dd{margin:0;}

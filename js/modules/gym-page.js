@@ -16,6 +16,8 @@ import { openEditModal, openReportModal } from './modals.js';
 import { gymPageHtml, notFoundHtml, pageSkeletonHtml } from './page-html.js';
 import { gymDayKey, status } from './hours.js';
 import { t } from './i18n.js';
+import { copyableAddress } from './visit-html.js';
+import { showToast } from './utils.js';
 import { currentRoute, refreshPage, registerView, setPageTitle } from './router.js';
 import { provenanceLine, publicNotes } from './provenance.js';
 import { gymSeo } from './seo-meta.js';
@@ -80,7 +82,8 @@ function hoursContext(g){
   const st = status(g);
   return { today: gymDayKey(g) || undefined, hoursStatus: st.state === 'unknown' ? null : st.state };
 }
-const visibleInfo = g => JSON.stringify([g.description || '', g.website || '', g.hours || null, g.day_pass || '', g.facilities || [], publicNotes(g.notes)]);
+const visibleInfo = g => JSON.stringify([g.description || '', g.website || '', g.hours || null, g.day_pass || '', g.facilities || [], publicNotes(g.notes),
+  g.address_local || '', g.visitor || null, g.info_source || '', g.info_source_kind || '', g.info_checked_on || '']);
 
 // Late reads re-render only while this gym's page is still the one showing: a person who has moved on to another page
 // (Nearby, Back, /add) must not have it torn down under them. The reads are batched so the page re-renders once, not four
@@ -137,6 +140,22 @@ function enter({ slug }, view){
   if(late.length) Promise.allSettled(late).then(() => refreshIfShowing(g));
 }
 
+// Copy the local-script address (else the address) to the clipboard; a hidden textarea + execCommand where the async API is missing.
+async function copyAddress(id){
+  const g = appState.spots.find(s => s.id === id), text = g ? copyableAddress(g) : '';
+  if(!text) return;
+  let ok = false;
+  try{ if(navigator.clipboard && navigator.clipboard.writeText){ await navigator.clipboard.writeText(text); ok = true; } }catch(err){ /* fall back */ }
+  if(!ok){
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly', ''); ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+    document.body.appendChild(ta); ta.select();
+    try{ ok = document.execCommand('copy'); }catch(err){ ok = false; }
+    ta.remove();
+  }
+  showToast(t(ok ? 'gym.addressCopied' : 'gym.addressCopyFailed'));
+}
+
 export function initGymPage(){
   registerView('gym', { enter, leave: destroyMiniMaps });
   registerView('notfound', { enter(params, view){ view.innerHTML = notFoundHtml(); setPageTitle(t('page.notFound')); } });
@@ -155,6 +174,7 @@ export function initGymPage(){
         if(g) sharePlace(gymShareText(g, { region: regionOf(g) }));
         break;
       }
+      case 'copy-address': copyAddress(id); break;
       case 'verify': setVerified(id, true); break;
       case 'unverify': setVerified(id, false); break;
     }

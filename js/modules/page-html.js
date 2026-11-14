@@ -12,6 +12,7 @@ import { icon } from './icons.js';
 import { localLang, localNameHtml, provenanceMarkHtml, thumbHtml, typeTagsHtml } from './list-html.js';
 import { pinSvg } from './pin-html.js';
 import { publicNotes } from './provenance.js';
+import { addressActionsHtml, visitorHtml } from './visit-html.js';
 
 // The address in the local script (address_local) above the English one, on the gym page only (the list read does not carry it).
 const localAddressHtml = g => {
@@ -108,7 +109,7 @@ export function gymPageHtml(g, ctx = {}){
     + `${photo ? `<img class="gym-hero gym-photo" src="${escapeHtml(photo)}" alt="${escapeHtml(g.name)}" referrerpolicy="no-referrer">` : ''}`
     + `<div class="gym-layout"><div class="gym-main">`
     + `${about ? `<section class="page-section" aria-labelledby="aboutTitle"><h2 class="section-title" id="aboutTitle">${th('gym.about')}</h2><p class="prose">${escapeHtml(about)}</p></section>` : ''}`
-    + facilitiesHtml(g)
+    + facilitiesHtml(g) + visitorHtml(g)
     + nearby + metroLink
     + `<section class="page-section" aria-labelledby="communityTitle"><h2 class="section-title" id="communityTitle">${th('gym.community')}</h2>`
     + `<p class="section-note">${escapeHtml(t(g.community ? 'gym.communityAdded' : 'gym.communityListed'))} ${th('gym.communityNote')}</p>`
@@ -118,7 +119,7 @@ export function gymPageHtml(g, ctx = {}){
     + `${ctx.isModerator ? `<button type="button" class="btn btn-tertiary btn-sm" data-page-action="${g.verified_at ? 'unverify' : 'verify'}" data-spot-id="${id}">${icon('check-circle', {size:'sm'})}${escapeHtml(t(g.verified_at ? 'gym.unverify' : 'gym.verify'))}</button>` : ''}</div></section>`
     + `</div><aside class="gym-aside"><section class="panel essentials" aria-labelledby="essentialsTitle"><h2 class="panel-title" id="essentialsTitle">${th('gym.essentials')}</h2>`
     + essentialsRowsHtml(g, ctx.hours || {})
-    + `<div class="essentials-address">${localAddressHtml(g)}<p class="panel-row">${escapeHtml(g.address || where)}</p>`
+    + `<div class="essentials-address"><div class="essentials-address-text">${localAddressHtml(g)}<p class="panel-row">${escapeHtml(g.address || where)}</p>${addressActionsHtml(g)}</div>`
     + mapThumbHtml({ lat: g.lat, lng: g.lng, zoom: 14, size: 120, href: ctx.exploreHref || '/', label: t('map.showOn', { name: g.name || t('map.thisGym') }), types: g.types })
     + `</div></section>${history}</aside></div>${actions}</article>`;   // actions last: beside the title on desktop, sticky at the bottom on phones
 }

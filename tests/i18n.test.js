@@ -142,14 +142,14 @@ test('i18n pages (PR 2B): gym page, region pages, provenance and share follow th
   const en = P.gymPageHtml(g, { history: { count: 2, last: '2026-09-01' }, metroLink: { name: 'Shanghai', total: 22, href: '/in/cn/shanghai/shanghai' } });
   assert.match(en, />Directions</); assert.match(en, /All 22 gyms in Shanghai/); assert.match(en, /2 sessions · last on Sep 1, 2026/);
   const bare = P.gymPageHtml({ ...g, day_pass: '', hours: null, facilities: [] }, {});
-  assert.equal((bare.match(/Not confirmed yet/g) || []).length, 3, 'day pass, hours and facilities say so when unknown');
+  assert.equal((bare.match(/Not confirmed yet/g) || []).length, 9, 'day pass, hours and facilities and the six visitor facts say so when unknown');
   await I.setLocale('zh-CN');
   const zh = P.gymPageHtml(g, { history: { count: 2, last: '2026-09-01' }, metroLink: { name: '上海', total: 22, href: '/x' } });
   for(const s of ['导航', '收藏', '去过', '基本信息', '设施', '租鞋', '咖啡厅', '上海的全部 22 家攀岩馆', '2 次攀岩', '2026年9月1日']) assert.ok(zh.includes(s), s);
   assert.ok(zh.includes('RMB 88 / 单次') && zh.includes('10:00–22:00'), 'gym-supplied day pass and hours are shown exactly as stored');
   assert.ok(zh.includes('Test &lt;Gym&gt;'), 'gym names are not translated, and stay escaped');
   const zhBare = P.gymPageHtml({ ...g, day_pass: '', hours: null, facilities: [] }, {});
-  assert.equal((zhBare.match(/尚未确认/g) || []).length, 3);
+  assert.equal((zhBare.match(/尚未确认/g) || []).length, 9);
   assert.ok(!/Not confirmed|Day pass|Facilities|Directions/.test(zhBare), 'no English left on the gym page chrome');
   assert.equal(GI.facilityLabel('shoe-hire'), '租鞋'); assert.equal(GI.dayLabel('sat'), '周六');
   assert.equal(P.regionMeta({ gyms: 28, cities: 1, areas: 6 }), '28 家岩馆 · 1 个城市 · 6 个其他区域');
