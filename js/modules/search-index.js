@@ -7,6 +7,7 @@
 //   a metro's aliases ("Wien") too.
 import { fold, wordStarts } from './geo.js';
 import { isMetroName, metroKey, metroOf } from './metros.js';
+import { CN_CITY_NAMES, COUNTRY_NAMES } from './place-names.js';
 
 // Chinese and Japanese names have no spaces between words, so every position in a run of CJK characters is a word start
 // ("攀岩" finds 香蕉攀岩(上地店)). Other scripts in the local name split on word boundaries as usual.
@@ -56,13 +57,21 @@ export function buildSearchIndex(spots, { countryLabels = {}, countryAlt = () =>
       if(!e) continue;
       e.count++; e.bounds = extend(e.bounds, g);
     }
+    // g.aliases (verified alternative names, migration 20261114000100) is read when the list query carries it; absent today.
+    const aliases = Array.isArray(g.aliases) ? g.aliases.filter(a => typeof a === 'string').join(' ') : '';
     gyms.push({ kind: 'gym', key: g.id, id: g.id, label: g.name || '', secondary: [g.name_local && String(g.name_local).trim() !== String(g.name || '').trim() ? String(g.name_local).trim() : '', g.suburb, region].filter(Boolean).join(' · '),
-      local: typeof g.name_local === 'string' ? g.name_local.trim() : '',
-      words: [...wordStarts(g.name), ...wordStarts(g.suburb), ...wordStarts(g.address), ...cjkStarts(g.name_local)], codes: [], count: 0, lat: g.lat, lng: g.lng });
+      local: typeof g.name_local === 'string' ? g.name_local.trim() : '', aliases,
+      words: [...wordStarts(g.name), ...wordStarts(g.suburb), ...wordStarts(g.address), ...cjkStarts(g.name_local), ...cjkStarts(aliases)], codes: [], count: 0, lat: g.lat, lng: g.lng });
   }
   const places = [...metros.values(), ...cities.values(), ...regions.values(), ...countries.values()];
-  for(const e of places) e.words = wordStarts([e.label, e.alt || '', ...(e.metro ? e.codes : [])].join(' '));   // a metro's aliases match like its name
-  for(const e of gyms){ e.nameWords = [...wordStarts(e.label), ...cjkStarts(e.local)]; delete e.local; }
+  for(const e of places){
+    // Native and Chinese names (place-names.js): a country by its own-language and Chinese names, a China city region by its
+    // Chinese name. Exact match ranks like a code; CJK prefixes match at every character like gym names.
+    const extra = e.kind === 'country' ? COUNTRY_NAMES[e.country] : e.kind === 'region' && e.country === 'CN' && CN_CITY_NAMES[e.state] ? [CN_CITY_NAMES[e.state]] : null;
+    if(extra) for(const n of extra) e.codes.push(fold(n));
+    e.words = cjkStarts([e.label, e.alt || '', ...(e.metro ? e.codes : []), ...(extra || [])].join(' '));   // a metro's aliases match like its name
+  }
+  for(const e of gyms){ e.nameWords = [...wordStarts(e.label), ...cjkStarts(e.local), ...cjkStarts(e.aliases)]; delete e.aliases; delete e.local; }
   return { places, gyms };
 }
 

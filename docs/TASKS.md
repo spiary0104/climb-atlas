@@ -45,15 +45,15 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 - Wave 3C paused. Global gap ranking (58 countries, 2026-10-06): `docs/research/coverage-gap-2026-10/ranking-countries.md`.
 
 ## Product
-### Welcome after the first email confirmation
-- Owner 2026-10-05: one-time welcome after a new user first confirms their email (log, save, add gyms); never on later sign-ins.
-### Self-serve account deletion
-- Users delete their own account from the app (the legal pages promise deletion within 30 days).
-### Community publishing (Phase 4)
-- Publish-then-review for edits, photos and confirm points are not built (gym-information edits still wait for moderation).
+### Gym aliases (i18n PR 3 follow-up; owner approval needed)
+- Apply `supabase/migrations/20261114000100_gym_aliases.sql` (untested locally: Docker was off), then add `aliases` to LIST_COLUMNS in
+  data-load.js AND spots-prefetch.js (a test keeps them identical) and regenerate the fallback; search-index.js already reads it.
+- Import pipeline: write only verified aliases (own signage/site/social). Visitor i18n model: `visitor` stays the original; optional `visitor_lang`, `visitor_i18n` jsonb {en:{...}}.
+### Welcome / account deletion / community publishing
+- One-time welcome after first email confirmation (owner 2026-10-05). Self-serve account deletion (legal pages promise 30 days).
+- Phase 4: publish-then-review for edits, photos and confirm points are not built.
 ### Map performance
-- Lazy map live 2026-10-06 (PR #77): MapLibre loads after the first list render. Next if needed: Fraunces (118 KB) still competes
-  with the list on slow phones; a static snapshot first view (option B) was not taken.
+- Lazy map live (PR #77). Next if needed: Fraunces (118 KB) competes with the list on slow phones.
 
 ## Blocked
 - _(none)_
