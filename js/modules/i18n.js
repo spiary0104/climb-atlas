@@ -18,7 +18,7 @@ export const LOCALES = Object.freeze([
   { code: 'de', name: 'Deutsch', html: 'de', enabled: true },
   { code: 'fr', name: 'Français', html: 'fr', enabled: true },
   { code: 'es', name: 'Español', html: 'es', enabled: true },
-  { code: 'pt-BR', name: 'Português (Brasil)', html: 'pt-BR', enabled: false },
+  { code: 'pt-BR', name: 'Português (Brasil)', html: 'pt-BR', enabled: true },
 ]);
 const LOADERS = {
   'zh-CN': () => import('./i18n-zh-CN.js'),
@@ -28,6 +28,7 @@ const LOADERS = {
   'zh-TW': () => import('./i18n-zh-TW.js'),
   'ja': () => import('./i18n-ja.js'),
   'ko': () => import('./i18n-ko.js'),
+  'pt-BR': () => import('./i18n-pt-BR.js'),
 };   // English is static; add one line per enabled language
 export const STORAGE_KEY = 'bouldeer_lang';
 export const DEFAULT_LOCALE = 'en';
@@ -106,6 +107,8 @@ export async function initI18n(){
 function pluralRule(n, lang){
   let pr = pluralCache.get(lang);
   if(!pr){ try { pr = new Intl.PluralRules(lang); } catch(e){ pr = new Intl.PluralRules('en'); } pluralCache.set(lang, pr); }
+  // CLDR puts 0 in Portuguese 'one' ("0 academia"); Brazilian usage is plural ("0 academias").
+  if(n === 0 && lang.startsWith('pt')) return 'other';
   return pr.select(n);
 }
 
