@@ -1,0 +1,116 @@
+// Simplified Chinese place names for the interface: region labels (regions.js STATES_BY_COUNTRY codes) and metro names
+// (metros.js, key COUNTRY:slug). Only names that differ from English; anything missing shows in English. Standard names only.
+export default {
+  regions: {
+    CN: {
+      BEIJING: '北京', CHANGCHUN: '长春', CHANGSHA: '长沙', CHANGZHOU: '常州', CHENGDU: '成都', CHONGQING: '重庆', DALI: '大理', DALIAN: '大连',
+      DONGGUAN: '东莞', FOSHAN: '佛山', FUZHOU: '福州', GUANGZHOU: '广州', GUIYANG: '贵阳', HAIKOU: '海口', HANGZHOU: '杭州', HARBIN: '哈尔滨',
+      HEFEI: '合肥', HOHHOT: '呼和浩特', JINAN: '济南', KUNMING: '昆明', LANZHOU: '兰州', LHASA: '拉萨', LIJIANG: '丽江', NANCHANG: '南昌',
+      NANJING: '南京', NANNING: '南宁', NINGBO: '宁波', QINGDAO: '青岛', SANYA: '三亚', SHANGHAI: '上海', SHENYANG: '沈阳', SHENZHEN: '深圳',
+      SHIJIAZHUANG: '石家庄', SUZHOU: '苏州', TAIYUAN: '太原', TIANJIN: '天津', URUMQI: '乌鲁木齐', WENZHOU: '温州', WUHAN: '武汉', WUXI: '无锡',
+      XIAMEN: '厦门', XIAN: '西安', XINING: '西宁', YINCHUAN: '银川', ZHENGZHOU: '郑州', ZHONGSHAN: '中山', ZHUHAI: '珠海',
+    },
+    TW: {
+      TAIPEI: '台北市', NEW_TAIPEI: '新北市', TAOYUAN: '桃园市', TAICHUNG: '台中市', TAINAN: '台南市', KAOHSIUNG: '高雄市', KEELUNG: '基隆市',
+      HSINCHU_CITY: '新竹市', CHIAYI_CITY: '嘉义市', HSINCHU_COUNTY: '新竹县', MIAOLI: '苗栗县', CHANGHUA: '彰化县', NANTOU: '南投县', YUNLIN: '云林县',
+      CHIAYI_COUNTY: '嘉义县', PINGTUNG: '屏东县', YILAN: '宜兰县', HUALIEN: '花莲县', TAITUNG: '台东县', PENGHU: '澎湖县', KINMEN: '金门县',
+      LIENCHIANG: '连江县',
+    },
+    HK: {
+      CENTRAL_WESTERN: '中西区', EASTERN: '东区', SOUTHERN: '南区', WAN_CHAI: '湾仔区', KOWLOON_CITY: '九龙城区', KWUN_TONG: '观塘区',
+      SHAM_SHUI_PO: '深水埗区', WONG_TAI_SIN: '黄大仙区', YAU_TSIM_MONG: '油尖旺区', ISLANDS: '离岛区', KWAI_TSING: '葵青区', NORTH: '北区',
+      SAI_KUNG: '西贡区', SHA_TIN: '沙田区', TAI_PO: '大埔区', TSUEN_WAN: '荃湾区', TUEN_MUN: '屯门区', YUEN_LONG: '元朗区',
+    },
+    JP: {
+      AICHI: '爱知县（名古屋）', AKITA: '秋田县', AOMORI: '青森县', CHIBA: '千叶县', EHIME: '爱媛县', FUKUI: '福井县', FUKUOKA: '福冈县', FUKUSHIMA: '福岛县',
+      GIFU: '岐阜县', GUNMA: '群马县', HIROSHIMA: '广岛县', HOKKAIDO: '北海道（札幌）', HYOGO: '兵库县（神户）', IBARAKI: '茨城县', ISHIKAWA: '石川县',
+      IWATE: '岩手县', KAGAWA: '香川县', KAGOSHIMA: '鹿儿岛县', KANAGAWA: '神奈川县（横滨）', KOCHI: '高知县', KUMAMOTO: '熊本县', KYOTO: '京都府', MIE: '三重县',
+      MIYAGI: '宫城县', MIYAZAKI: '宫崎县', NAGANO: '长野县', NAGASAKI: '长崎县', NARA: '奈良县', NIIGATA: '新潟县', OITA: '大分县', OKAYAMA: '冈山县',
+      OKINAWA: '冲绳县', OSAKA: '大阪府', SAGA: '佐贺县', SAITAMA: '埼玉县', SHIGA: '滋贺县', SHIMANE: '岛根县', SHIZUOKA: '静冈县', TOCHIGI: '栃木县',
+      TOKUSHIMA: '德岛县', TOKYO: '东京都', TOTTORI: '鸟取县', TOYAMA: '富山县', WAKAYAMA: '和歌山县', YAMAGATA: '山形县', YAMAGUCHI: '山口县',
+      YAMANASHI: '山梨县',
+    },
+    KR: {
+      BUSAN: '釜山', CHUNGCHEONGBUK: '忠清北道', CHUNGCHEONGNAM: '忠清南道', DAEGU: '大邱', DAEJEON: '大田', GANGWON: '江原道', GWANGJU: '光州',
+      GYEONGGI: '京畿道', GYEONGSANGBUK: '庆尚北道', GYEONGSANGNAM: '庆尚南道', INCHEON: '仁川', JEJU: '济州', JEOLLABUK: '全罗北道', JEOLLANAM: '全罗南道',
+      SEJONG: '世宗', SEOUL: '首尔', ULSAN: '蔚山',
+    },
+    US: {
+      AL: '阿拉巴马州', AK: '阿拉斯加州', AZ: '亚利桑那州', AR: '阿肯色州', CA: '加利福尼亚州', CO: '科罗拉多州', CT: '康涅狄格州', DE: '特拉华州', DC: '哥伦比亚特区',
+      FL: '佛罗里达州', GA: '佐治亚州', HI: '夏威夷州', ID: '爱达荷州', IL: '伊利诺伊州', IN: '印第安纳州', IA: '爱荷华州', KS: '堪萨斯州', KY: '肯塔基州', LA: '路易斯安那州',
+      ME: '缅因州', MD: '马里兰州', MA: '马萨诸塞州', MI: '密歇根州', MN: '明尼苏达州', MS: '密西西比州', MO: '密苏里州', MT: '蒙大拿州', NE: '内布拉斯加州', NV: '内华达州',
+      NH: '新罕布什尔州', NJ: '新泽西州', NM: '新墨西哥州', NY: '纽约州', NC: '北卡罗来纳州', ND: '北达科他州', OH: '俄亥俄州', OK: '俄克拉荷马州', OR: '俄勒冈州', PA: '宾夕法尼亚州',
+      RI: '罗得岛州', SC: '南卡罗来纳州', SD: '南达科他州', TN: '田纳西州', TX: '得克萨斯州', UT: '犹他州', VT: '佛蒙特州', VA: '弗吉尼亚州', WA: '华盛顿州', WV: '西弗吉尼亚州',
+      WI: '威斯康星州', WY: '怀俄明州',
+    },
+    CA: {
+      AB: '艾伯塔省', BC: '不列颠哥伦比亚省', MB: '马尼托巴省', NB: '新不伦瑞克省', NL: '纽芬兰与拉布拉多省', NT: '西北地区', NS: '新斯科舍省', NU: '努纳武特地区', ON: '安大略省',
+      PE: '爱德华王子岛省', QC: '魁北克省', SK: '萨斯喀彻温省', YT: '育空地区',
+    },
+    AU: {
+      NSW: '新南威尔士州', VIC: '维多利亚州', QLD: '昆士兰州', WA: '西澳大利亚州', SA: '南澳大利亚州', ACT: '首都领地', TAS: '塔斯马尼亚州', NT: '北领地',
+    },
+    GB: {
+      ENGLAND: '英格兰', SCOTLAND: '苏格兰', WALES: '威尔士', NORTHERN_IRELAND: '北爱尔兰',
+    },
+    DE: {
+      BAYERN: '巴伐利亚州', BERLIN: '柏林', NORDRHEIN_WESTFALEN: '北莱茵-威斯特法伦州', HESSEN: '黑森州', BADEN_WURTTEMBERG: '巴登-符腾堡州', BREMEN: '不来梅',
+      SCHLESWIG_HOLSTEIN: '石勒苏益格-荷尔斯泰因州', SACHSEN: '萨克森州', NIEDERSACHSEN: '下萨克森州', SACHSEN_ANHALT: '萨克森-安哈尔特州', BRANDENBURG: '勃兰登堡州',
+      RHEINLAND_PFALZ: '莱茵兰-普法尔茨州', HAMBURG: '汉堡', SAARLAND: '萨尔州', THURINGEN: '图林根州', MECKLENBURG_VORPOMMERN: '梅克伦堡-前波美拉尼亚州',
+    },
+    FR: {
+      AUVERGNE_RHONE_ALPES: '奥弗涅-罗讷-阿尔卑斯大区（里昂）', BOURGOGNE_FRANCHE_COMTE: '勃艮第-弗朗什-孔泰大区', BRETAGNE: '布列塔尼大区',
+      CENTRE_VAL_DE_LOIRE: '中央-卢瓦尔河谷大区', CORSE: '科西嘉岛', GRAND_EST: '大东部大区', HAUTS_DE_FRANCE: '上法兰西大区', ILE_DE_FRANCE: '法兰西岛大区（巴黎）',
+      NORMANDIE: '诺曼底大区', NOUVELLE_AQUITAINE: '新阿基坦大区', OCCITANIE: '奥克西塔尼大区（图卢兹）', PAYS_DE_LA_LOIRE: '卢瓦尔河地区大区',
+      PACA: '普罗旺斯-阿尔卑斯-蓝色海岸大区（马赛）',
+    },
+    ES: {
+      ANDALUCIA: '安达卢西亚', ARAGON: '阿拉贡', ASTURIAS: '阿斯图里亚斯', BALEARES: '巴利阿里群岛', CANARIAS: '加那利群岛', CANTABRIA: '坎塔布里亚',
+      CASTILLA_LA_MANCHA: '卡斯蒂利亚-拉曼恰', CASTILLA_Y_LEON: '卡斯蒂利亚-莱昂', CATALUNYA: '加泰罗尼亚（巴塞罗那）', CEUTA: '休达', MADRID: '马德里自治区',
+      COMUNIDAD_VALENCIANA: '瓦伦西亚自治区', EXTREMADURA: '埃斯特雷马杜拉', GALICIA: '加利西亚', LA_RIOJA: '拉里奥哈', MELILLA: '梅利利亚', MURCIA: '穆尔西亚',
+      NAVARRA: '纳瓦拉', PAIS_VASCO: '巴斯克地区',
+    },
+    IT: {
+      ABRUZZO: '阿布鲁佐', BASILICATA: '巴西利卡塔', CALABRIA: '卡拉布里亚', CAMPANIA: '坎帕尼亚', EMILIA_ROMAGNA: '艾米利亚-罗马涅（摩德纳）',
+      FRIULI_VENEZIA_GIULIA: '弗留利-威尼斯朱利亚', LAZIO: '拉齐奥（罗马）', LIGURIA: '利古里亚', LOMBARDIA: '伦巴第（米兰）', MARCHE: '马尔凯', MOLISE: '莫利塞',
+      PIEMONTE: '皮埃蒙特', PUGLIA: '普利亚', SARDEGNA: '撒丁岛', SICILIA: '西西里岛', TOSCANA: '托斯卡纳（佛罗伦萨）', TRENTINO_ALTO_ADIGE: '特伦蒂诺-上阿迪杰',
+      UMBRIA: '翁布里亚', VALLE_DAOSTA: '瓦莱达奥斯塔', VENETO: '威尼托',
+    },
+    CH: {
+      AARGAU: '阿尔高州', BASEL_LANDSCHAFT: '巴塞尔乡村州', BASEL_STADT: '巴塞尔城市州（巴塞尔）', BERN: '伯尔尼州', FRIBOURG: '弗里堡州', GENEVE: '日内瓦州',
+      GLARUS: '格拉鲁斯州', GRAUBUNDEN: '格劳宾登州', JURA: '汝拉州', LUZERN: '卢塞恩州', NEUCHATEL: '纳沙泰尔州', NIDWALDEN: '下瓦尔登州', OBWALDEN: '上瓦尔登州',
+      SCHAFFHAUSEN: '沙夫豪森州', SCHWYZ: '施维茨州', SOLOTHURN: '索洛图恩州', ST_GALLEN: '圣加仑州', THURGAU: '图尔高州', TICINO: '提契诺州', URI: '乌里州',
+      VALAIS: '瓦莱州', VAUD: '沃州', ZUG: '楚格州', ZURICH: '苏黎世州（温特图尔）',
+    },
+    AT: {
+      BURGENLAND: '布尔根兰州', KARNTEN: '克恩顿州', NIEDEROSTERREICH: '下奥地利州', OBEROSTERREICH: '上奥地利州（林茨）', SALZBURG: '萨尔茨堡州',
+      STEIERMARK: '施蒂利亚州（格拉茨）', TIROL: '蒂罗尔州', VORARLBERG: '福拉尔贝格州', WIEN: '维也纳',
+    },
+    NL: {
+      DRENTHE: '德伦特省', FLEVOLAND: '弗莱福兰省', FRIESLAND: '弗里斯兰省', GELDERLAND: '海尔德兰省', GRONINGEN: '格罗宁根省', LIMBURG: '林堡省',
+      NOORD_BRABANT: '北布拉班特省', NOORD_HOLLAND: '北荷兰省（阿姆斯特丹）', OVERIJSSEL: '上艾瑟尔省', UTRECHT: '乌得勒支省', ZEELAND: '泽兰省',
+      ZUID_HOLLAND: '南荷兰省（海牙、鹿特丹）',
+    },
+  },
+  metros: {
+    'AR:buenos-aires': '布宜诺斯艾利斯', 'AT:vienna': '维也纳', 'AU:adelaide': '阿德莱德', 'AU:brisbane': '布里斯班', 'AU:melbourne': '墨尔本',
+    'AU:perth': '珀斯', 'AU:sydney': '悉尼', 'BG:sofia': '索非亚', 'BR:sao-paulo': '圣保罗', 'CA:montreal': '蒙特利尔', 'CA:toronto': '多伦多',
+    'CH:bern': '伯尔尼', 'CH:geneva': '日内瓦', 'CH:lausanne': '洛桑', 'CH:zurich': '苏黎世', 'CN:beijing': '北京', 'CN:chengdu': '成都',
+    'CN:chongqing': '重庆', 'CN:guangzhou': '广州', 'CN:hangzhou': '杭州', 'CN:nanjing': '南京', 'CN:shanghai': '上海', 'CN:shenzhen': '深圳',
+    'CN:suzhou': '苏州', 'CN:tianjin': '天津', 'CN:wuhan': '武汉', 'CN:xi-an': '西安', 'CZ:prague': '布拉格', 'DE:berlin': '柏林',
+    'DE:cologne': '科隆', 'DE:dresden': '德累斯顿', 'DE:frankfurt': '法兰克福', 'DE:freiburg': '弗赖堡', 'DE:hamburg': '汉堡', 'DE:munich': '慕尼黑',
+    'DE:nuremberg': '纽伦堡', 'DE:ruhr-area': '鲁尔区', 'DE:stuttgart': '斯图加特', 'DK:copenhagen': '哥本哈根', 'ES:barcelona': '巴塞罗那',
+    'ES:madrid': '马德里', 'FI:helsinki': '赫尔辛基', 'FR:lyon': '里昂', 'FR:marseille': '马赛', 'FR:paris': '巴黎', 'FR:toulouse': '图卢兹',
+    'GB:bristol': '布里斯托尔', 'GB:edinburgh': '爱丁堡', 'GB:glasgow': '格拉斯哥', 'GB:leeds': '利兹', 'GB:london': '伦敦', 'GB:manchester': '曼彻斯特',
+    'GB:sheffield': '谢菲尔德', 'GB:southampton': '南安普敦', 'GR:athens': '雅典', 'HU:budapest': '布达佩斯', 'ID:jakarta': '雅加达',
+    'IE:dublin': '都柏林', 'IL:tel-aviv': '特拉维夫', 'IT:rome': '罗马', 'JP:kyoto': '京都', 'JP:osaka': '大阪', 'JP:sendai': '仙台',
+    'JP:tokyo': '东京', 'KR:busan': '釜山', 'KR:daegu': '大邱', 'KR:daejeon': '大田', 'KR:seoul': '首尔', 'MX:mexico-city': '墨西哥城',
+    'MY:kuala-lumpur': '吉隆坡', 'NL:amsterdam': '阿姆斯特丹', 'NL:the-hague': '海牙', 'NL:utrecht': '乌得勒支', 'PH:manila': '马尼拉',
+    'PL:krakow': '克拉科夫', 'PL:warsaw': '华沙', 'PL:wroc-aw': '弗罗茨瓦夫', 'PT:lisbon': '里斯本', 'RO:bucharest': '布加勒斯特', 'RU:moscow': '莫斯科',
+    'RU:saint-petersburg': '圣彼得堡', 'SE:gothenburg': '哥德堡', 'SE:stockholm': '斯德哥尔摩', 'SI:ljubljana': '卢布尔雅那', 'TH:bangkok': '曼谷',
+    'TW:taipei': '台北', 'US:atlanta': '亚特兰大', 'US:austin': '奥斯汀', 'US:boston': '波士顿', 'US:chicago': '芝加哥', 'US:dallas': '达拉斯',
+    'US:denver': '丹佛', 'US:houston': '休斯敦', 'US:los-angeles': '洛杉矶', 'US:nashville': '纳什维尔', 'US:new-york': '纽约',
+    'US:orange-county': '橙县', 'US:salt-lake-city': '盐湖城', 'US:san-diego': '圣迭戈', 'US:san-francisco-bay-area': '旧金山湾区',
+    'US:san-jose': '圣何塞', 'US:seattle': '西雅图',
+  },
+};
