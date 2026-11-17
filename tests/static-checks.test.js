@@ -60,6 +60,7 @@ test('destructive buttons (Reject / Dismiss / Delete) carry .btn-danger and are 
 const SAFE_EXPR = [
   /^escapeHtml\(/,
   /^th\('[a-zA-Z0-9_.]+'(, \{[^}]*\})?\)$/,                                  // i18n.th(): the translation, HTML-escaped (params too)
+  /^intro(Before|After)$/,                                                    // list-html introHtml: the two halves of th('explore.intro')
   /^languageOptionsHtml\(\)$/,                                               // i18n.js: endonyms from the fixed LOCALES table, escaped
   /^(climbed|bookmarked|c\.sent|active)\s*\?\s*'[^']*'\s*:\s*''$/,            // boolean -> fixed class / attribute strings
   /^c\.climb_type===['"][\w-]+['"]\?'selected':''$/,                          // <option selected> for a fixed value

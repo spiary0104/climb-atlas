@@ -137,7 +137,9 @@ export function peekHtml(g, ctx = {}){
 // The one-line orientation shown to a first-time visitor (list.js renderIntro), before the data loads: fixed wording, no
 // character here.
 export function introHtml(){
-  return `<p class="explore-intro-text"><strong>Bouldeer</strong> ${th('explore.intro')} <a class="link" href="/about.html">${th('me.about')}</a></p>`
+  // The brand sits inside the sentence ({brand}) so each language places it (and attaches its particles: Bouldeer는).
+  const [introBefore, introAfter = ''] = th('explore.intro', {}).split('{brand}');   // no value: t() keeps the placeholder
+  return `<p class="explore-intro-text">${introBefore}<strong>Bouldeer</strong>${introAfter} <a class="link" href="/about.html">${th('me.about')}</a></p>`
     + `<button type="button" class="btn btn-tertiary btn-icon btn-sm" data-intro-close aria-label="${th('common.dismiss')}">${icon('x', {size:'sm'})}</button>`;
 }
 

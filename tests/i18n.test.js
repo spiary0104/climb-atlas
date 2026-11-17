@@ -17,7 +17,7 @@ test.before(async () => {
   EN = (await import('../js/modules/i18n-en.js')).default;
   ZH = (await import('../js/modules/i18n-zh-CN.js')).default;
   DICTS = [['zh-CN', ZH]];
-  for(const c of ['de', 'fr', 'es']) DICTS.push([c, (await import(`../js/modules/i18n-${c}.js`)).default]);
+  for(const c of ['zh-TW', 'ja', 'ko', 'de', 'fr', 'es']) DICTS.push([c, (await import(`../js/modules/i18n-${c}.js`)).default]);
 });
 test.afterEach(async () => { store.clear(); await I.setLocale('en'); });
 
@@ -25,7 +25,7 @@ const placeholders = m => [...new Set((typeof m === 'object' ? Object.values(m).
 
 test('i18n: every enabled language has exactly the English keys, the same placeholders and an "other" plural form', () => {
   const enabled = I.enabledLocales().map(l => l.code);
-  assert.deepEqual(enabled, ['en', 'zh-CN', 'de', 'fr', 'es'], 'only reviewed languages are enabled');
+  assert.deepEqual(enabled, ['en', 'zh-CN', 'zh-TW', 'ja', 'ko', 'de', 'fr', 'es'], 'only reviewed languages are enabled');
   for(const [code, d] of DICTS){
     assert.deepEqual(Object.keys(d).sort(), Object.keys(EN).sort(), code + ' keys differ from English');
     for(const k of Object.keys(EN)){
@@ -51,18 +51,23 @@ test('i18n: every key the app uses (t, th, data-i18n, data-i18n-attr) exists in 
   assert.deepEqual(missing, [], 'keys used but not defined in i18n-en.js');
 });
 
-test('i18n: browser languages map to an enabled locale; Traditional Chinese is not mapped to Simplified', () => {
+test('i18n: browser languages map to an enabled locale; Traditional and Simplified Chinese are never swapped', () => {
   assert.equal(I.matchLocale(['zh-CN']), 'zh-CN');
   assert.equal(I.matchLocale(['zh']), 'zh-CN');
   assert.equal(I.matchLocale(['zh-Hans-SG']), 'zh-CN');
-  assert.equal(I.matchLocale(['zh-TW']), 'en');
-  assert.equal(I.matchLocale(['zh-Hant-HK']), 'en');
-  assert.equal(I.matchLocale(['ja-JP', 'zh-CN']), 'zh-CN', 'the first enabled match in preference order');
+  assert.equal(I.matchLocale(['zh-TW']), 'zh-TW');
+  assert.equal(I.matchLocale(['zh-Hant-HK']), 'zh-TW');
+  assert.equal(I.matchLocale(['zh-HK']), 'zh-TW');
+  assert.equal(I.matchLocale(['zh-MO']), 'zh-TW');
+  assert.equal(I.matchLocale(['zh-Hans-HK']), 'zh-CN', 'script beats region');
+  assert.equal(I.matchLocale(['ja-JP', 'zh-CN']), 'ja', 'the first enabled match in preference order');
+  assert.equal(I.matchLocale(['ko-KR']), 'ko');
+  assert.equal(I.matchLocale(['ja']), 'ja');
   assert.equal(I.matchLocale(['en-GB']), 'en');
   assert.equal(I.matchLocale(['fr-FR', 'de']), 'fr');
   assert.equal(I.matchLocale(['de-AT']), 'de');
   assert.equal(I.matchLocale(['es-MX']), 'es', 'regional Spanish uses the neutral Spanish dictionary');
-  assert.equal(I.matchLocale(['pt-BR', 'ko']), 'en', 'disabled languages fall back to English');
+  assert.equal(I.matchLocale(['pt-BR', 'it']), 'en', 'disabled and unknown languages fall back to English');
   assert.equal(I.matchLocale([]), 'en');
 });
 
@@ -89,7 +94,7 @@ test('i18n: lookup, English fallback, missing keys, plurals, interpolation and e
   assert.equal(I.t('common.gymCount', { count: 1 }), '1 家岩馆');
   assert.equal(I.t('no.such.key'), 'no.such.key', 'a missing key shows the key, never crashes');
   assert.equal(I.formatNumber(1234.5), '1,234.5');
-  await I.setLocale('ko');   // disabled -> English
+  await I.setLocale('pt-BR');   // disabled -> English
   assert.equal(I.currentLocale(), 'en');
   assert.equal(I.th('nav.explore'), 'Explore');
   assert.equal(I.t('common.gymCount', { count: '<b>' }), '{count} gyms'.replace('{count}', '<b>'));
@@ -101,8 +106,8 @@ test('i18n: language picker lists enabled languages by their own names, current 
   const html = I.languageOptionsHtml();
   assert.match(html, /<option value="en" lang="en">English<\/option>/);
   assert.match(html, /<option value="zh-CN" lang="zh-Hans-CN" selected>简体中文<\/option>/);
-  assert.ok(!/日本語|한국어|Português/.test(html), 'disabled languages are not offered');
-  for(const n of ['Deutsch', 'Français', 'Español']) assert.ok(html.includes('>' + n + '<'), n + ' offered');
+  assert.ok(!/Português/.test(html), 'disabled languages are not offered');
+  for(const n of ['繁體中文', '日本語', '한국어', 'Deutsch', 'Français', 'Español']) assert.ok(html.includes('>' + n + '<'), n + ' offered');
 });
 
 test('i18n: shell wiring: pickers in the top bar and on /me, the locale cached offline, CJK faces from the system only', () => {
@@ -110,8 +115,9 @@ test('i18n: shell wiring: pickers in the top bar and on /me, the locale cached o
   assert.match(html, /<select data-lang-picker aria-label="Language" data-i18n-attr="aria-label:lang.pickerAria">/);
   assert.match(read('js/modules/page-html.js'), /data-lang-picker aria-describedby="langHelp"/);
   const sw = read('sw.js');
-  for(const f of ['js/modules/i18n.js', 'js/modules/i18n-en.js', 'js/modules/i18n-zh-CN.js']) assert.ok(sw.includes(`'${f}'`), f + ' not in SHELL_FILES');
+  for(const f of ['js/modules/i18n.js', ...I.enabledLocales().map(l => `js/modules/i18n-${l.code}.js`)]) assert.ok(sw.includes(`'${f}'`), f + ' not in SHELL_FILES');
   assert.match(read('css/base.css'), /:lang\(zh-Hans\)\{--font-text:"Inter", var\(--font-cjk-hans\)/);
+  for(const l of ['zh-Hant', 'ja', 'ko']) assert.ok(read('css/base.css').includes(`:lang(${l}){--font-text:"Inter", var(--font-cjk-`), l + ' uses a system CJK face');
   assert.ok(!/fonts\.googleapis\.com\/[^"]*(Noto|CJK|SC)/i.test(html), 'no downloaded CJK font');
   assert.match(read('js/main.js'), /await initI18n\(\);/);
 });
@@ -282,3 +288,23 @@ test('manifest: TWA-ready basics (name, scope, standalone, maskable 512 icon) an
   assert.ok(m.icons.some(i => i.sizes === '512x512' && i.purpose === 'maskable'), 'a maskable 512 icon');
   assert.ok(m.icons.some(i => i.sizes === '512x512' && i.purpose === 'any'), 'a plain 512 icon');
 });
+
+test('i18n Phase 2: the Explore intro places the brand per language (particles attach: Bouldeer는, Bouldeerは)', async () => {
+  const { introHtml } = await import('../js/modules/list-html.js');
+  const want = { en: '<strong>Bouldeer</strong> maps', ko: '<strong>Bouldeer</strong>는 ', ja: '<strong>Bouldeer</strong>は、', 'zh-TW': '<strong>Bouldeer</strong> 收錄' };
+  for(const [code, start] of Object.entries(want)){
+    await I.setLocale(code);
+    assert.ok(introHtml().startsWith('<p class="explore-intro-text">' + start), code + ': ' + introHtml().slice(0, 90));
+    assert.ok(!introHtml().includes('{brand}'), code + ': placeholder left in');
+  }
+  for(const l of I.enabledLocales()) assert.ok(String((l.code === 'en' ? EN : DICTS.find(d => d[0] === l.code)[1])['explore.intro']).includes('{brand}'), l.code);
+});
+
+test('i18n Phase 2: Traditional Chinese, Japanese and Korean ordinals and plurals', async () => {
+  const P = await import('../js/modules/passport.js');
+  const want = { 'zh-TW': '第3', ja: '3番目', ko: '3번째' };
+  for(const [code, v] of Object.entries(want)){ await I.setLocale(code); assert.equal(P.ordinal(3), v, code); assert.equal(P.ordinal(1), v.replace('3', '1'), code); }
+  await I.setLocale('zh-TW');
+  assert.equal(I.currentHtmlLang(), 'zh-Hant-TW');
+});
+

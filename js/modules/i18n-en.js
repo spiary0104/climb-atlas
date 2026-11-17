@@ -63,7 +63,7 @@ export default {
   'explore.detailsOpen': '{name} — details open',
   'explore.locateError': 'Location unavailable — sorting by name',
   'explore.offline': 'Can’t reach Bouldeer right now. Showing a saved list of gyms; sign-in, saving and check-ins come back when you’re online.',
-  'explore.intro': 'maps thousands of climbing gyms in 80+ countries, researched gym by gym and kept current by climbers.',
+  'explore.intro': '{brand} maps thousands of climbing gyms in 80+ countries, researched gym by gym and kept current by climbers.',
   'explore.whereClimbing': 'Where are you climbing?',
   'explore.searchCity': 'Search a city',
 

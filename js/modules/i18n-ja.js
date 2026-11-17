@@ -61,7 +61,7 @@ export default {
   'explore.detailsOpen': '{name} — 詳細を表示中',
   'explore.locateError': '位置情報を取得できません — 名前順で並べ替えます',
   'explore.offline': 'Bouldeerに接続できません。保存済みのジム一覧を表示しています。ログイン、保存、チェックインはオンラインに戻ると使えます。',
-  'explore.intro': 'は、80か国以上の数千のクライミングジムを掲載する地図です。1軒ずつ調べ、クライマーのみなさんが最新の状態に保っています。',
+  'explore.intro': '{brand}は、80か国以上の数千のクライミングジムを掲載する地図です。1軒ずつ調べ、クライマーのみなさんが最新の状態に保っています。',
   'explore.whereClimbing': 'どこで登りますか？',
   'explore.searchCity': '都市を検索',
 

@@ -64,7 +64,7 @@ export default {
   'explore.detailsOpen': '{name} — 상세 정보 열림',
   'explore.locateError': '위치를 확인할 수 없어 이름순으로 정렬해요',
   'explore.offline': 'Bouldeer에 연결할 수 없어요. 저장된 클라이밍장 목록을 보여 드려요. 로그인, 저장, 체크인은 온라인이 되면 다시 사용할 수 있어요.',
-  'explore.intro': '은(는) 80개국 이상, 수천 곳의 클라이밍장을 하나하나 조사해 지도에 담고, 클라이머들이 최신 상태로 유지해요.',
+  'explore.intro': '{brand}는 80개국 이상, 수천 곳의 클라이밍장을 하나하나 조사해 지도에 담고, 클라이머들이 최신 상태로 유지해요.',
   'explore.whereClimbing': '어디서 클라이밍하세요?',
   'explore.searchCity': '도시 검색',
 
