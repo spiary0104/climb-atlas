@@ -45,6 +45,7 @@ export default {
 
   'explore.skip': '跳到主要内容',
   'explore.paneAria': '岩馆',
+  'site.title': 'Bouldeer — 由攀岩者共建的攀岩馆地图',
   'explore.mapAria': '地图',
   'explore.listAria': '地图范围内的岩馆',
   'explore.carouselAria': '此处的岩馆',
@@ -133,6 +134,7 @@ export default {
   'map.locate': '显示我的位置',
   'map.locateUnavailable': '无法获取位置',
   'map.attribution': '显示或隐藏版权信息',
+  'map.marker': '地图标记',
 
   'type.indoorBouldering': '室内抱石',
   'type.topRope': '顶绳',

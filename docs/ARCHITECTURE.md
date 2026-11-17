@@ -72,7 +72,7 @@ Supercluster → `modulepreload` of main.js's whole graph (`fetchpriority="low"`
 - map.js does not import the list; explore.js registers map handlers (`setMapHandlers`). Import cycles
   (explore ↔ modals ↔ map) are safe because top-level code only does DOM lookups (no map is made at import).
 - Interface text: `t('area.key', {count})`/`th()` (escaped) from `i18n.js`, strings in `i18n-<code>.js` (English = fallback; enabled
-  languages need every key, tests/i18n.test.js); markup `data-i18n(-attr)`; a switch fires `bouldeer:locale`. Gym data never translated. seo-meta.js has no imports (api/seo.mjs): English unless a `tr` (i18n `t`) is passed. Unknown hours/day pass/facilities show `common.notConfirmed`. `tOrdinal` (passport "第3"/"3rd"); dates via `formatDate`; tests/i18n.test.js guards against hardcoded English in the builders and index.html dialogs.
+  languages need every key, tests/i18n.test.js); markup `data-i18n(-attr)`; a switch fires `bouldeer:locale`. Gym data never translated. seo-meta.js has no imports (api/seo.mjs): English unless a `tr` (i18n `t`) is passed. Unknown hours/day pass/facilities show `common.notConfirmed`. `tOrdinal` (passport "第3"/"3rd"); dates via `formatDate`; tests/i18n.test.js guards against hardcoded English in the builders and index.html dialogs. Adding a language, glossary, SEO, Play/TWA notes: `docs/i18n.md`.
 
 ## Data model (`supabase/migrations/`; `schema.sql` is stale)
 `moderators`, `spots` (status pending/approved/rejected; insert needs sign-in + rate limit), `pending_edits` and `reports` (sign-in + 20/day each, `submitted_by` pinned; migrations 20261002*), `routes` (unused, read-only),

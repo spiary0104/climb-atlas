@@ -33,6 +33,8 @@ export function matchRoute(path){
   return { name: 'notfound', params: {} };
 }
 
+import { t } from './i18n.js';
+
 // The app path: "#/gym/x" wins when present (hash fallback), otherwise the real path.
 export function currentPath(){
   if(location.hash.startsWith('#/')) return location.hash.slice(1).split('?')[0].split('#')[0];
@@ -60,7 +62,7 @@ function setMeta(title, path){
 
 // Pages call this once they know their title (e.g. the gym name). canonicalPath: when this page duplicates another
 // (a region page listing exactly one city's gyms, place-canonical.js), the path of the page search engines should index.
-export function setPageTitle(title, canonicalPath){ setMeta(title ? title + ' · Bouldeer' : 'Bouldeer — community-sourced climbing map', canonicalPath || (current ? currentPath() : '/')); }
+export function setPageTitle(title, canonicalPath){ setMeta(title ? title + ' · Bouldeer' : t('site.title'), canonicalPath || (current ? currentPath() : '/')); }
 
 function markNav(area){
   document.querySelectorAll('[data-nav]').forEach(el => {
@@ -82,7 +84,7 @@ export function route({ focus = true } = {}){
   if(explore){
     lastExploreUrl = location.pathname + location.search;
     if(views.explore) views.explore.enter(current.params, null, { returning: !!prev && prev.name !== 'explore', initial: !prev });
-    setMeta('Bouldeer — community-sourced climbing map', '/');
+    setMeta(t('site.title'), '/');
     return;
   }
   const v = views[current.name] || views.notfound;
@@ -119,5 +121,6 @@ export function initRouter(){
     navigate(url.pathname + url.search);
   });
   window.addEventListener('popstate', () => route());
+  window.addEventListener('bouldeer:locale', () => { if(isExplore()) setMeta(t('site.title'), '/'); });   // pages retitle themselves when they re-render
   route({ focus: false });
 }

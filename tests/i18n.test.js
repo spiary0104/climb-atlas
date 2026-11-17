@@ -264,3 +264,15 @@ test('i18n 2C: the language switch re-renders in place: log/passport/mod/add pag
   assert.match(read('js/main.js'), /window\.addEventListener\('bouldeer:locale'[\s\S]*?refreshPage\(\);/);
   assert.match(read('js/modules/modals.js'), /addEventListener\('bouldeer:locale', localizeCountrySelect\)/, 'the edit form country list follows the language');
 });
+
+test('manifest: TWA-ready basics (name, scope, standalone, maskable 512 icon) and an explicit language and direction', () => {
+  const m = JSON.parse(read('manifest.json'));
+  assert.equal(m.lang, 'en');
+  assert.equal(m.dir, 'ltr');
+  assert.equal(m.scope, '/');
+  assert.equal(m.start_url, '/index.html');
+  assert.equal(m.display, 'standalone');
+  assert.ok(m.name && m.short_name && m.theme_color && m.background_color);
+  assert.ok(m.icons.some(i => i.sizes === '512x512' && i.purpose === 'maskable'), 'a maskable 512 icon');
+  assert.ok(m.icons.some(i => i.sizes === '512x512' && i.purpose === 'any'), 'a plain 512 icon');
+});
