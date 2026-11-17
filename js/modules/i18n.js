@@ -15,12 +15,17 @@ export const LOCALES = Object.freeze([
   { code: 'zh-TW', name: '繁體中文', html: 'zh-Hant-TW', enabled: false },
   { code: 'ja', name: '日本語', html: 'ja', enabled: false },
   { code: 'ko', name: '한국어', html: 'ko', enabled: false },
-  { code: 'de', name: 'Deutsch', html: 'de', enabled: false },
-  { code: 'fr', name: 'Français', html: 'fr', enabled: false },
-  { code: 'es', name: 'Español', html: 'es', enabled: false },
+  { code: 'de', name: 'Deutsch', html: 'de', enabled: true },
+  { code: 'fr', name: 'Français', html: 'fr', enabled: true },
+  { code: 'es', name: 'Español', html: 'es', enabled: true },
   { code: 'pt-BR', name: 'Português (Brasil)', html: 'pt-BR', enabled: false },
 ]);
-const LOADERS = { 'zh-CN': () => import('./i18n-zh-CN.js') };   // English is static; add one line per enabled language
+const LOADERS = {
+  'zh-CN': () => import('./i18n-zh-CN.js'),
+  'de': () => import('./i18n-de.js'),
+  'fr': () => import('./i18n-fr.js'),
+  'es': () => import('./i18n-es.js'),
+};   // English is static; add one line per enabled language
 export const STORAGE_KEY = 'bouldeer_lang';
 export const DEFAULT_LOCALE = 'en';
 

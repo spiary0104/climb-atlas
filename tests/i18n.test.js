@@ -11,11 +11,13 @@ const read = f => fs.readFileSync(path.join(ROOT, f), 'utf8');
 const store = new Map();
 globalThis.localStorage = { getItem: k => (store.has(k) ? store.get(k) : null), setItem: (k, v) => store.set(k, String(v)), removeItem: k => store.delete(k) };
 
-let I, EN, ZH;
+let I, EN, ZH, DICTS;
 test.before(async () => {
   I = await import('../js/modules/i18n.js');
   EN = (await import('../js/modules/i18n-en.js')).default;
   ZH = (await import('../js/modules/i18n-zh-CN.js')).default;
+  DICTS = [['zh-CN', ZH]];
+  for(const c of ['de', 'fr', 'es']) DICTS.push([c, (await import(`../js/modules/i18n-${c}.js`)).default]);
 });
 test.afterEach(async () => { store.clear(); await I.setLocale('en'); });
 
@@ -23,8 +25,8 @@ const placeholders = m => [...new Set((typeof m === 'object' ? Object.values(m).
 
 test('i18n: every enabled language has exactly the English keys, the same placeholders and an "other" plural form', () => {
   const enabled = I.enabledLocales().map(l => l.code);
-  assert.deepEqual(enabled, ['en', 'zh-CN'], 'only reviewed languages are enabled');
-  for(const [code, d] of [['zh-CN', ZH]]){
+  assert.deepEqual(enabled, ['en', 'zh-CN', 'de', 'fr', 'es'], 'only reviewed languages are enabled');
+  for(const [code, d] of DICTS){
     assert.deepEqual(Object.keys(d).sort(), Object.keys(EN).sort(), code + ' keys differ from English');
     for(const k of Object.keys(EN)){
       assert.deepEqual(placeholders(d[k]), placeholders(EN[k]), `${code} ${k}: placeholders differ`);
@@ -57,7 +59,10 @@ test('i18n: browser languages map to an enabled locale; Traditional Chinese is n
   assert.equal(I.matchLocale(['zh-Hant-HK']), 'en');
   assert.equal(I.matchLocale(['ja-JP', 'zh-CN']), 'zh-CN', 'the first enabled match in preference order');
   assert.equal(I.matchLocale(['en-GB']), 'en');
-  assert.equal(I.matchLocale(['fr-FR', 'de']), 'en', 'disabled languages fall back to English');
+  assert.equal(I.matchLocale(['fr-FR', 'de']), 'fr');
+  assert.equal(I.matchLocale(['de-AT']), 'de');
+  assert.equal(I.matchLocale(['es-MX']), 'es', 'regional Spanish uses the neutral Spanish dictionary');
+  assert.equal(I.matchLocale(['pt-BR', 'ko']), 'en', 'disabled languages fall back to English');
   assert.equal(I.matchLocale([]), 'en');
 });
 
@@ -84,7 +89,7 @@ test('i18n: lookup, English fallback, missing keys, plurals, interpolation and e
   assert.equal(I.t('common.gymCount', { count: 1 }), '1 家岩馆');
   assert.equal(I.t('no.such.key'), 'no.such.key', 'a missing key shows the key, never crashes');
   assert.equal(I.formatNumber(1234.5), '1,234.5');
-  await I.setLocale('fr');   // disabled -> English
+  await I.setLocale('ko');   // disabled -> English
   assert.equal(I.currentLocale(), 'en');
   assert.equal(I.th('nav.explore'), 'Explore');
   assert.equal(I.t('common.gymCount', { count: '<b>' }), '{count} gyms'.replace('{count}', '<b>'));
@@ -96,7 +101,8 @@ test('i18n: language picker lists enabled languages by their own names, current 
   const html = I.languageOptionsHtml();
   assert.match(html, /<option value="en" lang="en">English<\/option>/);
   assert.match(html, /<option value="zh-CN" lang="zh-Hans-CN" selected>简体中文<\/option>/);
-  assert.ok(!/日本語|Deutsch/.test(html), 'disabled languages are not offered');
+  assert.ok(!/日本語|한국어|Português/.test(html), 'disabled languages are not offered');
+  for(const n of ['Deutsch', 'Français', 'Español']) assert.ok(html.includes('>' + n + '<'), n + ' offered');
 });
 
 test('i18n: shell wiring: pickers in the top bar and on /me, the locale cached offline, CJK faces from the system only', () => {
