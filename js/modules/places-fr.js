@@ -41,7 +41,7 @@ export default {
     US: {
       CA: 'Californie', FL: 'Floride', LA: 'Louisiane', NC: 'Caroline du Nord', SC: 'Caroline du Sud', ND: 'Dakota du Nord',
       SD: 'Dakota du Sud', GA: 'Géorgie', HI: 'Hawaï', PA: 'Pennsylvanie', VA: 'Virginie', WV: 'Virginie-Occidentale',
-      NM: 'Nouveau-Mexique', NH: 'Nouveau-Hampshire', DC: 'district de Columbia',
+      NM: 'Nouveau-Mexique', NH: 'Nouveau-Hampshire', DC: 'District de Columbia',
     },
     CA: {
       BC: 'Colombie-Britannique', NB: 'Nouveau-Brunswick', NL: 'Terre-Neuve-et-Labrador', NT: 'Territoires du Nord-Ouest',

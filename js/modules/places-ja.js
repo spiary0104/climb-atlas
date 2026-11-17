@@ -8,7 +8,7 @@ export default {
       HEFEI: '合肥', HOHHOT: 'フフホト', JINAN: '済南', KUNMING: '昆明', LANZHOU: '蘭州', LHASA: 'ラサ', LIJIANG: '麗江', NANCHANG: '南昌',
       NANJING: '南京', NANNING: '南寧', NINGBO: '寧波', QINGDAO: '青島', SANYA: '三亜', SHANGHAI: '上海', SHENYANG: '瀋陽', SHENZHEN: '深圳',
       SHIJIAZHUANG: '石家荘', SUZHOU: '蘇州', TAIYUAN: '太原', TIANJIN: '天津', URUMQI: 'ウルムチ', WENZHOU: '温州', WUHAN: '武漢', WUXI: '無錫',
-      XIAMEN: 'アモイ', XIAN: '西安', XINING: '西寧', YINCHUAN: '銀川', ZHENGZHOU: '鄭州', ZHONGSHAN: '中山', ZHUHAI: '珠海',
+      XIAMEN: '厦門', XIAN: '西安', XINING: '西寧', YINCHUAN: '銀川', ZHENGZHOU: '鄭州', ZHONGSHAN: '中山', ZHUHAI: '珠海',
     },
     TW: {
       TAIPEI: '台北市', NEW_TAIPEI: '新北市', TAOYUAN: '桃園市', TAICHUNG: '台中市', TAINAN: '台南市', KAOHSIUNG: '高雄市', KEELUNG: '基隆市',

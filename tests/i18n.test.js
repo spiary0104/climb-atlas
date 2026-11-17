@@ -343,7 +343,7 @@ test('i18n places: every place-name table uses real region codes and metros, onl
 });
 
 test('i18n places: region and metro labels follow the language, codes and English search names stay', async () => {
-  const { stateLabel, stateLabelEn } = await import('../js/modules/map.js');
+  const { stateLabel, stateLabelEn } = await import('../js/modules/region-label.js');
   const { METROS } = await import('../js/modules/metros.js');
   const { buildSearchIndex, querySearchIndex } = await import('../js/modules/search-index.js');
   const tokyo = METROS.find(m => m.country === 'JP' && m.slug === 'tokyo');
