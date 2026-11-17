@@ -11,7 +11,7 @@ import { provenanceState } from './provenance.js';
 import { filtersActive } from './filters.js';
 import { status, statusLine } from './hours.js';
 import { firstRunArt } from './brand.js';
-import { currentLocale, formatNumber, t, th } from './i18n.js';
+import { currentLocale, formatNumber, metroName, t, th } from './i18n.js';
 import { appState } from './state.js';
 
 export const LIST_VIEW_KEY = 'bouldeer_list_view';
@@ -68,7 +68,7 @@ function dominantRegion(list){
     counts.set(k, (counts.get(k) || 0) + 1);
   }
   const topMetro = [...metros.entries()].sort((a, b) => b[1] - a[1])[0];
-  if(topMetro && topMetro[1] / list.length >= 0.6) return topMetro[0].name;
+  if(topMetro && topMetro[1] / list.length >= 0.6) return metroName(topMetro[0]);
   const [key, n] = [...counts.entries()].sort((a, b) => b[1] - a[1])[0];
   if(n / list.length < 0.6) return '';
   const [country, ...rest] = key.split(':');

@@ -319,3 +319,48 @@ test('i18n pt-BR: zero is plural ("0 academias"), one is singular, large round n
   assert.equal(P.ordinal(3), '3ª');
 });
 
+
+test('i18n places: every place-name table uses real region codes and metros, only names that differ from English', async () => {
+  const { STATES_BY_COUNTRY } = await import('../js/modules/regions.js');
+  const { METROS } = await import('../js/modules/metros.js');
+  const metroKeys = new Map(METROS.map(m => [m.country + ':' + m.slug, m.name]));
+  for(const l of I.enabledLocales().filter(l => l.code !== 'en')){
+    const P = (await import(`../js/modules/places-${l.code}.js`)).default;
+    assert.ok(P && P.regions && P.metros, l.code + ': { regions, metros }');
+    for(const [cc, names] of Object.entries(P.regions)){
+      const known = new Map((STATES_BY_COUNTRY[cc] || []).map(([code, en]) => [code, en]));
+      assert.ok(known.size, `${l.code}: unknown country ${cc}`);
+      for(const [code, name] of Object.entries(names)){
+        assert.ok(known.has(code), `${l.code}: ${cc}:${code} is not a region code`);
+        assert.ok(typeof name === 'string' && name.trim(), `${l.code}: ${cc}:${code} empty`);
+      }
+    }
+    for(const [key, name] of Object.entries(P.metros)){
+      assert.ok(metroKeys.has(key), `${l.code}: ${key} is not a metro`);
+      assert.ok(typeof name === 'string' && name.trim(), `${l.code}: ${key} empty`);
+    }
+  }
+});
+
+test('i18n places: region and metro labels follow the language, codes and English search names stay', async () => {
+  const { stateLabel, stateLabelEn } = await import('../js/modules/map.js');
+  const { METROS } = await import('../js/modules/metros.js');
+  const { buildSearchIndex, querySearchIndex } = await import('../js/modules/search-index.js');
+  const tokyo = METROS.find(m => m.country === 'JP' && m.slug === 'tokyo');
+  assert.equal(stateLabel('CN', 'CHENGDU'), 'Chengdu', 'English by default');
+  await I.setLocale('zh-CN');
+  assert.equal(stateLabel('CN', 'CHENGDU'), '成都');
+  assert.equal(stateLabelEn('CN', 'CHENGDU'), 'Chengdu');
+  assert.equal(stateLabel('XX', 'NOPE'), 'NOPE', 'unknown codes pass through');
+  await I.setLocale('ja');
+  assert.equal(I.metroName(tokyo), '東京');
+  const spots = [{ id: 'a', name: 'Gym A', country: 'JP', state: 'TOKYO', suburb: 'Shibuya', lat: tokyo.lat, lng: tokyo.lng }];
+  const idx = buildSearchIndex(spots, { stateLabel, stateLabelEn, metroName: I.metroName });
+  for(const q of ['tokyo', '東京']){
+    const r = querySearchIndex(idx, q);
+    const labels = Object.values(r).flat().map(e => e.label);
+    assert.ok(labels.includes('東京'), `${q}: ${labels}`);
+  }
+  await I.setLocale('en');
+  assert.equal(I.metroName(tokyo), 'Tokyo');
+});

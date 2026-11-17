@@ -15,7 +15,7 @@ import { setVerified } from './moderation.js';
 import { openEditModal, openReportModal } from './modals.js';
 import { gymPageHtml, notFoundHtml, pageSkeletonHtml } from './page-html.js';
 import { gymDayKey, status } from './hours.js';
-import { t } from './i18n.js';
+import { metroName, t } from './i18n.js';
 import { copyableAddress } from './visit-html.js';
 import { showToast } from './utils.js';
 import { currentRoute, refreshPage, registerView, setPageTitle } from './router.js';
@@ -44,7 +44,7 @@ export function placeCrumbs(g){
   return [
     { label: COUNTRY_LABELS[g.country] || g.country, href: known ? countryPath(g.country) : null },
     { label: regionOf(g), href: known ? regionPath(g.country, g.state) : null },
-    inCore ? { label: metro.name, href: metroPath(metro) }
+    inCore ? { label: metroName(metro), href: metroPath(metro) }
       : { label: g.suburb, href: known && g.suburb ? cityPath(g.country, g.state, g.suburb) : null },
   ].filter(c => c.label);
 }
@@ -67,7 +67,7 @@ function metroLinkOf(g){
   if(!metro) return null;
   let total = 0;
   for(const o of appState.spots) if(o.country === metro.country && metroOf(o) === metro) total++;
-  return total >= 2 ? { name: metro.name, total, href: metroPath(metro) } : null;
+  return total >= 2 ? { name: metroName(metro), total, href: metroPath(metro) } : null;
 }
 
 function historyOf(g){

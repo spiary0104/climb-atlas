@@ -30,6 +30,18 @@ const LOADERS = {
   'ko': () => import('./i18n-ko.js'),
   'pt-BR': () => import('./i18n-pt-BR.js'),
 };   // English is static; add one line per enabled language
+// Place names (places-<code>.js): region and metro labels that differ from English, loaded with the dictionary. Names only;
+// gym data (name, suburb, address) is never translated.
+const PLACE_LOADERS = {
+  'zh-CN': () => import('./places-zh-CN.js'),
+  'zh-TW': () => import('./places-zh-TW.js'),
+  'ja': () => import('./places-ja.js'),
+  'ko': () => import('./places-ko.js'),
+  'de': () => import('./places-de.js'),
+  'fr': () => import('./places-fr.js'),
+  'es': () => import('./places-es.js'),
+  'pt-BR': () => import('./places-pt-BR.js'),
+};
 export const STORAGE_KEY = 'bouldeer_lang';
 export const DEFAULT_LOCALE = 'en';
 
@@ -37,7 +49,7 @@ export const enabledLocales = () => LOCALES.filter(l => l.enabled);
 const isEnabled = code => LOCALES.some(l => l.code === code && l.enabled);
 const htmlLang = code => (LOCALES.find(l => l.code === code) || LOCALES[0]).html;
 
-let locale = DEFAULT_LOCALE, dict = EN;
+let locale = DEFAULT_LOCALE, dict = EN, places = null;
 const warned = new Set();
 const pluralCache = new Map();
 
@@ -81,13 +93,18 @@ async function loadDict(code){
   if(!load) return null;
   try { return (await load()).default; } catch(e){ console.warn('[i18n] could not load', code, e); return null; }
 }
+async function loadPlaces(code){
+  const load = PLACE_LOADERS[code];
+  if(!load) return null;
+  try { return (await load()).default; } catch(e){ console.warn('[i18n] could not load place names', code, e); return null; }
+}
 
 // Switch language. manual: the person picked it (stored; later browser-language changes never override it).
 export async function setLocale(code, { manual = false } = {}){
   if(!isEnabled(code)) code = DEFAULT_LOCALE;
-  const d = await loadDict(code);
+  const [d, p] = await Promise.all([loadDict(code), loadPlaces(code)]);
   if(!d){ code = DEFAULT_LOCALE; }
-  locale = code; dict = d || EN;
+  locale = code; dict = d || EN; places = d ? p : null;
   if(manual) writeStored(code);
   if(typeof document !== 'undefined'){
     document.documentElement.lang = htmlLang(code);
@@ -149,6 +166,10 @@ export function tOrdinal(key, n){
 
 // The same, HTML-escaped, for markup templates (translations and parameters are never trusted as HTML).
 export const th = (key, params) => escapeHtml(t(key, params));
+
+// A region (country + STATES_BY_COUNTRY code) or a metro (metros.js) in the current language; English when not listed.
+export const regionName = (country, code, english) => (places && places.regions && places.regions[country] && places.regions[country][code]) || english;
+export const metroName = m => (m && places && places.metros && places.metros[m.country + ':' + m.slug]) || (m ? m.name : '');
 
 export function formatNumber(n, opts){
   try { return new Intl.NumberFormat(htmlLang(locale), opts).format(n); } catch(e){ return String(n); }
