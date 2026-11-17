@@ -63,7 +63,7 @@ export default {
   'explore.detailsOpen': '{name} — Details geöffnet',
   'explore.locateError': 'Standort nicht verfügbar — sortiert nach Name',
   'explore.offline': 'Bouldeer ist gerade nicht erreichbar. Du siehst eine gespeicherte Hallenliste; Anmelden, Speichern und Check-ins gehen wieder, sobald du online bist.',
-  'explore.intro': 'zeigt tausende Kletterhallen in über 80 Ländern, Halle für Halle recherchiert und von der Community aktuell gehalten.',
+  'explore.intro': '{brand} zeigt tausende Kletterhallen in über 80 Ländern, Halle für Halle recherchiert und von der Community aktuell gehalten.',
   'explore.whereClimbing': 'Wo kletterst du?',
   'explore.searchCity': 'Stadt suchen',
 

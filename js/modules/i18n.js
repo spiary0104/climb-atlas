@@ -12,9 +12,9 @@ import { escapeHtml } from './html-safe.js';
 export const LOCALES = Object.freeze([
   { code: 'en', name: 'English', html: 'en', enabled: true },
   { code: 'zh-CN', name: '简体中文', html: 'zh-Hans-CN', enabled: true },
-  { code: 'zh-TW', name: '繁體中文', html: 'zh-Hant-TW', enabled: false },
-  { code: 'ja', name: '日本語', html: 'ja', enabled: false },
-  { code: 'ko', name: '한국어', html: 'ko', enabled: false },
+  { code: 'zh-TW', name: '繁體中文', html: 'zh-Hant-TW', enabled: true },
+  { code: 'ja', name: '日本語', html: 'ja', enabled: true },
+  { code: 'ko', name: '한국어', html: 'ko', enabled: true },
   { code: 'de', name: 'Deutsch', html: 'de', enabled: true },
   { code: 'fr', name: 'Français', html: 'fr', enabled: true },
   { code: 'es', name: 'Español', html: 'es', enabled: true },
@@ -25,6 +25,9 @@ const LOADERS = {
   'de': () => import('./i18n-de.js'),
   'fr': () => import('./i18n-fr.js'),
   'es': () => import('./i18n-es.js'),
+  'zh-TW': () => import('./i18n-zh-TW.js'),
+  'ja': () => import('./i18n-ja.js'),
+  'ko': () => import('./i18n-ko.js'),
 };   // English is static; add one line per enabled language
 export const STORAGE_KEY = 'bouldeer_lang';
 export const DEFAULT_LOCALE = 'en';
@@ -41,13 +44,13 @@ export const currentLocale = () => locale;
 export const currentHtmlLang = () => htmlLang(locale);
 
 // Browser languages -> an enabled locale. Simplified Chinese for zh, zh-CN, zh-Hans, zh-SG; Traditional (zh-TW/HK/MO,
-// zh-Hant) is NOT mapped to Simplified: until zh-TW is enabled those readers get English (a choice, not a guess).
+// zh-Hant) gets Traditional (Taiwan wording); the two are never mapped to each other.
 export function matchLocale(langs){
   for(const raw of langs || []){
     const l = String(raw || '').toLowerCase();
     if(!l) continue;
     if(l.startsWith('zh')){
-      if(/hant|-tw|-hk|-mo/.test(l)){ if(isEnabled('zh-TW')) return 'zh-TW'; continue; }
+      if(!/hans/.test(l) && /hant|-tw|-hk|-mo/.test(l)){ if(isEnabled('zh-TW')) return 'zh-TW'; continue; }
       if(isEnabled('zh-CN')) return 'zh-CN';
       continue;
     }
@@ -135,7 +138,7 @@ export function tOrdinal(key, n){
   if(msg === undefined) return String(n);
   if(typeof msg === 'object'){
     let cat = 'other';
-    try { cat = new Intl.PluralRules(lang === 'zh-CN' ? 'zh' : lang, { type: 'ordinal' }).select(n); } catch(e){ /* other */ }
+    try { cat = new Intl.PluralRules(lang.startsWith('zh') ? 'zh' : lang, { type: 'ordinal' }).select(n); } catch(e){ /* other */ }
     msg = msg[cat] ?? msg.other ?? '';
   }
   return msg.replace(/\{n\}/g, String(n));

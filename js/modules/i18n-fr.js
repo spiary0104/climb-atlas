@@ -64,7 +64,7 @@ export default {
   'explore.detailsOpen': '{name} — détails ouverts',
   'explore.locateError': 'Position indisponible — tri par nom',
   'explore.offline': 'Impossible de joindre Bouldeer pour le moment. Une liste de salles enregistrée s’affiche\u00a0; la connexion, les favoris et les pointages reviendront une fois en ligne.',
-  'explore.intro': 'recense des milliers de salles d’escalade dans plus de 80 pays, étudiées une à une et tenues à jour par les grimpeurs.',
+  'explore.intro': '{brand} recense des milliers de salles d’escalade dans plus de 80 pays, étudiées une à une et tenues à jour par les grimpeurs.',
   'explore.whereClimbing': 'Où grimpez-vous\u00a0?',
   'explore.searchCity': 'Rechercher une ville',
 

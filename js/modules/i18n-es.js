@@ -66,7 +66,7 @@ export default {
   'explore.detailsOpen': '{name}: detalles abiertos',
   'explore.locateError': 'Ubicación no disponible: ordenado por nombre',
   'explore.offline': 'No se puede conectar con Bouldeer ahora. Se muestra una lista guardada de rocódromos; el inicio de sesión, los guardados y los check-ins volverán cuando tengas conexión.',
-  'explore.intro': 'mapea miles de rocódromos en más de 80 países, investigados uno a uno y mantenidos al día por escaladores.',
+  'explore.intro': '{brand} mapea miles de rocódromos en más de 80 países, investigados uno a uno y mantenidos al día por escaladores.',
   'explore.whereClimbing': '¿Dónde vas a escalar?',
   'explore.searchCity': 'Buscar una ciudad',
 

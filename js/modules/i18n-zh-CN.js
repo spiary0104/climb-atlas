@@ -63,7 +63,7 @@ export default {
   'explore.detailsOpen': '{name} — 已打开详情',
   'explore.locateError': '无法获取位置，已改为按名称排序',
   'explore.offline': '暂时无法连接 Bouldeer，正在显示已保存的岩馆列表。联网后即可恢复登录、收藏和打卡。',
-  'explore.intro': '收录全球 80 多个国家的数千家攀岩馆，逐家调研，由攀岩者共同维护更新。',
+  'explore.intro': '{brand} 收录全球 80 多个国家的数千家攀岩馆，逐家调研，由攀岩者共同维护更新。',
   'explore.whereClimbing': '你想去哪里攀岩？',
   'explore.searchCity': '搜索城市',
 
