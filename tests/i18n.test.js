@@ -17,7 +17,7 @@ test.before(async () => {
   EN = (await import('../js/modules/i18n-en.js')).default;
   ZH = (await import('../js/modules/i18n-zh-CN.js')).default;
   DICTS = [['zh-CN', ZH]];
-  for(const c of ['zh-TW', 'ja', 'ko', 'de', 'fr', 'es']) DICTS.push([c, (await import(`../js/modules/i18n-${c}.js`)).default]);
+  for(const c of ['zh-TW', 'ja', 'ko', 'de', 'fr', 'es', 'pt-BR']) DICTS.push([c, (await import(`../js/modules/i18n-${c}.js`)).default]);
 });
 test.afterEach(async () => { store.clear(); await I.setLocale('en'); });
 
@@ -25,7 +25,7 @@ const placeholders = m => [...new Set((typeof m === 'object' ? Object.values(m).
 
 test('i18n: every enabled language has exactly the English keys, the same placeholders and an "other" plural form', () => {
   const enabled = I.enabledLocales().map(l => l.code);
-  assert.deepEqual(enabled, ['en', 'zh-CN', 'zh-TW', 'ja', 'ko', 'de', 'fr', 'es'], 'only reviewed languages are enabled');
+  assert.deepEqual(enabled, ['en', 'zh-CN', 'zh-TW', 'ja', 'ko', 'de', 'fr', 'es', 'pt-BR'], 'only reviewed languages are enabled');
   for(const [code, d] of DICTS){
     assert.deepEqual(Object.keys(d).sort(), Object.keys(EN).sort(), code + ' keys differ from English');
     for(const k of Object.keys(EN)){
@@ -67,7 +67,9 @@ test('i18n: browser languages map to an enabled locale; Traditional and Simplifi
   assert.equal(I.matchLocale(['fr-FR', 'de']), 'fr');
   assert.equal(I.matchLocale(['de-AT']), 'de');
   assert.equal(I.matchLocale(['es-MX']), 'es', 'regional Spanish uses the neutral Spanish dictionary');
-  assert.equal(I.matchLocale(['pt-BR', 'it']), 'en', 'disabled and unknown languages fall back to English');
+  assert.equal(I.matchLocale(['pt-BR']), 'pt-BR');
+  assert.equal(I.matchLocale(['pt-PT']), 'pt-BR', 'European Portuguese readers get Brazilian rather than English');
+  assert.equal(I.matchLocale(['it', 'nl']), 'en', 'unknown languages fall back to English');
   assert.equal(I.matchLocale([]), 'en');
 });
 
@@ -94,7 +96,7 @@ test('i18n: lookup, English fallback, missing keys, plurals, interpolation and e
   assert.equal(I.t('common.gymCount', { count: 1 }), '1 家岩馆');
   assert.equal(I.t('no.such.key'), 'no.such.key', 'a missing key shows the key, never crashes');
   assert.equal(I.formatNumber(1234.5), '1,234.5');
-  await I.setLocale('pt-BR');   // disabled -> English
+  await I.setLocale('it');   // not offered -> English
   assert.equal(I.currentLocale(), 'en');
   assert.equal(I.th('nav.explore'), 'Explore');
   assert.equal(I.t('common.gymCount', { count: '<b>' }), '{count} gyms'.replace('{count}', '<b>'));
@@ -106,8 +108,7 @@ test('i18n: language picker lists enabled languages by their own names, current 
   const html = I.languageOptionsHtml();
   assert.match(html, /<option value="en" lang="en">English<\/option>/);
   assert.match(html, /<option value="zh-CN" lang="zh-Hans-CN" selected>简体中文<\/option>/);
-  assert.ok(!/Português/.test(html), 'disabled languages are not offered');
-  for(const n of ['繁體中文', '日本語', '한국어', 'Deutsch', 'Français', 'Español']) assert.ok(html.includes('>' + n + '<'), n + ' offered');
+  for(const n of ['繁體中文', '日本語', '한국어', 'Deutsch', 'Français', 'Español', 'Português (Brasil)']) assert.ok(html.includes('>' + n + '<'), n + ' offered');
 });
 
 test('i18n: shell wiring: pickers in the top bar and on /me, the locale cached offline, CJK faces from the system only', () => {
@@ -306,5 +307,15 @@ test('i18n Phase 2: Traditional Chinese, Japanese and Korean ordinals and plural
   for(const [code, v] of Object.entries(want)){ await I.setLocale(code); assert.equal(P.ordinal(3), v, code); assert.equal(P.ordinal(1), v.replace('3', '1'), code); }
   await I.setLocale('zh-TW');
   assert.equal(I.currentHtmlLang(), 'zh-Hant-TW');
+});
+
+test('i18n pt-BR: zero is plural ("0 academias"), one is singular, large round numbers use "many"', async () => {
+  await I.setLocale('pt-BR');
+  const PT = DICTS.find(d => d[0] === 'pt-BR')[1];
+  for(const [k, v] of Object.entries(PT)) if(typeof v === 'object' && k !== 'passport.ordinal') assert.ok('one' in v && 'many' in v && 'other' in v, k);
+  assert.equal(I.t('common.gymCount', { count: 0 }), PT['common.gymCount'].other.replace('{count}', '0'));
+  assert.equal(I.t('common.gymCount', { count: 1 }), PT['common.gymCount'].one.replace('{count}', '1'));
+  const P = await import('../js/modules/passport.js');
+  assert.equal(P.ordinal(3), '3ª');
 });
 
