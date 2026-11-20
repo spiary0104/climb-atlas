@@ -7,6 +7,7 @@
 //   a metro's aliases ("Wien") too.
 import { fold, wordStarts } from './geo.js';
 import { isMetroName, metroKey, metroOf } from './metros.js';
+import { CN_CITY_NAMES, COUNTRY_NAMES } from './place-names.js';
 
 // Chinese and Japanese names have no spaces between words, so every position in a run of CJK characters is a word start
 // ("攀岩" finds 香蕉攀岩(上地店)). Other scripts in the local name split on word boundaries as usual.
@@ -33,19 +34,25 @@ function extend(b, g){
 // Place keys double as the ?place= URL value and the filter key: "AU", "AU:NSW", "AU:NSW:Marrickville".
 export const placeKey = (country, state, suburb) => [country, state, suburb].filter(v => v != null && v !== '').join(':');
 
-export function buildSearchIndex(spots, { countryLabels = {}, stateLabel = (c, s) => s } = {}){
+// stateLabel / metroName: names in the interface language; stateLabelEn: the English region name, so "tokyo" still finds
+// 東京都 (and the reverse), as countryAlt does for countries.
+export function buildSearchIndex(spots, { countryLabels = {}, countryAlt = () => '', stateLabel = (c, s) => s, stateLabelEn = null, metroName = m => m.name } = {}){
   const countries = new Map(), regions = new Map(), cities = new Map(), metros = new Map(), gyms = [];
   const secondaryOf = (region, country) => region === country ? country : region + ' · ' + country;
   for(const g of spots){
     if(!g || !Number.isFinite(g.lat) || !Number.isFinite(g.lng)) continue;
     const ck = placeKey(g.country), rk = placeKey(g.country, g.state), sk = placeKey(g.country, g.state, (g.suburb || '').trim());
     const country = countryLabels[g.country] || g.country, region = stateLabel(g.country, g.state) || g.state;
-    if(!countries.has(ck)) countries.set(ck, { kind: 'country', key: ck, label: country, secondary: '', codes: [fold(g.country)], count: 0, bounds: null, country: g.country });
-    if(!regions.has(rk)) regions.set(rk, { kind: 'region', key: rk, label: region, secondary: country, codes: [fold(g.state)], count: 0, bounds: null, country: g.country, state: g.state });
+    // countryAlt: the English name, so "china" still finds the country while its label is 中国 (and vice versa for the code)
+    const alt = countryAlt(g.country);
+    if(!countries.has(ck)) countries.set(ck, { kind: 'country', key: ck, label: country, secondary: '', codes: [fold(g.country), ...(alt && fold(alt) !== fold(country) ? [fold(alt)] : [])], alt: alt || '', count: 0, bounds: null, country: g.country });
+    const regionEn = !regions.has(rk) && stateLabelEn ? stateLabelEn(g.country, g.state) : '', regionAlt = regionEn && regionEn !== region ? regionEn : '';
+    if(!regions.has(rk)) regions.set(rk, { kind: 'region', key: rk, label: region, secondary: country, codes: [fold(g.state), ...(regionAlt ? [fold(regionAlt)] : [])], alt: regionAlt, count: 0, bounds: null, country: g.country, state: g.state });
     const metro = metroOf(g);
     if(metro && !metros.has(metro)){
       const mRegion = stateLabel(metro.country, metro.state) || metro.state;
-      metros.set(metro, { kind: 'city', key: metroKey(metro), label: metro.name, secondary: secondaryOf(mRegion, country), codes: (metro.aliases || []).map(fold),
+      const mLabel = metroName(metro);   // the English name stays searchable as an alias
+      metros.set(metro, { kind: 'city', key: metroKey(metro), label: mLabel, secondary: secondaryOf(mRegion, country), codes: [...(metro.aliases || []), ...(mLabel !== metro.name ? [metro.name] : [])].map(fold),
         count: 0, bounds: null, country: metro.country, state: metro.state, metro: metro.slug });
     }
     if(g.suburb && !cities.has(sk)) cities.set(sk, { kind: 'city', key: sk, label: g.suburb.trim(), secondary: secondaryOf(region, country), codes: [], count: 0, bounds: null, country: g.country, state: g.state,
@@ -54,13 +61,21 @@ export function buildSearchIndex(spots, { countryLabels = {}, stateLabel = (c, s
       if(!e) continue;
       e.count++; e.bounds = extend(e.bounds, g);
     }
+    // g.aliases (verified alternative names, migration 20261114000100) is read when the list query carries it; absent today.
+    const aliases = Array.isArray(g.aliases) ? g.aliases.filter(a => typeof a === 'string').join(' ') : '';
     gyms.push({ kind: 'gym', key: g.id, id: g.id, label: g.name || '', secondary: [g.name_local && String(g.name_local).trim() !== String(g.name || '').trim() ? String(g.name_local).trim() : '', g.suburb, region].filter(Boolean).join(' · '),
-      local: typeof g.name_local === 'string' ? g.name_local.trim() : '',
-      words: [...wordStarts(g.name), ...wordStarts(g.suburb), ...wordStarts(g.address), ...cjkStarts(g.name_local)], codes: [], count: 0, lat: g.lat, lng: g.lng });
+      local: typeof g.name_local === 'string' ? g.name_local.trim() : '', aliases,
+      words: [...wordStarts(g.name), ...wordStarts(g.suburb), ...wordStarts(g.address), ...cjkStarts(g.name_local), ...cjkStarts(aliases)], codes: [], count: 0, lat: g.lat, lng: g.lng });
   }
   const places = [...metros.values(), ...cities.values(), ...regions.values(), ...countries.values()];
-  for(const e of places) e.words = wordStarts([e.label, ...(e.metro ? e.codes : [])].join(' '));   // a metro's aliases match like its name
-  for(const e of gyms){ e.nameWords = [...wordStarts(e.label), ...cjkStarts(e.local)]; delete e.local; }
+  for(const e of places){
+    // Native and Chinese names (place-names.js): a country by its own-language and Chinese names, a China city region by its
+    // Chinese name. Exact match ranks like a code; CJK prefixes match at every character like gym names.
+    const extra = e.kind === 'country' ? COUNTRY_NAMES[e.country] : e.kind === 'region' && e.country === 'CN' && CN_CITY_NAMES[e.state] ? [CN_CITY_NAMES[e.state]] : null;
+    if(extra) for(const n of extra) e.codes.push(fold(n));
+    e.words = cjkStarts([e.label, e.alt || '', ...(e.metro ? e.codes : []), ...(extra || [])].join(' '));   // a metro's aliases match like its name
+  }
+  for(const e of gyms){ e.nameWords = [...wordStarts(e.label), ...cjkStarts(e.local), ...cjkStarts(e.aliases)]; delete e.aliases; delete e.local; }
   return { places, gyms };
 }
 

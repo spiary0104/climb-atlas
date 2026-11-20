@@ -459,3 +459,13 @@ input[type="checkbox"][role="switch"]{accent-color:var(--color-accent-solid);}
 .local-name--heading{margin-top:var(--space-1);font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);}
 .local-name--title{margin-top:var(--space-1);font-size:var(--type-text-lg-size);line-height:var(--type-text-lg-line);}
 .local-address{margin-bottom:var(--space-1);}
+
+/* Language picker (top bar): a native select behind a globe icon, the select itself is the accessible control. */
+.lang-picker{position:relative;display:inline-flex;align-items:center;gap:var(--space-1);min-height:var(--size-touch-min);padding:0 var(--space-2);border-radius:var(--radius-md);color:var(--color-text-secondary);}
+.lang-picker .icon{flex:none;pointer-events:none;}
+.lang-picker select{appearance:none;border:0;background:transparent;font:inherit;font-size:var(--type-text-sm-size);color:var(--color-text-primary);padding:var(--space-1) 0;cursor:pointer;max-width:7.5em;}
+.lang-picker select:focus-visible{outline:2px solid var(--color-focus-ring);outline-offset:2px;border-radius:var(--radius-sm);}
+.lang-picker:hover{background:var(--color-surface-subtle);}
+@media (max-width: 599px){.lang-picker select{position:absolute;inset:0;opacity:0;width:100%;max-width:none;}.lang-picker{padding:0 var(--space-2);min-width:var(--size-touch-min);justify-content:center;}}
+.lang-field select{max-width:20rem;margin-top:var(--space-1);}
+.lang-field{display:block;margin-top:var(--space-3);}

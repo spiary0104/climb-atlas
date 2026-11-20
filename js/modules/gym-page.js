@@ -15,6 +15,9 @@ import { setVerified } from './moderation.js';
 import { openEditModal, openReportModal } from './modals.js';
 import { gymPageHtml, notFoundHtml, pageSkeletonHtml } from './page-html.js';
 import { gymDayKey, status } from './hours.js';
+import { metroName, t } from './i18n.js';
+import { copyableAddress } from './visit-html.js';
+import { showToast } from './utils.js';
 import { currentRoute, refreshPage, registerView, setPageTitle } from './router.js';
 import { provenanceLine, publicNotes } from './provenance.js';
 import { gymSeo } from './seo-meta.js';
@@ -41,7 +44,7 @@ export function placeCrumbs(g){
   return [
     { label: COUNTRY_LABELS[g.country] || g.country, href: known ? countryPath(g.country) : null },
     { label: regionOf(g), href: known ? regionPath(g.country, g.state) : null },
-    inCore ? { label: metro.name, href: metroPath(metro) }
+    inCore ? { label: metroName(metro), href: metroPath(metro) }
       : { label: g.suburb, href: known && g.suburb ? cityPath(g.country, g.state, g.suburb) : null },
   ].filter(c => c.label);
 }
@@ -53,7 +56,7 @@ function nearbyOf(g){
     .filter(x => x.d <= NEARBY_KM)
     .sort((a, b) => a.d - b.d)
     .slice(0, 4)
-    .map(({ o, d }) => ({ g: o, ctx: { region: regionOf(o), href: gymPath(o), distance: formatDistance(d) + ' away' } }));
+    .map(({ o, d }) => ({ g: o, ctx: { region: regionOf(o), href: gymPath(o), distance: t('gym.away', { distance: formatDistance(d) }) } }));
 }
 
 // "All 22 gyms in Sydney": the gym's metro page and how many gyms it lists, counted with the metro page's own rule
@@ -64,7 +67,7 @@ function metroLinkOf(g){
   if(!metro) return null;
   let total = 0;
   for(const o of appState.spots) if(o.country === metro.country && metroOf(o) === metro) total++;
-  return total >= 2 ? { name: metro.name, total, href: metroPath(metro) } : null;
+  return total >= 2 ? { name: metroName(metro), total, href: metroPath(metro) } : null;
 }
 
 function historyOf(g){
@@ -79,7 +82,8 @@ function hoursContext(g){
   const st = status(g);
   return { today: gymDayKey(g) || undefined, hoursStatus: st.state === 'unknown' ? null : st.state };
 }
-const visibleInfo = g => JSON.stringify([g.description || '', g.website || '', g.hours || null, g.day_pass || '', g.facilities || [], publicNotes(g.notes)]);
+const visibleInfo = g => JSON.stringify([g.description || '', g.website || '', g.hours || null, g.day_pass || '', g.facilities || [], publicNotes(g.notes),
+  g.address_local || '', g.visitor || null, g.info_source || '', g.info_source_kind || '', g.info_checked_on || '']);
 
 // Late reads re-render only while this gym's page is still the one showing: a person who has moved on to another page
 // (Nearby, Back, /add) must not have it torn down under them. The reads are batched so the page re-renders once, not four
@@ -91,9 +95,9 @@ function refreshIfShowing(g){
 
 function enter({ slug }, view){
   destroyMiniMaps();
-  if(!appState.loaded){ view.innerHTML = pageSkeletonHtml(); setPageTitle('Loading'); return; }
+  if(!appState.loaded){ view.innerHTML = pageSkeletonHtml(); setPageTitle(t('page.loading')); return; }
   const g = findGym(slug);
-  if(!g){ view.innerHTML = notFoundHtml('gym'); setPageTitle('Gym not found'); return; }
+  if(!g){ view.innerHTML = notFoundHtml('gym'); setPageTitle(t('page.gymNotFound')); return; }
   // An id or an outdated URL resolves to the canonical slug without adding a history entry.
   if(g.slug && slug !== g.slug) history.replaceState(null, '', gymPath(g));
   // The list read carries only Explore's columns: fetch the whole row once, then re-render if this page is still showing.
@@ -120,7 +124,7 @@ function enter({ slug }, view){
     checkedIn: !!window.auth.user && checkedInRecently(g.id),
     hours: hoursContext(g),
   });
-  setPageTitle(gymSeo(g, { region: regionOf(g), country: COUNTRY_LABELS[g.country] || g.country }).title);
+  setPageTitle(gymSeo(g, { region: regionOf(g), country: COUNTRY_LABELS[g.country] || g.country, tr: t }).title);
   mountMiniMaps(view);
   // Provenance (added by / contributors / last edited) and, for the signed-in editor, their own latest proposal.
   const late = [];
@@ -136,9 +140,25 @@ function enter({ slug }, view){
   if(late.length) Promise.allSettled(late).then(() => refreshIfShowing(g));
 }
 
+// Copy the local-script address (else the address) to the clipboard; a hidden textarea + execCommand where the async API is missing.
+async function copyAddress(id){
+  const g = appState.spots.find(s => s.id === id), text = g ? copyableAddress(g) : '';
+  if(!text) return;
+  let ok = false;
+  try{ if(navigator.clipboard && navigator.clipboard.writeText){ await navigator.clipboard.writeText(text); ok = true; } }catch(err){ /* fall back */ }
+  if(!ok){
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly', ''); ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+    document.body.appendChild(ta); ta.select();
+    try{ ok = document.execCommand('copy'); }catch(err){ ok = false; }
+    ta.remove();
+  }
+  showToast(t(ok ? 'gym.addressCopied' : 'gym.addressCopyFailed'));
+}
+
 export function initGymPage(){
   registerView('gym', { enter, leave: destroyMiniMaps });
-  registerView('notfound', { enter(params, view){ view.innerHTML = notFoundHtml(); setPageTitle('Page not found'); } });
+  registerView('notfound', { enter(params, view){ view.innerHTML = notFoundHtml(); setPageTitle(t('page.notFound')); } });
   document.getElementById('view').addEventListener('click', (e)=>{
     const btn = e.target.closest('[data-page-action]');
     if(!btn) return;
@@ -154,6 +174,7 @@ export function initGymPage(){
         if(g) sharePlace(gymShareText(g, { region: regionOf(g) }));
         break;
       }
+      case 'copy-address': copyAddress(id); break;
       case 'verify': setVerified(id, true); break;
       case 'unverify': setVerified(id, false); break;
     }

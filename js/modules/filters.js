@@ -3,7 +3,8 @@
 // desktop, over the map below 1024px (explore.js moves it between slots).
 //   Type chips: all three on = no chip selected; tapping one narrows to it; tapping the last selected one returns to all.
 import { openAuthModal } from './auth-ui.js';
-import { COUNTRY_LABELS } from './constants.js';
+import { COUNTRY_LABELS, countryEnglish } from './constants.js';
+import { t } from './i18n.js';
 import { ALL_TYPES, fold, inBounds } from './geo.js';
 import { appliedPillHtml } from './list-html.js';
 import { stateLabel } from './map.js';
@@ -32,7 +33,7 @@ export function matches(g, f){
   if(!inPlace(g, f.place)) return false;
   if(f.text){
     // Name, suburb, address, region and country, by label and by code ("NSW", "JP"), diacritic-insensitive.
-    const hay = fold([g.name, g.suburb, g.address, g.state, stateLabel(g.country, g.state), g.country, COUNTRY_LABELS[g.country]].join(' '));
+    const hay = fold([g.name, g.suburb, g.address, g.state, stateLabel(g.country, g.state), g.country, COUNTRY_LABELS[g.country], countryEnglish(g.country)].join(' '));
     if(!hay.includes(fold(f.text).trim())) return false;
   }
   return true;
@@ -174,7 +175,7 @@ function syncSheet(){
   });
   $('filterSheetMarksHint').hidden = signedIn;
   const n = draftCount();
-  $('applyFiltersBtn').textContent = n === 1 ? 'Show 1 gym' : 'Show ' + n.toLocaleString('en-US') + ' gyms';
+  $('applyFiltersBtn').textContent = t('filters.showCount', { count: n });
 }
 export function openFilterSheet(){
   draft = currentFilters();

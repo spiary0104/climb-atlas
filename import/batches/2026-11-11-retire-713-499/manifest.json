@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-11-11-retire-713-499",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "4a9a09d86df84ca177f1e21cb609f8d41f822593ea853fea13da16e93dc151a8",
+  "payload_sha256": "4d3c45b4e5b60a3a5b86b5b6c7df38f553bea77c63be13c4ca98f2589534cd61",
+  "confirm_token": "0f33f2d775736296",
+  "live_state_sha256": "3a8436eec4e869d28a1f21465866a2c862c0a634ab954354d8605106bfba4eff",
+  "rows_updated": 0,
+  "approved_before": 3614,
+  "approved_after": 3612,
+  "changes": [],
+  "rows_retired": 2,
+  "retired": [
+    "seed-713",
+    "seed-499"
+  ],
+  "retirements": [
+    {
+      "id": "seed-713",
+      "reason_code": "closed",
+      "reason": "Closed: the Banana Climbing chain's own store list marks the CapitaLand One (Changsha) store as closed; Amap also shows it suspended",
+      "expect_h": "2b1af61ad9ccac60"
+    },
+    {
+      "id": "seed-499",
+      "reason_code": "duplicate",
+      "reason": "Duplicate of seed-510 Zhengyan Climbing Gym (Dayun): same address (Universiade Sports Center Gate 26) and one Amap listing",
+      "duplicate_of": "seed-510",
+      "expect_h": "ea5a615b6178db59"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 2,
+    "problems": []
+  },
+  "started_at": "2026-11-11T00:55:16.895Z",
+  "finished_at": "2026-11-11T00:55:20.255Z",
+  "ids": [
+    "seed-713",
+    "seed-499"
+  ]
+}

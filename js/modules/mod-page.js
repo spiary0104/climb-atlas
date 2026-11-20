@@ -2,6 +2,7 @@
 // first: new gyms, edits, reports. A row opens the side panel (diff, note, corrections, reason). Keyboard: J/K move,
 // Enter opens, A approves, R opens the reason field (it never rejects by itself), Escape closes the panel and does
 // nothing else. Moderators only; everyone else gets a plain "moderators only" page.
+import { t, th } from './i18n.js';
 import { openEditModal } from './modals.js';
 import { approveEdit, approveSpot, dismissReport, rejectEdit, rejectSpot } from './moderation.js';
 import { modPageHtml, modPanelHtml, modQueueHtml } from './moderation-html.js';
@@ -30,10 +31,10 @@ function buildItems(){
 }
 
 function whoFor(it){
-  if(it.kind === 'report') return { contributor: 'From a visitor', level: null };
-  if(!it.by) return { contributor: 'Not signed in', level: null };
+  if(it.kind === 'report') return { contributor: t('mod.fromVisitor'), level: null };
+  if(!it.by) return { contributor: t('mod.notSignedIn'), level: null };
   const c = contributors.get(it.by);
-  return { contributor: (c && c.name) || 'a climber', level: c ? c.level : null };
+  return { contributor: (c && c.name) || t('provenance.aClimber'), level: c ? c.level : null };
 }
 
 // Display names and levels for everyone in the queue (profiles are public; points need the moderator RPC).
@@ -61,9 +62,9 @@ function ctxFor(it, i){
 }
 
 function enter(params, view){
-  setPageTitle('Review');
+  setPageTitle(t('mod.review'));
   if(!appState.isModerator){
-    view.innerHTML = `<article class="page page-empty"><h1 class="page-title">Moderators only</h1><p class="section-note">This page is for Bouldeer moderators.</p><p><a class="btn btn-secondary" href="/" data-link>Back to the map</a></p></article>`;
+    view.innerHTML = `<article class="page page-empty"><h1 class="page-title">${th('mod.onlyTitle')}</h1><p class="section-note">${th('mod.onlyBody')}</p><p><a class="btn btn-secondary" href="/" data-link>${th('notFound.back')}</a></p></article>`;
     return;
   }
   items = buildItems();

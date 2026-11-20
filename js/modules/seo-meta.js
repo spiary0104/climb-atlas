@@ -2,12 +2,16 @@
 // tests/seo-meta.test.js. The in-app router uses the titles (document.title); anything that renders them into HTML on
 // a server must escapeHtml() them (html-safe.js). Values are plain text, whitespace-normalised and length-capped here
 // because gym names, suburbs and addresses are user-submitted.
+// No imports (api/seo.mjs loads this file from a data: URL), so the language is injected: every builder takes an optional
+// `tr(key, params)` (the app passes i18n.js t for in-app page titles and share text). Without it the output is English,
+// which is what the server-side link previews and sitemap get.
 export const SITE_NAME = 'Bouldeer';
 export const SITE_SUFFIX = ' · ' + SITE_NAME;
 export const SITE_TITLE = 'Bouldeer — community-sourced climbing map';
 export const SITE_DESCRIPTION = 'A community-sourced map of indoor climbing gyms — bouldering, top rope, and lead — in 80+ countries.';
 
 const TYPE_WORDS = { 'indoor-bouldering': 'bouldering', 'top-rope': 'top rope', 'lead-climbing': 'lead climbing' };
+const TYPE_WORD_KEYS = { 'indoor-bouldering': 'bouldering', 'top-rope': 'topRope', 'lead-climbing': 'lead' };
 const TITLE_MAX = 90, DESC_MAX = 200;
 
 // Strip control characters, collapse whitespace (\s also covers the Unicode line separators), cap the length (on a word
@@ -22,18 +26,23 @@ export function clean(value, max = 120){
 
 const join = parts => parts.map(p => clean(p)).filter(Boolean).join(', ');
 const list = words => words.length < 2 ? words.join('') : words.slice(0, -1).join(', ') + ' and ' + words[words.length - 1];
-export const typeWords = types => (Array.isArray(types) ? types : []).map(t => TYPE_WORDS[t]).filter(Boolean);
+export const typeWords = (types, tr) => (Array.isArray(types) ? types : []).filter(k => TYPE_WORDS[k]).map(k => tr ? tr('seo.word.' + TYPE_WORD_KEYS[k]) : TYPE_WORDS[k]);
 // "Bouldering gym" when bouldering is all it offers, otherwise "Climbing gym".
-export const gymNoun = types => { const w = typeWords(types); return w.length === 1 && w[0] === 'bouldering' ? 'Bouldering gym' : 'Climbing gym'; };
+export const gymNoun = (types, tr) => {
+  const w = typeWords(types);
+  const boulderOnly = w.length === 1 && w[0] === 'bouldering';
+  return tr ? tr(boulderOnly ? 'seo.boulderingGym' : 'seo.climbingGym') : boulderOnly ? 'Bouldering gym' : 'Climbing gym';
+};
 // The page title WITHOUT the site suffix (router.setPageTitle appends it); fullTitle() adds it for server-rendered tags.
 export const fullTitle = title => title + SITE_SUFFIX;
 
 // g: {name, suburb, types, address}; ctx: {region, country} already resolved to display names (e.g. "NSW"/"New South Wales", "Australia").
-export function gymSeo(g, { region = '', country = '' } = {}){
-  const name = clean(g.name, 80) || 'Climbing gym';
+export function gymSeo(g, { region = '', country = '', tr = null } = {}){
+  const name = clean(g.name, 80) || (tr ? tr('seo.climbingGym') : 'Climbing gym');
   const place = join([g.suburb, region, country]);
-  const noun = gymNoun(g.types);
-  let title = name + ' · ' + (place ? noun + ' in ' + place : noun);
+  const noun = gymNoun(g.types, tr);
+  const nounIn = p => tr ? tr('seo.nounIn', { noun, place: p }) : noun + ' in ' + p;
+  let title = name + ' · ' + (place ? nounIn(place) : noun);
   if(title.length + SITE_SUFFIX.length > TITLE_MAX) title = name + ' · ' + (join([g.suburb, country]) || noun);   // too long: drop the region
   const words = typeWords(g.types);
   const address = clean(g.address, 90);
@@ -50,10 +59,10 @@ export function gymSeo(g, { region = '', country = '' } = {}){
 
 // kind: 'country' | 'region' | 'city'; name: the place's own name; within: its parent(s) as one string ("Australia",
 // "NSW, Australia"); count: gyms in the place.
-export function placeSeo({ kind, name, within = '', count = 0 }){
+export function placeSeo({ kind, name, within = '', count = 0, tr = null }){
   const n = clean(name, 80);
   const where = kind === 'country' || !within ? n : n + ', ' + clean(within, 60);
-  const title = 'Climbing gyms in ' + where;
+  const title = tr ? tr('seo.placeTitle', { where }) : 'Climbing gyms in ' + where;
   const gyms = count === 1 ? '1 climbing gym' : count > 1 ? count.toLocaleString('en-US') + ' climbing gyms' : 'Climbing gyms';
   return { title, description: clean(gyms + ' in ' + where + ': bouldering, top rope and lead. Browse them on Bouldeer, the community-sourced climbing map.', DESC_MAX) };
 }

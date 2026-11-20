@@ -2,12 +2,13 @@
 // {region} (its cities and gyms), /in/{country}/{region}/{city} (its gyms). Every place is derived from the gyms
 // themselves, so counts match Explore and search. Each page has a mini map of its gyms linking to Explore with the
 // place applied: the non-map browse path the accessibility contract asks for (sec. 15).
-import { COUNTRY_LABELS, COUNTRY_TO_REGION, REGION_LABELS } from './constants.js';
+import { COUNTRY_LABELS, COUNTRY_TO_REGION, REGION_LABELS, countryEnglish } from './constants.js';
 import { encodeExploreState, fitCamera } from './geo.js';
-import { stateLabel } from './map.js';
+import { stateLabel, stateLabelEn } from './map.js';
 import { destroyMiniMaps, mountMiniMaps } from './mini-map.js';
 import { metroByPath, metroKey, metroOf, metrosForRegion } from './metros.js';
 import { notFoundHtml, pageSkeletonHtml, placePageHtml, regionMeta, regionSearchResultsHtml, regionsIndexHtml } from './page-html.js';
+import { metroName, t } from './i18n.js';
 import { registerView, setPageTitle } from './router.js';
 import { regionCanonicalPath } from './place-canonical.js';
 import { buildSearchIndex, placeKey, querySearchIndex } from './search-index.js';
@@ -17,7 +18,6 @@ import { appState } from './state.js';
 
 const MAP_W = 360, MAP_H = 270;
 const byName = (a, b) => a.label.localeCompare(b.label);
-const plural = (n, one, many) => n === 1 ? '1 ' + one : n.toLocaleString('en-US') + ' ' + many;
 
 function boundsOf(gyms){
   const b = { west: Infinity, south: Infinity, east: -Infinity, north: -Infinity };
@@ -29,7 +29,7 @@ function boundsOf(gyms){
 function mapFor(gyms, place, label){
   const cam = fitCamera(boundsOf(gyms), MAP_W, MAP_H, { maxZoom: 12 });
   const href = '/?' + encodeExploreState({ place, camera: { lng: cam.lng, lat: cam.lat, zoom: Math.max(cam.zoom, 3) } });
-  return { lat: cam.lat, lng: cam.lng, zoom: cam.zoom, href, label: 'Show ' + label + ' on the map' };
+  return { lat: cam.lat, lng: cam.lng, zoom: cam.zoom, href, label: t('map.showOn', { name: label }) };
 }
 
 function groupTiles(gyms, keyOf, labelOf, hrefOf){
@@ -52,8 +52,8 @@ function render(view, html, gyms, title, canonicalPath){
   mountMiniMaps(view, { points: gyms.map(g => ({ lat: g.lat, lng: g.lng, types: g.types })) });
 }
 
-function notFound(view){ destroyMiniMaps(); view.innerHTML = notFoundHtml('place'); setPageTitle('Place not found'); }
-const pending = view => { if(appState.loaded) return false; view.innerHTML = pageSkeletonHtml(); setPageTitle('Loading'); return true; };
+function notFound(view){ destroyMiniMaps(); view.innerHTML = notFoundHtml('place'); setPageTitle(t('page.placeNotFound')); }
+const pending = view => { if(appState.loaded) return false; view.innerHTML = pageSkeletonHtml(); setPageTitle(t('page.loading')); return true; };
 
 function regionsView(params, view){
   if(pending(view)) return;
@@ -67,10 +67,10 @@ function regionsView(params, view){
     byContinent.get(c).push(t);
   }
   const groups = [...Object.keys(REGION_LABELS), 'other'].filter(c => byContinent.has(c))
-    .map(c => ({ title: REGION_LABELS[c] || 'Other', items: byContinent.get(c).sort(byName) }));
+    .map(c => ({ title: REGION_LABELS[c] || t('place.other'), items: byContinent.get(c).sort(byName) }));
   destroyMiniMaps();
   view.innerHTML = regionsIndexHtml(groups, known.length);
-  setPageTitle('Regions');
+  setPageTitle(t('nav.regions'));
 }
 
 function countryView({ country }, view){
@@ -81,14 +81,14 @@ function countryView({ country }, view){
   const name = COUNTRY_LABELS[cc];
   const tiles = groupTiles(gyms, g => g.state, g => stateLabel(cc, g.state), g => regionPath(cc, g.state));
   render(view, placePageHtml({
-    crumbs: [{ label: 'Regions', href: '/in' }, { label: name, current: true }],
+    crumbs: [{ label: t('nav.regions'), href: '/in' }, { label: name, current: true }],
     title: name,
-    meta: plural(gyms.length, 'gym', 'gyms') + ' · ' + plural(tiles.length, 'region', 'regions'),
-    tilesTitle: 'Regions', tiles,
+    meta: t('common.gymCount', { count: gyms.length }) + ' · ' + t('place.regionCount', { count: tiles.length }),
+    tilesTitle: t('nav.regions'), tiles,
     // Small countries list their gyms right here; big ones go through their regions.
-    gymsTitle: 'Gyms', gyms: gyms.length <= 60 ? gymItems(gyms) : [],
+    gymsTitle: t('place.gyms'), gyms: gyms.length <= 60 ? gymItems(gyms) : [],
     map: mapFor(gyms, placeKey(cc), name),
-  }), gyms, placeSeo({ kind: 'country', name, count: gyms.length }).title);
+  }), gyms, placeSeo({ kind: 'country', name, count: gyms.length, tr: t }).title);
 }
 
 function regionGyms(country, region){
@@ -106,18 +106,18 @@ function regionView({ country, region }, view){
   // cross-region ones with 2+ gyms here, counted by those gyms. The suburbs of gyms in no metro follow as areas. The meta
   // line counts each kind by what it is, never suburbs as cities.
   const metros = metrosForRegion(appState.spots, cc, state)
-    .map(x => ({ label: x.metro.name, href: metroPath(x.metro), count: x.core ? x.total : x.here })).sort((a, b) => b.count - a.count || byName(a, b));
+    .map(x => ({ label: metroName(x.metro), href: metroPath(x.metro), count: x.core ? x.total : x.here })).sort((a, b) => b.count - a.count || byName(a, b));
   const loose = gyms.filter(g => !metroOf(g));
   const areas = groupTiles(loose.filter(g => (g.suburb || '').trim()), g => citySegment(g.suburb), g => g.suburb.trim(), g => cityPath(cc, state, g.suburb));
   render(view, placePageHtml({
-    crumbs: [{ label: 'Regions', href: '/in' }, { label: COUNTRY_LABELS[cc], href: countryPath(cc) }, { label: name, current: true }],
+    crumbs: [{ label: t('nav.regions'), href: '/in' }, { label: COUNTRY_LABELS[cc], href: countryPath(cc) }, { label: name, current: true }],
     title: name,
     meta: regionMeta({ gyms: gyms.length, cities: metros.length, areas: areas.length }),
-    tileSections: [{ title: 'Cities', tiles: metros },
-      { title: metros.length ? 'Other areas' : 'Areas', tiles: areas.length > 1 && areas.length < loose.length ? areas : [] }],   // area tiles only when one holds more than one gym
-    gymsTitle: 'Gyms', gyms: gymItems(gyms),
+    tileSections: [{ title: t('place.cities'), tiles: metros },
+      { title: t(metros.length ? 'place.otherAreas' : 'place.areas'), tiles: areas.length > 1 && areas.length < loose.length ? areas : [] }],   // area tiles only when one holds more than one gym
+    gymsTitle: t('place.gyms'), gyms: gymItems(gyms),
     map: mapFor(gyms, placeKey(cc, state), name),
-  }), gyms, placeSeo({ kind: 'region', name, within: COUNTRY_LABELS[cc], count: gyms.length }).title, regionCanonicalPath(appState.spots, cc, state));
+  }), gyms, placeSeo({ kind: 'region', name, within: COUNTRY_LABELS[cc], count: gyms.length, tr: t }).title, regionCanonicalPath(appState.spots, cc, state));
 }
 
 // A metro page (metros.js): every gym within the metro's radius, wherever its region code points.
@@ -125,14 +125,14 @@ function metroView(metro, view){
   const cc = metro.country;
   const gyms = appState.spots.filter(g => g.country === cc && metroOf(g) === metro);
   if(!gyms.length) return false;
-  const regionName = stateLabel(cc, metro.state), country = COUNTRY_LABELS[cc];
+  const regionName = stateLabel(cc, metro.state), country = COUNTRY_LABELS[cc], name = metroName(metro);
   render(view, placePageHtml({
-    crumbs: [{ label: 'Regions', href: '/in' }, { label: country, href: countryPath(cc) }, { label: regionName, href: regionPath(cc, metro.state) }, { label: metro.name, current: true }],
-    title: metro.name,
-    meta: plural(gyms.length, 'gym', 'gyms') + ' · ' + regionName,
-    gymsTitle: 'Gyms', gyms: gymItems(gyms),
-    map: mapFor(gyms, metroKey(metro), metro.name),
-  }), gyms, placeSeo({ kind: 'city', name: metro.name, within: regionName + ', ' + country, count: gyms.length }).title);
+    crumbs: [{ label: t('nav.regions'), href: '/in' }, { label: country, href: countryPath(cc) }, { label: regionName, href: regionPath(cc, metro.state) }, { label: name, current: true }],
+    title: name,
+    meta: t('common.gymCount', { count: gyms.length }) + ' · ' + regionName,
+    gymsTitle: t('place.gyms'), gyms: gymItems(gyms),
+    map: mapFor(gyms, metroKey(metro), name),
+  }), gyms, placeSeo({ kind: 'city', name, within: regionName + ', ' + country, count: gyms.length, tr: t }).title);
   return true;
 }
 
@@ -145,18 +145,18 @@ function cityView({ country, region, city }, view){
   if(!gyms.length || !COUNTRY_LABELS[cc]) return notFound(view);
   const state = gyms[0].state, name = gyms[0].suburb.trim(), regionName = stateLabel(cc, state);
   render(view, placePageHtml({
-    crumbs: [{ label: 'Regions', href: '/in' }, { label: COUNTRY_LABELS[cc], href: countryPath(cc) }, { label: regionName, href: regionPath(cc, state) }, { label: name, current: true }],
+    crumbs: [{ label: t('nav.regions'), href: '/in' }, { label: COUNTRY_LABELS[cc], href: countryPath(cc) }, { label: regionName, href: regionPath(cc, state) }, { label: name, current: true }],
     title: name,
-    meta: plural(gyms.length, 'gym', 'gyms') + ' · ' + regionName,
-    gymsTitle: 'Gyms', gyms: gymItems(gyms),
+    meta: t('common.gymCount', { count: gyms.length }) + ' · ' + regionName,
+    gymsTitle: t('place.gyms'), gyms: gymItems(gyms),
     map: mapFor(gyms, placeKey(cc, state, name), name),
-  }), gyms, placeSeo({ kind: 'city', name, within: regionName + ', ' + COUNTRY_LABELS[cc], count: gyms.length }).title);
+  }), gyms, placeSeo({ kind: 'city', name, within: regionName + ', ' + COUNTRY_LABELS[cc], count: gyms.length, tr: t }).title);
 }
 
 // /in search: the app's search index (search-index.js, the one Explore uses): countries, regions, cities, then gyms, each
 // a link to its page. Only countries with a page are offered.
 function regionSearchItems(text){
-  const idx = appState.searchIndex || (appState.searchIndex = buildSearchIndex(appState.spots, { countryLabels: COUNTRY_LABELS, stateLabel }));
+  const idx = appState.searchIndex || (appState.searchIndex = buildSearchIndex(appState.spots, { countryLabels: COUNTRY_LABELS, countryAlt: countryEnglish, stateLabel, stateLabelEn, metroName }));
   const r = querySearchIndex(idx, text);
   const byId = new Map(appState.spots.map(g => [g.id, g]));
   const known = e => !!COUNTRY_LABELS[e.country];

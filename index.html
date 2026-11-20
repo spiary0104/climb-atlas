@@ -40,107 +40,108 @@
 </head>
 <body class="app-body">
 
-<a class="skip-link" href="#gymList">Skip to content</a>
+<a class="skip-link" href="#gymList" data-i18n="explore.skip">Skip to content</a>
 <div class="app">
   <header class="topbar" data-theme="paper">
     <a class="wordmark" href="/" data-link><img class="wordmark-mark" src="assets/mascot/head.svg" alt="" width="28" height="28">Bouldeer</a>
-    <nav class="topbar-nav" aria-label="Primary">
-      <button type="button" class="tab" data-nav="explore" aria-current="page">Explore</button>
-      <button type="button" class="tab" data-nav="regions">Regions</button>
-      <button type="button" class="tab" data-nav="log">Log</button>
-      <button type="button" class="tab" data-nav="me">Me</button>
+    <nav class="topbar-nav" aria-label="Primary" data-i18n-attr="aria-label:nav.primary">
+      <button type="button" class="tab" data-nav="explore" aria-current="page"><span data-i18n="nav.explore">Explore</span></button>
+      <button type="button" class="tab" data-nav="regions"><span data-i18n="nav.regions">Regions</span></button>
+      <button type="button" class="tab" data-nav="log"><span data-i18n="nav.log">Log</span></button>
+      <button type="button" class="tab" data-nav="me"><span data-i18n="nav.me">Me</span></button>
     </nav>
     <div class="topbar-search" id="topbarSearchSlot">
       <div class="search" id="search" role="search">
         <div class="search-field">
-          <button type="button" class="btn btn-tertiary btn-icon search-back" id="searchBack" aria-label="Close search"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-arrow-left"/></svg></button>
+          <button type="button" class="btn btn-tertiary btn-icon search-back" id="searchBack" aria-label="Close search" data-i18n-attr="aria-label:search.back"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-arrow-left"/></svg></button>
           <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-magnifying-glass"/></svg>
-          <input id="searchInput" type="search" role="combobox" aria-expanded="false" aria-controls="searchPanel" aria-autocomplete="list" aria-label="Search gyms, cities, regions and countries" placeholder="Search gyms, cities, regions" autocomplete="off" enterkeyhint="search">
-          <button type="button" class="btn btn-tertiary btn-icon btn-sm search-clear" id="searchClear" aria-label="Clear search" hidden><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-x"/></svg></button>
+          <input id="searchInput" type="search" role="combobox" aria-expanded="false" aria-controls="searchPanel" aria-autocomplete="list" aria-label="Search gyms, cities, regions and countries" placeholder="Search gyms, cities, regions" data-i18n-attr="aria-label:search.aria;placeholder:search.placeholder" autocomplete="off" enterkeyhint="search">
+          <button type="button" class="btn btn-tertiary btn-icon btn-sm search-clear" id="searchClear" aria-label="Clear search" data-i18n-attr="aria-label:search.clear" hidden><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-x"/></svg></button>
         </div>
         <div class="search-panel" id="searchPanel" hidden></div>
       </div>
     </div>
     <div class="topbar-actions">
-      <button type="button" class="btn btn-secondary" id="addBtn"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg><span class="add-label-long">Add a gym</span><span class="add-label-short">Add</span></button>
-      <div class="account-slot" id="accountSlot"><button type="button" class="btn btn-tertiary" id="topSignInBtn">Sign in</button></div>
+      <label class="lang-picker"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-globe-hemisphere-west"/></svg><select data-lang-picker aria-label="Language" data-i18n-attr="aria-label:lang.pickerAria"><option value="en" lang="en" selected>English</option><option value="zh-CN" lang="zh-Hans-CN">简体中文</option></select></label>
+      <button type="button" class="btn btn-secondary" id="addBtn"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg><span class="add-label-long" data-i18n="topbar.addGym">Add a gym</span><span class="add-label-short" data-i18n="topbar.addShort">Add</span></button>
+      <div class="account-slot" id="accountSlot"><button type="button" class="btn btn-tertiary" id="topSignInBtn" data-i18n="auth.signIn">Sign in</button></div>
     </div>
   </header>
   <div class="offline-banner alert alert-warning hidden" id="offlineBanner" role="status"></div>
 
   <div class="layout explore" id="explore">
-    <section class="list-pane" id="listPane" data-theme="paper" aria-label="Gyms">
+    <section class="list-pane" id="listPane" data-theme="paper" aria-label="Gyms" data-i18n-attr="aria-label:explore.paneAria">
       <div class="sheet-inner">
         <div class="sheet-handle" id="sheetHandle">
-          <button type="button" class="sheet-grabber-btn" id="sheetGrabber" aria-label="Resize the gym list"><span class="sheet-grabber"></span></button>
+          <button type="button" class="sheet-grabber-btn" id="sheetGrabber" aria-label="Resize the gym list" data-i18n-attr="aria-label:explore.resize"><span class="sheet-grabber"></span></button>
           <div class="filter-slot" id="listFilterSlot">
             <div class="filter-bar" id="filterBar">
-              <div class="chip-scroll" role="group" aria-label="Filters">
-                <button type="button" class="chip" data-filter-type="indoor-bouldering" aria-pressed="false"><span class="type-dot type-dot--boulder" aria-hidden="true"></span>Boulder</button>
-                <button type="button" class="chip" data-filter-type="top-rope" aria-pressed="false"><span class="type-dot type-dot--toprope" aria-hidden="true"></span>Top rope</button>
-                <button type="button" class="chip" data-filter-type="lead-climbing" aria-pressed="false"><span class="type-dot type-dot--lead" aria-hidden="true"></span>Lead</button>
-                <button type="button" class="chip" data-filter-flag="saved" aria-pressed="false">Saved</button>
-                <button type="button" class="chip" data-filter-flag="climbed" aria-pressed="false">Climbed</button>
-                <button type="button" class="chip" data-filter-flag="open" aria-pressed="false" hidden>Open now</button>
-                <button type="button" class="chip" data-filter-flag="photos" aria-pressed="false">Has photos</button>
+              <div class="chip-scroll" role="group" aria-label="Filters" data-i18n-attr="aria-label:filters.groupAria">
+                <button type="button" class="chip" data-filter-type="indoor-bouldering" aria-pressed="false"><span class="type-dot type-dot--boulder" aria-hidden="true"></span><span data-i18n="filters.boulder">Boulder</span></button>
+                <button type="button" class="chip" data-filter-type="top-rope" aria-pressed="false"><span class="type-dot type-dot--toprope" aria-hidden="true"></span><span data-i18n="filters.topRope">Top rope</span></button>
+                <button type="button" class="chip" data-filter-type="lead-climbing" aria-pressed="false"><span class="type-dot type-dot--lead" aria-hidden="true"></span><span data-i18n="filters.lead">Lead</span></button>
+                <button type="button" class="chip" data-filter-flag="saved" aria-pressed="false" data-i18n="filters.saved">Saved</button>
+                <button type="button" class="chip" data-filter-flag="climbed" aria-pressed="false" data-i18n="filters.climbed">Climbed</button>
+                <button type="button" class="chip" data-filter-flag="open" aria-pressed="false" data-i18n="filters.open" hidden>Open now</button>
+                <button type="button" class="chip" data-filter-flag="photos" aria-pressed="false" data-i18n="filters.photos">Has photos</button>
                 <span class="applied-pills" id="appliedPills"></span>
-                <button type="button" class="chip chip-more" id="allFiltersBtn" aria-haspopup="dialog"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-sliders-horizontal"/></svg>All filters</button>
+                <button type="button" class="chip chip-more" id="allFiltersBtn" aria-haspopup="dialog"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-sliders-horizontal"/></svg><span data-i18n="filters.all">All filters</span></button>
               </div>
             </div>
           </div>
           <div class="list-status">
-            <p class="list-count" aria-live="polite"><strong class="tnum" id="countNum">…</strong> <span id="countLabel">gyms in view</span><span id="statusPlace"></span></p>
+            <p class="list-count" aria-live="polite"><strong class="tnum" id="countNum">…</strong> <span id="countLabel" data-i18n="explore.inView">gyms in view</span><span id="statusPlace"></span></p>
             <div class="list-tools">
-              <label class="visually-hidden" for="sortSelect">Sort by</label>
+              <label class="visually-hidden" for="sortSelect" data-i18n="explore.sortBy">Sort by</label>
               <select class="select select-sm" id="sortSelect">
-                <option value="distance" hidden>Distance</option>
-                <option value="name">Name</option>
-                <option value="recent">Recently added</option>
+                <option value="distance" data-i18n="sort.distance" hidden>Distance</option>
+                <option value="name" data-i18n="sort.name">Name</option>
+                <option value="recent" data-i18n="sort.recent">Recently added</option>
               </select>
-              <div class="seg" id="viewToggle" role="group" aria-label="List view">
-                <button type="button" class="seg-btn" data-view="rows" aria-pressed="true" aria-label="Rows"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-list"/></svg></button>
-                <button type="button" class="seg-btn" data-view="cards" aria-pressed="false" aria-label="Photo cards"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-squares-four"/></svg></button>
+              <div class="seg" id="viewToggle" role="group" aria-label="List view" data-i18n-attr="aria-label:explore.listViewAria">
+                <button type="button" class="seg-btn" data-view="rows" aria-pressed="true" aria-label="Rows" data-i18n-attr="aria-label:explore.rows"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-list"/></svg></button>
+                <button type="button" class="seg-btn" data-view="cards" aria-pressed="false" aria-label="Photo cards" data-i18n-attr="aria-label:explore.cards"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-squares-four"/></svg></button>
               </div>
             </div>
           </div>
-          <div class="carousel" id="carousel" role="group" aria-label="Gyms at this spot" hidden></div>
+          <div class="carousel" id="carousel" role="group" aria-label="Gyms at this spot" data-i18n-attr="aria-label:explore.carouselAria" hidden></div>
         </div>
         <div class="explore-intro" id="exploreIntro" hidden></div>
         <div class="empty-state explore-first-run" id="exploreFirstRun" hidden></div>
         <div class="featured-destinations" id="featuredDestinations" hidden>
-          <div class="section-label">Worth traveling for</div>
+          <div class="section-label" data-i18n="explore.worth">Worth traveling for</div>
           <div class="featured-row">
-            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="CN">China</button>
-            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="JP">Japan</button>
-            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="KR">South Korea</button>
-            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="US">United States</button>
-            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="DE">Germany</button>
-            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="GB">United Kingdom</button>
+            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="CN" data-i18n="country.CN">China</button>
+            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="JP" data-i18n="country.JP">Japan</button>
+            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="KR" data-i18n="country.KR">South Korea</button>
+            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="US" data-i18n="country.US">United States</button>
+            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="DE" data-i18n="country.DE">Germany</button>
+            <button type="button" class="btn btn-secondary btn-sm featured-chip" data-country="GB" data-i18n="country.GB">United Kingdom</button>
           </div>
         </div>
-        <div class="gym-list" id="gymList" role="list" aria-label="Gyms in view" tabindex="-1" aria-busy="true"></div>
+        <div class="gym-list" id="gymList" role="list" aria-label="Gyms in view" data-i18n-attr="aria-label:explore.listAria" tabindex="-1" aria-busy="true"></div>
         <div class="list-footer">
           <div class="footer-links">
-            <a class="link link-quiet" href="/about.html">About</a>
-            <a class="link link-quiet" href="/privacy">Privacy</a>
-            <a class="link link-quiet" href="/terms">Terms</a>
+            <a class="link link-quiet" href="/about.html" data-i18n="me.about">About</a>
+            <a class="link link-quiet" href="/privacy" data-i18n="me.privacy">Privacy</a>
+            <a class="link link-quiet" href="/terms" data-i18n="me.terms">Terms</a>
           </div>
         </div>
       </div>
-      <button type="button" class="btn btn-tertiary btn-icon sheet-close" id="sheetClose" aria-label="Collapse the gym list"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-down"/></svg></button>
+      <button type="button" class="btn btn-tertiary btn-icon sheet-close" id="sheetClose" aria-label="Collapse the gym list" data-i18n-attr="aria-label:explore.collapse"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-caret-down"/></svg></button>
     </section>
 
-    <main class="map-wrap" id="main" tabindex="-1" data-theme="paper" aria-label="Map">
+    <main class="map-wrap" id="main" tabindex="-1" data-theme="paper" aria-label="Map" data-i18n-attr="aria-label:explore.mapAria">
       <div id="map"></div>
       <div class="map-top" data-theme="paper">
         <div class="map-search-slot" id="mapSearchSlot"></div>
         <div class="map-filter-slot" id="mapFilterSlot"></div>
       </div>
       <div class="map-move-controls">
-        <button type="button" class="map-toggle map-float" data-theme="paper" id="searchAsMove" aria-pressed="true"><span class="map-toggle-box"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-check"/></svg></span>Search as I move the map</button>
-        <button type="button" class="btn btn-secondary btn-sm map-float" data-theme="paper" id="searchThisArea" hidden>Search this area</button>
+        <button type="button" class="map-toggle map-float" data-theme="paper" id="searchAsMove" aria-pressed="true"><span class="map-toggle-box"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-check"/></svg></span><span data-i18n="explore.searchAsMove">Search as I move the map</span></button>
+        <button type="button" class="btn btn-secondary btn-sm map-float" data-theme="paper" id="searchThisArea" data-i18n="explore.searchArea" hidden>Search this area</button>
       </div>
-      <div class="placing-banner map-float" data-theme="paper" id="placingBanner">Click anywhere on the map to drop a pin for the gym</div>
+      <div class="placing-banner map-float" data-theme="paper" id="placingBanner" data-i18n="explore.placing">Click anywhere on the map to drop a pin for the gym</div>
     </main>
     <section class="peek map-float" id="peek" data-theme="paper" aria-labelledby="peekTitle" hidden></section>
     <p class="visually-hidden" id="liveRegion" aria-live="polite"></p>
@@ -148,39 +149,39 @@
   <main class="page-view" id="view" data-theme="paper" tabindex="-1" hidden></main>
   <!-- In the shell, not in #explore: Explore is hidden while a page shows, and its toasts went with it. -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <nav class="tabbar" aria-label="Primary" data-theme="paper">
-    <button type="button" class="tabbar-item" data-nav="explore" aria-current="page"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-map-trifold"/></svg><span>Explore</span></button>
-    <button type="button" class="tabbar-item" data-nav="regions"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-squares-four"/></svg><span>Regions</span></button>
-    <button type="button" class="start-btn" data-nav="start" aria-label="Start: check in at a gym or log a session" aria-haspopup="dialog"><span class="start-disc"><span class="mascot mascot--start" data-mascot-slot="start" aria-hidden="true"><img src="assets/mascot/head.svg" alt=""></span><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg></span><span>Check in</span></button>
-    <button type="button" class="tabbar-item" data-nav="log"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-book-open"/></svg><span>Log</span></button>
-    <button type="button" class="tabbar-item" data-nav="me"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-user"/></svg><span>Me</span></button>
+  <nav class="tabbar" aria-label="Primary" data-theme="paper" data-i18n-attr="aria-label:nav.primary">
+    <button type="button" class="tabbar-item" data-nav="explore" aria-current="page"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-map-trifold"/></svg><span data-i18n="nav.explore">Explore</span></button>
+    <button type="button" class="tabbar-item" data-nav="regions"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-squares-four"/></svg><span data-i18n="nav.regions">Regions</span></button>
+    <button type="button" class="start-btn" data-nav="start" aria-label="Start: check in at a gym or log a session" data-i18n-attr="aria-label:nav.start.aria" aria-haspopup="dialog"><span class="start-disc"><span class="mascot mascot--start" data-mascot-slot="start" aria-hidden="true"><img src="assets/mascot/head.svg" alt=""></span><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg></span><span data-i18n="nav.checkin">Check in</span></button>
+    <button type="button" class="tabbar-item" data-nav="log"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-book-open"/></svg><span data-i18n="nav.log">Log</span></button>
+    <button type="button" class="tabbar-item" data-nav="me"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-user"/></svg><span data-i18n="nav.me">Me</span></button>
   </nav>
 </div>
 
 <div class="modal-backdrop hidden" id="editModalBackdrop">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="dlg-edit-this-spot">
-    <h2 id="dlg-edit-this-spot">Edit this spot</h2>
-    <div class="sub">Submitted as a proposed change — the spot keeps showing its current info until a moderator approves it.</div>
+    <h2 id="dlg-edit-this-spot" data-i18n="edit.title">Edit this spot</h2>
+    <div class="sub" data-i18n="edit.sub">Submitted as a proposed change — the spot keeps showing its current info until a moderator approves it.</div>
     <div class="pin-status" id="editPinStatus">Current pin: —</div>
-    <button class="btn btn-secondary btn-block u-mb-4" id="eDropPinBtn">Move pin</button>
+    <button class="btn btn-secondary btn-block u-mb-4" id="eDropPinBtn" data-i18n="edit.movePin">Move pin</button>
     <div class="field">
-      <label for="eName">Name</label>
+      <label for="eName" data-i18n="edit.name">Name</label>
       <input id="eName" type="text" maxlength="200" aria-required="true">
     </div>
     <div class="field">
-      <label for="eSuburb">Suburb / nearest town</label>
+      <label for="eSuburb" data-i18n="edit.suburb">Suburb / nearest town</label>
       <input id="eSuburb" type="text" maxlength="200" aria-required="true">
     </div>
     <div class="field field-row">
       <div>
-        <label for="eCountry">Country</label>
+        <label for="eCountry" data-i18n="edit.country">Country</label>
         <select id="eCountry">
-          <optgroup label="Africa">
+          <optgroup label="Africa" data-region="africa">
             <option value="EG">Egypt</option>
             <option value="KE">Kenya</option>
             <option value="ZA">South Africa</option>
           </optgroup>
-          <optgroup label="Asia">
+          <optgroup label="Asia" data-region="asia">
             <option value="AM">Armenia</option>
             <option value="CN">China</option>
             <option value="GE">Georgia</option>
@@ -207,7 +208,7 @@
             <option value="AE">United Arab Emirates</option>
             <option value="VN">Vietnam</option>
           </optgroup>
-          <optgroup label="Europe">
+          <optgroup label="Europe" data-region="europe">
             <option value="AD">Andorra</option>
             <option value="AT">Austria</option>
             <option value="BY">Belarus</option>
@@ -247,7 +248,7 @@
             <option value="GB">United Kingdom</option>
             <option value="UA">Ukraine</option>
           </optgroup>
-          <optgroup label="North America">
+          <optgroup label="North America" data-region="north-america">
             <option value="CA">Canada</option>
             <option value="CR">Costa Rica</option>
             <option value="GT">Guatemala</option>
@@ -255,11 +256,11 @@
             <option value="PA">Panama</option>
             <option value="US">United States</option>
           </optgroup>
-          <optgroup label="Oceania">
+          <optgroup label="Oceania" data-region="oceania">
             <option value="AU">Australia</option>
             <option value="NZ">New Zealand</option>
           </optgroup>
-          <optgroup label="South America">
+          <optgroup label="South America" data-region="south-america">
             <option value="AR">Argentina</option>
             <option value="BO">Bolivia</option>
             <option value="BR">Brazil</option>
@@ -271,11 +272,11 @@
             <option value="UY">Uruguay</option>
             <option value="VE">Venezuela</option>
           </optgroup>
-          <option value="OTHER">Other (not listed)</option>
+          <option value="OTHER" data-i18n="edit.other">Other (not listed)</option>
         </select>
       </div>
       <div>
-        <label for="eState">State</label>
+        <label for="eState" data-i18n="edit.state">State</label>
         <select id="eState">
           <option value="NSW">NSW</option>
           <option value="VIC">VIC</option>
@@ -290,85 +291,85 @@
     </div>
     <div class="field field-row init-hidden" id="eOtherCountryFields">
       <div>
-        <label for="eCountryOther">Country name</label>
-        <input id="eCountryOther" type="text" maxlength="100" placeholder="e.g. France">
+        <label for="eCountryOther" data-i18n="edit.countryName">Country name</label>
+        <input id="eCountryOther" type="text" maxlength="100" placeholder="e.g. France" data-i18n-attr="placeholder:edit.countryNamePh">
       </div>
       <div>
-        <label for="eStateOther">State / region</label>
-        <input id="eStateOther" type="text" maxlength="100" placeholder="e.g. Île-de-France or a nearby city">
+        <label for="eStateOther" data-i18n="edit.stateRegion">State / region</label>
+        <input id="eStateOther" type="text" maxlength="100" placeholder="e.g. Île-de-France or a nearby city" data-i18n-attr="placeholder:edit.stateRegionPh">
       </div>
     </div>
     <div class="field">
-      <label for="eAddress">Street address (optional)</label>
-      <input id="eAddress" type="text" maxlength="300" placeholder="e.g. 12 Chalk St, Marrickville NSW 2204">
+      <label for="eAddress" data-i18n="edit.address">Street address (optional)</label>
+      <input id="eAddress" type="text" maxlength="300" placeholder="e.g. 12 Chalk St, Marrickville NSW 2204" data-i18n-attr="placeholder:edit.addressPh">
     </div>
     <div class="field">
-      <div class="field-label">Type (select all that apply)</div>
+      <div class="field-label" data-i18n="edit.typeLegend">Type (select all that apply)</div>
       <div class="type-filter u-flush-top">
         <label class="type-check">
           <input type="checkbox" class="chk-indoor" id="eTypeIndoor">
           <span class="type-dot type-dot--boulder" aria-hidden="true"></span>
-          Indoor bouldering
+          <span data-i18n="type.indoorBouldering">Indoor bouldering</span>
         </label>
         <label class="type-check">
           <input type="checkbox" class="chk-toprope" id="eTypeTopRope">
           <span class="type-dot type-dot--toprope" aria-hidden="true"></span>
-          Top rope
+          <span data-i18n="type.topRope">Top rope</span>
         </label>
         <label class="type-check">
           <input type="checkbox" class="chk-lead" id="eTypeLead">
           <span class="type-dot type-dot--lead" aria-hidden="true"></span>
-          Lead climbing
+          <span data-i18n="type.leadClimbing">Lead climbing</span>
         </label>
       </div>
     </div>
     <div id="eInfoFields"></div>
     <div class="field">
-      <label for="ePhoto">Photo link (optional)</label>
-      <input id="ePhoto" type="text" maxlength="1000" placeholder="Link to a photo — their site, Instagram, Google Maps">
+      <label for="ePhoto" data-i18n="edit.photoLabel">Photo link (optional)</label>
+      <input id="ePhoto" type="text" maxlength="1000" placeholder="Link to a photo — their site, Instagram, Google Maps" data-i18n-attr="placeholder:edit.photoPh">
     </div>
     <div class="field">
-      <label for="eNote">Anything we should know? (optional)</label>
-      <input id="eNote" type="text" maxlength="200" placeholder="e.g. Moved to a new building in 2026, per their website">
+      <label for="eNote" data-i18n="edit.note">Anything we should know? (optional)</label>
+      <input id="eNote" type="text" maxlength="200" placeholder="e.g. Moved to a new building in 2026, per their website" data-i18n-attr="placeholder:edit.notePh">
     </div>
-    <label class="check-row"><input type="checkbox" id="eReview">Please double-check this</label>
+    <label class="check-row"><input type="checkbox" id="eReview"><span data-i18n="edit.review">Please double-check this</span></label>
     <p class="form-hint" id="eFormHint" aria-live="polite"></p>
     <div class="modal-actions">
-      <button class="btn btn-secondary" id="eCancelBtn" data-modal-close>Cancel</button>
-      <button class="btn btn-primary" id="eSaveBtn">Save changes</button>
+      <button class="btn btn-secondary" id="eCancelBtn" data-modal-close data-i18n="common.cancel">Cancel</button>
+      <button class="btn btn-primary" id="eSaveBtn" data-i18n="edit.saveBtn">Save changes</button>
     </div>
   </div>
 </div>
 
 <div class="modal-backdrop hidden" id="reportModalBackdrop">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="dlg-report-incorrect-information">
-    <h2 id="dlg-report-incorrect-information">Report incorrect information</h2>
-    <div class="sub">Not for full corrections — if you know the right details, use "Edit this spot" instead. This just flags something for a moderator to look into: <span id="reportSpotName"></span></div>
+    <h2 id="dlg-report-incorrect-information" data-i18n="report.title">Report incorrect information</h2>
+    <div class="sub"><span data-i18n="report.sub">Not for full corrections — if you know the right details, use “Edit this spot” instead. This just flags something for a moderator to look into:</span> <span id="reportSpotName"></span></div>
     <div class="field">
-      <label for="rMessage">What's wrong?</label>
-      <textarea id="rMessage" maxlength="2000" placeholder="e.g. This gym closed down in 2025 / wrong suburb / name is misspelled"></textarea>
+      <label for="rMessage" data-i18n="report.label">What’s wrong?</label>
+      <textarea id="rMessage" maxlength="2000" placeholder="e.g. This gym closed down in 2025 / wrong suburb / name is misspelled" data-i18n-attr="placeholder:report.placeholder"></textarea>
     </div>
     <div class="modal-actions">
-      <button class="btn btn-secondary" id="rCancelBtn" data-modal-close>Cancel</button>
-      <button class="btn btn-primary" id="rSubmitBtn" disabled>Send report</button>
+      <button class="btn btn-secondary" id="rCancelBtn" data-modal-close data-i18n="common.cancel">Cancel</button>
+      <button class="btn btn-primary" id="rSubmitBtn" disabled data-i18n="report.send">Send report</button>
     </div>
   </div>
 </div>
 
 <div class="modal-backdrop hidden" id="authModalBackdrop">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="dlg-sign-in">
-    <h2 id="dlg-sign-in">Sign in</h2>
-    <div class="sub">Sign in to save gyms, mark the ones you’ve climbed, check in for passport stamps, keep a log of your sessions and suggest edits.</div>
-    <button class="btn btn-secondary btn-block u-mb-4" id="googleSignInBtn">Continue with Google</button>
-    <div class="auth-divider"><span>or</span></div>
+    <h2 id="dlg-sign-in" data-i18n="auth.signIn">Sign in</h2>
+    <div class="sub" data-i18n="auth.intro">Sign in to save gyms, mark the ones you’ve climbed, check in for passport stamps, keep a log of your sessions and suggest edits.</div>
+    <button class="btn btn-secondary btn-block u-mb-4" id="googleSignInBtn" data-i18n="auth.google">Continue with Google</button>
+    <div class="auth-divider"><span data-i18n="auth.or">or</span></div>
     <div class="field">
-      <label for="authEmail">Email</label>
-      <input id="authEmail" type="email" placeholder="you@example.com">
+      <label for="authEmail" data-i18n="auth.email">Email</label>
+      <input id="authEmail" type="email" placeholder="you@example.com" data-i18n-attr="placeholder:auth.emailPlaceholder">
     </div>
     <div id="authStatus" class="auth-status"></div>
     <div class="modal-actions">
-      <button class="btn btn-secondary" id="authCancelBtn" data-modal-close>Cancel</button>
-      <button class="btn btn-primary" id="sendMagicLinkBtn">Send magic link</button>
+      <button class="btn btn-secondary" id="authCancelBtn" data-modal-close data-i18n="common.cancel">Cancel</button>
+      <button class="btn btn-primary" id="sendMagicLinkBtn" data-i18n="auth.sendLink">Send magic link</button>
     </div>
   </div>
 </div>
@@ -376,73 +377,73 @@
 <!-- Phase 5: check-in sheet, milestone sheet, START sheet (bodies rendered by js/modules/checkin.js, milestone-sheet.js) -->
 <div class="modal-backdrop hidden" id="checkinModalBackdrop">
   <div class="modal checkin-modal" role="dialog" aria-modal="true" aria-labelledby="dlg-check-in">
-    <button type="button" class="btn btn-tertiary btn-icon btn-sm modal-x" id="checkinClose" data-modal-close aria-label="Close"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-x"/></svg></button>
+    <button type="button" class="btn btn-tertiary btn-icon btn-sm modal-x" id="checkinClose" data-modal-close aria-label="Close" data-i18n-attr="aria-label:common.close"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-x"/></svg></button>
     <div id="checkinBody"></div>
   </div>
 </div>
 
 <div class="modal-backdrop hidden" id="milestoneModalBackdrop">
   <div class="modal milestone-modal" role="dialog" aria-modal="true" aria-labelledby="dlg-milestone">
-    <button type="button" class="btn btn-tertiary btn-icon btn-sm modal-x" id="milestoneClose" data-modal-close aria-label="Close"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-x"/></svg></button>
+    <button type="button" class="btn btn-tertiary btn-icon btn-sm modal-x" id="milestoneClose" data-modal-close aria-label="Close" data-i18n-attr="aria-label:common.close"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-x"/></svg></button>
     <div id="milestoneBody"></div>
   </div>
 </div>
 
 <div class="modal-backdrop hidden" id="startModalBackdrop">
   <div class="modal start-modal" role="dialog" aria-modal="true" aria-labelledby="dlg-start">
-    <h2 id="dlg-start">Start</h2>
-    <p class="sub" id="startSignedOut" hidden>Check in at a gym to collect a stamp in your passport, and keep a log of your sessions. Both need an account.</p>
-    <div class="start-actions" id="startSignedOutActions" hidden><button type="button" class="btn btn-secondary btn-block" data-start-action="signin">Sign in to start</button></div>
+    <h2 id="dlg-start" data-i18n="start.title">Start</h2>
+    <p class="sub" id="startSignedOut" hidden data-i18n="start.intro">Check in at a gym to collect a stamp in your passport, and keep a log of your sessions. Both need an account.</p>
+    <div class="start-actions" id="startSignedOutActions" hidden><button type="button" class="btn btn-secondary btn-block" data-start-action="signin" data-i18n="auth.signInToStart">Sign in to start</button></div>
     <div class="start-actions" id="startSignedInActions">
-      <button type="button" class="btn btn-secondary btn-block" data-start-action="checkin"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-map-pin"/></svg><span id="startCheckinLabel">Check in here</span></button>
-      <button type="button" class="btn btn-primary btn-block" data-start-action="log"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg>Log a session</button>
+      <button type="button" class="btn btn-secondary btn-block" data-start-action="checkin"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-map-pin"/></svg><span id="startCheckinLabel" data-i18n="start.checkinHere">Check in here</span></button>
+      <button type="button" class="btn btn-primary btn-block" data-start-action="log"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg><span data-i18n="log.title">Log a session</span></button>
     </div>
-    <div class="modal-actions"><button type="button" class="btn btn-tertiary" id="startClose" data-modal-close>Close</button></div>
+    <div class="modal-actions"><button type="button" class="btn btn-tertiary" id="startClose" data-modal-close data-i18n="common.close">Close</button></div>
   </div>
 </div>
 
 <div class="modal-backdrop hidden" id="addSessionModalBackdrop">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="dlg-log-a-session">
-    <h2 id="dlg-log-a-session">Log a session</h2>
-    <div class="sub">Private to your account — not shown on the public map.</div>
+    <h2 id="dlg-log-a-session" data-i18n="log.title">Log a session</h2>
+    <div class="sub" data-i18n="log.sub">Private to your account — not shown on the public map.</div>
     <div class="field field-row">
       <div>
-        <label for="sDate">Date</label>
+        <label for="sDate" data-i18n="log.date">Date</label>
         <input id="sDate" type="date">
       </div>
       <div>
-        <label for="sMood">Mood</label>
+        <label for="sMood" data-i18n="log.mood">Mood</label>
         <select id="sMood">
-          <option value="great">Great</option>
-          <option value="good" selected>Good</option>
-          <option value="ok">OK</option>
-          <option value="tired">Tired</option>
-          <option value="rough">Rough</option>
+          <option value="great" data-i18n="mood.great">Great</option>
+          <option value="good" selected data-i18n="mood.good">Good</option>
+          <option value="ok" data-i18n="mood.ok">OK</option>
+          <option value="tired" data-i18n="mood.tired">Tired</option>
+          <option value="rough" data-i18n="mood.rough">Rough</option>
         </select>
       </div>
     </div>
     <div class="field gym-picker">
       <!-- Search or browse instead of a 2,000-option select (logbook.js + gym-picker.js). #sGym holds the chosen id. -->
-      <label for="sGymSearch" id="sGymLabel">Gym (optional)</label>
+      <label for="sGymSearch" id="sGymLabel" data-i18n="log.gymOptional">Gym (optional)</label>
       <div class="gym-picker-current" id="sGymCurrent"></div>
       <div class="gym-picker-panel" id="sGymPanel" hidden>
-        <input type="search" id="sGymSearch" role="combobox" aria-expanded="false" aria-autocomplete="list" autocomplete="off" enterkeyhint="search" placeholder="Search by gym, city or country">
+        <input type="search" id="sGymSearch" role="combobox" aria-expanded="false" aria-autocomplete="list" autocomplete="off" enterkeyhint="search" placeholder="Search by gym, city or country" data-i18n-attr="placeholder:log.searchPh">
         <div class="gym-picker-results" id="sGymResults"></div>
       </div>
       <input type="hidden" id="sGym" value="">
     </div>
     <div class="field">
-      <div class="field-label">Climbs logged</div>
+      <div class="field-label" data-i18n="log.climbs">Climbs logged</div>
       <div id="sClimbsList" class="climb-rows"></div>
-      <button class="btn btn-secondary btn-block u-mt-2" id="sAddClimbBtn"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg>Add a climb</button>
+      <button class="btn btn-secondary btn-block u-mt-2" id="sAddClimbBtn"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg><span data-i18n="log.addClimb">Add a climb</span></button>
     </div>
     <div class="field">
-      <label for="sNotes">Notes (optional)</label>
-      <textarea id="sNotes" placeholder="How did it feel? Anything to remember for next time?"></textarea>
+      <label for="sNotes" data-i18n="log.notes">Notes (optional)</label>
+      <textarea id="sNotes" placeholder="How did it feel? Anything to remember for next time?" data-i18n-attr="placeholder:log.notesPh"></textarea>
     </div>
     <div class="modal-actions">
-      <button class="btn btn-secondary" id="sCancelBtn" data-modal-close>Cancel</button>
-      <button class="btn btn-primary" id="sSaveBtn">Save session</button>
+      <button class="btn btn-secondary" id="sCancelBtn" data-modal-close data-i18n="common.cancel">Cancel</button>
+      <button class="btn btn-primary" id="sSaveBtn" data-i18n="log.save">Save session</button>
     </div>
   </div>
 </div>
@@ -450,32 +451,32 @@
 <div class="modal-backdrop hidden" id="filterSheetBackdrop">
   <div class="modal filter-sheet" role="dialog" aria-modal="true" aria-labelledby="dlg-all-filters" id="filterSheet">
     <div class="filter-sheet-head">
-      <h2 id="dlg-all-filters">All filters</h2>
-      <button type="button" class="btn btn-tertiary btn-icon btn-sm" id="filterSheetClose" data-modal-close aria-label="Close"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-x"/></svg></button>
+      <h2 id="dlg-all-filters" data-i18n="filters.sheetTitle">All filters</h2>
+      <button type="button" class="btn btn-tertiary btn-icon btn-sm" id="filterSheetClose" data-modal-close aria-label="Close" data-i18n-attr="aria-label:common.close"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-x"/></svg></button>
     </div>
     <fieldset class="filter-section">
-      <legend class="section-label">Type</legend>
-      <label class="check-row"><input type="checkbox" data-sheet-type="indoor-bouldering"><span class="type-dot type-dot--boulder" aria-hidden="true"></span>Indoor bouldering</label>
-      <label class="check-row"><input type="checkbox" data-sheet-type="top-rope"><span class="type-dot type-dot--toprope" aria-hidden="true"></span>Top rope</label>
-      <label class="check-row"><input type="checkbox" data-sheet-type="lead-climbing"><span class="type-dot type-dot--lead" aria-hidden="true"></span>Lead climbing</label>
+      <legend class="section-label" data-i18n="filters.type">Type</legend>
+      <label class="check-row"><input type="checkbox" data-sheet-type="indoor-bouldering"><span class="type-dot type-dot--boulder" aria-hidden="true"></span><span data-i18n="type.indoorBouldering">Indoor bouldering</span></label>
+      <label class="check-row"><input type="checkbox" data-sheet-type="top-rope"><span class="type-dot type-dot--toprope" aria-hidden="true"></span><span data-i18n="type.topRope">Top rope</span></label>
+      <label class="check-row"><input type="checkbox" data-sheet-type="lead-climbing"><span class="type-dot type-dot--lead" aria-hidden="true"></span><span data-i18n="type.leadClimbing">Lead climbing</span></label>
     </fieldset>
     <fieldset class="filter-section">
-      <legend class="section-label">Marks</legend>
-      <label class="check-row"><input type="checkbox" data-sheet-flag="saved">Saved</label>
-      <label class="check-row"><input type="checkbox" data-sheet-flag="climbed">Climbed</label>
-      <p class="form-hint" id="filterSheetMarksHint">Sign in to filter by the gyms you saved or climbed.</p>
+      <legend class="section-label" data-i18n="filters.marks">Marks</legend>
+      <label class="check-row"><input type="checkbox" data-sheet-flag="saved"><span data-i18n="filters.saved">Saved</span></label>
+      <label class="check-row"><input type="checkbox" data-sheet-flag="climbed"><span data-i18n="filters.climbed">Climbed</span></label>
+      <p class="form-hint" id="filterSheetMarksHint" data-i18n="filters.marksHint">Sign in to filter by the gyms you saved or climbed.</p>
     </fieldset>
     <fieldset class="filter-section" id="filterSheetHours" hidden>
-      <legend class="section-label">Hours</legend>
-      <label class="check-row"><input type="checkbox" data-sheet-flag="open">Open now</label>
+      <legend class="section-label" data-i18n="filters.hours">Hours</legend>
+      <label class="check-row"><input type="checkbox" data-sheet-flag="open"><span data-i18n="filters.open">Open now</span></label>
     </fieldset>
     <fieldset class="filter-section" id="filterSheetPhotos">
-      <legend class="section-label">Photos</legend>
-      <label class="check-row"><input type="checkbox" data-sheet-flag="photos">Has photos</label>
+      <legend class="section-label" data-i18n="filters.photosSection">Photos</legend>
+      <label class="check-row"><input type="checkbox" data-sheet-flag="photos"><span data-i18n="filters.photos">Has photos</span></label>
     </fieldset>
     <div class="modal-actions filter-sheet-actions">
-      <button type="button" class="btn btn-tertiary" id="resetFiltersBtn">Reset</button>
-      <button type="button" class="btn btn-primary" id="applyFiltersBtn">Show gyms</button>
+      <button type="button" class="btn btn-tertiary" id="resetFiltersBtn" data-i18n="filters.reset">Reset</button>
+      <button type="button" class="btn btn-primary" id="applyFiltersBtn" data-i18n="filters.showGyms">Show gyms</button>
     </div>
   </div>
 </div>
@@ -492,6 +493,8 @@
      above, so the gym-list read (spots-prefetch.js) is requested first (tests/perf-load.test.js keeps this list equal to
      what js/main.js imports). -->
 <link rel="modulepreload" href="js/main.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/i18n.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/i18n-en.js" fetchpriority="low">
 <link rel="modulepreload" href="js/modules/auth-ui.js" fetchpriority="low">
 <link rel="modulepreload" href="js/modules/state.js" fetchpriority="low">
 <link rel="modulepreload" href="js/modules/utils.js" fetchpriority="low">
@@ -508,6 +511,7 @@
 <link rel="modulepreload" href="js/modules/map.js" fetchpriority="low">
 <link rel="modulepreload" href="js/modules/pin-html.js" fetchpriority="low">
 <link rel="modulepreload" href="js/modules/regions.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/region-label.js" fetchpriority="low">
 <link rel="modulepreload" href="js/modules/search-index.js" fetchpriority="low">
 <link rel="modulepreload" href="js/modules/metros.js" fetchpriority="low">
 <link rel="modulepreload" href="js/modules/hours.js" fetchpriority="low">
@@ -532,6 +536,8 @@
 <link rel="modulepreload" href="js/modules/mini-map.js" fetchpriority="low">
 <link rel="modulepreload" href="js/modules/moderation.js" fetchpriority="low">
 <link rel="modulepreload" href="js/modules/page-html.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/place-names.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/visit-html.js" fetchpriority="low">
 <link rel="modulepreload" href="js/modules/seo-meta.js" fetchpriority="low">
 <link rel="modulepreload" href="js/modules/share.js" fetchpriority="low">
 <link rel="modulepreload" href="js/modules/log-page.js" fetchpriority="low">

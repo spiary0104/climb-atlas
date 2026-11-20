@@ -2,6 +2,7 @@
 // Who shows the change (row, card, pin, peek) is explore.js's business: it registers a listener.
 import { openAuthModal } from './auth-ui.js';
 import { appState } from './state.js';
+import { t } from './i18n.js';
 import { showToast } from './utils.js';
 
 let listener = () => {};
@@ -19,7 +20,7 @@ export function markAdded(spotId, markType){
 // the opposite write, leaving the screen and the table disagreeing until the next load.
 const inFlight = new Set();
 export async function toggleMark(spotId, markType){
-  if(!window.sb){ showToast('Supabase is not configured — see README.md'); return; }
+  if(!window.sb){ showToast(t('common.notConfigured')); return; }
   const user = window.auth.user;
   if(!user){ openAuthModal(); return; }
   const key = spotId + '\u0000' + markType;
@@ -41,7 +42,7 @@ export async function toggleMark(spotId, markType){
   }catch(err){
     if(wasActive) set.add(spotId); else set.delete(spotId);
     listener(spotId);
-    showToast('Could not save — try again');
+    showToast(t('marks.saveFailed'));
     console.error(err);
   }finally{
     inFlight.delete(key);

@@ -168,7 +168,7 @@ test('explore builders: behaviour the popup had is preserved in the peek card, a
   assert.ok(/provenance-mark--verified/.test(list.rowHtml(benignSpot, { ...ctxBenign, provenance: 'community-verified' })), 'community-verified is the forest ring-dot');
   assert.ok(!/provenance-mark/.test(list.rowHtml(benignSpot, { ...ctxBenign, provenance: 'verified' })), 'no mark on a verified gym (sec. 10.2)');
   assert.ok(!/provenance-mark/.test(list.rowHtml(benignSpot, { ...ctxBenign, provenance: '"><script>' })), 'an unknown state renders nothing');
-  assert.match(list.capRowHtml(1204), /Zoom in to see all <span class="tnum">1,204<\/span>/);
+  assert.match(list.capRowHtml(1204), /Zoom in to see all 1,204/);
   assert.deepEqual(['area', 'filters', 'search'].map(k => tags(list.emptyHtml(k, 'x')).filter(t => t.attrs['data-list-action']).map(t => t.attrs['data-list-action']).join(',')),
     ['zoom-out,add-gym', 'clear-filters', 'search-city']);
 });
@@ -205,7 +205,7 @@ test('gym page: the minimum page renders no empty sections; the photo page shows
   assert.equal((html.match(/contribute-prompt/g) || []).length, 1, 'exactly one contribution prompt');
   assert.ok(/essentialsTitle/.test(html) && /data-mini-map/.test(html), 'Essentials with the map thumbnail is always there');
   assert.ok(text.includes('Somewhere, NSW'), 'address row falls back to the place when there is no street address');
-  assert.equal(headings, 3, 'h1 + Community + Essentials only');
+  assert.equal(headings, 5, 'h1 + Community + Facilities + Visitor info ("Not confirmed yet") + Essentials only');
   assert.ok(!/—<|>—|undefined|null|NaN/.test(html), 'no dash placeholders or leaked empties');
   const withPhoto = page.gymPageHtml({ ...minimal, photo: 'https://example.com/wall.jpg', notes: 'Great setting' }, pageCtx());
   const hero = tags(withPhoto).find(t => /\bgym-hero\b/.test(t.attrs.class || ''));
@@ -253,8 +253,8 @@ test('log page: month calendar starts on Monday and marks session days; signed-o
   const days = tags(cal).filter(t => /\bcal-day\b/.test(t.attrs.class || ''));
   assert.equal(days.length, 30);
   assert.equal(cal.indexOf('<td></td>'), cal.indexOf('<tbody><tr>') + '<tbody><tr>'.length, '1 September 2026 is a Tuesday: one empty Monday cell first');
-  assert.deepEqual(days.filter(d => /has-session/.test(d.attrs.class)).map(d => d.attrs['aria-label']), ['1 September, 1 session', '26 September, 2 sessions']);
-  assert.match(days.find(d => /is-today/.test(d.attrs.class)).attrs['aria-label'], /^26 September/);
+  assert.deepEqual(days.filter(d => /has-session/.test(d.attrs.class)).map(d => d.attrs['aria-label']), ['September 1, 1 session', 'September 26, 2 sessions']);
+  assert.match(days.find(d => /is-today/.test(d.attrs.class)).attrs['aria-label'], /^September 26/);
   assert.equal((cal.match(/<tr>/g) || []).length, 6, 'header + 5 weeks');
   const out = page.logPageHtml({ signedIn: false });
   assert.deepEqual(tags(out).filter(t => t.attrs['data-page-action']).map(t => t.attrs['data-page-action']), ['sign-in']);
@@ -439,7 +439,7 @@ test('add: one primary (Submit for review) per step, sign-in note only when sign
   assert.ok(/data-add-field="stateOther"/.test(add.addStepHtml(draftOf('Crux', { step: 2, country: 'OTHER' }), {})), 'Other country: free text');
   assert.ok(/disabled>Submitting…/.test(add.addStepHtml(draftOf('Crux'), { busy: true })));
   for (const html of [add.addPageHtml(), add.addDoneHtml(), s2]) assert.ok(!/mascot/.test(html));
-  assert.ok(allText(add.addDoneHtml()).includes("Thanks — it's in review."));
+  assert.ok(allText(add.addDoneHtml()).includes("Thanks — it’s in review."));
 });
 
 // ===== Brand marks (DESIGN.md sec. 1A, 12.2): the seal and the first-run art ===========================================

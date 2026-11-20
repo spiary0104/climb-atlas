@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-11-09-cn-beijing-info",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "614b85eaf5d2dddfaa6fdc5eae987220fecdde1d255f50583505339a9865a251",
+  "payload_sha256": "f78cea2525270ed6a4a6db7b01dd541c58af9a3485ce90249a9f2b874a111ef0",
+  "confirm_token": "c402be981276df5c",
+  "live_state_sha256": "3a8436eec4e869d28a1f21465866a2c862c0a634ab954354d8605106bfba4eff",
+  "rows_updated": 0,
+  "approved_before": 3614,
+  "approved_after": 3614,
+  "changes": [],
+  "rows_info_filled": 8,
+  "info_filled": [
+    {
+      "id": "seed-649",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "f84af893202d2457",
+      "after_h": "f84af893202d2457"
+    },
+    {
+      "id": "seed-656",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "5b97942c729873ab",
+      "after_h": "5b97942c729873ab"
+    },
+    {
+      "id": "seed-676",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "4d9efdd76920a0d7",
+      "after_h": "4d9efdd76920a0d7"
+    },
+    {
+      "id": "seed-665",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "23e9b62222fc2d6b",
+      "after_h": "23e9b62222fc2d6b"
+    },
+    {
+      "id": "seed-652",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "e294160130b847c6",
+      "after_h": "e294160130b847c6"
+    },
+    {
+      "id": "seed-658",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "6cf1d52ae8f01c77",
+      "after_h": "6cf1d52ae8f01c77"
+    },
+    {
+      "id": "seed-650",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "20929a22c62d06ce",
+      "after_h": "20929a22c62d06ce"
+    },
+    {
+      "id": "seed-653",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "9d1c617b961ea6bf",
+      "after_h": "9d1c617b961ea6bf"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 8,
+    "problems": []
+  },
+  "started_at": "2026-11-11T00:53:30.037Z",
+  "finished_at": "2026-11-11T00:53:34.621Z",
+  "ids": [
+    "seed-649",
+    "seed-656",
+    "seed-676",
+    "seed-665",
+    "seed-652",
+    "seed-658",
+    "seed-650",
+    "seed-653"
+  ]
+}
