@@ -3,6 +3,10 @@
 export default {
   regions: {
     CN: {
+      BENGBU: '벙부', GUILIN: '구이린', JIAXING: '자싱', JINHUA: '진화', JINING: '지닝', LIUZHOU: '류저우', LUZHOU: '루저우',
+      MIANYANG: '몐양', QUANZHOU: '취안저우', QUZHOU: '취저우', SHANTOU: '산터우', SHAOXING: '사오싱', TAIZHOU: '타이저우 (저장성)',
+      TANGSHAN: '탕산', WEIFANG: '웨이팡', WEIHAI: '웨이하이', XUZHOU: '쉬저우', YANCHENG: '옌청', YANGZHOU: '양저우', YANTAI: '옌타이',
+      ZIBO: '쯔보',
       BEIJING: '베이징', CHANGCHUN: '창춘', CHANGSHA: '창사', CHANGZHOU: '창저우', CHENGDU: '청두', CHONGQING: '충칭', DALI: '다리', DALIAN: '다롄',
       DONGGUAN: '둥관', FOSHAN: '포산', FUZHOU: '푸저우', GUANGZHOU: '광저우', GUIYANG: '구이양', HAIKOU: '하이커우', HANGZHOU: '항저우', HARBIN: '하얼빈',
       HEFEI: '허페이', HOHHOT: '후허하오터', JINAN: '지난', KUNMING: '쿤밍', LANZHOU: '란저우', LHASA: '라싸', LIJIANG: '리장', NANCHANG: '난창',

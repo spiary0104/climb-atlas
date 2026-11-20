@@ -40,5 +40,6 @@ export const CN_CITY_NAMES = Object.freeze({
   LHASA: '拉萨', LIJIANG: '丽江', NANCHANG: '南昌', NANJING: '南京', NANNING: '南宁', NINGBO: '宁波', QINGDAO: '青岛',
   SANYA: '三亚', SHANGHAI: '上海', SHENYANG: '沈阳', SHENZHEN: '深圳', SHIJIAZHUANG: '石家庄', SUZHOU: '苏州', TAIYUAN: '太原',
   TIANJIN: '天津', URUMQI: '乌鲁木齐', WENZHOU: '温州', WUHAN: '武汉', WUXI: '无锡', XIAMEN: '厦门', XIAN: '西安',
+  BENGBU: '蚌埠', GUILIN: '桂林', JIAXING: '嘉兴', JINHUA: '金华', JINING: '济宁', LIUZHOU: '柳州', LUZHOU: '泸州', MIANYANG: '绵阳', QUANZHOU: '泉州', QUZHOU: '衢州', SHANTOU: '汕头', SHAOXING: '绍兴', TAIZHOU: '台州', TANGSHAN: '唐山', WEIFANG: '潍坊', WEIHAI: '威海', XUZHOU: '徐州', YANCHENG: '盐城', YANGZHOU: '扬州', YANTAI: '烟台', ZIBO: '淄博',
   XINING: '西宁', YINCHUAN: '银川', ZHENGZHOU: '郑州', ZHONGSHAN: '中山', ZHUHAI: '珠海',
 });

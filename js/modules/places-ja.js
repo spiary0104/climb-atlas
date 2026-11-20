@@ -3,6 +3,10 @@
 export default {
   regions: {
     CN: {
+      BENGBU: '蚌埠', GUILIN: '桂林', JIAXING: '嘉興', JINHUA: '金華', JINING: '済寧', LIUZHOU: '柳州', LUZHOU: '瀘州',
+      MIANYANG: '綿陽', QUANZHOU: '泉州', QUZHOU: '衢州', SHANTOU: '汕頭', SHAOXING: '紹興', TAIZHOU: '台州（浙江省）',
+      TANGSHAN: '唐山', WEIFANG: '濰坊', WEIHAI: '威海', XUZHOU: '徐州', YANCHENG: '塩城', YANGZHOU: '揚州', YANTAI: '煙台',
+      ZIBO: '淄博',
       BEIJING: '北京', CHANGCHUN: '長春', CHANGSHA: '長沙', CHANGZHOU: '常州', CHENGDU: '成都', CHONGQING: '重慶', DALI: '大理', DALIAN: '大連',
       DONGGUAN: '東莞', FOSHAN: '仏山', FUZHOU: '福州', GUANGZHOU: '広州', GUIYANG: '貴陽', HAIKOU: '海口', HANGZHOU: '杭州', HARBIN: 'ハルビン',
       HEFEI: '合肥', HOHHOT: 'フフホト', JINAN: '済南', KUNMING: '昆明', LANZHOU: '蘭州', LHASA: 'ラサ', LIJIANG: '麗江', NANCHANG: '南昌',
