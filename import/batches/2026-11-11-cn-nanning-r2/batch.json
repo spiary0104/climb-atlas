@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-11-cn-nanning-r2",
+  "description": "Regional research \"China: Nanning\": 1 new gym(s) accepted of 7 candidate(s)",
+  "created": "2026-11-11",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-11-11-cn-nanning-r2",
+    "section_sha256": "4af044d4340a73f9c6b21ec134ef509becdd774511a7c4a2647d76f88d88b303",
+    "sources_sha256": "f2045b8dc056f709395ca22250c4f345986ef9e6e827fd9c761d004ebd8aec58",
+    "candidates_sha256": "2c731820f3405fa34d5a108856eb7cd5d7ed5c70e4dd24e0e2937ce18decf1fa",
+    "reconcile_sha256": "63faa99ec23e4f680ecfdd6ed2acac6f8a533d183bc40deddfa7effc5c5b80d6",
+    "review_sha256": "69bc777c5f0ed4eccc8f483b414e0372318aff3220ec042168770c0acb19ea5f",
+    "candidates": 7,
+    "staged": 1,
+    "decisions": {
+      "accept": 1,
+      "defer": 5,
+      "reject": 1
+    }
+  },
+  "index_at_staging": {
+    "sha256": "fb2af3b217bd169c384ebb1039a7aad5cc5b3d8869165218ff0023a3c2ee2e78",
+    "count": 3612
+  }
+}

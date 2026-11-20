@@ -1,0 +1,96 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-11-cn-zhengzhou-r2",
+ "index": {
+  "sha256": "fb2af3b217bd169c384ebb1039a7aad5cc5b3d8869165218ff0023a3c2ee2e78",
+  "count": 3612,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha",
+  "2026-11-11-cn-beijing-r2",
+  "2026-11-11-cn-changchun",
+  "2026-11-11-cn-changsha-r2",
+  "2026-11-11-cn-changzhou-r2",
+  "2026-11-11-cn-chengdu-r2",
+  "2026-11-11-cn-dalian-r2",
+  "2026-11-11-cn-dongguan-r2",
+  "2026-11-11-cn-foshan-r2",
+  "2026-11-11-cn-harbin-r2",
+  "2026-11-11-cn-hefei-r2",
+  "2026-11-11-cn-hohhot",
+  "2026-11-11-cn-jinan-r2",
+  "2026-11-11-cn-kunming-r2",
+  "2026-11-11-cn-lanzhou",
+  "2026-11-11-cn-lhasa",
+  "2026-11-11-cn-nanchang-r2",
+  "2026-11-11-cn-nanning-r2",
+  "2026-11-11-cn-ningbo-r2",
+  "2026-11-11-cn-shenyang-r2",
+  "2026-11-11-cn-shijiazhuang",
+  "2026-11-11-cn-taiyuan",
+  "2026-11-11-cn-urumqi",
+  "2026-11-11-cn-wuxi-r2",
+  "2026-11-11-cn-yinchuan-r2"
+ ],
+ "counts": {
+  "records": 5,
+  "new": 5,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "3638652fb78d9cf2e25748115ebc769915e4f7f9b8f593d712397fb16f824387",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-dfa60e5124",
+   "id_frozen": true,
+   "name": "Jianjixian Climbing (Greenland 360)",
+   "country": "CN"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-9edec08ff4",
+   "id_frozen": true,
+   "name": "Skywall Climbing (Miyou Creative Park)",
+   "country": "CN"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-bb4fcc5dc7",
+   "id_frozen": true,
+   "name": "ICG Zhengpan Climbing",
+   "country": "CN"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-48595fb4c6",
+   "id_frozen": true,
+   "name": "KK Climbing Centre (S-PARK)",
+   "country": "CN"
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-26cd06322b",
+   "id_frozen": true,
+   "name": "KK Climbing Club (Yuhua Plaza)",
+   "country": "CN"
+  }
+ ]
+}

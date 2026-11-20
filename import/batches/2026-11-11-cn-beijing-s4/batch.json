@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-11-cn-beijing-s4",
+  "description": "Regional research \"China: Beijing\": 4 new gym(s) accepted of 27 candidate(s)",
+  "created": "2026-11-11",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-11-11-cn-beijing-s4",
+    "section_sha256": "de9baabc0366b583f4803323befb09b051aedf6b5930735d9809168b305bdd99",
+    "sources_sha256": "b8643cde8340013620671a75be515ad7d26182edec4c55f1c0c2940290a21027",
+    "candidates_sha256": "7b6b4c8a4050f3c3d323fa237e5420022da1a19770dcaa47f598049243775d85",
+    "reconcile_sha256": "955debb3696acc64e6da71f7a4187677d28c3655e0f043891a3c81c132386ec7",
+    "review_sha256": "fe9dd9b6ea78b8f0d8b335a5cab5b9582c20b75f5e63f096aa29ef1d7509708b",
+    "candidates": 27,
+    "staged": 4,
+    "decisions": {
+      "accept": 4,
+      "defer": 22,
+      "reject": 1
+    }
+  },
+  "index_at_staging": {
+    "sha256": "fb2af3b217bd169c384ebb1039a7aad5cc5b3d8869165218ff0023a3c2ee2e78",
+    "count": 3612
+  }
+}

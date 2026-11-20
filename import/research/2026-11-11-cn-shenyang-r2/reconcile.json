@@ -1,0 +1,622 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-11-11-cn-shenyang-r2",
+ "inputs": {
+  "section_sha256": "69f720c8684dd3210b2a4d023d1635ad9e3bae4327c6eeb6a066eb18b5961993",
+  "sources_sha256": "1c5029b073bac218cfd57c51cf9e2fec45fa03a4fadf07634bc34723907261ae",
+  "candidates_sha256": "a5237b9dff25e5ccaf1bbd518af121eb632e9b2fa547fb9c27f81d2c2efea762",
+  "index": {
+   "sha256": "fb2af3b217bd169c384ebb1039a7aad5cc5b3d8869165218ff0023a3c2ee2e78",
+   "count": 3612
+  },
+  "staged_batches_compared": [
+   "2026-10-12-cn-beijing-chengdu",
+   "2026-10-12-cn-kunming-changsha",
+   "2026-11-11-cn-changchun",
+   "2026-11-11-cn-foshan-r2",
+   "2026-11-11-cn-hohhot",
+   "2026-11-11-cn-lanzhou",
+   "2026-11-11-cn-lhasa",
+   "2026-11-11-cn-shijiazhuang",
+   "2026-11-11-cn-taiyuan",
+   "2026-11-11-cn-urumqi"
+  ],
+  "other_sections_compared": [
+   {
+    "id": "2026-10-12-cn-beijing-chengdu",
+    "candidates_sha256": "1d2f7b800771adbafe399ecf877f6b8a0f3e7ae43779d02d32a7dcfd5a28d72b"
+   },
+   {
+    "id": "2026-10-12-cn-kunming-changsha",
+    "candidates_sha256": "0d864d1da8b9056771d840c55fe0622203ce0b0bf027522a546705c4985a2bc7"
+   },
+   {
+    "id": "2026-10-12-cn-shanghai",
+    "candidates_sha256": "50d68e713907b009021d0c95484c6350c28f3f6fdb190f1bdebf4271e475b844"
+   },
+   {
+    "id": "2026-11-01-cn-guangzhou",
+    "candidates_sha256": "f1d6750918703d8c7060acf2e91053919e9672d7e5bfb4ba804f74580e462b47"
+   },
+   {
+    "id": "2026-11-01-cn-jinan",
+    "candidates_sha256": "1d133eee1ad38381df03e11c09a5b00f1d31bf934ea382425c7c9346dd21c3ad"
+   },
+   {
+    "id": "2026-11-02-cn-hangzhou",
+    "candidates_sha256": "935f313217f60a9f8730a31a25c3b6a6d047e8dae18f97887412880340264a98"
+   },
+   {
+    "id": "2026-11-06-cn-changsha",
+    "candidates_sha256": "4d940331a2979d6a808638ac95f0d21c64453267ab721f57d1aa5f182a6a45e0"
+   },
+   {
+    "id": "2026-11-06-cn-dali",
+    "candidates_sha256": "4d9f48af97680b566539f7017750c604aa1f3fe3d108a624026f09ab035490a5"
+   },
+   {
+    "id": "2026-11-06-cn-kunming",
+    "candidates_sha256": "a89aeedc830d397ee6216fa46a9c886c1250f1fa953bfe559f5f1ba408ed0e38"
+   },
+   {
+    "id": "2026-11-06-cn-qingdao",
+    "candidates_sha256": "8027c939efa4d955a91317a3c51fb1faa632227a8abf4fd91bc811603fe290a1"
+   },
+   {
+    "id": "2026-11-06-cn-wenzhou",
+    "candidates_sha256": "c7be0b950f78f85139f5d84236d1e9812d2a21d755467bf1c9803af5f06be9c3"
+   },
+   {
+    "id": "2026-11-06-cn-xiamen",
+    "candidates_sha256": "b3fdc7df0df146dc75e9dc18d0362f3a29499e41e5b4da95765ac031e024456b"
+   },
+   {
+    "id": "2026-11-08-cn-changzhou",
+    "candidates_sha256": "4d230bc5000c97dfc14b3c0f6bda8cb9e1398e3cbe7759ce985c5f474fb878c4"
+   },
+   {
+    "id": "2026-11-08-cn-dalian",
+    "candidates_sha256": "f84096528345a09109cc672a5e5d7f95772018160fad914e8c9f9d8668c76dde"
+   },
+   {
+    "id": "2026-11-08-cn-dongguan",
+    "candidates_sha256": "9b624e8272b5e01bcd6c3f6f5feb534821ebc651cc9cd1a059681746807b6d9c"
+   },
+   {
+    "id": "2026-11-08-cn-foshan",
+    "candidates_sha256": "9b38497a66aa6f8291a0005ec91083f786c82a70d4a2f4030bb5c97e8f74e93a"
+   },
+   {
+    "id": "2026-11-08-cn-fuzhou",
+    "candidates_sha256": "391af306cb2a3a25a4bd84c8299c37c9980f975fe3542175565fba553eff4f9d"
+   },
+   {
+    "id": "2026-11-08-cn-guiyang",
+    "candidates_sha256": "4291cad7e5284e83e1a4057d14a2f5503a84f53cfe72bac8575426b08e30b717"
+   },
+   {
+    "id": "2026-11-08-cn-harbin",
+    "candidates_sha256": "f0e867260ea9cac09bb423bae7b0dbd15e830ca8fcb56f5dcf5f3d7ae949a406"
+   },
+   {
+    "id": "2026-11-08-cn-hefei",
+    "candidates_sha256": "97a706996e2d594400725081b8b96212614a2997e1dc656c11f301c665ce2859"
+   },
+   {
+    "id": "2026-11-08-cn-nanchang",
+    "candidates_sha256": "043c8679d89c68f814c6ce0434105dc8f4088de60e68e91a1c096b67fffc11bf"
+   },
+   {
+    "id": "2026-11-08-cn-nanning",
+    "candidates_sha256": "f191b0e6d5dc7193ca9728c61907772e66ecf6bb30c11c193556ee857f94589e"
+   },
+   {
+    "id": "2026-11-08-cn-ningbo",
+    "candidates_sha256": "ecdf2238e915d564d4bc4a533c335b5c3f540a4cd1928488641dd8863873774c"
+   },
+   {
+    "id": "2026-11-08-cn-shenyang",
+    "candidates_sha256": "70af2bf822a0aaeefe5ff915ef0aeccf84ec253955cdc40f975e53b512f99d82"
+   },
+   {
+    "id": "2026-11-08-cn-wuxi",
+    "candidates_sha256": "ed30d026001e1ea5e541dbccd29dba973e6dd4f484c1c8b56bfbeeb522ff3713"
+   },
+   {
+    "id": "2026-11-08-cn-xining",
+    "candidates_sha256": "433ba972cdc08a005ffe5c17a4005300db961f779b5ebbfd5344b6c52aa83d42"
+   },
+   {
+    "id": "2026-11-08-cn-yinchuan",
+    "candidates_sha256": "ad649ba8eca3a69bb32620953c5906e7c1d78a8396fa7c4be439c4be2b7adce1"
+   },
+   {
+    "id": "2026-11-08-cn-zhengzhou",
+    "candidates_sha256": "1ff071588187992b19766dbbd81c4695fc06d38f3305bd43c6a4f8e70398665e"
+   },
+   {
+    "id": "2026-11-08-cn-zhongshan",
+    "candidates_sha256": "e162689c4dd235053f3287d6ca96e3cd3514d7ee6a155e2ad9330b875105f264"
+   },
+   {
+    "id": "2026-11-08-cn-zhuhai",
+    "candidates_sha256": "8e190ee575245236eddb35ab30a06f307adbb0dca387ac0173673193826e4e8a"
+   },
+   {
+    "id": "2026-11-11-cn-beijing-r2",
+    "candidates_sha256": "3e965ca840860a99f7b3e6121b2f4509628e0ba39a13617b4f21f41bb910532e"
+   },
+   {
+    "id": "2026-11-11-cn-changchun",
+    "candidates_sha256": "c592c2018b0af457b424fad7695f5e1507572d4fff0d13f35548e841e3fe54ba"
+   },
+   {
+    "id": "2026-11-11-cn-changsha-r2",
+    "candidates_sha256": "9339ad71fc093a0511dcaca5872c8ab66917d30d486344463d7b30222260d458"
+   },
+   {
+    "id": "2026-11-11-cn-changzhou-r2",
+    "candidates_sha256": "9e8e56f20d96ba8eb7fd3ca1046c8a42d32a995774fe4f64794cb5bc9b82bb1e"
+   },
+   {
+    "id": "2026-11-11-cn-chengdu-r2",
+    "candidates_sha256": "54c0d397f140ec91edb215e771270ac30cc1758d9bb9bceafcf1f933965d7e4f"
+   },
+   {
+    "id": "2026-11-11-cn-dalian-r2",
+    "candidates_sha256": "a36a2d9d9e03e4f0e0b283fa8078e393ec1175f14a471c6ec14f8346df9406bd"
+   },
+   {
+    "id": "2026-11-11-cn-dongguan-r2",
+    "candidates_sha256": "bcbd54fbee1e0733fdb01268d66f9a3318f6d6898e3a45291856884f69da3e02"
+   },
+   {
+    "id": "2026-11-11-cn-foshan-r2",
+    "candidates_sha256": "fc42818355febf7eda4e9e3327794419ff07c8dd2c4268acf9d4a3937102df4a"
+   },
+   {
+    "id": "2026-11-11-cn-guiyang-r2",
+    "candidates_sha256": "f06901f523a603a919455813cbebd7ebd74a3897e15a3e7138f7409ffd3ad42d"
+   },
+   {
+    "id": "2026-11-11-cn-haikou",
+    "candidates_sha256": "3bd50d3de4e5340b0e2cd9af13ff95de5d30559a0144cf031a4c5290fd565bcf"
+   },
+   {
+    "id": "2026-11-11-cn-harbin-r2",
+    "candidates_sha256": "8efaa833b356246608e7b94e1d3f57167975869df18dd3404dd6a5582fba6fe9"
+   },
+   {
+    "id": "2026-11-11-cn-hefei-r2",
+    "candidates_sha256": "f8a68ac9ea4046e56ee89a60e6735864671086c5fa7460e5786d7354c59ee81a"
+   },
+   {
+    "id": "2026-11-11-cn-hohhot",
+    "candidates_sha256": "2fc97f61aaafdeede726c65099065ef1792ac7f4a3b86ef07dbb8fdc1db37fd9"
+   },
+   {
+    "id": "2026-11-11-cn-jinan-r2",
+    "candidates_sha256": "e2639e7b8e9478b90ef742246f5ab0abcf4fa386af7b3eb7dc6e3711d59fbfcc"
+   },
+   {
+    "id": "2026-11-11-cn-kunming-r2",
+    "candidates_sha256": "8f0b7d6c3bcb19c55a14619d1b2b5d54e39ee73813757b7ca522e558d500121e"
+   },
+   {
+    "id": "2026-11-11-cn-lanzhou",
+    "candidates_sha256": "10536a9382fccfae4aea092a4e0cf39e848c00d235e091fb1c80b0bb7adf6709"
+   },
+   {
+    "id": "2026-11-11-cn-lhasa",
+    "candidates_sha256": "5443ae91d80a9cff19737c2a7f2c09b05203e374534e99ee6cb28dd0ffe0988f"
+   },
+   {
+    "id": "2026-11-11-cn-nanchang-r2",
+    "candidates_sha256": "31d083cc1a2e03a5430c3d7007685fb545878283d604611a1f2bba1f6fb4bed1"
+   },
+   {
+    "id": "2026-11-11-cn-nanning-r2",
+    "candidates_sha256": "2c731820f3405fa34d5a108856eb7cd5d7ed5c70e4dd24e0e2937ce18decf1fa"
+   },
+   {
+    "id": "2026-11-11-cn-ningbo-r2",
+    "candidates_sha256": "4402517a3ff2f99ade061705237dd7a4b4b698e51b2731709a4c18624df457c8"
+   },
+   {
+    "id": "2026-11-11-cn-sanya",
+    "candidates_sha256": "3aef39d99f78d65f12e112892ce353ea103535fc6b9810fd29564a4465b2d91b"
+   },
+   {
+    "id": "2026-11-11-cn-shijiazhuang",
+    "candidates_sha256": "b4df77feb8dace643c4026d3b49e764838ae6a7ef09df0e93984cb5d8af95d0f"
+   },
+   {
+    "id": "2026-11-11-cn-taiyuan",
+    "candidates_sha256": "86acdec76916b22dcbde92a8b63e39804f9fe37967cd4f3fa9a7768e958e7f76"
+   },
+   {
+    "id": "2026-11-11-cn-urumqi",
+    "candidates_sha256": "8a27121f65d292fd3326fad230ad67bdda105a1d6261b76065599d9915c0eec5"
+   },
+   {
+    "id": "2026-11-11-cn-wuxi-r2",
+    "candidates_sha256": "746ce2a2b4a617295cd1cb243e23405f1458048779a67db6c006e957090a1b62"
+   },
+   {
+    "id": "2026-11-11-cn-yinchuan-r2",
+    "candidates_sha256": "f5902857c421cbabc4b919212c419a54b1da99b4009a2c272def7bade308fa62"
+   },
+   {
+    "id": "2026-11-11-cn-zhengzhou-r2",
+    "candidates_sha256": "e8364702731412b51ac65c5fe5cc45c117f70bfb2c7a8bafc57ee3ce1a0e51cb"
+   }
+  ]
+ },
+ "review_radii_m": {
+  "NEARBY_ANY_M": 150,
+  "RELATED_NAME_M": 15000,
+  "OTHER_COUNTRY_M": 2000
+ },
+ "counts": {
+  "candidates": 9,
+  "ready": 0,
+  "review": 2,
+  "blocked": 7,
+  "existing": 0,
+  "invalid": 0
+ },
+ "candidates": [
+  {
+   "cid": "cn-shenyang-r2-001",
+   "line": 1,
+   "name": "Jipan Climbing Club (Workers' Sports Centre)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-1bedb80e11"
+   },
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-fe836a047f same-name-but-pin-differs 11005 m",
+     "ids": [
+      "cn-shenyang-r2-002"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "candidate cn-shenyang-r2-002 \"Jipan Climbing Club (Hunnan)\": same-name-but-pin-differs (\"Jipan Climbing Club (Workers' Sports Centre)\" / \"Jipan Climbing Club (Hunnan)\", 11005 m)",
+     "ids": [
+      "cn-shenyang-r2-002"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-11-08-cn-shenyang#cn-sy-101 \"Jipan Climbing Club (Workers' Sports Centre)\": name-match same-name (\"Jipan Climbing Club (Workers' Sports Centre)\" / \"Jipan Climbing Club (Workers' Sports Centre)\", 0 m)",
+     "ids": [
+      "2026-11-08-cn-shenyang#cn-sy-101"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-11-08-cn-shenyang#cn-sy-102 \"Jipan Climbing Club (Hunnan)\": name-match same-name-but-pin-differs (\"Jipan Climbing Club (Workers' Sports Centre)\" / \"Jipan Climbing Club (Hunnan)\", 11005 m)",
+     "ids": [
+      "2026-11-08-cn-shenyang#cn-sy-102"
+     ]
+    },
+    {
+     "code": "visitor-evidence",
+     "detail": "rests on visitor notes (2+ recent, different authors) plus a map listing, not on a gym-controlled source: provisional, check the notes"
+    }
+   ],
+   "review_ids": [
+    "2026-11-08-cn-shenyang#cn-sy-101",
+    "2026-11-08-cn-shenyang#cn-sy-102",
+    "cn-shenyang-r2-002"
+   ]
+  },
+  {
+   "cid": "cn-shenyang-r2-002",
+   "line": 2,
+   "name": "Jipan Climbing Club (Hunnan)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "probable-duplicate",
+    "id": "g-fe836a047f"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "importer-probable-duplicate",
+     "detail": "g-1bedb80e11 same-name-but-pin-differs 11005 m",
+     "ids": [
+      "cn-shenyang-r2-001"
+     ]
+    },
+    {
+     "code": "name-match",
+     "detail": "candidate cn-shenyang-r2-001 \"Jipan Climbing Club (Workers' Sports Centre)\": same-name-but-pin-differs (\"Jipan Climbing Club (Hunnan)\" / \"Jipan Climbing Club (Workers' Sports Centre)\", 11005 m)",
+     "ids": [
+      "cn-shenyang-r2-001"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-11-08-cn-shenyang#cn-sy-101 \"Jipan Climbing Club (Workers' Sports Centre)\": name-match same-name-but-pin-differs (\"Jipan Climbing Club (Hunnan)\" / \"Jipan Climbing Club (Workers' Sports Centre)\", 11005 m)",
+     "ids": [
+      "2026-11-08-cn-shenyang#cn-sy-101"
+     ]
+    },
+    {
+     "code": "other-section",
+     "detail": "2026-11-08-cn-shenyang#cn-sy-102 \"Jipan Climbing Club (Hunnan)\": name-match same-name (\"Jipan Climbing Club (Hunnan)\" / \"Jipan Climbing Club (Hunnan)\", 0 m)",
+     "ids": [
+      "2026-11-08-cn-shenyang#cn-sy-102"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "2026-11-08-cn-shenyang#cn-sy-101",
+    "2026-11-08-cn-shenyang#cn-sy-102",
+    "cn-shenyang-r2-001"
+   ]
+  },
+  {
+   "cid": "cn-shenyang-r2-003",
+   "line": 3,
+   "name": "Today Climbing (Longzhimeng)",
+   "class": "review",
+   "suggested": "review",
+   "importer": {
+    "class": "new",
+    "id": "g-ed0ede1a00"
+   },
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-11-08-cn-shenyang#cn-sy-103 \"Today Climbing (Longzhimeng)\": name-match same-name (\"Today Climbing (Longzhimeng)\" / \"Today Climbing (Longzhimeng)\", 0 m)",
+     "ids": [
+      "2026-11-08-cn-shenyang#cn-sy-103"
+     ]
+    },
+    {
+     "code": "visitor-evidence",
+     "detail": "rests on visitor notes (2+ recent, different authors) plus a map listing, not on a gym-controlled source: provisional, check the notes"
+    }
+   ],
+   "review_ids": [
+    "2026-11-08-cn-shenyang#cn-sy-103"
+   ]
+  },
+  {
+   "cid": "cn-shenyang-r2-004",
+   "line": 4,
+   "name": "Jinxi Climbing",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-ddee44de3e"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-11-08-cn-shenyang#cn-sy-107 \"Jinxi Climbing\": name-match same-name (\"Jinxi Climbing\" / \"Jinxi Climbing\", 0 m)",
+     "ids": [
+      "2026-11-08-cn-shenyang#cn-sy-107"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "2026-11-08-cn-shenyang#cn-sy-107"
+   ]
+  },
+  {
+   "cid": "cn-shenyang-r2-005",
+   "line": 5,
+   "name": "Stone Monkey Climbing",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-3aa90eecf8"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-11-08-cn-shenyang#cn-sy-104 \"Stone Monkey Climbing\": name-match same-name (\"Stone Monkey Climbing\" / \"Stone Monkey Climbing\", 0 m)",
+     "ids": [
+      "2026-11-08-cn-shenyang#cn-sy-104"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "2026-11-08-cn-shenyang#cn-sy-104"
+   ]
+  },
+  {
+   "cid": "cn-shenyang-r2-006",
+   "line": 6,
+   "name": "Xingchen Climbing",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-cbeaaa60f3"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-11-08-cn-shenyang#cn-sy-105 \"Xingchen Climbing\": name-match same-name (\"Xingchen Climbing\" / \"Xingchen Climbing\", 0 m)",
+     "ids": [
+      "2026-11-08-cn-shenyang#cn-sy-105"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "2026-11-08-cn-shenyang#cn-sy-105"
+   ]
+  },
+  {
+   "cid": "cn-shenyang-r2-007",
+   "line": 7,
+   "name": "Kuwan Climbing Fitness Centre",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-73d0ed9f8f"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-11-08-cn-shenyang#cn-sy-108 \"Kuwan Climbing Fitness Centre\": name-match same-name (\"Kuwan Climbing Fitness Centre\" / \"Kuwan Climbing Fitness Centre\", 0 m)",
+     "ids": [
+      "2026-11-08-cn-shenyang#cn-sy-108"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "2026-11-08-cn-shenyang#cn-sy-108"
+   ]
+  },
+  {
+   "cid": "cn-shenyang-r2-008",
+   "line": 8,
+   "name": "Jiuzhou Yuanbao Climbing",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-3a3b448014"
+   },
+   "blockers": [
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-11-08-cn-shenyang#cn-sy-109 \"Jiuzhou Yuanbao Climbing\": name-match same-name (\"Jiuzhou Yuanbao Climbing\" / \"Jiuzhou Yuanbao Climbing\", 0 m)",
+     "ids": [
+      "2026-11-08-cn-shenyang#cn-sy-109"
+     ]
+    }
+   ],
+   "review_ids": [
+    "2026-11-08-cn-shenyang#cn-sy-109"
+   ]
+  },
+  {
+   "cid": "cn-shenyang-r2-009",
+   "line": 9,
+   "name": "Yanwu Space Climbing (Wanda Shenliao Road)",
+   "class": "blocked",
+   "suggested": "defer",
+   "importer": {
+    "class": "new",
+    "id": "g-b09be44091"
+   },
+   "blockers": [
+    {
+     "code": "insufficient-evidence",
+     "detail": "needs a primary source (official site/social, chain store list) confirming it exists and is open, or 2+ recent visitor notes by different authors plus a map listing; a directory or search result alone is not enough"
+    },
+    {
+     "code": "bouldering-unknown",
+     "detail": "bouldering offering not established (never assumed)"
+    }
+   ],
+   "flags": [
+    {
+     "code": "other-section",
+     "detail": "2026-11-08-cn-shenyang#cn-sy-106 \"Yanwu Space Climbing (Wanda Shenliao Road)\": name-match same-name (\"Yanwu Space Climbing (Wanda Shenliao Road)\" / \"Yanwu Space Climbing (Wanda Shenliao Road)\", 0 m)",
+     "ids": [
+      "2026-11-08-cn-shenyang#cn-sy-106"
+     ]
+    },
+    {
+     "code": "single-source",
+     "detail": "all evidence comes from one source"
+    }
+   ],
+   "review_ids": [
+    "2026-11-08-cn-shenyang#cn-sy-106"
+   ]
+  }
+ ],
+ "reconcile_sha256": "5dd4bdb294eaa531af9f81d9c80225bd0e60a21f0a111b5f6c0aedacd005b1f4"
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-11-cn-chengdu-s4",
+  "description": "Regional research \"China: Chengdu\": 3 new gym(s) accepted of 16 candidate(s)",
+  "created": "2026-11-11",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-11-11-cn-chengdu-s4",
+    "section_sha256": "7ef43f6a9967f5115297fa76483ae80b9253cc961c8f004ec9f734439de09e50",
+    "sources_sha256": "eaf84af4a5da2721a52d0c0b422ef6a1a9b948df9327840ca4c5aac4f3233bdc",
+    "candidates_sha256": "95f10999aba519dffd3d38283643a2bb3bd84c77f1340bd465428e4c6d95b166",
+    "reconcile_sha256": "27ec067ead4455bc0f31bfca74848cdfce0c33182fa4198c3a8beb1aeabb7b46",
+    "review_sha256": "ac179aefd67e6b25f03e2bdbb3301b624c4ee1243b16c68f9e177a0c1fc1bb60",
+    "candidates": 16,
+    "staged": 3,
+    "decisions": {
+      "accept": 3,
+      "defer": 6,
+      "reject": 6,
+      "same-as": 1
+    }
+  },
+  "index_at_staging": {
+    "sha256": "fb2af3b217bd169c384ebb1039a7aad5cc5b3d8869165218ff0023a3c2ee2e78",
+    "count": 3612
+  }
+}

@@ -1,0 +1,46 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-11-cn-changchun",
+ "index": {
+  "sha256": "fb2af3b217bd169c384ebb1039a7aad5cc5b3d8869165218ff0023a3c2ee2e78",
+  "count": 3612,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha",
+  "2026-11-11-cn-hohhot",
+  "2026-11-11-cn-lanzhou",
+  "2026-11-11-cn-lhasa",
+  "2026-11-11-cn-shijiazhuang",
+  "2026-11-11-cn-taiyuan",
+  "2026-11-11-cn-urumqi"
+ ],
+ "counts": {
+  "records": 1,
+  "new": 1,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "a294719f83f0c6226f816b7804f09582f006262217a83417c4d8c655c164eed8",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-504147bc31",
+   "id_frozen": true,
+   "name": "My Rock Climbing Club (Zhongdong Dick Park)",
+   "country": "CN"
+  }
+ ]
+}

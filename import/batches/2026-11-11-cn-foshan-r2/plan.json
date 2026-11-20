@@ -1,0 +1,88 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-11-cn-foshan-r2",
+ "index": {
+  "sha256": "fb2af3b217bd169c384ebb1039a7aad5cc5b3d8869165218ff0023a3c2ee2e78",
+  "count": 3612,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha",
+  "2026-11-11-cn-beijing-r2",
+  "2026-11-11-cn-changchun",
+  "2026-11-11-cn-changsha-r2",
+  "2026-11-11-cn-changzhou-r2",
+  "2026-11-11-cn-chengdu-r2",
+  "2026-11-11-cn-dalian-r2",
+  "2026-11-11-cn-dongguan-r2",
+  "2026-11-11-cn-harbin-r2",
+  "2026-11-11-cn-hefei-r2",
+  "2026-11-11-cn-hohhot",
+  "2026-11-11-cn-jinan-r2",
+  "2026-11-11-cn-kunming-r2",
+  "2026-11-11-cn-lanzhou",
+  "2026-11-11-cn-lhasa",
+  "2026-11-11-cn-nanchang-r2",
+  "2026-11-11-cn-nanning-r2",
+  "2026-11-11-cn-ningbo-r2",
+  "2026-11-11-cn-shenyang-r2",
+  "2026-11-11-cn-shijiazhuang",
+  "2026-11-11-cn-taiyuan",
+  "2026-11-11-cn-urumqi",
+  "2026-11-11-cn-wuxi-r2",
+  "2026-11-11-cn-yinchuan-r2",
+  "2026-11-11-cn-zhengzhou-r2"
+ ],
+ "counts": {
+  "records": 4,
+  "new": 4,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "0dda5e815fd6c19f35b2db85421630f22965790335b63c9b2b2c052d85d8e557",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-840a785877",
+   "id_frozen": true,
+   "name": "Super Extreme Climbing (Beijiao)",
+   "country": "CN"
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-2cc02c27a3",
+   "id_frozen": true,
+   "name": "Crag4yard Climbing x Fitness",
+   "country": "CN"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-d91db8ffec",
+   "id_frozen": true,
+   "name": "Moment Climbing (Daliang Qinghuiyuan)",
+   "country": "CN"
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-853a58ab6d",
+   "id_frozen": true,
+   "name": "Mars Climbing (Shunlian Park)",
+   "country": "CN"
+  }
+ ]
+}

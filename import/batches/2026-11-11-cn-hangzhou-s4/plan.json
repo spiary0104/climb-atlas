@@ -1,0 +1,133 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-11-cn-hangzhou-s4",
+ "index": {
+  "sha256": "fb2af3b217bd169c384ebb1039a7aad5cc5b3d8869165218ff0023a3c2ee2e78",
+  "count": 3612,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha",
+  "2026-11-11-cn-beijing-r2",
+  "2026-11-11-cn-changchun",
+  "2026-11-11-cn-changsha-r2",
+  "2026-11-11-cn-changzhou-r2",
+  "2026-11-11-cn-chengdu-r2",
+  "2026-11-11-cn-dalian-r2",
+  "2026-11-11-cn-dongguan-r2",
+  "2026-11-11-cn-foshan-r2",
+  "2026-11-11-cn-harbin-r2",
+  "2026-11-11-cn-hefei-r2",
+  "2026-11-11-cn-hohhot",
+  "2026-11-11-cn-jinan-r2",
+  "2026-11-11-cn-kunming-r2",
+  "2026-11-11-cn-lanzhou",
+  "2026-11-11-cn-lhasa",
+  "2026-11-11-cn-nanchang-r2",
+  "2026-11-11-cn-nanning-r2",
+  "2026-11-11-cn-ningbo-r2",
+  "2026-11-11-cn-shenyang-r2",
+  "2026-11-11-cn-shijiazhuang",
+  "2026-11-11-cn-taiyuan",
+  "2026-11-11-cn-urumqi",
+  "2026-11-11-cn-wuxi-r2",
+  "2026-11-11-cn-yinchuan-r2",
+  "2026-11-11-cn-zhengzhou-r2"
+ ],
+ "counts": {
+  "records": 7,
+  "new": 7,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "79c6dcc18883ee3e56200c62c4c5556309ccc497a01cfd7f466a65a3288b469a",
+ "records": [
+  {
+   "line": 1,
+   "class": "new",
+   "id": "g-e851c82e70",
+   "id_frozen": true,
+   "name": "Huandao Climbing (Bafang Library)",
+   "country": "CN",
+   "reviewed_distinct": {
+    "reason": "Own account posted 2026-09-11 (invitation to check in the red lines) and a visitor note of 2026-11-10 shows it open; two visitor notes by different authors (06-02 and 08-01) show V3 problems at the Bafang store. Based on titles. Amap listing 环岛攀岩(八方图书馆店) matches; the directory address says 运谷街 but Amap lists 振谷街, same venue. Flags reviewed: nearby/related-name flags are other gyms at distinct addresses unless noted.",
+    "reviewer": "Claude (AI) research worker; decisions drafted 2026-11-11, pending owner sign-off"
+   }
+  },
+  {
+   "line": 2,
+   "class": "new",
+   "id": "g-68707f41d2",
+   "id_frozen": true,
+   "name": "Yanli Lab Climbing",
+   "country": "CN"
+  },
+  {
+   "line": 3,
+   "class": "new",
+   "id": "g-7de3465c87",
+   "id_frozen": true,
+   "name": "Luna Climbing (Xitou Intime)",
+   "country": "CN",
+   "reviewed_distinct": {
+    "reason": "Own account posted V2/V3 and V3/V4 beta (2026-10-24, 10-26) and a coach-recruitment post on 11-10, so it is open and bouldering-graded; a visitor note 2026-09-05 also covers the store. Based on titles. Amap listing matches (西投银泰城). Flags reviewed: nearby/related-name flags are other gyms at distinct addresses unless noted.",
+    "reviewer": "Claude (AI) research worker; decisions drafted 2026-11-11, pending owner sign-off"
+   }
+  },
+  {
+   "line": 4,
+   "class": "new",
+   "id": "g-28cadafc2d",
+   "id_frozen": true,
+   "name": "Luna Climbing (Shangcheng Tianjie)",
+   "country": "CN",
+   "reviewed_distinct": {
+    "reason": "Own account posted 2026-10-22; two visitor notes by different authors show V-graded problems at this store (拍不住包 10-29 V3x9, 小熊友 10-30 V2x13 for the 26.10-11 season). Based on titles. Amap listing is named only 噜呐攀岩 at 上城天街 (no branch suffix) but the address and mall match the directory. Flags reviewed: nearby/related-name flags are other gyms at distinct addresses unless noted.",
+    "reviewer": "Claude (AI) research worker; decisions drafted 2026-11-11, pending owner sign-off"
+   }
+  },
+  {
+   "line": 5,
+   "class": "new",
+   "id": "g-fe05c62366",
+   "id_frozen": true,
+   "name": "PAN UP Climbing",
+   "country": "CN"
+  },
+  {
+   "line": 6,
+   "class": "new",
+   "id": "g-c028595d7b",
+   "id_frozen": true,
+   "name": "Luna Climbing (Chengxi Intime)",
+   "country": "CN",
+   "reviewed_distinct": {
+    "reason": "Own account posted 2026-11-02 (route reset notice) and 10-24; visitor notes by different authors on 2026-11-09 (V3x7 and V4/V5 lines) show bouldering at this store. Based on titles. Amap entrance matches (丰潭路380银泰城). Nearest Bouldeer gym 3.2 km away. Flags reviewed: nearby/related-name flags are other gyms at distinct addresses unless noted.",
+    "reviewer": "Claude (AI) research worker; decisions drafted 2026-11-11, pending owner sign-off"
+   }
+  },
+  {
+   "line": 7,
+   "class": "new",
+   "id": "g-4de1b9a6a2",
+   "id_frozen": true,
+   "name": "CLIFFS Climbing (Xiaoshan Zhong'an)",
+   "country": "CN",
+   "reviewed_distinct": {
+    "reason": "Own account posted 2026-11-06 (November V3-V4 route collection) and a visitor note 2026-10-08 shows V2x19. Based on titles. Amap entrance matches (萧山众安广场F3). Flags reviewed: nearby/related-name flags are other gyms at distinct addresses unless noted.",
+    "reviewer": "Claude (AI) research worker; decisions drafted 2026-11-11, pending owner sign-off"
+   }
+  }
+ ]
+}

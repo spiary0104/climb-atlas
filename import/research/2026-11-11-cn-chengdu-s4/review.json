@@ -1,0 +1,85 @@
+{
+ "schema_version": 1,
+ "section_id": "2026-11-11-cn-chengdu-s4",
+ "reviewer": "Claude (AI) research worker; decisions drafted 2026-11-11, pending owner sign-off",
+ "reviewed": "2026-11-11",
+ "decisions": {
+  "cn-chengdu-s4-001": {
+   "decision": "defer",
+   "reason": "Amap POI is the 领攀登山培训学校 mountaineering school; notes cover a 21 m tall wall, 5.11D routes and outdoor courses, no bouldering or V grades for this store."
+  },
+  "cn-chengdu-s4-002": {
+   "decision": "reject",
+   "reason_code": "duplicate",
+   "reason": "Same gym as Bouldeer seed-632 (Chengdu Sport University Eastern Campus Climbing Gym): the Amap POI name and address match it."
+  },
+  "cn-chengdu-s4-003": {
+   "decision": "reject",
+   "reason_code": "duplicate",
+   "reason": "Same gym as Bouldeer seed-635 (Bear Bear Climbing, 268 Huiyuan North Rd); Amap address matches, 159 m away."
+  },
+  "cn-chengdu-s4-004": {
+   "decision": "defer",
+   "reason": "Open settled (own account 04-15, 04-30; visitor notes to 07). Only one title gives a V grade (王小弟, V7/V6, 2026-07-07); no second V-grade or explicit bouldering statement in titles, and note pages could not be opened."
+  },
+  "cn-chengdu-s4-005": {
+   "decision": "reject",
+   "reason_code": "duplicate",
+   "reason": "Same venue as Bouldeer seed-634 (Climbing Hero (Shuangliu Wanda)); also a children's gym by name."
+  },
+  "cn-chengdu-s4-006": {
+   "decision": "accept",
+   "reason": "Visitor notes by different authors: V2-3 collection (2026-09-09), new V3-V4 (2026-11-11), new routes (11-10) at 超能. Amap POI address matches 红星路459号附114号. Flags reviewed: nearby/related-name flags are other gyms at distinct addresses unless noted.",
+   "reviewed_against": []
+  },
+  "cn-chengdu-s4-007": {
+   "decision": "defer",
+   "reason": "Notes found are about other 攀登侠 stores or kids' climbing; nothing specific to the 蜀都万达 store, and the 攀登侠 brand is mainly children's climbing."
+  },
+  "cn-chengdu-s4-008": {
+   "decision": "defer",
+   "reason": "Amap POI is the 南湖梦幻岛 amusement park; notes describe a climbing play area ('攀爬乐园'), not a bouldering gym."
+  },
+  "cn-chengdu-s4-009": {
+   "decision": "reject",
+   "reason_code": "duplicate",
+   "reason": "Same gym as Bouldeer seed-626 (Qurui Climbing, Longhu Shangcheng Tianjie, next to KFC); name and address match."
+  },
+  "cn-chengdu-s4-010": {
+   "decision": "reject",
+   "reason_code": "not-public",
+   "reason": "Children's climbing gym by name (攀登侠儿童攀岩馆, Wangfujing); based on the name only. Not an adult bouldering venue."
+  },
+  "cn-chengdu-s4-011": {
+   "decision": "reject",
+   "reason_code": "not-public",
+   "reason": "Children's climbing gym by name (攀登侠儿童攀岩馆, Xindu Poly Plaza); based on the name and a 攀登侠 note titled 'kids climbing in a mall'."
+  },
+  "cn-chengdu-s4-012": {
+   "decision": "defer",
+   "reason": "Already accepted in the held batch 2026-10-12-cn-beijing-chengdu (not applied yet); not staged twice."
+  },
+  "cn-chengdu-s4-013": {
+   "decision": "defer",
+   "reason": "Opened summer 2026 (beta 06-18, opening 08-31) and notes run to 11-01, so open. No title says bouldering or gives a V grade for this store (one 'immersive bouldering' title by 四季体验官 is not clearly 石屿); note pages could not be opened."
+  },
+  "cn-chengdu-s4-014": {
+   "decision": "same-as",
+   "same_as": "seed-619",
+   "reason": "Same gym as seed-619 Climbing Panda (Tianfu Joy City); the importer matches it as existing (pin and content differ; a location update is a separate task)."
+  },
+  "cn-chengdu-s4-015": {
+   "decision": "accept",
+   "reason": "Visitor notes by different authors: V2 (2026-11-08), CY-A new V3 (10-27), V4 indoor collection (10-13) at 丘山 CyPARK. Amap POI matches the address. Flags reviewed: nearby/related-name flags are other gyms at distinct addresses unless noted.",
+   "reviewed_against": []
+  },
+  "cn-chengdu-s4-016": {
+   "decision": "accept",
+   "reason": "Not a worklist item: surfaced while fixing item 78's Amap match. Opened Aug-Oct 2026; own account plus visitor notes by different authors with V3/V4 at this store. Check it is not already on Bouldeer (nearest known is seed-631, 4 km away). Flags reviewed: nearby/related-name flags are other gyms at distinct addresses unless noted.",
+   "reviewed_against": [
+    "seed-622",
+    "seed-611"
+   ]
+  }
+ }
+}

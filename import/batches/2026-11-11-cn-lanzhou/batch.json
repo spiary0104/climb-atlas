@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "2026-11-11-cn-lanzhou",
+  "description": "Regional research \"China: Lanzhou\": 2 new gym(s) accepted of 4 candidate(s)",
+  "created": "2026-11-11",
+  "source": {
+    "kind": "regional-research",
+    "section": "import/research/2026-11-11-cn-lanzhou",
+    "section_sha256": "61b5506bcd5fa60f3946ff743a6ff174e6013d04e4e9ab81c23a59f9c31b960d",
+    "sources_sha256": "4b921ff6125ee0d58e17c270c4046b7527b0613f8067f484a7c5e9273c8eb27a",
+    "candidates_sha256": "10536a9382fccfae4aea092a4e0cf39e848c00d235e091fb1c80b0bb7adf6709",
+    "reconcile_sha256": "26a3bedd1a24381b2f033950162807868f7e82c4938e6796b8245c438f5976fe",
+    "review_sha256": "ee4ad79cc3682b3baafe9ea240d6c249035921d66761c821309d2d29ac479ded",
+    "candidates": 4,
+    "staged": 2,
+    "decisions": {
+      "accept": 2,
+      "defer": 2
+    }
+  },
+  "index_at_staging": {
+    "sha256": "fb2af3b217bd169c384ebb1039a7aad5cc5b3d8869165218ff0023a3c2ee2e78",
+    "count": 3612
+  }
+}
