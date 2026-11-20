@@ -17,7 +17,7 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 ### China (Chengdu) pilot — Gate 0 done 2026-10-31; Gate 1 approved 2026-11-01; pilot data and name_local schema live
 - Network: no mainland hosting now (Supabase ~28% reachable on mainland networks; ICP needs a Chinese entity); roaming/eSIM
   guidance + a minimal offline "download a city" mode later. Plan: https://claude.ai/artifact/GVHNLJWVT6gdQyQCVSM4Lm
-- Next: the app does not read name_local/address_local/visitor yet (grep js/, 2026-11-10), so the China fills are stored but not shown.
+- name_local (lists, leads in a matching UI language), address_local + Amap (gym page) shown; visitor info: shown when filled.
   Visitor info: WeChat checks by someone with WeChat (owner note 2026-11-01).
 - Map tiles: CARTO keyless under its non-commercial terms (owner 2026-11-01); if use turns commercial, fall back to OpenFreeMap.
 
@@ -46,7 +46,7 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 - Apply `supabase/migrations/20261114000100_gym_aliases.sql` (untested locally: Docker was off), then add `aliases` to LIST_COLUMNS in
   data-load.js AND spots-prefetch.js (a test keeps them identical) and regenerate the fallback; search-index.js already reads it.
 - Import pipeline: write only verified aliases (own signage/site/social). Visitor i18n model: `visitor` stays the original; optional `visitor_lang`, `visitor_i18n` jsonb {en:{...}}.
-### i18n (docs/i18n.md): place names (cities/regions) still English in zh-CN; legal pages English only; unify 岩馆/攀岩馆; zh-TW (convert + review), ja/ko (place-names.js labels); SEO per-language URLs and Play/TWA are owner decisions.
+### i18n (docs/i18n.md): 9 languages + place names live; open: native review, legal pages English only, unify 岩馆/攀岩馆; SEO per-language URLs and Play/TWA are owner decisions.
 ### Welcome / account deletion / community publishing
 - One-time welcome after first email confirmation (owner 2026-10-05). Self-serve account deletion (legal pages promise 30 days).
 - Phase 4: publish-then-review for edits, photos and confirm points are not built.

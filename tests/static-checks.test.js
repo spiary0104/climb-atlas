@@ -135,6 +135,7 @@ const SAFE_EXPR = [
   // list-html.js / page-html.js local-script names: localNameHtml and localAddressHtml escape the value themselves and take
   // only literal class names; `lang` is read from the fixed LOCAL_LANG country table, never from the database
   /^localNameHtml\(g, '[a-z -]+'\)$/, /^localAddressHtml\(g\)$/, /^lang$/,
+  /^primaryNameHtml\(g\)$/,                                                   // the leading name (escapes itself, list-html.js)
   // visit-html.js: addressActionsHtml escapes every database value itself (tests/visit-html.test.js)
   /^addressActionsHtml\(g\)$/,
 ];
