@@ -12,7 +12,7 @@
 | Rejected by a human decision | 0 |
 | **Total records in batch** | 2 |
 
-Index: 3612 known gyms (sha256 fb2af3b217bd…). Plan: 95d89aa8a773… Also compared against staged batches: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha, 2026-11-11-cn-changchun, 2026-11-11-cn-hohhot, 2026-11-11-cn-lhasa, 2026-11-11-cn-shijiazhuang, 2026-11-11-cn-taiyuan, 2026-11-11-cn-urumqi.
+Index: 3648 known gyms (sha256 b5076a247a1e…). Plan: 3cbcfe013a58… Also compared against staged batches: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha, 2026-11-11-cn-lhasa, 2026-11-11-cn-nanchang-r2, 2026-11-11-cn-nanning-r2, 2026-11-11-cn-ningbo-r2, 2026-11-11-cn-shanghai-s4, 2026-11-11-cn-shenyang-r2, 2026-11-11-cn-shijiazhuang, 2026-11-11-cn-taiyuan, 2026-11-11-cn-urumqi, 2026-11-11-cn-wuxi-r2, 2026-11-11-cn-yinchuan-r2, 2026-11-11-cn-zhengzhou-r2.
 
 ## New gyms (2)
 
