@@ -1184,3 +1184,17 @@ test('LOCAL STACK: a real identity correction writes exactly name/suburb/types (
   const r4 = await runImport({ batchDir: s4.b.dir, indexDir: s4.indexDir, env: e });
   assert.equal(r4.exit, 2, r4.report); assert.match(r4.report, /would make it a probable duplicate of seed-100/); assert.equal(JSON.stringify(await adm.all()), snap4, 'nothing written');
 });
+
+test('bulk insert of rows with different optional fields lists the columns and asks for column defaults (PGRST102 fix)', async () => {
+  const api = new T.Api(T.resolveTarget({ SUPABASE_URL: 'http://127.0.0.1:54321', SUPABASE_ANON_KEY: fakeJwt('anon'), SUPABASE_SERVICE_ROLE_KEY: fakeJwt('service_role') }));
+  const sent = [];
+  api._send = async (method, path, opts) => { sent.push({ method, path, opts }); return { ok: true, status: 201 }; };
+  const rows = [{ id: 'g-aaaaaaaaaa', name: 'A', address_local: '路1号' }, { id: 'g-bbbbbbbbbb', name: 'B' }];
+  const gate = T.mintWriteGate({ batchId: 'x', token: 'y', rows, payloadSha: require('../scripts/lib/gym-import/importer').payloadSha(rows) });
+  await api.insertSpots(rows, gate);
+  assert.equal(sent.length, 1);
+  assert.equal(sent[0].path, '/rest/v1/spots?columns=id,name,address_local');
+  assert.match(sent[0].opts.headers.Prefer, /return=minimal/);
+  assert.match(sent[0].opts.headers.Prefer, /missing=default/);
+  assert.equal(sent[0].opts.body, JSON.stringify(rows), 'the payload itself is unchanged (no invented values)');
+});
