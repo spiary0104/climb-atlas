@@ -12,7 +12,7 @@
 | Rejected by a human decision | 0 |
 | **Total records in batch** | 3 |
 
-Index: 3457 known gyms (sha256 39a207384343…). Plan: a3c79227bc39… Also compared against staged batches: 2026-10-06-kr-seoul, 2026-11-08-cn-changzhou, 2026-11-08-cn-dalian, 2026-11-08-cn-zhongshan, 2026-11-08-cn-zhuhai.
+Index: 3600 known gyms (sha256 a5ff984d68bc…). Plan: d8a91b4b4327… Also compared against staged batches: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha, 2026-11-08-cn-xining, 2026-11-08-cn-yinchuan, 2026-11-08-cn-zhengzhou, 2026-11-08-cn-zhongshan, 2026-11-08-cn-zhuhai.
 
 ## New gyms (3)
 

@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-11-08-cn-wuhan-info",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "8d741cdba1f271ec45aea8a1853a1e48108efc2a2f0323e84705c67e80cd7b2d",
+  "payload_sha256": "2f29fb2cfdfa34925d90beb788f21f962060bbae8197c465d7de39e7c60f722c",
+  "confirm_token": "c2c1425cf59ff6e5",
+  "live_state_sha256": "3a8436eec4e869d28a1f21465866a2c862c0a634ab954354d8605106bfba4eff",
+  "rows_updated": 0,
+  "approved_before": 3614,
+  "approved_after": 3614,
+  "changes": [],
+  "rows_info_filled": 7,
+  "info_filled": [
+    {
+      "id": "seed-693",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "19f9eafe77ac3c06",
+      "after_h": "19f9eafe77ac3c06"
+    },
+    {
+      "id": "seed-694",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "ac8f7d67989c4d02",
+      "after_h": "ac8f7d67989c4d02"
+    },
+    {
+      "id": "seed-692",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "029808efe6926e5a",
+      "after_h": "029808efe6926e5a"
+    },
+    {
+      "id": "seed-695",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "27128fdd079b448a",
+      "after_h": "27128fdd079b448a"
+    },
+    {
+      "id": "seed-699",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "a17b145028a1cfb7",
+      "after_h": "a17b145028a1cfb7"
+    },
+    {
+      "id": "seed-704",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "9ff3945e160ed3b4",
+      "after_h": "9ff3945e160ed3b4"
+    },
+    {
+      "id": "seed-696",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "62d2944fc39e3daf",
+      "after_h": "62d2944fc39e3daf"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 7,
+    "problems": []
+  },
+  "started_at": "2026-11-11T00:52:00.961Z",
+  "finished_at": "2026-11-11T00:52:05.460Z",
+  "ids": [
+    "seed-693",
+    "seed-694",
+    "seed-692",
+    "seed-695",
+    "seed-699",
+    "seed-704",
+    "seed-696"
+  ]
+}

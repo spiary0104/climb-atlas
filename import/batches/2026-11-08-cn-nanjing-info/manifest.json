@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-11-08-cn-nanjing-info",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "d81fb7228d626e03773fa01164828f5b7b98393049d70b3024ef223affc9fc22",
+  "payload_sha256": "c9189ce91f220441f8d2de96de5cc78126c0d7811be92fca32369798635cb65c",
+  "confirm_token": "6798dd56211a8abe",
+  "live_state_sha256": "3a8436eec4e869d28a1f21465866a2c862c0a634ab954354d8605106bfba4eff",
+  "rows_updated": 0,
+  "approved_before": 3614,
+  "approved_after": 3614,
+  "changes": [],
+  "rows_info_filled": 8,
+  "info_filled": [
+    {
+      "id": "seed-859",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "d2422b49e32c23a8",
+      "after_h": "d2422b49e32c23a8"
+    },
+    {
+      "id": "seed-854",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "7945bbdf0043ab97",
+      "after_h": "7945bbdf0043ab97"
+    },
+    {
+      "id": "seed-849",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "b5de4ca8dc5a0863",
+      "after_h": "b5de4ca8dc5a0863"
+    },
+    {
+      "id": "seed-850",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "ce707c024f818869",
+      "after_h": "ce707c024f818869"
+    },
+    {
+      "id": "seed-848",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "b19e1f777ea2c23d",
+      "after_h": "b19e1f777ea2c23d"
+    },
+    {
+      "id": "seed-853",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "642a4ffd1faa3f37",
+      "after_h": "642a4ffd1faa3f37"
+    },
+    {
+      "id": "seed-856",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "076b3ae3c62497ab",
+      "after_h": "076b3ae3c62497ab"
+    },
+    {
+      "id": "seed-858",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "419818d9fc3c08dd",
+      "after_h": "419818d9fc3c08dd"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 8,
+    "problems": []
+  },
+  "started_at": "2026-11-11T00:51:17.265Z",
+  "finished_at": "2026-11-11T00:51:21.953Z",
+  "ids": [
+    "seed-859",
+    "seed-854",
+    "seed-849",
+    "seed-850",
+    "seed-848",
+    "seed-853",
+    "seed-856",
+    "seed-858"
+  ]
+}
