@@ -76,6 +76,7 @@ test('search: Enter on a query that names a place exactly goes to that place; ot
 });
 
 test('metro pages use the shared place title (seo-meta.js), like country, region and suburb pages', () => {
-  assert.match(read('js/modules/region-page.js'), /placeSeo\(\{ kind: 'city', name: metro\.name, within: regionName \+ ', ' \+ country, count: gyms\.length, tr: t \}\)\.title/);
+  assert.match(read('js/modules/region-page.js'), /placeSeo\(\{ kind: 'city', name, within: regionName \+ ', ' \+ country, count: gyms\.length, tr: t \}\)\.title/);
+  assert.match(read('js/modules/region-page.js'), /name = metroName\(metro\)/, 'the metro name follows the interface language');
 });
 

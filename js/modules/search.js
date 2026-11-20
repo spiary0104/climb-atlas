@@ -4,9 +4,9 @@
 //   Browse (the Regions tab): every country with gyms, grouped by continent, so no place is reachable only by typing.
 //   Keyboard: arrows move, Enter selects (or applies the text as a list filter), Escape closes.
 import { COUNTRY_LABELS, COUNTRY_TO_REGION, REGION_LABELS, countryEnglish } from './constants.js';
-import { t, th } from './i18n.js';
+import { metroName, t, th } from './i18n.js';
 import { searchGroupHtml, searchOptionHtml } from './list-html.js';
-import { stateLabel } from './map.js';
+import { stateLabel, stateLabelEn } from './map.js';
 import { fold } from './geo.js';
 import { buildSearchIndex, querySearchIndex } from './search-index.js';
 import { appState } from './state.js';
@@ -21,7 +21,7 @@ let timer = null;
 let mode = 'query';        // 'query' | 'browse'
 
 export function rebuildSearchIndex(){
-  appState.searchIndex = buildSearchIndex(appState.spots, { countryLabels: COUNTRY_LABELS, countryAlt: countryEnglish, stateLabel });
+  appState.searchIndex = buildSearchIndex(appState.spots, { countryLabels: COUNTRY_LABELS, countryAlt: countryEnglish, stateLabel, stateLabelEn, metroName });
 }
 
 function readRecent(){

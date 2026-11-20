@@ -2,13 +2,13 @@
 // {region} (its cities and gyms), /in/{country}/{region}/{city} (its gyms). Every place is derived from the gyms
 // themselves, so counts match Explore and search. Each page has a mini map of its gyms linking to Explore with the
 // place applied: the non-map browse path the accessibility contract asks for (sec. 15).
-import { COUNTRY_LABELS, COUNTRY_TO_REGION, REGION_LABELS } from './constants.js';
+import { COUNTRY_LABELS, COUNTRY_TO_REGION, REGION_LABELS, countryEnglish } from './constants.js';
 import { encodeExploreState, fitCamera } from './geo.js';
-import { stateLabel } from './map.js';
+import { stateLabel, stateLabelEn } from './map.js';
 import { destroyMiniMaps, mountMiniMaps } from './mini-map.js';
 import { metroByPath, metroKey, metroOf, metrosForRegion } from './metros.js';
 import { notFoundHtml, pageSkeletonHtml, placePageHtml, regionMeta, regionSearchResultsHtml, regionsIndexHtml } from './page-html.js';
-import { t } from './i18n.js';
+import { metroName, t } from './i18n.js';
 import { registerView, setPageTitle } from './router.js';
 import { regionCanonicalPath } from './place-canonical.js';
 import { buildSearchIndex, placeKey, querySearchIndex } from './search-index.js';
@@ -106,7 +106,7 @@ function regionView({ country, region }, view){
   // cross-region ones with 2+ gyms here, counted by those gyms. The suburbs of gyms in no metro follow as areas. The meta
   // line counts each kind by what it is, never suburbs as cities.
   const metros = metrosForRegion(appState.spots, cc, state)
-    .map(x => ({ label: x.metro.name, href: metroPath(x.metro), count: x.core ? x.total : x.here })).sort((a, b) => b.count - a.count || byName(a, b));
+    .map(x => ({ label: metroName(x.metro), href: metroPath(x.metro), count: x.core ? x.total : x.here })).sort((a, b) => b.count - a.count || byName(a, b));
   const loose = gyms.filter(g => !metroOf(g));
   const areas = groupTiles(loose.filter(g => (g.suburb || '').trim()), g => citySegment(g.suburb), g => g.suburb.trim(), g => cityPath(cc, state, g.suburb));
   render(view, placePageHtml({
@@ -125,14 +125,14 @@ function metroView(metro, view){
   const cc = metro.country;
   const gyms = appState.spots.filter(g => g.country === cc && metroOf(g) === metro);
   if(!gyms.length) return false;
-  const regionName = stateLabel(cc, metro.state), country = COUNTRY_LABELS[cc];
+  const regionName = stateLabel(cc, metro.state), country = COUNTRY_LABELS[cc], name = metroName(metro);
   render(view, placePageHtml({
-    crumbs: [{ label: t('nav.regions'), href: '/in' }, { label: country, href: countryPath(cc) }, { label: regionName, href: regionPath(cc, metro.state) }, { label: metro.name, current: true }],
-    title: metro.name,
+    crumbs: [{ label: t('nav.regions'), href: '/in' }, { label: country, href: countryPath(cc) }, { label: regionName, href: regionPath(cc, metro.state) }, { label: name, current: true }],
+    title: name,
     meta: t('common.gymCount', { count: gyms.length }) + ' · ' + regionName,
     gymsTitle: t('place.gyms'), gyms: gymItems(gyms),
-    map: mapFor(gyms, metroKey(metro), metro.name),
-  }), gyms, placeSeo({ kind: 'city', name: metro.name, within: regionName + ', ' + country, count: gyms.length, tr: t }).title);
+    map: mapFor(gyms, metroKey(metro), name),
+  }), gyms, placeSeo({ kind: 'city', name, within: regionName + ', ' + country, count: gyms.length, tr: t }).title);
   return true;
 }
 
@@ -156,7 +156,7 @@ function cityView({ country, region, city }, view){
 // /in search: the app's search index (search-index.js, the one Explore uses): countries, regions, cities, then gyms, each
 // a link to its page. Only countries with a page are offered.
 function regionSearchItems(text){
-  const idx = appState.searchIndex || (appState.searchIndex = buildSearchIndex(appState.spots, { countryLabels: COUNTRY_LABELS, stateLabel }));
+  const idx = appState.searchIndex || (appState.searchIndex = buildSearchIndex(appState.spots, { countryLabels: COUNTRY_LABELS, countryAlt: countryEnglish, stateLabel, stateLabelEn, metroName }));
   const r = querySearchIndex(idx, text);
   const byId = new Map(appState.spots.map(g => [g.id, g]));
   const known = e => !!COUNTRY_LABELS[e.country];

@@ -6,9 +6,8 @@
 // queues event listeners; from then on every call goes to the real map.
 import { CONTINENT_LABEL_ZOOM, COUNTRY_FLY_TARGETS, COUNTRY_LABELS, COUNTRY_LABEL_ZOOM, COUNTRY_TO_REGION, HOLD_ICON_ZOOM, PIN_DOT_MAX_ZOOM, REGION_FLY_TARGETS, REGION_LABELS, TYPE_LABELS, motion } from './constants.js';
 import { boundsOf, decodeExploreState, fitCamera, stackOffsets, viewBox } from './geo.js';
-import { t } from './i18n.js';
+import { currentLocale, t } from './i18n.js';
 import { pinSvg } from './pin-html.js';
-import { STATES_BY_COUNTRY } from './regions.js';
 import { appState } from './state.js';
 
 export const LAST_CAMERA_KEY = 'bouldeer_last_camera';
@@ -101,10 +100,8 @@ export function viewBounds(){
   return boundsOf(b.getWest(), b.getSouth(), b.getEast(), b.getNorth());
 }
 
-export function stateLabel(country, state){
-  const entry = (STATES_BY_COUNTRY[country]||[]).find(([code])=>code===state);
-  return entry ? entry[1] : state;
-}
+import { stateLabel } from './region-label.js';
+export { stateLabel, stateLabelEn } from './region-label.js';
 
 // MapLibre doesn't cluster arbitrary DOM markers itself, so supercluster computes the groups (radius 48, maxZoom 15 so
 // individual pins are guaranteed above it, sec. 7.8); plain maplibregl.Marker elements are repainted for whatever is in
@@ -227,9 +224,12 @@ function paintRegionLabels(bbox, zoom){
       if(accepted.some(a=>Math.hypot(a.pt.x - cand.pt.x, a.pt.y - cand.pt.y) < MIN_LABEL_SPACING)) return;
       accepted.push(cand);
       seenLabels.add(cand.key);
-      if(appState.regionLabelMarkers[cand.key]) return;
+      const painted = appState.regionLabelMarkers[cand.key];
+      if(painted && painted.getElement().dataset.lang === currentLocale()) return;
+      if(painted) painted.remove();   // painted in another language: repaint
       const el = document.createElement('div');
       el.className = 'region-label';
+      el.dataset.lang = currentLocale();
       if(showContinentTier){
         el.textContent = REGION_LABELS[cand.c.region] || cand.c.region;
         el.classList.add('continent-label');

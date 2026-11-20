@@ -34,7 +34,9 @@ function extend(b, g){
 // Place keys double as the ?place= URL value and the filter key: "AU", "AU:NSW", "AU:NSW:Marrickville".
 export const placeKey = (country, state, suburb) => [country, state, suburb].filter(v => v != null && v !== '').join(':');
 
-export function buildSearchIndex(spots, { countryLabels = {}, countryAlt = () => '', stateLabel = (c, s) => s } = {}){
+// stateLabel / metroName: names in the interface language; stateLabelEn: the English region name, so "tokyo" still finds
+// 東京都 (and the reverse), as countryAlt does for countries.
+export function buildSearchIndex(spots, { countryLabels = {}, countryAlt = () => '', stateLabel = (c, s) => s, stateLabelEn = null, metroName = m => m.name } = {}){
   const countries = new Map(), regions = new Map(), cities = new Map(), metros = new Map(), gyms = [];
   const secondaryOf = (region, country) => region === country ? country : region + ' · ' + country;
   for(const g of spots){
@@ -44,11 +46,13 @@ export function buildSearchIndex(spots, { countryLabels = {}, countryAlt = () =>
     // countryAlt: the English name, so "china" still finds the country while its label is 中国 (and vice versa for the code)
     const alt = countryAlt(g.country);
     if(!countries.has(ck)) countries.set(ck, { kind: 'country', key: ck, label: country, secondary: '', codes: [fold(g.country), ...(alt && fold(alt) !== fold(country) ? [fold(alt)] : [])], alt: alt || '', count: 0, bounds: null, country: g.country });
-    if(!regions.has(rk)) regions.set(rk, { kind: 'region', key: rk, label: region, secondary: country, codes: [fold(g.state)], count: 0, bounds: null, country: g.country, state: g.state });
+    const regionEn = !regions.has(rk) && stateLabelEn ? stateLabelEn(g.country, g.state) : '', regionAlt = regionEn && regionEn !== region ? regionEn : '';
+    if(!regions.has(rk)) regions.set(rk, { kind: 'region', key: rk, label: region, secondary: country, codes: [fold(g.state), ...(regionAlt ? [fold(regionAlt)] : [])], alt: regionAlt, count: 0, bounds: null, country: g.country, state: g.state });
     const metro = metroOf(g);
     if(metro && !metros.has(metro)){
       const mRegion = stateLabel(metro.country, metro.state) || metro.state;
-      metros.set(metro, { kind: 'city', key: metroKey(metro), label: metro.name, secondary: secondaryOf(mRegion, country), codes: (metro.aliases || []).map(fold),
+      const mLabel = metroName(metro);   // the English name stays searchable as an alias
+      metros.set(metro, { kind: 'city', key: metroKey(metro), label: mLabel, secondary: secondaryOf(mRegion, country), codes: [...(metro.aliases || []), ...(mLabel !== metro.name ? [metro.name] : [])].map(fold),
         count: 0, bounds: null, country: metro.country, state: metro.state, metro: metro.slug });
     }
     if(g.suburb && !cities.has(sk)) cities.set(sk, { kind: 'city', key: sk, label: g.suburb.trim(), secondary: secondaryOf(region, country), codes: [], count: 0, bounds: null, country: g.country, state: g.state,
