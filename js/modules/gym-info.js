@@ -3,11 +3,19 @@
 // anyone can propose, so everything is escaped here and URLs go through safeUrl. Missing fields render nothing: a gym
 // with only a name and a location is a complete page (sec. 8.2 "Minimum page").
 import { escapeHtml, safeUrl } from './html-safe.js';
+import { t, th } from './i18n.js';
 
+// DAYS / FACILITIES stay the English key+label tables (moderation and import tooling read them); what visitors see goes
+// through dayLabel() / facilityLabel() below (i18n.js). Gym-supplied text (hours, day pass) is never translated.
 export const DAYS = [['mon', 'Monday'], ['tue', 'Tuesday'], ['wed', 'Wednesday'], ['thu', 'Thursday'], ['fri', 'Friday'], ['sat', 'Saturday'], ['sun', 'Sunday']];
 // The fixed list the database accepts (spots_facilities_check); order is the display order.
 export const FACILITIES = [['cafe', 'Café'], ['training', 'Training area'], ['kids', 'Kids’ climbing'], ['shoe-hire', 'Shoe hire'],
   ['shop', 'Shop'], ['showers', 'Showers'], ['parking', 'Parking'], ['yoga', 'Yoga']];
+const DAY_FULL = { mon: 'day.monday', tue: 'day.tuesday', wed: 'day.wednesday', thu: 'day.thursday', fri: 'day.friday', sat: 'day.saturday', sun: 'day.sunday' };
+export const dayLabel = key => t(DAY_FULL[key] || 'day.monday');
+const FACILITY_KEY = { cafe: 'facility.cafe', training: 'facility.training', kids: 'facility.kids', 'shoe-hire': 'facility.shoeHire', shop: 'facility.shop',
+  showers: 'facility.showers', parking: 'facility.parking', yoga: 'facility.yoga' };
+export const facilityLabel = key => t(FACILITY_KEY[key] || 'facility.shop');
 // Database caps (migration 20261004000100); the form maxlengths use the same numbers (tested).
 export const LIMITS = { description: 600, website: 300, day_pass: 120, hour: 40 };
 
@@ -44,28 +52,29 @@ export const hasPracticalInfo = g => !!(g && (websiteLabel(g.website) || cleanHo
 export function essentialsRowsHtml(g, { today = todayKey(), hoursStatus = null } = {}){
   const rows = [];
   const pass = str(g.day_pass);
-  if(pass) rows.push(`<div class="essentials-row"><h3 class="essentials-label">Day pass</h3><p class="panel-row">${escapeHtml(pass)}</p></div>`);
+  // An unknown fact says so ("Not confirmed yet") instead of vanishing: the page then reads the same for every gym.
+  const unknown = label => `<div class="essentials-row"><h3 class="essentials-label">${th(label)}</h3><p class="panel-row essentials-unknown">${th('common.notConfirmed')}</p></div>`;
+  rows.push(pass ? `<div class="essentials-row"><h3 class="essentials-label">${th('gym.dayPass')}</h3><p class="panel-row">${escapeHtml(pass)}</p></div>` : unknown('gym.dayPass'));
   const hours = cleanHours(g.hours);
   if(hours){
     const todayText = hours[today] || '';
-    const state = hoursStatus === 'open' ? 'Open' : hoursStatus === 'closed' ? 'Closed' : '';
-    const stateHtml = state && todayText ? `<span class="hours-state hours-state--${state.toLowerCase()}"><span class="hours-dot" aria-hidden="true"></span>${state}</span> · ` : '';
-    const summary = todayText ? `${stateHtml}Today: ${escapeHtml(todayText)}` : 'Opening hours';
-    const table = DAYS.filter(([k]) => hours[k]).map(([k, label]) => `<tr${k === today ? ' class="is-today"' : ''}><th scope="row">${escapeHtml(label)}</th><td>${escapeHtml(hours[k])}</td></tr>`).join('');
-    rows.push(`<div class="essentials-row"><h3 class="essentials-label">Hours</h3><details class="hours"><summary>${summary}</summary>`
-      + `<table class="hours-table"><caption class="visually-hidden">Opening hours as the gym states them</caption><tbody>${table}</tbody></table></details></div>`);
-  }
+    const state = hoursStatus === 'open' || hoursStatus === 'closed' ? hoursStatus : '';
+    const stateHtml = state && todayText ? `<span class="hours-state hours-state--${state}"><span class="hours-dot" aria-hidden="true"></span>${th(state === 'open' ? 'hours.open' : 'hours.closed')}</span> · ` : '';
+    const summary = todayText ? `${stateHtml}${th('gym.todayHours', { hours: todayText })}` : th('gym.openingHours');
+    const table = DAYS.filter(([k]) => hours[k]).map(([k]) => `<tr${k === today ? ' class="is-today"' : ''}><th scope="row">${escapeHtml(dayLabel(k))}</th><td>${escapeHtml(hours[k])}</td></tr>`).join('');
+    rows.push(`<div class="essentials-row"><h3 class="essentials-label">${th('gym.hours')}</h3><details class="hours"><summary>${summary}</summary>`
+      + `<table class="hours-table"><caption class="visually-hidden">${th('gym.hoursCaption')}</caption><tbody>${table}</tbody></table></details></div>`);
+  } else rows.push(unknown('gym.hours'));
   const site = safeUrl(g.website), label = websiteLabel(g.website);
-  if(site && label) rows.push(`<div class="essentials-row"><h3 class="essentials-label">Website</h3><p class="panel-row"><a class="link" href="${escapeHtml(site)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a></p></div>`);
+  if(site && label) rows.push(`<div class="essentials-row"><h3 class="essentials-label">${th('gym.website')}</h3><p class="panel-row"><a class="link" href="${escapeHtml(site)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a></p></div>`);
   return rows.join('');
 }
 
 export function facilitiesHtml(g){
   const list = cleanFacilities(g.facilities);
-  if(!list.length) return '';
-  const label = Object.fromEntries(FACILITIES);
-  return `<section class="page-section" aria-labelledby="facilitiesTitle"><h2 class="section-title" id="facilitiesTitle">Facilities</h2>`
-    + `<ul class="facility-list">${list.map(k => `<li class="facility-chip">${escapeHtml(label[k])}</li>`).join('')}</ul></section>`;
+  const body = list.length ? `<ul class="facility-list">${list.map(k => `<li class="facility-chip">${escapeHtml(facilityLabel(k))}</li>`).join('')}</ul>`
+    : `<p class="panel-row essentials-unknown">${th('common.notConfirmed')}</p>`;
+  return `<section class="page-section" aria-labelledby="facilitiesTitle"><h2 class="section-title" id="facilitiesTitle">${th('gym.facilities')}</h2>${body}</section>`;
 }
 
 // ===== Forms (the edit dialog and /add) ==============================================================================
@@ -76,17 +85,17 @@ export function infoFieldsHtml(prefix, v = {}, { hoursAndFacilities = true, data
   const attr = key => (data ? ` ${data}="${escapeHtml(key)}"` : '');
   const hours = cleanHours(v.hours) || {};
   const facilities = new Set(cleanFacilities(v.facilities));
-  let html = `<div class="field"><label for="${p}-website">Website (optional)</label><input id="${p}-website"${attr('website')} type="url" inputmode="url" maxlength="${LIMITS.website}" placeholder="https://" value="${escapeHtml(str(v.website))}"></div>`
-    + `<div class="field"><label for="${p}-day-pass">Day pass price (optional)</label><input id="${p}-day-pass"${attr('day_pass')} type="text" maxlength="${LIMITS.day_pass}" placeholder="e.g. A$28 adult, A$22 concession" value="${escapeHtml(str(v.day_pass))}"></div>`;
+  let html = `<div class="field"><label for="${p}-website">${th('edit.website')}</label><input id="${p}-website"${attr('website')} type="url" inputmode="url" maxlength="${LIMITS.website}" placeholder="https://" value="${escapeHtml(str(v.website))}"></div>`
+    + `<div class="field"><label for="${p}-day-pass">${th('edit.dayPass')}</label><input id="${p}-day-pass"${attr('day_pass')} type="text" maxlength="${LIMITS.day_pass}" placeholder="${th('edit.dayPassPlaceholder')}" value="${escapeHtml(str(v.day_pass))}"></div>`;
   if(hoursAndFacilities){
-    html += `<fieldset class="field hours-fields"><legend class="field-label">Opening hours (optional, as the gym states them)</legend>`
-      + DAYS.map(([k, label]) => `<label class="hours-field"><span>${escapeHtml(label)}</span><input id="${p}-hours-${k}" data-hours-day="${k}" type="text" maxlength="${LIMITS.hour}" placeholder="e.g. 6am–10pm or Closed" value="${escapeHtml(hours[k] || '')}"></label>`).join('')
+    html += `<fieldset class="field hours-fields"><legend class="field-label">${th('edit.hoursLegend')}</legend>`
+      + DAYS.map(([k]) => `<label class="hours-field"><span>${escapeHtml(dayLabel(k))}</span><input id="${p}-hours-${k}" data-hours-day="${k}" type="text" maxlength="${LIMITS.hour}" placeholder="${th('edit.hoursPlaceholder')}" value="${escapeHtml(hours[k] || '')}"></label>`).join('')
       + `</fieldset>`
-      + `<fieldset class="field"><legend class="field-label">Facilities (optional)</legend><div class="facility-checks">`
-      + FACILITIES.map(([k, label]) => `<label class="check-row"><input type="checkbox" data-facility="${k}"${facilities.has(k) ? ' checked' : ''}>${escapeHtml(label)}</label>`).join('')
+      + `<fieldset class="field"><legend class="field-label">${th('edit.facilitiesLegend')}</legend><div class="facility-checks">`
+      + FACILITIES.map(([k]) => `<label class="check-row"><input type="checkbox" data-facility="${k}"${facilities.has(k) ? ' checked' : ''}>${escapeHtml(facilityLabel(k))}</label>`).join('')
       + `</div></fieldset>`;
   }
-  html += `<div class="field"><label for="${p}-description">About this gym (optional)</label><textarea id="${p}-description"${attr('description')} maxlength="${LIMITS.description}" placeholder="What it’s like: walls, style, atmosphere">${escapeHtml(str(v.description))}</textarea></div>`;
+  html += `<div class="field"><label for="${p}-description">${th('edit.about')}</label><textarea id="${p}-description"${attr('description')} maxlength="${LIMITS.description}" placeholder="${th('edit.aboutPlaceholder')}">${escapeHtml(str(v.description))}</textarea></div>`;
   return html;
 }
 

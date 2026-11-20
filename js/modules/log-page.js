@@ -1,5 +1,6 @@
 // /log (DESIGN.md sec. 6.1, 14): the signed-in user's session diary as a page, replacing the Logbook dialog. A month
 // calendar marks session days; the list is the existing logbook re-skinned. "Log a session" opens the existing dialog.
+import { t } from './i18n.js';
 import { openAuthModal } from './auth-ui.js';
 import { deleteSession, loadSessions, sessionsHtml, startLogSession } from './logbook.js';
 import { calendarHtml, logPageHtml, pageSkeletonHtml } from './page-html.js';
@@ -11,7 +12,7 @@ let month = null;                     // {y, m} shown in the calendar; defaults 
 const todayKey = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; };
 
 function enter(params, view){
-  setPageTitle('Log');
+  setPageTitle(t('nav.log'));
   if(!window.auth.user){ view.innerHTML = logPageHtml({ signedIn: false }); return; }
   if(!appState.sessionsLoaded){
     appState.sessionsLoaded = true;   // set first: a failed load must not loop through refreshPage

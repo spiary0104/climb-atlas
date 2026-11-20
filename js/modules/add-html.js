@@ -6,6 +6,7 @@
 import { COUNTRY_LABELS, TYPE_LABELS } from './constants.js';
 import { distanceKm, formatDistance, ALL_TYPES } from './geo.js';
 import { escapeHtml } from './html-safe.js';
+import { t, th } from './i18n.js';
 import { icon } from './icons.js';
 import { STATES_BY_COUNTRY } from './regions.js';
 import { infoFieldsHtml } from './gym-info.js';
@@ -37,26 +38,26 @@ export function countryState(d){
 // "Still needed" for step 1's three fields (sec. 10.3); the area only when the nearest gym could not supply it.
 export function stepOneMissing(d, zoom){
   const missing = [];
-  if(!Number.isFinite(d.lat) || !(zoom >= PIN_ZOOM)) missing.push('the pin (zoom in to street level)');
-  if(!String(d.name || '').trim()) missing.push('a name');
-  if(!(d.types || []).length) missing.push('at least one climbing type');
+  if(!Number.isFinite(d.lat) || !(zoom >= PIN_ZOOM)) missing.push(t('add.need.pin'));
+  if(!String(d.name || '').trim()) missing.push(t('add.need.name'));
+  if(!(d.types || []).length) missing.push(t('add.need.type'));
   return missing;
 }
 export function areaMissing(d){
   const { country, state } = countryState(d);
   const missing = [];
-  if(!String(d.suburb || '').trim()) missing.push('a suburb or town');
-  if(!country || !state) missing.push('a country and region');
+  if(!String(d.suburb || '').trim()) missing.push(t('add.need.suburb'));
+  if(!country || !state) missing.push(t('add.need.countryRegion'));
   return missing;
 }
 
 export function addPageHtml(){
-  return `<article class="page add-page"><header class="page-header-row"><div><h1 class="page-title">Add a gym</h1>`
-    + `<p class="place-meta">Submitted gyms appear once a moderator has checked them.</p></div></header>`
-    + `<div class="add-layout"><section class="add-map-col" aria-label="Where is it?">`
-    + `<div class="add-map-wrap"><div class="add-map" data-add-map aria-label="Map. Move it so the gym is under the crosshair."></div>`
+  return `<article class="page add-page"><header class="page-header-row"><div><h1 class="page-title">${th('topbar.addGym')}</h1>`
+    + `<p class="place-meta">${th('add.subtitle')}</p></div></header>`
+    + `<div class="add-layout"><section class="add-map-col" aria-label="${th('add.where')}">`
+    + `<div class="add-map-wrap"><div class="add-map" data-add-map aria-label="${th('add.mapAria')}"></div>`
     + `<span class="add-crosshair" aria-hidden="true">${icon('crosshair-simple', {size:'lg'})}</span></div>`
-    + `<div class="add-map-bar"><button type="button" class="btn btn-secondary btn-sm" data-add-action="locate">${icon('navigation-arrow', {size:'sm'})}Use my location</button>`
+    + `<div class="add-map-bar"><button type="button" class="btn btn-secondary btn-sm" data-add-action="locate">${icon('navigation-arrow', {size:'sm'})}${th('add.locate')}</button>`
     + `<span class="add-coords tnum" id="addCoords"></span></div>`
     + `<div id="addNear" aria-live="polite"></div></section>`
     + `<form class="add-form" id="addForm" novalidate></form></div></article>`;
@@ -65,13 +66,13 @@ export function addPageHtml(){
 // Under the map: a likely duplicate, the area the gym will be filed under, or a note that step 2 needs it.
 export function nearHtml(d, near, href){
   if(near && near.km < DUPLICATE_KM){
-    return `<p class="add-near add-near--warn">${icon('warning-circle', {size:'sm'})}<span><a href="${escapeHtml(href)}" data-link>${escapeHtml(near.g.name)}</a> is already on the map, ${escapeHtml(formatDistance(near.km))} from the crosshair. If that is this gym, suggest an edit on its page instead.</span></p>`;
+    return `<p class="add-near add-near--warn">${icon('warning-circle', {size:'sm'})}<span><a href="${escapeHtml(href)}" data-link>${escapeHtml(near.g.name)}</a>${th('add.dupTail', { distance: formatDistance(near.km) })}</span></p>`;
   }
   const { country, state } = countryState(d);
   if(String(d.suburb || '').trim() && country && state){
-    return `<p class="add-near">Filed under ${escapeHtml(d.suburb)}, ${escapeHtml(state)}, ${escapeHtml(COUNTRY_LABELS[country] || country)}. You can change this in step 2.</p>`;
+    return `<p class="add-near">${th('add.filedUnder', { suburb: d.suburb, state, country: COUNTRY_LABELS[country] || country })}</p>`;
   }
-  return `<p class="add-near">No gyms nearby yet, so step 2 will ask for the suburb and region.</p>`;
+  return `<p class="add-near">${th('add.noNear')}</p>`;
 }
 
 function typeChecks(types){
@@ -87,48 +88,48 @@ function textField(key, label, value, extra = ''){
 function countrySelect(d){
   const codes = Object.keys(COUNTRY_LABELS).sort((a, b) => COUNTRY_LABELS[a].localeCompare(COUNTRY_LABELS[b]));
   const known = d.country === 'OTHER' || !d.country || COUNTRY_LABELS[d.country];
-  const opts = (d.country ? '' : '<option value="" selected>Choose a country</option>')
+  const opts = (d.country ? '' : `<option value="" selected>${th('add.chooseCountry')}</option>`)
     + (known ? '' : `<option value="${escapeHtml(d.country)}" selected>${escapeHtml(d.country)}</option>`)
     + codes.map(c => `<option value="${escapeHtml(c)}"${c === d.country ? ' selected' : ''}>${escapeHtml(COUNTRY_LABELS[c])}</option>`).join('')
-    + `<option value="OTHER"${d.country === 'OTHER' ? ' selected' : ''}>Other (not listed)</option>`;
-  return `<div><label for="add-country">Country</label><select id="add-country" data-add-field="country">${opts}</select></div>`;
+    + `<option value="OTHER"${d.country === 'OTHER' ? ' selected' : ''}>${th('edit.other')}</option>`;
+  return `<div><label for="add-country">${th('edit.country')}</label><select id="add-country" data-add-field="country">${opts}</select></div>`;
 }
 
 function regionSelect(d){
   const list = STATES_BY_COUNTRY[d.country] || [];
-  if(!list.length) return textField('state', 'Region', d.state);
-  const opts = (list.some(([code]) => code === d.state) ? '' : '<option value="" selected>Choose a region</option>')
+  if(!list.length) return textField('state', t('add.region'), d.state);
+  const opts = (list.some(([code]) => code === d.state) ? '' : `<option value="" selected>${th('add.chooseRegion')}</option>`)
     + list.map(([code, label]) => `<option value="${escapeHtml(code)}"${code === d.state ? ' selected' : ''}>${escapeHtml(label)}</option>`).join('');
-  return `<div><label for="add-state">Region</label><select id="add-state" data-add-field="state">${opts}</select></div>`;
+  return `<div><label for="add-state">${th('add.region')}</label><select id="add-state" data-add-field="state">${opts}</select></div>`;
 }
 
 // The form for the current step. ctx: {signedIn, busy}
 export function addStepHtml(d, ctx = {}){
-  const submit = `<button type="submit" class="btn btn-primary"${ctx.busy ? ' disabled' : ''}>${ctx.busy ? 'Submitting…' : 'Submit for review'}</button>`;
-  const signIn = ctx.signedIn ? '' : '<p class="add-signin">You will be asked to sign in when you submit.</p>';
+  const submit = `<button type="submit" class="btn btn-primary"${ctx.busy ? ' disabled' : ''}>${escapeHtml(t(ctx.busy ? 'add.submitting' : 'add.submit'))}</button>`;
+  const signIn = ctx.signedIn ? '' : `<p class="add-signin">${th('add.signInNote')}</p>`;
   if(d.step === 2){
     const other = d.country === 'OTHER'
-      ? `<div class="field field-row">${textField('countryOther', 'Country name', d.countryOther, ' maxlength="100"')}${textField('stateOther', 'State or region', d.stateOther, ' maxlength="100"')}</div>`
+      ? `<div class="field field-row">${textField('countryOther', t('edit.countryName'), d.countryOther, ' maxlength="100"')}${textField('stateOther', t('add.stateOrRegion'), d.stateOther, ' maxlength="100"')}</div>`
       : '';
-    return `<p class="add-step">Step 2 of 2 · Details (optional)</p>`
-      + textField('suburb', 'Suburb or nearest town', d.suburb, ' autocomplete="off" maxlength="200"')
+    return `<p class="add-step">${th('add.step2')}</p>`
+      + textField('suburb', t('add.suburbTown'), d.suburb, ' autocomplete="off" maxlength="200"')
       + `<div class="field field-row">${countrySelect(d)}${d.country === 'OTHER' ? '' : regionSelect(d)}</div>${other}`
-      + textField('address', 'Street address', d.address, ' autocomplete="off" maxlength="300"')
-      + textField('photo', 'Photo link', d.photo, ' inputmode="url" maxlength="1000" placeholder="https://"')
+      + textField('address', t('add.addressLabel'), d.address, ' autocomplete="off" maxlength="300"')
+      + textField('photo', t('add.photoLabel'), d.photo, ' inputmode="url" maxlength="1000" placeholder="https://"')
       + infoFieldsHtml('add', d, { hoursAndFacilities: false, data: 'data-add-field' })   // hours and facilities come with a later edit
       + `<p class="form-hint" id="addHint" aria-live="polite"></p>`
-      + `<div class="add-actions"><button type="button" class="btn btn-tertiary" data-add-action="back">${icon('arrow-left', {size:'sm'})}Back</button>${submit}</div>${signIn}`;
+      + `<div class="add-actions"><button type="button" class="btn btn-tertiary" data-add-action="back">${icon('arrow-left', {size:'sm'})}${th('common.back')}</button>${submit}</div>${signIn}`;
   }
-  return `<p class="add-step">Step 1 of 2 · The essentials</p>`
-    + textField('name', 'Name', d.name, ' autocomplete="off" maxlength="120" placeholder="e.g. Boulder Collective"')
-    + `<fieldset class="field add-types"><legend class="field-label">Climbing</legend>${typeChecks(d.types)}</fieldset>`
+  return `<p class="add-step">${th('add.step1')}</p>`
+    + textField('name', t('edit.name'), d.name, ` autocomplete="off" maxlength="120" placeholder="${th('add.namePh')}"`)
+    + `<fieldset class="field add-types"><legend class="field-label">${th('add.climbing')}</legend>${typeChecks(d.types)}</fieldset>`
     + `<p class="form-hint" id="addHint" aria-live="polite"></p>`
-    + `<div class="add-actions"><button type="button" class="btn btn-secondary" data-add-action="details">Add details</button>${submit}</div>${signIn}`;
+    + `<div class="add-actions"><button type="button" class="btn btn-secondary" data-add-action="details">${th('add.details')}</button>${submit}</div>${signIn}`;
 }
 
 export function addDoneHtml(){
-  return `<div class="add-done"><h2 class="section-title">Thanks — it's in review.</h2>`
-    + `<p class="section-note">We'll show it once a moderator has checked it. You can follow it under Contributions on your profile.</p>`
-    + `<div class="add-actions"><a class="btn btn-secondary" href="/me" data-link>Your contributions</a>`
-    + `<button type="button" class="btn btn-primary" data-add-action="another">Add another gym</button></div></div>`;
+  return `<div class="add-done"><h2 class="section-title">${th('add.doneTitle')}</h2>`
+    + `<p class="section-note">${th('add.doneBody')}</p>`
+    + `<div class="add-actions"><a class="btn btn-secondary" href="/me" data-link>${th('me.contributions')}</a>`
+    + `<button type="button" class="btn btn-primary" data-add-action="another">${th('add.another')}</button></div></div>`;
 }

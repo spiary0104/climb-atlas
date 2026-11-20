@@ -43,7 +43,7 @@
 // v39: MapLibre is no longer in the shell: map.js loads it after the first list render; modulepreload; parallel gym pages.
 // v42: a region page that lists exactly one city's gyms names that city page as its canonical (place-canonical.js).
 // v44: 16 more China city regions (regions.js) for the China research.
-const CACHE_VERSION = 'v46';
+const CACHE_VERSION = 'v57';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;
@@ -85,6 +85,25 @@ const SHELL_FILES = [
   'js/modules/icons.js',
   'js/modules/nav.js',
   'js/modules/html-safe.js',
+  'js/modules/i18n.js',
+  'js/modules/i18n-en.js',
+  'js/modules/i18n-zh-CN.js',
+  'js/modules/i18n-de.js',
+  'js/modules/i18n-fr.js',
+  'js/modules/i18n-es.js',
+  'js/modules/i18n-zh-TW.js',
+  'js/modules/i18n-ja.js',
+  'js/modules/i18n-ko.js',
+  'js/modules/i18n-pt-BR.js',
+  'js/modules/region-label.js',
+  'js/modules/places-zh-CN.js',
+  'js/modules/places-zh-TW.js',
+  'js/modules/places-ja.js',
+  'js/modules/places-ko.js',
+  'js/modules/places-de.js',
+  'js/modules/places-fr.js',
+  'js/modules/places-es.js',
+  'js/modules/places-pt-BR.js',
   'js/modules/list-html.js',
   'js/modules/pin-html.js',
   'js/modules/geo.js',
@@ -102,6 +121,8 @@ const SHELL_FILES = [
   'js/modules/slug.js',
   'js/modules/seo-meta.js',
   'js/modules/page-html.js',
+  'js/modules/place-names.js',
+  'js/modules/visit-html.js',
   'js/modules/gym-page.js',
   'js/modules/mini-map.js',
   'js/modules/region-page.js',

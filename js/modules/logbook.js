@@ -5,6 +5,7 @@ import { newTopGrade } from './passport.js';
 import { firstRunArt } from './brand.js';
 import { MOODS, TYPE_LABELS } from './constants.js';
 import { buildPickerIndex, gymsInCountry, pickerBrowseHtml, pickerCurrentHtml, pickerGymsHtml, pickerResultsHtml, queryGyms } from './gym-picker.js';
+import { t, th } from './i18n.js';
 import { icon } from './icons.js';
 import { stateLabel } from './map.js';
 import { refreshPage } from './router.js';
@@ -30,26 +31,26 @@ export async function loadSessions(){
 }
 
 function spotLabel(spotId){
-  if(!spotId) return 'No specific gym';
+  if(!spotId) return t('log.noGym');
   const g = appState.spots.find(s=>s.id===spotId);
-  return g ? g.name : 'Unknown gym';
+  return g ? g.name : t('log.unknownGym');
 }
 
 // The /log page's session list (dense, newest first). Delete is .btn-danger and never a close control.
 export function sessionsHtml(sessions = appState.sessions){
   if(!sessions.length){
     // First run by definition: the list holds every session this person has logged.
-    return '<div class="empty-state">' + firstRunArt('log') + '<p class="empty-title">No sessions yet</p><p>Log your first session to start your diary.</p></div>';
+    return '<div class="empty-state">' + firstRunArt('log') + '<p class="empty-title">' + th('log.emptyTitle') + '</p><p>' + th('log.emptyBody') + '</p></div>';
   }
   return sessions.map(s=>{
     const climbs = s.session_climbs || [];
     const chips = climbs.map(c=>`<span class="climb-chip ${c.sent?'sent':''}">${escapeHtml(TYPE_LABELS[c.climb_type]||c.climb_type)} ${escapeHtml(c.grade)}${c.attempts>1?` ×${escapeHtml(c.attempts)}`:''}</span>`).join('');
     return `<div class="session-item" data-id="${escapeHtml(s.id)}">
         <div class="pending-kind"><span class="tnum">${escapeHtml(s.session_date)}</span> · ${moodHtml(s.mood)} · ${escapeHtml(spotLabel(s.spot_id))}</div>
-        ${chips ? `<div class="climb-chips">${chips}</div>` : '<div class="pending-notes">No climbs logged this session.</div>'}
+        ${chips ? `<div class="climb-chips">${chips}</div>` : `<div class="pending-notes">${th('log.noClimbs')}</div>`}
         ${s.notes ? `<div class="pending-notes">${escapeHtml(s.notes)}</div>` : ''}
         <div class="pending-actions">
-          <button type="button" class="btn btn-tertiary btn-sm btn-danger session-delete" data-id="${escapeHtml(s.id)}">Delete</button>
+          <button type="button" class="btn btn-tertiary btn-sm btn-danger session-delete" data-id="${escapeHtml(s.id)}">${th('common.delete')}</button>
         </div>
       </div>`;
   }).join('');
@@ -155,14 +156,14 @@ function renderClimbRows(){
   sClimbsList.innerHTML = appState.draftClimbs.map((c, i)=>`
       <div class="climb-row" data-index="${i}">
         <select class="climb-type" data-field="climb_type">
-          <option value="indoor-bouldering" ${c.climb_type==='indoor-bouldering'?'selected':''}>Boulder</option>
-          <option value="top-rope" ${c.climb_type==='top-rope'?'selected':''}>Top rope</option>
-          <option value="lead-climbing" ${c.climb_type==='lead-climbing'?'selected':''}>Lead</option>
+          <option value="indoor-bouldering" ${c.climb_type==='indoor-bouldering'?'selected':''}>${th('filters.boulder')}</option>
+          <option value="top-rope" ${c.climb_type==='top-rope'?'selected':''}>${th('filters.topRope')}</option>
+          <option value="lead-climbing" ${c.climb_type==='lead-climbing'?'selected':''}>${th('filters.lead')}</option>
         </select>
-        <input type="text" class="climb-grade" data-field="grade" placeholder="Grade, e.g. V2" value="${escapeHtml(c.grade||'')}">
-        <input type="number" class="climb-attempts" data-field="attempts" min="1" value="${Number(c.attempts)||1}" title="Attempts">
-        <label class="climb-sent"><input type="checkbox" data-field="sent" ${c.sent?'checked':''}> Sent</label>
-        <button type="button" class="btn btn-tertiary btn-icon btn-sm remove-climb-btn" title="Remove this climb" aria-label="Remove this climb">${icon('x', {size:'sm'})}</button>
+        <input type="text" class="climb-grade" data-field="grade" placeholder="${th('log.gradePh')}" value="${escapeHtml(c.grade||'')}">
+        <input type="number" class="climb-attempts" data-field="attempts" min="1" value="${Number(c.attempts)||1}" title="${th('log.attempts')}" aria-label="${th('log.attempts')}">
+        <label class="climb-sent"><input type="checkbox" data-field="sent" ${c.sent?'checked':''}> ${th('log.sent')}</label>
+        <button type="button" class="btn btn-tertiary btn-icon btn-sm remove-climb-btn" title="${th('log.removeClimb')}" aria-label="${th('log.removeClimb')}">${icon('x', {size:'sm'})}</button>
       </div>`).join('');
 }
 
@@ -185,7 +186,7 @@ function openAddSessionModal(spotId){
 // START (mobile tab bar) and the /log page: "Log a session". Signed-in only, like the logbook itself.
 // opts.spotId: pre-select the gym ("Log this session" after a check-in, sec. 11.1).
 export function startLogSession(opts = {}){
-  if(!window.auth.user){ showToast('Sign in to log a session'); return; }
+  if(!window.auth.user){ showToast(t('log.signInToLog')); return; }
   openAddSessionModal(opts.spotId);
 }
 
@@ -199,9 +200,9 @@ export async function deleteSession(id, btn){
   try{
     const {error} = await window.sb.from('sessions').delete().eq('id', id);
     if(error) throw error;
-    showToast('Session deleted');
+    showToast(t('log.deleted'));
   }catch(err){
-    showToast('Could not delete — try again');
+    showToast(t('log.deleteFailed'));
     console.error(err);
   }
   await loadSessions();
@@ -235,7 +236,7 @@ export function initLogbook(){
 
   document.getElementById('sSaveBtn').addEventListener('click', async ()=>{
     const date = document.getElementById('sDate').value;
-    if(!date){ showToast('Pick a date first'); return; }
+    if(!date){ showToast(t('log.pickDate')); return; }
     const saveBtn = document.getElementById('sSaveBtn');
     saveBtn.disabled = true;
     try{
@@ -259,16 +260,16 @@ export function initLogbook(){
         })));
         if(e2) throw e2;
       }
-      showToast('Session saved');
+      showToast(t('log.saved'));
       closeAddSessionModal();
       const before = (appState.sessions || []).filter(s => s.id !== session.id).flatMap(s => s.session_climbs || []);
       await loadSessions();
       refreshPage();
       // A new highest sent grade (sec. 12.3): the dyno milestone, once per session like every milestone.
       const top = newTopGrade(before, climbRows.map(c => ({ grade: c.grade.trim(), grade_system: c.climb_type === 'indoor-bouldering' ? 'v-scale' : 'yds', sent: c.sent })));
-      if(top) showMilestones([top], { title: top.title, place: 'Bouldeer logbook', date: new Date().toISOString(), seed: top.title });
+      if(top) showMilestones([top], { title: top.title, place: t('log.cardPlace'), date: new Date().toISOString(), seed: top.title });
     }catch(err){
-      showToast('Could not save session — try again');
+      showToast(t('log.saveFailed'));
       console.error(err);
     }
     saveBtn.disabled = false;

@@ -5,6 +5,8 @@
 //   verified            a moderator marked it verified (spots.verified_at)
 // Marks: grey ring-dot, forest ring-dot, nothing. Levels (sec. 10.6): thresholds are ours, the spec fixes only the points.
 
+import { t } from './i18n.js';
+
 export function provenanceState(g, contributors = 0){
   if(g && g.verified_at) return 'verified';
   if(Number(contributors) >= 2) return 'community-verified';
@@ -12,11 +14,12 @@ export function provenanceState(g, contributors = 0){
   return 'community-added';
 }
 
+// Getters into the interface language (i18n.js): read like a plain table, always the current language.
 export const PROVENANCE_LABELS = Object.freeze({
-  'listed': 'Listed by Bouldeer',
-  'community-added': 'Community-added',
-  'community-verified': 'Community-verified',
-  'verified': 'Verified',
+  get 'listed'(){ return t('provenance.listed'); },
+  get 'community-added'(){ return t('provenance.communityAdded'); },
+  get 'community-verified'(){ return t('provenance.communityVerified'); },
+  get 'verified'(){ return t('provenance.verified'); },
 });
 
 // Points: 15 per approved gym, 5 per approved edit (computed server-side); levels 1-5; "Contributor" from level 3.
@@ -29,18 +32,19 @@ export function levelFor(points){
 }
 export const isContributor = points => levelFor(points) >= 3;
 
-// "today", "yesterday", "3 days ago", "2 weeks ago", "5 months ago", "2 years ago"; '' for missing/invalid dates.
+// "today", "yesterday", "3 days ago", "2 weeks ago", "5 months ago", "2 years ago" (in the interface language, i18n.js
+// rel.* keys); '' for missing/invalid dates.
 export function formatRelative(date, now = new Date()){
   if(date == null || date === '') return '';           // new Date(null) is 1970, not "unknown"
-  const t = new Date(date).getTime();
-  if(!Number.isFinite(t)) return '';
-  const days = Math.floor((new Date(now).getTime() - t) / 86400000);
-  if(days <= 0) return 'today';
-  if(days === 1) return 'yesterday';
-  if(days < 14) return days + ' days ago';
-  if(days < 60) return Math.floor(days / 7) + ' weeks ago';
-  if(days < 730) return Math.floor(days / 30) + ' months ago';
-  return Math.floor(days / 365) + ' years ago';
+  const ms = new Date(date).getTime();
+  if(!Number.isFinite(ms)) return '';
+  const days = Math.floor((new Date(now).getTime() - ms) / 86400000);
+  if(days <= 0) return t('rel.today');
+  if(days === 1) return t('rel.yesterday');
+  if(days < 14) return t('rel.days', { count: days });
+  if(days < 60) return t('rel.weeks', { count: Math.floor(days / 7) });
+  if(days < 730) return t('rel.months', { count: Math.floor(days / 30) });
+  return t('rel.years', { count: Math.floor(days / 365) });
 }
 
 // The page line (sec. 10.2): "{state} · added by {name or "a climber"} · last edited {relative} · {n} contributors".
@@ -49,11 +53,11 @@ export function provenanceLine(g, p = {}, now = new Date()){
   p = p || {};                                        // a failed lookup is cached as null
   const state = provenanceState(g, p.contributors);
   const parts = [PROVENANCE_LABELS[state]];
-  if(g && g.submitted_by) parts.push('added by ' + (p.added_by || 'a climber'));
+  if(g && g.submitted_by) parts.push(t('provenance.addedBy', { name: p.added_by || t('provenance.aClimber') }));
   const edited = formatRelative(p.last_edited, now);
-  if(edited) parts.push('last edited ' + edited);
+  if(edited) parts.push(t('provenance.lastEdited', { when: edited }));
   const n = Number(p.contributors) || 0;
-  if(n >= 1) parts.push(n === 1 ? '1 contributor' : n + ' contributors');
+  if(n >= 1) parts.push(t('provenance.contributors', { count: n }));
   return { state, text: parts.join(' · ') };
 }
 
@@ -69,11 +73,11 @@ export const isMissingTable = err => !!err && (err.code === 'PGRST205' || err.co
 // What to tell someone whose display name did not save. The profiles table arrives with migration 20260926084510; until
 // then every save 404s, and "try again" would never work.
 export function displayNameSaveMessage(err){
-  if(isMissingTable(err)) return 'Display names aren’t switched on yet. Your name will be saved once they are.';
+  if(isMissingTable(err)) return t('me.namesOff');
   const why = String((err && err.message) || '');
-  if((err && err.code === '23514') || /check constraint/i.test(why)) return 'Use 2 to 40 characters, without @ or < >.';
-  if(/JWT|row-level security|permission denied|Not signed in/i.test(why)) return 'Your sign-in has expired. Sign in again to save.';
-  return 'Could not save — try again.';
+  if((err && err.code === '23514') || /check constraint/i.test(why)) return t('me.nameInvalid');
+  if(/JWT|row-level security|permission denied|Not signed in/i.test(why)) return t('me.signInExpiredSave');
+  return t('me.saveFailed');
 }
 
 // Internal research notes. Imported gyms carry the remarks written while the data was researched: where the entry was

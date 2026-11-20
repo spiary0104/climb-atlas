@@ -33,7 +33,7 @@ Line refs drift: re-grep function names rather than trusting numbers.
 | `js/modules/constants.js` | Type labels, country labels + fly targets, zoom thresholds (`PIN_DOT_MAX_ZOOM`, `LIST_CAP`), `motion()` |
 | `js/modules/regions.js` | `STATES_BY_COUNTRY` (static, ~620 lines) |
 | `js/modules/html-safe.js`, `utils.js` | Pure `escapeHtml` / `safeUrl` (http/https only); `directionsUrl`, `showToast` |
-| `js/modules/geo.js`, `metros.js` (curated city metros: centre + radius, membership computed, no DB; place key `AU:NSW:~sydney`), `search-index.js`, `pin-html.js`, `list-html.js`, `moderation-html.js`, `provenance.js`, `add-html.js`, `passport.js`, `stamp-html.js`, `gym-picker.js`, `hours.js` | PURE (no DOM, unit-tested): hours.js: a gym's free-text day hours -> ranges (`parseDay`, null when unsure), its time zone from country/state (`gymTimeZone`), open/closed/unknown now (`status`; unknown beats wrong) · Log a session gym picker (search, continent browse) · passport rules (stamps per city, passport line, milestones, grades) and stamp/passport/sheet markup · distance, antimeridian-safe bounds, stacked-pin offsets, URL state encode/decode, folding · search index + query · pin SVG · row/card/carousel/peek/empty/pill/search-option markup · /mod queue, diff, panel · provenance state/line, levels, display-name rule, `publicNotes` (hides internal research notes from the gym page About and the peek card; stored text untouched) · /add steps, nearest-gym area, duplicate note |
+| `js/modules/geo.js`, `metros.js` (curated city metros: centre + radius, membership computed, no DB; place key `AU:NSW:~sydney`), `search-index.js` (+ `place-names.js`: native/Chinese country names, CN city names; accepts `g.aliases` when the row has them), `pin-html.js`, `list-html.js`, `moderation-html.js`, `provenance.js`, `add-html.js`, `passport.js`, `stamp-html.js`, `gym-picker.js`, `hours.js` | PURE (no DOM, unit-tested): hours.js: a gym's free-text day hours -> ranges (`parseDay`, null when unsure), its time zone from country/state (`gymTimeZone`), open/closed/unknown now (`status`; unknown beats wrong) · Log a session gym picker (search, continent browse) · passport rules (stamps per city, passport line, milestones, grades) and stamp/passport/sheet markup · distance, antimeridian-safe bounds, stacked-pin offsets, URL state encode/decode, folding · search index + query · pin SVG · row/card/carousel/peek/empty/pill/search-option markup · /mod queue, diff, panel · provenance state/line, levels, display-name rule, `publicNotes` (hides internal research notes from the gym page About and the peek card; stored text untouched) · /add steps, nearest-gym area, duplicate note |
 | `js/modules/router.js` | History API router (+ `/#/` fallback): `matchRoute`, `navigate`, `registerView`, `refreshPage`, title/canonical, nav `aria-current`. Explore stays mounted behind pages |
 | `js/modules/slug.js` | Pure slug rule mirroring the DB migration (fallback for rows without `slug`) + `gymPath`/`countryPath`/`regionPath`/`cityPath` · `seo-meta.js`: page titles/descriptions for gyms and places (router titles; same text for crawler metadata) |
 | `js/modules/page-html.js` | Pure page builders: gym page (+ provenance line, own-edit note, moderator verify), breadcrumb, map slot, page card/row, regions/place pages, calendar, log, me (+ contributions), not found |
@@ -71,6 +71,8 @@ Supercluster → `modulepreload` of main.js's whole graph (`fetchpriority="low"`
   `data-gym-action` / `data-list-action` / `data-spot-id` + delegated listeners. No inline handlers, no `window.__*`.
 - map.js does not import the list; explore.js registers map handlers (`setMapHandlers`). Import cycles
   (explore ↔ modals ↔ map) are safe because top-level code only does DOM lookups (no map is made at import).
+- Interface text: `t('area.key', {count})`/`th()` (escaped) from `i18n.js`, strings in `i18n-<code>.js` (English = fallback; enabled
+  languages need every key, tests/i18n.test.js; region/metro names: `places-<code>.js` via `region-label.js` + `metroName`); markup `data-i18n(-attr)`; a switch fires `bouldeer:locale`. Gym data never translated. seo-meta.js has no imports (api/seo.mjs): English unless a `tr` (i18n `t`) is passed. Unknown hours/day pass/facilities show `common.notConfirmed`. `tOrdinal` (passport "第3"/"3rd"); dates via `formatDate`; tests/i18n.test.js guards against hardcoded English in the builders and index.html dialogs. Adding a language, glossary, SEO, Play/TWA notes: `docs/i18n.md`.
 
 ## Data model (`supabase/migrations/`; `schema.sql` is stale)
 `moderators`, `spots` (status pending/approved/rejected; insert needs sign-in + rate limit), `pending_edits` and `reports` (sign-in + 20/day each, `submitted_by` pinned; migrations 20261002*), `routes` (unused, read-only),
@@ -78,7 +80,7 @@ Supercluster → `modulepreload` of main.js's whole graph (`fetchpriority="low"`
 owner-only; user/time pinned by trigger; one per gym per 12 h, 30/day, checked in the trigger under a per-person lock; adds the `climbed` mark).
 Spot shape: `id` (`seed-N` legacy, `community-<uuid>`, or frozen `g-<hex>` for imported gyms), `name`, `suburb`, `state`,
 `country`, `lat`, `lng`, `address`, `types[]` (`indoor-bouldering` | `top-rope` | `lead-climbing`), `notes` (research remark, not shown), `photo`,
-`description`, `website`, `hours` (jsonb mon..sun), `day_pass`, `facilities[]` (gym information, `gym-info.js`; same columns on `pending_edits`), `name_local`, `address_local`, `visitor` (jsonb booking/payment/english_help/id_required/shoe_hire/note), `info_source` + `_kind` + `_checked_on` (null = unknown; provenance importer-only, migration `20261101000100`, live). `name_local` is in the list read and shown beside the English name (`localNameHtml`, list-html.js; `lang` from the country) and searchable (`cjkStarts`, search-index.js); `address_local` only on the gym page,
+`description`, `website`, `hours` (jsonb mon..sun), `day_pass`, `facilities[]` (gym information, `gym-info.js`; same columns on `pending_edits`), `name_local`, `address_local`, `visitor` (jsonb booking/payment/english_help/id_required/shoe_hire/note), `info_source` + `_kind` + `_checked_on` (null = unknown; provenance importer-only, migration `20261101000100`, live). `name_local` is in the list read and shown beside the English name (`localNameHtml`, list-html.js; `lang` from the country) and searchable (`cjkStarts`, search-index.js); `address_local` only on the gym page, Gym page: `visit-html.js` renders `visitor` (verbatim, only present fields), the source line (`info_source*`, safeUrl), Copy address and the CN-only Amap link (`uri.amap.com/marker`, `coordinate=wgs84`, no client conversion). Migration `20261114000100_gym_aliases.sql` (`aliases text[]`, search-only) is prepared, NOT applied.
 `community`, `edited`, `created_at`, `slug` (stored, unique, set on insert, never changed), `verified_at`, `rejection_reason`. `state` codes collide across
 countries — always key on `country:state`.
 
@@ -127,8 +129,7 @@ Buttons: `.btn` + exactly one of `.btn-primary` (one per surface) / `-secondary`
 `ICON_NAMES`. After editing tokens.css run `node scripts/build-tokens-json.js`.
 
 ## Offline / PWA (`sw.js`, v39)
-Shell precached (`SHELL_FILES`). Page loads (`mode: navigate`) of every app route share one cached shell (keyed `/`),
-whatever the path or query; other pages (about.html, privacy.html, terms.html) are cached per path. Tiles cache-first; other same-origin + CDN files stale-while-revalidate;
+Shell precached (`SHELL_FILES`). App routes (`mode: navigate`) share one cached shell (`/`); static pages per path. Tiles cache-first; other same-origin + CDN files stale-while-revalidate;
 CDN tags carry `crossorigin="anonymous"`. Supabase: ONLY the public `GET /rest/v1/spots?...status=eq.approved` read
 is cached (network-first); marks/sessions/moderator/pending/auth and every write are never intercepted (the Cache
 API ignores `Authorization`, so caching them would leak across users). Escape only clicks `[data-modal-close]`.
@@ -138,8 +139,7 @@ API ignores `Authorization`, so caching them would leak across users). Escape on
 escaping/URL safety, hostile-input rendering of every Explore builder, /mod panel and /add step, pure Explore modules
 (`explore-pure.test.js`: bounds, URL state, search index, pins, slugs, routes), page builders, service-worker caching (vm sandbox), static checks
 (no inline handlers, modal-close markers, reviewed template interpolations), design system (`design-system.test.js`).
-RLS: `node scripts/test-rls-local.js` against the local stack (`supabase start`, then `supabase db reset --local`), check-ins included.
-Artwork: `design/tools/` (Python, dev-only) regenerates the traced poses and static seals byte for byte (README there).
+RLS: `node scripts/test-rls-local.js` on the local stack (`supabase start`, `db reset --local`). Artwork: `design/tools/` (README there).
 
 ## Querying the gym data
 ```

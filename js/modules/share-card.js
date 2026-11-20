@@ -2,7 +2,8 @@
 // date, the head lockup bottom-right at 5% width. Drawn on a canvas (the stamp is redrawn natively: an SVG drawn as an
 // image cannot use the page's web fonts). Shared through the Web Share API with the file when the browser can, else
 // downloaded. No feed, no likes: the card leaves the product. Colours come from the tokens.
-import { stampDate, stampTilt } from './stamp-html.js';
+import { t } from './i18n.js';
+import { niceDate, stampDate, stampTilt } from './stamp-html.js';
 import { showToast } from './utils.js';
 
 const W = 1080, H = 1350;
@@ -80,7 +81,7 @@ export async function renderShareCard(card){
   ctx.fillText(card.title || '', W / 2, 1060);
   ctx.fillStyle = muted;
   ctx.font = `500 36px ${body}`;
-  ctx.fillText([card.place, stampDate(card.date).replace(/^(\d+) ([A-Z])([A-Z]+)/, (m, d, a, b) => d + ' ' + a + b.toLowerCase())].filter(Boolean).join(' · '), W / 2, 1120);
+  ctx.fillText([card.place, niceDate(card.date)].filter(Boolean).join(' · '), W / 2, 1120);
 
   // Head lockup, bottom-right, 5% of the width
   const mark = Math.round(W * 0.05);
@@ -112,7 +113,7 @@ export async function shareCard(card){
   }catch(err){
     if(err && err.name === 'AbortError') return 'cancelled';
     console.error(err);
-    showToast('Could not make the share card');
+    showToast(t('ck.cardFail'));
     return 'failed';
   }
 }

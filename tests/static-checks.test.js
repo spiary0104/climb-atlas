@@ -59,6 +59,9 @@ test('destructive buttons (Reject / Dismiss / Delete) carry .btn-danger and are 
 // Every ${...} inside these HTML-building templates must be escapeHtml(...) or one of the reviewed-safe expressions below.
 const SAFE_EXPR = [
   /^escapeHtml\(/,
+  /^th\('[a-zA-Z0-9_.]+'(, \{[^}]*\})?\)$/,                                  // i18n.th(): the translation, HTML-escaped (params too)
+  /^intro(Before|After)$/,                                                    // list-html introHtml: the two halves of th('explore.intro')
+  /^languageOptionsHtml\(\)$/,                                               // i18n.js: endonyms from the fixed LOCALES table, escaped
   /^(climbed|bookmarked|c\.sent|active)\s*\?\s*'[^']*'\s*:\s*''$/,            // boolean -> fixed class / attribute strings
   /^c\.climb_type===['"][\w-]+['"]\?'selected':''$/,                          // <option selected> for a fixed value
   /^(g|s)\.(community|edited)\s*\?\s*'[^']*'\s*:\s*''$/,
@@ -106,7 +109,7 @@ const SAFE_EXPR = [
   // calendar/log/me: assembled in the same builder from numbers, fixed names and escaped labels; p.sessions is
   // logbook.js sessionsHtml() (itself in this review), p.calendar is calendarHtml()
   /^(head|links)$/, /^rows\.join\(''\)$/, /^p\.(sessions|calendar)$/,
-  /^key$/, /^tab\('(saved|climbed)', '(Saved|Climbed)', p\.(saved|climbed)\.length\)$/, /^pending$/,   // me page: tab keys are literals
+  /^key$/, /^tab\('(saved|climbed)', t\('me\.(saved|climbed)'\), p\.(saved|climbed)\.length\)$/, /^pending$/,   // tab() escapes its label;   // me page: tab keys are literals
   // Phase 4 provenance: m comes from the fixed MARKS table; the mark builder takes a state name and emits fixed markup
   /^m\[[01]\](\.toLowerCase\(\))?$/, /^provenanceMarkHtml\((ctx\.provenance|prov\.state)\)$/, /^subs$/,
   // moderation-html.js (/mod): label comes from the fixed FIELDS table, k is forced to a KIND_LABEL key by kindOf(),
@@ -121,7 +124,7 @@ const SAFE_EXPR = [
   // add-html.js (/add): extra is a literal attribute string at every textField() call site; opts/other/submit/signIn are
   // assembled in the same builder from escaped values and literals; the helpers escape internally
   /^(extra|opts|other|submit|signIn)$/, /^(countrySelect\(d\)|typeChecks\(d\.types\))$/, /^d\.country === 'OTHER' \? '' : regionSelect\(d\)$/,
-  /^textField\('[a-zA-Z]+', '[A-Za-z ]+', d\.[a-zA-Z]+(, ' maxlength="\d+"')?\)$/,
+  /^textField\('[a-zA-Z]+', (?:'[A-Za-z ]+'|t\('[a-zA-Z0-9_.]+'\)), d\.[a-zA-Z]+(, ' maxlength="\d+"')?\)$/,   // the label is a literal or a translation (textField escapes it)
   // brand.js: the seal builder takes only literal options and escapes its label
   /^sealSvg\(\)$/, /^(arc|clip|head|CREST|pose|art)$/,
   // page-html.js page header art (sec. 13A): literal names only; pageArtHtml renders `name` only when it is in the PAGE_ART set
@@ -132,6 +135,8 @@ const SAFE_EXPR = [
   // list-html.js / page-html.js local-script names: localNameHtml and localAddressHtml escape the value themselves and take
   // only literal class names; `lang` is read from the fixed LOCAL_LANG country table, never from the database
   /^localNameHtml\(g, '[a-z -]+'\)$/, /^localAddressHtml\(g\)$/, /^lang$/,
+  // visit-html.js: addressActionsHtml escapes every database value itself (tests/visit-html.test.js)
+  /^addressActionsHtml\(g\)$/,
 ];
 // A conditional is safe when every branch that can be rendered is safe: a fixed string literal, a template whose own
 // interpolations are all safe, or a nested conditional (checked recursively). The condition itself is never rendered.
@@ -235,8 +240,8 @@ test('legal pages are real pages: dated, no "draft / not legal advice" banner, n
   assert.match(read('terms.html'), /governed by the laws of New South Wales, Australia/);
   const idx = read('index.html');
   assert.ok(!/privacyModalBackdrop|termsModalBackdrop|id="openPrivacy"|id="openTerms"/.test(idx), 'the Privacy/Terms dialogs are gone from index.html');
-  assert.match(idx, /<a class="link link-quiet" href="\/privacy">Privacy<\/a>/);
-  assert.match(idx, /<a class="link link-quiet" href="\/terms">Terms<\/a>/);
+  assert.match(idx, /<a class="link link-quiet" href="\/privacy" data-i18n="me\.privacy">Privacy<\/a>/);   // the English stays in the markup; data-i18n translates it
+  assert.match(idx, /<a class="link link-quiet" href="\/terms" data-i18n="me\.terms">Terms<\/a>/);
   for (const f of moduleFiles) assert.ok(!/openPrivacy|openTerms|privacyModalBackdrop|termsModalBackdrop|initInfoModals/.test(read(f)), f + ' still wires the old dialogs');
 });
 
@@ -247,7 +252,7 @@ test('privacy policy names every service the app contacts and what the app store
   assert.match(html, /30 days/);
   // The storage keys the app really uses, so the "Stored in your browser" list cannot drift from the code.
   const code = moduleFiles.map(read).join('\n');
-  for (const k of ['bouldeer_add_draft', 'bouldeer_list_view', 'bouldeer_last_camera', 'bouldeer_recent_searches']) assert.ok(code.includes(k), k + ' is no longer used: update the policy');
+  for (const k of ['bouldeer_add_draft', 'bouldeer_list_view', 'bouldeer_last_camera', 'bouldeer_recent_searches', 'bouldeer_lang']) assert.ok(code.includes(k), k + ' is no longer used: update the policy');
   assert.ok(!/document\.cookie/.test(code), 'the app now sets cookies: update the policy');
   assert.ok(!/gtag|googletagmanager|plausible|posthog|mixpanel|hotjar|sentry/i.test(code + read('index.html')), 'analytics added: update the policy');
 });
@@ -294,8 +299,8 @@ test('Open now: chip between Climbed and All filters (hidden until the 10% rule 
   const chips = [...html.matchAll(/<button type="button" class="chip[^"]*"[^>]*>(?:<[^>]*>)*([^<]+)<\/button>/g)].map((m) => m[1].trim());
   const iClimbed = chips.indexOf('Climbed'), iOpen = chips.indexOf('Open now'), iAll = chips.indexOf('All filters');
   assert.ok(iClimbed >= 0 && iOpen === iClimbed + 1 || (iOpen > iClimbed && iOpen < iAll), 'Open now follows Climbed and precedes All filters: ' + chips.join(' | '));
-  assert.match(html, /<button type="button" class="chip" data-filter-flag="open" aria-pressed="false" hidden>Open now<\/button>/);
-  assert.match(html, /<fieldset class="filter-section" id="filterSheetHours" hidden>\s*<legend class="section-label">Hours<\/legend>\s*<label class="check-row"><input type="checkbox" data-sheet-flag="open">Open now<\/label>/);
+  assert.match(html, /<button type="button" class="chip" data-filter-flag="open" aria-pressed="false" data-i18n="filters\.open" hidden>Open now<\/button>/);
+  assert.match(html, /<fieldset class="filter-section" id="filterSheetHours" hidden>\s*<legend class="section-label" data-i18n="filters\.hours">Hours<\/legend>\s*<label class="check-row"><input type="checkbox" data-sheet-flag="open"><span data-i18n="filters\.open">Open now<\/span><\/label>/);
   const f = read('js/modules/filters.js');
   assert.match(f, /if\(f\.open && status\(g\)\.state !== 'open'\) return false;/, 'only open gyms match; unknown never does');
   assert.match(f, /NEEDS_SIGN_IN = new Set\(\['saved', 'climbed'\]\)/, 'Open now (like Has photos) is not behind sign-in');

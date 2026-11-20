@@ -18,6 +18,7 @@ import { openEditModal, openReportModal, startAddGym } from './modals.js';
 import { closeSearch, initSearch, isSearchOpen, openSearch, rebuildSearchIndex } from './search.js';
 import { SHEET_QUERY, initSheet, isSheetMode, setMinPeek, setSnap } from './sheet.js';
 import { appState } from './state.js';
+import { currentLocale, t } from './i18n.js';
 import { showToast } from './utils.js';
 
 const $ = id => document.getElementById(id);
@@ -26,6 +27,7 @@ let indexedSpots = null;      // the spots array the search index and id map wer
 let urlApplied = false;
 let freshSearch = false;      // mobile: the first four results after a search render as photo cards
 let movedSinceScope = false;
+let indexedLocale = null;       // the language the search index was built in
 let focusSearchOnRender = false;  // first-run (sec. 7.10): focus the search once its index exists
 
 const spotById = id => byId.get(id) || null;
@@ -42,8 +44,14 @@ export function render({ page = true } = {}){
     appState.bySlug = new Map(appState.spots.map(g => [g.slug, g]));
     appState.spots.forEach(g => byId.set(g.id, g));
     rebuildSearchIndex();
+    indexedLocale = currentLocale();
     if(!urlApplied){ urlApplied = true; applyUrlFilters(decodeExploreState(location.search)); }
     else if(appState.placeFilter) setPlaceFilter(appState.searchIndex.places.find(p => p.key === appState.placeFilter.key) || null);
+  }
+  if(indexedLocale !== currentLocale()){          // a language switch: country names and labels in the index change
+    indexedLocale = currentLocale();
+    rebuildSearchIndex();
+    if(appState.placeFilter) setPlaceFilter(appState.searchIndex.places.find(p => p.key === appState.placeFilter.key) || null);
   }
   filtersChanged({write: false});
   if(focusSearchOnRender){ focusSearchOnRender = false; if(isExplore() && appState.exploreFirstRun) $('searchInput').focus({preventScroll: true}); }
@@ -189,7 +197,7 @@ function renderPeek(){
   const wasHidden = peek.hidden;
   peek.innerHTML = peekHtml(g, gymCtx(g));
   peek.hidden = false;
-  if(wasHidden) announce(g.name + ' — details open');
+  if(wasHidden) announce(t('explore.detailsOpen', { name: g.name }));
 }
 
 function showCarousel(ids){
@@ -346,7 +354,7 @@ export function initExplore(){
       refreshList();
       if(appState.selectedId) renderPeek();
     },
-    onLocateError(){ showToast('Location unavailable — sorting by name'); },
+    onLocateError(){ showToast(t('explore.locateError')); },
   });
   map.on('moveend', onMoveEnd);
   document.addEventListener('visibilitychange', () => { if(!document.hidden) tickHours(); });   // a tab left open catches up on return

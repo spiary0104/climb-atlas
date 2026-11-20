@@ -18,13 +18,35 @@ import { initMilestoneSheet } from './modules/milestone-sheet.js';
 import { initPassportPage } from './modules/passport-page.js';
 import { initNavigation } from './modules/nav.js';
 import { initRegionPages } from './modules/region-page.js';
-import { initRouter } from './modules/router.js';
+import { initRouter, refreshPage } from './modules/router.js';
+import { currentLocale, initI18n, setLocale, t } from './modules/i18n.js';
 import { appState } from './modules/state.js';
 import { showActionToast } from './modules/utils.js';
 
 // sw-register.js (a classic script) announces a newer service worker; the person chooses when to reload, never us.
 window.addEventListener('bouldeer:sw-updated', () => {
-  showActionToast('Bouldeer has finished a climb, please refresh the page', 'Refresh', () => location.reload());
+  showActionToast(t('sw.updated'), t('sw.refresh'), () => location.reload());
+});
+
+// Interface language before anything renders (English needs no fetch). A picker change switches in place: the open
+// page and the Explore list re-render, while the URL, map camera, filters and selection stay exactly as they were.
+await initI18n();
+const syncLangPickers = () => { for(const s of document.querySelectorAll('select[data-lang-picker]')) s.value = currentLocale(); };
+syncLangPickers();
+document.addEventListener('change', (e) => {
+  const s = e.target && e.target.closest ? e.target.closest('select[data-lang-picker]') : null;
+  if(!s || s.value === currentLocale()) return;
+  const inPage = !!s.closest('#view');
+  // the /me page re-renders: give keyboard focus back to its (new) picker
+  setLocale(s.value, { manual: true }).then(() => { if(inPage){ const n = document.querySelector('#view select[data-lang-picker]'); if(n) n.focus(); } });
+});
+window.addEventListener('bouldeer:locale', () => {
+  syncLangPickers();
+  const banner = document.getElementById('offlineBanner');
+  if(appState.usingFallback && banner) banner.textContent = t('explore.offline');
+  renderAuthUI(window.auth && window.auth.user);
+  if(appState.loaded) render();
+  refreshPage();
 });
 
 // Wire up each area. The list shows skeleton rows until the first load finishes.
@@ -88,7 +110,7 @@ async function init(){
   if(appState.usingFallback){
     // The text lives here, not in the static shell: a crawler or reader mode must never pick up a warning that is not true.
     const banner = document.getElementById('offlineBanner');
-    banner.textContent = 'Can’t reach Bouldeer right now. Showing a saved list of gyms; sign-in, saving and check-ins come back when you’re online.';
+    banner.textContent = t('explore.offline');
     banner.classList.remove('hidden');
   }
 }

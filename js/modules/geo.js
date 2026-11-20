@@ -1,4 +1,5 @@
 // Pure geometry and Explore-state helpers (no DOM, no MapLibre), unit-tested in tests/explore-pure.test.js.
+import { formatNumber, t } from './i18n.js';
 //   distanceKm / formatDistance     the list's distance column (DESIGN.md sec. 7.4)
 //   boundsOf / inBounds             viewport scoping, antimeridian-safe (sec. 7.2)
 //   viewBox / fitCamera             a camera's box / the camera for a box (Web Mercator; the map before MapLibre loads)
@@ -15,12 +16,12 @@ export function distanceKm(a, b){
   return 2 * R_KM * Math.asin(Math.min(1, Math.sqrt(h)));
 }
 
-// 0.35 -> "350 m", 4.26 -> "4.3 km", 12.7 -> "13 km", 1204 -> "1,204 km"
+// 0.35 -> "350 m", 4.26 -> "4.3 km", 12.7 -> "13 km", 1204 -> "1,204 km" (Chinese: 350 米, 4.3 公里)
 export function formatDistance(km){
   if(!Number.isFinite(km)) return '';
-  if(km < 1) return Math.max(10, Math.round(km * 100) * 10) + ' m';
-  if(km < 10) return km.toFixed(1) + ' km';
-  return Math.round(km).toLocaleString('en-US') + ' km';
+  if(km < 1) return t('geo.meters', { n: String(Math.max(10, Math.round(km * 100) * 10)) });
+  if(km < 10) return t('geo.km', { n: km.toFixed(1) });
+  return t('geo.km', { n: formatNumber(Math.round(km)) });
 }
 
 const wrapLng = lng => lng >= -180 && lng <= 180 ? lng : ((((lng + 180) % 360) + 360) % 360) - 180;
