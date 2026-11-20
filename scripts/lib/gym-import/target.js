@@ -130,7 +130,12 @@ class Api {
     if (!gate || gate[GATE] !== true || !MINTED_WRITE_GATES.has(gate)) throw new Error('refusing to write: no write gate (all preflight checks and safety flags must pass first)');
     if (!Array.isArray(rows) || !rows.length || rows !== gate.rows) throw new Error('refusing to write: rows do not match the approved payload');
     if (!gate.payloadSha || sha256(JSON.stringify(rows)) !== gate.payloadSha) throw new Error('refusing to write: the payload changed after it was approved (hash mismatch)');
-    return this._send('POST', '/rest/v1/spots', { service: true, headers: { 'Content-Type': 'application/json', Prefer: 'return=minimal' }, body: JSON.stringify(rows) });
+    // Rows may carry different optional fields (one gym has address_local, another not). PostgREST rejects a bulk insert whose
+    // objects have different keys (PGRST102) unless ?columns= lists them; missing=default then gives an absent field its column
+    // default, exactly as a one-row insert would. No value is invented.
+    const columns = [...new Set(rows.flatMap(r => Object.keys(r)))];
+    if (!columns.every(c => /^[a-z_][a-z0-9_]*$/.test(c))) throw new Error('refusing to write: unexpected column name in the payload');
+    return this._send('POST', '/rest/v1/spots?columns=' + columns.join(','), { service: true, headers: { 'Content-Type': 'application/json', Prefer: 'return=minimal,missing=default' }, body: JSON.stringify(rows) });
   }
 
   // THE ONLY UPDATE in the importer (updater.js): one location correction of one existing approved spot. PATCH with the row
