@@ -9,7 +9,7 @@ import { escapeHtml, safeUrl } from './html-safe.js';
 import { formatDate, formatNumber, languageOptionsHtml, t, th } from './i18n.js';
 import { directionsUrl } from './utils.js';
 import { icon } from './icons.js';
-import { localLang, localNameHtml, provenanceMarkHtml, thumbHtml, typeTagsHtml } from './list-html.js';
+import { localLang, localNameHtml, primaryName, primaryNameHtml, provenanceMarkHtml, thumbHtml, typeTagsHtml } from './list-html.js';
 import { pinSvg } from './pin-html.js';
 import { publicNotes } from './provenance.js';
 import { addressActionsHtml, visitorHtml } from './visit-html.js';
@@ -49,7 +49,7 @@ export function mapThumbHtml({ lat, lng, zoom = 14, size = 120, href, label, typ
 export function pageCardHtml(g, ctx = {}){
   const meta = [[g.suburb, ctx.region].filter(Boolean).join(', '), ctx.distance].filter(Boolean).join(' · ');
   return `<a class="gym-card page-card" href="${escapeHtml(ctx.href)}" data-link>${thumbHtml(g, 'card')}`
-    + `<span class="gym-card-body"><span class="gym-card-name">${escapeHtml(g.name)}</span>${localNameHtml(g, 'local-name--block')}`
+    + `<span class="gym-card-body"><span class="gym-card-name">${primaryNameHtml(g)}</span>${localNameHtml(g, 'local-name--block')}`
     + `<span class="gym-card-meta tnum">${escapeHtml(meta)}</span><span class="gym-card-tags">${typeTagsHtml(g.types)}</span></span></a>`;
 }
 
@@ -57,7 +57,7 @@ export function pageCardHtml(g, ctx = {}){
 export function pageRowHtml(g, ctx = {}){
   const place = [g.suburb, ctx.region].filter(Boolean).join(' · ');
   return `<a class="page-row" href="${escapeHtml(ctx.href)}" data-link>${thumbHtml(g, 'row')}`
-    + `<span class="gym-row-text"><span class="gym-row-name"><span class="gym-row-title">${escapeHtml(g.name)}</span>${localNameHtml(g, 'local-name--inline')}</span><span class="gym-row-meta">${escapeHtml(place)}</span></span>`
+    + `<span class="gym-row-text"><span class="gym-row-name"><span class="gym-row-title">${primaryNameHtml(g)}</span>${localNameHtml(g, 'local-name--inline')}</span><span class="gym-row-meta">${escapeHtml(place)}</span></span>`
     + `${ctx.distance ? `<span class="gym-row-distance tnum">${escapeHtml(ctx.distance)}</span>` : ''}</a>`;
 }
 
@@ -102,11 +102,11 @@ export function gymPageHtml(g, ctx = {}){
     + breadcrumbHtml(ctx.crumbs || [])
     // Share sits beside the name, not in the action row: four actions are what fits a phone (the tab bar's round Check in
     // covers a fifth, middle one). A compact icon button with the 44px hit area .btn-icon carries; no sign-in needed.
-    + `<header class="gym-header"><div class="gym-heading"><div class="gym-title-row"><h1 class="page-title">${escapeHtml(g.name)}${localNameHtml(g, 'local-name--block local-name--title')}</h1>`
+    + `<header class="gym-header"><div class="gym-heading"><div class="gym-title-row"><h1 class="page-title">${primaryNameHtml(g)}${localNameHtml(g, 'local-name--block local-name--title')}</h1>`
     + `<button type="button" class="btn btn-secondary btn-icon gym-share" data-page-action="share" data-spot-id="${id}" aria-label="${th('gym.shareAria', { name: g.name })}" title="${th('gym.share')}">${icon('share-network', {size:'sm'})}</button></div>`
     + `<p class="gym-meta"><span class="gym-meta-tags">${typeTagsHtml(g.types)}</span><span>${escapeHtml(where)}</span>${ctx.distance ? `<span class="tnum">${escapeHtml(ctx.distance)}</span>` : ''}</p>`
     + provenance + prompt + `</div></header>`
-    + `${photo ? `<img class="gym-hero gym-photo" src="${escapeHtml(photo)}" alt="${escapeHtml(g.name)}" referrerpolicy="no-referrer">` : ''}`
+    + `${photo ? `<img class="gym-hero gym-photo" src="${escapeHtml(photo)}" alt="${escapeHtml(primaryName(g))}" referrerpolicy="no-referrer">` : ''}`
     + `<div class="gym-layout"><div class="gym-main">`
     + `${about ? `<section class="page-section" aria-labelledby="aboutTitle"><h2 class="section-title" id="aboutTitle">${th('gym.about')}</h2><p class="prose">${escapeHtml(about)}</p></section>` : ''}`
     + facilitiesHtml(g) + visitorHtml(g)

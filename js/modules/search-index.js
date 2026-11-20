@@ -36,7 +36,7 @@ export const placeKey = (country, state, suburb) => [country, state, suburb].fil
 
 // stateLabel / metroName: names in the interface language; stateLabelEn: the English region name, so "tokyo" still finds
 // 東京都 (and the reverse), as countryAlt does for countries.
-export function buildSearchIndex(spots, { countryLabels = {}, countryAlt = () => '', stateLabel = (c, s) => s, stateLabelEn = null, metroName = m => m.name } = {}){
+export function buildSearchIndex(spots, { countryLabels = {}, countryAlt = () => '', stateLabel = (c, s) => s, stateLabelEn = null, metroName = m => m.name, localFirst = () => false } = {}){
   const countries = new Map(), regions = new Map(), cities = new Map(), metros = new Map(), gyms = [];
   const secondaryOf = (region, country) => region === country ? country : region + ' · ' + country;
   for(const g of spots){
@@ -63,7 +63,9 @@ export function buildSearchIndex(spots, { countryLabels = {}, countryAlt = () =>
     }
     // g.aliases (verified alternative names, migration 20261114000100) is read when the list query carries it; absent today.
     const aliases = Array.isArray(g.aliases) ? g.aliases.filter(a => typeof a === 'string').join(' ') : '';
-    gyms.push({ kind: 'gym', key: g.id, id: g.id, label: g.name || '', secondary: [g.name_local && String(g.name_local).trim() !== String(g.name || '').trim() ? String(g.name_local).trim() : '', g.suburb, region].filter(Boolean).join(' · '),
+    const other = g.name_local && String(g.name_local).trim() !== String(g.name || '').trim() ? String(g.name_local).trim() : '';
+    const swap = !!other && localFirst(g);   // the gym's own name leads (list-html localFirst); the English name goes second
+    gyms.push({ kind: 'gym', key: g.id, id: g.id, label: swap ? other : g.name || '', secondary: [swap ? g.name : other, g.suburb, region].filter(Boolean).join(' · '),
       local: typeof g.name_local === 'string' ? g.name_local.trim() : '', aliases,
       words: [...wordStarts(g.name), ...wordStarts(g.suburb), ...wordStarts(g.address), ...cjkStarts(g.name_local), ...cjkStarts(aliases)], codes: [], count: 0, lat: g.lat, lng: g.lng });
   }
