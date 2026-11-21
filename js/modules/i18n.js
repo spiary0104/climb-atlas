@@ -167,6 +167,10 @@ export function tOrdinal(key, n){
 // The same, HTML-escaped, for markup templates (translations and parameters are never trusted as HTML).
 export const th = (key, params) => escapeHtml(t(key, params));
 
+// About, Privacy and Terms in the current language (scripts/build-static-pages.js): /about in English, /ja/about etc.
+const PAGE_PREFIX = { 'zh-CN': 'zh-cn', 'zh-TW': 'zh-tw', ja: 'ja', ko: 'ko', de: 'de', fr: 'fr', es: 'es', 'pt-BR': 'pt-br' };
+export const pagePath = page => (PAGE_PREFIX[locale] ? '/' + PAGE_PREFIX[locale] : '') + '/' + page;
+
 // A region (country + STATES_BY_COUNTRY code) or a metro (metros.js) in the current language; English when not listed.
 export const regionName = (country, code, english) => (places && places.regions && places.regions[country] && places.regions[country][code]) || english;
 export const metroName = m => (m && places && places.metros && places.metros[m.country + ':' + m.slug]) || (m ? m.name : '');
@@ -191,6 +195,7 @@ export function formatList(items, type = 'conjunction'){
 export function applyI18n(root){
   if(!root || !root.querySelectorAll) return;
   for(const el of root.querySelectorAll('[data-i18n]')) el.textContent = t(el.getAttribute('data-i18n'));
+  for(const el of root.querySelectorAll('[data-page-link]')) el.setAttribute('href', pagePath(el.getAttribute('data-page-link')));
   for(const el of root.querySelectorAll('[data-i18n-attr]')){
     for(const pair of el.getAttribute('data-i18n-attr').split(';')){
       const [attr, key] = pair.split(':').map(s => s && s.trim());

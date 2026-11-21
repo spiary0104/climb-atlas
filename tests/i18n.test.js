@@ -364,3 +364,27 @@ test('i18n places: region and metro labels follow the language, codes and Englis
   await I.setLocale('en');
   assert.equal(I.metroName(tokyo), 'Tokyo');
 });
+
+test('About, Privacy and Terms open in the interface language; generated pages are in sync with their sources', async () => {
+  await I.setLocale('en');
+  assert.deepEqual(['about', 'privacy', 'terms'].map(I.pagePath), ['/about', '/privacy', '/terms']);
+  await I.setLocale('ja'); assert.equal(I.pagePath('privacy'), '/ja/privacy');
+  await I.setLocale('zh-CN'); assert.equal(I.pagePath('about'), '/zh-cn/about');
+  await I.setLocale('pt-BR'); assert.equal(I.pagePath('terms'), '/pt-br/terms');
+  const S = require('../scripts/build-static-pages.js');
+  assert.deepEqual(S.build({ check: true }), [], 'run node scripts/build-static-pages.js');
+  // every enabled language has a source, and every source page exists with the right lang, canonical and FAQ data
+  for(const l of S.LANGS){
+    assert.ok(I.enabledLocales().some(x => x.code === l.code), l.code + ' is an enabled language');
+    for(const p of S.PAGES){
+      const html = read((l.prefix ? l.prefix + '/' : '') + p + '.html');
+      assert.match(html, new RegExp(`<html lang="${l.html}">`));
+      assert.ok(html.includes(`<link rel="canonical" href="https://www.bouldeer.com${S.urlPath(l, p)}">`), l.code + ' ' + p);
+      assert.equal((html.match(/<link rel="alternate" hreflang=/g) || []).length, S.LANGS.length + 1, 'every translation + x-default');
+      assert.ok(html.includes('href="mailto:hello@bouldeer.com"'));
+      const ld = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+      if(p === 'about') assert.ok(ld['@graph'].some(n => n['@type'] === 'FAQPage' && n.mainEntity.length >= 6), l.code + ' FAQ');
+    }
+  }
+  assert.ok(S.LANGS.length === I.enabledLocales().length, 'one static page set per enabled language');
+});

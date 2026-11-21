@@ -68,7 +68,7 @@ test('vercel.json: only crawler and unfurler user agents reach the function, bef
   for (const r of fnRewrites) {
     assert.equal(r.has[0].type, 'header'); assert.equal(r.has[0].key, 'user-agent');
     const re = new RegExp(r.has[0].value.re);
-    for (const ua of ['facebookexternalhit/1.1', 'Twitterbot/1.0', 'Slackbot-LinkExpanding 1.0', 'WhatsApp/2.23', 'Discordbot/2.0', 'Mozilla/5.0 (compatible; Googlebot/2.1)', 'LinkedInBot/1.0', 'TelegramBot (like TwitterBot)'])
+    for (const ua of ['facebookexternalhit/1.1', 'Twitterbot/1.0', 'Slackbot-LinkExpanding 1.0', 'WhatsApp/2.23', 'Discordbot/2.0', 'Mozilla/5.0 (compatible; Googlebot/2.1)', 'LinkedInBot/1.0', 'TelegramBot (like TwitterBot)', 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)', 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; ChatGPT-User/1.0; +https://openai.com/bot)', 'Claude-SearchBot/1.0', 'Claude-User/1.0', 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; PerplexityBot/1.0; +https://perplexity.ai/perplexitybot)', 'Perplexity-User/1.0'])
       assert.ok(re.test(ua), 'routes ' + ua);
     for (const ua of ['Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1', 'Mozilla/5.0 (Windows NT 10.0) Chrome/140.0 Safari/537.36'])
       assert.ok(!re.test(ua), 'people keep the static shell: ' + ua.slice(0, 30));

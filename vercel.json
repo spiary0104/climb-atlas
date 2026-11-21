@@ -64,7 +64,7 @@
           "type": "header",
           "key": "user-agent",
           "value": {
-            "re": "(facebookexternalhit|Facebot|Twitterbot|Slackbot|Slack-ImgProxy|Discordbot|WhatsApp|TelegramBot|LinkedInBot|Pinterestbot|redditbot|Applebot|SkypeUriPreview|Embedly|Iframely|vkShare|Mastodon|Bluesky|Googlebot|Google-InspectionTool|bingbot|DuckDuckBot|YandexBot|Baiduspider|Yeti|Naverbot|SeznamBot|Qwantbot)"
+            "re": "(facebookexternalhit|Facebot|Twitterbot|Slackbot|Slack-ImgProxy|Discordbot|WhatsApp|TelegramBot|LinkedInBot|Pinterestbot|redditbot|Applebot|SkypeUriPreview|Embedly|Iframely|vkShare|Mastodon|Bluesky|Googlebot|Google-InspectionTool|bingbot|DuckDuckBot|YandexBot|Baiduspider|Yeti|Naverbot|SeznamBot|Qwantbot|OAI-SearchBot|ChatGPT-User|Claude-SearchBot|Claude-User|PerplexityBot|Perplexity-User)"
           }
         }
       ],
@@ -77,7 +77,7 @@
           "type": "header",
           "key": "user-agent",
           "value": {
-            "re": "(facebookexternalhit|Facebot|Twitterbot|Slackbot|Slack-ImgProxy|Discordbot|WhatsApp|TelegramBot|LinkedInBot|Pinterestbot|redditbot|Applebot|SkypeUriPreview|Embedly|Iframely|vkShare|Mastodon|Bluesky|Googlebot|Google-InspectionTool|bingbot|DuckDuckBot|YandexBot|Baiduspider|Yeti|Naverbot|SeznamBot|Qwantbot)"
+            "re": "(facebookexternalhit|Facebot|Twitterbot|Slackbot|Slack-ImgProxy|Discordbot|WhatsApp|TelegramBot|LinkedInBot|Pinterestbot|redditbot|Applebot|SkypeUriPreview|Embedly|Iframely|vkShare|Mastodon|Bluesky|Googlebot|Google-InspectionTool|bingbot|DuckDuckBot|YandexBot|Baiduspider|Yeti|Naverbot|SeznamBot|Qwantbot|OAI-SearchBot|ChatGPT-User|Claude-SearchBot|Claude-User|PerplexityBot|Perplexity-User)"
           }
         }
       ],
@@ -90,7 +90,7 @@
           "type": "header",
           "key": "user-agent",
           "value": {
-            "re": "(facebookexternalhit|Facebot|Twitterbot|Slackbot|Slack-ImgProxy|Discordbot|WhatsApp|TelegramBot|LinkedInBot|Pinterestbot|redditbot|Applebot|SkypeUriPreview|Embedly|Iframely|vkShare|Mastodon|Bluesky|Googlebot|Google-InspectionTool|bingbot|DuckDuckBot|YandexBot|Baiduspider|Yeti|Naverbot|SeznamBot|Qwantbot)"
+            "re": "(facebookexternalhit|Facebot|Twitterbot|Slackbot|Slack-ImgProxy|Discordbot|WhatsApp|TelegramBot|LinkedInBot|Pinterestbot|redditbot|Applebot|SkypeUriPreview|Embedly|Iframely|vkShare|Mastodon|Bluesky|Googlebot|Google-InspectionTool|bingbot|DuckDuckBot|YandexBot|Baiduspider|Yeti|Naverbot|SeznamBot|Qwantbot|OAI-SearchBot|ChatGPT-User|Claude-SearchBot|Claude-User|PerplexityBot|Perplexity-User)"
           }
         }
       ],
@@ -139,6 +139,10 @@
     {
       "source": "/about",
       "destination": "/about.html"
+    },
+    {
+      "source": "/:lang(zh-cn|zh-tw|ja|ko|de|fr|es|pt-br)/:page(about|privacy|terms)",
+      "destination": "/:lang/:page.html"
     }
   ],
   "headers": [

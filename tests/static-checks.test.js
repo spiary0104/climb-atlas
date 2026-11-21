@@ -240,8 +240,8 @@ test('legal pages are real pages: dated, no "draft / not legal advice" banner, n
   assert.match(read('terms.html'), /governed by the laws of New South Wales, Australia/);
   const idx = read('index.html');
   assert.ok(!/privacyModalBackdrop|termsModalBackdrop|id="openPrivacy"|id="openTerms"/.test(idx), 'the Privacy/Terms dialogs are gone from index.html');
-  assert.match(idx, /<a class="link link-quiet" href="\/privacy" data-i18n="me\.privacy">Privacy<\/a>/);   // the English stays in the markup; data-i18n translates it
-  assert.match(idx, /<a class="link link-quiet" href="\/terms" data-i18n="me\.terms">Terms<\/a>/);
+  assert.match(idx, /<a class="link link-quiet" href="\/privacy" data-page-link="privacy" data-i18n="me\.privacy">Privacy<\/a>/);   // English in the markup; data-i18n translates the text, data-page-link the URL
+  assert.match(idx, /<a class="link link-quiet" href="\/terms" data-page-link="terms" data-i18n="me\.terms">Terms<\/a>/);
   for (const f of moduleFiles) assert.ok(!/openPrivacy|openTerms|privacyModalBackdrop|termsModalBackdrop|initInfoModals/.test(read(f)), f + ' still wires the old dialogs');
 });
 
