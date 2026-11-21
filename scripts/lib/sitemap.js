@@ -7,7 +7,9 @@ const path = require('path');
 const { pathToFileURL } = require('url');
 
 const ORIGIN = 'https://www.bouldeer.com';
-const STATIC_PAGES = ['/', '/in', '/about', '/privacy', '/terms'];
+// About, Privacy and Terms also exist per language (scripts/build-static-pages.js LANGS prefixes).
+const PAGE_LANGS = ['zh-cn', 'zh-tw', 'ja', 'ko', 'de', 'fr', 'es', 'pt-br'];
+const STATIC_PAGES = ['/', '/in', '/about', '/privacy', '/terms', ...PAGE_LANGS.flatMap(l => ['about', 'privacy', 'terms'].map(p => `/${l}/${p}`))];
 const ROOT = path.resolve(__dirname, '..', '..');
 
 // The app modules are ES modules; constants.js reads window.matchMedia at import time (reduced motion), so give it a stub.

@@ -42,9 +42,9 @@ test('gym: no photo keeps the site image; unknown slug is a 404 with the shell; 
     let r = await get('slug=plain');
     assert.equal(tag(r.html, /<meta property="og:image" content="([^"]*)">/), 'https://www.bouldeer.com/icons/icon-512.png', 'http photos are never used');
     stubSpots([]); r = await get('slug=nope');
-    assert.equal(r.status, 404); assert.match(r.html, /<title>Bouldeer — community-sourced climbing map<\/title>/);
+    assert.equal(r.status, 404); assert.match(r.html, /<title>Bouldeer — climbing gyms wherever you travel<\/title>/);
     stubSpots([], { throws: true }); r = await get('slug=plain');
-    assert.equal(r.status, 200); assert.match(r.html, /<title>Bouldeer — community-sourced climbing map<\/title>/);
+    assert.equal(r.status, 200); assert.match(r.html, /<title>Bouldeer — climbing gyms wherever you travel<\/title>/);
     stubSpots([], { status: 500 }); r = await get('slug=plain');
     assert.equal(r.status, 200);
     r = await get('slug=' + encodeURIComponent('"><script>'));
@@ -58,7 +58,7 @@ test('places: country, region (any case), metro and multi-gym suburb pages get t
   assert.deepEqual(await pick('path=au/NSW'), ['Climbing gyms in NSW, Australia · Bouldeer', 'https://www.bouldeer.com/in/au/nsw']);
   assert.deepEqual(await pick('path=au/nsw/sydney'), ['Climbing gyms in Sydney, NSW, Australia · Bouldeer', 'https://www.bouldeer.com/in/au/nsw/sydney']);
   assert.deepEqual(await pick('path='), ['Regions · Bouldeer', 'https://www.bouldeer.com/in']);
-  assert.deepEqual(await pick('path=zz/nowhere'), ['Bouldeer — community-sourced climbing map', 'https://www.bouldeer.com/']);
+  assert.deepEqual(await pick('path=zz/nowhere'), ['Bouldeer — climbing gyms wherever you travel', 'https://www.bouldeer.com/']);
 });
 
 test('vercel.json: only crawler and unfurler user agents reach the function, before the shell rewrites; its files are bundled', () => {
@@ -68,7 +68,7 @@ test('vercel.json: only crawler and unfurler user agents reach the function, bef
   for (const r of fnRewrites) {
     assert.equal(r.has[0].type, 'header'); assert.equal(r.has[0].key, 'user-agent');
     const re = new RegExp(r.has[0].value.re);
-    for (const ua of ['facebookexternalhit/1.1', 'Twitterbot/1.0', 'Slackbot-LinkExpanding 1.0', 'WhatsApp/2.23', 'Discordbot/2.0', 'Mozilla/5.0 (compatible; Googlebot/2.1)', 'LinkedInBot/1.0', 'TelegramBot (like TwitterBot)'])
+    for (const ua of ['facebookexternalhit/1.1', 'Twitterbot/1.0', 'Slackbot-LinkExpanding 1.0', 'WhatsApp/2.23', 'Discordbot/2.0', 'Mozilla/5.0 (compatible; Googlebot/2.1)', 'LinkedInBot/1.0', 'TelegramBot (like TwitterBot)', 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot)', 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; ChatGPT-User/1.0; +https://openai.com/bot)', 'Claude-SearchBot/1.0', 'Claude-User/1.0', 'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; PerplexityBot/1.0; +https://perplexity.ai/perplexitybot)', 'Perplexity-User/1.0'])
       assert.ok(re.test(ua), 'routes ' + ua);
     for (const ua of ['Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1', 'Mozilla/5.0 (Windows NT 10.0) Chrome/140.0 Safari/537.36'])
       assert.ok(!re.test(ua), 'people keep the static shell: ' + ua.slice(0, 30));

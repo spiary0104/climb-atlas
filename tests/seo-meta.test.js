@@ -14,7 +14,7 @@ test('gym: title and description follow the pattern (bouldering-only vs mixed)',
   assert.equal(a.title, 'BlocHaus Marrickville · Bouldering gym in Marrickville, NSW, Australia');
   assert.equal(fullTitle(a.title), 'BlocHaus Marrickville · Bouldering gym in Marrickville, NSW, Australia · Bouldeer');
   assert.match(a.description, /^BlocHaus Marrickville is a bouldering gym in Marrickville, NSW, Australia\. Address: 2\/5 Fisher St/);
-  assert.ok(a.description.endsWith('community-sourced climbing map.'));
+  assert.ok(a.description.endsWith('climbing gym map for travellers.'));
   const b = gymSeo({ name: 'Rock Up', suburb: 'Leeds', types: ['indoor-bouldering', 'top-rope', 'lead-climbing'] }, { region: 'England', country: 'United Kingdom' });
   assert.equal(b.title, 'Rock Up · Climbing gym in Leeds, England, United Kingdom');
   assert.match(b.description, /Climbing here: bouldering, top rope and lead climbing\./);
@@ -57,7 +57,7 @@ test('place: country, region and city titles and descriptions, with counts', asy
   const { placeSeo } = await mod;
   assert.deepEqual(placeSeo({ kind: 'country', name: 'Australia', count: 1204 }), {
     title: 'Climbing gyms in Australia',
-    description: '1,204 climbing gyms in Australia: bouldering, top rope and lead. Browse them on Bouldeer, the community-sourced climbing map.',
+    description: '1,204 climbing gyms in Australia: bouldering, top rope and lead. Browse them on Bouldeer, the climbing gym map for travellers.',
   });
   assert.equal(placeSeo({ kind: 'region', name: 'New South Wales', within: 'Australia', count: 1 }).title, 'Climbing gyms in New South Wales, Australia');
   assert.match(placeSeo({ kind: 'region', name: 'New South Wales', within: 'Australia', count: 1 }).description, /^1 climbing gym in New South Wales, Australia:/);

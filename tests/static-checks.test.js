@@ -225,7 +225,7 @@ test('legal pages use the Bouldeer name (Climb Atlas only as "formerly")', () =>
     assert.ok(!/climb\s*atlas/i.test(text), f + ': old product name in the legal copy: ' + (text.match(/.{0,60}climb\s*atlas.{0,20}/i) || [''])[0]);
     assert.ok((read(f).match(/\bBouldeer\b/g) || []).length >= 4, f + ' names Bouldeer throughout');
   }
-  assert.match(read('terms.html'), /<p>Bouldeer \(formerly Climb Atlas\) is a free, informational, community-edited map/);
+  assert.match(read('terms.html'), /<p>Bouldeer \(formerly Climb Atlas\) is a free, informational map of climbing gyms for climbers who travel/);
   for (const f of ['about.html', '404.html']) assert.ok(!/climb\s*atlas/i.test(read(f)), f + ' names Climb Atlas');
 });
 
@@ -233,15 +233,15 @@ test('legal pages are real pages: dated, no "draft / not legal advice" banner, n
   for (const f of LEGAL_PAGES) {
     const html = read(f);
     assert.match(html, /<html lang="en">/, f);
-    assert.match(html, /Last updated: 3 October 2026/, f + ' carries the current date');
+    assert.match(html, /Last updated: 21 November 2026/, f + ' carries the current date');
     assert.ok(!/starting draft|not legal advice|legal-note/i.test(html), f + ' still presents itself as a draft');
     assert.match(html, /<h1[^>]*>(Privacy Policy|Terms of Service)<\/h1>/, f);
   }
   assert.match(read('terms.html'), /governed by the laws of New South Wales, Australia/);
   const idx = read('index.html');
   assert.ok(!/privacyModalBackdrop|termsModalBackdrop|id="openPrivacy"|id="openTerms"/.test(idx), 'the Privacy/Terms dialogs are gone from index.html');
-  assert.match(idx, /<a class="link link-quiet" href="\/privacy" data-i18n="me\.privacy">Privacy<\/a>/);   // the English stays in the markup; data-i18n translates it
-  assert.match(idx, /<a class="link link-quiet" href="\/terms" data-i18n="me\.terms">Terms<\/a>/);
+  assert.match(idx, /<a class="link link-quiet" href="\/privacy" data-page-link="privacy" data-i18n="me\.privacy">Privacy<\/a>/);   // English in the markup; data-i18n translates the text, data-page-link the URL
+  assert.match(idx, /<a class="link link-quiet" href="\/terms" data-page-link="terms" data-i18n="me\.terms">Terms<\/a>/);
   for (const f of moduleFiles) assert.ok(!/openPrivacy|openTerms|privacyModalBackdrop|termsModalBackdrop|initInfoModals/.test(read(f)), f + ' still wires the old dialogs');
 });
 
