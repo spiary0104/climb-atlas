@@ -29,7 +29,7 @@ module.exports = {
     </ul>
 
     <h2>De onde vêm as informações</h2>
-    <p>Cada academia é pesquisada uma a uma a partir do próprio site e das redes sociais dela e de listagens públicas de mapas, e é verificada antes de aparecer no mapa. Quando não confirmamos um detalhe, como um preço ou o horário de funcionamento, o Bouldeer diz isso em vez de adivinhar. Se algo estiver desatualizado, <strong>Sugerir uma edição</strong> ou <strong>Relatar um problema</strong> na página da academia nos avisa, e toda correção é verificada antes de ir ao ar.</p>
+    <p>Cada academia é pesquisada uma a uma a partir do próprio site e das redes sociais dela e de listagens públicas de mapas, e é verificada antes de aparecer no mapa. Quando não confirmamos um detalhe, como um preço ou o horário de funcionamento, o Bouldeer diz isso em vez de adivinhar. Se algo estiver desatualizado, <strong>Sugerir edição</strong> ou <strong>Reportar problema</strong> na página da academia nos avisa, e toda correção é verificada antes de ir ao ar.</p>
 
     <h2>Para quem é</h2>
     <p>Escaladores que viajam: de férias, a trabalho, numa viagem longa por vários países ou recém-chegados a uma cidade. Você não precisa de uma conta para usar o mapa.</p>
@@ -99,7 +99,7 @@ module.exports = {
 
     <h2>Excluir sua conta</h2>
     <p>Envie um e-mail para <a href="mailto:hello@bouldeer.com">hello@bouldeer.com</a> a partir do endereço com o qual você entra e excluiremos sua conta em até 30 dias. Isso remove seu e-mail, nome de exibição, academias salvas e escaladas, check-ins, diário e pontos. As academias, edições e relatos que você enviou permanecem, com o vínculo com você removido. As cópias nos registros e backups dos nossos provedores expiram conforme os prazos de cada um.</p>
-    <p>Você também pode nos escrever para saber o que guardamos sobre você ou para corrigir esses dados. Para corrigir os detalhes de uma academia, use Sugerir uma edição ou Relatar um problema na página dela.</p>
+    <p>Você também pode nos escrever para saber o que guardamos sobre você ou para corrigir esses dados. Para corrigir os detalhes de uma academia, use Sugerir edição ou Reportar problema na página dela.</p>
 
     <h2>Alterações</h2>
     <p>Se o Bouldeer passar a coletar algo novo, atualizaremos esta página primeiro e mudaremos a data acima.</p>

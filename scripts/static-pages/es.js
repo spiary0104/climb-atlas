@@ -29,7 +29,7 @@ module.exports = {
     </ul>
 
     <h2>De dónde sale la información</h2>
-    <p>Cada rocódromo se investiga uno por uno a partir de su propio sitio web y sus redes sociales y de fichas públicas de mapas, y se comprueba antes de que aparezca en el mapa. Cuando no hemos confirmado un dato, como un precio o un horario, Bouldeer lo dice en lugar de adivinar. Si algo está desactualizado, <strong>Sugerir una edición</strong> o <strong>Informar de un problema</strong> en la página del rocódromo nos lo hace llegar, y cada corrección se revisa antes de publicarse.</p>
+    <p>Cada rocódromo se investiga uno por uno a partir de su propio sitio web y sus redes sociales y de fichas públicas de mapas, y se comprueba antes de que aparezca en el mapa. Cuando no hemos confirmado un dato, como un precio o un horario, Bouldeer lo dice en lugar de adivinar. Si algo está desactualizado, <strong>Sugerir un cambio</strong> o <strong>Informar de un problema</strong> en la página del rocódromo nos lo hace llegar, y cada corrección se revisa antes de publicarse.</p>
 
     <h2>Para quién es</h2>
     <p>Para escaladores que viajan: de vacaciones, en un viaje de trabajo, en un viaje largo por varios países o recién llegados a una ciudad. No necesitas una cuenta para usar el mapa.</p>
@@ -99,7 +99,7 @@ module.exports = {
 
     <h2>Eliminar tu cuenta</h2>
     <p>Escribe a <a href="mailto:hello@bouldeer.com">hello@bouldeer.com</a> desde la dirección con la que inicias sesión y eliminaremos tu cuenta en un plazo de 30 días. Eso borra tu correo electrónico, tu nombre visible, tus rocódromos guardados y escalados, check-ins, diario y puntos. Los rocódromos, ediciones e informes que enviaste se conservan, sin el vínculo contigo. Las copias en los registros y copias de seguridad de nuestros proveedores caducan según sus propios plazos.</p>
-    <p>También puedes escribirnos para preguntar qué datos tenemos sobre ti o para que los corrijamos. Para corregir los datos de un rocódromo, usa Sugerir una edición o Informar de un problema en su página.</p>
+    <p>También puedes escribirnos para preguntar qué datos tenemos sobre ti o para que los corrijamos. Para corregir los datos de un rocódromo, usa Sugerir un cambio o Informar de un problema en su página.</p>
 
     <h2>Cambios</h2>
     <p>Si Bouldeer empieza a recopilar algo nuevo, actualizaremos primero esta página y cambiaremos la fecha de arriba.</p>

@@ -292,7 +292,7 @@ test('manifest: TWA-ready basics (name, scope, standalone, maskable 512 icon) an
 
 test('i18n Phase 2: the Explore intro places the brand per language (particles attach: Bouldeer는, Bouldeerは)', async () => {
   const { introHtml } = await import('../js/modules/list-html.js');
-  const want = { en: '<strong>Bouldeer</strong> helps', ko: '<strong>Bouldeer</strong>는 ', ja: '<strong>Bouldeer</strong>は、', 'zh-TW': '<strong>Bouldeer</strong> 收錄' };
+  const want = { en: '<strong>Bouldeer</strong> helps', ko: '<strong>Bouldeer</strong>는 ', ja: '<strong>Bouldeer</strong>は、', 'zh-TW': '<strong>Bouldeer</strong> 幫助' };
   for(const [code, start] of Object.entries(want)){
     await I.setLocale(code);
     assert.ok(introHtml().startsWith('<p class="explore-intro-text">' + start), code + ': ' + introHtml().slice(0, 90));
