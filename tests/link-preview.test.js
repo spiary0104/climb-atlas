@@ -42,9 +42,9 @@ test('gym: no photo keeps the site image; unknown slug is a 404 with the shell; 
     let r = await get('slug=plain');
     assert.equal(tag(r.html, /<meta property="og:image" content="([^"]*)">/), 'https://www.bouldeer.com/icons/icon-512.png', 'http photos are never used');
     stubSpots([]); r = await get('slug=nope');
-    assert.equal(r.status, 404); assert.match(r.html, /<title>Bouldeer — community-sourced climbing map<\/title>/);
+    assert.equal(r.status, 404); assert.match(r.html, /<title>Bouldeer — climbing gyms wherever you travel<\/title>/);
     stubSpots([], { throws: true }); r = await get('slug=plain');
-    assert.equal(r.status, 200); assert.match(r.html, /<title>Bouldeer — community-sourced climbing map<\/title>/);
+    assert.equal(r.status, 200); assert.match(r.html, /<title>Bouldeer — climbing gyms wherever you travel<\/title>/);
     stubSpots([], { status: 500 }); r = await get('slug=plain');
     assert.equal(r.status, 200);
     r = await get('slug=' + encodeURIComponent('"><script>'));
@@ -58,7 +58,7 @@ test('places: country, region (any case), metro and multi-gym suburb pages get t
   assert.deepEqual(await pick('path=au/NSW'), ['Climbing gyms in NSW, Australia · Bouldeer', 'https://www.bouldeer.com/in/au/nsw']);
   assert.deepEqual(await pick('path=au/nsw/sydney'), ['Climbing gyms in Sydney, NSW, Australia · Bouldeer', 'https://www.bouldeer.com/in/au/nsw/sydney']);
   assert.deepEqual(await pick('path='), ['Regions · Bouldeer', 'https://www.bouldeer.com/in']);
-  assert.deepEqual(await pick('path=zz/nowhere'), ['Bouldeer — community-sourced climbing map', 'https://www.bouldeer.com/']);
+  assert.deepEqual(await pick('path=zz/nowhere'), ['Bouldeer — climbing gyms wherever you travel', 'https://www.bouldeer.com/']);
 });
 
 test('vercel.json: only crawler and unfurler user agents reach the function, before the shell rewrites; its files are bundled', () => {

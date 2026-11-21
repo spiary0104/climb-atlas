@@ -7,8 +7,8 @@
 // which is what the server-side link previews and sitemap get.
 export const SITE_NAME = 'Bouldeer';
 export const SITE_SUFFIX = ' · ' + SITE_NAME;
-export const SITE_TITLE = 'Bouldeer — community-sourced climbing map';
-export const SITE_DESCRIPTION = 'A community-sourced map of indoor climbing gyms — bouldering, top rope, and lead — in 80+ countries.';
+export const SITE_TITLE = 'Bouldeer — climbing gyms wherever you travel';
+export const SITE_DESCRIPTION = 'A map of indoor climbing gyms for climbers who travel: bouldering, top rope and lead in 80+ countries.';
 
 const TYPE_WORDS = { 'indoor-bouldering': 'bouldering', 'top-rope': 'top rope', 'lead-climbing': 'lead climbing' };
 const TYPE_WORD_KEYS = { 'indoor-bouldering': 'bouldering', 'top-rope': 'topRope', 'lead-climbing': 'lead' };
@@ -49,7 +49,7 @@ export function gymSeo(g, { region = '', country = '', tr = null } = {}){
   const parts = [
     name + ' is a ' + noun.toLowerCase() + (place ? ' in ' + place : '') + '.',
     words.length && noun !== 'Bouldering gym' ? 'Climbing here: ' + list(words) + '.' : '',
-    'See it on Bouldeer, the community-sourced climbing map.',
+    'See it on Bouldeer, the climbing gym map for travellers.',
   ].filter(Boolean);
   // The address goes before the closing sentence, but only when everything still fits (never cut the tail off).
   const withAddress = address ? [...parts.slice(0, -1), 'Address: ' + address + '.', parts[parts.length - 1]] : parts;
@@ -64,7 +64,7 @@ export function placeSeo({ kind, name, within = '', count = 0, tr = null }){
   const where = kind === 'country' || !within ? n : n + ', ' + clean(within, 60);
   const title = tr ? tr('seo.placeTitle', { where }) : 'Climbing gyms in ' + where;
   const gyms = count === 1 ? '1 climbing gym' : count > 1 ? count.toLocaleString('en-US') + ' climbing gyms' : 'Climbing gyms';
-  return { title, description: clean(gyms + ' in ' + where + ': bouldering, top rope and lead. Browse them on Bouldeer, the community-sourced climbing map.', DESC_MAX) };
+  return { title, description: clean(gyms + ' in ' + where + ': bouldering, top rope and lead. Browse them on Bouldeer, the climbing gym map for travellers.', DESC_MAX) };
 }
 
 // A region page that lists exactly the same gyms as one of its city pages (a region and its only city sharing a name,

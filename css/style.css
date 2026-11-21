@@ -81,6 +81,13 @@ body.app-body{overflow:hidden;}
 .static-content a:not(.btn):hover{color:var(--color-accent-hover);}
 .static-notfound{padding:var(--space-5) 0 var(--space-4);}
 .static-notfound .brand-crest{display:block;width:var(--space-8);height:auto;margin:0 0 var(--space-4);}
+/* About: questions and answers (also the FAQPage structured data); every page: its translations */
+.static-content .faq{margin:0;max-width:var(--size-measure);}
+.static-content .faq dt{margin-top:var(--space-4);font-weight:var(--font-weight-semibold);}
+.static-content .faq dd{margin:var(--space-1) 0 0;color:var(--color-text-secondary);}
+.static-languages ul{display:flex;flex-wrap:wrap;column-gap:var(--space-4);margin:var(--space-6) 0 0;padding:0;list-style:none;font-size:var(--type-text-sm-size);}
+.static-languages a,.static-languages span{display:inline-flex;align-items:center;min-height:var(--size-touch-min);}
+.static-languages span[aria-current]{font-weight:var(--font-weight-semibold);}
 .static-footer{margin-top:var(--space-7);padding-top:var(--space-3);border-top:var(--border-width) solid var(--color-border-subtle);display:flex;flex-wrap:wrap;column-gap:var(--space-5);font-size:var(--type-text-md-size);}
 .static-footer a{display:inline-flex;align-items:center;min-height:var(--size-touch-min);color:var(--color-text-secondary);text-underline-offset:var(--text-underline-offset);}
 .static-footer a:hover{color:var(--color-text-primary);}

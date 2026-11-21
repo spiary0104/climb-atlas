@@ -31,7 +31,7 @@ test('filters: "Has photos" is offered only once 5% of gyms have a photo, and st
 test('orientation: one escaped line with live counts, an About link and a dismiss button; once per device', async () => {
   const { introHtml } = await listHtml;
   const html = introHtml();
-  assert.match(html, /<strong>Bouldeer<\/strong> maps thousands of climbing gyms in 80\+ countries, researched gym by gym and kept current by climbers\./);
+  assert.match(html, /<strong>Bouldeer<\/strong> helps climbers who travel find a gym anywhere: thousands of bouldering and climbing gyms in 80\+ countries, researched gym by gym\./);
   assert.match(html, /href="\/about\.html"/); assert.match(html, /data-intro-close aria-label="Dismiss"/);
   assert.ok(!/mascot/.test(read('js/modules/list-html.js')), 'no character in the list builders');
   const src = read('js/modules/list.js');
