@@ -49,6 +49,9 @@ try {
   Write-Host "`n==== Refreshing the index, sitemap and offline list ====" -ForegroundColor Cyan
   & node scripts/gym-import.js build-index --live
   & node scripts/build-sitemap.js
+  # Tell Bing and the other IndexNow engines about new and removed gym/place pages (never fails the apply).
+  & node scripts/indexnow.js --changed
+  if ($LASTEXITCODE -ne 0) { Write-Host "IndexNow submission did not go through (see above); the sitemap still covers these pages." -ForegroundColor Yellow }
   Write-Host "`nDone: all $($Batch.Count) batch(es) applied and verified." -ForegroundColor Green
 } finally {
   [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($bstr)
