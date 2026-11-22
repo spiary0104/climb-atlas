@@ -167,6 +167,13 @@
 .me-brand .section-title{margin-top:0;}
 .me-links{display:flex;flex-wrap:wrap;column-gap:var(--space-4);margin:0;font-size:var(--type-text-md-size);}
 .me-links a{display:inline-flex;align-items:center;min-height:var(--size-touch-min);}
+/* Delete account: folded away under the account actions; the list says what goes and what stays */
+.me-delete-summary{display:list-item;padding:var(--space-3) 0;cursor:pointer;color:var(--color-text-secondary);}   /* list-item keeps the native disclosure arrow */
+.me-delete-summary:hover{color:var(--color-status-danger);}
+.me-delete-body{max-width:var(--size-measure);}
+.me-delete-list{margin:var(--space-2) 0 var(--space-3);padding-left:var(--space-5);color:var(--color-text-secondary);}
+.me-delete-body .check-row{display:flex;align-items:center;gap:var(--space-2);min-height:var(--size-touch-min);}
+.me-delete-actions{margin:var(--space-2) 0 0;}
 .me-points{margin:0 0 var(--space-4);font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);color:var(--color-text-secondary);}
 .me-points strong{color:var(--color-text-primary);font-weight:var(--font-weight-semibold);}
 .me-name{max-width:var(--size-dialog);}

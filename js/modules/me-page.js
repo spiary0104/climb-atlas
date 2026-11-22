@@ -8,7 +8,7 @@ import { displayNameSaveMessage, isContributor, isMissingTable, levelFor, validD
 import { stateLabel } from './map.js';
 import { startAddGym } from './modals.js';
 import { mePageHtml, pageSkeletonHtml } from './page-html.js';
-import { currentRoute, refreshPage, registerView, setPageTitle } from './router.js';
+import { currentRoute, navigate, refreshPage, registerView, setPageTitle } from './router.js';
 import { gymPath } from './slug.js';
 import { appState } from './state.js';
 import { showToast } from './utils.js';
@@ -78,6 +78,34 @@ export function initMePage(){
       case 'sign-in': openAuthModal(); break;
       case 'sign-out': window.auth.signOut(); showToast(t('me.signedOut')); break;
       case 'add-gym': startAddGym(); break;
+      case 'delete-account': deleteAccount(btn); break;
     }
   });
+  document.getElementById('view').addEventListener('change', (e)=>{
+    const box = e.target.closest('[data-delete-confirm]');
+    const btn = document.querySelector('[data-page-action="delete-account"]');
+    if(box && btn) btn.disabled = !box.checked;
+  });
+}
+
+// The Edge Function (supabase/functions/delete-account) deletes the caller's own auth user with the service role; the
+// database foreign keys remove the personal data and unlink submissions. Then this device signs out locally (the
+// server-side session is already gone with the user).
+async function deleteAccount(btn){
+  const box = document.querySelector('[data-delete-confirm]'), hint = document.getElementById('deleteHint');
+  if(!box || !box.checked || !window.sb || !window.auth.user) return;
+  btn.disabled = true; box.disabled = true;
+  if(hint) hint.textContent = t('me.deleting');
+  try{
+    const { data, error } = await window.sb.functions.invoke('delete-account', { method: 'POST' });
+    if(error || !data || !data.deleted) throw error || new Error('not deleted');
+  }catch(err){
+    console.error('[delete-account]', err);
+    if(hint) hint.textContent = t('me.deleteFailed');
+    btn.disabled = false; box.disabled = false;
+    return;
+  }
+  try{ await window.sb.auth.signOut({ scope: 'local' }); }catch(e){ /* the account is gone either way */ }
+  showToast(t('me.deleted'));
+  navigate('/');
 }

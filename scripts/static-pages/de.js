@@ -55,7 +55,7 @@ module.exports = {
     title: 'Datenschutzerklärung',
     metaTitle: 'Datenschutzerklärung — Bouldeer',
     description: 'Was Bouldeer speichert, wer es sehen kann, welche Dienste es nutzt und wie du dein Konto löschst.',
-    updated: 'Stand: 21. November 2026',
+    updated: 'Stand: 22. November 2026',
     body: `
     <p>Bouldeer ist eine kleine, kostenlose Karte von Kletterhallen für Kletternde, die reisen. Wir erheben so wenig wie möglich, nutzen weder Werbung noch Analysedienste und verkaufen deine Daten nicht.</p>
 
@@ -98,7 +98,7 @@ module.exports = {
     </ul>
 
     <h2>Dein Konto löschen</h2>
-    <p>Schreib eine E-Mail an <a href="mailto:hello@bouldeer.com">hello@bouldeer.com</a> von der Adresse, mit der du dich anmeldest, und wir löschen dein Konto innerhalb von 30 Tagen. Dabei werden deine E-Mail-Adresse, dein Anzeigename, gespeicherte und gekletterte Hallen, Check-ins, Logbuch und Punkte entfernt. Hallen, Änderungen und Meldungen, die du geschickt hast, bleiben bestehen, die Verknüpfung zu dir wird entfernt. Kopien in den Protokollen und Backups unserer Anbieter laufen nach deren eigenen Fristen ab.</p>
+    <p>Nutze unten auf deiner Ich-Seite <strong>Konto löschen</strong>, um dein Konto sofort zu löschen, oder schreib eine E-Mail an <a href="mailto:hello@bouldeer.com">hello@bouldeer.com</a> von der Adresse, mit der du dich anmeldest, und wir löschen es innerhalb von 30 Tagen. In beiden Fällen werden deine E-Mail-Adresse, dein Anzeigename, gespeicherte und gekletterte Hallen, Check-ins, Logbuch und Punkte entfernt. Hallen, Änderungen und Meldungen, die du geschickt hast, bleiben bestehen, die Verknüpfung zu dir wird entfernt. Kopien in den Protokollen und Backups unserer Anbieter laufen nach deren eigenen Fristen ab.</p>
     <p>Du kannst uns auch schreiben, um zu erfahren, was wir über dich speichern, oder um es berichtigen zu lassen. Um die Angaben zu einer Halle zu korrigieren, nutze auf deren Seite Änderung vorschlagen oder Problem melden.</p>
 
     <h2>Änderungen</h2>
