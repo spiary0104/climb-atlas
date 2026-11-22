@@ -1,0 +1,197 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-22-cn-banana-names",
+ "index": {
+  "sha256": "e44702806afb1e2443afda3319d6acbc800ebd5324a8b62a3d4d781172385a1b",
+  "count": 3658,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha"
+ ],
+ "counts": {
+  "records": 10,
+  "new": 0,
+  "existing": 0,
+  "update": 10,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "843ca19f61ae8ba4dbe19a8f20c213e60b80ef52e995c9392f0ba9618ef1276a",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-533",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "BANANA+ 香蕉攀岩（嘉里合集店）"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "上海市静安区天目西路218号嘉里合集B1层B103-B104"
+    }
+   ],
+   "expect_h": "c46d8b7947496f79",
+   "update_reason": "Chinese name and address from the operator's official store list (sh-kerry)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-534",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "香蕉攀岩（延安西路店）"
+    }
+   ],
+   "expect_h": "a5e10062198a04ac",
+   "update_reason": "Chinese name from the operator's official store list (sh-yananxi)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-637",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "香蕉攀岩（上地店）"
+    }
+   ],
+   "expect_h": "b83bc9d332adce8e",
+   "update_reason": "Chinese name from the operator's official store list (bj-shangdi)"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-711",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "香蕉攀岩（珠江星环店）"
+    }
+   ],
+   "expect_h": "4b5dbb9943c5395b",
+   "update_reason": "Chinese name from the operator's official store list (cs-zhujiang)"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-712",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "香蕉攀岩（悦方ID MALL店）"
+    }
+   ],
+   "expect_h": "124933d850a51089",
+   "update_reason": "Chinese name from the operator's official store list (cs-yuefang)"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-714",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "香蕉攀岩（来福士店）"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "杭州市上城区新业路228号杭州来福士中心"
+    }
+   ],
+   "expect_h": "14d8c1db75ff2322",
+   "update_reason": "Chinese name and address from the operator's official store list (hz-raffles)"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-715",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "香蕉攀岩（西溪天街店）"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "杭州市西湖区余杭塘路龙湖西溪天街4层46、47号"
+    }
+   ],
+   "expect_h": "e64fcac918a725bb",
+   "update_reason": "Chinese name and address from the operator's official store list (hz-xixi)"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-716",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "香蕉攀岩（奥体印象城店）"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "杭州市萧山区盈丰街道汇德隆印象城L6-01a"
+    }
+   ],
+   "expect_h": "e6b2835ba9b2bf9b",
+   "update_reason": "Chinese name and address from the operator's official store list (hz-aoti)"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "seed-735",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "香蕉攀岩（君超中心店）"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "广州市天河区广州国际金融城君超中心GRANTRAL ONE"
+    }
+   ],
+   "expect_h": "4cf45c6e51808d14",
+   "update_reason": "Chinese name and address from the operator's official store list (gz-junchao)"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "seed-755",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "香蕉攀岩（乐士店）"
+    }
+   ],
+   "expect_h": "4b5b25b65bed6e89",
+   "update_reason": "Chinese name from the operator's official store list (zh-leshi)"
+  }
+ ]
+}
