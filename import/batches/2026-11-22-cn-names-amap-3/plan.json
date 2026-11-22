@@ -11,10 +11,10 @@
   "2026-10-12-cn-kunming-changsha"
  ],
  "counts": {
-  "records": 60,
+  "records": 61,
   "new": 0,
   "existing": 0,
-  "update": 53,
+  "update": 54,
   "probable-duplicate": 0,
   "invalid": 0,
   "rejected": 0,
@@ -27,7 +27,7 @@
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "09362803ba0575ec1fdc54c6f060669a1781f6b3395beb7c151bfa3a38eeb25a",
+ "plan_sha256": "bb2879606b3768be83a69a2e296abc4d56d5d046f251199e02f570ff1280964e",
  "records": [
   {
    "line": 1,
@@ -973,6 +973,25 @@
   },
   {
    "line": 54,
+   "class": "update",
+   "id": "seed-505",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "蓝天攀岩-青少年训练(罗湖益田假日广场店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "深圳市罗湖区翠竹街道木头龙社区爱国路1009号益田御龙华府1栋L2-04"
+    }
+   ],
+   "expect_h": "bc367cdd709caeed",
+   "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 55,
    "class": "retire",
    "id": "seed-559",
    "name": "Panxing Climbing (Nanqiao Bailian)",
@@ -997,7 +1016,7 @@
    }
   },
   {
-   "line": 55,
+   "line": 56,
    "class": "retire",
    "id": "seed-568",
    "name": "Panxing Climbing (Zhonghuan Bailian)",
@@ -1021,7 +1040,7 @@
    }
   },
   {
-   "line": 56,
+   "line": 57,
    "class": "retire",
    "id": "seed-634",
    "name": "Climbing Hero (Shuangliu Wanda)",
@@ -1046,7 +1065,7 @@
    }
   },
   {
-   "line": 57,
+   "line": 58,
    "class": "retire",
    "id": "seed-605",
    "name": "Jibi Storm Climbing (Bailian Xijiao)",
@@ -1070,7 +1089,7 @@
    }
   },
   {
-   "line": 58,
+   "line": 59,
    "class": "retire",
    "id": "seed-668",
    "name": "Yaoyan Climbing (Shahe)",
@@ -1094,7 +1113,7 @@
    }
   },
   {
-   "line": 59,
+   "line": 60,
    "class": "retire",
    "id": "seed-729",
    "name": "Climbing Orangutan (California Sunshine Kaiyuan Plaza)",
@@ -1119,7 +1138,7 @@
    }
   },
   {
-   "line": 60,
+   "line": 61,
    "class": "retire",
    "id": "seed-851",
    "name": "Kuanrun Climbing Gym",

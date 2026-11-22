@@ -193,10 +193,10 @@ seed-564 (High Five Climbing Center, Jing'an) was matched to 酸爽攀岩 earlie
 
 ## Results 2026-11-22 (batch `2026-11-22-cn-names-amap-3`, not applied)
 
-Of the 130: 10 were already named by the Banana batch; **53 staged** (40 name + address, 13 name only);
+Of the 130: 10 were already named by the Banana batch; **54 staged** (41 name + address, 13 name only; seed-505 added after the owner kept it);
 **15 held for the owner** (below; owner 2026-11-22: the 3 kids-only and 4 closed are retired in the same batch, `not-public` / `closed`); **52 without a clear Amap listing** (left out, per the rule above).
 Amap injects random noise characters into search-result text, so every staged value was read twice from the POI detail page in separate loads and is identical in both.
-Addresses carrying a walking/metro/entrance hint or a malformed prefix were left out (name only). Live preflight (read-only) passed 53/53.
+Addresses carrying a walking/metro/entrance hint or a malformed prefix were left out (name only). Live preflight (read-only) passed for every record (54 fills + 7 retirements).
 
 ### Held for the owner (not staged)
 
@@ -205,7 +205,7 @@ Addresses carrying a walking/metro/entrance hint or a malformed prefix were left
 | seed-559 | Panxing Climbing (Nanqiao Bailian) | Amap lists 攀猩儿童攀岩馆(南桥百联店): a kids' climbing gym (policy: kids-only venues are not listed) **Owner 2026-11-22: retire; staged in the same batch.** |
 | seed-568 | Panxing Climbing (Zhonghuan Bailian) | Amap lists 攀猩儿童攀岩馆(中环百联店): a kids' climbing gym **Owner 2026-11-22: retire; staged in the same batch.** |
 | seed-634 | Climbing Hero (Shuangliu Wanda) | Amap lists 攀登侠儿童攀岩馆(万达广场双流店): a kids' climbing gym **Owner 2026-11-22: retire; staged in the same batch.** |
-| seed-505 | Blue Sky Climbing (Luohu Yitian Holiday Plaza) | Amap lists 蓝天攀岩-青少年训练(罗湖益田假日广场店) at our exact address: a youth-training branch; kids-only? |
+| seed-505 | Blue Sky Climbing (Luohu Yitian Holiday Plaza) | Amap lists 蓝天攀岩-青少年训练(罗湖益田假日广场店) at our exact address: a youth-training branch; kids-only? **Owner 2026-11-22: keep listed; name and address staged in the same batch (B0LAVZVX82).** |
 | seed-605 | Jibi Storm Climbing (Bailian Xijiao) | Amap lists 极壁风暴攀岩馆(长宁店) at our exact address, marked 暂停营业 (temporarily closed) **Owner 2026-11-22: retire; staged in the same batch.** |
 | seed-668 | Yaoyan Climbing (Shahe) | Amap lists 耀岩攀岩(沙河店), marked 暂停营业 (temporarily closed) **Owner 2026-11-22: retire; staged in the same batch.** |
 | seed-729 | Climbing Orangutan (California Sunshine Kaiyuan Plaza) | Amap lists 攀猩攀岩馆(加州阳光·开元广场店) at our address, marked 暂停营业 (temporarily closed) **Owner 2026-11-22: retire; staged in the same batch.** |
