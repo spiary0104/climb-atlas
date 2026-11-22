@@ -6,7 +6,7 @@ import { TYPE_LABELS } from './constants.js';
 import { escapeHtml, safeUrl } from './html-safe.js';
 import { directionsUrl } from './utils.js';
 import { icon } from './icons.js';
-import { currentLocale, t, th } from './i18n.js';
+import { currentLocale, pagePath, t, th } from './i18n.js';
 import { PROVENANCE_LABELS, publicNotes } from './provenance.js';
 
 const TYPE_CLASS = { 'indoor-bouldering': 'boulder', 'top-rope': 'toprope', 'lead-climbing': 'lead' };
@@ -150,7 +150,7 @@ export function peekHtml(g, ctx = {}){
 export function introHtml(){
   // The brand sits inside the sentence ({brand}) so each language places it (and attaches its particles: Bouldeer는).
   const [introBefore, introAfter = ''] = th('explore.intro', {}).split('{brand}');   // no value: t() keeps the placeholder
-  return `<p class="explore-intro-text">${introBefore}<strong>Bouldeer</strong>${introAfter} <a class="link" href="/about.html">${th('me.about')}</a></p>`
+  return `<p class="explore-intro-text">${introBefore}<strong>Bouldeer</strong>${introAfter} <a class="link" href="${escapeHtml(pagePath('about'))}">${th('me.about')}</a></p>`
     + `<button type="button" class="btn btn-tertiary btn-icon btn-sm" data-intro-close aria-label="${th('common.dismiss')}">${icon('x', {size:'sm'})}</button>`;
 }
 

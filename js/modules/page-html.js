@@ -6,7 +6,7 @@
 import { firstRunArt, sealSvg } from './brand.js';
 import { essentialsRowsHtml, facilitiesHtml, hasPracticalInfo } from './gym-info.js';
 import { escapeHtml, safeUrl } from './html-safe.js';
-import { formatDate, formatNumber, languageOptionsHtml, t, th } from './i18n.js';
+import { formatDate, formatNumber, languageOptionsHtml, pagePath, t, th } from './i18n.js';
 import { directionsUrl } from './utils.js';
 import { icon } from './icons.js';
 import { localLang, localNameHtml, primaryName, primaryNameHtml, provenanceMarkHtml, thumbHtml, typeTagsHtml } from './list-html.js';
@@ -254,8 +254,8 @@ export function mePageHtml(p){
   // One character appearance per screen (sec. 12.2): the seal steps aside while the first-run backpacker is shown.
   const firstRun = !!p.signedIn && p.section !== 'climbed' && !(p.saved || []).length && !(p.climbed || []).length;
   const links = `<section class="page-section me-brand" aria-labelledby="aboutMeTitle">${firstRun ? '' : sealSvg()}<div><h2 class="section-title" id="aboutMeTitle">Bouldeer</h2><p class="me-links">`
-    + `<a class="link link-quiet" href="/about.html">${th('me.about')}</a><a class="link link-quiet" href="/privacy">${th('me.privacy')}</a>`
-    + `<a class="link link-quiet" href="/terms">${th('me.terms')}</a></p></div></section>`
+    + `<a class="link link-quiet" href="${escapeHtml(pagePath('about'))}">${th('me.about')}</a><a class="link link-quiet" href="${escapeHtml(pagePath('privacy'))}">${th('me.privacy')}</a>`
+    + `<a class="link link-quiet" href="${escapeHtml(pagePath('terms'))}">${th('me.terms')}</a></p></div></section>`
     + languageSectionHtml();
   if(!p.signedIn) return `<article class="page me-page">${pageArtHtml('me-shelf')}<header class="place-header"><h1 class="page-title">${th('me.title')}</h1>`
     + `<p class="place-meta">${th('me.signedOutIntro')}</p></header>`
