@@ -163,3 +163,11 @@ Applied with `supabase db push --linked`; verified: listed as applied, the colum
 2026-11-07 (owner ran `supabase db push --linked` after a dry run listing exactly this file): `20261101000100_local_names_visitor_info`
 (China pilot: name_local, address_local, visitor, info_source/_kind/_checked_on; tested locally: test-rls-local.js 106/106 and constraint
 cases). Verified afterwards (read-only REST): all six columns readable, null on existing rows; the public gym list unchanged.
+
+## Edge Functions
+`supabase/functions/delete-account` (Me page > Delete account): deletes the caller's own auth user with the service role
+(Supabase provides SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY to functions; nothing to configure). The foreign keys of
+`20261002000500_account_deletion_fks` delete personal data and unlink submissions. Logic in `handler.js` (Node tests:
+`tests/delete-account.test.js`). Deploy (owner): `supabase functions deploy delete-account --project-ref thayxaampaelvntoaido`.
+Local test: `supabase start` (edge runtime on) + `supabase functions serve delete-account`. Windows can reserve the 543xx ports
+(`netsh interface ipv4 show excludedportrange protocol=tcp`); if so, shift the ports in config.toml temporarily.

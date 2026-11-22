@@ -168,7 +168,7 @@
 .me-links{display:flex;flex-wrap:wrap;column-gap:var(--space-4);margin:0;font-size:var(--type-text-md-size);}
 .me-links a{display:inline-flex;align-items:center;min-height:var(--size-touch-min);}
 /* Delete account: folded away under the account actions; the list says what goes and what stays */
-.me-delete-summary{display:inline-flex;align-items:center;min-height:var(--size-touch-min);cursor:pointer;color:var(--color-text-secondary);}
+.me-delete-summary{display:list-item;padding:var(--space-3) 0;cursor:pointer;color:var(--color-text-secondary);}   /* list-item keeps the native disclosure arrow */
 .me-delete-summary:hover{color:var(--color-status-danger);}
 .me-delete-body{max-width:var(--size-measure);}
 .me-delete-list{margin:var(--space-2) 0 var(--space-3);padding-left:var(--space-5);color:var(--color-text-secondary);}
