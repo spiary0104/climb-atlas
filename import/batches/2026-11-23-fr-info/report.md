@@ -12,7 +12,7 @@
 | Rejected by a human decision | 0 |
 | **Total records in batch** | 100 |
 
-Index: 3651 known gyms (sha256 ee0e0c45b261…). Plan: ca96c7983f64… Also compared against staged batches: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha.
+Index: 3651 known gyms (sha256 ee0e0c45b261…). Plan: d936d9ca0d47… Also compared against staged batches: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha.
 
 ## Updates to existing gyms (100)
 
