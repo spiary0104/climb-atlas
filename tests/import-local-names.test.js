@@ -68,7 +68,16 @@ test('sources: maps, directories and review sites are refused for information; o
     'https://maps.app.goo.gl/abc', 'https://map.baidu.com/poi/x', 'https://www.openstreetmap.org/node/1', 'https://www.tripadvisor.com/Attraction-1', 'https://www.meituan.com/x'];
   for (const u of denied) for (const kind of ['official-site', 'official-social']) assert.ok((await codes(set(u, kind), { source: u })).some(c => c.startsWith('bad-info-source:info_source')), kind + ' ' + u);
   // also when only the record's free-text source names such a URL (a name_local fill has no trio)
-  for (const u of ['https://www.amap.com/place/B0FFF', 'https://www.dianping.com/shop/123', 'https://www.google.com/maps/place/Gym']) assert.ok((await codes({ name_local: 'N' }, { source: `${u} (map listing)` })).includes('bad-source:source'), u);
+  for (const u of ['https://www.dianping.com/shop/123', 'https://www.google.com/maps/place/Gym']) assert.ok((await codes({ name_local: 'N' }, { source: `${u} (map listing)` })).includes('bad-source:source'), u);
+  // owner decision 2026-11-22: the local LABELS alone may cite the gym's Amap listing (or the 攀搭攀岩 mini program, plain text);
+  // any record that also sets a fact keeps the official-only rule
+  for (const s of [{ name_local: 'N' }, { address_local: 'A' }, { name_local: 'N', address_local: 'A' }]) {
+    assert.deepEqual(await codes(s, { source: 'https://www.amap.com/place/B0FFF (Amap listing)' }), [], 'label-only fill from Amap: ' + Object.keys(s));
+    assert.deepEqual(await codes(s, { source: 'https://ditu.gaode.com/place/B0FFF' }), [], 'gaode.com is Amap');
+    assert.deepEqual(await codes(s, { source: '攀搭攀岩 WeChat mini program (岩馆探索), checked 2026-11-22' }), [], 'mini program, plain text');
+  }
+  assert.ok((await codes({ name_local: 'N', website: 'https://gym.example.cn/' }, { source: 'https://www.amap.com/place/B0FFF' })).includes('bad-source:source'), 'a label plus a fact: official only');
+  assert.ok((await codes({ name_local: 'N', notes: 'Open late.' }, { source: 'https://www.amap.com/place/B0FFF' })).includes('bad-source:source'), 'notes are a fact');
   assert.deepEqual(await codes({ name_local: 'N' }, { source: 'https://www.google.com/search?q=gym' }), [], 'a non-map google URL is not a map');
   // kinds against hosts
   assert.deepEqual(await codes(set('https://www.xiaohongshu.com/user/profile/1', 'official-social'), { source: 'https://www.xiaohongshu.com/user/profile/1' }), []);

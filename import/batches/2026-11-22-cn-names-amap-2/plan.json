@@ -1,0 +1,491 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-22-cn-names-amap-2",
+ "index": {
+  "sha256": "e44702806afb1e2443afda3319d6acbc800ebd5324a8b62a3d4d781172385a1b",
+  "count": 3658,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha"
+ ],
+ "counts": {
+  "records": 26,
+  "new": 0,
+  "existing": 0,
+  "update": 26,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "a5e5af46c08197d753941fe84be9dc746b1fc52213d4ced698465f9b2093b627",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-707",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "MTC顶峰攀岩"
+    }
+   ],
+   "expect_h": "322cc99694b6d35c",
+   "update_reason": "Chinese name as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-710",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "火舞攀岩休闲健身馆"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "吴家街阡那广场1中庭"
+    }
+   ],
+   "expect_h": "767bd8f05fdf643d",
+   "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-756",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "HOLDZClimbing猴子攀岩昆山店"
+    }
+   ],
+   "expect_h": "3e71152efdaa112b",
+   "update_reason": "Chinese name as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-757",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "HOLDZ Climbing猴子攀岩吴中店"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "南溪江路88号801号"
+    }
+   ],
+   "expect_h": "301763d1c869fa56",
+   "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-760",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "TBW极限运动中心(昆山城西店)"
+    }
+   ],
+   "expect_h": "97a472808be9e262",
+   "update_reason": "Chinese name as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-761",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "攀猩攀岩馆(星斓荟店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "南榭雨街55号星斓荟·路劲广场"
+    }
+   ],
+   "expect_h": "03d47bde4d6c472b",
+   "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-762",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "星空攀岩文体中心店"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "太湖大道999文体中心健身中心楼综合馆vip网球室"
+    }
+   ],
+   "expect_h": "9aac91d40b5bd5a9",
+   "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-763",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "星空攀岩(超级星空美罗店)"
+    }
+   ],
+   "expect_h": "ebd02c6eb4520aa9",
+   "update_reason": "Chinese name as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "seed-764",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "星空攀岩(悠方店)"
+    }
+   ],
+   "expect_h": "faba8aa764f44806",
+   "update_reason": "Chinese name as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "seed-765",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "星空攀岩(吾悦广场苏州高铁店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "相城大道3188号吾悦广场苏州高铁店F4层"
+    }
+   ],
+   "expect_h": "6c9a15f8773baaca",
+   "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "seed-767",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "运动社&星空攀岩(尹山湖歌林公园店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "8号楼负一楼"
+    }
+   ],
+   "expect_h": "401080ee910321bd",
+   "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "seed-768",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "刘常忠攀岩馆(砂之船店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "开平路3688号"
+    }
+   ],
+   "expect_h": "de48920b967b96d3",
+   "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "seed-771",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "攀月攀岩漕湖文体中心店"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "永昌泾路19号文体中心二楼"
+    }
+   ],
+   "expect_h": "846bf5bfed571c30",
+   "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "seed-772",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "攀月攀岩 (相城天街店)"
+    }
+   ],
+   "expect_h": "4e702fe5912259e3",
+   "update_reason": "Chinese name as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "seed-773",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "攀月攀岩(园区星湖店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "工业园区星湖龙湖天街A馆5F-03"
+    }
+   ],
+   "expect_h": "e763774e7efa581d",
+   "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "seed-774",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "九星龙国际攀岩LOONG CLIMBING"
+    }
+   ],
+   "expect_h": "fd45d2445544b64a",
+   "update_reason": "Chinese name as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "seed-777",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "芒果攀岩(滨海吾悦广场店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "滨海吾悦广场2号门二楼001"
+    }
+   ],
+   "expect_h": "39a5953ea9d68d09",
+   "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "seed-778",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "渤龙湖体育健身中心攀岩馆"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "高新六路与惠仁道交叉口东北160米"
+    }
+   ],
+   "expect_h": "97562c5e39592eb4",
+   "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "seed-780",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "锋芒攀岩(新世界百货店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "鼓楼街道东马路新世界百货负一层"
+    }
+   ],
+   "expect_h": "f62542f253c43029",
+   "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "seed-783",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "趣野攀岩(梅江会展中心店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "梅江会展中心二期S3馆3楼"
+    }
+   ],
+   "expect_h": "8984b969c0f45a9c",
+   "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "seed-785",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "本攀攀岩馆(天津店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "南泥湾路6-10底商熙悦汇悦动广场B1"
+    }
+   ],
+   "expect_h": "06520a0eb8e69404",
+   "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "seed-786",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "天津TOP climbing攀岩俱乐部(河西店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "太湖路17号通达尚城体育馆2楼"
+    }
+   ],
+   "expect_h": "6540729ca5fd3dc7",
+   "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "seed-787",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "天津Top climbing 攀岩馆(黄河道店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "黄河道519号,幢号24-102-1号"
+    }
+   ],
+   "expect_h": "674f9f0b81b0110d",
+   "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "seed-788",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "天津OverRock攀岩馆"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "兴华四支路11号"
+    }
+   ],
+   "expect_h": "bcb2983ba042a092",
+   "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "seed-789",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "天津TOP攀岩俱乐部(凌奥馆)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "凌奥创意产业园2期2号"
+    }
+   ],
+   "expect_h": "fe0380b1268ca76f",
+   "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "seed-796",
+   "changes": [
+    {
+     "field": "name_local",
+     "before": null,
+     "after": "西安火石攀岩运动馆(省体店)"
+    },
+    {
+     "field": "address_local",
+     "before": null,
+     "after": "绿锐商城内负一层"
+    }
+   ],
+   "expect_h": "bf19cd8ebec288c0",
+   "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  }
+ ]
+}
