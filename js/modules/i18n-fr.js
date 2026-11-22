@@ -400,6 +400,14 @@ export default {
   'start.checkinAt': 'Pointer à {name}',
   'start.checkinNearby': 'Pointer à proximité',
 
+  'welcome.title': 'Bienvenue sur Bouldeer',
+  'welcome.intro': 'Vous êtes connecté. Où que vous voyagiez, votre compte garde :',
+  'welcome.save': 'Les salles enregistrées pour le voyage, et celles où vous avez grimpé',
+  'welcome.stamp': 'Un tampon de passeport pour chaque salle où vous pointez',
+  'welcome.log': 'Un journal privé de vos séances et cotations',
+  'welcome.passport': 'Ouvrir mon passeport',
+  'welcome.go': 'Commencer',
+
   'log.title': 'Noter une séance',
   'log.sub': 'Privé, visible uniquement depuis votre compte — absent de la carte publique.',
   'log.date': 'Date',

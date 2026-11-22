@@ -457,6 +457,7 @@ test('brand: the seal is a decorative-safe SVG with arched BOULDEER; first-run a
   assert.match(brand.firstRunArt('log'), /^<img class="mascot mascot--spot" src="assets\/mascot\/chalking-up\.svg" alt=""/);
   assert.match(brand.firstRunArt('saved'), /src="assets\/mascot\/field-notes\.svg" alt=""/);
   assert.match(brand.firstRunArt('explore'), /src="assets\/mascot\/backpacker\.svg" alt=""/);
+  assert.match(brand.firstRunArt('welcome'), /^<img class="mascot mascot--spot" src="assets\/mascot\/wave-badge\.svg" alt="" width="96"/);
   for (const k of ['', 'fell-off', '../x', 'constructor', undefined]) assert.equal(brand.firstRunArt(k), '', 'no art for ' + k);
   const row = { g: { ...benignSpot, name: 'Boulder Barn' }, ctx: { region: 'NSW', href: '/gym/boulder-barn' } };
   const base = { signedIn: true, section: 'saved', saved: [], climbed: [], isModerator: false, pendingCount: 0 };

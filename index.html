@@ -403,6 +403,14 @@
   </div>
 </div>
 
+<!-- One-time welcome after a new account's first sign-in (body rendered by js/modules/welcome.js) -->
+<div class="modal-backdrop hidden" id="welcomeModalBackdrop">
+  <div class="modal welcome-modal" role="dialog" aria-modal="true" aria-labelledby="dlg-welcome">
+    <button type="button" class="btn btn-tertiary btn-icon btn-sm modal-x" id="welcomeClose" data-modal-close aria-label="Close" data-i18n-attr="aria-label:common.close"><svg class="icon icon-sm" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-x"/></svg></button>
+    <div id="welcomeBody"></div>
+  </div>
+</div>
+
 <div class="modal-backdrop hidden" id="addSessionModalBackdrop">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="dlg-log-a-session">
     <h2 id="dlg-log-a-session" data-i18n="log.title">Log a session</h2>
@@ -530,6 +538,8 @@
 <link rel="modulepreload" href="js/modules/checkin.js" fetchpriority="low">
 <link rel="modulepreload" href="js/modules/logbook.js" fetchpriority="low">
 <link rel="modulepreload" href="js/modules/milestone-sheet.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/welcome.js" fetchpriority="low">
+<link rel="modulepreload" href="js/modules/welcome-html.js" fetchpriority="low">
 <link rel="modulepreload" href="js/modules/share-card.js" fetchpriority="low">
 <link rel="modulepreload" href="js/modules/stamp-html.js" fetchpriority="low">
 <link rel="modulepreload" href="js/modules/passport.js" fetchpriority="low">

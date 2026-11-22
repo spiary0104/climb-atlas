@@ -49,7 +49,7 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 - Import pipeline: write only verified aliases (own signage/site/social). Visitor i18n model: `visitor` stays the original; optional `visitor_lang`, `visitor_i18n` jsonb {en:{...}}.
 ### i18n (docs/i18n.md): 9 languages + place names live; open: native review, legal pages English only, unify 岩馆/攀岩馆; SEO per-language URLs and Play/TWA are owner decisions.
 ### Welcome / account deletion / community publishing
-- One-time welcome after first email confirmation (owner 2026-10-05). Account deletion built (Me page + Edge Function);
+- One-time welcome after a new account's first sign-in: built 2026-11-23 (welcome.js). Account deletion built (Me page + Edge Function);
   deployed 2026-11-22 (docs/migrations.md).
 - Phase 4: publish-then-review for edits, photos and confirm points are not built.
 ### Map performance

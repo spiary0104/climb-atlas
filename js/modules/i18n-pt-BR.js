@@ -403,6 +403,14 @@ export default {
   'start.checkinAt': 'Fazer check-in em {name}',
   'start.checkinNearby': 'Fazer check-in por perto',
 
+  'welcome.title': 'Boas-vindas ao Bouldeer',
+  'welcome.intro': 'Você entrou. Para onde você viajar, sua conta guarda:',
+  'welcome.save': 'As academias salvas para a viagem e as que você já escalou',
+  'welcome.stamp': 'Um carimbo no passaporte para cada academia onde você faz check-in',
+  'welcome.log': 'Um registro privado das suas sessões e graus',
+  'welcome.passport': 'Abrir meu passaporte',
+  'welcome.go': 'Começar a explorar',
+
   'log.title': 'Registrar sessão',
   'log.sub': 'Privado na sua conta — não aparece no mapa público.',
   'log.date': 'Data',

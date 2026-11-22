@@ -270,6 +270,8 @@ test('mascot: brand marks only where sec. 12.2 allows (START, wordmark lockup, d
   assert.deepEqual((read('js/modules/logbook.js').match(/firstRunArt\([^)]*\)/g) || []), ["firstRunArt('log')"], 'Log: chalking-up on the first-run empty state only');
   assert.deepEqual((read('js/modules/page-html.js').match(/firstRunArt\([^)]*\)/g) || []), ["firstRunArt('saved')"], '/me: field-notes on a first-run Saved tab only');
   assert.deepEqual((read('js/modules/list.js').match(/firstRunArt\([^)]*\)/g) || []), ["firstRunArt('explore')"], 'Explore: the backpacker on the first-ever visit only (sec. 7.10)');
+  assert.deepEqual((read('js/modules/welcome-html.js').match(/firstRunArt\([^)]*\)/g) || []), ["firstRunArt('welcome')"], 'the waving deer on the one-time welcome only');
+  assert.ok(!/firstRunArt|companionArt|mascot/.test(read('js/modules/welcome.js')), 'welcome.js takes its art from welcome-html.js');
   assert.match(read('js/modules/list.js'), /const show = appState\.exploreFirstRun && zoom < 4 && !appState\.placeFilter && !appState\.searchTerm;/, 'world/continent zoom, no place or search');
   assert.ok(!/mascot/.test(read('index.html').match(/<div class="empty-state explore-first-run"[^>]*><\/div>/)[0]), 'the shell holds only an empty slot; brand.js supplies the art');
   assert.match(read('js/modules/page-html.js'), /const art = firstRun \? firstRunArt\('saved'\) : '';/, 'never on a repeat empty');

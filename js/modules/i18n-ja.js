@@ -397,6 +397,14 @@ export default {
   'start.checkinAt': '{name}にチェックイン',
   'start.checkinNearby': '近くでチェックイン',
 
+  'welcome.title': 'Bouldeer へようこそ',
+  'welcome.intro': 'ログインしました。どこへ旅しても、アカウントに残るもの：',
+  'welcome.save': '旅行用に保存したジムと、登ったジム',
+  'welcome.stamp': 'チェックインしたジムごとのパスポートスタンプ',
+  'welcome.log': '自分だけのセッションとグレードの記録',
+  'welcome.passport': 'パスポートを開く',
+  'welcome.go': '探し始める',
+
   'log.title': 'セッションを記録',
   'log.sub': 'あなたのアカウントだけに表示されます。公開地図には表示されません。',
   'log.date': '日付',

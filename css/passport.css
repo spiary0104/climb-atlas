@@ -57,6 +57,16 @@
 .milestone-mark{display:inline-flex;align-items:center;justify-content:center;width:var(--size-control-sm);height:var(--size-control-sm);border:var(--border-width-object) solid var(--color-border-strong);border-radius:var(--radius-circle);}
 .milestone-modal .modal-actions{justify-content:center;}
 
+/* The one-time welcome (welcome.js): the waving deer at spot size, then what the account keeps. Scoped to beat .mascot:empty. */
+.welcome-modal{text-align:center;}
+.welcome-modal .mascot.mascot--spot{display:block;margin:0 auto var(--space-2);}
+.welcome-title{margin:0 0 var(--space-2);font-family:var(--font-display);font-size:var(--type-display-lg-size);line-height:var(--type-display-lg-line);font-weight:var(--font-weight-semibold);}
+.welcome-intro{margin:0 0 var(--space-3);color:var(--color-text-secondary);}
+.welcome-list{display:flex;flex-direction:column;gap:var(--space-2);margin:0 auto var(--space-4);padding:0;list-style:none;max-width:var(--size-sheet-max);text-align:left;}
+.welcome-list li{display:flex;align-items:flex-start;gap:var(--space-2);}
+.welcome-list .icon{flex:none;margin-top:var(--space-1);color:var(--color-brand-bark);}
+.welcome-modal .modal-actions{justify-content:center;flex-wrap:wrap;}
+
 .start-badge{display:flex;justify-content:center;margin:calc(-1 * var(--space-2)) 0 var(--space-2);}
 .start-badge .mascot--companion{width:var(--size-mascot-badge);}
 .start-modal h2{text-align:center;}
@@ -67,14 +77,14 @@
    look), slides up from below, and keeps its actions clear of the home indicator. One position (content height, at
    most 88% of the screen): these are modal sheets like All filters, not the draggable Explore sheet, so no grabber. */
 @media (max-width:767px){
-  #checkinModalBackdrop,#milestoneModalBackdrop,#startModalBackdrop{align-items:flex-end;}
-  .modal.checkin-modal,.modal.milestone-modal,.modal.start-modal{
+  #checkinModalBackdrop,#milestoneModalBackdrop,#startModalBackdrop,#welcomeModalBackdrop{align-items:flex-end;}
+  .modal.checkin-modal,.modal.milestone-modal,.modal.start-modal,.modal.welcome-modal{
     width:100%;max-width:var(--size-sheet-max);max-height:88vh;max-height:88dvh;margin-top:0;
     border-width:var(--border-width) 0 0;border-radius:var(--radius-xl) var(--radius-xl) 0 0;
     padding-bottom:calc(var(--space-4) + env(safe-area-inset-bottom));
   }
   #checkinModalBackdrop.hidden .modal,#milestoneModalBackdrop.hidden .modal,
-  #startModalBackdrop.hidden .modal{transform:translateY(100%);}
+  #startModalBackdrop.hidden .modal,#welcomeModalBackdrop.hidden .modal{transform:translateY(100%);}
 }
 
 /* ----- gym page: four actions (Check in first); the short label on narrow screens ----- */

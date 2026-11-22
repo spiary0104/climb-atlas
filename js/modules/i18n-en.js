@@ -399,6 +399,14 @@ export default {
   'start.checkinAt': 'Check in at {name}',
   'start.checkinNearby': 'Check in nearby',
 
+  'welcome.title': 'Welcome to Bouldeer',
+  'welcome.intro': 'You\'re signed in. Wherever you travel, your account keeps:',
+  'welcome.save': 'Gyms you\'ve saved for the trip, and the ones you\'ve climbed',
+  'welcome.stamp': 'A passport stamp for every gym you check in at',
+  'welcome.log': 'A private log of your sessions and grades',
+  'welcome.passport': 'Open my passport',
+  'welcome.go': 'Start exploring',
+
   'log.title': 'Log a session',
   'log.sub': 'Private to your account — not shown on the public map.',
   'log.date': 'Date',

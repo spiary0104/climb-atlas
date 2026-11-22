@@ -15,6 +15,7 @@ import { initModPage } from './modules/mod-page.js';
 import { initAddPage } from './modules/add-page.js';
 import { initCheckin } from './modules/checkin.js';
 import { initMilestoneSheet } from './modules/milestone-sheet.js';
+import { initWelcome, maybeShowWelcome } from './modules/welcome.js';
 import { initPassportPage } from './modules/passport-page.js';
 import { initNavigation } from './modules/nav.js';
 import { initRegionPages } from './modules/region-page.js';
@@ -65,6 +66,7 @@ initModPage();
 initAddPage();
 initCheckin();
 initMilestoneSheet();
+initWelcome();
 initPassportPage();
 initNavigation();
 initRouter();          // after every view has registered: renders the page for the URL (a skeleton until data arrives)
@@ -82,7 +84,7 @@ async function init(){
     await loadPending();
     renderPendingBadge();
     render();
-    if(user) closeAuthModal();
+    if(user){ closeAuthModal(); maybeShowWelcome(user); }
   });
   // MapLibre (270 KB) loads after the first render, so on a slow phone it doesn't compete with the gym rows or the list.
   // A slow or failing read must not hold the map back: after 4 s it starts anyway.
@@ -103,6 +105,7 @@ async function init(){
   await counts;
   renderAuthUI(window.auth.user);
   renderPendingBadge();
+  if(window.auth.user) maybeShowWelcome(window.auth.user);   // a magic link lands here already signed in (no change event)
   // The page is already showing; render it again only when these reads can change it: signed-in marks/history/moderator
   // controls, or the contributor counts behind this gym's provenance mark (a re-render also rebuilds the mini map).
   const shown = document.querySelector('#view .gym-page [data-spot-id]');
