@@ -10,8 +10,9 @@ let seq = 0;
 
 // First-run art (sec. 12.2 tier 4): full-body poses, flat-vector traces of design/mascot/deer, at spot size (96px max),
 // decorative (the empty state's text carries the meaning). Only these kinds exist; anything else renders nothing.
-// field-notes (2026-10-03) on a first-run /me; the backpacker on a first-ever Explore visit (sec. 7.10).
-const FIRST_RUN = { log: 'chalking-up', saved: 'field-notes', passport: 'traveller-passport', explore: 'backpacker' };
+// field-notes (2026-10-03) on a first-run /me; the backpacker on a first-ever Explore visit (sec. 7.10); the waving deer on
+// the one-time welcome after a new account's first sign-in (welcome-html.js).
+const FIRST_RUN = { log: 'chalking-up', saved: 'field-notes', passport: 'traveller-passport', explore: 'backpacker', welcome: 'wave-badge' };
 export function firstRunArt(kind){
   const pose = Object.hasOwn(FIRST_RUN, kind) ? FIRST_RUN[kind] : null;   // own keys only (not constructor, toString...)
   return pose ? `<img class="mascot mascot--spot" src="assets/mascot/${pose}.svg" alt="" width="96" height="96" loading="lazy">` : '';

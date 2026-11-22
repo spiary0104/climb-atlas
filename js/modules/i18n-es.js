@@ -402,6 +402,14 @@ export default {
   'start.checkinAt': 'Hacer check-in en {name}',
   'start.checkinNearby': 'Hacer check-in cerca',
 
+  'welcome.title': 'Te damos la bienvenida a Bouldeer',
+  'welcome.intro': 'Has iniciado sesión. Vayas donde vayas, tu cuenta guarda:',
+  'welcome.save': 'Los rocódromos guardados para el viaje y los que ya escalaste',
+  'welcome.stamp': 'Un sello en el pasaporte por cada rocódromo donde haces check-in',
+  'welcome.log': 'Un registro privado de tus sesiones y grados',
+  'welcome.passport': 'Abrir mi pasaporte',
+  'welcome.go': 'Empezar a explorar',
+
   'log.title': 'Registrar una sesión',
   'log.sub': 'Privado en tu cuenta: no se muestra en el mapa público.',
   'log.date': 'Fecha',

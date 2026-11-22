@@ -399,6 +399,14 @@ export default {
   'start.checkinAt': '在{name}打卡',
   'start.checkinNearby': '打卡附近的攀岩馆',
 
+  'welcome.title': '欢迎来到 Bouldeer',
+  'welcome.intro': '你已登录。无论旅行到哪里，你的账户都会保存：',
+  'welcome.save': '为旅行收藏的攀岩馆，以及你爬过的攀岩馆',
+  'welcome.stamp': '每次在攀岩馆打卡，护照上就多一枚印章',
+  'welcome.log': '只有你能看到的攀岩记录和难度',
+  'welcome.passport': '打开我的护照',
+  'welcome.go': '开始探索',
+
   'log.title': '记录一次攀岩',
   'log.sub': '仅你的账户可见，不会显示在公开地图上。',
   'log.date': '日期',

@@ -399,6 +399,14 @@ export default {
   'start.checkinAt': 'Einchecken in {name}',
   'start.checkinNearby': 'In der Nähe einchecken',
 
+  'welcome.title': 'Willkommen bei Bouldeer',
+  'welcome.intro': 'Du bist angemeldet. Wohin du auch reist, dein Konto behält:',
+  'welcome.save': 'Hallen, die du für die Reise gemerkt hast, und die, in denen du warst',
+  'welcome.stamp': 'Einen Passstempel für jede Halle, in der du eincheckst',
+  'welcome.log': 'Ein privates Logbuch deiner Sessions und Grade',
+  'welcome.passport': 'Meinen Pass öffnen',
+  'welcome.go': 'Los geht\'s',
+
   'log.title': 'Session eintragen',
   'log.sub': 'Nur für dein Konto sichtbar — nicht in der öffentlichen Karte.',
   'log.date': 'Datum',

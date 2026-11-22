@@ -157,10 +157,10 @@ test('START names what it does, and the check-in, milestone and START sheets are
   assert.match(name, /check in/i); assert.match(name, /log a session/i);
   assert.ok(/\blog\b/i.test(name), 'the visible label "Log" is part of the accessible name (WCAG 2.5.3)');
   const css = fs.readFileSync(path.join(ROOT, 'css', 'passport.css'), 'utf8').replace(/\r\n/g, '\n');
-  const from = css.indexOf('@media (max-width:767px){\n  #checkinModalBackdrop,#milestoneModalBackdrop,#startModalBackdrop{align-items:flex-end;}');
-  assert.ok(from >= 0, 'a phone rule anchors all three sheets to the bottom edge');
+  const from = css.indexOf('@media (max-width:767px){\n  #checkinModalBackdrop,#milestoneModalBackdrop,#startModalBackdrop,#welcomeModalBackdrop{align-items:flex-end;}');
+  assert.ok(from >= 0, 'a phone rule anchors all four sheets (check-in, milestone, START, welcome) to the bottom edge');
   const phone = css.slice(from, css.indexOf('\n}', from));
-  for (const part of ['.modal.checkin-modal,.modal.milestone-modal,.modal.start-modal{', 'border-radius:var(--radius-xl) var(--radius-xl) 0 0', 'env(safe-area-inset-bottom)', 'max-width:var(--size-sheet-max)', '#startModalBackdrop.hidden .modal{transform:translateY(100%);}'])
+  for (const part of ['.modal.checkin-modal,.modal.milestone-modal,.modal.start-modal,.modal.welcome-modal{', 'border-radius:var(--radius-xl) var(--radius-xl) 0 0', 'env(safe-area-inset-bottom)', 'max-width:var(--size-sheet-max)', '#startModalBackdrop.hidden .modal,#welcomeModalBackdrop.hidden .modal{transform:translateY(100%);}'])
     assert.ok(phone.includes(part), 'phone sheet rule lacks ' + part);
 });
 

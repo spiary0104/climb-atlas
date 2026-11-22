@@ -400,6 +400,14 @@ export default {
   'start.checkinAt': '{name} 체크인',
   'start.checkinNearby': '근처에서 체크인',
 
+  'welcome.title': 'Bouldeer에 오신 것을 환영합니다',
+  'welcome.intro': '로그인했어요. 어디로 여행하든 계정에 남아요:',
+  'welcome.save': '여행을 위해 저장한 클라이밍장과 다녀온 클라이밍장',
+  'welcome.stamp': '체크인한 클라이밍장마다 받는 패스포트 스탬프',
+  'welcome.log': '나만 보는 세션과 난이도 기록',
+  'welcome.passport': '내 패스포트 열기',
+  'welcome.go': '둘러보기',
+
   'log.title': '세션 기록',
   'log.sub': '내 계정에만 보이며 공개 지도에는 표시되지 않아요.',
   'log.date': '날짜',
