@@ -11,13 +11,14 @@
   "2026-10-12-cn-kunming-changsha"
  ],
  "counts": {
-  "records": 53,
+  "records": 60,
   "new": 0,
   "existing": 0,
   "update": 53,
   "probable-duplicate": 0,
   "invalid": 0,
   "rejected": 0,
+  "retire": 7,
   "existing_identical": 0,
   "existing_content_differs": 0,
   "new_id_not_frozen": 0,
@@ -26,7 +27,7 @@
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "e3959bfd697c4901b29f731dd60381d625040d53c9d08e416f4b91079322fd52",
+ "plan_sha256": "09362803ba0575ec1fdc54c6f060669a1781f6b3395beb7c151bfa3a38eeb25a",
  "records": [
   {
    "line": 1,
@@ -969,6 +970,177 @@
    ],
    "expect_h": "087842c46f1cb591",
    "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+  },
+  {
+   "line": 54,
+   "class": "retire",
+   "id": "seed-559",
+   "name": "Panxing Climbing (Nanqiao Bailian)",
+   "country": "CN",
+   "expect_h": "5b382d1ab5c9a283",
+   "reason_code": "not-public",
+   "retire_reason": "Kids-only climbing venue: its Amap listing is 攀猩儿童攀岩馆(南桥百联店), a children's climbing gym (checked 2026-11-22); not listed per owner policy 2026-11-11.",
+   "entry": {
+    "id": "seed-559",
+    "name": "Panxing Climbing (Nanqiao Bailian)",
+    "country": "CN",
+    "state": "SHANGHAI",
+    "suburb": "Fengxian District, Shanghai",
+    "lat": 30.9131,
+    "lng": 121.4807,
+    "address": "Bailian Nanqiao Shopping Mall, 588 Baiqi Rd, Fengxian District, Shanghai",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "5b382d1ab5c9a283"
+   }
+  },
+  {
+   "line": 55,
+   "class": "retire",
+   "id": "seed-568",
+   "name": "Panxing Climbing (Zhonghuan Bailian)",
+   "country": "CN",
+   "expect_h": "f98b91d4a23acf77",
+   "reason_code": "not-public",
+   "retire_reason": "Kids-only climbing venue: its Amap listing is 攀猩儿童攀岩馆(中环百联店), a children's climbing gym (checked 2026-11-22); not listed per owner policy 2026-11-11.",
+   "entry": {
+    "id": "seed-568",
+    "name": "Panxing Climbing (Zhonghuan Bailian)",
+    "country": "CN",
+    "state": "SHANGHAI",
+    "suburb": "Putuo District, Shanghai",
+    "lat": 31.2551,
+    "lng": 121.3797,
+    "address": "1F, Bailian Zhonghuan Shopping Plaza, 1258 Zhenguang Rd, Putuo District, Shanghai",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "f98b91d4a23acf77"
+   }
+  },
+  {
+   "line": 56,
+   "class": "retire",
+   "id": "seed-634",
+   "name": "Climbing Hero (Shuangliu Wanda)",
+   "country": "CN",
+   "expect_h": "627d9900c755eca4",
+   "reason_code": "not-public",
+   "retire_reason": "Kids-only climbing venue: its Amap listing is 攀登侠儿童攀岩馆(万达广场双流店), a children's climbing gym (checked 2026-11-22); not listed per owner policy 2026-11-11.",
+   "entry": {
+    "id": "seed-634",
+    "name": "Climbing Hero (Shuangliu Wanda)",
+    "country": "CN",
+    "state": "CHENGDU",
+    "suburb": "Shuangliu District, Chengdu",
+    "lat": 30.598793,
+    "lng": 103.9247591,
+    "address": "Wanda Plaza Atrium Floor 2, Shuangliu District, Chengdu",
+    "types": [
+     "indoor-bouldering",
+     "lead-climbing"
+    ],
+    "h": "627d9900c755eca4"
+   }
+  },
+  {
+   "line": 57,
+   "class": "retire",
+   "id": "seed-605",
+   "name": "Jibi Storm Climbing (Bailian Xijiao)",
+   "country": "CN",
+   "expect_h": "baf974dcc55ef0a8",
+   "reason_code": "closed",
+   "retire_reason": "Closed: its Amap listing 极壁风暴攀岩馆(长宁店) is marked 暂停营业 (temporarily closed), checked 2026-11-22.",
+   "entry": {
+    "id": "seed-605",
+    "name": "Jibi Storm Climbing (Bailian Xijiao)",
+    "country": "CN",
+    "state": "SHANGHAI",
+    "suburb": "Changning District, Shanghai",
+    "lat": 31.2111,
+    "lng": 121.3516,
+    "address": "F1 near the BMW store entrance, 88 Xianxia West Rd, Bailian Xijiao Shopping Center, Changning District, Shanghai",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "baf974dcc55ef0a8"
+   }
+  },
+  {
+   "line": 58,
+   "class": "retire",
+   "id": "seed-668",
+   "name": "Yaoyan Climbing (Shahe)",
+   "country": "CN",
+   "expect_h": "2d0701e10445514d",
+   "reason_code": "closed",
+   "retire_reason": "Closed: its Amap listing 耀岩攀岩(沙河店) is marked 暂停营业 (temporarily closed), checked 2026-11-22.",
+   "entry": {
+    "id": "seed-668",
+    "name": "Yaoyan Climbing (Shahe)",
+    "country": "CN",
+    "state": "BEIJING",
+    "suburb": "Changping District, Beijing",
+    "lat": 40.1479875,
+    "lng": 116.2844001,
+    "address": "1983 Creative Industry Park, Shahe, Changping District, Beijing",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "2d0701e10445514d"
+   }
+  },
+  {
+   "line": 59,
+   "class": "retire",
+   "id": "seed-729",
+   "name": "Climbing Orangutan (California Sunshine Kaiyuan Plaza)",
+   "country": "CN",
+   "expect_h": "bab3df7c83274b70",
+   "reason_code": "closed",
+   "retire_reason": "Closed: its Amap listing 攀猩攀岩馆(加州阳光·开元广场店) is marked 暂停营业 (temporarily closed), checked 2026-11-22.",
+   "entry": {
+    "id": "seed-729",
+    "name": "Climbing Orangutan (California Sunshine Kaiyuan Plaza)",
+    "country": "CN",
+    "state": "HANGZHOU",
+    "suburb": "Xiaoshan District, Hangzhou",
+    "lat": 30.184812,
+    "lng": 120.24651,
+    "address": "333 Jincheng Rd, California Sunshine Kaiyuan Plaza Floor 1, Xiaoshan District, Hangzhou",
+    "types": [
+     "indoor-bouldering",
+     "lead-climbing"
+    ],
+    "h": "bab3df7c83274b70"
+   }
+  },
+  {
+   "line": 60,
+   "class": "retire",
+   "id": "seed-851",
+   "name": "Kuanrun Climbing Gym",
+   "country": "CN",
+   "expect_h": "f86645c717ad387b",
+   "reason_code": "closed",
+   "retire_reason": "Closed: its Amap listing 宽润 is marked 暂停营业 (temporarily closed), checked 2026-11-22.",
+   "entry": {
+    "id": "seed-851",
+    "name": "Kuanrun Climbing Gym",
+    "country": "CN",
+    "state": "NANJING",
+    "suburb": "Gulou District, Nanjing",
+    "lat": 32.071,
+    "lng": 118.7701,
+    "address": "B2, Kuanrun Sports, 12 Hunan Rd, Gulou District, Nanjing",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "f86645c717ad387b"
+   }
   }
  ]
 }
