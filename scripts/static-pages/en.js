@@ -58,7 +58,7 @@ module.exports = {
     title: 'Privacy Policy',
     metaTitle: 'Privacy Policy — Bouldeer',
     description: 'What Bouldeer stores, who can see it, which services it uses, and how to delete your account.',
-    updated: 'Last updated: 21 November 2026',
+    updated: 'Last updated: 22 November 2026',
     body: `
     <p>Bouldeer is a small, free map of climbing gyms for climbers who travel. We collect as little as we can, we don&rsquo;t use ads or analytics, and we don&rsquo;t sell your data.</p>
 
@@ -101,7 +101,7 @@ module.exports = {
     </ul>
 
     <h2>Deleting your account</h2>
-    <p>Email <a href="mailto:hello@bouldeer.com">hello@bouldeer.com</a> from the address you sign in with and we&rsquo;ll delete your account within 30 days. That removes your email address, display name, saved and climbed gyms, check-ins, logbook and points. Gyms, edits and reports you sent stay, with the link to you removed. Copies in our providers&rsquo; logs and backups expire on their own schedules.</p>
+    <p>Use <strong>Delete account</strong> at the bottom of your Me page to delete your account straight away, or email <a href="mailto:hello@bouldeer.com">hello@bouldeer.com</a> from the address you sign in with and we&rsquo;ll delete it within 30 days. Either way, that removes your email address, display name, saved and climbed gyms, check-ins, logbook and points. Gyms, edits and reports you sent stay, with the link to you removed. Copies in our providers&rsquo; logs and backups expire on their own schedules.</p>
     <p>You can also email us to ask what we hold about you or to have it corrected. To fix a gym&rsquo;s details, use Suggest an edit or Report a problem on its page.</p>
 
     <h2>Changes</h2>

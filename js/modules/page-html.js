@@ -274,7 +274,18 @@ export function mePageHtml(p){
     + contributions
     + `<section class="page-section" aria-labelledby="accountTitle"><h2 class="section-title" id="accountTitle">${th('me.account')}</h2><div class="me-actions">`
     + `<button type="button" class="btn btn-secondary" data-page-action="add-gym">${icon('plus', {size:'sm'})}${th('topbar.addGym')}</button>${pending}`
-    + `<button type="button" class="btn btn-tertiary" data-page-action="sign-out">${th('auth.signOut')}</button></div></section>${links}</article>`;
+    + `<button type="button" class="btn btn-tertiary" data-page-action="sign-out">${th('auth.signOut')}</button></div></section>`
+    + deleteAccountHtml() + `${links}</article>`;
+}
+
+// Delete account (Privacy Policy, "Deleting your account"): folded away, says exactly what goes and what stays, and the
+// destructive button only works once the box is ticked. The button is .btn-danger, never primary (DESIGN.md).
+export function deleteAccountHtml(){
+  return `<section class="page-section me-delete"><details class="me-delete-details"><summary class="me-delete-summary">${th('me.deleteAccount')}</summary>`
+    + `<div class="me-delete-body"><p>${th('me.deleteIntro')}</p><ul class="me-delete-list"><li>${th('me.deleteRemoves')}</li><li>${th('me.deleteKeeps')}</li></ul>`
+    + `<label class="check-row"><input type="checkbox" data-delete-confirm> ${th('me.deleteConfirm')}</label>`
+    + `<p class="me-delete-actions"><button type="button" class="btn btn-secondary btn-danger" data-page-action="delete-account" disabled>${th('me.deleteButton')}</button></p>`
+    + `<p class="field-hint" id="deleteHint" role="status" aria-live="polite"></p></div></details></section>`;
 }
 
 // /me "Your contributions" (sec. 10.2, 10.5, 10.6): display name, points and level, own submissions in review or not
