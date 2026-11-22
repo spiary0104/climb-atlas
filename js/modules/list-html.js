@@ -6,7 +6,7 @@ import { TYPE_LABELS } from './constants.js';
 import { escapeHtml, safeUrl } from './html-safe.js';
 import { directionsUrl } from './utils.js';
 import { icon } from './icons.js';
-import { pagePath, t, th } from './i18n.js';
+import { currentLocale, pagePath, t, th } from './i18n.js';
 import { PROVENANCE_LABELS, publicNotes } from './provenance.js';
 
 const TYPE_CLASS = { 'indoor-bouldering': 'boulder', 'top-rope': 'toprope', 'lead-climbing': 'lead' };
@@ -31,14 +31,25 @@ export function localName(g){
   const s = g && typeof g.name_local === 'string' ? g.name_local.trim() : '';
   return s && s !== String(g.name || '').trim() ? s : '';
 }
+// Which name leads: the gym's own name when the interface reads its script (Chinese interface: CN/TW/HK/MO gyms; Japanese: JP;
+// Korean: KR), the English name otherwise. The other one follows as the small second line, so both are always shown.
+const READS = { 'zh-CN': ['CN', 'TW', 'HK', 'MO'], 'zh-TW': ['CN', 'TW', 'HK', 'MO'], ja: ['JP'], ko: ['KR'] };
+export const localFirst = g => !!localName(g) && (READS[currentLocale()] || []).includes(g.country);
+export const primaryName = g => localFirst(g) ? localName(g) : (g && g.name) || '';
+export function primaryNameHtml(g){
+  if(!localFirst(g)) return escapeHtml(g.name);
+  const lang = localLang(g);
+  return `<span${lang ? ` lang="${lang}"` : ''}>${escapeHtml(localName(g))}</span>`;
+}
 export function localNameHtml(g, cls = ''){
   const s = localName(g);
   if(!s) return '';
+  if(localFirst(g)) return `<span class="local-name ${escapeHtml(cls)}" lang="en">${escapeHtml(g.name)}</span>`;   // the English name second
   const lang = localLang(g);
   return `<span class="local-name ${escapeHtml(cls)}"${lang ? ` lang="${lang}"` : ''}>${escapeHtml(s)}</span>`;
 }
-// "Banana Climbing (Shangdi), 香蕉攀岩(上地店)" for an accessible label.
-const spokenName = g => [g.name, localName(g)].filter(Boolean).join(', ');
+// "Banana Climbing (Shangdi), 香蕉攀岩(上地店)" for an accessible label (the leading name first).
+const spokenName = g => localFirst(g) ? [localName(g), g.name].join(', ') : [g.name, localName(g)].filter(Boolean).join(', ');
 
 export const typeDotsHtml = types => knownTypes(types).map(t => `<span class="type-dot type-dot--${TYPE_CLASS[t]}" aria-hidden="true"></span>`).join('');
 export const typeTagsHtml = types => knownTypes(types).map(t => `<span class="type-tag type-tag--${TYPE_CLASS[t]}">${escapeHtml(TYPE_LABELS[t])}</span>`).join('');
@@ -84,7 +95,7 @@ export function rowHtml(g, ctx = {}){
   return `<div class="gym-row${ctx.selected ? ' is-selected' : ''}" data-id="${escapeHtml(g.id)}" role="listitem">`
     + `<button type="button" class="gym-row-main" data-gym-action="open" data-spot-id="${escapeHtml(g.id)}" aria-label="${escapeHtml(spokenName(g))}, ${escapeHtml(typeText(g.types))}, ${escapeHtml(placeLine(g, ctx))}${hoursOf(ctx) ? ', ' + escapeHtml(hoursOf(ctx).text) : ''}">`
     + thumbHtml(g, 'row')
-    + `<span class="gym-row-text"><span class="gym-row-name"><span class="gym-row-title">${escapeHtml(g.name)}</span>${localNameHtml(g, 'local-name--inline')}${provenanceMarkHtml(ctx.provenance)}</span>`
+    + `<span class="gym-row-text"><span class="gym-row-name"><span class="gym-row-title">${primaryNameHtml(g)}</span>${localNameHtml(g, 'local-name--inline')}${provenanceMarkHtml(ctx.provenance)}</span>`
     + `<span class="gym-row-meta">${typeDotsHtml(g.types)}<span class="gym-row-place">${escapeHtml(placeLine(g, ctx))}</span>${hoursHtml(g, ctx, 'span', 'gym-row-hours')}</span></span></button>`
     + `<span class="gym-row-side">${ctx.distance ? `<span class="gym-row-distance tnum">${escapeHtml(ctx.distance)}</span>` : ''}${saveButton(g, ctx.saved, 'gym-row-save')}</span></div>`;
 }
@@ -95,7 +106,7 @@ export function cardHtml(g, ctx = {}){
   return `<div class="gym-card${ctx.selected ? ' is-selected' : ''}" data-id="${escapeHtml(g.id)}" role="listitem">`
     + `<button type="button" class="gym-card-main" data-gym-action="open" data-spot-id="${escapeHtml(g.id)}">`
     + thumbHtml(g, 'card')
-    + `<span class="gym-card-body"><span class="gym-card-name">${escapeHtml(g.name)}${provenanceMarkHtml(ctx.provenance)}</span>${localNameHtml(g, 'local-name--block')}`
+    + `<span class="gym-card-body"><span class="gym-card-name">${primaryNameHtml(g)}${provenanceMarkHtml(ctx.provenance)}</span>${localNameHtml(g, 'local-name--block')}`
     + `<span class="gym-card-meta tnum">${escapeHtml(meta)}</span>${hoursHtml(g, ctx, 'span', 'gym-card-hours')}<span class="gym-card-tags">${typeTagsHtml(g.types)}</span></span></button>`
     + saveButton(g, ctx.saved, 'gym-card-save') + `</div>`;
 }
@@ -104,7 +115,7 @@ export function cardHtml(g, ctx = {}){
 export function carouselCardHtml(g, ctx = {}){
   return `<button type="button" class="carousel-card${ctx.selected ? ' is-selected' : ''}" data-gym-action="details" data-spot-id="${escapeHtml(g.id)}">`
     + thumbHtml(g, 'row')
-    + `<span class="carousel-card-body"><span class="carousel-card-name">${escapeHtml(g.name)}</span>${localNameHtml(g, 'local-name--block local-name--clip')}`
+    + `<span class="carousel-card-body"><span class="carousel-card-name">${primaryNameHtml(g)}</span>${localNameHtml(g, 'local-name--block local-name--clip')}`
     + `<span class="carousel-card-meta">${typeDotsHtml(g.types)}${escapeHtml(placeLine(g, ctx))}</span>${hoursHtml(g, ctx, 'span', 'carousel-card-hours')}`
     + `${ctx.distance ? `<span class="carousel-card-distance tnum">${escapeHtml(ctx.distance)}</span>` : ''}</span></button>`;
 }
@@ -116,9 +127,9 @@ export function peekHtml(g, ctx = {}){
   const where = [g.suburb, ctx.region, ctx.country && ctx.country !== ctx.region ? ctx.country : ''].filter(Boolean).join(', ');
   // The public description (in the list read); legacy research notes only when the whole row has been loaded.
   const notes = (typeof g.description === 'string' && g.description.trim()) || publicNotes(g.notes);
-  return `<div class="peek-head"><h2 class="peek-name" id="peekTitle">${escapeHtml(g.name)}${localNameHtml(g, 'local-name--block local-name--heading')}</h2>`
+  return `<div class="peek-head"><h2 class="peek-name" id="peekTitle">${primaryNameHtml(g)}${localNameHtml(g, 'local-name--block local-name--heading')}</h2>`
     + `<button type="button" class="btn btn-tertiary btn-icon btn-sm peek-close" data-gym-action="close" aria-label="${th('common.close')}">${icon('x', {size:'sm'})}</button></div>`
-    + `${photo ? `<img class="gym-photo peek-photo" src="${escapeHtml(photo)}" alt="${escapeHtml(g.name)}" loading="lazy" referrerpolicy="no-referrer">` : ''}`
+    + `${photo ? `<img class="gym-photo peek-photo" src="${escapeHtml(photo)}" alt="${escapeHtml(primaryName(g))}" loading="lazy" referrerpolicy="no-referrer">` : ''}`
     + `<div class="peek-tags">${typeTagsHtml(g.types)}</div>`
     + `<p class="peek-meta">${escapeHtml(where)}${ctx.distance ? ` · <span class="tnum">${escapeHtml(ctx.distance)}</span>` : ''}</p>`
     + hoursHtml(g, ctx, 'p', 'peek-hours')

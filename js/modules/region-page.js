@@ -4,6 +4,7 @@
 // place applied: the non-map browse path the accessibility contract asks for (sec. 15).
 import { COUNTRY_LABELS, COUNTRY_TO_REGION, REGION_LABELS, countryEnglish } from './constants.js';
 import { encodeExploreState, fitCamera } from './geo.js';
+import { localFirst } from './list-html.js';
 import { stateLabel, stateLabelEn } from './map.js';
 import { destroyMiniMaps, mountMiniMaps } from './mini-map.js';
 import { metroByPath, metroKey, metroOf, metrosForRegion } from './metros.js';
@@ -156,7 +157,7 @@ function cityView({ country, region, city }, view){
 // /in search: the app's search index (search-index.js, the one Explore uses): countries, regions, cities, then gyms, each
 // a link to its page. Only countries with a page are offered.
 function regionSearchItems(text){
-  const idx = appState.searchIndex || (appState.searchIndex = buildSearchIndex(appState.spots, { countryLabels: COUNTRY_LABELS, countryAlt: countryEnglish, stateLabel, stateLabelEn, metroName }));
+  const idx = appState.searchIndex || (appState.searchIndex = buildSearchIndex(appState.spots, { countryLabels: COUNTRY_LABELS, countryAlt: countryEnglish, stateLabel, stateLabelEn, metroName, localFirst }));
   const r = querySearchIndex(idx, text);
   const byId = new Map(appState.spots.map(g => [g.id, g]));
   const known = e => !!COUNTRY_LABELS[e.country];
