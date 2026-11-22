@@ -5,16 +5,16 @@
 | What would happen | Records |
 |---|---:|
 | Insert as NEW gyms | 0 |
-| Update existing gyms (explicit update records) | 38 |
+| Update existing gyms (explicit update records) | 37 |
 | Already exist — no action (identical content: 0; content differs, NOT applied: 0) | 0 |
 | Probable duplicates — need a human decision | 0 |
 | Invalid — rejected | 0 |
 | Rejected by a human decision | 0 |
-| **Total records in batch** | 38 |
+| **Total records in batch** | 37 |
 
-Index: 3651 known gyms (sha256 ee0e0c45b261…). Plan: af5f71a2433c… Also compared against staged batches: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha.
+Index: 3651 known gyms (sha256 ee0e0c45b261…). Plan: d25d730098ef… Also compared against staged batches: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha.
 
-## Updates to existing gyms (38)
+## Updates to existing gyms (37)
 
 - line 1 `g-e058446ef8` — Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)
   - FILLS gym information (only if empty in production; never overwrites): website sputnikclimbing.com + hours mon,tue,wed,thu,fri,sat + day pass + facilities (1) + source official-site sputnikclimbing.com 2026-11-22
@@ -66,5 +66,5 @@ Index: 3651 known gyms (sha256 ee0e0c45b261…). Plan: af5f71a2433c… Also comp
   - FILLS gym information (only if empty in production; never overwrites): website arkose.com + hours mon,tue,wed,thu,fri,sat,sun + day pass + source official-site arkose.com 2026-11-22
 - line 25 `g-ab41a4bb5c` — Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)
   - FILLS gym information (only if empty in production; never overwrites): website awesomebouldercenter.com + hours mon,tue,wed,thu,fri,sat,sun + day pass + facilities (1) + source official-site awesomebouldercenter.com 2026-11-22
-- … and 13 more (see plan.json)
+- … and 12 more (see plan.json)
 

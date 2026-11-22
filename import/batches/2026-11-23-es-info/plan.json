@@ -11,10 +11,10 @@
   "2026-10-12-cn-kunming-changsha"
  ],
  "counts": {
-  "records": 38,
+  "records": 37,
   "new": 0,
   "existing": 0,
-  "update": 38,
+  "update": 37,
   "probable-duplicate": 0,
   "invalid": 0,
   "rejected": 0,
@@ -26,7 +26,7 @@
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "af5f71a2433cd5ffd7c6d6270be804241be48426740c5b55b960f9823c53780b",
+ "plan_sha256": "d25d730098efd81dc46fc89fc30287a4ef2a7ea9e65c8f1fd27cf8351faf540a",
  "records": [
   {
    "line": 1,
@@ -633,7 +633,7 @@
     {
      "field": "info_source",
      "before": null,
-     "after": "https://www.bulderplanet.com/maresme/tarifas/"
+     "after": "https://www.bulderplanet.com/maresme/contacto/"
     },
     {
      "field": "info_source_kind",
@@ -1465,49 +1465,6 @@
   {
    "line": 31,
    "class": "update",
-   "id": "g-8cd75fe6cc",
-   "changes": [
-    {
-     "field": "website",
-     "before": null,
-     "after": "https://climbpro.es/"
-    },
-    {
-     "field": "day_pass",
-     "before": null,
-     "after": "Normal 10 â‚¬, reducida 8,50 â‚¬, infantil (-14) 7 â‚¬, maÃ±anas Lâ€“V 7,50 â‚¬"
-    },
-    {
-     "field": "facilities",
-     "before": null,
-     "after": [
-      "cafe",
-      "training",
-      "shoe-hire"
-     ]
-    },
-    {
-     "field": "info_source",
-     "before": null,
-     "after": "https://climbpro.es/tarifas-rocodromo/"
-    },
-    {
-     "field": "info_source_kind",
-     "before": null,
-     "after": "official-site"
-    },
-    {
-     "field": "info_checked_on",
-     "before": null,
-     "after": "2026-11-22"
-    }
-   ],
-   "expect_h": "8a0bfb97e232c927",
-   "update_reason": "Official website, day pass price, facilities from the gym's own site (researched 2026-11-22)"
-  },
-  {
-   "line": 32,
-   "class": "update",
    "id": "g-a21e09684e",
    "changes": [
     {
@@ -1547,7 +1504,7 @@
    "update_reason": "Official website, day pass price, facilities from the gym's own site (researched 2026-11-22)"
   },
   {
-   "line": 33,
+   "line": 32,
    "class": "update",
    "id": "g-9b06dd1215",
    "changes": [
@@ -1590,7 +1547,7 @@
    "update_reason": "Official website, day pass price, facilities from the gym's own site (researched 2026-11-22)"
   },
   {
-   "line": 34,
+   "line": 33,
    "class": "update",
    "id": "g-9aafcd8425",
    "changes": [
@@ -1631,7 +1588,7 @@
    "update_reason": "Official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
   },
   {
-   "line": 35,
+   "line": 34,
    "class": "update",
    "id": "g-42f8062a7f",
    "changes": [
@@ -1684,7 +1641,7 @@
    "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
   },
   {
-   "line": 36,
+   "line": 35,
    "class": "update",
    "id": "g-de4c11e36c",
    "changes": [
@@ -1741,7 +1698,7 @@
    "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
   },
   {
-   "line": 37,
+   "line": 36,
    "class": "update",
    "id": "g-5e5bc8e1ac",
    "changes": [
@@ -1788,7 +1745,7 @@
    "update_reason": "Official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
   },
   {
-   "line": 38,
+   "line": 37,
    "class": "update",
    "id": "g-b5f67ffe7a",
    "changes": [
