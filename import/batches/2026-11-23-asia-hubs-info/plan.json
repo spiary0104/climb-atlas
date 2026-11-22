@@ -1,0 +1,1312 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-23-asia-hubs-info",
+ "index": {
+  "sha256": "ee0e0c45b261e8d56a5a89777d4e4567f16b0ff18b4a45aeb76908b50eff22ad",
+  "count": 3651,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha"
+ ],
+ "counts": {
+  "records": 30,
+  "new": 0,
+  "existing": 0,
+  "update": 30,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "2f44da536c02da5aacbe247ff579151b81e0a31fcd816723ed4d6f03c7da3f34",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "g-f96c32d46b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderm.com/"
+    }
+   ],
+   "expect_h": "172847970f24d4d9",
+   "update_reason": "Official website from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "g-9e5903dc39",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderm.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–22:00",
+      "tue": "11:00–22:00",
+      "wed": "11:00–22:00",
+      "thu": "11:00–22:00",
+      "fri": "11:00–22:00",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderm.com/locations/our-gyms/bugis"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "6d853aad08d8429a",
+   "update_reason": "Official website, opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "g-cab3d4cd7b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderm.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–22:00",
+      "tue": "11:00–22:00",
+      "wed": "11:00–22:00",
+      "thu": "11:00–22:00",
+      "fri": "11:00–22:00",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderm.com/locations/our-gyms/rochor"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "516184e1dcc7a115",
+   "update_reason": "Official website, opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "g-6847f87580",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderm.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–22:00",
+      "tue": "11:00–22:00",
+      "wed": "11:00–22:00",
+      "thu": "11:00–22:00",
+      "fri": "11:00–22:00",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderm.com/locations/our-gyms/tai-seng"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "35468fe1d5490865",
+   "update_reason": "Official website, opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "g-d152720a9c",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderplanet.sg"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$33 single entry"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderplanet.sg"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "1184f82cc0f386f6",
+   "update_reason": "Official website, opening hours, day pass, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "g-caa551790b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderplanet.sg"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:30",
+      "tue": "10:00–22:30",
+      "wed": "10:00–22:30",
+      "thu": "10:00–22:30",
+      "fri": "10:00–22:30",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$33 single entry"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderplanet.sg"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "975f6ffe66b83798",
+   "update_reason": "Official website, opening hours, day pass, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "g-e3c22a0dbe",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://bffclimb.com/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$27.25 single entry, $17.44 youth (weekdays)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://bffclimb.com/rates/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "500ff470508c3905",
+   "update_reason": "Official website, day pass from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "g-d3aa4eb39d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://bffclimb.com/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$23.98 single entry, $17.44 youth (weekdays)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://bffclimb.com/rates/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "62319a3352b62fe0",
+   "update_reason": "Official website, day pass from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "g-3c144dfa48",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://bffclimb.com/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$23.98 single entry, $17.44 youth (weekdays)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://bffclimb.com/rates/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "3044c62801c1a4fb",
+   "update_reason": "Official website, day pass from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "g-f38f20d8c0",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://fitbloc.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:30–22:30",
+      "tue": "09:30–22:30",
+      "wed": "08:30–22:30",
+      "thu": "09:30–22:30",
+      "fri": "09:30–22:30",
+      "sat": "09:30–22:30",
+      "sun": "09:30–22:30"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$28 single entry"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://fitbloc.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "b3f04ce1ffe8a3c7",
+   "update_reason": "Official website, opening hours, day pass, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "g-0d06c06c2d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://fitbloc.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–22:00",
+      "tue": "13:00–22:00",
+      "wed": "13:00–22:00",
+      "thu": "13:00–22:00",
+      "fri": "13:00–22:00",
+      "sat": "10:00–22:30",
+      "sun": "10:00–22:30"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$28 single entry"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://fitbloc.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "c4311d2657cdc538",
+   "update_reason": "Official website, opening hours, day pass, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "g-e8f3a38dae",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://fitbloc.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "09:30–21:30",
+      "sun": "09:30–21:30"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$28 single entry"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://fitbloc.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "1d69c80bcedf5583",
+   "update_reason": "Official website, opening hours, day pass from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "g-063336c756",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.kineticsclimbing.com.sg/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "16:00–22:00",
+      "tue": "13:00–22:00",
+      "wed": "13:00–22:00",
+      "thu": "13:00–22:00",
+      "fri": "13:00–22:00",
+      "sat": "10:00–19:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$23 single entry"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.kineticsclimbing.com.sg/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "3e19b5886d999c1e",
+   "update_reason": "Official website, opening hours, day pass, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "g-f49056682b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.lighthouseclimbing.com"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$28 adult, $19 youth (18 & under), $16 child (12 & under)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.lighthouseclimbing.com"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "3b0b07d8843cdf5c",
+   "update_reason": "Official website, opening hours, day pass, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "g-6f2fb86cf4",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.climba.sg"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "17:30–22:00",
+      "tue": "11:30–22:00",
+      "wed": "11:30–22:00",
+      "thu": "11:30–22:00",
+      "fri": "11:30–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.climba.sg"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "f03ad39855c3f262",
+   "update_reason": "Official website, opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "seed-1731",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.groundupsg.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "17:00–22:30",
+      "tue": "12:00–22:30",
+      "wed": "12:00–22:30",
+      "thu": "12:00–22:30",
+      "fri": "12:00–22:30",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.groundupsg.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "7046b05108820b84",
+   "update_reason": "Official website, opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "seed-1824",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://justclimb.hk/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "14:00–23:00",
+      "tue": "14:00–23:00",
+      "wed": "14:00–23:00",
+      "thu": "14:00–23:00",
+      "fri": "14:00–23:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "HKD$278 adult, HKD$248 student (23 & under)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://justclimb.hk/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "18bec37ff9cb797e",
+   "update_reason": "Official website, opening hours, day pass, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "seed-1826",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://justclimb.hk/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "14:00–23:00",
+      "tue": "14:00–23:00",
+      "wed": "14:00–23:00",
+      "thu": "14:00–23:00",
+      "fri": "14:00–23:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "HKD$278 adult, HKD$248 student (23 & under)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://justclimb.hk/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "05083e16db7be29a",
+   "update_reason": "Official website, opening hours, day pass, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "seed-1827",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://justclimb.hk/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "14:00–23:00",
+      "tue": "14:00–23:00",
+      "wed": "14:00–23:00",
+      "thu": "14:00–23:00",
+      "fri": "14:00–23:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "HKD$278 adult, HKD$248 student (23 & under)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://justclimb.hk/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "824e99ca5524cd2e",
+   "update_reason": "Official website, opening hours, day pass, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "seed-1828",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://justclimb.hk/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "14:00–23:00",
+      "tue": "14:00–23:00",
+      "wed": "14:00–23:00",
+      "thu": "14:00–23:00",
+      "fri": "14:00–23:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "HKD$278 adult, HKD$248 student (23 & under)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://justclimb.hk/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "54833722678340f9",
+   "update_reason": "Official website, opening hours, day pass, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "seed-1829",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://justclimb.hk/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–22:00",
+      "tue": "13:00–22:00",
+      "wed": "13:00–22:00",
+      "thu": "13:00–22:00",
+      "fri": "13:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "HKD$278 adult, HKD$248 student (23 & under)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://justclimb.hk/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "4d954925aa2d8c0d",
+   "update_reason": "Official website, opening hours, day pass, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "seed-1825",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://justclimb.hk/"
+    }
+   ],
+   "expect_h": "3eab55c57ec71f24",
+   "update_reason": "Official website from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "seed-1830",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://justclimb.hk/"
+    }
+   ],
+   "expect_h": "7c63742e053705ba",
+   "update_reason": "Official website from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "seed-1847",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.hkclimbingpark.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "14:00–22:00",
+      "tue": "14:00–22:00",
+      "wed": "14:00–22:00",
+      "thu": "14:00–22:00",
+      "fri": "14:00–22:00",
+      "sat": "11:00–20:00",
+      "sun": "11:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.hkclimbingpark.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "489f3ed839c4ca16",
+   "update_reason": "Official website, opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "seed-1832",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.atticv.com.hk/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–22:30",
+      "tue": "11:00–22:30",
+      "wed": "11:00–22:30",
+      "thu": "11:00–22:30",
+      "fri": "11:00–22:30",
+      "sat": "11:00–22:30",
+      "sun": "11:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "HKD 150 adult, HKD 130 under 18"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.atticv.com.hk/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "3856a8e22ae638b3",
+   "update_reason": "Official website, opening hours, day pass, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "seed-1840",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.theplayerclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "14:00–22:30",
+      "tue": "14:00–22:30",
+      "wed": "14:00–22:30",
+      "thu": "14:00–22:30",
+      "fri": "14:00–22:30",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$288 adult, $248 student (25 & under)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.theplayerclimbing.com/visit-us"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "725616c851e5a829",
+   "update_reason": "Official website, opening hours, day pass, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 27,
+   "class": "update",
+   "id": "seed-1843",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.tanukibouldering.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "17:30–23:00",
+      "tue": "14:00–23:00",
+      "wed": "14:00–23:00",
+      "thu": "14:00–23:00",
+      "fri": "14:00–23:00",
+      "sat": "11:00–20:00",
+      "sun": "11:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.tanukibouldering.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "509f51f964c2321d",
+   "update_reason": "Official website, opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 28,
+   "class": "update",
+   "id": "seed-1848",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://campfourbouldering.com.hk/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–23:00",
+      "tue": "11:00–23:00",
+      "wed": "11:00–23:00",
+      "thu": "11:00–23:00",
+      "fri": "11:00–23:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://campfourbouldering.com.hk/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "76a2bd9f415b67f2",
+   "update_reason": "Official website, opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 29,
+   "class": "update",
+   "id": "seed-1849",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.vitabeta.hk/"
+    }
+   ],
+   "expect_h": "f1303d215e092232",
+   "update_reason": "Official website from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 30,
+   "class": "update",
+   "id": "seed-1838",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.cruxhk.com/"
+    }
+   ],
+   "expect_h": "caad58a3fb3a2330",
+   "update_reason": "Official website from the gym's own site (researched 2026-11-22)"
+  }
+ ]
+}
