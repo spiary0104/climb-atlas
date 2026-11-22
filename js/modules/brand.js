@@ -17,6 +17,19 @@ export function firstRunArt(kind){
   return pose ? `<img class="mascot mascot--spot" src="assets/mascot/${pose}.svg" alt="" width="96" height="96" loading="lazy">` : '';
 }
 
+// Companion art (sec. 12.2 tier 3b, 2026-11-22, Panda-inspired): four placements the owner allowed beyond first run, each
+// the only character on its screen, 96px max, decorative (the surface's text carries the meaning):
+//   calendar  beside the Log month title while the current month is shown      (calendar-today)
+//   map       the "see every gym on the map" tile on the Regions index          (city-map)
+//   medal     beside points and level on /me (the seal steps aside)             (medal)
+//   wave      heading the START sheet (not the sign-in dialog)                  (wave-badge)
+const COMPANION = { calendar: 'calendar-today', map: 'city-map', medal: 'medal', wave: 'wave-badge' };
+export function companionArt(kind, size = 96){
+  const pose = Object.hasOwn(COMPANION, kind) ? COMPANION[kind] : null;
+  const px = Math.min(96, Math.max(24, Number(size) || 96));
+  return pose ? `<img class="mascot mascot--companion mascot--${pose}" src="assets/mascot/${pose}.svg" alt="" width="${Number(px)}" height="${Number(px)}" loading="lazy">` : '';
+}
+
 // Milestone art (sec. 12.3): the one sheet where the character may break an edge at 160px. topped-out for the first
 // stamp, fresh-stamp for travel milestones (new country, first abroad, every 5th gym), dyno for a new highest grade.
 // Decorative; the sheet's title carries the meaning.

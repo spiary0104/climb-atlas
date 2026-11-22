@@ -131,6 +131,14 @@
 
 /* /in: search, then continents as collapsed disclosures (real-phone test 2026-09-28) */
 .regions-search{position:relative;margin-top:var(--space-4);}
+/* Regions: the map tile (city-map deer, a line for travellers, a button-styled link) */
+.regions-map-tile{display:grid;grid-template-columns:auto 1fr;column-gap:var(--space-3);row-gap:var(--space-2);align-items:center;margin-top:var(--space-4);padding:var(--space-3) var(--space-4);border-radius:var(--radius-lg);background:var(--color-brand-fawn-subtle);border:var(--border-width) solid var(--color-brand-fawn-muted);color:var(--color-text-primary);text-decoration:none;}
+.regions-map-tile:hover{border-color:var(--color-brand-fawn);}
+.regions-map-tile .mascot--companion{grid-row:1 / span 2;width:var(--size-mascot-companion);}
+.regions-map-text{display:flex;flex-direction:column;min-width:0;}
+.regions-map-title{font-weight:var(--font-weight-semibold);}
+.regions-map-sub{color:var(--color-text-secondary);font-size:var(--type-text-sm-size);line-height:var(--type-text-sm-line);}
+.regions-map-cta{justify-self:start;}
 .regions-search > .icon{position:absolute;left:var(--space-3);top:50%;transform:translateY(-50%);color:var(--color-text-secondary);pointer-events:none;}
 .regions-search .input{width:100%;min-height:var(--size-touch-min);padding-left:calc(var(--space-3) + var(--size-icon-sm) + var(--space-2));}
 .regions-results .regions-hits{margin-top:var(--space-4);padding:0;list-style:none;}
@@ -152,6 +160,8 @@
 .log-layout{display:grid;grid-template-columns:minmax(0, 1fr) var(--size-page-aside);gap:var(--space-7);align-items:start;margin-top:var(--space-5);}
 .calendar-head{display:flex;align-items:center;justify-content:space-between;gap:var(--space-2);}
 .calendar-head .panel-title{margin:0;}
+.calendar-head .mascot--companion{width:var(--size-mascot-companion);margin:calc(-1 * var(--space-2)) 0;}
+.calendar-head .mascot--companion + .panel-title{flex:1 1 auto;}
 .calendar-nav{display:flex;gap:var(--space-1);}
 .calendar-grid{width:100%;margin-top:var(--space-3);border-collapse:collapse;table-layout:fixed;font-feature-settings:var(--font-features-numeric);}
 .calendar-grid th{padding:var(--space-1) 0;font-size:var(--type-caption-size);line-height:var(--type-caption-line);font-weight:var(--font-weight-semibold);color:var(--color-text-secondary);}
@@ -167,6 +177,10 @@
 .me-brand .section-title{margin-top:0;}
 .me-links{display:flex;flex-wrap:wrap;column-gap:var(--space-4);margin:0;font-size:var(--type-text-md-size);}
 .me-links a{display:inline-flex;align-items:center;min-height:var(--size-touch-min);}
+/* Points and level with the medal deer (sec. 12.2 tier 3b) */
+.me-points-row{display:flex;align-items:center;gap:var(--space-3);}
+.me-points-row .mascot--companion{width:var(--size-mascot-companion);}
+.me-points-row .me-points{margin:0;}
 /* Delete account: folded away under the account actions; the list says what goes and what stays */
 .me-delete-summary{display:list-item;padding:var(--space-3) 0;cursor:pointer;color:var(--color-text-secondary);}   /* list-item keeps the native disclosure arrow */
 .me-delete-summary:hover{color:var(--color-status-danger);}

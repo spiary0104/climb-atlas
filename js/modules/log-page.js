@@ -23,7 +23,7 @@ function enter(params, view){
   if(!month){ const d = new Date(); month = { y: d.getFullYear(), m: d.getMonth() }; }
   const counts = new Map();
   for(const s of appState.sessions) counts.set(s.session_date, (counts.get(s.session_date) || 0) + 1);
-  view.innerHTML = logPageHtml({ signedIn: true, count: appState.sessions.length, calendar: calendarHtml(month.y, month.m, counts, todayKey()), sessions: sessionsHtml() });
+  view.innerHTML = logPageHtml({ signedIn: true, count: appState.sessions.length, calendar: calendarHtml(month.y, month.m, counts, todayKey(), { companion: appState.sessions.length > 0 }), sessions: sessionsHtml() });   // no sessions: chalking-up is the screen's character
 }
 
 export function initLogPage(){

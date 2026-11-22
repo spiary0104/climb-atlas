@@ -7,6 +7,7 @@
 //     Done. When the sheet closes, the milestone sheet shows if this check-in earned one (once per session).
 // START on phones opens a small sheet: "Check in at <gym>" (the gym page or selected gym) or "nearby", and "Log a session".
 import { openAuthModal } from './auth-ui.js';
+import { companionArt } from './brand.js';
 import { COUNTRY_LABELS } from './constants.js';
 import { distanceKm, formatDistance } from './geo.js';
 import { t } from './i18n.js';
@@ -153,6 +154,8 @@ export function openStartSheet(){
   $('startSignedInActions').hidden = !signedIn;
   $('startCheckinLabel').textContent = g ? t('start.checkinAt', { name: g.name }) : t('start.checkinNearby');
   startBackdrop.dataset.spotId = g ? g.id : '';
+  const badge = $('startBadge');
+  if(badge && !badge.firstChild) badge.innerHTML = companionArt('wave', 72);   // the waving deer heads the sheet (sec. 12.2 tier 3b)
   startBackdrop.classList.remove('hidden');
 }
 async function checkInNearby(){

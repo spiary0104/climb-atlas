@@ -29,7 +29,7 @@ and fresh-stamp are in the product (DESIGN.md sec. 12.1); pin-drop's role is a p
 
 Added 2026-11-22: four poses generated with Higgsfield (GPT Image 2.6, high) from `head-on-boulder.png`, `backpacker.png` and
 `traveller-passport.png` as references (same character, not a redesign), for surfaces inspired by the 攀搭攀岩 (Panda) mini
-program. Proposals only: not traced, not in the product until approved (DESIGN.md sec. 12).
+program. Traced to `assets/mascot/` and placed in the product on 2026-11-22 (DESIGN.md sec. 12.2 tier 3b).
 
 | File | Pose | Proposed role (Panda pattern) |
 |---|---|---|
