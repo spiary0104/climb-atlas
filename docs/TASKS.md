@@ -27,7 +27,7 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 - Follow-up 2026-11-11: 592 checks verified on public sources (42 resolved, 26 already resolved, 115 need a human, 393 open), index
   `import/research/MANUAL-CHECKS-followup-2026-11-11.md`. Later: the ~70 pin/entrance checks (owner, map inspection); Korea + small EU files not covered.
 - Owner policy 2026-11-11: RedNote visitor notes count (2+ authors, 12 months, + map listing; flagged); kids-only, members-only municipal and
-  appointment-only venues are not listed. Next: retire existing ones (reason `not-public`), starting with the China kids-only list in the follow-up.
+  appointment-only venues are not listed. Done 2026-11-22: 16 China kids-only venues retired (`not-public`); no other live venue matches.
 - Done: 8 gyms added, 1 tag fix, the rest declined (`import/research/MANUAL-CHECKS-2026-10-06.md`). Open: CAT Torino (bouldering for day visitors?);
   re-check later: Kletterhütte Ilmenau (not open yet), Hwang Pyeong-ju (unsure).
 - Decisions: the merged Jeonnam-Gwangju region name in Korean addresses.
@@ -49,7 +49,7 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 ### i18n (docs/i18n.md): 9 languages + place names live; open: native review, legal pages English only, unify 岩馆/攀岩馆; SEO per-language URLs and Play/TWA are owner decisions.
 ### Welcome / account deletion / community publishing
 - One-time welcome after first email confirmation (owner 2026-10-05). Account deletion built (Me page + Edge Function);
-  owner deploys it: `supabase functions deploy delete-account` (docs/migrations.md).
+  deployed 2026-11-22 (docs/migrations.md).
 - Phase 4: publish-then-review for edits, photos and confirm points are not built.
 ### Map performance
 - Lazy map live (PR #77). Next if needed: Fraunces (118 KB) competes with the list on slow phones.

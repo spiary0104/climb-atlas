@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-11-22-retire-kids-only",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "14cd0280ab727ce6d2ad7eb8f7cb05ecd18b1aa68a639c9a3c1c1e791c5f6218",
+  "payload_sha256": "56cccd591c26016de1ac21490674efd33d41c4a8f992b120e9a468d8b8e23ab1",
+  "confirm_token": "19e594d581a6c522",
+  "live_state_sha256": "cad4995ad0058bd8b31478efd20b923d1cbe5f262ca4a0d91e345641d64831ca",
+  "rows_updated": 0,
+  "approved_before": 3674,
+  "approved_after": 3658,
+  "changes": [],
+  "rows_retired": 16,
+  "retired": [
+    "seed-554",
+    "seed-586",
+    "seed-588",
+    "seed-816",
+    "seed-817",
+    "seed-821",
+    "seed-828",
+    "seed-831",
+    "seed-838",
+    "seed-839",
+    "seed-507",
+    "seed-515",
+    "seed-518",
+    "seed-519",
+    "seed-525",
+    "seed-529"
+  ],
+  "retirements": [
+    {
+      "id": "seed-554",
+      "reason_code": "not-public",
+      "reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+      "expect_h": "c1277ec06c68217a"
+    },
+    {
+      "id": "seed-586",
+      "reason_code": "not-public",
+      "reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+      "expect_h": "589e196648bb4e09"
+    },
+    {
+      "id": "seed-588",
+      "reason_code": "not-public",
+      "reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+      "expect_h": "2cf4ec3751addfb0"
+    },
+    {
+      "id": "seed-816",
+      "reason_code": "not-public",
+      "reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+      "expect_h": "25f7fe1bafcf9076"
+    },
+    {
+      "id": "seed-817",
+      "reason_code": "not-public",
+      "reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+      "expect_h": "d22d8379d02acba5"
+    },
+    {
+      "id": "seed-821",
+      "reason_code": "not-public",
+      "reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+      "expect_h": "1dbe10a1b7d7b49c"
+    },
+    {
+      "id": "seed-828",
+      "reason_code": "not-public",
+      "reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+      "expect_h": "d25bdbbd765db9fd"
+    },
+    {
+      "id": "seed-831",
+      "reason_code": "not-public",
+      "reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+      "expect_h": "4211a7cb4de17d1b"
+    },
+    {
+      "id": "seed-838",
+      "reason_code": "not-public",
+      "reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+      "expect_h": "e0bb9a2ab556a2c3"
+    },
+    {
+      "id": "seed-839",
+      "reason_code": "not-public",
+      "reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+      "expect_h": "9ae90352ba8fcaaa"
+    },
+    {
+      "id": "seed-507",
+      "reason_code": "not-public",
+      "reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+      "expect_h": "573fc03e5281e9fc"
+    },
+    {
+      "id": "seed-515",
+      "reason_code": "not-public",
+      "reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+      "expect_h": "5f0ca5aeaa4c27a2"
+    },
+    {
+      "id": "seed-518",
+      "reason_code": "not-public",
+      "reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+      "expect_h": "6fff410026405b81"
+    },
+    {
+      "id": "seed-519",
+      "reason_code": "not-public",
+      "reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+      "expect_h": "312bf18bc7053f3f"
+    },
+    {
+      "id": "seed-525",
+      "reason_code": "not-public",
+      "reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+      "expect_h": "5528edc893b7fc1e"
+    },
+    {
+      "id": "seed-529",
+      "reason_code": "not-public",
+      "reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+      "expect_h": "99f4d0ca35734f96"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 16,
+    "problems": []
+  },
+  "started_at": "2026-11-22T07:50:51.434Z",
+  "finished_at": "2026-11-22T07:50:59.067Z",
+  "ids": [
+    "seed-554",
+    "seed-586",
+    "seed-588",
+    "seed-816",
+    "seed-817",
+    "seed-821",
+    "seed-828",
+    "seed-831",
+    "seed-838",
+    "seed-839",
+    "seed-507",
+    "seed-515",
+    "seed-518",
+    "seed-519",
+    "seed-525",
+    "seed-529"
+  ]
+}
