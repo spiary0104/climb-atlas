@@ -1,0 +1,620 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-11-22-cn-names-amap-3",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "bb2879606b3768be83a69a2e296abc4d56d5d046f251199e02f570ff1280964e",
+  "payload_sha256": "08867de7b153844ac98efa1a68956ecb2234bcd3bbd6ea46342ead8e8caf7c5f",
+  "confirm_token": "a37a1525e9965f60",
+  "live_state_sha256": "10893e1ad11f743f928bd8ef1eb116df78980cf9922e4a7b8dcc6693fba56658",
+  "rows_updated": 0,
+  "approved_before": 3658,
+  "approved_after": 3651,
+  "changes": [],
+  "rows_info_filled": 54,
+  "info_filled": [
+    {
+      "id": "seed-539",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "e1f9a7e5e589e534",
+      "after_h": "e1f9a7e5e589e534"
+    },
+    {
+      "id": "seed-540",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "f400208fed3f67c0",
+      "after_h": "f400208fed3f67c0"
+    },
+    {
+      "id": "seed-542",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "d1483d86247abd59",
+      "after_h": "d1483d86247abd59"
+    },
+    {
+      "id": "seed-552",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "b7190bdccc7ef875",
+      "after_h": "b7190bdccc7ef875"
+    },
+    {
+      "id": "seed-561",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "890ddd91be51a376",
+      "after_h": "890ddd91be51a376"
+    },
+    {
+      "id": "seed-556",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "0d08fb013687b5ed",
+      "after_h": "0d08fb013687b5ed"
+    },
+    {
+      "id": "seed-563",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "867fb22f5b7f2767",
+      "after_h": "867fb22f5b7f2767"
+    },
+    {
+      "id": "seed-566",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "27a90d3943ccf3e3",
+      "after_h": "27a90d3943ccf3e3"
+    },
+    {
+      "id": "seed-573",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "ff4cda2b00ccedbf",
+      "after_h": "ff4cda2b00ccedbf"
+    },
+    {
+      "id": "seed-580",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "f23c44d33a151b9f",
+      "after_h": "f23c44d33a151b9f"
+    },
+    {
+      "id": "seed-594",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "10636433c015d825",
+      "after_h": "10636433c015d825"
+    },
+    {
+      "id": "seed-599",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "333c42063602ed07",
+      "after_h": "333c42063602ed07"
+    },
+    {
+      "id": "seed-576",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "a4ec8ab4758435cc",
+      "after_h": "a4ec8ab4758435cc"
+    },
+    {
+      "id": "seed-640",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "eebec6ebbd5a094e",
+      "after_h": "eebec6ebbd5a094e"
+    },
+    {
+      "id": "seed-657",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "1deee3ee5a16fd10",
+      "after_h": "1deee3ee5a16fd10"
+    },
+    {
+      "id": "seed-678",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "d7640e0533f8eae9",
+      "after_h": "d7640e0533f8eae9"
+    },
+    {
+      "id": "seed-645",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "4f3e3032aa469282",
+      "after_h": "4f3e3032aa469282"
+    },
+    {
+      "id": "seed-648",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "43a514dfc1a04d69",
+      "after_h": "43a514dfc1a04d69"
+    },
+    {
+      "id": "seed-661",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "85aa879195b04872",
+      "after_h": "85aa879195b04872"
+    },
+    {
+      "id": "seed-662",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "09f7cd5faf3da1bd",
+      "after_h": "09f7cd5faf3da1bd"
+    },
+    {
+      "id": "seed-669",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "17134e8ad9c48c7f",
+      "after_h": "17134e8ad9c48c7f"
+    },
+    {
+      "id": "seed-687",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "93a3f69782f384c7",
+      "after_h": "93a3f69782f384c7"
+    },
+    {
+      "id": "seed-689",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "e5834122a4671fa7",
+      "after_h": "e5834122a4671fa7"
+    },
+    {
+      "id": "seed-610",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "83a0447b25f35ae1",
+      "after_h": "83a0447b25f35ae1"
+    },
+    {
+      "id": "seed-612",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "8a892532e00ea477",
+      "after_h": "8a892532e00ea477"
+    },
+    {
+      "id": "seed-620",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "f700f414493d04ee",
+      "after_h": "f700f414493d04ee"
+    },
+    {
+      "id": "seed-627",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "1b09516c3aa5cffb",
+      "after_h": "1b09516c3aa5cffb"
+    },
+    {
+      "id": "seed-633",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "a56b41da208be551",
+      "after_h": "a56b41da208be551"
+    },
+    {
+      "id": "seed-609",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "4e7464177d0b8817",
+      "after_h": "4e7464177d0b8817"
+    },
+    {
+      "id": "seed-626",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "c535e62ca39ae651",
+      "after_h": "c535e62ca39ae651"
+    },
+    {
+      "id": "seed-631",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "7fbdc2fa17341e7f",
+      "after_h": "7fbdc2fa17341e7f"
+    },
+    {
+      "id": "seed-635",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "e743398aacdb6699",
+      "after_h": "e743398aacdb6699"
+    },
+    {
+      "id": "seed-616",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "6dc3f22ac87f77c1",
+      "after_h": "6dc3f22ac87f77c1"
+    },
+    {
+      "id": "seed-630",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "1827c840f211084e",
+      "after_h": "1827c840f211084e"
+    },
+    {
+      "id": "seed-496",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "540d9cce64e4efee",
+      "after_h": "540d9cce64e4efee"
+    },
+    {
+      "id": "seed-506",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "e54c50d71b35ea08",
+      "after_h": "e54c50d71b35ea08"
+    },
+    {
+      "id": "seed-509",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "f91f0fddb696b9bd",
+      "after_h": "f91f0fddb696b9bd"
+    },
+    {
+      "id": "seed-524",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "379ba010dc1397a8",
+      "after_h": "379ba010dc1397a8"
+    },
+    {
+      "id": "seed-530",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "c358f87f7542071f",
+      "after_h": "c358f87f7542071f"
+    },
+    {
+      "id": "seed-500",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "54b946c946271174",
+      "after_h": "54b946c946271174"
+    },
+    {
+      "id": "seed-810",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "243f630506436895",
+      "after_h": "243f630506436895"
+    },
+    {
+      "id": "seed-802",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "8c3ba4807ce9e489",
+      "after_h": "8c3ba4807ce9e489"
+    },
+    {
+      "id": "seed-807",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "161b9af974af2e1b",
+      "after_h": "161b9af974af2e1b"
+    },
+    {
+      "id": "seed-805",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "d911f25e851e23ec",
+      "after_h": "d911f25e851e23ec"
+    },
+    {
+      "id": "seed-801",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "01f818638c5d4883",
+      "after_h": "01f818638c5d4883"
+    },
+    {
+      "id": "seed-800",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "0ff401515ebef65d",
+      "after_h": "0ff401515ebef65d"
+    },
+    {
+      "id": "seed-808",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "77a69a4efbf1ec3d",
+      "after_h": "77a69a4efbf1ec3d"
+    },
+    {
+      "id": "seed-734",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "9fee0652b1ce4522",
+      "after_h": "9fee0652b1ce4522"
+    },
+    {
+      "id": "seed-841",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "7433f55229a828bc",
+      "after_h": "7433f55229a828bc"
+    },
+    {
+      "id": "seed-847",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "932b5463271120bd",
+      "after_h": "932b5463271120bd"
+    },
+    {
+      "id": "seed-852",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "24522b68c8c88f0c",
+      "after_h": "24522b68c8c88f0c"
+    },
+    {
+      "id": "seed-857",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "e998f52d30d66264",
+      "after_h": "e998f52d30d66264"
+    },
+    {
+      "id": "seed-746",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "087842c46f1cb591",
+      "after_h": "087842c46f1cb591"
+    },
+    {
+      "id": "seed-505",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "bc367cdd709caeed",
+      "after_h": "bc367cdd709caeed"
+    }
+  ],
+  "rows_retired": 7,
+  "retired": [
+    "seed-559",
+    "seed-568",
+    "seed-634",
+    "seed-605",
+    "seed-668",
+    "seed-729",
+    "seed-851"
+  ],
+  "retirements": [
+    {
+      "id": "seed-559",
+      "reason_code": "not-public",
+      "reason": "Kids-only climbing venue: its Amap listing is 攀猩儿童攀岩馆(南桥百联店), a children's climbing gym (checked 2026-11-22); not listed per owner policy 2026-11-11.",
+      "expect_h": "5b382d1ab5c9a283"
+    },
+    {
+      "id": "seed-568",
+      "reason_code": "not-public",
+      "reason": "Kids-only climbing venue: its Amap listing is 攀猩儿童攀岩馆(中环百联店), a children's climbing gym (checked 2026-11-22); not listed per owner policy 2026-11-11.",
+      "expect_h": "f98b91d4a23acf77"
+    },
+    {
+      "id": "seed-634",
+      "reason_code": "not-public",
+      "reason": "Kids-only climbing venue: its Amap listing is 攀登侠儿童攀岩馆(万达广场双流店), a children's climbing gym (checked 2026-11-22); not listed per owner policy 2026-11-11.",
+      "expect_h": "627d9900c755eca4"
+    },
+    {
+      "id": "seed-605",
+      "reason_code": "closed",
+      "reason": "Closed: its Amap listing 极壁风暴攀岩馆(长宁店) is marked 暂停营业 (temporarily closed), checked 2026-11-22.",
+      "expect_h": "baf974dcc55ef0a8"
+    },
+    {
+      "id": "seed-668",
+      "reason_code": "closed",
+      "reason": "Closed: its Amap listing 耀岩攀岩(沙河店) is marked 暂停营业 (temporarily closed), checked 2026-11-22.",
+      "expect_h": "2d0701e10445514d"
+    },
+    {
+      "id": "seed-729",
+      "reason_code": "closed",
+      "reason": "Closed: its Amap listing 攀猩攀岩馆(加州阳光·开元广场店) is marked 暂停营业 (temporarily closed), checked 2026-11-22.",
+      "expect_h": "bab3df7c83274b70"
+    },
+    {
+      "id": "seed-851",
+      "reason_code": "closed",
+      "reason": "Closed: its Amap listing 宽润 is marked 暂停营业 (temporarily closed), checked 2026-11-22.",
+      "expect_h": "f86645c717ad387b"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 61,
+    "problems": []
+  },
+  "started_at": "2026-11-22T12:15:23.580Z",
+  "finished_at": "2026-11-22T12:15:41.404Z",
+  "ids": [
+    "seed-539",
+    "seed-540",
+    "seed-542",
+    "seed-552",
+    "seed-561",
+    "seed-556",
+    "seed-563",
+    "seed-566",
+    "seed-573",
+    "seed-580",
+    "seed-594",
+    "seed-599",
+    "seed-576",
+    "seed-640",
+    "seed-657",
+    "seed-678",
+    "seed-645",
+    "seed-648",
+    "seed-661",
+    "seed-662",
+    "seed-669",
+    "seed-687",
+    "seed-689",
+    "seed-610",
+    "seed-612",
+    "seed-620",
+    "seed-627",
+    "seed-633",
+    "seed-609",
+    "seed-626",
+    "seed-631",
+    "seed-635",
+    "seed-616",
+    "seed-630",
+    "seed-496",
+    "seed-506",
+    "seed-509",
+    "seed-524",
+    "seed-530",
+    "seed-500",
+    "seed-810",
+    "seed-802",
+    "seed-807",
+    "seed-805",
+    "seed-801",
+    "seed-800",
+    "seed-808",
+    "seed-734",
+    "seed-841",
+    "seed-847",
+    "seed-852",
+    "seed-857",
+    "seed-746",
+    "seed-505",
+    "seed-559",
+    "seed-568",
+    "seed-634",
+    "seed-605",
+    "seed-668",
+    "seed-729",
+    "seed-851"
+  ]
+}
