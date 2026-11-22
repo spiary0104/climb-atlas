@@ -358,3 +358,29 @@ test('START reads "Check in", never the Log tab\'s word; its visible label is in
   assert.ok(tabLabels.includes('Log') && !tabLabels.includes(start[2]), 'no two tab-bar items share a label');
   assert.match(read('css/style.css'), /\.maplibregl-ctrl-attrib\{[^}]*color:var\(--map-control-text\)/, 'attribution text uses the paper control token, not the rock secondary text');
 });
+
+test('companion art (sec. 12.2 tier 3b): four fixed poses, each the only character on its screen', async () => {
+  const brand = await import('../js/modules/brand.js');
+  for (const [k, f] of [['calendar', 'calendar-today'], ['map', 'city-map'], ['medal', 'medal'], ['wave', 'wave-badge']]) {
+    assert.match(brand.companionArt(k), new RegExp(`^<img class="mascot mascot--companion mascot--${f}" src="assets/mascot/${f}\.svg" alt="" width="96" height="96" loading="lazy">$`), k);
+    const svg = read('assets/mascot/' + f + '.svg');
+    assert.ok(!/<script|\son[a-z]+=|javascript:|href=|<image|<foreignObject/i.test(svg), f + ' is plain vector shapes');
+  }
+  assert.equal(brand.companionArt('toString'), '', 'only own keys');
+  assert.match(brand.companionArt('wave', 400), /width="96"/, 'never above 96px');
+  globalThis.window = globalThis.window || {}; globalThis.window.matchMedia = globalThis.window.matchMedia || (() => ({ matches: false }));
+  const page = await import('../js/modules/page-html.js');
+  const cal = page.calendarHtml(2026, 10, new Map(), '2026-11-22', { companion: true });
+  assert.match(cal, /calendar-today\.svg/, 'current month: the calendar deer');
+  assert.ok(!/mascot/.test(page.calendarHtml(2026, 9, new Map(), '2026-11-22', { companion: true })), 'another month: none');
+  assert.ok(!/mascot/.test(page.calendarHtml(2026, 10, new Map(), '2026-11-22')), 'no sessions (chalking-up shows instead): none');
+  const base = { signedIn: true, section: 'saved', saved: [{ g: { id: 'a', name: 'A', country: 'AU', types: [] }, ctx: {} }], climbed: [], community: { points: 12, level: 1, contributor: true, displayName: '', submissions: [] } };
+  const me = page.mePageHtml(base);
+  assert.match(me, /medal\.svg/); assert.ok(!/class="seal/.test(me), 'the seal steps aside for the medal');
+  const first = page.mePageHtml({ ...base, saved: [] });
+  assert.ok(!/medal\.svg/.test(first) && /field-notes\.svg/.test(first), 'first run: field-notes only');
+  assert.match(page.regionsMapTileHtml(3674), /city-map\.svg[\s\S]*href|href="\/" data-link/);
+  assert.match(read('index.html'), /<div class="start-badge" id="startBadge" aria-hidden="true"><\/div>/, 'the START sheet holds an empty slot');
+  assert.match(read('js/modules/checkin.js'), /companionArt\('wave', 72\)/);
+  assert.ok(!/companionArt/.test(read('js/modules/auth-ui.js')), 'never in the sign-in dialog');
+});

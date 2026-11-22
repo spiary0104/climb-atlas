@@ -3,7 +3,7 @@
 // escapeHtml(); photos through safeUrl() first. Actions are data-page-action + data-spot-id; links are
 // <a href data-link> that the router turns into History API navigation. A section with no data renders nothing
 // (DNA #3); the only substitute is the single contribution prompt.
-import { firstRunArt, sealSvg } from './brand.js';
+import { companionArt, firstRunArt, sealSvg } from './brand.js';
 import { essentialsRowsHtml, facilitiesHtml, hasPracticalInfo } from './gym-info.js';
 import { escapeHtml, safeUrl } from './html-safe.js';
 import { formatDate, formatNumber, languageOptionsHtml, pagePath, t, th } from './i18n.js';
@@ -152,6 +152,14 @@ export function pageArtHtml(name){
 // /in: a search field over countries, regions, cities and gyms, then every country with gyms grouped by continent. The
 // continents start collapsed (real-phone test 2026-09-28: the fully expanded list was far too long on a phone); each
 // summary says how many countries and gyms it holds. groups: [{title, items: tiles}]
+// The map tile on the Regions index (Panda-inspired, sec. 12.2 tier 3b): the city-map deer, a line for travellers and a
+// link to the map. The only character on the page (the header art is a scene without one).
+export function regionsMapTileHtml(total){
+  return `<a class="regions-map-tile" href="/" data-link>${companionArt('map', 80)}<span class="regions-map-text"><strong class="regions-map-title">${th('regions.mapTileTitle')}</strong>`
+    + `<span class="regions-map-sub">${escapeHtml(t('regions.mapTileSub', { gyms: countLabel(total) }))}</span></span>`
+    + `<span class="btn btn-primary btn-sm regions-map-cta">${th('regions.mapTileCta')}${icon('caret-right', {size:'sm'})}</span></a>`;
+}
+
 export function regionsIndexHtml(groups, total){
   const countries = groups.reduce((n, g) => n + g.items.length, 0);
   return `<article class="page place-page regions-page">${pageArtHtml('regions-wall')}<header class="place-header"><h1 class="page-title">${th('nav.regions')}</h1>`
@@ -159,6 +167,7 @@ export function regionsIndexHtml(groups, total){
     + `<form class="regions-search" role="search" data-page-form="region-search"><label class="visually-hidden" for="regionSearch">${th('regions.searchLabel')}</label>`
     + `${icon('magnifying-glass', {size:'sm'})}<input class="input" type="search" id="regionSearch" autocomplete="off" enterkeyhint="search" placeholder="${th('regions.searchPlaceholder')}"></form>`
     + `<div class="regions-results" id="regionResults" aria-live="polite"></div>`
+    + regionsMapTileHtml(total)
     + `<div class="regions-browse" id="regionBrowse">`
     + groups.map(g => `<details class="page-section region-continent"><summary class="region-continent-summary">${icon('caret-right', {size:'sm'})}`
       + `<h2 class="section-title">${escapeHtml(g.title)}</h2><span class="region-continent-count tnum">${escapeHtml(t('regions.continentLine', { countries: t('regions.countryCount', { count: g.items.length }), gyms: countLabel(g.items.reduce((n, x) => n + x.count, 0)) }))}</span></summary>`
@@ -207,7 +216,8 @@ const weekdayName = (i, weekday) => formatDate(new Date(Date.UTC(2024, 0, 1 + i)
 const pad = n => String(n).padStart(2, '0');
 
 // Month calendar (weeks start on Monday); days with sessions are marked. counts: Map('YYYY-MM-DD' -> sessions).
-export function calendarHtml(year, month, counts = new Map(), today = ''){
+// companion: the calendar deer beside the title (sec. 12.2 tier 3b), only for the month that holds today.
+export function calendarHtml(year, month, counts = new Map(), today = '', { companion = false } = {}){
   const y = Number(year), m = Number(month);
   const first = new Date(Date.UTC(y, m, 1));
   const lead = (first.getUTCDay() + 6) % 7;
@@ -225,7 +235,8 @@ export function calendarHtml(year, month, counts = new Map(), today = ''){
   const rows = [];
   for(let i = 0; i < cells.length; i += 7) rows.push('<tr>' + cells.slice(i, i + 7).join('') + '</tr>');
   const head = Array.from({ length: 7 }, (_, i) => '<th scope="col" abbr="' + escapeHtml(weekdayName(i, 'long')) + '">' + escapeHtml(weekdayName(i, 'narrow')) + '</th>').join('');
-  return `<section class="panel calendar" aria-labelledby="calTitle"><div class="calendar-head"><h2 class="panel-title" id="calTitle">${escapeHtml(monthName(y, m, { year: 'numeric' }))}</h2>`
+  const deer = companion && today.startsWith(y + '-' + pad(m + 1) + '-') ? companionArt('calendar', 56) : '';
+  return `<section class="panel calendar" aria-labelledby="calTitle"><div class="calendar-head">${deer}<h2 class="panel-title" id="calTitle">${escapeHtml(monthName(y, m, { year: 'numeric' }))}</h2>`
     + `<div class="calendar-nav"><button type="button" class="btn btn-tertiary btn-icon btn-sm" data-page-action="cal-prev" aria-label="${th('log.prevMonth')}">${icon('arrow-left', {size:'sm'})}</button>`
     + `<button type="button" class="btn btn-tertiary btn-icon btn-sm" data-page-action="cal-next" aria-label="${th('log.nextMonth')}">${icon('caret-right', {size:'sm'})}</button></div></div>`
     + `<table class="calendar-grid"><thead><tr>${head}</tr></thead><tbody>${rows.join('')}</tbody></table></section>`;
@@ -253,7 +264,9 @@ export function languageSectionHtml(){
 export function mePageHtml(p){
   // One character appearance per screen (sec. 12.2): the seal steps aside while the first-run backpacker is shown.
   const firstRun = !!p.signedIn && p.section !== 'climbed' && !(p.saved || []).length && !(p.climbed || []).length;
-  const links = `<section class="page-section me-brand" aria-labelledby="aboutMeTitle">${firstRun ? '' : sealSvg()}<div><h2 class="section-title" id="aboutMeTitle">Bouldeer</h2><p class="me-links">`
+  // The medal beside points (sec. 12.2 tier 3b) is this screen's character when shown: never with first-run art, and the seal steps aside.
+  const medal = !firstRun && !!p.community && p.community.points !== null && p.community.points !== undefined;
+  const links = `<section class="page-section me-brand" aria-labelledby="aboutMeTitle">${firstRun || medal ? '' : sealSvg()}<div><h2 class="section-title" id="aboutMeTitle">Bouldeer</h2><p class="me-links">`
     + `<a class="link link-quiet" href="${escapeHtml(pagePath('about'))}">${th('me.about')}</a><a class="link link-quiet" href="${escapeHtml(pagePath('privacy'))}">${th('me.privacy')}</a>`
     + `<a class="link link-quiet" href="${escapeHtml(pagePath('terms'))}">${th('me.terms')}</a></p></div></section>`
     + languageSectionHtml();
@@ -267,7 +280,7 @@ export function mePageHtml(p){
   // The backpacker only on a true first run: nothing saved and nothing climbed yet (sec. 12.2; never on repeat empties).
   const art = firstRun ? firstRunArt('saved') : '';
   const pending = p.isModerator ? `<a class="btn btn-secondary" href="/mod" data-link>${th('me.pendingReview')}${p.pendingCount ? ` <span class="tnum">(${Number(p.pendingCount)})</span>` : ''}</a>` : '';
-  const contributions = meContributionsHtml(p.community);
+  const contributions = meContributionsHtml(p.community, { medal });
   return `<article class="page me-page"><header class="place-header"><h1 class="page-title">${th('me.title')}</h1></header>`
     + `<nav class="tabs me-tabs" aria-label="${th('me.tabsAria')}">${tab('saved', t('me.saved'), p.saved.length)}${tab('climbed', t('me.climbed'), p.climbed.length)}<a class="tab" href="/me/passport" data-link>${th('me.passport')}</a></nav>`
     + (items.length ? `<div class="page-list">${items.map(i => pageRowHtml(i.g, i.ctx)).join('')}</div>` : `<div class="empty-state me-empty">${art}<p>${escapeHtml(empty)}</p></div>`)
@@ -290,7 +303,7 @@ export function deleteAccountHtml(){
 
 // /me "Your contributions" (sec. 10.2, 10.5, 10.6): display name, points and level, own submissions in review or not
 // accepted (with the moderator's reason). c: {displayName, points|null, level, contributor, submissions: [{kind, name, status, reason}]}
-export function meContributionsHtml(c){
+export function meContributionsHtml(c, { medal = false } = {}){
   if(!c) return '';
   const points = c.points === null ? '' : `<p class="me-points tnum"><strong>${escapeHtml(formatNumber(Number(c.points)))}</strong> ${th('me.pointsLevel', { level: Number(c.level) })}${escapeHtml(c.contributor ? ' · ' + t('me.contributor') : '')}</p>`;
   // Before the profiles table exists (migration 20260926084510 not applied) the name cannot be saved: say so, disabled.
@@ -303,7 +316,7 @@ export function meContributionsHtml(c){
     + ` <span class="${s.status === 'pending' ? 'provenance-pending' : 'provenance-rejected'}">${escapeHtml(t(s.status === 'pending' ? 'me.inReview' : 'me.notAccepted'))}</span>`
     + `${s.status === 'rejected' && s.reason ? `<span class="me-submission-reason">${escapeHtml(s.reason)}</span>` : ''}</li>`).join('');
   return `<section class="page-section" aria-labelledby="contribTitle"><h2 class="section-title" id="contribTitle">${th('me.contributions')}</h2>`
-    + points + form + (subs ? `<ul class="me-submissions">${subs}</ul>` : '') + `</section>`;
+    + (medal && points ? `<div class="me-points-row">${companionArt('medal', 56)}${points}</div>` : points) + form + (subs ? `<ul class="me-submissions">${subs}</ul>` : '') + `</section>`;
 }
 
 export function notFoundHtml(what = 'page'){

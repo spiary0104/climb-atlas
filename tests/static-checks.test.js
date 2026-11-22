@@ -98,7 +98,8 @@ const SAFE_EXPR = [
   // page-html.js: numbers coerced with Number(); markup assembled earlier in the same builder from escaped parts;
   // helpers that escape internally (link, thumbHtml, pinSvg, pageCardHtml); cls is a literal class list from callers
   /^Number\([A-Za-z.]+\)$/,
-  /^(cls|tiles|pin|history|actions)$/, /^items\.join\(''\)$/,
+  /^(cls|tiles|pin|history|actions|deer|points)$/, /^items\.join\(''\)$/,   // deer: companionArt(); points: meContributionsHtml's escaped line
+  /^companionArt\('(calendar|map|medal|wave)', \d+\)$/,                       // brand.js companion poses: fixed files, no data
   /^link\(c\.href, c\.label\)$/, /^pinSvg\(\{ types \}\)$/, /^thumbHtml\(g, '(card|row)'\)$/,
   /^ctx\.nearby\.map\(n => page(?:Card|Row)Html\(n\.g, n\.ctx\)\)\.join\(''\)$/,
   // page-html.js region builders: the tile template escapes href/label/count; the rest compose reviewed builders

@@ -706,6 +706,10 @@ The deer is the brand's character (§1A). **Source of truth:** the owner's rende
 | Topped-out (flag) | `assets/mascot/topped-out-flag.svg` | milestone sheet: first stamp | done |
 | Fresh stamp | `assets/mascot/fresh-stamp.svg` | milestone sheet: travel milestones (first gym in a country, first stamp abroad, every 5th gym) | done (2026-10-03) |
 | Pin drop | `design/mascot/deer/pin-drop.png` (source only) | proposed: add-a-gym "in review" | not traced; not a sanctioned surface |
+| Calendar today | `assets/mascot/calendar-today.svg` | Log calendar title, current month (3b) | done (2026-11-22) |
+| City map | `assets/mascot/city-map.svg` | Regions index map tile (3b) | done (2026-11-22) |
+| Medal | `assets/mascot/medal.svg` | /me points and level (3b) | done (2026-11-22) |
+| Wave badge | `assets/mascot/wave-badge.svg` | START sheet header (3b) | done (2026-11-22) |
 | Dyno | `assets/mascot/dyno.svg` | new top grade (milestone) | done |
 | High five | from `high-five.png` | native onboarding; first approved contribution | Phase 5+ |
 | Rest day | from `rest-day.png` | a quiet week in the log (optional) | later |
@@ -716,8 +720,9 @@ The deer is the brand's character (§1A). **Source of truth:** the owner's rende
 1. **Brand marks** (identity, always): app icon; favicon; the wordmark lockup (desktop top bar and static pages); START (phones); the default avatar (compact seal); the lettered seal on owned/collected surfaces (/me now; stamps, passport and share cards in Phase 5).
 2. **Interaction anchor:** START; in Phase 5 the check-in stamp landing.
 3. **Collecting and progression** (Phase 5): passport cover and stamps, milestone sheet (topped-out, dyno), empty passport (traveller).
+3b. **Companion placements** (owner decision 2026-11-22, inspired by the 攀搭攀岩 mini program; `brand.js` `companionArt`, 96px max, each the only character on its screen): the calendar deer beside the Log month title while the current month is shown and the log has sessions (`--size-mascot-companion`); the city-map deer in the map tile at the top of the Regions index; the medal deer beside points and level on /me (not with first-run art; the seal steps aside); the waving badge heading the START sheet (`--size-mascot-badge`; not the sign-in dialog).
 4. **First run only, 96px max** (`--size-mascot-spot`): first-ever Explore visit with no home area (backpacker, sec. 7.10); Log with no sessions (chalking-up); /me Saved when nothing is saved or climbed (field-notes); native onboarding (high-five); optionally rest-day for a quiet log week. All character markup comes from `js/modules/brand.js` (`firstRunArt`, `sealSvg`).
-5. **Never:** forms and inputs; filters; sign-in; moderation; errors and toasts (the fell-off pose stays marketing: failure is not made cute in product); the map canvas, pins, clusters, labels; gym, region and city page bodies; dense rows; points and level displays; any empty state after the person has had content there; hover or tap reactions.
+5. **Never:** forms and inputs; filters; sign-in; moderation; errors and toasts (the fell-off pose stays marketing: failure is not made cute in product); the map canvas, pins, clusters, labels; gym, country, region and city page bodies (the Regions index map tile aside, 3b); dense rows; points and level displays other than the /me medal (3b); any empty state after the person has had content there; hover or tap reactions.
 
 **One character per screen** besides START (persistent chrome): where first-run art shows, the seal steps aside (/me). The lockup (top bar, >= 600px) and START (tab bar, < 600px) never share a screen.
 

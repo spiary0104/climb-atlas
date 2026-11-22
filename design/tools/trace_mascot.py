@@ -91,6 +91,8 @@ if NCOL == 0:
       'dyno': [(364, 780)],                                  # between thigh and shorts
       'chalking-up': [(564, 636), (868, 706)],               # between arm and leg; inside the bucket handle
       'backpacker': [(640, 680), (716, 680), (490, 854)],    # beside the suitcase, inside its handle, between the feet
+      'calendar-today': [(510, 610)],                        # between the legs, above the calendar page
+      'medal': [(490, 830)],                                 # between the knees
     }
     def flood(starts):
         seen = set(starts); todo = list(starts)

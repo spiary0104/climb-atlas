@@ -17,6 +17,7 @@ One exception adds an opt-in sample group (7th argument), so groups never change
 | `chalking-up`, `backpacker` (Brand Pass), `traveller-passport`, `dyno` (Phase 5) | none | |
 | `topped-out-flag` (Phase 5) | `granite` | the grey boulder needs granite + one shade, or its shadows snap to forest |
 | `field-notes`, `fresh-stamp` (2026-10-03) | `ground` | the source's soft beige ground shadow (bottom 14% of the image only) is background, not a cream ellipse |
+| `calendar-today`, `city-map`, `medal`, `wave-badge` (2026-11-22) | `ground` | same soft ground shadow |
 
 Background is only what is connected to the image edge: enclosed white inside the character (eye whites and highlights,
 chalk, socks, a map pin's hole) is traced as white. Real gaps between limbs are listed in `POCKETS` in the script as a
@@ -27,6 +28,8 @@ point inside each gap (source 1024px coordinates), so they stay transparent:
 | `dyno` | between thigh and shorts |
 | `chalking-up` | between arm and leg; inside the bucket handle |
 | `backpacker` | beside the suitcase; inside its handle; between the feet |
+| `calendar-today` | between the legs, above the calendar page |
+| `medal` | between the knees |
 
 All five poses were re-traced with this rule on 2026-09-29 (before it, every near-white pixel was dropped, so eye whites
 were holes that showed the dimmed page behind the milestone sheet).
