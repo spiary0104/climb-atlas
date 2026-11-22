@@ -1,0 +1,2323 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-23-england-info",
+ "index": {
+  "sha256": "ee0e0c45b261e8d56a5a89777d4e4567f16b0ff18b4a45aeb76908b50eff22ad",
+  "count": 3651,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha"
+ ],
+ "counts": {
+  "records": 49,
+  "new": 0,
+  "existing": 0,
+  "update": 49,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "746ef04ec0d2f3bf7a152028024b8e2696976701faa6529e65fad84db0b5dc89",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "g-5c1f23c597",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.citybouldering.co.uk/locations/city-bouidering-aldgate"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:30–23:00",
+      "tue": "06:30–23:00",
+      "wed": "06:30–23:00",
+      "thu": "06:30–23:00",
+      "fri": "06:30–23:00",
+      "sat": "09:00–22:00",
+      "sun": "09:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£17 peak, £14 off-peak (Mon–Fri 9am–3pm); £3 registration for new customers"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.citybouldering.co.uk/locations/city-bouidering-aldgate"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "684f245fe4e84187",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "g-60cb81ef3f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.citybouldering.co.uk/locations/city-bouldering-stratford"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:30",
+      "tue": "07:00–22:30",
+      "wed": "07:00–22:30",
+      "thu": "07:00–22:30",
+      "fri": "10:00–22:30",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£17 peak, £14 off-peak (Tue–Thu 9am–3pm); £3 registration for new customers"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.citybouldering.co.uk/locations/city-bouldering-stratford"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "26a372a5a6b43e91",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "g-fe74b7ba49",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.citybouldering.co.uk/locations/city-bouldering-white-city"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:30",
+      "tue": "10:00–22:30",
+      "wed": "10:00–22:30",
+      "thu": "10:00–22:30",
+      "fri": "10:00–22:30",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£17 peak, £14 off-peak (Mon–Fri 10am–3pm); £3 registration for new customers"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.citybouldering.co.uk/locations/city-bouldering-white-city"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "25f002f9f6f5d992",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "g-3fc0852b2f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocfit.co.uk/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–22:00",
+      "tue": "06:00–22:00",
+      "wed": "06:00–22:00",
+      "thu": "06:00–22:00",
+      "fri": "06:00–22:00",
+      "sat": "10:00–18:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£14 adult, £12 concession"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocfit.co.uk/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "5eb51e927035431a",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "g-f6e53041ba",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbingdistrict.uk/climbing-gym/building-one/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:30–22:30",
+      "tue": "06:30–22:30",
+      "wed": "06:30–22:30",
+      "thu": "06:30–22:30",
+      "fri": "06:30–22:30",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£15 adult, £12.50 concession, £9 under 18"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://climbingdistrict.uk/climbing-gym/building-one/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "6ef85f5f4386f547",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "g-c802fb9f8d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbingdistrict.uk/climbing-gym/london-fields/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–22:30",
+      "tue": "07:00–22:30",
+      "wed": "07:00–22:30",
+      "thu": "07:00–22:30",
+      "fri": "07:00–22:30",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£15 adult, £12.50 concession, £9 under 18"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://climbingdistrict.uk/climbing-gym/london-fields/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "3ab1299dba7d1b4e",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "g-fc6a351a39",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbingdistrict.uk/climbing-gym/tottenham-hale/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–22:30",
+      "tue": "07:00–22:30",
+      "wed": "08:00–22:30",
+      "thu": "08:00–22:30",
+      "fri": "07:00–22:30",
+      "sat": "09:00–19:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://climbingdistrict.uk/climbing-gym/tottenham-hale/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "af64c8be791bd394",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "g-26671a9b9b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.the-font.co.uk/borough"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–22:00",
+      "tue": "07:00–22:00",
+      "wed": "07:00–22:00",
+      "thu": "07:00–22:00",
+      "fri": "07:00–22:00",
+      "sat": "10:00–18:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£20 peak, £17 off-peak bouldering; £3.50 first-visit registration"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.the-font.co.uk/borough"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "44ace9c5b58a596b",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "g-39e9863b9b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.the-font.co.uk/hounslow"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–21:30",
+      "tue": "10:00–21:30",
+      "wed": "10:00–21:30",
+      "thu": "10:00–21:30",
+      "fri": "10:00–21:30",
+      "sat": "10:00–18:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£19 peak, £17 off-peak bouldering; £3.50 first-visit registration"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.the-font.co.uk/hounslow"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "fff001336027b506",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "g-0aa33c91da",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.the-font.co.uk/wandsworth"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–22:00",
+      "tue": "06:00–22:00",
+      "wed": "06:00–22:00",
+      "thu": "06:00–22:00",
+      "fri": "06:00–22:00",
+      "sat": "09:00–18:00",
+      "sun": "09:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£20 peak, £17 off-peak bouldering; £3.50 first-visit registration"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.the-font.co.uk/wandsworth"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "dce96f7930ddf6fe",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "g-d1f4618d13",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://londonclimbingcentres.co.uk/centre/bethwall/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£17 peak, £13 off-peak; £2 new climber registration"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://londonclimbingcentres.co.uk/prices/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "56155fc10b5bdad9",
+   "update_reason": "Official official website, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "g-d41cc4f3e9",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://londonclimbingcentres.co.uk/centre/canarywall/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£17 peak, £13 off-peak; £2 new climber registration"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://londonclimbingcentres.co.uk/prices/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "f08203a0e6c5210e",
+   "update_reason": "Official official website, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "g-6ede02abab",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://londonclimbingcentres.co.uk/centre/eustonwall/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£17 peak, £13 off-peak; £2 new climber registration"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://londonclimbingcentres.co.uk/prices/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "11d2e8a04fc75195",
+   "update_reason": "Official official website, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "g-d56fba722d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://thereach.org.uk/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–19:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£15 peak, £12 off-peak (Mon–Fri before 4pm); £5 registration"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://thereach.org.uk/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "55148851dd839124",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "g-5de3d2392c",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rise-climbing.com/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shop",
+      "showers"
+     ]
+    }
+   ],
+   "expect_h": "5e39aa04c5740c43",
+   "update_reason": "Official official website, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "g-4c4f1d6c3d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://brixton.substation.co.uk/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–22:00",
+      "tue": "07:00–22:00",
+      "wed": "07:00–22:00",
+      "thu": "07:00–22:00",
+      "fri": "07:00–22:00",
+      "sat": "08:00–20:00",
+      "sun": "08:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://brixton.substation.co.uk/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "49cdc6ca0b9b0bbe",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "g-81bd5e75df",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://romfordrockandboulder.co.uk/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–18:00",
+      "sun": "10:00–16:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£12.50 adult; £4 one-time joining fee; shoe hire £3.50"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://romfordrockandboulder.co.uk/pricing"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "cb3a0f0c41d7ce0b",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "g-d8019fc80a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.spiderclimbing.com/yellow-spider/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "09:00–19:00",
+      "sun": "09:00–19:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.spiderclimbing.com/yellow-spider/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "e171ae830da24089",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "g-fc40b51763",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.spiderclimbing.com/red-spider/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "06:30–22:00",
+      "fri": "10:00–22:00",
+      "sat": "09:00–19:30",
+      "sun": "09:00–19:30"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.spiderclimbing.com/red-spider/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "25f499d77b71755c",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "g-66083cf9e6",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.spiderclimbing.com/green-spider/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–18:30",
+      "sun": "10:00–18:30"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.spiderclimbing.com/green-spider/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "28bfa76843187db8",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "g-cea9c9bac7",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://theclimbinghangar.com/locations/bristol"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "07:30–22:00",
+      "thu": "10:00–22:00",
+      "fri": "07:30–21:00",
+      "sat": "09:00–19:00",
+      "sun": "09:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£18 adult, £15 concession/under 18; shoe hire included"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://theclimbinghangar.com/locations/bristol"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "fadb76a9fcbe62b7",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "g-61ca434f8b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderbrighton.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:00–22:00",
+      "tue": "06:00–22:00",
+      "wed": "06:00–22:00",
+      "thu": "06:00–22:00",
+      "fri": "06:00–22:00",
+      "sat": "08:00–22:00",
+      "sun": "08:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£13 peak, £9.75 off-peak (2-hour session); shoe hire £3.90"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderbrighton.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "f83b8678e1944aa7",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "g-5bb84dd833",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.awesomewalls.co.uk/stockport/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£15 non-member, £12.50 member"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.awesomewalls.co.uk/stockport/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "6f55e63026c3d46b",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "g-3b95a00c44",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.awesomewalls.co.uk/stoke/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£15 non-member, £12.50 member"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shoe-hire",
+      "shop",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.awesomewalls.co.uk/stoke/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "3d9d407c1ab33d5a",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "seed-915",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rockoverclimbing.com/locations"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–22:00",
+      "tue": "11:00–22:00",
+      "wed": "11:00–22:00",
+      "thu": "11:00–22:00",
+      "fri": "11:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.rockoverclimbing.com/locations"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "d91dd18d51e4a464",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "g-748fb420d6",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rockoverclimbing.com/locations"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–22:00",
+      "tue": "11:00–22:00",
+      "wed": "11:00–22:00",
+      "thu": "11:00–22:00",
+      "fri": "11:00–22:00",
+      "sat": "11:00–20:00",
+      "sun": "11:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.rockoverclimbing.com/locations"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "0112a2365701ee5f",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 27,
+   "class": "update",
+   "id": "g-d5fc9f4865",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rockoverclimbing.com/locations"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–22:00",
+      "tue": "11:00–22:00",
+      "wed": "11:00–22:00",
+      "thu": "11:00–22:00",
+      "fri": "11:00–22:00",
+      "sat": "11:00–20:00",
+      "sun": "11:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.rockoverclimbing.com/locations"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "fb8d55b413d9470f",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 28,
+   "class": "update",
+   "id": "g-e0e63ea28b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.redpointbirmingham.co.uk/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–18:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.redpointbirmingham.co.uk/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "135d2fbac62de811",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 29,
+   "class": "update",
+   "id": "g-d114642968",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.redpointworcester.co.uk/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–18:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£15.50 off-peak and weekends, £16.50 weekday peak (4pm–10pm)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.redpointworcester.co.uk/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "73604c68539ee797",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 30,
+   "class": "update",
+   "id": "g-52ec7ba665",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.tideclimbing.com/locations/helston/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–21:00",
+      "tue": "09:00–21:00",
+      "wed": "09:00–21:00",
+      "thu": "09:00–21:00",
+      "fri": "09:00–21:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.tideclimbing.com/locations/helston/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "42a907f73de049f6",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 31,
+   "class": "update",
+   "id": "g-91a140e194",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.tideclimbing.com/locations/padstow/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–21:00",
+      "tue": "09:00–21:00",
+      "wed": "09:00–21:00",
+      "thu": "09:00–21:00",
+      "fri": "09:00–21:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.tideclimbing.com/locations/padstow/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "f18893ba407ea575",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 32,
+   "class": "update",
+   "id": "g-57ce52c3f2",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://freeklime.co.uk/huddersfield"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£10.50 adult day entry"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://freeklime.co.uk/huddersfield"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "51cce93ec901677f",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 33,
+   "class": "update",
+   "id": "g-e41f03bb5d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://freeklime.co.uk/lincoln"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£10.50 adult day entry"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://freeklime.co.uk/lincoln"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "a649a46bbb879c4a",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 34,
+   "class": "update",
+   "id": "g-ddc23cf03e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.chimeraclimbingcanterbury.com"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "shoe-hire",
+      "showers"
+     ]
+    }
+   ],
+   "expect_h": "5207ccf32b8b71a7",
+   "update_reason": "Official official website, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 35,
+   "class": "update",
+   "id": "g-10d0030e4b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.chimeraclimbingchatham.com/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "shoe-hire",
+      "showers"
+     ]
+    }
+   ],
+   "expect_h": "9a443e013409c009",
+   "update_reason": "Official official website, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 36,
+   "class": "update",
+   "id": "g-c1ed5435a3",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.chimeraclimbingtunbridgewells.com/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "shoe-hire",
+      "showers",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "05661cacc308dccd",
+   "update_reason": "Official official website, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 37,
+   "class": "update",
+   "id": "g-1d224ac512",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.theclimbingacademy.com/locations/the-arc/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–22:00",
+      "tue": "11:00–22:00",
+      "wed": "09:30–22:00",
+      "thu": "11:00–22:00",
+      "fri": "11:00–22:00",
+      "sat": "09:30–18:00",
+      "sun": "09:30–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£14.50 adult single visit"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.theclimbingacademy.com/locations/the-arc/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "e0539b875d5005d7",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 38,
+   "class": "update",
+   "id": "g-a43e94dabf",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.f51.co.uk/CLIMB"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "Closed",
+      "wed": "14:00–21:00",
+      "thu": "14:00–21:00",
+      "fri": "14:00–21:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.f51.co.uk/CLIMB"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "a5dbd869e929c3ac",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 39,
+   "class": "update",
+   "id": "g-e4b7038738",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://gallerybouldering.co.uk/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–22:00",
+      "tue": "08:00–22:00",
+      "wed": "07:00–22:00",
+      "thu": "08:00–22:00",
+      "fri": "08:00–22:00",
+      "sat": "08:00–22:00",
+      "sun": "08:00–22:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://gallerybouldering.co.uk/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "d4307983e1c1be0e",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 40,
+   "class": "update",
+   "id": "g-1e3663e189",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.sunderlandwall.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–19:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.sunderlandwall.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "81ca623c966fbf51",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 41,
+   "class": "update",
+   "id": "g-d4eb37b5bb",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.frictionbouldering.co.uk/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.frictionbouldering.co.uk/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "9d8e99a8c3c65c03",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 42,
+   "class": "update",
+   "id": "g-28e7f5f683",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.durhamclimbingcentre.co.uk/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£12.50 adult non-member, £10.50 member"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.durhamclimbingcentre.co.uk/prices"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "ac417b5c2ee1721a",
+   "update_reason": "Official official website, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 43,
+   "class": "update",
+   "id": "g-c864f05fb2",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderuk.co.uk/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training"
+     ]
+    }
+   ],
+   "expect_h": "44ea34edded9e722",
+   "update_reason": "Official official website, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 44,
+   "class": "update",
+   "id": "g-c57e7edfac",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.theclimbinghub.co.uk/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–21:00",
+      "sat": "10:00–18:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Day passes from £9"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.theclimbinghub.co.uk/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "5269892d605ae123",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 45,
+   "class": "update",
+   "id": "g-0e0952ce1c",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderryn.co.uk/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–21:00",
+      "tue": "10:00–21:00",
+      "wed": "10:00–21:00",
+      "thu": "10:00–21:00",
+      "fri": "10:00–21:00",
+      "sat": "10:00–19:30",
+      "sun": "11:00–16:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderryn.co.uk/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "710e2808c6bd0621",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 46,
+   "class": "update",
+   "id": "g-25ed1dbdbf",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.indirock.co.uk/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–21:30",
+      "tue": "10:00–21:30",
+      "wed": "10:00–21:30",
+      "thu": "10:00–21:30",
+      "fri": "10:00–21:30",
+      "sat": "10:00–18:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£12.50 adult; £8 super off-peak (2–4pm weekdays); £3 first-visit registration"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shoe-hire",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.indirock.co.uk/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "87d4b70cd41fe2c1",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 47,
+   "class": "update",
+   "id": "g-b9d648164b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulderrooms.co.uk/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "0928f51d39e3df43",
+   "update_reason": "Official official website, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 48,
+   "class": "update",
+   "id": "g-19829aff2a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.madvolume.co.uk/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "17:00–22:00",
+      "tue": "17:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–18:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£9 adult single entry"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "parking",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.madvolume.co.uk/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "932364739d3cf116",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 49,
+   "class": "update",
+   "id": "seed-898",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.hants.gov.uk/thingstodo/calshot/hangar/the-wall/times-prices"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "£13 adult, £11 concession, £30 family"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.hants.gov.uk/thingstodo/calshot/hangar/the-wall/times-prices"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "6da1e0a810b4c62d",
+   "update_reason": "Official official website, day pass price from the gym's own site (researched 2026-11-22)"
+  }
+ ]
+}
