@@ -36,6 +36,7 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 - Camp5 MY (~6), Hive CA (~4), Boulderwelt DE (~4), B-PUMP JP (~3), 9 Degrees AU (~2), Boulder Co NZ (~1). Verify each branch.
 ### Gym information (website, hours, day pass, facilities)
 - 456 gyms in countries not yet researched; KR: Naver Place; CN: RedNote/Amap/WeChat (decided). Seed website + hours for the top metros.
+- Staged, not applied: `import/batches/2026-11-23-jp-hubs-info` (53 JP hub gyms; PR open); 20 more JP hub gyms still without official-site data.
 ### Locations and addresses
 - Owner manual pin checks: 39 (`import/pin-check/2026-10-06/MANUAL-CHECK-{europe,rest-of-world}.md`). China: 138 gyms with unconfirmed pins
   or no address (Amap pins, GCJ-02 -> WGS-84; several pin batches already applied).
