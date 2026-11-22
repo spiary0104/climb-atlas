@@ -26,7 +26,7 @@
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "6eb001e34e5ab9eed879859bf8fdc7f5514946e587d82dfeb265656010d9feea",
+ "plan_sha256": "8c06dcfff9ebdd6e2cf6cda6e9fa68e62a499b32763516a7449e668d1a490a00",
  "records": [
   {
    "line": 1,
@@ -61,7 +61,6 @@
      "before": null,
      "after": [
       "shoe-hire",
-      "shop",
       "parking"
      ]
     },
@@ -379,11 +378,6 @@
      }
     },
     {
-     "field": "day_pass",
-     "before": null,
-     "after": "Entrée régulière 19$, hors pointe 15$, enfant 15$ (avant taxes)"
-    },
-    {
      "field": "facilities",
      "before": null,
      "after": [
@@ -409,7 +403,7 @@
     }
    ],
    "expect_h": "0af750b4a0ffca89",
-   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
   },
   {
    "line": 8,
@@ -433,11 +427,6 @@
       "sat": "09:00–21:00",
       "sun": "09:00–21:00"
      }
-    },
-    {
-     "field": "day_pass",
-     "before": null,
-     "after": "Entrée régulière 19$, hors pointe 15$, enfant 15$ (avant taxes)"
     },
     {
      "field": "facilities",
@@ -465,7 +454,7 @@
     }
    ],
    "expect_h": "11ad7829729387d3",
-   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
   },
   {
    "line": 9,
@@ -870,11 +859,6 @@
      }
     },
     {
-     "field": "day_pass",
-     "before": null,
-     "after": "Adult drop-in $24+, student $22+, youth $20+ (plus taxes)"
-    },
-    {
      "field": "facilities",
      "before": null,
      "after": [
@@ -898,7 +882,7 @@
     }
    ],
    "expect_h": "553d49885b6ac1d9",
-   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
   },
   {
    "line": 17,
@@ -922,11 +906,6 @@
       "sat": "09:00–21:00",
       "sun": "09:00–21:00"
      }
-    },
-    {
-     "field": "day_pass",
-     "before": null,
-     "after": "Adult drop-in $24+, student $22+, youth $20+ (plus taxes)"
     },
     {
      "field": "facilities",
@@ -954,7 +933,7 @@
     }
    ],
    "expect_h": "e1d1f80bc58295b6",
-   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
   },
   {
    "line": 18,
@@ -1137,11 +1116,6 @@
      }
     },
     {
-     "field": "day_pass",
-     "before": null,
-     "after": "$24 adult, $19 youth (9-17), $14 child (8 & under)"
-    },
-    {
      "field": "facilities",
      "before": null,
      "after": [
@@ -1168,7 +1142,7 @@
     }
    ],
    "expect_h": "b030c258fefd16f2",
-   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
   },
   {
    "line": 22,
@@ -1192,11 +1166,6 @@
       "sat": "10:00–20:00",
       "sun": "10:00–20:00"
      }
-    },
-    {
-     "field": "day_pass",
-     "before": null,
-     "after": "$24 adult, $19 youth (9-17), $14 child (8 & under)"
     },
     {
      "field": "facilities",
@@ -1224,7 +1193,7 @@
     }
    ],
    "expect_h": "27c798e12c05e444",
-   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
   },
   {
    "line": 23,
@@ -1248,11 +1217,6 @@
       "sat": "08:00–22:00",
       "sun": "08:00–22:00"
      }
-    },
-    {
-     "field": "day_pass",
-     "before": null,
-     "after": "$24 adult, $19 youth (9-17), $14 child (8 & under)"
     },
     {
      "field": "facilities",
@@ -1280,7 +1244,7 @@
     }
    ],
    "expect_h": "680c3c843630e5f6",
-   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
   },
   {
    "line": 24,
@@ -1304,11 +1268,6 @@
       "sat": "08:00–22:00",
       "sun": "08:00–22:00"
      }
-    },
-    {
-     "field": "day_pass",
-     "before": null,
-     "after": "Entrée unique 28$, étudiant 25$, enfant (12 ans et moins) 22$ (avant taxes)"
     },
     {
      "field": "facilities",
@@ -1335,7 +1294,7 @@
     }
    ],
    "expect_h": "6368d05d8ed7d757",
-   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
   },
   {
    "line": 25,
@@ -1359,11 +1318,6 @@
       "sat": "08:00–22:00",
       "sun": "08:00–22:00"
      }
-    },
-    {
-     "field": "day_pass",
-     "before": null,
-     "after": "Entrée unique 28$, étudiant 25$, enfant (12 ans et moins) 22$ (avant taxes)"
     },
     {
      "field": "facilities",
@@ -1391,7 +1345,7 @@
     }
    ],
    "expect_h": "d86b6c80c5085cca",
-   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
   },
   {
    "line": 26,
@@ -1513,11 +1467,6 @@
      }
     },
     {
-     "field": "day_pass",
-     "before": null,
-     "after": "Adulte 25$, étudiant 23$, enfant (3 à 13 ans) 21$ (avant taxes)"
-    },
-    {
      "field": "facilities",
      "before": null,
      "after": [
@@ -1544,7 +1493,7 @@
     }
    ],
    "expect_h": "5c5e2f547e87d7b8",
-   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
   },
   {
    "line": 29,
@@ -1568,11 +1517,6 @@
       "sat": "08:30–21:00",
       "sun": "08:30–21:00"
      }
-    },
-    {
-     "field": "day_pass",
-     "before": null,
-     "after": "Adulte 25$, étudiant 23$, enfant (3 à 13 ans) 21$ (avant taxes)"
     },
     {
      "field": "facilities",
@@ -1601,7 +1545,7 @@
     }
    ],
    "expect_h": "04d5533c56dafc04",
-   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
   },
   {
    "line": 30,
@@ -2063,13 +2007,6 @@
      }
     },
     {
-     "field": "facilities",
-     "before": null,
-     "after": [
-      "shop"
-     ]
-    },
-    {
      "field": "info_source",
      "before": null,
      "after": "https://www.verticaladventures.ca"
@@ -2086,7 +2023,7 @@
     }
    ],
    "expect_h": "9f210ef30b1b8342",
-   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+   "update_reason": "Official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
   },
   {
    "line": 39,
@@ -2112,19 +2049,11 @@
      }
     },
     {
-     "field": "day_pass",
-     "before": null,
-     "after": "Session pass $24, youth session pass $19 (17 and under)"
-    },
-    {
      "field": "facilities",
      "before": null,
      "after": [
-      "cafe",
       "training",
-      "kids",
-      "shoe-hire",
-      "shop"
+      "shoe-hire"
      ]
     },
     {
@@ -2144,7 +2073,7 @@
     }
    ],
    "expect_h": "7835ae52559e9842",
-   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
   },
   {
    "line": 40,
@@ -2170,19 +2099,11 @@
      }
     },
     {
-     "field": "day_pass",
-     "before": null,
-     "after": "Session pass $24, youth session pass $19 (17 and under)"
-    },
-    {
      "field": "facilities",
      "before": null,
      "after": [
-      "cafe",
       "training",
-      "kids",
-      "shoe-hire",
-      "shop"
+      "shoe-hire"
      ]
     },
     {
@@ -2202,7 +2123,7 @@
     }
    ],
    "expect_h": "8cab397e79f2afdf",
-   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
   },
   {
    "line": 41,
@@ -2228,19 +2149,11 @@
      }
     },
     {
-     "field": "day_pass",
-     "before": null,
-     "after": "Session pass $24, youth session pass $19 (17 and under)"
-    },
-    {
      "field": "facilities",
      "before": null,
      "after": [
-      "cafe",
       "training",
-      "kids",
-      "shoe-hire",
-      "shop"
+      "shoe-hire"
      ]
     },
     {
@@ -2260,7 +2173,7 @@
     }
    ],
    "expect_h": "cea109cabeb6ce91",
-   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
   }
  ]
 }
