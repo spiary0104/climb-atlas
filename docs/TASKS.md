@@ -11,7 +11,8 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
   production 3,612 gyms. Still held: 2026-10-12-cn-kunming-changsha and cn-beijing-chengdu (re-review: 3 gyms already exist).
 - apply-batch.ps1 rebuilds the index and re-plans each batch itself, so committed plan.json files going stale is expected.
 ### China data
-- 130 gyms still lack a Chinese name (worklist: `import/research/2026-11-22-cn-names-worklist.md`; Amap/mini program allowed for names since 2026-11-22). Earlier note: mostly kids' or sports-centre walls with no account, or brands whose accounts list no stores
+- Chinese names worklist (`import/research/2026-11-22-cn-names-worklist.md`, Results section): 53 staged in `2026-11-22-cn-names-amap-3` (preflight passed, NOT applied: owner applies);
+  15 held for the owner (4 kids/youth, 4 temporarily closed on Amap, 7 name/address conflicts); 52 with no clear Amap listing remain unnamed. Earlier note: mostly kids' or sports-centre walls with no account, or brands whose accounts list no stores
   (RedNote read-only, 30 s between reads avoids captchas). Owner checks: `import/research/MANUAL-CHECKS-china-2026-10-12.md`.
 - Sources: RedNote/Amap/WeChat read-only (WeChat: a gym's own 公众号 article = official-social; mini programs have no citable URL).
 ### China (Chengdu) pilot — Gate 0 done 2026-10-31; Gate 1 approved 2026-11-01; pilot data and name_local schema live

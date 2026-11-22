@@ -191,3 +191,41 @@ seed-564 (High Five Climbing Center, Jing'an) was matched to 酸爽攀岩 earlie
 |---|---|---|
 | seed-755 | Banana Climbing (Le Shi) | 74 Daishan Rd, Xiangzhou District, Zhuhai |
 
+## Results 2026-11-22 (batch `2026-11-22-cn-names-amap-3`, not applied)
+
+Of the 130: 10 were already named by the Banana batch; **53 staged** (40 name + address, 13 name only);
+**15 held for the owner** (below); **52 without a clear Amap listing** (left out, per the rule above).
+Amap injects random noise characters into search-result text, so every staged value was read twice from the POI detail page in separate loads and is identical in both.
+Addresses carrying a walking/metro/entrance hint or a malformed prefix were left out (name only). Live preflight (read-only) passed 53/53.
+
+### Held for the owner (not staged)
+
+| id | gym | why |
+|---|---|---|
+| seed-559 | Panxing Climbing (Nanqiao Bailian) | Amap lists 攀猩儿童攀岩馆(南桥百联店): a kids' climbing gym (policy: kids-only venues are not listed) |
+| seed-568 | Panxing Climbing (Zhonghuan Bailian) | Amap lists 攀猩儿童攀岩馆(中环百联店): a kids' climbing gym |
+| seed-634 | Climbing Hero (Shuangliu Wanda) | Amap lists 攀登侠儿童攀岩馆(万达广场双流店): a kids' climbing gym |
+| seed-505 | Blue Sky Climbing (Luohu Yitian Holiday Plaza) | Amap lists 蓝天攀岩-青少年训练(罗湖益田假日广场店) at our exact address: a youth-training branch; kids-only? |
+| seed-605 | Jibi Storm Climbing (Bailian Xijiao) | Amap lists 极壁风暴攀岩馆(长宁店) at our exact address, marked 暂停营业 (temporarily closed) |
+| seed-668 | Yaoyan Climbing (Shahe) | Amap lists 耀岩攀岩(沙河店), marked 暂停营业 (temporarily closed) |
+| seed-729 | Climbing Orangutan (California Sunshine Kaiyuan Plaza) | Amap lists 攀猩攀岩馆(加州阳光·开元广场店) at our address, marked 暂停营业 (temporarily closed) |
+| seed-851 | Kuanrun Climbing Gym | Amap lists 宽润 at 湖南路12号 (our address), marked 暂停营业 (temporarily closed) |
+| seed-564 | High Five Climbing Center (Jing'an) | our unit (永和东路643号2幢L180) is listed as 酸爽攀岩, not High Five: rebrand or different gym? |
+| seed-547 | Panzhuxia Climbing (Jiangqiao Wanda) | our spot (江桥万达 F1) is listed as 枸奇岛攀岩(江桥万达店); Amap has 攀蛛侠 (Panzhuxia) only at 曹路 |
+| seed-574 | Atrium Climbing Field (New World City) | New World City has 新世界天宇攀登(新世界城店) at 南京西路2-68号 L3; our record says "Atrium Climbing Field", 2-88 |
+| seed-660 | Yueshi Sports Climbing Space (Huamao) | our spot (华贸天地西区 B1) is listed as 奥攀攀岩(北苑店), not Yueshi |
+| seed-641 | Haoshi Sports Climbing Space | Haoshi = 北京浩石运动攀岩空间, which Amap lists only at 久隆生活广场 (酒仙桥路39号); at our 万红路5号 7号楼 it lists Mellow Climbing Gym |
+| seed-590 | HIGH5 Extreme Sports Center | our HIGH5 address (西营南路555号2层217室) is listed as Le Mont Climbing Gym攀岩馆 (B0LGGU0N6Z) |
+| seed-570 | LE MONT Climbing Gym | our LE MONT record says 1200 Changqing Rd; Amap has Le Mont only at the HIGH5 address above (moved?) |
+
+### Staged notes
+
+- seed-657 Aopan Climbing (Xihongmen): our name says Aopan; address exact; 魔王 is an 奥攀 sub-brand (Amap also lists 奥攀攀岩(魔王富丰桥校区))
+- seed-610 Quantum Climbing: medium confidence: the 量子介 complex in the Erxianqiao area; our street address differs
+- seed-496 Blue Sky Climbing (Nanshan): Amap unit D604, ours D616 (same building)
+- seed-841 Xiao Songshu Climbing: no address on record; the only Chongqing listing with this name
+- seed-857 Koolah Climbing: production already had an address, so name only (fill-only)
+
+### No clear Amap listing (still missing)
+
+seed-1764 Howl Shanghai · seed-536 Yanwu Kongjian (Rock Dance Space) · seed-538 Benchmark Climbing Gym · seed-553 TBW Extreme Sports Center (Parkour & Bouldering) · seed-560 Panzhuxia Climbing (Kangqiao New Field 360) · seed-575 Jungle Berry Camp · seed-577 Beta Boulders (Jing'an) · seed-578 Glacier Sports Climbing (Wanduhui) · seed-584 Kaiyuan Mediterranean Panxing Climbing · seed-587 Red Gorilla Climbing · seed-595 Little Champion Climbing (Bubugao) · seed-596 Tongji University Climbing Gym (Siping Rd Campus) · seed-643 BE1ST Sports Space (Wukesong Wanda Plaza) · seed-670 Sports Club Climbing (Beiqijia) · seed-675 Aopan Climbing (Beijing Sport University) · seed-680 Climbing Orangutan · seed-681 Yaoyan Climbing (Jinhui Port) · seed-684 Zhongpan Alps Climbing Center · seed-688 Vitality Zone Sports Center · seed-615 C7 Climbing Comprehensive Sports Hall · seed-624 Lezhidao City Sports Leisure Camp · seed-625 Pink Rabbit Fitness Sports Hall · seed-628 Elephant Climbing Sports Hall · seed-632 Chengdu Sport University Eastern Campus Climbing Gym · seed-501 Bengbei Trendy Play (Longhua) · seed-504 Yijiu Climbing Gym (Longhua Bookstore) · seed-508 Triple Top Climbing Gym · seed-511 Climbing Orangutan (Longhua) · seed-520 Yanwu Kongjian Climbing (Jiayanghui) · seed-531 Climbing Orangutan (Shuiwan) · seed-799 DC Climbing · seed-803 Muyan Climbing · seed-804 Jianshan Climbing · seed-811 Xi'an Seeyou Climbing Gym · seed-814 Peter Rabbit Climbing (Damao City) · seed-725 Hangzhou Li-Ning Sports Park Climbing Gym · seed-731 Dpump Climbing (Zhongda Intime City) · seed-733 Happy Climbing Gym (Qixianjun) · seed-791 Bashan Tiger Climbing Club · seed-795 Zhongti · Bihuwang Climbing Gym · seed-818 Yichen Climbing (Beibei Wuyue Plaza) · seed-836 Lichuan Climbing Gym · seed-837 Gulang Climbing (Huanlehui) · seed-846 MR.B X PARK Extreme Sports (Boulder) · seed-855 Outdoor Dream Factory Climbing Center · seed-776 Dianfeng Climbing Gym · seed-781 Rockway Climbing (Shuicheng) · seed-782 Xingkong Climbing Gym (Liuyuan) · seed-790 Rockway Climbing (Cuitong Rd) · seed-705 Rock Climbing (Dongxihu) · seed-708 Snow Leopard Climbing Gym · seed-709 HICOME Climbing (Jiangteng)
