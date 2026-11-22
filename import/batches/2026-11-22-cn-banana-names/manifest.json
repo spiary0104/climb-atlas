@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-11-22-cn-banana-names",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "843ca19f61ae8ba4dbe19a8f20c213e60b80ef52e995c9392f0ba9618ef1276a",
+  "payload_sha256": "5a757561bdbc042320bf3b018063783d4e166c4c1cd8e0558d2325e135871c15",
+  "confirm_token": "26272e4dac022238",
+  "live_state_sha256": "10893e1ad11f743f928bd8ef1eb116df78980cf9922e4a7b8dcc6693fba56658",
+  "rows_updated": 0,
+  "approved_before": 3658,
+  "approved_after": 3658,
+  "changes": [],
+  "rows_info_filled": 10,
+  "info_filled": [
+    {
+      "id": "seed-533",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "c46d8b7947496f79",
+      "after_h": "c46d8b7947496f79"
+    },
+    {
+      "id": "seed-534",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "a5e10062198a04ac",
+      "after_h": "a5e10062198a04ac"
+    },
+    {
+      "id": "seed-637",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "b83bc9d332adce8e",
+      "after_h": "b83bc9d332adce8e"
+    },
+    {
+      "id": "seed-711",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "4b5dbb9943c5395b",
+      "after_h": "4b5dbb9943c5395b"
+    },
+    {
+      "id": "seed-712",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "124933d850a51089",
+      "after_h": "124933d850a51089"
+    },
+    {
+      "id": "seed-714",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "14d8c1db75ff2322",
+      "after_h": "14d8c1db75ff2322"
+    },
+    {
+      "id": "seed-715",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "e64fcac918a725bb",
+      "after_h": "e64fcac918a725bb"
+    },
+    {
+      "id": "seed-716",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "e6b2835ba9b2bf9b",
+      "after_h": "e6b2835ba9b2bf9b"
+    },
+    {
+      "id": "seed-735",
+      "fields": [
+        "name_local",
+        "address_local"
+      ],
+      "expect_h": "4cf45c6e51808d14",
+      "after_h": "4cf45c6e51808d14"
+    },
+    {
+      "id": "seed-755",
+      "fields": [
+        "name_local"
+      ],
+      "expect_h": "4b5b25b65bed6e89",
+      "after_h": "4b5b25b65bed6e89"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 10,
+    "problems": []
+  },
+  "started_at": "2026-11-22T10:23:17.157Z",
+  "finished_at": "2026-11-22T10:23:22.626Z",
+  "ids": [
+    "seed-533",
+    "seed-534",
+    "seed-637",
+    "seed-711",
+    "seed-712",
+    "seed-714",
+    "seed-715",
+    "seed-716",
+    "seed-735",
+    "seed-755"
+  ]
+}
