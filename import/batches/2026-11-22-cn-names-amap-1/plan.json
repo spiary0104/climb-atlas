@@ -26,7 +26,7 @@
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "0736a95841805ffd47ae510d2f3fb50aa32e749ec60ee8b9e3bf2c41b1049aa9",
+ "plan_sha256": "4e7fe41ef0d469982182eadc3c8df910fdf2aff841fe7d568e08283001d5ab0f",
  "records": [
   {
    "line": 1,
@@ -914,15 +914,10 @@
      "field": "name_local",
      "before": null,
      "after": "GOAT攀岩俱乐部(徐家汇TPY中心店)"
-    },
-    {
-     "field": "address_local",
-     "before": null,
-     "after": "徐汇区肇嘉浜路1117号TPY中心八楼"
     }
    ],
    "expect_h": "796e114893ab54a4",
-   "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+   "update_reason": "Chinese name as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
   },
   {
    "line": 50,
@@ -966,15 +961,10 @@
      "field": "name_local",
      "before": null,
      "after": "GOAT攀岩俱乐部(普陀TopOne店)"
-    },
-    {
-     "field": "address_local",
-     "before": null,
-     "after": "普陀区真南路1199弄19号桃浦湾TopOne地下一层商业区B1025"
     }
    ],
    "expect_h": "86686e631fec18c3",
-   "update_reason": "Chinese name and address as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
+   "update_reason": "Chinese name as written on the gym's Amap listing (owner decision 2026-11-22: local labels may come from Amap)"
   },
   {
    "line": 53,
