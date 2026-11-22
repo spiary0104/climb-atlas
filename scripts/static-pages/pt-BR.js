@@ -55,7 +55,7 @@ module.exports = {
     title: 'Política de Privacidade',
     metaTitle: 'Política de Privacidade — Bouldeer',
     description: 'O que o Bouldeer armazena, quem pode ver, quais serviços ele usa e como excluir sua conta.',
-    updated: 'Última atualização: 21 de novembro de 2026',
+    updated: 'Última atualização: 22 de novembro de 2026',
     body: `
     <p>O Bouldeer é um mapa pequeno e gratuito de academias de escalada para escaladores que viajam. Coletamos o mínimo possível, não usamos anúncios nem ferramentas de análise e não vendemos seus dados.</p>
 
@@ -98,7 +98,7 @@ module.exports = {
     </ul>
 
     <h2>Excluir sua conta</h2>
-    <p>Envie um e-mail para <a href="mailto:hello@bouldeer.com">hello@bouldeer.com</a> a partir do endereço com o qual você entra e excluiremos sua conta em até 30 dias. Isso remove seu e-mail, nome de exibição, academias salvas e escaladas, check-ins, diário e pontos. As academias, edições e relatos que você enviou permanecem, com o vínculo com você removido. As cópias nos registros e backups dos nossos provedores expiram conforme os prazos de cada um.</p>
+    <p>Use <strong>Excluir conta</strong> no final da sua página Eu para excluir sua conta na hora, ou envie um e-mail para <a href="mailto:hello@bouldeer.com">hello@bouldeer.com</a> a partir do endereço com o qual você entra e a excluiremos em até 30 dias. Nas duas opções, isso remove seu e-mail, nome de exibição, academias salvas e escaladas, check-ins, diário e pontos. As academias, edições e relatos que você enviou permanecem, com o vínculo com você removido. As cópias nos registros e backups dos nossos provedores expiram conforme os prazos de cada um.</p>
     <p>Você também pode nos escrever para saber o que guardamos sobre você ou para corrigir esses dados. Para corrigir os detalhes de uma academia, use Sugerir edição ou Reportar problema na página dela.</p>
 
     <h2>Alterações</h2>
