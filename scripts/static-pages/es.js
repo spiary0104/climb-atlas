@@ -55,7 +55,7 @@ module.exports = {
     title: 'Política de privacidad',
     metaTitle: 'Política de privacidad — Bouldeer',
     description: 'Qué guarda Bouldeer, quién puede verlo, qué servicios usa y cómo eliminar tu cuenta.',
-    updated: 'Última actualización: 21 de noviembre de 2026',
+    updated: 'Última actualización: 22 de noviembre de 2026',
     body: `
     <p>Bouldeer es un pequeño mapa gratuito de rocódromos para escaladores que viajan. Recopilamos lo mínimo posible, no usamos publicidad ni analítica y no vendemos tus datos.</p>
 
@@ -98,7 +98,7 @@ module.exports = {
     </ul>
 
     <h2>Eliminar tu cuenta</h2>
-    <p>Escribe a <a href="mailto:hello@bouldeer.com">hello@bouldeer.com</a> desde la dirección con la que inicias sesión y eliminaremos tu cuenta en un plazo de 30 días. Eso borra tu correo electrónico, tu nombre visible, tus rocódromos guardados y escalados, check-ins, diario y puntos. Los rocódromos, ediciones e informes que enviaste se conservan, sin el vínculo contigo. Las copias en los registros y copias de seguridad de nuestros proveedores caducan según sus propios plazos.</p>
+    <p>Usa <strong>Eliminar cuenta</strong> al final de tu página Yo para eliminar tu cuenta al instante, o escribe a <a href="mailto:hello@bouldeer.com">hello@bouldeer.com</a> desde la dirección con la que inicias sesión y la eliminaremos en un plazo de 30 días. En ambos casos, esto borra tu correo electrónico, tu nombre visible, tus rocódromos guardados y escalados, check-ins, diario y puntos. Los rocódromos, ediciones e informes que enviaste se conservan, sin el vínculo contigo. Las copias en los registros y copias de seguridad de nuestros proveedores caducan según sus propios plazos.</p>
     <p>También puedes escribirnos para preguntar qué datos tenemos sobre ti o para que los corrijamos. Para corregir los datos de un rocódromo, usa Sugerir un cambio o Informar de un problema en su página.</p>
 
     <h2>Cambios</h2>
