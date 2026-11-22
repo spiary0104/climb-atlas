@@ -62,6 +62,8 @@ const INFO_DENY_HOSTS = Object.freeze(['amap.com', 'gaode.com', 'autonavi.com', 
 const SOCIAL_HOSTS = Object.freeze(['xiaohongshu.com', 'xhslink.com', 'weixin.qq.com', 'weibo.com', 'weibo.cn', 'douyin.com', 'tiktok.com', 'bilibili.com', 'instagram.com', 'facebook.com', 'fb.com', 'x.com',
   'twitter.com', 'youtube.com', 'youtu.be', 'threads.net', 'line.me']);
 const hostIn = (host, list) => list.some(d => host === d || host.endsWith('.' + d));
+const LABEL_FIELDS = Object.freeze(['name_local', 'address_local']);   // labels, not facts (see the label-only exception below)
+const LABEL_MAP_HOSTS = Object.freeze(['amap.com', 'gaode.com']);      // the only map hosts a label-only fill may cite
 const deniedUrl = u => hostIn(u.hostname, INFO_DENY_HOSTS) || (/(^|\.)google\.[a-z.]+$/.test(u.hostname) && /^\/maps\b/.test(u.pathname));
 const urlsIn = text => (String(text).match(/https?:\/\/[^\s)]+/gi) || []).map(u => { try { return new URL(u); } catch (e) { return null; } }).filter(Boolean);
 const httpsUrl = v => { if (!/^https:\/\/\S+$/.test(String(v))) return null; try { const u = new URL(v); return !u.username && !u.password ? u : null; } catch (e) { return null; } };
@@ -274,7 +276,11 @@ async function validateUpdateRecord(rec) {
     if (isInfoSet(rec.set) && !nonInfo.length) {
       errors.push(...provenanceProblems(rec.set, isStr(rec.source) ? rec.source.trim() : ''));
       // any URL in an information fill's source must not be a map / directory / review site (older records give a URL plus a note; the text is not parsed further)
-      const bad = isStr(rec.source) ? [...new Set(rec.source.match(/https?:\/\/[^\s)]+/gi) || [])].filter(x => { try { return deniedUrl(new URL(x)); } catch (e) { return false; } }) : [];
+      // Owner decision 2026-11-22: the local-script LABELS (name_local / address_local, how the name and address are written) may
+      // come from the gym's Amap listing or the 攀搭攀岩 mini program when a record sets nothing else. Facts (hours, prices, visitor,
+      // facilities, notes, website) stay official-only, and every other map / directory / review host stays refused.
+      const labelOnly = Object.keys(rec.set).every(k => LABEL_FIELDS.includes(k));
+      const bad = isStr(rec.source) ? [...new Set(rec.source.match(/https?:\/\/[^\s)]+/gi) || [])].filter(x => { try { const u = new URL(x); return deniedUrl(u) && !(labelOnly && hostIn(u.hostname, LABEL_MAP_HOSTS)); } catch (e) { return false; } }) : [];
       if (bad.length) errors.push({ code: 'bad-source', field: 'source', message: `source ${bad[0]} is a map / directory / review site; gym information comes from the gym's own site or its official social account` });
     }
     if (typesOutOfOrder(rec.set.types)) errors.push({ code: 'bad-types', field: 'types', message: `types must be listed in the canonical order: ${TYPES.join(', ')}` });

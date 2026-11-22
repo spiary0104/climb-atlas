@@ -359,7 +359,9 @@ Record: `{"intent":"update","id":"seed-884","expect_h":"<16 hex>","reason":"why 
   (`{"notes":"Temporarily closed (last checked 5 October 2026).","hours":{…}}`). **Notes are public**: the gym page shows them (`js/modules/provenance.js` `publicNotes` hides research-style
   sentences), so a notes fill must read as a visitor-facing sentence (what a climber should know), never as research ("per the gym's site…", sources, confidence).
 - **Sources: the gym's official website** (put its URL in `source`), or -- only with `info_source_kind` `official-social` -- an official social profile/post the gym controls (RedNote, WeChat, Instagram, ...); never maps,
-  directories or review sites. A `source` that contains an amap/dianping/Google-Maps/Baidu-Maps/OSM/Tripadvisor/Yelp/... URL (`validate.js INFO_DENY_HOSTS`) is refused for every information fill. Hours are written as the gym states them.
+  directories or review sites. A `source` that contains an amap/dianping/Google-Maps/Baidu-Maps/OSM/Tripadvisor/Yelp/... URL (`validate.js INFO_DENY_HOSTS`) is refused for every information fill,
+  **except** (owner decision 2026-11-22) a record whose `set` holds only `name_local` and/or `address_local` (labels, not facts): it may cite the gym's Amap listing (`amap.com`/`gaode.com`)
+  or the 攀搭攀岩 WeChat mini program (plain text; it has no citable URL). Hours are written as the gym states them.
 - **Local names and visitor facts (migration `20261101000100`):** `name_local` (1-120) and `address_local` (1-300): trimmed text, no control characters, tabs or line breaks. `visitor`: a non-empty object whose only keys are
   `booking payment english_help id_required shoe_hire note`, each a non-empty trimmed single-line string of at most 160 characters (`spots_visitor_check`). All three are **fill-only** like the other fields (empty = `null`, `''`, or
   `{}` for visitor; a held value is never overwritten and refuses the batch), are not in the content hash or the index, and the PATCH body is exactly the approved set.
