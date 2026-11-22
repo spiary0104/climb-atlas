@@ -1,0 +1,4499 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-23-fr-info",
+ "index": {
+  "sha256": "ee0e0c45b261e8d56a5a89777d4e4567f16b0ff18b4a45aeb76908b50eff22ad",
+  "count": 3651,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha"
+ ],
+ "counts": {
+  "records": 100,
+  "new": 0,
+  "existing": 0,
+  "update": 100,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "ca96c7983f647c995bc906bf80b0f8b430295e8dd8270cb68efd3b77db8cabea",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "g-da2ba86580",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://aix-boucbelair.climb-up.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:30–23:00",
+      "tue": "09:30–23:00",
+      "wed": "09:30–23:00",
+      "thu": "09:30–23:00",
+      "fri": "09:30–23:00",
+      "sat": "09:30–22:00",
+      "sun": "09:30–22:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://aix-boucbelair.climb-up.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "0fb55740573c980a",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "g-cc0571d0a8",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://aubagne.climb-up.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "09:30–21:00",
+      "sun": "09:30–21:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://aubagne.climb-up.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "a207236e9b0502c3",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "g-e7fb9ec054",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://brest.climb-up.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:30",
+      "tue": "10:00–22:30",
+      "wed": "10:00–22:30",
+      "thu": "10:00–22:30",
+      "fri": "10:00–22:30",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://brest.climb-up.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "0158e0e12170a523",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "g-375b427b55",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://angers-lespontsdece.climb-up.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://angers-lespontsdece.climb-up.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "12d2bdb2c8ef2c97",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "g-fa22decd6e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://limoges.climb-up.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–19:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://limoges.climb-up.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "83270eb7ee4e9623",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "g-1691bbd032",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://bordeaux-eysines.climb-up.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–21:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://bordeaux-eysines.climb-up.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "0e54b744684bf8d5",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "g-c2b82e827f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://aix-lesmilles.climb-up.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:30–23:00",
+      "tue": "10:30–23:00",
+      "wed": "10:30–23:00",
+      "thu": "10:30–23:00",
+      "fri": "10:30–23:00",
+      "sat": "09:30–21:00",
+      "sun": "09:30–21:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://aix-lesmilles.climb-up.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "e350a267f24c287b",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "g-7172d8c9eb",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://dijon.climb-up.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:30–22:30",
+      "tue": "09:30–22:30",
+      "wed": "09:30–22:30",
+      "thu": "09:30–22:30",
+      "fri": "09:30–22:30",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://dijon.climb-up.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "ced97c9fdbad372f",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "g-8067294135",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://lille-wambrechies.climb-up.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "12:00–24:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://lille-wambrechies.climb-up.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "fd33f09514f4e58a",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "g-9c59152858",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://lille-villeneuvedascq.climb-up.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://lille-villeneuvedascq.climb-up.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "aea97bd0f0d624a2",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "g-a1fabd0c05",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://bordeaux-villenave.climb-up.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "09:00–23:00",
+      "fri": "09:00–21:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://bordeaux-villenave.climb-up.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "afb4c7d3b6558bb6",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "g-d190d816e7",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://mulhouse-wittenheim.climb-up.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:30–22:30",
+      "tue": "10:30–22:30",
+      "wed": "10:30–22:30",
+      "thu": "10:30–22:30",
+      "fri": "10:30–22:30",
+      "sat": "09:00–20:00",
+      "sun": "09:00–19:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://mulhouse-wittenheim.climb-up.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "e1b8b1ec919d0c70",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "g-2d669a7807",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://cergy.climb-up.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–23:00",
+      "tue": "11:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "11:00–23:00",
+      "fri": "11:00–23:00",
+      "sat": "09:00–22:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://cergy.climb-up.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "7c41265b63964a57",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "g-4fb4fbed4d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://orleans.climb-up.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://orleans.climb-up.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "f6b36121168f0f70",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "g-d2164daa6d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://lemans.climb-up.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://lemans.climb-up.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "fa7b1f416ced611f",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "g-8543d8c840",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://nimes.climb-up.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://nimes.climb-up.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "b60786d50b41b734",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "g-c9b603935b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://istres.climb-up.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "09:00–23:00",
+      "sun": "09:00–23:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://istres.climb-up.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "f3ec90e105c6e6e0",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "g-28f182daaf",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://laennec.mroc.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–24:00",
+      "tue": "09:00–24:00",
+      "wed": "09:00–24:00",
+      "thu": "09:00–24:00",
+      "fri": "09:00–24:00",
+      "sat": "09:00–24:00",
+      "sun": "09:00–24:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "18 € la séance, 16 € prix réduit, 10 € enfant (-12 ans)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://laennec.mroc.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "3f447bba7ae4d743",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "g-4c156c806c",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://villeurbanne.mroc.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–24:00",
+      "tue": "09:00–24:00",
+      "wed": "09:00–24:00",
+      "thu": "09:00–24:00",
+      "fri": "09:00–24:00",
+      "sat": "09:00–24:00",
+      "sun": "09:00–24:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée unitaire 18 €"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://villeurbanne.mroc.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "90a8302c745a63fa",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "g-59d3478619",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/ajaccio/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "15:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "17:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "15:00–20:00",
+      "sun": "15:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 16 € (12 ans et plus)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/ajaccio/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "c701c735e3544cb2",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "g-d014ec9e78",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/ardennes/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "16:00–21:00",
+      "tue": "16:00–22:00",
+      "wed": "10:00–20:00",
+      "thu": "16:00–22:00",
+      "fri": "16:00–21:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 14 € (12 ans et plus)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/ardennes/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "1a6ab30a6271fd80",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "g-7007ead23e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/belfort/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 15 € (12 ans et plus)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/belfort/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "e24902095c0d1d8b",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "g-15ffed3aa2",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/beziers/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–19:00",
+      "sun": "13:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 15 € (12 ans et plus)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/beziers/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "9214faf1c1b44b7f",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "g-d92771320e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/chalon-sur-saone/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 15 € (12 ans et plus)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/chalon-sur-saone/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "1f3320d0d4f71c36",
+   "update_reason": "Official official website, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "g-4724015231",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/chinon/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "09:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "09:00–22:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 15 € (12 ans et plus)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/chinon/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "f6048bbb2c98099d",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "g-ef5b48f0bb",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/gap/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 15 € (12 ans et plus)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/gap/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "be85cee8d9daa551",
+   "update_reason": "Official official website, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 27,
+   "class": "update",
+   "id": "g-63613953bc",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/haguenau/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "17:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "14:00–19:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "14:00–19:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 15 € (12 ans et plus)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/haguenau/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "0ca6bd4c39875c19",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 28,
+   "class": "update",
+   "id": "g-95a27d6ef5",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/la-ciotat/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–14:00 & 17:00–22:00",
+      "tue": "12:00–14:00 & 17:00–22:00",
+      "wed": "12:00–14:00 & 17:00–22:00",
+      "thu": "12:00–14:00 & 17:00–22:00",
+      "fri": "12:00–14:00 & 17:00–22:00",
+      "sat": "14:30–19:30",
+      "sun": "Fermé"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 14 € (12 ans et plus)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/la-ciotat/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "ef6cd40478276767",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 29,
+   "class": "update",
+   "id": "g-16ce0a549b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/loire-estuaire/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "15:00–22:00",
+      "tue": "15:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "15:00–22:00",
+      "fri": "15:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 16 € (12 ans et plus)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/loire-estuaire/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "44b3cc90a08cab57",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 30,
+   "class": "update",
+   "id": "g-f99ac1d300",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/lyon-beynost/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–14:00 & 17:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "14:00–19:00",
+      "sun": "14:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 16 € (12 ans et plus)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/lyon-beynost/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "5c268fc0520e3f00",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 31,
+   "class": "update",
+   "id": "g-00ef0fe045",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/lyon-craponne/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–21:00",
+      "tue": "12:00–21:00",
+      "wed": "12:00–21:00",
+      "thu": "12:00–21:00",
+      "fri": "12:00–21:00",
+      "sat": "13:00–19:00",
+      "sun": "13:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 15 € (12 ans et plus)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/lyon-craponne/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "af1797499eb66e17",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 32,
+   "class": "update",
+   "id": "g-96d0b309b5",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/marne-la-vallee/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–22:00",
+      "sun": "09:30–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 16 € (12 ans et plus)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/marne-la-vallee/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "5d25dbf63eacdb39",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 33,
+   "class": "update",
+   "id": "g-c325ca9c55",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/marseille-sud/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "15:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 14 € (12 ans et plus)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/marseille-sud/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "59dbe80b94f50568",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 34,
+   "class": "update",
+   "id": "g-5671a2c0e4",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/pertuis/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 16 € (12 ans et plus)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/pertuis/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "a6be3f9dbb37239b",
+   "update_reason": "Official official website, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 35,
+   "class": "update",
+   "id": "g-3515cabc4e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/pontarlier/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "09:00–19:00",
+      "sun": "12:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 16 € (12 ans et plus)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/pontarlier/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "d430d174d0953cf9",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 36,
+   "class": "update",
+   "id": "g-a51b939708",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/rouen/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 16 € (12 ans et plus)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/rouen/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "828ca0d883ae089a",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 37,
+   "class": "update",
+   "id": "g-66ac06b0d9",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/salon/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 16 € (12 ans et plus)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/salon/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "7db2b05a62af8a25",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 38,
+   "class": "update",
+   "id": "g-685df4d86d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/strasbourg/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "14:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 16 € (12 ans et plus)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/strasbourg/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "0468af9c1d494f0d",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 39,
+   "class": "update",
+   "id": "g-b54d1864e5",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/toulon-ouest/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–22:00",
+      "tue": "11:00–22:00",
+      "wed": "11:00–22:00",
+      "thu": "11:00–22:00",
+      "fri": "11:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 15 € (12 ans et plus)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/toulon-ouest/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "234fa5cee32641ea",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 40,
+   "class": "update",
+   "id": "g-ee78f54336",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/vienne/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "14:00–19:00",
+      "sun": "14:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 15 € (12 ans et plus)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/vienne/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "9e6016716e3a996e",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 41,
+   "class": "update",
+   "id": "g-86f45a6c06",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/salle-club-escalade-biarritz-baynone-anglet/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–20:00",
+      "tue": "12:00–21:00",
+      "wed": "12:00–21:00",
+      "thu": "10:00–21:00",
+      "fri": "12:00–20:00",
+      "sat": "10:00–19:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 15 € (12 ans et plus)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocsession.com/salle-escalade/salle-club-escalade-biarritz-baynone-anglet/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "c47bf51cbf22834a",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 42,
+   "class": "update",
+   "id": "g-1e11a562a5",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://rennes.theroof.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:59",
+      "tue": "09:00–23:59",
+      "wed": "09:00–23:59",
+      "thu": "09:00–23:59",
+      "fri": "09:00–23:59",
+      "sat": "09:00–23:59",
+      "sun": "09:00–23:59"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "5 € à 16 € la séance"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://rennes.theroof.fr/infos-pratiques.html"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "e896238626f12171",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 43,
+   "class": "update",
+   "id": "g-855ccfbf00",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://brest.theroof.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "6,50 € à 13 € la séance"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://brest.theroof.fr/infos-pratiques.html"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "4130d72d6a2b83b6",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 44,
+   "class": "update",
+   "id": "g-8363ecdc78",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://poitiers.theroof.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "17:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "6 € à 13 € la séance"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shop",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://poitiers.theroof.fr/infos-pratiques.html"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "a6adda903ada2549",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 45,
+   "class": "update",
+   "id": "g-f2d04e371e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://albi.theroof.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "17:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "9 € à 15 € la séance"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://albi.theroof.fr/infos-pratiques.html"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "58abc87ceecc854f",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 46,
+   "class": "update",
+   "id": "g-c092799ed8",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://bayonne.theroof.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "08:30–22:00",
+      "thu": "09:00–22:00",
+      "fri": "09:00–22:00",
+      "sat": "08:30–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "7 € à 15 € la séance"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://bayonne.theroof.fr/infos-pratiques.html"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "0117ee4cbe27ffad",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 47,
+   "class": "update",
+   "id": "g-d366767cf8",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://vercors.theroof.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–22:30",
+      "tue": "11:00–22:30",
+      "wed": "09:00–22:30",
+      "thu": "11:00–22:30",
+      "fri": "11:00–22:30",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "7,50 € à 15 € la séance"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://vercors.theroof.fr/infos-pratiques.html"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "4ddb22697c078b5a",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 48,
+   "class": "update",
+   "id": "g-a39fe4d585",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://saintbrieuc.theroof.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:30–22:00",
+      "tue": "11:30–22:00",
+      "wed": "10:00–22:00",
+      "thu": "11:30–22:00",
+      "fri": "11:30–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "8 € à 15 € la séance"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://saintbrieuc.theroof.fr/infos-pratiques.html"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "d85803c52fd04cb4",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 49,
+   "class": "update",
+   "id": "g-42161cb45e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://albi.altissimo.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "16:00–22:00",
+      "tue": "14:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "14:00–22:00",
+      "fri": "14:00–22:00",
+      "sat": "10:00–19:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée 17 € plein tarif, 15 € étudiant, 13 € enfant (-12 ans)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://albi.altissimo.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "663071c5674fc3ea",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 50,
+   "class": "update",
+   "id": "g-787c4d3a6a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://metz-haut-gazon.altissimo.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Fermé",
+      "tue": "15:00–22:00",
+      "wed": "15:00–22:00",
+      "thu": "15:00–22:00",
+      "fri": "15:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "Fermé"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée 17 € plein tarif, 15 € étudiant, 13 € enfant (-12 ans)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://metz-haut-gazon.altissimo.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "7b2c08cdf1963308",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 51,
+   "class": "update",
+   "id": "g-51adae9d61",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://metz-loisirama.altissimo.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:30",
+      "tue": "12:00–22:30",
+      "wed": "10:00–22:30",
+      "thu": "12:00–22:30",
+      "fri": "12:00–22:30",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée 17 € plein tarif, 15 € étudiant, 13 € enfant (-12 ans)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://metz-loisirama.altissimo.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "1717c2f68b5ade0b",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 52,
+   "class": "update",
+   "id": "g-dc36370043",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://montpellier-grabels.altissimo.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée 17 € plein tarif, 15 € étudiant, 13 € enfant (-12 ans)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://montpellier-grabels.altissimo.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "ffe68a25d7710664",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 53,
+   "class": "update",
+   "id": "g-5d084ba73c",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://montpellier-odysseum.altissimo.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée 17 € plein tarif, 15 € étudiant, 13 € enfant (-12 ans)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://montpellier-odysseum.altissimo.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "d904db8f7891ccc3",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 54,
+   "class": "update",
+   "id": "g-c5bc9cbcbf",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://nantes.altissimo.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée 17 € plein tarif, 15 € étudiant, 13 € enfant (-12 ans)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://nantes.altissimo.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "236d563470203814",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 55,
+   "class": "update",
+   "id": "g-7fa2bfce6a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://perpignan.altissimo.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–19:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée 17 € plein tarif, 15 € étudiant, 13 € enfant (-12 ans)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://perpignan.altissimo.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "f48916d56d5a6db1",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 56,
+   "class": "update",
+   "id": "g-5e8807310d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://karma-escalade.fr/la-villette/la-salle"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "14:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "09:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–23:00",
+      "sun": "09:00–22:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://karma-escalade.fr/la-villette/la-salle"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "d1fc989da54f9ccc",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 57,
+   "class": "update",
+   "id": "g-7c79384ac7",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://karma-escalade.fr/fontainebleau/la-salle"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée 16 € plein tarif, 14 € réduit, 12 € enfant (7-12 ans)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://karma-escalade.fr/fontainebleau/tarifs"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "a967472f70f061c7",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 58,
+   "class": "update",
+   "id": "g-7c3105fa67",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.espacevertical.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:30",
+      "tue": "12:00–22:30",
+      "wed": "12:00–22:30",
+      "thu": "12:00–22:30",
+      "fri": "12:00–22:30",
+      "sat": "10:00–19:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Séance 15 € plein tarif, 13 € réduit"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.espacevertical.com/tarifs/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "3b6ccfdc936ec54f",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 59,
+   "class": "update",
+   "id": "g-5dd31eb55c",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.espacevertical.com/labo/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:30",
+      "tue": "12:00–22:30",
+      "wed": "12:00–22:30",
+      "thu": "12:00–22:30",
+      "fri": "12:00–22:30",
+      "sat": "10:00–19:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Séance 15 € plein tarif, 13 € réduit"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.espacevertical.com/tarifs/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "127be75365612337",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 60,
+   "class": "update",
+   "id": "g-5ac47ca5ea",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.verticalpark.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.verticalpark.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "96fa43b647068fea",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 61,
+   "class": "update",
+   "id": "g-f08fa97671",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://ablok.fr/grenoble"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée 14 € plein tarif, 12 € réduit, 8 € kids"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://ablok.fr/grenoble/nos-tarifs"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "bc1f8a9bc020e5be",
+   "update_reason": "Official official website, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 62,
+   "class": "update",
+   "id": "g-d9a8224398",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://ablok.fr/voiron"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée 15 € plein tarif, 13 € réduit, 10 € kids (5-11 ans)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://ablok.fr/nos-tarifs"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "974ae030b4b15488",
+   "update_reason": "Official official website, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 63,
+   "class": "update",
+   "id": "g-9c96d10277",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.hueco.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "14:00–19:45",
+      "sun": "14:00–19:45"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Séance 18 €, 16 € tarif réduit, 13,50 € enfant"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.hueco.fr/infos-pratiques/horaires-acces/city/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "2751dd549ddacaa9",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 64,
+   "class": "update",
+   "id": "g-c29b2de354",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.hueco.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–19:45",
+      "sun": "10:00–19:45"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Séance 18 €, 16 € tarif réduit, 13,50 € enfant"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.hueco.fr/infos-pratiques/horaires-acces/zenith/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "408677561c0311ae",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 65,
+   "class": "update",
+   "id": "g-22ab3b0cc3",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.b-wall.fr/salle-escalade/vannes/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée libre 16 € plein tarif, 14 € réduit, 10 € -12 ans"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.b-wall.fr/tarifs-reservation/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "d2fd6c9e2aa0cd36",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 66,
+   "class": "update",
+   "id": "g-d5d10db939",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.b-wall.fr/salle-escalade/lorient/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée libre 16 € plein tarif, 14 € réduit, 10 € -12 ans"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.b-wall.fr/tarifs-reservation/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "6610ea987c6e4e2c",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 67,
+   "class": "update",
+   "id": "g-66d3a3d442",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.b-wall.fr/salle-escalade/quimper/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée libre 16 € plein tarif, 14 € réduit, 10 € -12 ans"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.b-wall.fr/tarifs-reservation/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "1d33b19428d35a08",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 68,
+   "class": "update",
+   "id": "g-b45e6000fb",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulderline.fr/"
+    }
+   ],
+   "expect_h": "1fa1b914ac9e171f",
+   "update_reason": "Official official website from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 69,
+   "class": "update",
+   "id": "g-1b48f454c4",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulderline.fr/"
+    }
+   ],
+   "expect_h": "d7fda8f8d80fcf2c",
+   "update_reason": "Official official website from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 70,
+   "class": "update",
+   "id": "g-f04cb9c92a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbingdistrict.com/salle-escalade/pont-de-neuilly/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–23:00",
+      "tue": "07:00–23:00",
+      "wed": "07:00–23:00",
+      "thu": "07:00–23:00",
+      "fri": "07:00–23:00",
+      "sat": "08:00–23:00",
+      "sun": "08:00–23:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "1 entrée 18 € plein tarif, 15 € tarif réduit"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://climbingdistrict.com/salle-escalade/pont-de-neuilly/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "c9ff4ba0c2d08aba",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 71,
+   "class": "update",
+   "id": "g-f860d7675f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.hardbloc.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:30–22:30",
+      "tue": "10:30–22:30",
+      "wed": "10:30–22:30",
+      "thu": "10:30–22:30",
+      "fri": "10:30–22:30",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée 17 € plein tarif, 15 € réduit, 11 € enfant"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.hardbloc.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "b3966c6c66cc2a5c",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 72,
+   "class": "update",
+   "id": "g-9a323d05e0",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://blocbuster.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–23:00",
+      "tue": "11:00–23:00",
+      "wed": "11:00–23:00",
+      "thu": "11:00–23:00",
+      "fri": "11:00–23:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://blocbuster.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "431053de1ebe94a2",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 73,
+   "class": "update",
+   "id": "g-e89f6dff5d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.climbarena.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–23:00",
+      "tue": "11:00–23:00",
+      "wed": "11:00–23:00",
+      "thu": "11:00–23:00",
+      "fri": "11:00–23:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Séance 18 € classique, 14 € réduit"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.climbarena.fr/tarifs/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "11ab3b3f5790f407",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 74,
+   "class": "update",
+   "id": "g-deb0b9f45f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://antrebloc.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–23:00",
+      "tue": "11:00–23:00",
+      "wed": "11:00–23:00",
+      "thu": "11:00–23:30",
+      "fri": "11:00–23:30",
+      "sat": "09:00–20:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://antrebloc.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "bfb46fe7e9959bae",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 75,
+   "class": "update",
+   "id": "g-f70a8a56dd",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://auperchoir.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "09:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://auperchoir.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "4c4a2d882a338da1",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 76,
+   "class": "update",
+   "id": "g-95d87582e6",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.picetparoi.fr/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "1 entrée 16 € plein tarif, 14 € tarif réduit"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.picetparoi.fr/le-bloc/tarifs/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "af67b783c3c4e521",
+   "update_reason": "Official official website, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 77,
+   "class": "update",
+   "id": "g-cc2534030c",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.modjo-escalade.fr/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Séance 16 € normal, 14 € réduit (sans matériel)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.modjo-escalade.fr/tarifs/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "a5f7eb39dc108f17",
+   "update_reason": "Official official website, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 78,
+   "class": "update",
+   "id": "g-7d4776dabd",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocabrac.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Unitaire 15 € adulte, 13 € réduit"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocabrac.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "902c31dfd5b7d4f1",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 79,
+   "class": "update",
+   "id": "g-a691df794f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://lazipette.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–19:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://lazipette.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "9b21ca65312dad1c",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 80,
+   "class": "update",
+   "id": "g-cbbbe4c2c5",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.alpabloc.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "17:00–21:30",
+      "tue": "12:00–22:30",
+      "wed": "12:00–21:30",
+      "thu": "12:00–21:30",
+      "fri": "12:00–21:30",
+      "sat": "10:00–19:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée 15 € normal, 13 € réduit, 8 € enfant (-10 ans)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.alpabloc.fr/tarifs-escalade-indoor-bourgoin-jallieu"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "313d5c14819104b8",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 81,
+   "class": "update",
+   "id": "g-e89c51ffc1",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.technobloc.fr/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pass journée 14 € par séance (adulte dès 13 ans)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.technobloc.fr/nos-tarifs"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "24f67ef60d5517a3",
+   "update_reason": "Official official website, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 82,
+   "class": "update",
+   "id": "g-26f7e3f0f4",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.arcabloc.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–19:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée 14 € adulte, 11 € réduit, 8 € enfant (5-11 ans)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.arcabloc.fr/tarifs/entrees-abonnements"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "68cff2bc0f7eb3fd",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 83,
+   "class": "update",
+   "id": "g-4cea3626ba",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.start-in-bloc.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "09:00–22:00",
+      "thu": "09:00–23:00",
+      "fri": "09:00–22:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.start-in-bloc.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "c8556171773ef9d6",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 84,
+   "class": "update",
+   "id": "g-5e2011916f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://la-o-escalade.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–23:00",
+      "tue": "12:00–23:00",
+      "wed": "12:00–23:00",
+      "thu": "12:00–23:00",
+      "fri": "12:00–23:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée 7 € (Targa), 10 € (Alba), 13 € (Bleu)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://la-o-escalade.fr/tarifs/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "93c5342591a3d488",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 85,
+   "class": "update",
+   "id": "g-bd2116952e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.wattabloc.com/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée 13 € plein tarif, 6 € enfant (-10 ans)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.wattabloc.com/nos-tarifs-2/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "06c491ac331b64fd",
+   "update_reason": "Official official website, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 86,
+   "class": "update",
+   "id": "g-a2ee1d22e1",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://letopo.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée unitaire adulte 18 €, tarif réduit 17 €"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://letopo.fr/corporate-3-landing/horaires-tarifs/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "af92afe055eb901e",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 87,
+   "class": "update",
+   "id": "g-0f4ddd5fa0",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.montblancescalade.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:30–22:00",
+      "tue": "11:30–22:00",
+      "wed": "11:30–22:00",
+      "thu": "11:30–22:00",
+      "fri": "11:30–22:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.montblancescalade.com/horaires-et-acces/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "417dd0e830bcae20",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 88,
+   "class": "update",
+   "id": "g-ba194580b7",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.gravity-bouldering.fr/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "3d131fe2a2886b20",
+   "update_reason": "Official official website, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 89,
+   "class": "update",
+   "id": "g-45f2fdf677",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.climbzone.fr/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée à la journée dès 10 €"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.climbzone.fr/tarifs/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "bc9f3e125f8d9933",
+   "update_reason": "Official official website, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 90,
+   "class": "update",
+   "id": "g-12ae91dc0f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.spacebloc.fr/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids"
+     ]
+    }
+   ],
+   "expect_h": "ced0e36dc6ac1e6a",
+   "update_reason": "Official official website, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 91,
+   "class": "update",
+   "id": "g-796dbcb8b1",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://la-grappe-escalade.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "17:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "14:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–19:00",
+      "sun": "14:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Séance 13 € normal, 11 € étudiant (-28 ans)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://la-grappe-escalade.fr/tarifs"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "f6cc59e3e5c2de42",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 92,
+   "class": "update",
+   "id": "g-948232783a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.bloc-zone.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "14:00–21:00",
+      "tue": "14:00–21:00",
+      "wed": "10:00–21:00",
+      "thu": "14:00–21:00",
+      "fri": "14:00–21:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.bloc-zone.fr/adresse-acces-contact/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "41a8a893032af59e",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 93,
+   "class": "update",
+   "id": "g-b52bf427e7",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://captnhablock.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://captnhablock.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "81c431a53ad2230b",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 94,
+   "class": "update",
+   "id": "g-7d0df92ee4",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blocdelours.com/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée jour 15 € normal, 12,50 € réduit, 10 € enfant (-12 ans)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blocdelours.com/tarifs/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "c3290d6f52e588ec",
+   "update_reason": "Official official website, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 95,
+   "class": "update",
+   "id": "g-8d782dbac1",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.atome-annecy.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "09:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–23:00",
+      "sun": "09:00–22:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.atome-annecy.fr/contact"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "4f5c62982a282d63",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 96,
+   "class": "update",
+   "id": "g-a84ea13ce7",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.beta-bloc.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "13:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "1 séance 15 € adulte, 11 € réduit, 8 € enfant (-10 ans)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.beta-bloc.com/tarifs-et-cours/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "26537084fbfa7ec8",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 97,
+   "class": "update",
+   "id": "g-28a763e4c3",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://orangerie-perchee.fr/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:00–23:00",
+      "tue": "08:00–23:00",
+      "wed": "08:00–23:00",
+      "thu": "08:00–23:00",
+      "fri": "08:00–23:00",
+      "sat": "09:00–23:00",
+      "sun": "09:00–22:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://orangerie-perchee.fr/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "a85569a77d01ac23",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 98,
+   "class": "update",
+   "id": "g-ac83b743a2",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.ucpa.com/sport-station/nantes"
+    }
+   ],
+   "expect_h": "d3a358ba1a0e066d",
+   "update_reason": "Official official website from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 99,
+   "class": "update",
+   "id": "g-a758a05a2d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.ucpa.com/sport-station/bordeaux"
+    }
+   ],
+   "expect_h": "382fb7d8243d38af",
+   "update_reason": "Official official website from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 100,
+   "class": "update",
+   "id": "g-59c668af00",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://stherblain.elcap.fr/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Séance 17 € normal, 15 € réduit, 11 € enfant (-12 ans)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://stherblain.elcap.fr/tarifs-horaires/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "6e740ffaff898f99",
+   "update_reason": "Official official website, day pass price from the gym's own site (researched 2026-11-22)"
+  }
+ ]
+}
