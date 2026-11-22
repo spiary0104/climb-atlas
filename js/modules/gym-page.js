@@ -8,6 +8,7 @@ import { checkedInRecently, loadCheckins, startCheckin } from './checkin.js';
 import { loadGymProvenance, loadMyEditFor } from './community.js';
 import { loadSessions } from './logbook.js';
 import { destroyMiniMaps, mountMiniMaps } from './mini-map.js';
+import { primaryName } from './list-html.js';
 import { stateLabel } from './map.js';
 import { metroOf, metrosForRegion } from './metros.js';
 import { toggleMark } from './marks.js';
@@ -124,7 +125,7 @@ function enter({ slug }, view){
     checkedIn: !!window.auth.user && checkedInRecently(g.id),
     hours: hoursContext(g),
   });
-  setPageTitle(gymSeo(g, { region: regionOf(g), country: COUNTRY_LABELS[g.country] || g.country, tr: t }).title);
+  setPageTitle(gymSeo({ ...g, name: primaryName(g) }, { region: regionOf(g), country: COUNTRY_LABELS[g.country] || g.country, tr: t }).title);
   mountMiniMaps(view);
   // Provenance (added by / contributors / last edited) and, for the signed-in editor, their own latest proposal.
   const late = [];

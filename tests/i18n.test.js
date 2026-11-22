@@ -364,3 +364,25 @@ test('i18n places: region and metro labels follow the language, codes and Englis
   await I.setLocale('en');
   assert.equal(I.metroName(tokyo), 'Tokyo');
 });
+
+test('gym names: the gym\'s own name leads when the interface reads its script; both names always shown', async () => {
+  const L = await import('../js/modules/list-html.js');
+  const cn = { id: 'x', name: 'Banana Climbing (Shangdi)', name_local: '香蕉攀岩(上地店)', country: 'CN', types: ['boulder'] };
+  const kr = { id: 'y', name: 'The Climb Gangnam', name_local: '더클라임 강남', country: 'KR', types: ['boulder'] };
+  await I.setLocale('en');
+  assert.equal(L.primaryName(cn), 'Banana Climbing (Shangdi)');
+  assert.match(L.localNameHtml(cn, 'x'), /lang="zh-Hans">香蕉攀岩\(上地店\)</);
+  for(const code of ['zh-CN', 'zh-TW']){
+    await I.setLocale(code);
+    assert.equal(L.primaryName(cn), '香蕉攀岩(上地店)', code);
+    assert.equal(L.primaryNameHtml(cn), '<span lang="zh-Hans">香蕉攀岩(上地店)</span>');
+    assert.match(L.localNameHtml(cn, 'x'), /lang="en">Banana Climbing \(Shangdi\)</, 'English second');
+    assert.equal(L.primaryName(kr), 'The Climb Gangnam', 'a Korean gym stays English-first in Chinese');
+  }
+  await I.setLocale('ko');
+  assert.equal(L.primaryName(kr), '더클라임 강남');
+  await I.setLocale('de');
+  assert.equal(L.primaryName(cn), 'Banana Climbing (Shangdi)');
+  await I.setLocale('zh-CN');
+  assert.equal(L.primaryName({ ...cn, name_local: '' }), 'Banana Climbing (Shangdi)', 'no local name: English');
+});
