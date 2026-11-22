@@ -1,0 +1,421 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-22-retire-kids-only",
+ "index": {
+  "sha256": "f5ac6bae798292cd855edd836c4da65a2e1fed09ed48a832cbb817fe02140003",
+  "count": 3674,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha"
+ ],
+ "counts": {
+  "records": 16,
+  "new": 0,
+  "existing": 0,
+  "update": 0,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "retire": 16,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "14cd0280ab727ce6d2ad7eb8f7cb05ecd18b1aa68a639c9a3c1c1e791c5f6218",
+ "records": [
+  {
+   "line": 1,
+   "class": "retire",
+   "id": "seed-554",
+   "name": "Panxing Kids Climbing (Baoshan Riyueguang)",
+   "country": "CN",
+   "expect_h": "c1277ec06c68217a",
+   "reason_code": "not-public",
+   "retire_reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+   "entry": {
+    "id": "seed-554",
+    "name": "Panxing Kids Climbing (Baoshan Riyueguang)",
+    "country": "CN",
+    "state": "SHANGHAI",
+    "suburb": "Baoshan District, Shanghai",
+    "lat": 31.334,
+    "lng": 121.4007,
+    "address": "L1, Riyueguang Center Baoshan Store, 1933 Hutai Rd, Baoshan District, Shanghai",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "c1277ec06c68217a"
+   }
+  },
+  {
+   "line": 2,
+   "class": "retire",
+   "id": "seed-586",
+   "name": "Panxing Climbing (Xindahui Sanlin)",
+   "country": "CN",
+   "expect_h": "589e196648bb4e09",
+   "reason_code": "not-public",
+   "retire_reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+   "entry": {
+    "id": "seed-586",
+    "name": "Panxing Climbing (Xindahui Sanlin)",
+    "country": "CN",
+    "state": "SHANGHAI",
+    "suburb": "Pudong New Area, Shanghai",
+    "lat": 31.1485,
+    "lng": 121.5388,
+    "address": "B1 atrium, Bldg 1-26, 1058 Yongtai Rd, Sanlin Town, Pudong New Area, Shanghai",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "589e196648bb4e09"
+   }
+  },
+  {
+   "line": 3,
+   "class": "retire",
+   "id": "seed-588",
+   "name": "Panxing Kids Climbing (Xinye Future Center)",
+   "country": "CN",
+   "expect_h": "2cf4ec3751addfb0",
+   "reason_code": "not-public",
+   "retire_reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+   "entry": {
+    "id": "seed-588",
+    "name": "Panxing Kids Climbing (Xinye Future Center)",
+    "country": "CN",
+    "state": "SHANGHAI",
+    "suburb": "Jiading District, Shanghai",
+    "lat": 31.3862,
+    "lng": 121.2463,
+    "address": "Bldg 5, Xinye Future Center, Jiading Town, Jiading District, Shanghai",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "2cf4ec3751addfb0"
+   }
+  },
+  {
+   "line": 4,
+   "class": "retire",
+   "id": "seed-816",
+   "name": "Pandengxia Kids Climbing (Qijiang Wanda)",
+   "country": "CN",
+   "expect_h": "25f7fe1bafcf9076",
+   "reason_code": "not-public",
+   "retire_reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+   "entry": {
+    "id": "seed-816",
+    "name": "Pandengxia Kids Climbing (Qijiang Wanda)",
+    "country": "CN",
+    "state": "CHONGQING",
+    "suburb": "Qijiang District, Chongqing",
+    "lat": 29.037,
+    "lng": 106.6717,
+    "address": "B1F via the right escalator at Gate 1, Wanda Plaza, Qijiang District, Chongqing",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "25f7fe1bafcf9076"
+   }
+  },
+  {
+   "line": 5,
+   "class": "retire",
+   "id": "seed-817",
+   "name": "Pandengxia Kids Climbing (Yongchuan)",
+   "country": "CN",
+   "expect_h": "d22d8379d02acba5",
+   "reason_code": "not-public",
+   "retire_reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+   "entry": {
+    "id": "seed-817",
+    "name": "Pandengxia Kids Climbing (Yongchuan)",
+    "country": "CN",
+    "state": "CHONGQING",
+    "suburb": "Yongchuan District, Chongqing",
+    "lat": 29.2842,
+    "lng": 105.921,
+    "address": "4F, Wanda Plaza, 789 Xinglong Ave, Yongchuan District, Chongqing",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "d22d8379d02acba5"
+   }
+  },
+  {
+   "line": 6,
+   "class": "retire",
+   "id": "seed-821",
+   "name": "Pandengxia Kids Climbing (Yubei Shuita Yunxuan)",
+   "country": "CN",
+   "expect_h": "1dbe10a1b7d7b49c",
+   "reason_code": "not-public",
+   "retire_reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+   "entry": {
+    "id": "seed-821",
+    "name": "Pandengxia Kids Climbing (Yubei Shuita Yunxuan)",
+    "country": "CN",
+    "state": "CHONGQING",
+    "suburb": "Yubei District, Chongqing",
+    "lat": 29.6949,
+    "lng": 106.6182,
+    "address": "2F via the escalator at Gate 1, Shuita Yunxuan Plaza, Yubei District, Chongqing",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "1dbe10a1b7d7b49c"
+   }
+  },
+  {
+   "line": 7,
+   "class": "retire",
+   "id": "seed-828",
+   "name": "Pandengxia Kids Climbing (Changshou Kaiyi)",
+   "country": "CN",
+   "expect_h": "d25bdbbd765db9fd",
+   "reason_code": "not-public",
+   "retire_reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+   "entry": {
+    "id": "seed-828",
+    "name": "Pandengxia Kids Climbing (Changshou Kaiyi)",
+    "country": "CN",
+    "state": "CHONGQING",
+    "suburb": "Changshou District, Chongqing",
+    "lat": 29.9569,
+    "lng": 107.1354,
+    "address": "Kaiyi Century Plaza, 8 Taoyuan Ave, Changshou District, Chongqing",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "d25bdbbd765db9fd"
+   }
+  },
+  {
+   "line": 8,
+   "class": "retire",
+   "id": "seed-831",
+   "name": "Pandengxia Kids Climbing (Shapingba Rongchuangmao)",
+   "country": "CN",
+   "expect_h": "4211a7cb4de17d1b",
+   "reason_code": "not-public",
+   "retire_reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+   "entry": {
+    "id": "seed-831",
+    "name": "Pandengxia Kids Climbing (Shapingba Rongchuangmao)",
+    "country": "CN",
+    "state": "CHONGQING",
+    "suburb": "Shapingba District, Chongqing",
+    "lat": 29.6292,
+    "lng": 106.355,
+    "address": "Rongchuang Mall, Tuzhu Subdistrict, Shapingba District, Chongqing",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "4211a7cb4de17d1b"
+   }
+  },
+  {
+   "line": 9,
+   "class": "retire",
+   "id": "seed-838",
+   "name": "Pandengxia Kids Climbing (Shuangfu Wuyue)",
+   "country": "CN",
+   "expect_h": "e0bb9a2ab556a2c3",
+   "reason_code": "not-public",
+   "retire_reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+   "entry": {
+    "id": "seed-838",
+    "name": "Pandengxia Kids Climbing (Shuangfu Wuyue)",
+    "country": "CN",
+    "state": "CHONGQING",
+    "suburb": "Chongqing",
+    "lat": 29.567,
+    "lng": 106.5451,
+    "address": null,
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "e0bb9a2ab556a2c3"
+   }
+  },
+  {
+   "line": 10,
+   "class": "retire",
+   "id": "seed-839",
+   "name": "Pandengxia Kids Climbing (Liangjiang Xingyueli)",
+   "country": "CN",
+   "expect_h": "9ae90352ba8fcaaa",
+   "reason_code": "not-public",
+   "retire_reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+   "entry": {
+    "id": "seed-839",
+    "name": "Pandengxia Kids Climbing (Liangjiang Xingyueli)",
+    "country": "CN",
+    "state": "CHONGQING",
+    "suburb": "Liangjiang New Area, Chongqing",
+    "lat": 29.6948,
+    "lng": 106.6161,
+    "address": null,
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "9ae90352ba8fcaaa"
+   }
+  },
+  {
+   "line": 11,
+   "class": "retire",
+   "id": "seed-507",
+   "name": "Climbing Orangutan (Pingshan)",
+   "country": "CN",
+   "expect_h": "573fc03e5281e9fc",
+   "reason_code": "not-public",
+   "retire_reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+   "entry": {
+    "id": "seed-507",
+    "name": "Climbing Orangutan (Pingshan)",
+    "country": "CN",
+    "state": "SHENZHEN",
+    "suburb": "Pingshan District, Shenzhen",
+    "lat": 22.6760828,
+    "lng": 114.3371329,
+    "address": "Yueling SPACE Shopping Mall Floor 3, Maluanshan Subdistrict, Pingshan District, Shenzhen",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "573fc03e5281e9fc"
+   }
+  },
+  {
+   "line": 12,
+   "class": "retire",
+   "id": "seed-515",
+   "name": "Captain Ryder Kids Sports Center (Poly Yuedu)",
+   "country": "CN",
+   "expect_h": "5f0ca5aeaa4c27a2",
+   "reason_code": "not-public",
+   "retire_reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+   "entry": {
+    "id": "seed-515",
+    "name": "Captain Ryder Kids Sports Center (Poly Yuedu)",
+    "country": "CN",
+    "state": "SHENZHEN",
+    "suburb": "Longhua District, Shenzhen",
+    "lat": 22.66754,
+    "lng": 114.01406,
+    "address": "Poly Yuedu Plaza District A Floor 2 Unit 003, Sanlian, Longhua District, Shenzhen",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "5f0ca5aeaa4c27a2"
+   }
+  },
+  {
+   "line": 13,
+   "class": "retire",
+   "id": "seed-518",
+   "name": "Little Player Dream Factory (Shiyan Main Store)",
+   "country": "CN",
+   "expect_h": "6fff410026405b81",
+   "reason_code": "not-public",
+   "retire_reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+   "entry": {
+    "id": "seed-518",
+    "name": "Little Player Dream Factory (Shiyan Main Store)",
+    "country": "CN",
+    "state": "SHENZHEN",
+    "suburb": "Bao'an District, Shenzhen",
+    "lat": 22.6729919,
+    "lng": 113.9219256,
+    "address": "97 Baoshi South Rd, Honfa Grand World Phase 1 315, Shiyan, Bao'an District, Shenzhen",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "6fff410026405b81"
+   }
+  },
+  {
+   "line": 14,
+   "class": "retire",
+   "id": "seed-519",
+   "name": "Little Player Dream Factory (Honwan)",
+   "country": "CN",
+   "expect_h": "312bf18bc7053f3f",
+   "reason_code": "not-public",
+   "retire_reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+   "entry": {
+    "id": "seed-519",
+    "name": "Little Player Dream Factory (Honwan)",
+    "country": "CN",
+    "state": "SHENZHEN",
+    "suburb": "Bao'an District, Shenzhen",
+    "lat": 22.6040939,
+    "lng": 113.8514717,
+    "address": "681 Gushu 1st Rd, Honwan Market A233, Xixiang, Bao'an District, Shenzhen",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "312bf18bc7053f3f"
+   }
+  },
+  {
+   "line": 15,
+   "class": "retire",
+   "id": "seed-525",
+   "name": "Little Warrior Climbing Challenge",
+   "country": "CN",
+   "expect_h": "5528edc893b7fc1e",
+   "reason_code": "not-public",
+   "retire_reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+   "entry": {
+    "id": "seed-525",
+    "name": "Little Warrior Climbing Challenge",
+    "country": "CN",
+    "state": "SHENZHEN",
+    "suburb": "Yantian District, Shenzhen",
+    "lat": 22.5606578,
+    "lng": 114.2403308,
+    "address": "1018 Haijing 2nd Rd, Jingmao Import Goods Exhibition Center, Yantian District, Shenzhen",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "5528edc893b7fc1e"
+   }
+  },
+  {
+   "line": 16,
+   "class": "retire",
+   "id": "seed-529",
+   "name": "Little Warrior Climbing Challenge Explorer Camp (Xixiang)",
+   "country": "CN",
+   "expect_h": "99f4d0ca35734f96",
+   "reason_code": "not-public",
+   "retire_reason": "Children's climbing venue (儿童攀岩馆 / kids' centre), not open to adult visitors; kids-only venues are not listed (owner policy 2026-11-11).",
+   "entry": {
+    "id": "seed-529",
+    "name": "Little Warrior Climbing Challenge Explorer Camp (Xixiang)",
+    "country": "CN",
+    "state": "SHENZHEN",
+    "suburb": "Bao'an District, Shenzhen",
+    "lat": 22.5826211,
+    "lng": 113.8779035,
+    "address": "Fenghuang Tianyu Jihui B1-101, Fenghuanggang, Xixiang, Bao'an District, Shenzhen",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "99f4d0ca35734f96"
+   }
+  }
+ ]
+}
