@@ -1,0 +1,2179 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-23-ca-info",
+ "index": {
+  "sha256": "ee0e0c45b261e8d56a5a89777d4e4567f16b0ff18b4a45aeb76908b50eff22ad",
+  "count": 3651,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha"
+ ],
+ "counts": {
+  "records": 41,
+  "new": 0,
+  "existing": 0,
+  "update": 41,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "8c06dcfff9ebdd6e2cf6cda6e9fa68e62a499b32763516a7449e668d1a490a00",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "g-135135dfea",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://basecampclimbing.ca/queen"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "07:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "07:00–23:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$28 adult, $25 student/youth/senior"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://basecampclimbing.ca/queen"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "a9274dea94c34a0a",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "g-0555135dcc",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://allezup.com/fr/mile_end/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:30–23:00",
+      "tue": "08:30–23:00",
+      "wed": "08:30–23:00",
+      "thu": "08:30–23:00",
+      "fri": "08:30–23:00",
+      "sat": "08:30–22:00",
+      "sun": "08:30–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée journalière 23.75$"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://allezup.com/fr/mile_end/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "325d6dfedd53131e",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "g-989fdeebb6",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://allezup.com/fr/verdun/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:30–23:00",
+      "tue": "08:30–23:00",
+      "wed": "08:30–23:00",
+      "thu": "08:30–23:00",
+      "fri": "08:30–23:00",
+      "sat": "08:30–22:00",
+      "sun": "08:30–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée journalière 23.75$"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://allezup.com/fr/verdun/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "52fadef220b0aeca",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "g-4546cbabe5",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://hiveclimbing.com/locations/north-shore"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–23:00",
+      "tue": "07:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$32 adult, $24 student (BC bouldering locations)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://hiveclimbing.com/locations/north-shore"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "b858df3e46f673f9",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "g-d4fe5a6d61",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://hiveclimbing.com/locations/port-coquitlam"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$32 adult, $24 student (BC bouldering locations)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://hiveclimbing.com/locations/port-coquitlam"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "8b1ef3fae35b4615",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "g-a3c7fdfd0d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://hiveclimbing.com/locations/surrey"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$32 adult, $24 student (BC bouldering locations)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://hiveclimbing.com/locations/surrey"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "21e14ad28c9fef77",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "g-dab2ad7e68",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://blocshop.com/mile-ex/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://blocshop.com/mile-ex/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "0af750b4a0ffca89",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "g-6c77b9dabc",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://blocshop.com/hochelaga/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://blocshop.com/hochelaga/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "11ad7829729387d3",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "g-5cc383113f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://ottawa.klimat.ca/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–23:00",
+      "tue": "07:00–23:00",
+      "wed": "07:00–23:00",
+      "thu": "07:00–23:00",
+      "fri": "07:00–23:00",
+      "sat": "07:00–23:00",
+      "sun": "07:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Adult (14+) $20, youth (9-13) $17"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://ottawa.klimat.ca/locations"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "43357ba2fd43e0d1",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "g-4e5f3a47a6",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://wakefield.klimat.ca/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–22:00",
+      "tue": "07:00–22:00",
+      "wed": "07:00–22:00",
+      "thu": "07:00–22:00",
+      "fri": "07:00–22:00",
+      "sat": "07:00–22:00",
+      "sun": "07:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Adult (14+) $20, youth (9-13) $17"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://wakefield.klimat.ca/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "00b6cc9861f5f10b",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "g-9621bddb93",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://altitudegym.ca/en/gatineau"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "09:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–22:00",
+      "sun": "09:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Adult $22.50, student $19.50, child (12 & under) $16.50 + tax"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://altitudegym.ca/en/gatineau"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "ec516b8bc686917f",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "g-3c8448e3c9",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://altitudegym.ca/en/orleans"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "09:00–22:00",
+      "sun": "09:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Adult $22.50, student $19.50, child (12 & under) $16.50 + tax"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://altitudegym.ca/en/orleans"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "ff95a5d387439ccd",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "g-94799263cd",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://hubclimbing.com/markham"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–23:00",
+      "tue": "12:00–23:00",
+      "wed": "12:00–23:00",
+      "thu": "12:00–23:00",
+      "fri": "12:00–23:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$28.75 adult day pass + HST (rentals not included)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://hubclimbing.com/markham"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "36098c7f5383c14d",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "g-d5b0ae0a62",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://hubclimbing.com/mississauga"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–23:00",
+      "tue": "12:00–23:00",
+      "wed": "12:00–23:00",
+      "thu": "12:00–23:00",
+      "fri": "12:00–23:00",
+      "sat": "10:00–21:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$28.75 adult day pass + HST (rentals not included)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://hubclimbing.com/mississauga"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "036fe6faf2ee4c84",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "g-6d4a5748e6",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.cragx.ca/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "08:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$22 adult, $20 student/military (before tax)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.cragx.ca/hours-location-contact"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "5899c3edf7ced679",
+   "update_reason": "Official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "g-b9fbf86143",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderhouse.ca/victoria/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:00",
+      "tue": "16:00–23:00",
+      "wed": "08:00–23:00",
+      "thu": "09:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderhouse.ca/victoria/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "553d49885b6ac1d9",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "g-9c3f3ff7b3",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderhouse.ca/langford/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "16:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderhouse.ca/langford/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "e1d1f80bc58295b6",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "g-422795e1ff",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://projectclimbing.ca/abbotsford"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–22:00",
+      "tue": "13:00–22:00",
+      "wed": "13:00–22:00",
+      "thu": "13:00–22:00",
+      "fri": "13:00–22:00",
+      "sat": "12:00–21:00",
+      "sun": "12:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$24 adult, $22 student, $20 child 13 and under"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://projectclimbing.ca/abbotsford"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "3f568d11ddb96df6",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "g-09597cfa46",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://projectclimbing.ca/chilliwack"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "11:00–21:00",
+      "sun": "11:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$24 adult, $22 student, $20 child 13 and under"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://projectclimbing.ca/chilliwack"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "ead5271a3a206259",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "g-074724bd20",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://projectclimbing.ca/cloverdale"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–22:30",
+      "tue": "11:00–22:30",
+      "wed": "11:00–22:30",
+      "thu": "11:00–22:30",
+      "fri": "11:00–22:30",
+      "sat": "11:00–21:00",
+      "sun": "11:00–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://projectclimbing.ca/cloverdale"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "9dd34f1105822060",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "g-7f559f26dd",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.calgaryclimbing.com/locations/hanger/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire",
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.calgaryclimbing.com/locations/hanger/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "b030c258fefd16f2",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "g-42f1822db1",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.calgaryclimbing.com/locations/stronghold/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–23:00",
+      "tue": "06:00–23:00",
+      "wed": "06:00–23:00",
+      "thu": "06:00–23:00",
+      "fri": "06:00–23:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.calgaryclimbing.com/locations/stronghold/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "27c798e12c05e444",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "g-0c58174e04",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.calgaryclimbing.com/locations/rocky-mountain/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–23:00",
+      "tue": "06:00–23:00",
+      "wed": "06:00–23:00",
+      "thu": "06:00–23:00",
+      "fri": "06:00–23:00",
+      "sat": "08:00–22:00",
+      "sun": "08:00–22:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.calgaryclimbing.com/locations/rocky-mountain/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "680c3c843630e5f6",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "g-50f659e41d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rosebloc.com/brossard"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:00–23:00",
+      "tue": "08:00–23:00",
+      "wed": "08:00–23:00",
+      "thu": "08:00–23:00",
+      "fri": "08:00–23:00",
+      "sat": "08:00–22:00",
+      "sun": "08:00–22:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.rosebloc.com/brossard"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "6368d05d8ed7d757",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "g-8d992992fe",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rosebloc.com/longueuil"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:00–23:00",
+      "tue": "08:00–23:00",
+      "wed": "08:00–23:00",
+      "thu": "08:00–23:00",
+      "fri": "08:00–23:00",
+      "sat": "08:00–22:00",
+      "sun": "08:00–22:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.rosebloc.com/longueuil"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "d86b6c80c5085cca",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "g-f02051389b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://delirescalade.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:00–23:00",
+      "tue": "08:00–23:00",
+      "wed": "08:00–23:00",
+      "thu": "08:00–23:00",
+      "fri": "08:00–23:00",
+      "sat": "08:00–22:00",
+      "sun": "08:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Régulier 24,50$, junior & étudiant 21$ (taxes en sus)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://delirescalade.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "958f3437c76820c3",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 27,
+   "class": "update",
+   "id": "g-b5c696f8f4",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://delirescalade.com/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Régulier 24,50$, junior & étudiant 21$ (taxes en sus)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://delirescalade.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "a228fad2aa44ff46",
+   "update_reason": "Official website, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 28,
+   "class": "update",
+   "id": "g-21d12f79f0",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://lecrux.com/centre/laval"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:30–23:00",
+      "tue": "08:30–23:00",
+      "wed": "08:30–23:00",
+      "thu": "08:30–23:00",
+      "fri": "08:30–23:00",
+      "sat": "08:30–21:00",
+      "sun": "08:30–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shop",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://lecrux.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "5c5e2f547e87d7b8",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 29,
+   "class": "update",
+   "id": "g-9e58ce39ed",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://lecrux.com/centre/boisbriand"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:30–23:00",
+      "tue": "08:30–23:00",
+      "wed": "08:30–23:00",
+      "thu": "08:30–23:00",
+      "fri": "08:30–23:00",
+      "sat": "08:30–21:00",
+      "sun": "08:30–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shop",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://lecrux.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "04d5533c56dafc04",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 30,
+   "class": "update",
+   "id": "g-f90116fa52",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://hogtownboulders.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "10:00–23:00",
+      "sun": "10:00–23:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$30 regular, $27 student/youth/senior/military (in person with proof)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://hogtownboulders.com"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "5b3a656625d6ea43",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 31,
+   "class": "update",
+   "id": "g-ca972ddf7d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://rockonclimbing.ca/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "16:00–22:00",
+      "tue": "16:00–22:00",
+      "wed": "16:00–22:00",
+      "thu": "16:00–22:00",
+      "fri": "16:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$24 day pass, plus HST"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://rockonclimbing.ca"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "dea75befe122e15d",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 32,
+   "class": "update",
+   "id": "g-4d5b1c9f08",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://bolderclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "09:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–22:00",
+      "sun": "09:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$23 day pass, $20 student, $18 youth (10-14)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://bolderclimbing.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "6bf75e4c361e555d",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 33,
+   "class": "update",
+   "id": "g-cd2a49e9c8",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.climbbase5.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:30",
+      "tue": "10:00–22:30",
+      "wed": "10:00–22:30",
+      "thu": "10:00–22:30",
+      "fri": "10:00–22:30",
+      "sat": "10:00–22:30",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$31 adult, $28 youth (14-18)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.climbbase5.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "f44f103848f86395",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 34,
+   "class": "update",
+   "id": "g-50d8ff3d8f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.whistlercore.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–22:00",
+      "tue": "07:00–22:00",
+      "wed": "07:00–22:00",
+      "thu": "07:00–22:00",
+      "fri": "07:00–22:00",
+      "sat": "07:00–21:00",
+      "sun": "08:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Climbing and gym $25, gym only $23, youth (under 16) climbing $19, plus GST"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.whistlercore.com"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "fcc7024da5ed2520",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 35,
+   "class": "update",
+   "id": "g-b9cbd6e663",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.coastalclimbing.ca/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "16:00–22:00",
+      "tue": "16:00–22:00",
+      "wed": "16:00–22:00",
+      "thu": "16:00–22:00",
+      "fri": "16:00–22:00",
+      "sat": "11:00–20:00",
+      "sun": "11:00–17:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Route climbing $19.95, bouldering $17.49, student $17.49, youth (13 & under) $15.95, plus GST"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.coastalclimbing.ca/about/location-parking/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "783e52c853b220c4",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 36,
+   "class": "update",
+   "id": "g-9a18a8ba90",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rocgyms.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "09:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "09:00–22:00",
+      "sat": "09:00–22:00",
+      "sun": "09:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "19,75$ adulte, 16,75$ étudiant, 13$ enfant (13 ans et moins) (avant taxes)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.rocgyms.com"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "c2062310f8f00091",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 37,
+   "class": "update",
+   "id": "g-d850cd1110",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.shaktirockgym.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:00–22:00",
+      "tue": "08:00–22:00",
+      "wed": "08:00–22:00",
+      "thu": "08:00–22:00",
+      "fri": "08:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$20 adult, $15 student, $10 child (13 and under)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.shaktirockgym.com"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "272f87a89951208e",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 38,
+   "class": "update",
+   "id": "g-4f36b21db0",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.verticaladventures.ca/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "16:00–22:00",
+      "tue": "16:00–22:00",
+      "wed": "16:00–22:00",
+      "thu": "16:00–22:00",
+      "fri": "16:00–22:00",
+      "sat": "11:00–21:00",
+      "sun": "12:00–19:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.verticaladventures.ca"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "9f210ef30b1b8342",
+   "update_reason": "Official website, weekly opening hours from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 39,
+   "class": "update",
+   "id": "g-9754015a69",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://sevenbaysbouldering.com/gottingen/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:00–23:00",
+      "tue": "15:00–23:00",
+      "wed": "08:00–23:00",
+      "thu": "08:00–23:00",
+      "fri": "08:00–23:00",
+      "sat": "08:00–21:00",
+      "sun": "08:00–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://sevenbaysbouldering.com/gottingen/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "7835ae52559e9842",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 40,
+   "class": "update",
+   "id": "g-ebfdd3338b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://sevenbaysbouldering.com/bayerslake/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:00–23:00",
+      "tue": "08:00–23:00",
+      "wed": "08:00–23:00",
+      "thu": "08:00–23:00",
+      "fri": "08:00–23:00",
+      "sat": "08:00–21:00",
+      "sun": "08:00–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://sevenbaysbouldering.com/bayerslake/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "8cab397e79f2afdf",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  },
+  {
+   "line": 41,
+   "class": "update",
+   "id": "g-479f9418a8",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://sevenbaysbouldering.com/dartmouth/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:00–23:00",
+      "tue": "08:00–23:00",
+      "wed": "08:00–23:00",
+      "thu": "08:00–23:00",
+      "fri": "08:00–23:00",
+      "sat": "08:00–21:00",
+      "sun": "08:00–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://sevenbaysbouldering.com/dartmouth/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-22"
+    }
+   ],
+   "expect_h": "cea109cabeb6ce91",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-22)"
+  }
+ ]
+}
