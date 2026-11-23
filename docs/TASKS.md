@@ -35,8 +35,8 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 ### Chain expansions
 - Camp5 MY (~6), Hive CA (~4), Boulderwelt DE (~4), B-PUMP JP (~3), 9 Degrees AU (~2), Boulder Co NZ (~1). Verify each branch.
 ### Gym information (website, hours, day pass, facilities)
-- ~2,250 live gyms have no website/hours/day pass (measured 2026-11-23); KR: Naver Place; CN: RedNote/Amap/WeChat (decided). Next: other travel hubs (DE, FR, US, CA, ES).
-- Applied 2026-11-23: 132 hub gyms (SG/HK 30, England 49, JP 53). Not found: TW 22 (social only), SG/HK 14, England 35, JP 20 (see each batch report.md); GoNature HK seed-1845 may duplicate seed-1847.
+- ~1,990 live gyms still lack website/hours/day pass (KR: Naver Place; CN: RedNote/Amap/WeChat; next: US, IT, NL, BE, AT, smaller DE/FR towns). Applied 2026-11-23: 132 hub gyms (SG/HK 30, England 49, JP 53). Not found: TW 22 (social only), SG/HK 14, England 35, JP 20 (see each batch report.md); GoNature HK seed-1845 may duplicate seed-1847.
+- Applied 2026-11-23 (2nd wave): 260 gyms (FR 100, DE south 41, DE north 41, CA 41, ES 37). Owner checks: seed-1060 Stuntwerk Köln and seed-1046 Mandala Dresden (which site?), ClimbPro Alicante address, Bloc en Stock = Arkose Meinau?, Ethos Toronto (shop?), Uuadibloc typo.
 ### Locations and addresses
 - Owner manual pin checks: 39 (`import/pin-check/2026-10-06/MANUAL-CHECK-{europe,rest-of-world}.md`). China: 138 gyms with unconfirmed pins
   or no address (Amap pins, GCJ-02 -> WGS-84; several pin batches already applied).

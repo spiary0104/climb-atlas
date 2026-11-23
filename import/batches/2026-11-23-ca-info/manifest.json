@@ -1,0 +1,628 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-11-23-ca-info",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "8c06dcfff9ebdd6e2cf6cda6e9fa68e62a499b32763516a7449e668d1a490a00",
+  "payload_sha256": "9f337d0a53739bcfd0df7110bb5824845779e4526407b822f2edc484bb66b572",
+  "confirm_token": "063d7554871e2edf",
+  "live_state_sha256": "5f80188d05672613ba2b210261af071d23f7de13f9c2200f8b60c9669401a72f",
+  "rows_updated": 0,
+  "approved_before": 3651,
+  "approved_after": 3651,
+  "changes": [],
+  "rows_info_filled": 41,
+  "info_filled": [
+    {
+      "id": "g-135135dfea",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "a9274dea94c34a0a",
+      "after_h": "a9274dea94c34a0a"
+    },
+    {
+      "id": "g-0555135dcc",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "325d6dfedd53131e",
+      "after_h": "325d6dfedd53131e"
+    },
+    {
+      "id": "g-989fdeebb6",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "52fadef220b0aeca",
+      "after_h": "52fadef220b0aeca"
+    },
+    {
+      "id": "g-4546cbabe5",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "b858df3e46f673f9",
+      "after_h": "b858df3e46f673f9"
+    },
+    {
+      "id": "g-d4fe5a6d61",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "8b1ef3fae35b4615",
+      "after_h": "8b1ef3fae35b4615"
+    },
+    {
+      "id": "g-a3c7fdfd0d",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "21e14ad28c9fef77",
+      "after_h": "21e14ad28c9fef77"
+    },
+    {
+      "id": "g-dab2ad7e68",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "0af750b4a0ffca89",
+      "after_h": "0af750b4a0ffca89"
+    },
+    {
+      "id": "g-6c77b9dabc",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "11ad7829729387d3",
+      "after_h": "11ad7829729387d3"
+    },
+    {
+      "id": "g-5cc383113f",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "43357ba2fd43e0d1",
+      "after_h": "43357ba2fd43e0d1"
+    },
+    {
+      "id": "g-4e5f3a47a6",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "00b6cc9861f5f10b",
+      "after_h": "00b6cc9861f5f10b"
+    },
+    {
+      "id": "g-9621bddb93",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "ec516b8bc686917f",
+      "after_h": "ec516b8bc686917f"
+    },
+    {
+      "id": "g-3c8448e3c9",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "ff95a5d387439ccd",
+      "after_h": "ff95a5d387439ccd"
+    },
+    {
+      "id": "g-94799263cd",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "36098c7f5383c14d",
+      "after_h": "36098c7f5383c14d"
+    },
+    {
+      "id": "g-d5b0ae0a62",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "036fe6faf2ee4c84",
+      "after_h": "036fe6faf2ee4c84"
+    },
+    {
+      "id": "g-6d4a5748e6",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "5899c3edf7ced679",
+      "after_h": "5899c3edf7ced679"
+    },
+    {
+      "id": "g-b9fbf86143",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "553d49885b6ac1d9",
+      "after_h": "553d49885b6ac1d9"
+    },
+    {
+      "id": "g-9c3f3ff7b3",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "e1d1f80bc58295b6",
+      "after_h": "e1d1f80bc58295b6"
+    },
+    {
+      "id": "g-422795e1ff",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "3f568d11ddb96df6",
+      "after_h": "3f568d11ddb96df6"
+    },
+    {
+      "id": "g-09597cfa46",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "ead5271a3a206259",
+      "after_h": "ead5271a3a206259"
+    },
+    {
+      "id": "g-074724bd20",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "9dd34f1105822060",
+      "after_h": "9dd34f1105822060"
+    },
+    {
+      "id": "g-7f559f26dd",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "b030c258fefd16f2",
+      "after_h": "b030c258fefd16f2"
+    },
+    {
+      "id": "g-42f1822db1",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "27c798e12c05e444",
+      "after_h": "27c798e12c05e444"
+    },
+    {
+      "id": "g-0c58174e04",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "680c3c843630e5f6",
+      "after_h": "680c3c843630e5f6"
+    },
+    {
+      "id": "g-50f659e41d",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "6368d05d8ed7d757",
+      "after_h": "6368d05d8ed7d757"
+    },
+    {
+      "id": "g-8d992992fe",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "d86b6c80c5085cca",
+      "after_h": "d86b6c80c5085cca"
+    },
+    {
+      "id": "g-f02051389b",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "958f3437c76820c3",
+      "after_h": "958f3437c76820c3"
+    },
+    {
+      "id": "g-b5c696f8f4",
+      "fields": [
+        "website",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "a228fad2aa44ff46",
+      "after_h": "a228fad2aa44ff46"
+    },
+    {
+      "id": "g-21d12f79f0",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "5c5e2f547e87d7b8",
+      "after_h": "5c5e2f547e87d7b8"
+    },
+    {
+      "id": "g-9e58ce39ed",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "04d5533c56dafc04",
+      "after_h": "04d5533c56dafc04"
+    },
+    {
+      "id": "g-f90116fa52",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "5b3a656625d6ea43",
+      "after_h": "5b3a656625d6ea43"
+    },
+    {
+      "id": "g-ca972ddf7d",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "dea75befe122e15d",
+      "after_h": "dea75befe122e15d"
+    },
+    {
+      "id": "g-4d5b1c9f08",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "6bf75e4c361e555d",
+      "after_h": "6bf75e4c361e555d"
+    },
+    {
+      "id": "g-cd2a49e9c8",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "f44f103848f86395",
+      "after_h": "f44f103848f86395"
+    },
+    {
+      "id": "g-50d8ff3d8f",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "fcc7024da5ed2520",
+      "after_h": "fcc7024da5ed2520"
+    },
+    {
+      "id": "g-b9cbd6e663",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "783e52c853b220c4",
+      "after_h": "783e52c853b220c4"
+    },
+    {
+      "id": "g-9a18a8ba90",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "c2062310f8f00091",
+      "after_h": "c2062310f8f00091"
+    },
+    {
+      "id": "g-d850cd1110",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "272f87a89951208e",
+      "after_h": "272f87a89951208e"
+    },
+    {
+      "id": "g-4f36b21db0",
+      "fields": [
+        "website",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "9f210ef30b1b8342",
+      "after_h": "9f210ef30b1b8342"
+    },
+    {
+      "id": "g-9754015a69",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "7835ae52559e9842",
+      "after_h": "7835ae52559e9842"
+    },
+    {
+      "id": "g-ebfdd3338b",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "8cab397e79f2afdf",
+      "after_h": "8cab397e79f2afdf"
+    },
+    {
+      "id": "g-479f9418a8",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "cea109cabeb6ce91",
+      "after_h": "cea109cabeb6ce91"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 41,
+    "problems": []
+  },
+  "started_at": "2026-11-23T00:02:46.066Z",
+  "finished_at": "2026-11-23T00:02:59.419Z",
+  "ids": [
+    "g-135135dfea",
+    "g-0555135dcc",
+    "g-989fdeebb6",
+    "g-4546cbabe5",
+    "g-d4fe5a6d61",
+    "g-a3c7fdfd0d",
+    "g-dab2ad7e68",
+    "g-6c77b9dabc",
+    "g-5cc383113f",
+    "g-4e5f3a47a6",
+    "g-9621bddb93",
+    "g-3c8448e3c9",
+    "g-94799263cd",
+    "g-d5b0ae0a62",
+    "g-6d4a5748e6",
+    "g-b9fbf86143",
+    "g-9c3f3ff7b3",
+    "g-422795e1ff",
+    "g-09597cfa46",
+    "g-074724bd20",
+    "g-7f559f26dd",
+    "g-42f1822db1",
+    "g-0c58174e04",
+    "g-50f659e41d",
+    "g-8d992992fe",
+    "g-f02051389b",
+    "g-b5c696f8f4",
+    "g-21d12f79f0",
+    "g-9e58ce39ed",
+    "g-f90116fa52",
+    "g-ca972ddf7d",
+    "g-4d5b1c9f08",
+    "g-cd2a49e9c8",
+    "g-50d8ff3d8f",
+    "g-b9cbd6e663",
+    "g-9a18a8ba90",
+    "g-d850cd1110",
+    "g-4f36b21db0",
+    "g-9754015a69",
+    "g-ebfdd3338b",
+    "g-479f9418a8"
+  ]
+}
