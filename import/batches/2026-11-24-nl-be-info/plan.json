@@ -1,0 +1,3205 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-24-nl-be-info",
+ "index": {
+  "sha256": "ee0e0c45b261e8d56a5a89777d4e4567f16b0ff18b4a45aeb76908b50eff22ad",
+  "count": 3651,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha"
+ ],
+ "counts": {
+  "records": 64,
+  "new": 0,
+  "existing": 0,
+  "update": 64,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "18298929f570c02c871f50dc2a2533c842ee050e16385d71fbd8802a4b73544a",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "g-75dcd02a7c",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://monk.nl/eindhoven/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–00:00",
+      "tue": "09:00–00:00",
+      "wed": "09:00–00:00",
+      "thu": "09:00–00:00",
+      "fri": "09:00–00:00",
+      "sat": "09:00–00:00",
+      "sun": "09:00–00:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entree €14,50 vanaf 25 jaar, €13,50 18-25 jaar, €12,50 6-18 jaar"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shoe-hire",
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://monk.nl/eindhoven/openingstijden/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "083a0b8a398169bc",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "g-059d37135a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://monk.nl/hilversum/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "14:00–23:00",
+      "tue": "14:00–23:00",
+      "wed": "14:00–23:00",
+      "thu": "14:00–23:00",
+      "fri": "14:00–23:00",
+      "sat": "09:00–18:00",
+      "sun": "09:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entree €14,50 vanaf 25 jaar, €13,50 18-25 jaar, €12,50 6-18 jaar"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shoe-hire",
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://monk.nl/hilversum/openingstijden/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "0d4f3628852cfed0",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "g-c0ab118fcd",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://monk.nl/hasselt/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–23:00",
+      "tue": "12:00–23:00",
+      "wed": "12:00–23:00",
+      "thu": "12:00–23:00",
+      "fri": "12:00–23:00",
+      "sat": "10:00–19:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entree €14,50 vanaf 25 jaar, €13,50 18-25 jaar, €12,50 6-18 jaar"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shoe-hire",
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://monk.nl/hasselt/openingstijden/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "7191bfbd2c563c1e",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "g-e04a57cbac",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.delftsbleau.nl/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:30",
+      "tue": "12:00–22:30",
+      "wed": "12:00–22:30",
+      "thu": "12:00–22:30",
+      "fri": "16:00–22:30",
+      "sat": "09:00–18:00",
+      "sun": "09:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Dagkaart €13,50; tot 25 en vanaf 65 jaar €12,50; tot 18 jaar €10,00"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.delftsbleau.nl/openingstijden/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "442f65c6b7a80676",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "g-7bac17a411",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://beestboulders.com/vestigingen/beest-boulders-delft/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–23:00",
+      "tue": "13:00–23:00",
+      "wed": "13:00–23:00",
+      "thu": "13:00–23:00",
+      "fri": "11:00–23:00",
+      "sat": "09:00–23:00",
+      "sun": "09:00–23:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://beestboulders.com/vestigingen/beest-boulders-delft/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "ef2e582fd90521fc",
+   "update_reason": "Official website, opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "g-ed331f1849",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://beestboulders.com/vestigingen/beest-boulders-breda/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "09:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://beestboulders.com/vestigingen/beest-boulders-breda/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "2a60dbbded6b15b9",
+   "update_reason": "Official website, opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-1147",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://beestboulders.com/vestigingen/beest-boulders-antwerpen/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "09:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–23:00",
+      "sun": "09:00–23:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://beestboulders.com/vestigingen/beest-boulders-antwerpen/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "1b8cd97d97cc436d",
+   "update_reason": "Official website, opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-1108",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderhalluchthaven.nl/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "09:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–22:00",
+      "sun": "09:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Losse entree €14,50 vanaf 25 jaar, €13,40 18-24 jaar, €11,20 6-17 jaar"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderhalluchthaven.nl/openingstijden/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "6df47a71f4db72a6",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "g-cf5892e880",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderhalkunststof.nl/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "09:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–19:00",
+      "sun": "09:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Losse entree €14,50 vanaf 25 jaar, €13,40 18-24 jaar, €11,20 6-17 jaar"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderhalkunststof.nl/openingstijden/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "c474aeff00a64377",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "g-92147da66b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderhalkrachtstof.nl/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "09:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–22:00",
+      "sun": "09:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Losse entree €14,50 vanaf 25 jaar, €13,40 18-24 jaar, €11,20 6-17 jaar"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire",
+      "shop",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderhalkrachtstof.nl/openingstijden/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "13407fe77d779c01",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "g-38eb6656c8",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.radiumboulders.nl/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "09:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–23:00",
+      "sun": "09:00–23:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Losse entree €14,50 vanaf 25 jaar, €13,40 18-24 jaar, €11,20 6-17 jaar"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.radiumboulders.nl/openingstijden/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "05a13a76dbc71b68",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "g-b7ac4de1fd",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderhalvrijhaven.nl/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "09:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–18:00",
+      "sun": "09:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Losse entree €14,50 vanaf 25 jaar, €13,40 18-24 jaar, €11,20 6-17 jaar"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderhalvrijhaven.nl/openingstijden/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "6cb521a746cf67a4",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "g-79c2641f03",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.apexboulders.nl/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "09:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–22:00",
+      "sun": "09:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Losse entree €14,50 vanaf 25 jaar, €13,40 18-24 jaar, €11,20 6-17 jaar"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.apexboulders.nl/openingstijden/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "10e2109f2b0eec32",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "g-e4b28507c0",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderhalroest.nl/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "09:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–23:00",
+      "sun": "09:00–23:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Losse entree €14,50 vanaf 25 jaar, €13,40 18-24 jaar, €11,20 6-17 jaar"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderhalroest.nl/openingstijden/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "f0ebb54a81d6a609",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "seed-1159",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://arkose.com/en/canal"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–00:00",
+      "tue": "09:00–00:00",
+      "wed": "09:00–00:00",
+      "thu": "09:00–00:00",
+      "fri": "09:00–00:00",
+      "sat": "09:00–00:00",
+      "sun": "09:00–00:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Single entry €16 (€13 during Happy Hour)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://arkose.com/en/canal"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "d6b9d3fe309e85d0",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "g-a3dd2c31de",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://keiboulderhal.nl/locaties/kei-boulderhal-wagenwerkplaats/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–23:00",
+      "tue": "11:00–23:00",
+      "wed": "11:00–23:00",
+      "thu": "11:00–23:00",
+      "fri": "17:00–23:00",
+      "sat": "09:00–18:00",
+      "sun": "09:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entree €14 volwassenen, €13 student, €12 jeugd (9-17 jaar)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shoe-hire",
+      "shop",
+      "showers",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://keiboulderhal.nl/locaties/kei-boulderhal-wagenwerkplaats/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "ce91dd1cf9ede155",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "g-20d7a4b9b6",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://keiboulderhal.nl/locaties/kei-boulderhal-de-hoef/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "17:00–23:00",
+      "tue": "11:00–23:00",
+      "wed": "11:00–23:00",
+      "thu": "11:00–23:00",
+      "fri": "11:00–23:00",
+      "sat": "09:00–22:00",
+      "sun": "09:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entree €14 volwassenen, €13 student, €12 jeugd (9-17 jaar)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shoe-hire",
+      "shop",
+      "showers",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://keiboulderhal.nl/locaties/kei-boulderhal-de-hoef/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "9cabfc3ac4b92be7",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "g-e9b6ef9e98",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://keiapeldoorn.nl/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "17:00–23:00",
+      "tue": "15:00–23:00",
+      "wed": "15:00–23:00",
+      "thu": "15:00–23:00",
+      "fri": "11:00–23:00",
+      "sat": "10:00–18:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entree €14 volwassenen, €13 student"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://keiapeldoorn.nl/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "acad18f8cc973f8b",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "g-e82deff66f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderhalsendmast.nl/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "16:00–23:00",
+      "thu": "16:00–23:00",
+      "tue": "12:00–23:00",
+      "wed": "12:00–23:00",
+      "fri": "12:00–23:00",
+      "sat": "09:00–18:00",
+      "sun": "10:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Losse entree €13,75 vanaf 25 jaar, €12,75 18-24 jaar, €10,75 6-17 jaar"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shoe-hire",
+      "shop",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderhalsendmast.nl/informatie/openingstijden/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "ed1ab1126544e072",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "g-7401362b20",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.impactboulderhal.nl/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "16:00–23:00",
+      "tue": "16:00–23:00",
+      "thu": "16:00–23:00",
+      "fri": "16:00–23:00",
+      "wed": "14:00–23:00",
+      "sat": "10:00–18:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Losse entree €13,00, gehele dag toegang"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.impactboulderhal.nl/prijzen-en-openingstijden/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "f809741b56d40293",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "g-d51055862f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderhalbruut.nl/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:30",
+      "tue": "09:00–23:30",
+      "wed": "09:00–23:30",
+      "thu": "09:00–23:30",
+      "fri": "09:00–23:30",
+      "sat": "09:00–22:00",
+      "sun": "09:00–23:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entree €13 vanaf 25 jaar, €12 19-24 jaar, €11 11-18 jaar"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderhalbruut.nl/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "4d5dc6fc2c38169c",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "g-641fe95b09",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulderneoliet.nl/nl/eindhoven/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "09:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Dagentree €14,50 volwassenen, €13,50 18-24 jaar, €12,50 8-17 jaar"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://boulderneoliet.nl/nl/eindhoven/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "5db131aca1ff125c",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "g-1e4ae46246",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulderneoliet.nl/nl/veldhoven/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–23:00",
+      "tue": "13:00–23:00",
+      "wed": "13:00–23:00",
+      "thu": "13:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–18:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Dagentree €14,50 volwassenen, €13,50 18-24 jaar, €12,50 8-17 jaar"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://boulderneoliet.nl/nl/veldhoven/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "204ab6fcfc887e9d",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "g-54558b2b15",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulderneoliet.nl/nl/tilburg/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "09:00–23:00",
+      "fri": "09:00–23:00",
+      "thu": "13:00–23:00",
+      "sat": "09:00–18:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Dagentree €14,50 volwassenen, €13,50 18-24 jaar, €12,50 8-17 jaar"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://boulderneoliet.nl/nl/tilburg/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "133bcd6f9547a97b",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "g-b696dd357f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulderneoliet.nl/nl/apeldoorn/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–23:00",
+      "tue": "13:00–23:00",
+      "wed": "13:00–23:00",
+      "thu": "13:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–18:00",
+      "sun": "09:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Dagentree €14,50 volwassenen, €13,50 18-24 jaar, €12,50 8-17 jaar"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://boulderneoliet.nl/nl/apeldoorn/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "5b21cf9d047b50c6",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "g-65452f1874",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://block013.nl/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:30–23:00",
+      "wed": "09:30–23:00",
+      "thu": "09:30–23:00",
+      "fri": "09:30–23:00",
+      "sat": "09:30–22:00",
+      "sun": "09:30–22:00",
+      "tue": "12:00–23:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Dagpas €14,50 25+ jaar, €13,50 18-24 jaar, €12,50 8-17 jaar"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://block013.nl/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "df858b3a870eebf0",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 27,
+   "class": "update",
+   "id": "g-9f43eb1687",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.cubebouldergym.nl/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "14:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "09:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–19:00",
+      "sun": "09:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Losse entree €13,00 25+ jaar, €12,00 18-24 jaar, €10,00 6-17 jaar"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.cubebouldergym.nl/openingstijden/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "c480fea478291531",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 28,
+   "class": "update",
+   "id": "g-ba778a89fb",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderhaldefabriek.nl/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "13:00–23:00",
+      "sun": "10:00–23:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Dagentree €13,50 volwassenen, €11,50 jeugd 10-17 jaar, €9,50 kids t/m 9 jaar"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderhaldefabriek.nl/locaties-openingstijden"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "f13e725d925cee5a",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 29,
+   "class": "update",
+   "id": "g-996f029d81",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderhaldefabriek.nl/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–23:00",
+      "tue": "12:00–23:00",
+      "wed": "12:00–23:00",
+      "thu": "12:00–23:00",
+      "fri": "12:00–23:00",
+      "sat": "10:00–18:00",
+      "sun": "10:00–23:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Dagentree €13,50 volwassenen, €11,50 jeugd 10-17 jaar, €9,50 kids t/m 9 jaar"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderhaldefabriek.nl/locaties-openingstijden"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "258eb3beed95e8ab",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 30,
+   "class": "update",
+   "id": "g-980c904b70",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.bosscheboulders.nl/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "09:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Dagkaart €16,50 25+ jaar, €14,50 18-24 jaar, €12,50 6-17 jaar"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.bosscheboulders.nl/openingstijden-tarieven-boulderen-den-bosch/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "6b44d970086d67a6",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 31,
+   "class": "update",
+   "id": "g-583828e63d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderkerkvenlo.nl/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "15:30–23:00",
+      "tue": "15:30–23:00",
+      "fri": "15:30–23:00",
+      "wed": "13:00–23:00",
+      "thu": "17:00–23:00",
+      "sat": "10:00–19:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Losse entree €13,50 volwassenen, €11,50 student, €10,00 jeugd 6-17"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderkerkvenlo.nl/openingstijden/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "bbbbdc30d0794fec",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 32,
+   "class": "update",
+   "id": "g-d22028992c",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.bazbouldergym.nl/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "16:00–23:00",
+      "tue": "16:00–23:00",
+      "thu": "16:00–23:00",
+      "wed": "12:00–23:00",
+      "fri": "12:00–23:00",
+      "sat": "10:00–23:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.bazbouldergym.nl/informatie/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "1c1dc602676437e4",
+   "update_reason": "Official website, opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 33,
+   "class": "update",
+   "id": "g-233b499de5",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://monoboulder.nl/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "14:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "09:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Dagpas €15, hele dag geldig"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "parking",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://monoboulder.nl/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "344ee0098db9813b",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 34,
+   "class": "update",
+   "id": "seed-1115",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.climbingnetwork.nl/en/indoor/locatie/climbingcenter-amsterdam"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–23:00",
+      "tue": "12:00–23:00",
+      "wed": "12:00–23:00",
+      "thu": "12:00–23:00",
+      "fri": "12:00–23:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Day pass climbing + bouldering €19,50 (25+), €17,50 (18-24), €15,50 (up to 17)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.climbingnetwork.nl/en/indoor/locatie/climbingcenter-amsterdam"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "9ba86827c082d0f8",
+   "update_reason": "Official website, opening hours, day pass price from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 35,
+   "class": "update",
+   "id": "g-b88e496c76",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.climbingnetwork.nl/en/indoor/locatie/bouldergym-arnhem"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Day pass bouldering €16,25 (25+), €14,25 (18-24), €12,25 (up to 17)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.climbingnetwork.nl/en/indoor/locatie/bouldergym-arnhem"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "e4dcd147d41358d4",
+   "update_reason": "Official website, opening hours, day pass price from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 36,
+   "class": "update",
+   "id": "g-18edb2b711",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.climbingnetwork.nl/en/indoor/locatie/climbingcenter-dordrecht"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Day pass bouldering €12,25 (25+), €11,25 (18-24), €10,25 (up to 17)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.climbingnetwork.nl/en/tickets/dor-dagkaart"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "aa6bd8477d9b5920",
+   "update_reason": "Official website, day pass price from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 37,
+   "class": "update",
+   "id": "g-e4db5956ce",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.climbingnetwork.nl/en/indoor/locatie/climbingcenter-heerenveen"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "17:00–23:00",
+      "tue": "17:00–23:00",
+      "thu": "17:00–23:00",
+      "wed": "16:00–23:00",
+      "fri": "16:00–23:00",
+      "sat": "09:00–17:00",
+      "sun": "Closed"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.climbingnetwork.nl/en/indoor/locatie/climbingcenter-heerenveen"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "ec10d5dedb2aa84f",
+   "update_reason": "Official website, opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 38,
+   "class": "update",
+   "id": "g-ac222cae95",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.climbingnetwork.nl/en/indoor/locatie/climbingcenter-leeuwarden"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Day pass bouldering €15,50 (25+), €14,50 (18-24), €12,00 (up to 17)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.climbingnetwork.nl/en/indoor/locatie/climbingcenter-leeuwarden"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "64e3167cb5726d21",
+   "update_reason": "Official website, opening hours, day pass price from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 39,
+   "class": "update",
+   "id": "g-ab0ecb28fb",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://gripnijmegen.nl/boulderhal/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "17:00–23:00",
+      "tue": "08:30–23:00",
+      "wed": "08:30–23:00",
+      "thu": "08:30–23:00",
+      "fri": "08:30–23:00",
+      "sat": "08:30–23:00",
+      "sun": "08:30–19:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://gripnijmegen.nl/boulderhal/ontdek/grip-prijzen-en-openingstijden/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "8669f9347bd00367",
+   "update_reason": "Official website, opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 40,
+   "class": "update",
+   "id": "g-95c6137bce",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.revoltclimbing.com/en/revolt-climbing-gym/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–23:00",
+      "tue": "11:00–23:00",
+      "wed": "11:00–23:00",
+      "thu": "11:00–23:00",
+      "fri": "11:00–23:00",
+      "sat": "09:00–23:00",
+      "sun": "09:00–23:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.revoltclimbing.com/en/revolt-climbing-gym/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "0dbbb758ac612ac6",
+   "update_reason": "Official website, opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 41,
+   "class": "update",
+   "id": "g-be576e1384",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.klimzaalbanzai.be/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids"
+     ]
+    }
+   ],
+   "expect_h": "56cf700e16f2edbd",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 42,
+   "class": "update",
+   "id": "g-8d5c68d329",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://blackboxboulder.be/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "16:00–23:00",
+      "tue": "16:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "13:00–23:00",
+      "fri": "13:00–23:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Dagpas €14,00 volwassenen, €12,50 kortingtarief, €10,00 studenten"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shoe-hire",
+      "shop",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://blackboxboulder.be/openingsuren/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "a8cae2d8715205cb",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 43,
+   "class": "update",
+   "id": "g-85c936f30a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://cruxbouldergym.be/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "17:00–23:00",
+      "tue": "17:00–23:00",
+      "thu": "17:00–23:00",
+      "fri": "17:00–23:00",
+      "wed": "15:00–23:00",
+      "sat": "10:00–19:00",
+      "sun": "13:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Klimbeurt €10 volwassenen, €8 student (-24j), €6 -12j"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire",
+      "shop",
+      "showers",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://cruxbouldergym.be/tarieven/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "850b361d1590d123",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 44,
+   "class": "update",
+   "id": "g-4afaea7526",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://destordeur.be/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Klimbeurt volwassenen €14 (€13 leden Hungaria/inwoners Leuven), student €12, kind -12 €10.5"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://destordeur.be/tarieven/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "c34f8bb8f7df900a",
+   "update_reason": "Official website, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 45,
+   "class": "update",
+   "id": "g-bcc441587f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.pinkpeaks.be/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–23:00",
+      "tue": "13:00–23:00",
+      "thu": "13:00–23:00",
+      "wed": "12:00–23:00",
+      "fri": "12:00–23:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Daypass €15 adults, €13 students/reduced price"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.pinkpeaks.be/en_US"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "9fa6eae0c5d55d8c",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 46,
+   "class": "update",
+   "id": "g-23cbf3407a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://hall9.be/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Dagticket €13,50 volwassenen, €11,5 jongeren (13-26), €10,00 kinderen (4-12)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://hall9.be/tarieven-boulder-zone/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "5502a3655d906c49",
+   "update_reason": "Official website, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 47,
+   "class": "update",
+   "id": "g-20f3d88ecf",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.citylizard.be/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "15:00–23:00",
+      "tue": "15:00–23:00",
+      "thu": "15:00–23:00",
+      "fri": "15:00–23:00",
+      "wed": "12:00–23:00",
+      "sat": "12:00–19:00",
+      "sun": "12:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "1 bouldersessie €14,5; student €12,5; student -12 jaar €10,5"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.citylizard.be/tarieven"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "322bb61cf95aeb8f",
+   "update_reason": "Official website, opening hours, day pass price from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 48,
+   "class": "update",
+   "id": "g-7934dbc05b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://gustaafklimt.be/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe"
+     ]
+    }
+   ],
+   "expect_h": "ff348a518d0a167d",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 49,
+   "class": "update",
+   "id": "g-0045261756",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://petite-ile.be/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–21:00",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée 1 jour: adulte 13,50€, jeune 11,50€, enfant/BIM 10,00€"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://petite-ile.be/horaires-et-acces/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "f164dba3764db8fa",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 50,
+   "class": "update",
+   "id": "g-600590e6a2",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://abloc.brussels/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "1 entrée: adultes 13,50€, étudiants -26 ans 11,50€, enfants -13 ans 9,50€"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shoe-hire",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://abloc.brussels/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "553a451bd503cb95",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 51,
+   "class": "update",
+   "id": "g-aff3f21803",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://stone-age.be/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "3c9e9ecbb52e50dd",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 52,
+   "class": "update",
+   "id": "g-b384fc40d1",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://lescalearlon.eu/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shoe-hire",
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "31a347185a0e02fb",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 53,
+   "class": "update",
+   "id": "g-8e4e30c6ec",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://facenord.be/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:30",
+      "tue": "10:00–22:30",
+      "wed": "10:00–22:30",
+      "thu": "10:00–22:30",
+      "fri": "10:00–22:30",
+      "sat": "10:00–19:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://facenord.be/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "e3a5386ced7e2dd9",
+   "update_reason": "Official website, opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 54,
+   "class": "update",
+   "id": "g-9425ab2e37",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.bebloc.be/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–23:30",
+      "tue": "12:00–23:30",
+      "wed": "12:00–23:30",
+      "thu": "12:00–23:30",
+      "fri": "12:00–23:30",
+      "sat": "10:00–19:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrée individuelle: adultes 15€, étudiants 13€, 7-12 ans 11,5€"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.bebloc.be/horaires/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "5c3a384200b0fc94",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 55,
+   "class": "update",
+   "id": "seed-1148",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulderzaaltheisland.be/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–23:00",
+      "tue": "11:00–23:00",
+      "wed": "11:00–23:00",
+      "fri": "11:00–23:00",
+      "thu": "14:00–23:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Dagpas €14,50 25+ jaar, €13,50 18-24 jaar, €12,50 8-17 jaar"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://boulderzaaltheisland.be/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "3c59bcf8047d44d5",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 56,
+   "class": "update",
+   "id": "seed-1149",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://klimzaalblok.be/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "11:00–21:00",
+      "sun": "13:00–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://klimzaalblok.be/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "08da3119af70633f",
+   "update_reason": "Official website, opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 57,
+   "class": "update",
+   "id": "seed-1150",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://club.risingyou.be/klimzaal-antwerpen/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:30",
+      "tue": "10:00–22:30",
+      "wed": "10:00–22:30",
+      "thu": "10:00–22:30",
+      "fri": "10:00–22:30",
+      "sat": "10:00–20:30",
+      "sun": "10:00–20:30"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Beurt €11,00 volwassenen, €10,00 studenten (14+), €8,00 kinderen (-14 jaar)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://club.risingyou.be/klimzaal-antwerpen/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "95ef49b2bb0c53a2",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 58,
+   "class": "update",
+   "id": "seed-1151",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.klimzaalwallstreet.be/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Boulder/kilterboard sessie €11, student €8; klimbeurt (lengte+boulder) €14"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.klimzaalwallstreet.be/nl/tarieven/index.htm"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "97b5f8b5c83dff85",
+   "update_reason": "Official website, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 59,
+   "class": "update",
+   "id": "seed-1152",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.klimzaalbalance.be/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "b08c7a3c2c93ce63",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 60,
+   "class": "update",
+   "id": "seed-1153",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.klimzaalbleau.be/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "10:00–21:45 (boulder from 12:00)",
+      "sun": "10:00–21:45 (boulder from 12:00)"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.klimzaalbleau.be/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "42f02346a61fbe5a",
+   "update_reason": "Official website, opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 61,
+   "class": "update",
+   "id": "seed-1154",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rhinobouldergym.com/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "2c1cc89d6c2307a2",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 62,
+   "class": "update",
+   "id": "seed-1155",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://walden.gent/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:30–23:00",
+      "tue": "11:30–23:00",
+      "wed": "10:30–23:00",
+      "thu": "10:30–23:00",
+      "fri": "10:30–23:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Single entry €14 (from 12 years), €10 (under 12)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://walden.gent/en/prices-and-practical-information/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "adf835a40f76d9d8",
+   "update_reason": "Official website, opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 63,
+   "class": "update",
+   "id": "seed-1156",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://geckotank.be/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Séance: adulte 10 euros, étudiant 9 euros, enfant -12 ans 7 euros"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://geckotank.be/crbst_1.html"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "d1cf16e24e6d2f9d",
+   "update_reason": "Official website, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 64,
+   "class": "update",
+   "id": "seed-1160",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://terresneuves.be/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "ab586bc076d0d0de",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-11-24)"
+  }
+ ]
+}
