@@ -12,7 +12,7 @@
 | Rejected by a human decision | 0 |
 | **Total records in batch** | 64 |
 
-Index: 3651 known gyms (sha256 ee0e0c45b261…). Plan: 8090213fd409… Also compared against staged batches: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha.
+Index: 3651 known gyms (sha256 ee0e0c45b261…). Plan: ee31ca0f276f… Also compared against staged batches: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha.
 
 ## Updates to existing gyms (64)
 
@@ -22,10 +22,10 @@ Index: 3651 known gyms (sha256 ee0e0c45b261…). Plan: 8090213fd409… Also comp
   - FILLS gym information (only if empty in production; never overwrites): website boulderhonpo.com
 - line 3 `g-f6dd0d1d84` — official website, facilities from the gym's own site (researched 2026-11-24)
   - FILLS gym information (only if empty in production; never overwrites): website cube.eek.jp + facilities (1)
-- line 4 `g-24f1ccb686` — official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)
-  - FILLS gym information (only if empty in production; never overwrites): website climbing-cuore.com + hours mon,tue,wed,thu,fri,sat,sun + day pass + facilities (1) + source official-site climbing-cuore.com 2026-11-24
-- line 5 `g-fe2180137a` — official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-24)
-  - FILLS gym information (only if empty in production; never overwrites): website climbing-cuore.com + hours mon,tue,wed,thu,fri,sat,sun + day pass + source official-site climbing-cuore.com 2026-11-24
+- line 4 `g-24f1ccb686` — official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)
+  - FILLS gym information (only if empty in production; never overwrites): website climbing-cuore.com + hours mon,tue,wed,thu,fri,sat,sun + facilities (1) + source official-site climbing-cuore.com 2026-11-24
+- line 5 `g-fe2180137a` — official website, weekly opening hours from the gym's own site (researched 2026-11-24)
+  - FILLS gym information (only if empty in production; never overwrites): website climbing-cuore.com + hours mon,tue,wed,thu,fri,sat,sun + source official-site climbing-cuore.com 2026-11-24
 - line 6 `g-7064a41023` — official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)
   - FILLS gym information (only if empty in production; never overwrites): website gyodoclimbing2.com + hours mon,tue,wed,thu,fri,sat,sun + facilities (1) + source official-site gyodoclimbing2.com 2026-11-24
 - line 7 `g-16737a2c21` — official website, weekly opening hours from the gym's own site (researched 2026-11-24)
@@ -48,14 +48,14 @@ Index: 3651 known gyms (sha256 ee0e0c45b261…). Plan: 8090213fd409… Also comp
   - FILLS gym information (only if empty in production; never overwrites): website climbingjam.com + hours mon,tue,wed,thu,fri,sat,sun + source official-site climbingjam.com 2026-11-24
 - line 16 `g-85250f6dbb` — official website, weekly opening hours from the gym's own site (researched 2026-11-24)
   - FILLS gym information (only if empty in production; never overwrites): website climbingjam.com + hours mon,tue,wed,thu,fri,sat,sun + source official-site climbingjam.com 2026-11-24
-- line 17 `g-d7400bf7af` — official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)
-  - FILLS gym information (only if empty in production; never overwrites): website climbing-od.com + hours mon,tue,wed,thu,fri,sat,sun + day pass + facilities (2) + source official-site climbing-od.com 2026-11-24
-- line 18 `g-89109c9954` — official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)
-  - FILLS gym information (only if empty in production; never overwrites): website climbing-od.com + hours mon,tue,wed,thu,fri,sat,sun + day pass + facilities (1) + source official-site climbing-od.com 2026-11-24
-- line 19 `g-77f3668e62` — official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)
-  - FILLS gym information (only if empty in production; never overwrites): website climbing-od.com + hours mon,tue,wed,thu,fri,sat,sun + day pass + facilities (1) + source official-site climbing-od.com 2026-11-24
-- line 20 `g-747c204aeb` — official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)
-  - FILLS gym information (only if empty in production; never overwrites): website hoa-hoa.com + hours mon,tue,wed,thu,fri,sat,sun + day pass + facilities (2) + source official-site hoa-hoa.com 2026-11-24
+- line 17 `g-d7400bf7af` — official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)
+  - FILLS gym information (only if empty in production; never overwrites): website climbing-od.com + hours mon,tue,wed,thu,fri,sat,sun + facilities (2) + source official-site climbing-od.com 2026-11-24
+- line 18 `g-89109c9954` — official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)
+  - FILLS gym information (only if empty in production; never overwrites): website climbing-od.com + hours mon,tue,wed,thu,fri,sat,sun + facilities (1) + source official-site climbing-od.com 2026-11-24
+- line 19 `g-77f3668e62` — official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)
+  - FILLS gym information (only if empty in production; never overwrites): website climbing-od.com + hours mon,tue,wed,thu,fri,sat,sun + facilities (1) + source official-site climbing-od.com 2026-11-24
+- line 20 `g-747c204aeb` — official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)
+  - FILLS gym information (only if empty in production; never overwrites): website hoa-hoa.com + hours mon,tue,wed,thu,fri,sat,sun + facilities (2) + source official-site hoa-hoa.com 2026-11-24
 - line 21 `g-7742b9664d` — official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)
   - FILLS gym information (only if empty in production; never overwrites): website favourclimbing.net + hours mon,tue,wed,thu,fri,sat,sun + day pass + facilities (2) + source official-site favourclimbing.net 2026-11-24
 - line 22 `g-63d4aca9ed` — official website, weekly opening hours from the gym's own site (researched 2026-11-24)
