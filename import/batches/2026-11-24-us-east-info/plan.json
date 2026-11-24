@@ -1,0 +1,3540 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-24-us-east-info",
+ "index": {
+  "sha256": "ee0e0c45b261e8d56a5a89777d4e4567f16b0ff18b4a45aeb76908b50eff22ad",
+  "count": 3651,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha"
+ ],
+ "counts": {
+  "records": 76,
+  "new": 0,
+  "existing": 0,
+  "update": 76,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "a6d8a1c59383ce7a9d4a7a5a03bdda435bdfe8f4572a5c055a3ffa4999c91c8a",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "g-0ac95f6449",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://sportrock.com/alexandria/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–23:00",
+      "tue": "06:00–23:00",
+      "wed": "06:00–23:00",
+      "thu": "06:00–23:00",
+      "fri": "06:00–23:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$28 adult, $26 student/military/teacher/first responder, $24 ages 10 & under"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shop",
+      "showers",
+      "parking",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://sportrock.com/alexandria/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "4e6af61d95ec0509",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "g-db1d9479a2",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://sportrock.com/lorton/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–22:00",
+      "tue": "06:00–22:00",
+      "wed": "06:00–22:00",
+      "thu": "06:00–22:00",
+      "fri": "06:00–22:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$26 adult, $24 student/military/teacher/first responder, $22 ages 10 & under"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://sportrock.com/lorton/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "c4d5f2461ff4e1dd",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "g-b4ae887869",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://sportrock.com/rio/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–23:00",
+      "tue": "06:00–23:00",
+      "wed": "06:00–23:00",
+      "thu": "06:00–23:00",
+      "fri": "06:00–23:00",
+      "sat": "08:00–21:00",
+      "sun": "08:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$28 adult, $26 student/military/teacher/first responder, $24 ages 10 & under"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "parking",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://sportrock.com/rio/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "3fe0beffe774a701",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "g-ae66a649b1",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://sportrock.com/sterling/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–22:00",
+      "tue": "06:00–23:00",
+      "wed": "06:00–22:00",
+      "thu": "06:00–23:00",
+      "fri": "06:00–22:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$26 adult, $24 student/military/teacher/first responder, $22 ages 10 & under"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop",
+      "showers",
+      "parking",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://sportrock.com/sterling/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "30d07c32468bddf0",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "g-c432ac435a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://movementgyms.com/callowhill/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–22:00",
+      "tue": "06:00–22:00",
+      "wed": "06:00–22:00",
+      "thu": "06:00–22:00",
+      "fri": "06:00–22:00",
+      "sat": "08:00–20:00",
+      "sun": "08:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop",
+      "showers",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://movementgyms.com/callowhill/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "f974d3a5561530df",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "g-5b590dea54",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://movementgyms.com/fishtown/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–22:00",
+      "tue": "06:00–22:00",
+      "wed": "06:00–22:00",
+      "thu": "06:00–22:00",
+      "fri": "06:00–22:00",
+      "sat": "08:00–20:00",
+      "sun": "08:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop",
+      "showers",
+      "parking",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://movementgyms.com/fishtown/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "e16b8845f92d1631",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "g-b754b42b1e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://movementgyms.com/columbia/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–23:00",
+      "tue": "06:00–23:00",
+      "wed": "06:00–23:00",
+      "thu": "06:00–23:00",
+      "fri": "06:00–23:00",
+      "sat": "08:00–20:00",
+      "sun": "08:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop",
+      "showers",
+      "parking",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://movementgyms.com/columbia/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "ec288a11a0881190",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "g-45345fb0c5",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://movementgyms.com/hampden/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–22:00",
+      "tue": "06:00–22:00",
+      "wed": "06:00–22:00",
+      "thu": "06:00–22:00",
+      "fri": "06:00–22:00",
+      "sat": "08:00–20:00",
+      "sun": "08:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop",
+      "showers",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://movementgyms.com/hampden/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "ca734e07df0c9eca",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "g-653934814e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://movementgyms.com/rockville/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–23:00",
+      "tue": "06:00–23:00",
+      "wed": "06:00–23:00",
+      "thu": "06:00–23:00",
+      "fri": "06:00–23:00",
+      "sat": "08:00–20:00",
+      "sun": "08:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop",
+      "showers",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://movementgyms.com/rockville/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "571485739e9b7126",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "g-0da862988b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://movementgyms.com/timonium/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "09:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "09:00–22:00",
+      "sat": "08:00–20:00",
+      "sun": "08:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop",
+      "showers",
+      "parking",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://movementgyms.com/timonium/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "5360c3dd76c170f8",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "g-0457e68e62",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://movementgyms.com/crystal-city/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop",
+      "yoga"
+     ]
+    }
+   ],
+   "expect_h": "de38d1e155ea4b45",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "g-5f6da6cb74",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://gravityvault.com/locations/chatham-nj"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "09:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "09:00–22:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$28 adult, $25 youth (20 & under)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://gravityvault.com/locations/chatham-nj"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "a5ecf6ee603f3416",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (location page and its pricing page, checked 2026-11-24)"
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "g-8af5a4ccf0",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://gravityvault.com/locations/brick-nj"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "09:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "09:00–22:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$26 adult, $23 youth (20 & under)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shop",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://gravityvault.com/locations/brick-nj"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "a575485929f4d9fc",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (location page and its pricing page, checked 2026-11-24)"
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "g-ba5f04ffb2",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://gravityvault.com/locations/flemington-nj"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "09:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "09:00–22:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$28 adult, $25 youth (20 & under)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://gravityvault.com/locations/flemington-nj"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "d6fd3ceb881d2892",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (location page and its pricing page, checked 2026-11-24)"
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "g-732a02e965",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://gravityvault.com/locations/hoboken-nj"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "09:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "09:00–22:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$30 adult, $27 youth (20 & under)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop",
+      "showers",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://gravityvault.com/locations/hoboken-nj"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "bb22141320eaa468",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (location page and its pricing page, checked 2026-11-24)"
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "g-b171f6e09c",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://gravityvault.com/locations/lehigh-valley-pa"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "09:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "09:00–22:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$28 adult, $25 youth (20 & under)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://gravityvault.com/locations/lehigh-valley-pa"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "080886f160d697e4",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (location page and its pricing page, checked 2026-11-24)"
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "g-f794c64b4f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://gravityvault.com/locations/middletown-nj"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "09:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "09:00–22:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$26 adult, $23 youth (20 & under)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shop",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://gravityvault.com/locations/middletown-nj"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "ffb1b68862bb6553",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (location page and its pricing page, checked 2026-11-24)"
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "g-501f122240",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://gravityvault.com/locations/montclair-nj"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "09:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "09:00–22:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$28 adult, $25 youth (20 & under)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop",
+      "showers",
+      "parking",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://gravityvault.com/locations/montclair-nj"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "9d66f173d703a286",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (location page and its pricing page, checked 2026-11-24)"
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "g-87f9eeef70",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://gravityvault.com/locations/princeton-nj"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "09:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "09:00–22:00",
+      "sat": "09:00–22:00",
+      "sun": "09:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$30 adult, $27 youth (20 & under)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "showers",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://gravityvault.com/locations/princeton-nj"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "26ced4e8ac1d2ba5",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (location page and its pricing page, checked 2026-11-24)"
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "g-9e238aa61f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://gravityvault.com/locations/upper-saddle-river-nj"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "09:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "09:00–22:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$28 adult, $25 youth (20 & under)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://gravityvault.com/locations/upper-saddle-river-nj"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "6aae2f8882c0e8ed",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (location page and its pricing page, checked 2026-11-24)"
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "g-f466f0ad1b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://gravityvault.com/locations/voorhees-nj"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "09:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "09:00–22:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$22 adult, $20 youth (20 & under)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://gravityvault.com/locations/voorhees-nj"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "0c66f7c02704a7e4",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (location page and its pricing page, checked 2026-11-24)"
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "g-9a06308527",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://gravityvault.com/locations/westbury-ny"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "09:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "09:00–22:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$28 adult, $25 youth (20 & under)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "showers",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://gravityvault.com/locations/westbury-ny"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "36ee968898e52648",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (location page and its pricing page, checked 2026-11-24)"
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "g-cbe6440d07",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://philarockgym.com/prg-east-falls/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "09:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "09:00–22:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$23 day pass, $30.50 day pass with gear"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://philarockgym.com/prg-east-falls/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "ebe2399b354fd789",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "g-8d36f85e1d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://philarockgym.com/prg-fishtown/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$23 day pass, $30.50 day pass with gear"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire",
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://philarockgym.com/prg-fishtown/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "4c22a610e837bb20",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "g-fc4da48f01",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://philarockgym.com/prg-malvern/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$23 day pass, $30.50 day pass with gear"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire",
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://philarockgym.com/prg-malvern/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "9c8af060f505ffb8",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "g-21ef272712",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://philarockgym.com/prg-oaks/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$23 day pass, $30.50 day pass with gear"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire",
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://philarockgym.com/prg-oaks/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "eeadaf23897df798",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 27,
+   "class": "update",
+   "id": "g-5af10a33de",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://philarockgym.com/prg-wyncote/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$23 day pass, $30.50 day pass with gear"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://philarockgym.com/prg-wyncote/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "68626f3c74f18255",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 28,
+   "class": "update",
+   "id": "g-4db85bedc1",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rockspotclimbing.com/providence"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "09:00–23:00",
+      "thu": "09:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–23:00",
+      "sun": "09:00–23:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$33 adult, $31 age 23 & under/military/veteran/65+, gear rental incl."
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.rockspotclimbing.com/providence"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "546fe70a8bccf73e",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 29,
+   "class": "update",
+   "id": "g-872ed2fa23",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rockspotclimbing.com/lincoln"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–23:00",
+      "tue": "11:00–23:00",
+      "wed": "11:00–23:00",
+      "thu": "11:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$33 adult, $31 age 23 & under/military/veteran/65+, gear rental incl."
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.rockspotclimbing.com/lincoln"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "9c2dbcd7201f056d",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 30,
+   "class": "update",
+   "id": "g-c50c5bc950",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rockspotclimbing.com/wallingford"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "09:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "09:00–22:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$32 adult, $30 age 23 & under/military/veteran/65+, gear rental incl."
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.rockspotclimbing.com/wallingford"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "9fa00f26f9699a5a",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 31,
+   "class": "update",
+   "id": "g-cbea01008a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rockspotclimbing.com/peace-dale"
+    }
+   ],
+   "expect_h": "621f03014237787e",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 32,
+   "class": "update",
+   "id": "g-9679fde155",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://innerpeaks.com/matthews/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "09:00–19:00",
+      "sun": "11:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$24 day pass, $33 day pass with gear"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop",
+      "showers",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://innerpeaks.com/matthews/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "eca2b0f4d69ca37a",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 33,
+   "class": "update",
+   "id": "g-cc6ae437da",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://innerpeaks.com/noda/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–22:00",
+      "tue": "06:00–22:00",
+      "wed": "06:00–22:00",
+      "thu": "06:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$24 day pass, $33 day pass with gear"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop",
+      "showers",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://innerpeaks.com/noda/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "b00c7a4902e8b084",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 34,
+   "class": "update",
+   "id": "g-4a7882f6b0",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://innerpeaks.com/south-end/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–22:00",
+      "tue": "06:00–22:00",
+      "wed": "06:00–22:00",
+      "thu": "06:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "09:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$24 day pass, $33 day pass with gear"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://innerpeaks.com/south-end/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "fe2b050d5d6b1c7c",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 35,
+   "class": "update",
+   "id": "g-97f314f31e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://account.trianglerockclub.com/durham"
+    }
+   ],
+   "expect_h": "77a0d0cf6942321d",
+   "update_reason": "Official branch page on the Triangle Rock Club site, loads and names the branch (checked 2026-11-24)"
+  },
+  {
+   "line": 36,
+   "class": "update",
+   "id": "g-c3281c4833",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://account.trianglerockclub.com/fayetteville"
+    }
+   ],
+   "expect_h": "f5fb90acbeb9cfd0",
+   "update_reason": "Official branch page on the Triangle Rock Club site, loads and names the branch (checked 2026-11-24)"
+  },
+  {
+   "line": 37,
+   "class": "update",
+   "id": "g-6c6ac002e4",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://account.trianglerockclub.com/morrisville"
+    }
+   ],
+   "expect_h": "41150ccfc6379c3f",
+   "update_reason": "Official branch page on the Triangle Rock Club site, loads and names the branch (checked 2026-11-24)"
+  },
+  {
+   "line": 38,
+   "class": "update",
+   "id": "g-b8c730b3a7",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://account.trianglerockclub.com/raleigh"
+    }
+   ],
+   "expect_h": "662073de89b10613",
+   "update_reason": "Official branch page on the Triangle Rock Club site, loads and names the branch (checked 2026-11-24)"
+  },
+  {
+   "line": 39,
+   "class": "update",
+   "id": "g-2d1d95c0a7",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://account.trianglerockclub.com/salvage-yard"
+    }
+   ],
+   "expect_h": "1296a1f11b584044",
+   "update_reason": "Official branch page on the Triangle Rock Club site, loads and names the branch (checked 2026-11-24)"
+  },
+  {
+   "line": 40,
+   "class": "update",
+   "id": "g-4cf4058e86",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.latitudeclimbing.com/hampton"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:00–22:00",
+      "tue": "08:00–22:00",
+      "wed": "08:00–22:00",
+      "thu": "08:00–22:00",
+      "fri": "08:00–22:00",
+      "sat": "09:00–22:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$26 adult, $23 student, $20 youth"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.latitudeclimbing.com/hampton"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "0c273f58ce1b00c3",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 41,
+   "class": "update",
+   "id": "g-9c978532b0",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.latitudeclimbing.com/norfolk"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:00–22:00",
+      "tue": "08:00–22:00",
+      "wed": "08:00–22:00",
+      "thu": "08:00–22:00",
+      "fri": "08:00–22:00",
+      "sat": "09:00–22:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$26 adult, $23 student, $20 youth"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.latitudeclimbing.com/norfolk"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "7b4d580fb15ed334",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 42,
+   "class": "update",
+   "id": "g-ebd14f4357",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.latitudeclimbing.com/va-beach"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:00–22:00",
+      "tue": "08:00–22:00",
+      "wed": "08:00–22:00",
+      "thu": "08:00–22:00",
+      "fri": "08:00–22:00",
+      "sat": "09:00–22:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$26 adult, $23 student, $20 youth"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.latitudeclimbing.com/va-beach"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "2a94b5b8f2d11a01",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 43,
+   "class": "update",
+   "id": "g-a4b7d5df5a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.centralrockgym.com/glastonbury/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "09:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "09:00–22:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.centralrockgym.com/glastonbury/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "4eea38e59ed4b72d",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 44,
+   "class": "update",
+   "id": "g-d235f59aea",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.centralrockgym.com/tampa/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "06:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "12:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.centralrockgym.com/tampa/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "7edc80d5de79e5fe",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 45,
+   "class": "update",
+   "id": "g-5ce45b33c8",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.centralrockgym.com/citrus-park/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "06:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "06:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.centralrockgym.com/citrus-park/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "0ced04ef443accb3",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 46,
+   "class": "update",
+   "id": "g-cc9bdf12ab",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.centralrockgym.com/orlando/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.centralrockgym.com/orlando/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "f41aafc257ae20ed",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 47,
+   "class": "update",
+   "id": "g-b44e368e24",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.centralrockgym.com/fort-myers/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–22:00",
+      "tue": "06:00–22:00",
+      "wed": "11:00–22:00",
+      "thu": "06:00–22:00",
+      "fri": "13:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "11:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.centralrockgym.com/fort-myers/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "8eb94ad52c78f737",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 48,
+   "class": "update",
+   "id": "g-2b442ff003",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.centralrockgym.com/warwick/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:30–22:30",
+      "tue": "09:30–22:30",
+      "wed": "09:30–22:30",
+      "thu": "09:30–22:30",
+      "fri": "11:00–22:30",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.centralrockgym.com/warwick/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "07d3af84a4d5ce02",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 49,
+   "class": "update",
+   "id": "g-53ee9d4039",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.centralrockgym.com/west-hartford/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "06:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "08:00–22:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.centralrockgym.com/west-hartford/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "ebd16d1ea50201f5",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 50,
+   "class": "update",
+   "id": "g-a3a2fe1749",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.saltpumpclimbing.com/scarborough-maine/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.saltpumpclimbing.com/scarborough-maine/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "97625389b9d52519",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 51,
+   "class": "update",
+   "id": "g-f0167e0bfc",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.saltpumpclimbing.com/portsmouth-new-hampshire/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.saltpumpclimbing.com/portsmouth-new-hampshire/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "2863258e91c3300b",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 52,
+   "class": "update",
+   "id": "g-44e36401ba",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.peakexperiences.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–23:00",
+      "tue": "06:00–23:00",
+      "wed": "06:00–23:00",
+      "thu": "06:00–23:00",
+      "fri": "06:00–23:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.peakexperiences.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "811de6328f2b3a82",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 53,
+   "class": "update",
+   "id": "g-d0cd33c30c",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.peakexperiences.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–21:00",
+      "tue": "09:00–21:00",
+      "wed": "09:00–21:00",
+      "thu": "09:00–21:00",
+      "fri": "09:00–21:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.peakexperiences.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "1674ee22eac4d42b",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 54,
+   "class": "update",
+   "id": "g-559897cf32",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.cultivateclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–22:00",
+      "tue": "06:00–22:00",
+      "wed": "06:00–22:00",
+      "thu": "06:00–22:00",
+      "fri": "06:00–22:00",
+      "sat": "08:00–20:00",
+      "sun": "08:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.cultivateclimbing.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "c7616d63453ee9f9",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 55,
+   "class": "update",
+   "id": "g-253268432a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.cultivateclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–22:00",
+      "tue": "06:00–22:00",
+      "wed": "06:00–22:00",
+      "thu": "06:00–22:00",
+      "fri": "06:00–22:00",
+      "sat": "08:00–20:00",
+      "sun": "08:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.cultivateclimbing.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "c21cc517b3dd7604",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 56,
+   "class": "update",
+   "id": "g-a82d4b2d1d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.ascendclimbing.com/locations/point-breeze-pittsburgh"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–23:00",
+      "tue": "06:00–23:00",
+      "wed": "06:00–23:00",
+      "thu": "06:00–23:00",
+      "fri": "06:00–23:00",
+      "sat": "08:00–20:00",
+      "sun": "08:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop",
+      "showers",
+      "parking",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.ascendclimbing.com/locations/point-breeze-pittsburgh"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "8bbe8c34d9730e6a",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 57,
+   "class": "update",
+   "id": "g-cbc82c6f80",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.ascendclimbing.com/locations/south-side-pittsburgh"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop",
+      "showers",
+      "parking",
+      "yoga"
+     ]
+    }
+   ],
+   "expect_h": "401bc47341712d5b",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 58,
+   "class": "update",
+   "id": "g-87c3d44f76",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.ascendclimbing.com/locations/erie"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop",
+      "showers",
+      "parking",
+      "yoga"
+     ]
+    }
+   ],
+   "expect_h": "bbb0b6f836f8a815",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 59,
+   "class": "update",
+   "id": "g-bcca4dc01a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://ironcityboulders.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–22:00",
+      "tue": "06:00–22:00",
+      "wed": "06:00–22:00",
+      "thu": "06:00–22:00",
+      "fri": "06:00–22:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$22 standard, $20 student/military"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://ironcityboulders.com/visit"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "5829536ef7fb978a",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 60,
+   "class": "update",
+   "id": "g-bb66536a97",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://blueswanboulders.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:00",
+      "tue": "06:00–22:00",
+      "wed": "09:00–22:00",
+      "thu": "06:00–22:00",
+      "fri": "09:00–22:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$22 standard, $20 student/military"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://blueswanboulders.com/visit"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "78ebfeee78f7cdcf",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 61,
+   "class": "update",
+   "id": "g-0ecd718597",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.velocityclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "15:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "15:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "15:00–22:00",
+      "sat": "09:00–22:00",
+      "sun": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$30 day pass, $37.50 day pass with full rental gear"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.velocityclimbing.com/prices/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "cffc0e3067ca6579",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 62,
+   "class": "update",
+   "id": "g-da0b46ff43",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.lasrocasclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–23:00",
+      "tue": "07:00–23:00",
+      "wed": "07:00–23:00",
+      "thu": "07:00–23:00",
+      "fri": "07:00–23:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–22:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.lasrocasclimbing.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "7ca5d49dc1444ca2",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 63,
+   "class": "update",
+   "id": "g-8c098943d0",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.highpointclimbing.com/orlando"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop",
+      "showers",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.highpointclimbing.com/orlando"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "d01425425c429b05",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 64,
+   "class": "update",
+   "id": "g-af5bfaf816",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulderingproject.com/location/eckington"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–22:00",
+      "tue": "06:00–22:00",
+      "wed": "06:00–22:00",
+      "thu": "06:00–22:00",
+      "fri": "06:00–22:00",
+      "sat": "08:00–20:00",
+      "sun": "08:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://boulderingproject.com/location/eckington"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "bb9bf7a9d69ae92c",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 65,
+   "class": "update",
+   "id": "g-f10b4991df",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://methodclimb.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:00–23:00",
+      "tue": "08:00–23:00",
+      "wed": "08:00–23:00",
+      "thu": "08:00–23:00",
+      "fri": "08:00–23:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://methodclimb.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "b7e41dd34c6f54c6",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 66,
+   "class": "update",
+   "id": "g-a159c7a336",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://tufasboulderlounge.com/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training"
+     ]
+    }
+   ],
+   "expect_h": "1358caabc74180e9",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 67,
+   "class": "update",
+   "id": "g-39318a79cb",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://projectrock.com/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids"
+     ]
+    }
+   ],
+   "expect_h": "5ae4dead0d82c795",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 68,
+   "class": "update",
+   "id": "g-a365f2b47a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.alchemyclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "sun": "12:00–20:00",
+      "mon": "16:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "12:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$25 adult, $20 youth (under 14); gear rental not included"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.alchemyclimbing.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "22293af65f507b42",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 69,
+   "class": "update",
+   "id": "g-e3e0f197a6",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://dynoclimb.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–23:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://dynoclimb.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "f948fab7868e9600",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 70,
+   "class": "update",
+   "id": "g-43260b83d3",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.hexrockclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–22:00",
+      "tue": "07:00–22:00",
+      "wed": "07:00–22:00",
+      "thu": "07:00–22:00",
+      "fri": "07:00–00:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shop",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.hexrockclimbing.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "c2f814461efb76eb",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 71,
+   "class": "update",
+   "id": "g-3345dad57e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blockerboulders.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "12:00–22:00",
+      "sun": "12:00–19:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blockerboulders.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "5e439526268514dc",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 72,
+   "class": "update",
+   "id": "g-bbffd01df7",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.beachesrockgym.com/"
+    }
+   ],
+   "expect_h": "60e5e0b7a2d4db37",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 73,
+   "class": "update",
+   "id": "g-b8a62fe579",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://theedgerockgym.com/home/"
+    }
+   ],
+   "expect_h": "91fc373767d90f1a",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 74,
+   "class": "update",
+   "id": "g-6de0ea4507",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.stoneclimbing.com/"
+    }
+   ],
+   "expect_h": "904680b20e15167e",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 75,
+   "class": "update",
+   "id": "g-cbfbb6faed",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climb-va.com/manassas/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids"
+     ]
+    }
+   ],
+   "expect_h": "44b5460e2119966d",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  },
+  {
+   "line": 76,
+   "class": "update",
+   "id": "g-b74d4e830b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climb-va.com/tysons/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shop",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "f3d16c55a1374243",
+   "update_reason": "Official website, hours, day pass and facilities from the gym own site (checked 2026-11-24)"
+  }
+ ]
+}
