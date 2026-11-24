@@ -1,0 +1,201 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-24-owner-fixes",
+ "index": {
+  "sha256": "ee0e0c45b261e8d56a5a89777d4e4567f16b0ff18b4a45aeb76908b50eff22ad",
+  "count": 3651,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha"
+ ],
+ "counts": {
+  "records": 7,
+  "new": 0,
+  "existing": 0,
+  "update": 4,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "retire": 3,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 5
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "1757589f1ab4e43920f0e7c8eb42c1aa9876329f7b578ab0fd9011d88580dd46",
+ "records": [
+  {
+   "line": 1,
+   "class": "retire",
+   "id": "g-5d90436009",
+   "name": "Sandstein Boulder Halle Aschaffenburg",
+   "country": "DE",
+   "expect_h": "ccd7951a0dceb63c",
+   "reason_code": "closed",
+   "retire_reason": "Closed permanently in mid-November 2026 (high rent, too few summer visitors); its website is offline and the space goes to a fitness studio.",
+   "entry": {
+    "id": "g-5d90436009",
+    "name": "Sandstein Boulder Halle Aschaffenburg",
+    "country": "DE",
+    "state": "BAYERN",
+    "suburb": "Aschaffenburg",
+    "lat": 49.978999,
+    "lng": 9.114318,
+    "address": "Mainaschaffer Straße 113, 63741 Aschaffenburg",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "ccd7951a0dceb63c"
+   }
+  },
+  {
+   "line": 2,
+   "class": "retire",
+   "id": "seed-1845",
+   "name": "GoNature Climbing Gym",
+   "country": "HK",
+   "expect_h": "fb2343c56698764a",
+   "reason_code": "duplicate",
+   "retire_reason": "GoNature now gives only the Sha Tin address (Belair Gardens, 52 Tai Chung Kiu Road), the same as Hong Kong Climbing Park (seed-1847); Kwun Tong no longer listed.",
+   "duplicate_of": "seed-1847",
+   "entry": {
+    "id": "seed-1845",
+    "name": "GoNature Climbing Gym",
+    "country": "HK",
+    "state": "KWUN_TONG",
+    "suburb": "Kwun Tong",
+    "lat": 22.3091337,
+    "lng": 114.2244957,
+    "address": "Unit C2, G/F, Wing Hing Industrial Building, 14 Hing Yip Street, Kwun Tong, Kowloon",
+    "types": [
+     "indoor-bouldering",
+     "lead-climbing",
+     "top-rope"
+    ],
+    "h": "fb2343c56698764a"
+   },
+   "warnings": [
+    {
+     "code": "duplicate-far-apart",
+     "field": "duplicate_of",
+     "message": "seed-1845 and seed-1847 are 8853 m apart; check they are the same gym"
+    }
+   ]
+  },
+  {
+   "line": 3,
+   "class": "retire",
+   "id": "seed-994",
+   "name": "Climbing Factory",
+   "country": "DE",
+   "expect_h": "5d3ff3bf03b138a3",
+   "reason_code": "closed",
+   "retire_reason": "Climbing Factory closed in early 2026; DAV Nuernberg was still examining a takeover as of 05.08.2026 with no decision, so the hall is not open.",
+   "entry": {
+    "id": "seed-994",
+    "name": "Climbing Factory",
+    "country": "DE",
+    "state": "BAYERN",
+    "suburb": "Nürnberg, Mittelfranken",
+    "lat": 49.448,
+    "lng": 11.085,
+    "address": null,
+    "types": [
+     "indoor-bouldering",
+     "lead-climbing",
+     "top-rope"
+    ],
+    "h": "5d3ff3bf03b138a3"
+   }
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "g-02f57d3060",
+   "changes": [
+    {
+     "field": "name",
+     "before": "Bloc en Stock",
+     "after": "Arkose - Strasbourg Meinau"
+    }
+   ],
+   "expect_h": "01ce9ec31d962970",
+   "update_reason": "Rebranded: Arkose says Bloc en Stock is now Arkose Strasbourg Meinau (same address).",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"Bloc en Stock\" -> \"Arkose - Strasbourg Meinau\""
+    }
+   ]
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-1254",
+   "changes": [
+    {
+     "field": "name",
+     "before": "Uuadibloc - Madrid",
+     "after": "Uadibloc - Madrid"
+    }
+   ],
+   "expect_h": "fd1a761f83e83d6c",
+   "update_reason": "Name typo: the gym is Uadibloc (one u), as on its own site and social accounts.",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"Uuadibloc - Madrid\" -> \"Uadibloc - Madrid\""
+    }
+   ]
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-1060",
+   "changes": [
+    {
+     "field": "name",
+     "before": "Stuntwerk Köln",
+     "after": "Stuntwerk Köln Mülheim"
+    }
+   ],
+   "expect_h": "6a6c3faf673695c6",
+   "update_reason": "Stuntwerk has two Cologne halls; Zollstock is listed separately (g-01e07290ea), so this record is Koeln Muelheim.",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"Stuntwerk Köln\" -> \"Stuntwerk Köln Mülheim\""
+    }
+   ]
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-1046",
+   "changes": [
+    {
+     "field": "name",
+     "before": "Mandala Boulderhalle",
+     "after": "Mandala Boulderhalle Dresden Zeitenströmung"
+    }
+   ],
+   "expect_h": "371a2d922e787cc5",
+   "update_reason": "Mandala has two Dresden halls; this record predates Postplatz (opened 2024), so it is the original hall at Zeitenstroemung.",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"Mandala Boulderhalle\" -> \"Mandala Boulderhalle Dresden Zeitenströmung\""
+    }
+   ]
+  }
+ ]
+}
