@@ -5,16 +5,16 @@
 | What would happen | Records |
 |---|---:|
 | Insert as NEW gyms | 0 |
-| Update existing gyms (explicit update records) | 50 |
+| Update existing gyms (explicit update records) | 49 |
 | Already exist — no action (identical content: 0; content differs, NOT applied: 0) | 0 |
 | Probable duplicates — need a human decision | 0 |
 | Invalid — rejected | 0 |
 | Rejected by a human decision | 0 |
-| **Total records in batch** | 50 |
+| **Total records in batch** | 49 |
 
-Index: 3651 known gyms (sha256 ee0e0c45b261…). Plan: e51317652f3f… Also compared against staged batches: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha.
+Index: 3651 known gyms (sha256 ee0e0c45b261…). Plan: 880793766373… Also compared against staged batches: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha.
 
-## Updates to existing gyms (50)
+## Updates to existing gyms (49)
 
 - line 1 `g-56f82b06bd` — Official website, hours from the gym's own site (researched 2026-11-24)
   - FILLS gym information (only if empty in production; never overwrites): website active-garden.de + hours mon,tue,wed,thu,fri,sat,sun + source official-site active-garden.de 2026-11-24
@@ -56,15 +56,15 @@ Index: 3651 known gyms (sha256 ee0e0c45b261…). Plan: e51317652f3f… Also comp
   - FILLS gym information (only if empty in production; never overwrites): website dav-pfaffenhofen.de + hours mon,tue,wed,thu,fri,sun + day pass + facilities (1) + source official-site dav-pfaffenhofen.de 2026-11-24
 - line 20 `g-961023efa7` — Official website, hours from the gym's own site (researched 2026-11-24)
   - FILLS gym information (only if empty in production; never overwrites): website rockinn-wuerzburg.de + hours mon,tue,wed,thu,fri,sat,sun + source official-site rockinn-wuerzburg.de 2026-11-24
-- line 21 `g-5d90436009` — Official website from the gym's own site (researched 2026-11-24)
-  - FILLS gym information (only if empty in production; never overwrites): website sandstein-aschaffenburg.de
-- line 22 `g-38d7d7998c` — Official website, day pass price, facilities from the gym's own site (researched 2026-11-24)
+- line 21 `g-38d7d7998c` — Official website, day pass price, facilities from the gym's own site (researched 2026-11-24)
   - FILLS gym information (only if empty in production; never overwrites): website zugzwang-auerbach.de + day pass + facilities (1) + source official-site zugzwang-auerbach.de 2026-11-24
-- line 23 `g-dcd29956ad` — Official website, hours, day pass price from the gym's own site (researched 2026-11-24)
+- line 22 `g-dcd29956ad` — Official website, hours, day pass price from the gym's own site (researched 2026-11-24)
   - FILLS gym information (only if empty in production; never overwrites): website kletterzentrum-berchtesgaden.de + hours mon,tue,wed,thu,fri,sat,sun + day pass + source official-site kletterzentrum-berchtesgaden.de 2026-11-24
-- line 24 `g-7ae35368e3` — Official website, hours, day pass price, facilities from the gym's own site (researched 2026-11-24)
+- line 23 `g-7ae35368e3` — Official website, hours, day pass price, facilities from the gym's own site (researched 2026-11-24)
   - FILLS gym information (only if empty in production; never overwrites): website boulderhall.de + hours mon,tue,wed,thu,fri,sat,sun + day pass + facilities (2) + source official-site boulderhall.de 2026-11-24
-- line 25 `g-34307158f3` — Official website from the gym's own site (researched 2026-11-24)
+- line 24 `g-34307158f3` — Official website from the gym's own site (researched 2026-11-24)
   - FILLS gym information (only if empty in production; never overwrites): website cube-kletterzentrum.de
-- … and 25 more (see plan.json)
+- line 25 `g-7459d925b1` — Official website from the gym's own site (researched 2026-11-24)
+  - FILLS gym information (only if empty in production; never overwrites): website sportpark-kelkheim.de
+- … and 24 more (see plan.json)
 
