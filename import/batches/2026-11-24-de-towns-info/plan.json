@@ -1,0 +1,1994 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-24-de-towns-info",
+ "index": {
+  "sha256": "ee0e0c45b261e8d56a5a89777d4e4567f16b0ff18b4a45aeb76908b50eff22ad",
+  "count": 3651,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha"
+ ],
+ "counts": {
+  "records": 50,
+  "new": 0,
+  "existing": 0,
+  "update": 50,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "e51317652f3fea2afa7ad9e33a2cc7f73076c1bf5dbad881032ac1cfb43e6e86",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "g-56f82b06bd",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://active-garden.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "14:00–22:30",
+      "tue": "10:00–22:30",
+      "wed": "14:00–22:30",
+      "thu": "14:00–22:30",
+      "fri": "10:00–22:30",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://active-garden.de/active-garden-oeffnungszeiten"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "591cb0698e257321",
+   "update_reason": "Official website, hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "g-1223a96f22",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulderbock.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–24:00",
+      "tue": "06:00–24:00",
+      "wed": "06:00–24:00",
+      "thu": "06:00–24:00",
+      "fri": "06:00–24:00",
+      "sat": "06:00–24:00",
+      "sun": "06:00–24:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://boulderbock.de/tickets/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "1386fbaf4a3181dc",
+   "update_reason": "Official website, hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "g-83c8e972b5",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderhaus.net/"
+    }
+   ],
+   "expect_h": "765cf61b1a25614a",
+   "update_reason": "Official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "g-d40e058bd5",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderzentrum-ostalb.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "14:00–23:00",
+      "tue": "14:00–23:00",
+      "wed": "14:00–23:00",
+      "thu": "14:00–23:00",
+      "fri": "09:00–23:00",
+      "sat": "09:00–22:00",
+      "sun": "09:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Einzeleintritt €15 Gäste, €14,50 DAV-Mitglieder; ermäßigt €12 / €11,50"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderzentrum-ostalb.de/preise"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "05bf79d812482423",
+   "update_reason": "Official website, hours, day pass price from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "g-5034de8b9d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.kletterzentrum-ostalb.de/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Einzeleintritt €14 Gäste, €13,50 DAV-Mitglieder; ermäßigt €12 / €11,50"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.kletterzentrum-ostalb.de/preise"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "a23c99ff6d596618",
+   "update_reason": "Official website, day pass price from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "g-e3708902ff",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://greifbar-bouldern.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–20:30",
+      "sun": "10:00–20:30"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Erwachsene €13,50, ermäßigt €11,90, Kinder (6–13 J.) €8,90"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://greifbar-bouldern.de/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "8adbd82673aeacd6",
+   "update_reason": "Official website, hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "g-cedd4a3b5f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.griffkiste.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "17:00–22:00",
+      "tue": "17:00–22:00",
+      "wed": "17:00–22:00",
+      "thu": "17:00–22:00",
+      "fri": "17:00–22:00",
+      "sat": "12:00–20:00",
+      "sun": "11:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.griffkiste.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "ed36a03718f0c7d5",
+   "update_reason": "Official website, hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "g-688eb9cff8",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.diekletterarena.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.diekletterarena.de/infos/oeffnungszeiten-anfahrt"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "51c6c525f62ca0e7",
+   "update_reason": "Official website, hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "g-e55c3ea301",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulderhalle-eislingen.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "14:00–22:00",
+      "tue": "14:00–22:00",
+      "wed": "14:00–22:00",
+      "thu": "14:00–22:00",
+      "fri": "14:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://boulderhalle-eislingen.de/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "5536cd456d036d2d",
+   "update_reason": "Official website, hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "g-c77118b89c",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://rox-herrenberg.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–23:00",
+      "tue": "13:00–23:00",
+      "wed": "09:30–23:00",
+      "thu": "08:00–23:00",
+      "fri": "09:30–23:00",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Tageskarte €14 Erwachsene, €13 ermäßigt, €11,50 (14–17 J.)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://rox-herrenberg.de/oeffnungszeiten/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "beb3d6a3b5102021",
+   "update_reason": "Official website, hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "g-101337b916",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://topboulder.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "15:00–22:00",
+      "tue": "15:00–22:00",
+      "wed": "15:00–22:00",
+      "thu": "15:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "09:00–22:00",
+      "sun": "09:00–22:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://topboulder.de/malmsheim/allgemeine-informationen/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "a818718a853983c5",
+   "update_reason": "Official website, hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "g-4188a745ee",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderia.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "09:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "09:00–22:00",
+      "sat": "09:00–22:00",
+      "sun": "09:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Normaltarif €12 Erwachsene, €10,50 ermäßigt, Kinder €8,50 (6–11 J.)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderia.de/start/oeffnungszeiten/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "3f9b199d1efb4f5f",
+   "update_reason": "Official website, hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "g-35775d0d9a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.frankenjura-academy.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "tue": "17:00–22:00",
+      "wed": "17:00–22:00",
+      "thu": "17:00–22:00",
+      "sat": "12:00–18:00",
+      "sun": "10:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Tagesticket €14, Kinder U14 €10; Bouldern €10, Kinder U14 €8"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.frankenjura-academy.de/preise-%C3%B6ffnungszeiten"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "37741d2a46c08c11",
+   "update_reason": "Official website, hours, day pass price from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "g-da32d2afb4",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://die-kletterei.de/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe"
+     ]
+    }
+   ],
+   "expect_h": "4f09fa4c5ae12a29",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "g-9973f7e291",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://kletterhalle-weilheim.de/"
+    }
+   ],
+   "expect_h": "dc93f4a9086e1e36",
+   "update_reason": "Official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "g-5ab7e17b48",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.jurabloc.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:00–23:00",
+      "tue": "08:00–23:00",
+      "wed": "08:00–23:00",
+      "thu": "08:00–23:00",
+      "fri": "08:00–23:00",
+      "sat": "08:00–23:00",
+      "sun": "08:00–23:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.jurabloc.de/oeffnungszeiten/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "0771eba26a08be9c",
+   "update_reason": "Official website, hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "g-5b3890696b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://kletterhalle-basislager.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:30",
+      "tue": "09:00–22:30",
+      "wed": "09:00–22:30",
+      "thu": "09:00–22:30",
+      "fri": "09:00–22:30",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://kletterhalle-basislager.de/anfahrt-und-oeffnungszeiten/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "be36f79f7e27b0a2",
+   "update_reason": "Official website, hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "g-60991652bc",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.kletterhalle-dachau.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Tageskarte Klettern €20 (ab 18 J.), ermäßigt €14, unter 18 J. €11"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.kletterhalle-dachau.de/kontakt"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "92cc196cbdfc9f9f",
+   "update_reason": "Official website, hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "g-d9f2e6f2fc",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://dav-pfaffenhofen.de/pafrock/infos"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "17:30–22:30",
+      "tue": "17:30–22:30",
+      "wed": "09:00–12:00, 17:30–22:30",
+      "thu": "17:30–22:30",
+      "fri": "17:30–22:30",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Einzeleintritt Erwachsene €13,50 (kein DAV-Mitglied), €10 (andere DAV-Sektion), €9 (Sektion Pfaffenhofen-Asch)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://dav-pfaffenhofen.de/pafrock/infos"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "04ab9eefb35f736d",
+   "update_reason": "Official website, hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "g-961023efa7",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://rockinn-wuerzburg.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–23:00",
+      "tue": "09:00–23:00",
+      "wed": "12:00–23:00",
+      "thu": "09:00–23:00",
+      "fri": "12:00–23:00",
+      "sat": "09:00–23:00",
+      "sun": "09:00–23:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://rockinn-wuerzburg.de/info/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "08cddc3825fb677f",
+   "update_reason": "Official website, hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "g-5d90436009",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://sandstein-aschaffenburg.de/"
+    }
+   ],
+   "expect_h": "ccd7951a0dceb63c",
+   "update_reason": "Official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "g-38d7d7998c",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://zugzwang-auerbach.de/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Erwachsene €6, ermäßigt €5, Familien €12, Kinder bis 10 Jahre €4"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://zugzwang-auerbach.de/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "5a7e432d58e4a4f6",
+   "update_reason": "Official website, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "g-dcd29956ad",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.kletterzentrum-berchtesgaden.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Klettereintritt Erwachsene €16,50 (kein Mitglied), €14,50 (DAV/ÖAV-Mitglied)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.kletterzentrum-berchtesgaden.de/infos/preiseoeffnungszeiten"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "4afdb6885cbfe97f",
+   "update_reason": "Official website, hours, day pass price from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "g-7ae35368e3",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulderhall.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Tageskarte Erwachsene €13, ermäßigt €12, Kinder 5–13 J. €8"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://boulderhall.de/faq/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "e437db4d25b151da",
+   "update_reason": "Official website, hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "g-34307158f3",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.cube-kletterzentrum.de/"
+    }
+   ],
+   "expect_h": "e140fb1a0252e73b",
+   "update_reason": "Official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "g-7459d925b1",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.sportpark-kelkheim.de/"
+    }
+   ],
+   "expect_h": "33f2a9e7853f6555",
+   "update_reason": "Official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 27,
+   "class": "update",
+   "id": "g-ae098fe6ba",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulderchurch.de/"
+    }
+   ],
+   "expect_h": "440329588a8f27c2",
+   "update_reason": "Official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 28,
+   "class": "update",
+   "id": "g-932932f132",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.adventure-campus.com/firmen-sportgruppen/kletter-boulderhalle/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Einzeleintritt Erwachsene €7, DAV-Mitglied €6, unter 18 €5"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.adventure-campus.com/firmen-sportgruppen/kletter-boulderhalle/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "c6b8c78a495f9dde",
+   "update_reason": "Official website, day pass price from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 29,
+   "class": "update",
+   "id": "g-c1a097566f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.exus.de/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "f9e228d84d31d1c3",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 30,
+   "class": "update",
+   "id": "g-d752e3f0eb",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.fliegerhalle-bs.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "15:00–23:00",
+      "tue": "09:30–23:00",
+      "wed": "09:30–23:00",
+      "thu": "09:30–23:00",
+      "fri": "09:30–23:00",
+      "sat": "09:30–21:00",
+      "sun": "09:30–21:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.fliegerhalle-bs.de/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "56c56f127b8e6a31",
+   "update_reason": "Official website, hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 31,
+   "class": "update",
+   "id": "g-12e74874cf",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://felsmeister.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "14:00–21:30",
+      "tue": "14:00–21:30",
+      "wed": "14:00–21:30",
+      "thu": "14:00–21:30",
+      "fri": "14:00–21:30",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://felsmeister.de/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "e4488879b439be2b",
+   "update_reason": "Official website, hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 32,
+   "class": "update",
+   "id": "g-18becdf608",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://kletterbar-kiel.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "09:00–22:00",
+      "sun": "09:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Tageskarte €17,50 normal, €15 ermäßigt, Kinder 5–11 J. €12"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://kletterbar-kiel.de/halleninfos/oeffnungszeiten/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "ab83056cbeeea69e",
+   "update_reason": "Official website, hours, day pass price from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 33,
+   "class": "update",
+   "id": "g-9d2cefa21d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.freiraum-basecamp.de/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Bouldern Tageskarte €12 (Erwachsene ab 18 J.)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.freiraum-basecamp.de/preisliste/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "205c104a6916f5d6",
+   "update_reason": "Official website, day pass price from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 34,
+   "class": "update",
+   "id": "g-6614cca3aa",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderolymp.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderolymp.de/preise-offnungszeiten"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "ee1d3bc86a51fdd9",
+   "update_reason": "Official website, hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 35,
+   "class": "update",
+   "id": "g-bf83e0c087",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.schmiedebloc.de/"
+    }
+   ],
+   "expect_h": "97264b5c5bc9eb59",
+   "update_reason": "Official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 36,
+   "class": "update",
+   "id": "g-817e68bf0f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.dav-hochwald.de/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Tageskarte €12, ermäßigt €10 (kein DAV-Mitglied); DAV-Mitglieder ab €8"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.dav-hochwald.de/kletterzentrum-hochwald/preise"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "5b4b541f68268c34",
+   "update_reason": "Official website, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 37,
+   "class": "update",
+   "id": "g-e762a4af0a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://kletterhalle-weimar.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "14:00–23:00",
+      "tue": "14:00–23:00",
+      "wed": "14:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://kletterhalle-weimar.de/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "3cee79a914fb6851",
+   "update_reason": "Official website, hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 38,
+   "class": "update",
+   "id": "g-9384ac6b84",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rocks-jena.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.rocks-jena.de/about/offnungszeiten/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "be98e418f188a273",
+   "update_reason": "Official website, hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 39,
+   "class": "update",
+   "id": "g-35143927e5",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://holdontide.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "16:00–20:00",
+      "wed": "16:00–20:00",
+      "thu": "16:00–20:00",
+      "fri": "16:00–20:00",
+      "sat": "12:00–20:00",
+      "sun": "12:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://holdontide.com/offnungszeiten-anfahrt/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "f1915f53d9567261",
+   "update_reason": "Official website, hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 40,
+   "class": "update",
+   "id": "g-e72b2cee0b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.gluecksgriff-boulderhalle.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–23:00",
+      "tue": "12:00–23:00",
+      "wed": "12:00–23:00",
+      "thu": "12:00–23:00",
+      "fri": "12:00–23:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–22:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "kids"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.gluecksgriff-boulderhalle.de/kontakt/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "f8c80fa3c9ed3db5",
+   "update_reason": "Official website, hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 41,
+   "class": "update",
+   "id": "g-b5d06dd15c",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://monkeyspot.de/startseite-moenchengladbach/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Tageseintritt Erwachsene €13,90, ermäßigt (14–17 J.) €11,90, Kind (4–13 J.) €9,50"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://monkeyspot.de/startseite-moenchengladbach/informationen/preise-und-oeffnungszeiten-2/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "04d080f0dcd76547",
+   "update_reason": "Official website, day pass price from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 42,
+   "class": "update",
+   "id": "g-7af58d8d90",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://bb.blocbuster.net/bouldern-in-paderborn"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "15:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "15:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "15:00–22:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–22:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://bb.blocbuster.net/bouldern-in-paderborn"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "635e53803045b454",
+   "update_reason": "Official website, hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 43,
+   "class": "update",
+   "id": "g-bb437cb06d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://bouldercafe-wuppertal.de/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe"
+     ]
+    }
+   ],
+   "expect_h": "cda5ec7e0777bdad",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 44,
+   "class": "update",
+   "id": "g-f395200a2f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.gravity-kh.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–21:00",
+      "tue": "11:00–22:00",
+      "wed": "11:00–22:00",
+      "thu": "11:00–22:00",
+      "fri": "11:00–22:00",
+      "sat": "11:00–21:00",
+      "sun": "11:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Tageskarte Bouldern Erwachsene €11, ermäßigt €10, Kinder (5–13 J.) €8,50"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.gravity-kh.de/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "bfab37b2eb4058e3",
+   "update_reason": "Official website, hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 45,
+   "class": "update",
+   "id": "g-cc208b127b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.cave-bouldern.de/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Tageskarte Erwachsene €12, ermäßigt (ab 12 J.) €11, Kinder 6–11 J. €8"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.cave-bouldern.de/infos/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "055e891c1c1d7f5a",
+   "update_reason": "Official website, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 46,
+   "class": "update",
+   "id": "g-2a33a4832d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://dav-meiningen.de/"
+    }
+   ],
+   "expect_h": "9894ea5c0dc26090",
+   "update_reason": "Official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 47,
+   "class": "update",
+   "id": "g-478643f0b1",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://svn-muenchen.de/klettern/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:00–23:00",
+      "tue": "08:00–23:00",
+      "wed": "08:00–23:00",
+      "thu": "08:00–23:00",
+      "fri": "08:00–23:00",
+      "sat": "08:00–22:00",
+      "sun": "08:00–22:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://svn-muenchen.de/klettern/beitrag-eintrittspreise/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "8e6fc4bd49a9f3e5",
+   "update_reason": "Official website, hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 48,
+   "class": "update",
+   "id": "g-d0319bcd25",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulderningoettingen.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "14:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Einzeleintritt Erwachsene €13, ermäßigt €11, Kinder €8"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://boulderningoettingen.de/infos/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "6c54cbbe0b2093e6",
+   "update_reason": "Official website, hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 49,
+   "class": "update",
+   "id": "g-6ea431c2ea",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.campvier.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–22:00",
+      "tue": "11:00–22:00",
+      "wed": "11:00–22:00",
+      "thu": "11:00–22:00",
+      "fri": "11:00–22:00",
+      "sat": "11:00–21:00",
+      "sun": "11:00–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.campvier.de/preise-und-oeffnungszeiten"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "d14165ef83733d8e",
+   "update_reason": "Official website, hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 50,
+   "class": "update",
+   "id": "g-84a999eb03",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.zenit-klettern.de/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–23:00",
+      "tue": "12:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Tageseintritt Bouldern €14 normal, €11 ermäßigt, Kinder (6–13 J.) €7"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shop",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.zenit-klettern.de/oeffnungszeiten-und-preise/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "76eecec335b565dc",
+   "update_reason": "Official website, hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  }
+ ]
+}
