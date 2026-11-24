@@ -11,10 +11,10 @@
   "2026-10-12-cn-kunming-changsha"
  ],
  "counts": {
-  "records": 48,
+  "records": 46,
   "new": 0,
   "existing": 0,
-  "update": 48,
+  "update": 46,
   "probable-duplicate": 0,
   "invalid": 0,
   "rejected": 0,
@@ -26,7 +26,7 @@
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "974698157cad14450bab87dcaab1ec046d8593dd68b90f0da5a5bfd0b3343a4e",
+ "plan_sha256": "42cd4a8d7216bce822ac87e2889cbee127f3a719af0ecd324d6808d80a368463",
  "records": [
   {
    "line": 1,
@@ -602,20 +602,6 @@
   {
    "line": 14,
    "class": "update",
-   "id": "g-f055b65c2e",
-   "changes": [
-    {
-     "field": "website",
-     "before": null,
-     "after": "https://www.thejugrockgym.com/"
-    }
-   ],
-   "expect_h": "6cfdef1ff12891ae",
-   "update_reason": "Official website from the gym's own site (researched 2026-11-24)"
-  },
-  {
-   "line": 15,
-   "class": "update",
    "id": "g-f17c4ea21a",
    "changes": [
     {
@@ -665,7 +651,7 @@
    "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 16,
+   "line": 15,
    "class": "update",
    "id": "g-c4a9274f2f",
    "changes": [
@@ -716,7 +702,7 @@
    "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 17,
+   "line": 16,
    "class": "update",
    "id": "g-c1352dffba",
    "changes": [
@@ -764,7 +750,7 @@
    "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 18,
+   "line": 17,
    "class": "update",
    "id": "g-c03e4eb3ec",
    "changes": [
@@ -817,7 +803,7 @@
    "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 19,
+   "line": 18,
    "class": "update",
    "id": "g-e62a1b3b70",
    "changes": [
@@ -859,7 +845,7 @@
    "update_reason": "Official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 20,
+   "line": 19,
    "class": "update",
    "id": "g-d23a840b02",
    "changes": [
@@ -908,7 +894,7 @@
    "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 21,
+   "line": 20,
    "class": "update",
    "id": "g-d3fa9a169d",
    "changes": [
@@ -929,30 +915,7 @@
    "update_reason": "Official website, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 22,
-   "class": "update",
-   "id": "g-f4a9cc62d2",
-   "changes": [
-    {
-     "field": "website",
-     "before": null,
-     "after": "https://rocksolidclimbing.com/"
-    },
-    {
-     "field": "facilities",
-     "before": null,
-     "after": [
-      "training",
-      "kids",
-      "yoga"
-     ]
-    }
-   ],
-   "expect_h": "dc111e5aec8a19ef",
-   "update_reason": "Official website, facilities from the gym's own site (researched 2026-11-24)"
-  },
-  {
-   "line": 23,
+   "line": 21,
    "class": "update",
    "id": "g-bc8b938464",
    "changes": [
@@ -1009,7 +972,7 @@
    "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 24,
+   "line": 22,
    "class": "update",
    "id": "g-86cb7509a9",
    "changes": [
@@ -1058,7 +1021,7 @@
    "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 25,
+   "line": 23,
    "class": "update",
    "id": "g-5d315f4633",
    "changes": [
@@ -1108,7 +1071,7 @@
    "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 26,
+   "line": 24,
    "class": "update",
    "id": "g-25479c204a",
    "changes": [
@@ -1163,7 +1126,7 @@
    "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 27,
+   "line": 25,
    "class": "update",
    "id": "g-6d9381b9fa",
    "changes": [
@@ -1214,7 +1177,7 @@
    "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 28,
+   "line": 26,
    "class": "update",
    "id": "g-36f3fd912d",
    "changes": [
@@ -1266,7 +1229,7 @@
    "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 29,
+   "line": 27,
    "class": "update",
    "id": "g-5ed20223ae",
    "changes": [
@@ -1318,7 +1281,7 @@
    "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 30,
+   "line": 28,
    "class": "update",
    "id": "g-d25f0aa6b6",
    "changes": [
@@ -1371,7 +1334,7 @@
    "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 31,
+   "line": 29,
    "class": "update",
    "id": "g-da17343f42",
    "changes": [
@@ -1413,7 +1376,7 @@
    "update_reason": "Official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 32,
+   "line": 30,
    "class": "update",
    "id": "g-c947d3124e",
    "changes": [
@@ -1464,7 +1427,7 @@
    "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 33,
+   "line": 31,
    "class": "update",
    "id": "g-5398263af4",
    "changes": [
@@ -1515,7 +1478,7 @@
    "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 34,
+   "line": 32,
    "class": "update",
    "id": "g-44c1e96bd7",
    "changes": [
@@ -1565,7 +1528,7 @@
    "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 35,
+   "line": 33,
    "class": "update",
    "id": "g-cb57883cfb",
    "changes": [
@@ -1586,7 +1549,7 @@
    "update_reason": "Official website, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 36,
+   "line": 34,
    "class": "update",
    "id": "g-3552a25b4e",
    "changes": [
@@ -1639,7 +1602,7 @@
    "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 37,
+   "line": 35,
    "class": "update",
    "id": "g-cfd8d60ae9",
    "changes": [
@@ -1681,7 +1644,7 @@
    "update_reason": "Official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 38,
+   "line": 36,
    "class": "update",
    "id": "g-9a43178011",
    "changes": [
@@ -1695,7 +1658,7 @@
    "update_reason": "Official website from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 39,
+   "line": 37,
    "class": "update",
    "id": "g-db115f8a1b",
    "changes": [
@@ -1709,7 +1672,7 @@
    "update_reason": "Official website from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 40,
+   "line": 38,
    "class": "update",
    "id": "g-675e072a40",
    "changes": [
@@ -1760,7 +1723,7 @@
    "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 41,
+   "line": 39,
    "class": "update",
    "id": "g-2f938b5b82",
    "changes": [
@@ -1811,7 +1774,7 @@
    "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 42,
+   "line": 40,
    "class": "update",
    "id": "g-4eccedd2c1",
    "changes": [
@@ -1860,7 +1823,7 @@
    "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 43,
+   "line": 41,
    "class": "update",
    "id": "g-93c3d14e32",
    "changes": [
@@ -1909,7 +1872,7 @@
    "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 44,
+   "line": 42,
    "class": "update",
    "id": "g-2e32c07be1",
    "changes": [
@@ -1960,7 +1923,7 @@
    "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 45,
+   "line": 43,
    "class": "update",
    "id": "g-dc002b2042",
    "changes": [
@@ -2002,7 +1965,7 @@
    "update_reason": "Official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 46,
+   "line": 44,
    "class": "update",
    "id": "g-82956e5d0b",
    "changes": [
@@ -2044,28 +2007,28 @@
    "update_reason": "Official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 47,
+   "line": 45,
    "class": "update",
    "id": "g-9ec90337ce",
    "changes": [
     {
      "field": "website",
      "before": null,
-     "after": "https://mwclimbing.com/"
+     "after": "https://mwclimbing.com/locations"
     }
    ],
    "expect_h": "7b63b0a298712e9a",
    "update_reason": "Official website from the gym's own site (researched 2026-11-24)"
   },
   {
-   "line": 48,
+   "line": 46,
    "class": "update",
    "id": "g-34a0c5b0f7",
    "changes": [
     {
      "field": "website",
      "before": null,
-     "after": "https://mwclimbing.com/"
+     "after": "https://mwclimbing.com/locations"
     }
    ],
    "expect_h": "4d6529f2be1f1d5f",
