@@ -1,0 +1,765 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-11-24-jp-regions-info",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "ee31ca0f276fe3e76d18d050808e0ead3ac718b1683dc1c2d56eb6bcfcbd95cc",
+  "payload_sha256": "18eefc819cf2978c1be621c43c521ac55cfb0eb23b9ba74bb2fe705a5818dd18",
+  "confirm_token": "b3f9c23dda047f00",
+  "live_state_sha256": "5f80188d05672613ba2b210261af071d23f7de13f9c2200f8b60c9669401a72f",
+  "rows_updated": 0,
+  "approved_before": 3651,
+  "approved_after": 3651,
+  "changes": [],
+  "rows_info_filled": 64,
+  "info_filled": [
+    {
+      "id": "g-924474d561",
+      "fields": [
+        "website",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "0b57b37fea0fb8db",
+      "after_h": "0b57b37fea0fb8db"
+    },
+    {
+      "id": "g-2b0d0e567e",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "3952108dd52abcb0",
+      "after_h": "3952108dd52abcb0"
+    },
+    {
+      "id": "g-f6dd0d1d84",
+      "fields": [
+        "website",
+        "facilities"
+      ],
+      "expect_h": "28ea9a75d759f9fe",
+      "after_h": "28ea9a75d759f9fe"
+    },
+    {
+      "id": "g-24f1ccb686",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "1d29b45b03bfbd82",
+      "after_h": "1d29b45b03bfbd82"
+    },
+    {
+      "id": "g-fe2180137a",
+      "fields": [
+        "website",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "3a6b94c7cb9c1d3a",
+      "after_h": "3a6b94c7cb9c1d3a"
+    },
+    {
+      "id": "g-7064a41023",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "38912eafd4b99a78",
+      "after_h": "38912eafd4b99a78"
+    },
+    {
+      "id": "g-16737a2c21",
+      "fields": [
+        "website",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "a828fe04db6248ef",
+      "after_h": "a828fe04db6248ef"
+    },
+    {
+      "id": "g-460a253882",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "f15c85e2f5b3df57",
+      "after_h": "f15c85e2f5b3df57"
+    },
+    {
+      "id": "g-fc47752145",
+      "fields": [
+        "website",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "7954472f430e8110",
+      "after_h": "7954472f430e8110"
+    },
+    {
+      "id": "g-c7dc10e005",
+      "fields": [
+        "website",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "efd24d4ba0a98fef",
+      "after_h": "efd24d4ba0a98fef"
+    },
+    {
+      "id": "g-f566a09f47",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "1992c856ffb971ae",
+      "after_h": "1992c856ffb971ae"
+    },
+    {
+      "id": "g-6ed1468467",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "d4ce54a61bf402cb",
+      "after_h": "d4ce54a61bf402cb"
+    },
+    {
+      "id": "g-76c4934610",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "a3b2ba17fd6eeedb",
+      "after_h": "a3b2ba17fd6eeedb"
+    },
+    {
+      "id": "g-9c09cf4908",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "c19de50fd77ac243",
+      "after_h": "c19de50fd77ac243"
+    },
+    {
+      "id": "g-10e6e2115b",
+      "fields": [
+        "website",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "5cff8efee55d2c60",
+      "after_h": "5cff8efee55d2c60"
+    },
+    {
+      "id": "g-85250f6dbb",
+      "fields": [
+        "website",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "93992a70a7b2bb7f",
+      "after_h": "93992a70a7b2bb7f"
+    },
+    {
+      "id": "g-d7400bf7af",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "741a1d4968f71a2d",
+      "after_h": "741a1d4968f71a2d"
+    },
+    {
+      "id": "g-89109c9954",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "2a3101bce8b42b51",
+      "after_h": "2a3101bce8b42b51"
+    },
+    {
+      "id": "g-77f3668e62",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "28dae90d69947f82",
+      "after_h": "28dae90d69947f82"
+    },
+    {
+      "id": "g-747c204aeb",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "ff368c7a94cc850e",
+      "after_h": "ff368c7a94cc850e"
+    },
+    {
+      "id": "g-7742b9664d",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "8b47c6aab494a757",
+      "after_h": "8b47c6aab494a757"
+    },
+    {
+      "id": "g-63d4aca9ed",
+      "fields": [
+        "website",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "899caa99742af15a",
+      "after_h": "899caa99742af15a"
+    },
+    {
+      "id": "g-ae03c45606",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "b225ad49b507c6d3",
+      "after_h": "b225ad49b507c6d3"
+    },
+    {
+      "id": "g-97e70cb5b0",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "f528d021b1b50281",
+      "after_h": "f528d021b1b50281"
+    },
+    {
+      "id": "g-b1c085146a",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "158c52f3066fba0e",
+      "after_h": "158c52f3066fba0e"
+    },
+    {
+      "id": "g-ffb2b1a10d",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "5a098f5cc547ab5d",
+      "after_h": "5a098f5cc547ab5d"
+    },
+    {
+      "id": "g-ee0dd4f008",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "ed02ab9016cfdccd",
+      "after_h": "ed02ab9016cfdccd"
+    },
+    {
+      "id": "g-ce178e385e",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "aa9157d362f0fa06",
+      "after_h": "aa9157d362f0fa06"
+    },
+    {
+      "id": "g-a2044b33e1",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "71b763f497afa6b0",
+      "after_h": "71b763f497afa6b0"
+    },
+    {
+      "id": "g-1d32bd8573",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "a19004f6bf0ee469",
+      "after_h": "a19004f6bf0ee469"
+    },
+    {
+      "id": "g-dd4262fb1f",
+      "fields": [
+        "website",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "edac760f6743ce71",
+      "after_h": "edac760f6743ce71"
+    },
+    {
+      "id": "g-32c1056120",
+      "fields": [
+        "website",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "2af5f7c366d156ea",
+      "after_h": "2af5f7c366d156ea"
+    },
+    {
+      "id": "g-1000c0efa0",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "327d6bcdfd54000e",
+      "after_h": "327d6bcdfd54000e"
+    },
+    {
+      "id": "g-e68ff30606",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "a43315aae8265c6d",
+      "after_h": "a43315aae8265c6d"
+    },
+    {
+      "id": "g-4e763802f9",
+      "fields": [
+        "website",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "45e0413567c05a9c",
+      "after_h": "45e0413567c05a9c"
+    },
+    {
+      "id": "g-6d0f4a0dc5",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "364b2715eedb9d8e",
+      "after_h": "364b2715eedb9d8e"
+    },
+    {
+      "id": "g-6b5fb7ba4e",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "da26bfc4c43dce03",
+      "after_h": "da26bfc4c43dce03"
+    },
+    {
+      "id": "g-2370a85fa3",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "fbd83cc20a6de333",
+      "after_h": "fbd83cc20a6de333"
+    },
+    {
+      "id": "g-e935c40916",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "c547d0932be95c93",
+      "after_h": "c547d0932be95c93"
+    },
+    {
+      "id": "g-83c717cf0c",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "b5f16d67404a7c0a",
+      "after_h": "b5f16d67404a7c0a"
+    },
+    {
+      "id": "g-d897233391",
+      "fields": [
+        "website",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "b7665847a431ba0d",
+      "after_h": "b7665847a431ba0d"
+    },
+    {
+      "id": "g-b935e0d7ef",
+      "fields": [
+        "website",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "0c3c68889c8c8204",
+      "after_h": "0c3c68889c8c8204"
+    },
+    {
+      "id": "g-21d55d1630",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "72155509d79c5477",
+      "after_h": "72155509d79c5477"
+    },
+    {
+      "id": "g-4ea11241b3",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "65be4e59e25b3ef0",
+      "after_h": "65be4e59e25b3ef0"
+    },
+    {
+      "id": "g-d155b43ca0",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "a6421c9d8258fa92",
+      "after_h": "a6421c9d8258fa92"
+    },
+    {
+      "id": "g-b5f3bf8d3d",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "a4b10e647f31e3c6",
+      "after_h": "a4b10e647f31e3c6"
+    },
+    {
+      "id": "g-d0c21b435e",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "8fe86c759e4dbe86",
+      "after_h": "8fe86c759e4dbe86"
+    },
+    {
+      "id": "g-5cafa49f4b",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "367a42478d0f8daa",
+      "after_h": "367a42478d0f8daa"
+    },
+    {
+      "id": "g-1385ed51d8",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "1f776af4ae01b371",
+      "after_h": "1f776af4ae01b371"
+    },
+    {
+      "id": "g-247b828a07",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "730fb798a0688443",
+      "after_h": "730fb798a0688443"
+    },
+    {
+      "id": "g-fefc7f35b5",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "4855153044ef2b28",
+      "after_h": "4855153044ef2b28"
+    },
+    {
+      "id": "g-c03f1007a0",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "b77bb27688e4fb39",
+      "after_h": "b77bb27688e4fb39"
+    },
+    {
+      "id": "g-1f30d1fc23",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "7a985a0046c782b4",
+      "after_h": "7a985a0046c782b4"
+    },
+    {
+      "id": "g-7ffa816287",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "e7c04e8a59561ae5",
+      "after_h": "e7c04e8a59561ae5"
+    },
+    {
+      "id": "g-ab225e84f4",
+      "fields": [
+        "website",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "1d70af7c571c666f",
+      "after_h": "1d70af7c571c666f"
+    },
+    {
+      "id": "g-54ec81f096",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "e584dbd13862a62a",
+      "after_h": "e584dbd13862a62a"
+    },
+    {
+      "id": "g-8c64074d62",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "01c9d916134b981c",
+      "after_h": "01c9d916134b981c"
+    },
+    {
+      "id": "g-0e97233a22",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "39bb96feeb33ac20",
+      "after_h": "39bb96feeb33ac20"
+    },
+    {
+      "id": "g-2dba59b028",
+      "fields": [
+        "website",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "3ba76a4e9c33ccb1",
+      "after_h": "3ba76a4e9c33ccb1"
+    },
+    {
+      "id": "g-bc748309c8",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "41fb28eeaf1898c7",
+      "after_h": "41fb28eeaf1898c7"
+    },
+    {
+      "id": "g-b6ddf01640",
+      "fields": [
+        "website",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "d9ba5286202059c9",
+      "after_h": "d9ba5286202059c9"
+    },
+    {
+      "id": "g-1ec8c7942d",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "bd201298eec6d360",
+      "after_h": "bd201298eec6d360"
+    },
+    {
+      "id": "g-82293f791c",
+      "fields": [
+        "website",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "264966068500612d",
+      "after_h": "264966068500612d"
+    },
+    {
+      "id": "g-e5ebcdb1c6",
+      "fields": [
+        "website",
+        "day_pass",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "22ce2f49ecc15381",
+      "after_h": "22ce2f49ecc15381"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 64,
+    "problems": []
+  },
+  "started_at": "2026-11-24T09:20:04.984Z",
+  "finished_at": "2026-11-24T09:20:25.481Z",
+  "ids": [
+    "g-924474d561",
+    "g-2b0d0e567e",
+    "g-f6dd0d1d84",
+    "g-24f1ccb686",
+    "g-fe2180137a",
+    "g-7064a41023",
+    "g-16737a2c21",
+    "g-460a253882",
+    "g-fc47752145",
+    "g-c7dc10e005",
+    "g-f566a09f47",
+    "g-6ed1468467",
+    "g-76c4934610",
+    "g-9c09cf4908",
+    "g-10e6e2115b",
+    "g-85250f6dbb",
+    "g-d7400bf7af",
+    "g-89109c9954",
+    "g-77f3668e62",
+    "g-747c204aeb",
+    "g-7742b9664d",
+    "g-63d4aca9ed",
+    "g-ae03c45606",
+    "g-97e70cb5b0",
+    "g-b1c085146a",
+    "g-ffb2b1a10d",
+    "g-ee0dd4f008",
+    "g-ce178e385e",
+    "g-a2044b33e1",
+    "g-1d32bd8573",
+    "g-dd4262fb1f",
+    "g-32c1056120",
+    "g-1000c0efa0",
+    "g-e68ff30606",
+    "g-4e763802f9",
+    "g-6d0f4a0dc5",
+    "g-6b5fb7ba4e",
+    "g-2370a85fa3",
+    "g-e935c40916",
+    "g-83c717cf0c",
+    "g-d897233391",
+    "g-b935e0d7ef",
+    "g-21d55d1630",
+    "g-4ea11241b3",
+    "g-d155b43ca0",
+    "g-b5f3bf8d3d",
+    "g-d0c21b435e",
+    "g-5cafa49f4b",
+    "g-1385ed51d8",
+    "g-247b828a07",
+    "g-fefc7f35b5",
+    "g-c03f1007a0",
+    "g-1f30d1fc23",
+    "g-7ffa816287",
+    "g-ab225e84f4",
+    "g-54ec81f096",
+    "g-8c64074d62",
+    "g-0e97233a22",
+    "g-2dba59b028",
+    "g-bc748309c8",
+    "g-b6ddf01640",
+    "g-1ec8c7942d",
+    "g-82293f791c",
+    "g-e5ebcdb1c6"
+  ]
+}

@@ -35,8 +35,8 @@ Entry format: `### title` / Status / What / Notes. Move finished items out
 ### Chain expansions
 - Camp5 MY (~6), Hive CA (~4), Boulderwelt DE (~4), B-PUMP JP (~3), 9 Degrees AU (~2), Boulder Co NZ (~1). Verify each branch.
 ### Gym information (website, hours, day pass, facilities)
-- ~1,990 live gyms still lack website/hours/day pass (KR: Naver Place; CN: RedNote/Amap/WeChat; next: US, IT, NL, BE, AT, smaller DE/FR towns). Applied 2026-11-23: 132 hub gyms (SG/HK 30, England 49, JP 53). Not found: TW 22 (social only), SG/HK 14, England 35, JP 20 (see each batch report.md); GoNature HK seed-1845 may duplicate seed-1847.
-- Applied 2026-11-23 (2nd wave): 260 gyms (FR 100, DE south 41, DE north 41, CA 41, ES 37). Owner checks: seed-1060 Stuntwerk Köln and seed-1046 Mandala Dresden (which site?), ClimbPro Alicante address, Bloc en Stock = Arkose Meinau?, Ethos Toronto (shop?), Uuadibloc typo.
+- ~1,660 live gyms still lack website/hours/day pass (KR 248, CN 440: Naver Place / RedNote/Amap/WeChat; rest: JP ~115, US ~140, LatAm, smaller countries). Applied: 2026-11-23 132 hub gyms (SG/HK, England, JP hubs) + 260 (FR, DE, CA, ES); 2026-11-24 330 (US 122, JP regions 64, NL/BE 64, DE towns 49, IT/AT 31). Unfound gyms: each batch report.md.
+- Owner checks: possibly closed: Sandstein Aschaffenburg (closed 15.11.2026), Climb Cleveland, Elite Climbing NJ, Edge Miami, Aiguille FL; dup/not a gym: BOK Den Haag seed-1121, GoNature HK seed-1845, Ethos Toronto; which site: Stuntwerk Köln seed-1060, Mandala seed-1046; addresses: ClimbPro Alicante, Arkose Canal, Climbing Factory Nbg; Bloc en Stock = Arkose Meinau?; Uuadibloc typo.
 ### Locations and addresses
 - Owner manual pin checks: 39 (`import/pin-check/2026-10-06/MANUAL-CHECK-{europe,rest-of-world}.md`). China: 138 gyms with unconfirmed pins
   or no address (Amap pins, GCJ-02 -> WGS-84; several pin batches already applied).
