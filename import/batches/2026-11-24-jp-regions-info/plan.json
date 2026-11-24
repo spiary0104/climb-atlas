@@ -1,0 +1,2072 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-24-jp-regions-info",
+ "index": {
+  "sha256": "ee0e0c45b261e8d56a5a89777d4e4567f16b0ff18b4a45aeb76908b50eff22ad",
+  "count": 3651,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha"
+ ],
+ "counts": {
+  "records": 64,
+  "new": 0,
+  "existing": 0,
+  "update": 64,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "8090213fd4099e54d9ab465fa15924607969958bf38a60b85eae779cf33af68a",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "g-924474d561",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://bolsta.storeinfo.jp/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–22:00",
+      "tue": "Closed",
+      "wed": "13:00–22:00",
+      "thu": "13:00–22:00",
+      "fri": "13:00–22:00",
+      "sat": "13:00–22:00",
+      "sun": "13:00–22:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://bolsta.storeinfo.jp/pages/1018273/page_201705231145"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "0b57b37fea0fb8db",
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "g-2b0d0e567e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://boulderhonpo.com/"
+    }
+   ],
+   "expect_h": "3952108dd52abcb0",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "g-f6dd0d1d84",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://cube.eek.jp/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "28ea9a75d759f9fe",
+   "update_reason": "official website, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "g-24f1ccb686",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbing-cuore.com/shop_nakagawa"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,900 おとな 平日1日フリー, ¥2,100 土日祝（初回登録料 ¥500）"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://climbing-cuore.com/shop_nakagawa"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "1d29b45b03bfbd82",
+   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "g-fe2180137a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbing-cuore.com/shop_imaike"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:30",
+      "tue": "10:00–23:30",
+      "wed": "10:00–23:30",
+      "thu": "10:00–23:30",
+      "fri": "10:00–23:30",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,900 おとな 平日1日フリー, ¥2,300 土日祝"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://climbing-cuore.com/shop_imaike"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "3a6b94c7cb9c1d3a",
+   "update_reason": "official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "g-7064a41023",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.gyodoclimbing2.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–22:30",
+      "tue": "Closed",
+      "wed": "13:00–22:30",
+      "thu": "13:00–22:30",
+      "fri": "13:00–22:30",
+      "sat": "13:00–22:30",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.gyodoclimbing2.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "38912eafd4b99a78",
+   "update_reason": "official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "g-16737a2c21",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://riot-climbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–22:00",
+      "tue": "Closed",
+      "wed": "13:00–22:00",
+      "thu": "13:00–22:00",
+      "fri": "13:00–22:00",
+      "sat": "10:00–19:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://riot-climbing.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "a828fe04db6248ef",
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "g-460a253882",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://pinna2.com/toyota.html"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "16:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "16:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://pinna2.com/toyota.html"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "f15c85e2f5b3df57",
+   "update_reason": "official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "g-fc47752145",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://pinna2.com/obu.html"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://pinna2.com/obu.html"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "7954472f430e8110",
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "g-c7dc10e005",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbing-gym-soleil2.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "14:00–22:00",
+      "wed": "14:00–22:00",
+      "thu": "14:00–22:00",
+      "fri": "14:00–22:00",
+      "sat": "10:00–19:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://climbing-gym-soleil2.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "efd24d4ba0a98fef",
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "g-f566a09f47",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://rockdrunkard.com/"
+    }
+   ],
+   "expect_h": "1992c856ffb971ae",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "g-6ed1468467",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://picco-roccia.com/"
+    }
+   ],
+   "expect_h": "d4ce54a61bf402cb",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "g-76c4934610",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.bouldering-knot.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "14:00–24:00",
+      "wed": "14:00–24:00",
+      "thu": "14:00–24:00",
+      "fri": "14:00–24:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,200 一般 1日利用（税込）"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "shoe-hire",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.bouldering-knot.com/price"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "a3b2ba17fd6eeedb",
+   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "g-9c09cf4908",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.climbingjam.com/shizuoka/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–22:30",
+      "tue": "13:00–22:30",
+      "wed": "13:00–22:30",
+      "thu": "13:00–22:30",
+      "fri": "13:00–22:30",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.climbingjam.com/shizuoka/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "c19de50fd77ac243",
+   "update_reason": "official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "g-10e6e2115b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.climbingjam.com/hamamatsu/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–22:30",
+      "tue": "13:00–22:30",
+      "wed": "13:00–22:30",
+      "thu": "17:00–22:30",
+      "fri": "13:00–22:30",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.climbingjam.com/hamamatsu/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "5cff8efee55d2c60",
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "g-85250f6dbb",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.climbingjam.com/yaizu/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "15:00–22:30",
+      "tue": "15:00–22:30",
+      "wed": "15:00–22:30",
+      "thu": "15:00–22:30",
+      "fri": "15:00–22:30",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.climbingjam.com/yaizu/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "93992a70a7b2bb7f",
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "g-d7400bf7af",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbing-od.com/kokura"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Self-service all day",
+      "tue": "Staffed 14:00–21:00; self-service 24h",
+      "wed": "Staffed 14:00–21:00; self-service 24h",
+      "thu": "Staffed 14:00–21:00; self-service 24h",
+      "fri": "Staffed 14:00–21:00; self-service 24h",
+      "sat": "Staffed 11:00–20:00; self-service 24h",
+      "sun": "Staffed 11:00–18:00; self-service 24h"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,870 一般 1日（ビジター）（初回登録料 ¥1,100）"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shop",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://climbing-od.com/kokura"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "741a1d4968f71a2d",
+   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "g-89109c9954",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbing-od.com/yahata"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Self-service all day",
+      "tue": "Staffed 14:00–21:00; self-service 24h",
+      "wed": "Self-service all day",
+      "thu": "Staffed 14:00–21:00; self-service 24h",
+      "fri": "Staffed 14:00–21:00; self-service 24h",
+      "sat": "Staffed 11:00–20:00; self-service 24h",
+      "sun": "Staffed 11:00–18:00; self-service 24h"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,870 一般 1日（ビジター）（初回登録料 ¥1,100）"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://climbing-od.com/yahata"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "2a3101bce8b42b51",
+   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "g-77f3668e62",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbing-od.com/munakata"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "Staffed 14:00–21:00; self-service 24h",
+      "wed": "Staffed 14:00–21:00; self-service 24h",
+      "thu": "Staffed 14:00–21:00; self-service 24h",
+      "fri": "Staffed 14:00–21:00; self-service 24h",
+      "sat": "Staffed 11:00–20:00; self-service 24h",
+      "sun": "Staffed 11:00–18:00; self-service 24h"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,870 一般 1日（ビジター）（初回登録料 ¥1,100）"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://climbing-od.com/munakata"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "28dae90d69947f82",
+   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "g-747c204aeb",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://hoa-hoa.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "14:00–22:00",
+      "wed": "14:00–22:00",
+      "thu": "14:00–22:00",
+      "fri": "14:00–22:00",
+      "sat": "11:00–20:00",
+      "sun": "11:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,700 一般 1日利用（初回登録料 ¥1,700）"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://hoa-hoa.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "ff368c7a94cc850e",
+   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "g-7742b9664d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.favourclimbing.net/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "16:30–18:30",
+      "tue": "14:00–22:00",
+      "wed": "14:00–22:00",
+      "thu": "14:00–22:00",
+      "fri": "14:00–22:00",
+      "sat": "13:00–20:00",
+      "sun": "13:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,800 大人 1日利用料（初回登録料 ¥1,500）"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.favourclimbing.net/price.php"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "8b47c6aab494a757",
+   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "g-63d4aca9ed",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://stump-climbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "14:00–23:00",
+      "wed": "14:00–23:00",
+      "thu": "14:00–23:00",
+      "fri": "14:00–23:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://stump-climbing.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "899caa99742af15a",
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "g-ae03c45606",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://kurume.joywallclimbing.com/"
+    }
+   ],
+   "expect_h": "b225ad49b507c6d3",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "g-97e70cb5b0",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://ecole-climbing.com/"
+    }
+   ],
+   "expect_h": "f528d021b1b50281",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "g-b1c085146a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://ziprockclimbing.com/"
+    }
+   ],
+   "expect_h": "158c52f3066fba0e",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "g-ffb2b1a10d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.sunwall.jp/"
+    }
+   ],
+   "expect_h": "5a098f5cc547ab5d",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 27,
+   "class": "update",
+   "id": "g-ee0dd4f008",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://www.climbing-maru.com/"
+    }
+   ],
+   "expect_h": "ed02ab9016cfdccd",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 28,
+   "class": "update",
+   "id": "g-ce178e385e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://beborn.boy.jp/"
+    }
+   ],
+   "expect_h": "aa9157d362f0fa06",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 29,
+   "class": "update",
+   "id": "g-a2044b33e1",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.lutra-lutra.com/"
+    }
+   ],
+   "expect_h": "71b763f497afa6b0",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 30,
+   "class": "update",
+   "id": "g-1d32bd8573",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://rockcube.net/"
+    }
+   ],
+   "expect_h": "a19004f6bf0ee469",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 31,
+   "class": "update",
+   "id": "g-dd4262fb1f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://rockcraft.jp/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–22:30",
+      "tue": "Closed",
+      "wed": "13:00–22:30",
+      "thu": "13:00–22:30",
+      "fri": "13:00–22:30",
+      "sat": "09:30–20:00",
+      "sun": "09:30–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://rockcraft.jp/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "edac760f6743ce71",
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 32,
+   "class": "update",
+   "id": "g-32c1056120",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://routef.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–23:00",
+      "tue": "11:00–23:00",
+      "wed": "11:00–23:00",
+      "thu": "Closed",
+      "fri": "11:00–23:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://routef.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "2af5f7c366d156ea",
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 33,
+   "class": "update",
+   "id": "g-1000c0efa0",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://bonobo-bs.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–23:00",
+      "tue": "Closed",
+      "wed": "13:00–23:00",
+      "thu": "13:00–23:00",
+      "fri": "13:00–23:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,800 一般 1日利用料（初回登録料 ¥1,100）"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://bonobo-bs.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "327d6bcdfd54000e",
+   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 34,
+   "class": "update",
+   "id": "g-e68ff30606",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulderinggym.jp/"
+    }
+   ],
+   "expect_h": "a43315aae8265c6d",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 35,
+   "class": "update",
+   "id": "g-4e763802f9",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.nextgen-bouldering.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–22:00",
+      "tue": "13:00–22:00",
+      "wed": "13:00–23:00",
+      "thu": "13:00–22:00",
+      "fri": "13:00–23:00",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,420 一般 平日通日, ¥2,530 土日祝通日（初回登録料 ¥1,100）"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.nextgen-bouldering.com/price"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "45e0413567c05a9c",
+   "update_reason": "official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 36,
+   "class": "update",
+   "id": "g-6d0f4a0dc5",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://okkurock.com/"
+    }
+   ],
+   "expect_h": "364b2715eedb9d8e",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 37,
+   "class": "update",
+   "id": "g-6b5fb7ba4e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://www.overground-climb.com/"
+    }
+   ],
+   "expect_h": "da26bfc4c43dce03",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 38,
+   "class": "update",
+   "id": "g-2370a85fa3",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.limestone.jp/"
+    }
+   ],
+   "expect_h": "fbd83cc20a6de333",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 39,
+   "class": "update",
+   "id": "g-e935c40916",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://bgfunny.jp/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "14:00–23:00",
+      "tue": "14:00–23:00",
+      "wed": "14:00–23:00",
+      "thu": "14:00–23:00",
+      "fri": "Closed",
+      "sat": "12:00–23:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,100 一般 平日1日（初回登録料 ¥1,300）"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://bgfunny.jp/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "c547d0932be95c93",
+   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 40,
+   "class": "update",
+   "id": "g-83c717cf0c",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbing-aska.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Staffed 16:00–22:00; 24h self",
+      "tue": "Staffed closed",
+      "wed": "Staffed 16:00–22:00; 24h self",
+      "thu": "Staffed 16:00–22:00; 24h self",
+      "fri": "Staffed 16:00–22:00; 24h self",
+      "sat": "Staffed 15:00–20:00; 24h self",
+      "sun": "Staffed 15:00–20:00; 24h self"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,500 1日（初回登録料 ¥2,000）"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://climbing-aska.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "b5f16d67404a7c0a",
+   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 41,
+   "class": "update",
+   "id": "g-d897233391",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/yachiyo/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Staffed 16:00–22:00; 24h self-service",
+      "tue": "Staffed 16:00–22:00; 24h self-service",
+      "wed": "Staffed 16:00–22:00; 24h self-service",
+      "thu": "Staffed 16:00–22:00; 24h self-service",
+      "fri": "Staffed 16:00–22:00; 24h self-service",
+      "sat": "Staffed 10:00–19:00; 24h self-service",
+      "sun": "Staffed 10:00–19:00; 24h self-service"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/yachiyo/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "b7665847a431ba0d",
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 42,
+   "class": "update",
+   "id": "g-b935e0d7ef",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://energy-climbing.co.jp/kashiwa/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:30–23:00",
+      "tue": "10:30–23:00",
+      "wed": "10:30–23:00",
+      "thu": "10:30–23:00",
+      "fri": "10:30–23:00",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://energy-climbing.co.jp/kashiwa/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "0c3c68889c8c8204",
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 43,
+   "class": "update",
+   "id": "g-21d55d1630",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://beaksc.wixsite.com/beaks"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–22:00",
+      "tue": "13:00–22:00",
+      "wed": "13:00–22:00",
+      "thu": "13:00–22:00",
+      "fri": "13:00–22:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,600 一般 フリータイム（初回登録料 ¥600）"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://beaksc.wixsite.com/beaks"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "72155509d79c5477",
+   "update_reason": "official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 44,
+   "class": "update",
+   "id": "g-4ea11241b3",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://olioli.ltd/"
+    }
+   ],
+   "expect_h": "65be4e59e25b3ef0",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 45,
+   "class": "update",
+   "id": "g-d155b43ca0",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.q-roche.com/"
+    }
+   ],
+   "expect_h": "a6421c9d8258fa92",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 46,
+   "class": "update",
+   "id": "g-b5f3bf8d3d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://sarukichi-jp.jimdofree.com/"
+    }
+   ],
+   "expect_h": "a4b10e647f31e3c6",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 47,
+   "class": "update",
+   "id": "g-d0c21b435e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://xn--rlsr11attnfmy.com/"
+    }
+   ],
+   "expect_h": "8fe86c759e4dbe86",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 48,
+   "class": "update",
+   "id": "g-5cafa49f4b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://akalaclimb.com/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,650 1日券 平日, ¥1,870 土日祝（入会金 ¥1,500）"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://akalaclimb.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "367a42478d0f8daa",
+   "update_reason": "official website, day pass price from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 49,
+   "class": "update",
+   "id": "g-1385ed51d8",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://whippersnappergym.com/"
+    }
+   ],
+   "expect_h": "1f776af4ae01b371",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 50,
+   "class": "update",
+   "id": "g-247b828a07",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.signal-climbing.com/"
+    }
+   ],
+   "expect_h": "730fb798a0688443",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 51,
+   "class": "update",
+   "id": "g-fefc7f35b5",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rainbow-cliff.co.jp/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "17:00–22:00",
+      "tue": "17:00–22:00",
+      "wed": "13:00–22:00",
+      "thu": "17:00–22:00",
+      "fri": "17:00–22:00",
+      "sat": "11:00–20:00",
+      "sun": "11:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,400 大人 一日（90分 ¥1,200）"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.rainbow-cliff.co.jp/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "4855153044ef2b28",
+   "update_reason": "official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 52,
+   "class": "update",
+   "id": "g-c03f1007a0",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://www.homie.jp/"
+    }
+   ],
+   "expect_h": "b77bb27688e4fb39",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 53,
+   "class": "update",
+   "id": "g-1f30d1fc23",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.xtreme-gym.com/"
+    }
+   ],
+   "expect_h": "7a985a0046c782b4",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 54,
+   "class": "update",
+   "id": "g-7ffa816287",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://spookyclimbing.jimdofree.com/"
+    }
+   ],
+   "expect_h": "e7c04e8a59561ae5",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 55,
+   "class": "update",
+   "id": "g-ab225e84f4",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://kokopelliboulder.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "Closed",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://kokopelliboulder.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "1d70af7c571c666f",
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 56,
+   "class": "update",
+   "id": "g-54ec81f096",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://cero-climb.com/"
+    }
+   ],
+   "expect_h": "e584dbd13862a62a",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 57,
+   "class": "update",
+   "id": "g-8c64074d62",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://ubl-climbingpark.com/higashihiroshima/"
+    }
+   ],
+   "expect_h": "01c9d916134b981c",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 58,
+   "class": "update",
+   "id": "g-0e97233a22",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://www.youyoukan.jp/gymfurukawa/index.html"
+    }
+   ],
+   "expect_h": "39bb96feeb33ac20",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 59,
+   "class": "update",
+   "id": "g-2dba59b028",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://banjat.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "13:00–21:00",
+      "wed": "13:00–21:00",
+      "thu": "13:00–21:00",
+      "fri": "13:00–21:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://banjat.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "3ba76a4e9c33ccb1",
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 60,
+   "class": "update",
+   "id": "g-bc748309c8",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://lookrock.okinawa/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–22:00",
+      "tue": "13:00–22:00",
+      "wed": "Closed",
+      "thu": "13:00–22:00",
+      "fri": "13:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥2,200 大人ビジター 1日（税別）"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://lookrock.okinawa/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "41fb28eeaf1898c7",
+   "update_reason": "official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 61,
+   "class": "update",
+   "id": "g-b6ddf01640",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.coralrock-okinawa.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "14:00–22:00 (2nd Tue closed)",
+      "wed": "14:00–22:00",
+      "thu": "14:00–22:00",
+      "fri": "14:00–22:00",
+      "sat": "13:00–20:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.coralrock-okinawa.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "d9ba5286202059c9",
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 62,
+   "class": "update",
+   "id": "g-1ec8c7942d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://handjam.net/"
+    }
+   ],
+   "expect_h": "bd201298eec6d360",
+   "update_reason": "official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 63,
+   "class": "update",
+   "id": "g-82293f791c",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://obuse-open-oasis.jp/bouldering.html"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–17:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://obuse-open-oasis.jp/bouldering.html"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "264966068500612d",
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 64,
+   "class": "update",
+   "id": "g-e5ebcdb1c6",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://rockgym-horie.com/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "¥1,200 大人ビジター（初回登録料 ¥800）"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://rockgym-horie.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "22ce2f49ecc15381",
+   "update_reason": "official website, day pass price from the gym's own site (researched 2026-11-24)"
+  }
+ ]
+}
