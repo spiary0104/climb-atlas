@@ -1,0 +1,2038 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-24-us-west-info",
+ "index": {
+  "sha256": "ee0e0c45b261e8d56a5a89777d4e4567f16b0ff18b4a45aeb76908b50eff22ad",
+  "count": 3651,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha"
+ ],
+ "counts": {
+  "records": 46,
+  "new": 0,
+  "existing": 0,
+  "update": 46,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "42cd4a8d7216bce822ac87e2889cbee127f3a719af0ecd324d6808d80a368463",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "g-da27fc19f8",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://movementgyms.com/portland/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–23:00",
+      "tue": "06:00–23:00",
+      "wed": "06:00–23:00",
+      "thu": "06:00–23:00",
+      "fri": "06:00–23:00",
+      "sat": "08:00–20:00",
+      "sun": "08:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop",
+      "showers",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://movementgyms.com/portland/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "1d053e8a2fa9561a",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "g-c86c541110",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.thecircuitgym.com/northeast"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "07:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "07:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "09:00–23:00",
+      "sun": "09:00–23:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.thecircuitgym.com/northeast"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "cf4fdde6389842c5",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "g-42b9c2971e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.thecircuitgym.com/southwest"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.thecircuitgym.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "748e6435f4680091",
+   "update_reason": "Official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "g-2c947c33c0",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.thecircuitgym.com/tigard"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "09:00–23:00",
+      "sun": "09:00–23:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.thecircuitgym.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "f3c51ede8119ba74",
+   "update_reason": "Official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "g-53f77820d1",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.thecircuitgym.com/bend"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "07:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "07:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.thecircuitgym.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "e49d44131a1e53c2",
+   "update_reason": "Official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "g-7df9f96c58",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.thecircuitgym.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–23:00",
+      "tue": "10:00–23:00",
+      "wed": "07:00–23:00",
+      "thu": "10:00–23:00",
+      "fri": "07:00–23:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–22:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.thecircuitgym.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "426f1a51382c0d37",
+   "update_reason": "Official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "g-973f0a7dff",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://portlandrockgym.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–22:00",
+      "tue": "07:00–22:00",
+      "wed": "07:00–22:00",
+      "thu": "07:00–22:00",
+      "fri": "07:00–22:00",
+      "sat": "08:00–21:00",
+      "sun": "08:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$27 day pass (Northeast only)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://portlandrockgym.com/rates"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "a43c1b71e0fd2033",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "g-11445ad709",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://portlandrockgym.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–23:00",
+      "tue": "07:00–23:00",
+      "wed": "07:00–23:00",
+      "thu": "07:00–23:00",
+      "fri": "07:00–23:00",
+      "sat": "08:00–21:00",
+      "sun": "08:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$32 day pass (Beaverton)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://portlandrockgym.com/rates"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "534542fd6128982f",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "g-8c015938de",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.skyhookbouldering.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–21:00 (staffed)",
+      "tue": "13:00–21:00 (staffed)",
+      "wed": "13:00–21:00 (staffed)",
+      "thu": "13:00–21:00 (staffed)",
+      "fri": "13:00–21:00 (staffed)",
+      "sat": "10:00–18:00 (staffed)",
+      "sun": "10:00–18:00 (staffed)"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.skyhookbouldering.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "07b1652fb0a2f1c2",
+   "update_reason": "Official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "g-ca3b730168",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.bendrockgym.com/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$22 adult (16+), $19 youth (4–15)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.bendrockgym.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "af69c6357786b31f",
+   "update_reason": "Official website, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "g-968f96eda2",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.brimstoneboulders.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "15:00–20:00",
+      "tue": "15:00–20:00",
+      "wed": "15:00–20:00",
+      "thu": "15:00–20:00",
+      "fri": "15:00–20:00",
+      "sat": "10:00–18:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.brimstoneboulders.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "17f57dc42528b8a1",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "g-9b10b4bc62",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.roguerockgym.com/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$20 adult, $18 student and youth"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://roguerockgym.com/day-use/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "ea3fb5979cb1faba",
+   "update_reason": "Official website, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "g-0692d41106",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.valleyrockgym.com/"
+    }
+   ],
+   "expect_h": "be5f5050be40281a",
+   "update_reason": "Official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "g-f17c4ea21a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.altaclimbing.com/chandler"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "05:00–22:00",
+      "tue": "05:00–22:00",
+      "wed": "05:00–22:00",
+      "thu": "05:00–22:00",
+      "fri": "05:00–22:00",
+      "sat": "07:00–22:00",
+      "sun": "10:00–17:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.altaclimbing.com/chandler"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "20a3c95bc64904bd",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "g-c4a9274f2f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.altaclimbing.com/gilbert"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "05:00–22:00",
+      "tue": "05:00–22:00",
+      "wed": "05:00–22:00",
+      "thu": "05:00–22:00",
+      "fri": "05:00–22:00",
+      "sat": "07:00–22:00",
+      "sun": "08:00–17:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.altaclimbing.com/gilbert"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "752f8eafa38d52f7",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "g-c1352dffba",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.blackrockboulderinggym.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–21:00",
+      "tue": "09:00–21:00",
+      "wed": "09:00–21:00",
+      "thu": "09:00–21:00",
+      "fri": "09:00–21:00",
+      "sat": "09:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.blackrockboulderinggym.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "1e6ecff08f849006",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "g-c03e4eb3ec",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://boulderingproject.com/location/tempe"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–23:00",
+      "tue": "06:00–23:00",
+      "wed": "06:00–23:00",
+      "thu": "06:00–23:00",
+      "fri": "06:00–23:00",
+      "sat": "08:00–22:00",
+      "sun": "08:00–22:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "parking",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://boulderingproject.com/location/tempe"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "badca0c06fc71cd6",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "g-e62a1b3b70",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://phoenixrockgym.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "15:00–22:00",
+      "tue": "15:00–22:00",
+      "wed": "15:00–22:00",
+      "thu": "15:00–22:00",
+      "fri": "15:00–22:00",
+      "sat": "10:00–19:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://phoenixrockgym.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "de990cd8a8a64366",
+   "update_reason": "Official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "g-d23a840b02",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.flagstaffclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "12:00–20:00",
+      "sun": "12:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.flagstaffclimbing.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "581cbc4a78f0f4fa",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "g-d3fa9a169d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.mainstreetboulders.com/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training"
+     ]
+    }
+   ],
+   "expect_h": "fb30582e37bd0834",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "g-bc8b938464",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://hawaiiclimb.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:00–23:00",
+      "tue": "08:00–23:00",
+      "wed": "08:00–23:00",
+      "thu": "08:00–23:00",
+      "fri": "08:00–23:00",
+      "sat": "08:00–21:30",
+      "sun": "08:00–21:30"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$35 visitor, $29 first-time kamaaina, $32 return kamaaina"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire",
+      "shop",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://hawaiiclimb.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "e03e89d27102d5f4",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "g-86cb7509a9",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://volcanicrockgymhawaii.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–21:00",
+      "tue": "09:00–21:00",
+      "wed": "09:00–21:00",
+      "thu": "09:00–21:00",
+      "fri": "09:00–21:00",
+      "sat": "09:00–19:00",
+      "sun": "09:00–19:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://volcanicrockgymhawaii.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "c769aa0c0acbf119",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "g-5d315f4633",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://aloharockgym.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–21:00",
+      "tue": "10:00–21:00",
+      "wed": "10:00–21:00",
+      "thu": "10:00–21:00",
+      "fri": "10:00–21:00",
+      "sat": "10:00–21:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://aloharockgym.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "e06e4e3df5876ea2",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "g-25479c204a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.bigislandclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–20:00",
+      "tue": "12:00–20:00",
+      "wed": "12:00–20:00",
+      "thu": "12:00–20:00",
+      "fri": "12:00–20:00",
+      "sat": "10:00–18:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "$18 kamaaina adult, $13 keiki; visitors add $5"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.bigislandclimbing.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "697a03f2a839b746",
+   "update_reason": "Official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "g-6d9381b9fa",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.mosaicclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–21:00",
+      "tue": "12:00–21:00",
+      "wed": "12:00–21:00",
+      "thu": "12:00–21:00",
+      "fri": "12:00–21:00",
+      "sat": "10:00–20:00",
+      "sun": "11:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.mosaicclimbing.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "54b5be3fd348dfa9",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "g-36f3fd912d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rockmillclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "09:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "09:00–22:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.rockmillclimbing.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "acac6b45e48e3fb9",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 27,
+   "class": "update",
+   "id": "g-5ed20223ae",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.climbcincy.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "06:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "06:00–22:00",
+      "fri": "06:00–22:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.climbcincy.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "b0e8d8892e85db6b",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 28,
+   "class": "update",
+   "id": "g-d25f0aa6b6",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.boulderingproject.com/location/minneapolis"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–23:00",
+      "tue": "06:00–23:00",
+      "wed": "06:00–23:00",
+      "thu": "06:00–23:00",
+      "fri": "06:00–23:00",
+      "sat": "07:00–22:00",
+      "sun": "07:00–22:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop",
+      "parking",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.boulderingproject.com/location/minneapolis"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "cbdbb2dea67f7e2b",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 29,
+   "class": "update",
+   "id": "g-da17343f42",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.bigislandbouldering.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–22:00",
+      "tue": "06:00–22:00",
+      "wed": "06:00–22:00",
+      "thu": "06:00–22:00",
+      "fri": "06:00–22:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.bigislandbouldering.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "a50acab421666994",
+   "update_reason": "Official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 30,
+   "class": "update",
+   "id": "g-c947d3124e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://stlouis.climbsoill.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–22:00",
+      "tue": "11:00–22:00",
+      "wed": "11:00–22:00",
+      "thu": "11:00–22:00",
+      "fri": "11:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://stlouis.climbsoill.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "272adfae76ef00ef",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 31,
+   "class": "update",
+   "id": "g-5398263af4",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://stcharles.climbsoill.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "11:00–22:00",
+      "tue": "11:00–22:00",
+      "wed": "11:00–22:00",
+      "thu": "11:00–22:00",
+      "fri": "11:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://stcharles.climbsoill.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "f0f62b17a27db8a4",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 32,
+   "class": "update",
+   "id": "g-44c1e96bd7",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.hoosierheightsbloomington.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–22:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.hoosierheightsbloomington.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "3ab620a238c29ffd",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 33,
+   "class": "update",
+   "id": "g-cb57883cfb",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.hoosierheightsindianapolis.com/hoosierheights/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training"
+     ]
+    }
+   ],
+   "expect_h": "00f88a3370f1124c",
+   "update_reason": "Official website, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 34,
+   "class": "update",
+   "id": "g-3552a25b4e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://momentumclimbing.com/locations/memorial/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–23:00",
+      "tue": "06:00–23:00",
+      "wed": "06:00–23:00",
+      "thu": "06:00–23:00",
+      "fri": "06:00–23:00",
+      "sat": "08:00–22:00",
+      "sun": "08:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shoe-hire",
+      "shop",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://momentumclimbing.com/locations/memorial/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "828e4cf31c8264ea",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 35,
+   "class": "update",
+   "id": "g-cfd8d60ae9",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://theclimbgyms.com/bentonville/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–21:00",
+      "tue": "09:00–21:00",
+      "wed": "09:00–21:00",
+      "thu": "09:00–21:00",
+      "fri": "09:00–21:00",
+      "sat": "09:00–21:00",
+      "sun": "11:00–18:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://theclimbgyms.com/bentonville/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "7b30ef17a7f8e353",
+   "update_reason": "Official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 36,
+   "class": "update",
+   "id": "g-9a43178011",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbstoneage.com/locations/stone-age-midtown/"
+    }
+   ],
+   "expect_h": "6c2e78d3f7622453",
+   "update_reason": "Official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 37,
+   "class": "update",
+   "id": "g-db115f8a1b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbstoneage.com/locations/stone-age-north/"
+    }
+   ],
+   "expect_h": "27a8d4749f468c11",
+   "update_reason": "Official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 38,
+   "class": "update",
+   "id": "g-675e072a40",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.odysseyclimbing.com/greenbay-1"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "09:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "09:00–22:00",
+      "sat": "09:00–22:00",
+      "sun": "09:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.odysseyclimbing.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "35dea995901879de",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 39,
+   "class": "update",
+   "id": "g-2f938b5b82",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.odysseyclimbing.com/appleton"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–22:00",
+      "tue": "09:00–22:00",
+      "wed": "09:00–22:00",
+      "thu": "09:00–22:00",
+      "fri": "09:00–22:00",
+      "sat": "09:00–22:00",
+      "sun": "09:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.odysseyclimbing.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "e6d0b502ab294afb",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 40,
+   "class": "update",
+   "id": "g-4eccedd2c1",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.climbkalamazoo.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–22:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.climbkalamazoo.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "8d6ea71545d2656b",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 41,
+   "class": "update",
+   "id": "g-93c3d14e32",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.spireclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–22:00",
+      "tue": "06:00–22:00",
+      "wed": "06:00–22:00",
+      "thu": "06:00–22:00",
+      "fri": "06:00–22:00",
+      "sat": "08:00–21:00",
+      "sun": "08:00–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.spireclimbing.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "97c36d94c7da699f",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 42,
+   "class": "update",
+   "id": "g-2e32c07be1",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.freestoneclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–22:00",
+      "tue": "06:00–22:00",
+      "wed": "06:00–22:00",
+      "thu": "06:00–22:00",
+      "fri": "06:00–22:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–22:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shop",
+      "yoga"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.freestoneclimbing.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "43b0aec2abe784db",
+   "update_reason": "Official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 43,
+   "class": "update",
+   "id": "g-dc002b2042",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.fargoclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "12:00–22:00",
+      "tue": "12:00–22:00",
+      "wed": "12:00–22:00",
+      "thu": "12:00–22:00",
+      "fri": "12:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.fargoclimbing.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "b46ad776230bfa8d",
+   "update_reason": "Official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 44,
+   "class": "update",
+   "id": "g-82956e5d0b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.alaskarockgym.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–22:00",
+      "tue": "06:00–22:00",
+      "wed": "06:00–22:00",
+      "thu": "06:00–22:00",
+      "fri": "06:00–22:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–21:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.alaskarockgym.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-24"
+    }
+   ],
+   "expect_h": "04c8081c9db27f0e",
+   "update_reason": "Official website, weekly opening hours from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 45,
+   "class": "update",
+   "id": "g-9ec90337ce",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://mwclimbing.com/locations"
+    }
+   ],
+   "expect_h": "7b63b0a298712e9a",
+   "update_reason": "Official website from the gym's own site (researched 2026-11-24)"
+  },
+  {
+   "line": 46,
+   "class": "update",
+   "id": "g-34a0c5b0f7",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://mwclimbing.com/locations"
+    }
+   ],
+   "expect_h": "4d6529f2be1f1d5f",
+   "update_reason": "Official website from the gym's own site (researched 2026-11-24)"
+  }
+ ]
+}
