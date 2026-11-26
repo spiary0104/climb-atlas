@@ -54,97 +54,153 @@ module.exports = {
   privacy: {
     title: 'Política de Privacidade',
     metaTitle: 'Política de Privacidade — Bouldeer',
-    description: 'O que o Bouldeer armazena, quem pode ver, quais serviços ele usa e como excluir sua conta.',
-    updated: 'Última atualização: 22 de novembro de 2026',
+    description: 'O que o Bouldeer armazena, quem pode ver, onde os dados são processados e como excluir sua conta.',
+    updated: 'Última atualização: 26 de novembro de 2026',
     body: `
-    <p>O Bouldeer é um mapa pequeno e gratuito de academias de escalada para escaladores que viajam. Coletamos o mínimo possível, não usamos anúncios nem ferramentas de análise e não vendemos seus dados.</p>
+    <p>O Bouldeer é um mapa pequeno e gratuito de academias de escalada para escaladores que viajam, administrado a partir de Nova Gales do Sul, na Austrália. Coletamos o mínimo possível. Não exibimos anúncios, não usamos ferramentas de análise e não vendemos nem compartilhamos seus dados para fins de publicidade.</p>
 
     <h2>Sem conta</h2>
-    <p>Você pode usar o mapa, a busca e as páginas das academias sem entrar na sua conta. O Bouldeer não define cookies e não usa rastreamento. Os serviços que entregam o site (listados abaixo) veem os dados comuns de uma requisição, como seu endereço IP e seu navegador.</p>
+    <p>Você pode usar o mapa, a busca e as páginas das academias sem entrar na sua conta. O Bouldeer não define cookies e não rastreia você. Os serviços que entregam o site (listados abaixo) veem os dados comuns de uma requisição, como seu endereço IP e seu navegador.</p>
 
     <h2>Com conta</h2>
-    <p>Você entra com um link enviado por e-mail ou com o Google, por meio do Supabase, nosso provedor de banco de dados e de login. Armazenamos:</p>
+    <p>Você precisa ter pelo menos 16 anos para criar uma conta. Você entra com um link enviado por e-mail ou com o Google, por meio do nosso provedor de login, o Supabase. Armazenamos:</p>
     <ul>
-      <li>Seu endereço de e-mail (e, se você usar o Google, os dados básicos de perfil que o Google compartilha) para que você possa entrar. Ele nunca é exibido no Bouldeer.</li>
-      <li>Um nome de exibição opcional, mostrado publicamente como &ldquo;adicionada por&nbsp;&hellip;&rdquo; nas academias que você adiciona.</li>
-      <li>Suas academias salvas e escaladas, check-ins e diário: as academias, datas, anotações, humores e graus que você informa.</li>
+      <li>Seu endereço de e-mail, para que você possa entrar. Se você usar o Google, o Google também compartilha seu perfil básico (nome e foto de perfil) com nosso provedor de login. Nada disso é exibido no Bouldeer.</li>
+      <li>Um nome de exibição opcional.</li>
+      <li>Suas academias salvas e escaladas, check-ins (a academia, o horário e uma nota curta ou link de foto opcionais) e seu diário (datas, vias, graus, humores e anotações).</li>
       <li>O que você nos envia: novas academias, edições sugeridas e relatos de problemas, vinculados à sua conta.</li>
     </ul>
+    <p>Usamos isso para operar sua conta e os recursos que você escolhe. Também usamos para verificar e publicar informações das academias e para manter o site livre de abusos.</p>
 
     <h2>Quem pode ver o quê</h2>
     <ul>
-      <li><strong>Todos:</strong> os detalhes aprovados das academias e seu nome de exibição nas academias que você adicionou. Não coloque informações pessoais nos detalhes de uma academia.</li>
-      <li><strong>Moderadores:</strong> o que você nos envia e de qual conta veio, para poderem verificar.</li>
-      <li><strong>Somente você:</strong> seu e-mail, academias salvas e escaladas, check-ins, diário e pontos.</li>
+      <li><strong>Todos:</strong> os detalhes aprovados das academias e seu nome de exibição, se você definiu um. Os nomes de exibição são públicos. Aparecem como &ldquo;adicionada por&nbsp;&hellip;&rdquo; nas academias que você adicionou e são vinculados a um número de conta interno, nunca ao seu e-mail. Não coloque informações pessoais nos detalhes de uma academia.</li>
+      <li><strong>Moderadores:</strong> o que você nos envia, o nome de exibição da conta que enviou e os pontos de contribuição, para poderem verificar os envios. Eles nunca veem seu e-mail.</li>
+      <li><strong>Somente você:</strong> seu e-mail, academias salvas e escaladas, check-ins e diário.</li>
     </ul>
-    <p>Os dados privados são protegidos por regras de acesso do banco de dados. A pessoa que administra o Bouldeer tem acesso de administrador ao banco de dados e o usa apenas para operar e proteger o site.</p>
+    <p>Os dados privados são protegidos por regras de acesso do banco de dados e trafegam criptografados (HTTPS). A pessoa que administra o Bouldeer tem acesso de administrador ao banco de dados e o usa apenas para operar e proteger o site.</p>
 
     <h2>Localização</h2>
-    <p>O Bouldeer só pede sua localização quando você usa o botão de localizar, &ldquo;Usar minha localização&rdquo; em Adicionar uma academia, ou faz check-in pelo celular (você precisa estar a cerca de 500&nbsp;metros da academia). Seu navegador pergunta antes, e você pode recusar. Sua posição é usada no seu dispositivo e nunca é enviada a nós nem salva: um check-in registra a academia e o horário, não onde você estava.</p>
+    <p>O Bouldeer só pede sua localização quando você usa o botão de localizar, &ldquo;Usar minha localização&rdquo; em Adicionar academia, ou faz check-in pelo celular (você precisa estar a cerca de 500&nbsp;metros da academia). Seu navegador pergunta antes, e você pode recusar.</p>
+    <ul>
+      <li><strong>Botão de localizar e check-in:</strong> sua posição é usada somente no seu dispositivo. Ela nunca é enviada para nós nem salva. Um check-in registra a academia e o horário, não onde você estava.</li>
+      <li><strong>Adicionar academia:</strong> &ldquo;Usar minha localização&rdquo; move o marcador para onde você está. O marcador que você envia chega até nós como a localização da academia e é publicado depois de aprovado, então coloque-o primeiro sobre a academia.</li>
+    </ul>
 
     <h2>Armazenado no seu dispositivo</h2>
-    <p>Sem cookies. O armazenamento do seu navegador guarda sua sessão de login, um rascunho não enviado de Adicionar uma academia, o layout da sua lista, a última posição do mapa, buscas recentes e o idioma escolhido, uma anotação para que uma mensagem de marco apareça só uma vez por visita, e cópias offline do site, dos blocos de mapa visualizados e da lista pública de academias. Limpar os dados do site no navegador remove tudo isso.</p>
-
-    <h2>Serviços que usamos</h2>
-    <p>Cada um destes vê seu endereço IP e os dados do seu navegador e tem sua própria política de privacidade:</p>
+    <p>Sem cookies. O armazenamento do seu navegador guarda:</p>
     <ul>
-      <li><strong>Supabase:</strong> banco de dados e login. Armazena os dados da sua conta e envia os e-mails de login.</li>
-      <li><strong>Vercel:</strong> hospeda o site e mantém registros de requisições.</li>
+      <li>sua sessão de login;</li>
+      <li>um rascunho não enviado de Adicionar academia, incluindo a posição do marcador;</li>
+      <li>o layout da sua lista, a última visualização do mapa, buscas recentes e o idioma escolhido;</li>
+      <li>anotações para que a introdução e as mensagens de boas-vindas e de marco apareçam só uma vez;</li>
+      <li>cópias offline do site, das imagens do mapa que você viu e da lista pública de academias.</li>
+    </ul>
+    <p>Sair da conta ou excluí-la encerra sua sessão. Limpar os dados do site no navegador remove todo o resto.</p>
+
+    <h2>Onde seus dados são processados</h2>
+    <p>Os dados da sua conta são armazenados em Singapura. Nossos provedores também processam dados nos Estados Unidos e em outros países. Cada um tem sua própria política de privacidade:</p>
+    <ul>
+      <li><strong>Supabase:</strong> banco de dados e login; os dados da sua conta ficam armazenados em Singapura.</li>
+      <li><strong>Resend:</strong> envia os e-mails de login, então vê seu e-mail. Armazena dados nos Estados Unidos e mantém registros de e-mail por 30 dias.</li>
+      <li><strong>Vercel:</strong> hospeda o site no mundo todo e mantém registros de requisições.</li>
+      <li><strong>CARTO:</strong> imagens de mapa, baseadas em dados do OpenStreetMap. Encurta os endereços IP e mantém seus registros por 30 dias nos Estados Unidos.</li>
       <li><strong>Google:</strong> login com o Google (somente se você escolher), Google Fonts e Google Maps quando você toca em Como chegar.</li>
       <li><strong>Amap:</strong> somente quando você escolhe abrir um endereço no Amap.</li>
-      <li><strong>CARTO:</strong> blocos de mapa, baseados em dados do OpenStreetMap.</li>
       <li><strong>unpkg.com e cdn.jsdelivr.net:</strong> as bibliotecas de código do mapa e da conexão com o banco de dados.</li>
       <li><strong>Hospedagens de fotos:</strong> as fotos das academias são links, então seu navegador as carrega do site que as hospeda.</li>
     </ul>
 
+    <h2>Por quanto tempo guardamos os dados</h2>
+    <ul>
+      <li><strong>Dados da conta:</strong> até você excluir sua conta.</li>
+      <li><strong>Academias, edições e relatos que você enviou:</strong> permanecem como parte do mapa. Depois que você exclui sua conta, deixam de estar vinculados a você.</li>
+      <li><strong>Registros dos provedores:</strong> o Resend e o CARTO mantêm registros por 30 dias. A Vercel e o Supabase mantêm registros de requisições por períodos que eles definem.</li>
+    </ul>
+
     <h2>Excluir sua conta</h2>
-    <p>Use <strong>Excluir conta</strong> no final da sua página Eu para excluir sua conta na hora, ou envie um e-mail para <a href="mailto:hello@bouldeer.com">hello@bouldeer.com</a> a partir do endereço com o qual você entra e a excluiremos em até 30 dias. Nas duas opções, isso remove seu e-mail, nome de exibição, academias salvas e escaladas, check-ins, diário e pontos. As academias, edições e relatos que você enviou permanecem, com o vínculo com você removido. As cópias nos registros e backups dos nossos provedores expiram conforme os prazos de cada um.</p>
-    <p>Você também pode nos escrever para saber o que guardamos sobre você ou para corrigir esses dados. Para corrigir os detalhes de uma academia, use Sugerir edição ou Reportar problema na página dela.</p>
+    <p>Use <strong>Excluir conta</strong> no final da sua página Eu para excluir sua conta na hora. Você pode fazer isso em qualquer navegador em bouldeer.com: entre na sua conta, abra Eu e escolha Excluir conta. Os passos também estão em <a href="{delete}">Excluir sua conta</a>.</p>
+    <p>A exclusão remove seu e-mail, nome de exibição, academias salvas e escaladas, check-ins, diário e pontos. As academias, edições e relatos que você enviou permanecem no mapa, inclusive qualquer texto que você escreveu, mas deixam de estar vinculados a você.</p>
+
+    <h2>Seus direitos</h2>
+    <p>Você pode pedir para acessar, corrigir ou exportar seus dados, ou se opor ao uso que fazemos deles: escreva para <a href="mailto:hello@bouldeer.com">hello@bouldeer.com</a>. Para corrigir os detalhes de uma academia, use Sugerir edição ou Reportar problema na página dela. Se você não ficar satisfeito com nossa resposta, pode reclamar ao Office of the Australian Information Commissioner (oaic.gov.au), à autoridade de proteção de dados do seu país na UE ou ao Information Commissioner&rsquo;s Office do Reino Unido (ico.org.uk).</p>
+
+    <h2>Crianças</h2>
+    <p>O Bouldeer não foi feito para crianças. Você precisa ter pelo menos 16 anos para criar uma conta.</p>
 
     <h2>Alterações</h2>
-    <p>Se o Bouldeer passar a coletar algo novo, atualizaremos esta página primeiro e mudaremos a data acima.</p>
+    <p>Se o Bouldeer passar a coletar qualquer coisa nova, atualizaremos esta página primeiro e mudaremos a data acima. Em alterações importantes, também publicaremos um aviso no site.</p>
 
     <h2>Contato</h2>
-    <p><a href="mailto:hello@bouldeer.com">hello@bouldeer.com</a>. Veja também os <a href="{terms}">Termos de Uso</a>.</p>
+    <p><a href="mailto:hello@bouldeer.com">hello@bouldeer.com</a>. Veja também os <a href="{terms}">Termos de Serviço</a>.</p>
 `,
   },
 
   terms: {
-    title: 'Termos de Uso',
-    metaTitle: 'Termos de Uso — Bouldeer',
+    title: 'Termos de Serviço',
+    metaTitle: 'Termos de Serviço — Bouldeer',
     description: 'Os termos para usar o Bouldeer, o mapa gratuito de academias de escalada para escaladores que viajam.',
-    updated: 'Última atualização: 21 de novembro de 2026',
+    updated: 'Última atualização: 26 de novembro de 2026',
     body: `
-    <p>O Bouldeer (antigo Climb Atlas) é um mapa gratuito e informativo de academias de escalada para escaladores que viajam. Ele não tem ligação com as academias listadas e não aceita reservas nem pagamentos. Ao usar o Bouldeer, você concorda com estes termos; a <a href="{privacy}">Política de Privacidade</a> explica como tratamos seus dados.</p>
+    <p>O Bouldeer (antes Climb Atlas) é um mapa gratuito e informativo de academias de escalada para escaladores que viajam, administrado a partir de Nova Gales do Sul, na Austrália. Ele não tem ligação com as academias listadas e não faz reservas nem recebe pagamentos. Ao usar o Bouldeer, você concorda com estes termos. A <a href="{privacy}">Política de Privacidade</a> explica como tratamos seus dados.</p>
 
     <h2>Confirme antes de ir</h2>
-    <p>Os detalhes das academias são pesquisados em fontes públicas, como os sites e redes sociais das próprias academias e listagens de mapas, e a partir de correções que as pessoas nos enviam. Eles podem estar desatualizados ou errados. Confirme com a própria academia o horário de funcionamento, os preços e se ela ainda está aberta. A escalada envolve riscos reais: você escala por sua conta e risco e é responsável pela sua própria segurança.</p>
+    <p>Os detalhes das academias são pesquisados em fontes públicas, como os sites e as contas de redes sociais das próprias academias e listagens de mapas, e em correções que as pessoas nos enviam. Eles podem estar desatualizados ou errados. Confirme com a própria academia o horário de funcionamento, os preços e se ela ainda está aberta. A escalada envolve riscos reais: você escala por sua conta e risco e é responsável pela sua própria segurança.</p>
 
     <h2>Sua conta</h2>
     <ul>
-      <li>Mantenha seu acesso só para você. Você é responsável pelo que for feito com a sua conta.</li>
-      <li>Você pode pedir a exclusão da sua conta a qualquer momento. Podemos suspender ou remover contas que descumpram estes termos ou abusem do site.</li>
+      <li>Você precisa ter pelo menos 16 anos para criar uma conta.</li>
+      <li>Mantenha seu login só para você. Você é responsável pelo que for feito com sua conta.</li>
+      <li>Você pode excluir sua conta a qualquer momento na sua página Eu (veja <a href="{delete}">Excluir sua conta</a>).</li>
+      <li>Podemos suspender ou remover contas que violem estes termos ou abusem do site. Em geral, diremos o motivo, a menos que o abuso seja grave ou que contar possa causar dano, e você pode responder para <a href="mailto:hello@bouldeer.com">hello@bouldeer.com</a>.</li>
     </ul>
 
     <h2>O que você nos envia</h2>
     <ul>
-      <li>Envie apenas informações que você acredita serem corretas e que você tem o direito de compartilhar. Não inclua informações pessoais de ninguém.</li>
-      <li>Sem spam, conteúdo ofensivo ou informações deliberadamente falsas.</li>
-      <li>Você permite que o Bouldeer mostre no mapa o que você envia e o mantenha lá, inclusive depois que você excluir sua conta.</li>
-      <li>Os moderadores verificam as novas academias e edições e podem editar, rejeitar ou remover qualquer coisa enviada.</li>
+      <li>Envie apenas informações que você acredite serem corretas e que tenha o direito de compartilhar. Não inclua informações pessoais de ninguém.</li>
+      <li>Nada de spam, conteúdo ofensivo ou informações deliberadamente falsas.</li>
+      <li>Você mantém os direitos que tiver sobre o que envia. Você nos concede uma licença gratuita, não exclusiva, mundial e permanente para hospedar, exibir, editar, traduzir e guardar esse conteúdo como parte do Bouldeer, inclusive depois que você excluir sua conta.</li>
+      <li>Os moderadores verificam novas academias e edições e podem editar, rejeitar ou remover qualquer envio.</li>
     </ul>
 
     <h2>Uso justo</h2>
-    <p>Por favor, não faça scraping nem cópia em massa dos dados do mapa, nem sobrecarregue o site a ponto de afetar outras pessoas, sem nos perguntar antes. Mecanismos de busca e assistentes de IA podem ler e linkar páginas individuais. O código e o design do site pertencem ao Bouldeer; fatos simples sobre as academias, como seus endereços, não são nossos.</p>
+    <p>Por favor, não extraia nem copie em massa os dados do mapa, nem sobrecarregue o site a ponto de afetar outras pessoas, sem nos perguntar antes. Mecanismos de busca e assistentes de IA podem ler e linkar páginas individuais. Os dados do mapa são &copy; colaboradores do OpenStreetMap e CARTO. Fatos simples sobre as academias, como seus endereços, não são nossos.</p>
 
     <h2>Sem garantia</h2>
-    <p>O Bouldeer é fornecido no estado em que se encontra, sem qualquer garantia de que seja preciso ou esteja sempre disponível. Na medida em que a lei permitir, não somos responsáveis por perdas decorrentes do uso do site ou da confiança em suas informações. Os sites vinculados e os serviços que usamos para mapas, hospedagem e login estão fora do nosso controle.</p>
+    <p>O Bouldeer é oferecido como está, sem nenhuma garantia de que seja preciso ou esteja sempre disponível. Na medida em que a lei permitir, não somos responsáveis por perdas decorrentes do uso do site ou da confiança em suas informações. Nada nestes termos exclui direitos que você tenha segundo a Australian Consumer Law (lei australiana de defesa do consumidor) ou outras leis que não possam ser excluídos. Sites vinculados e os serviços que usamos para mapas, hospedagem e login estão fora do nosso controle.</p>
 
     <h2>Traduções</h2>
     <p>Estes termos e a Política de Privacidade também estão disponíveis em outros idiomas. Se uma tradução diferir da versão em inglês, vale a versão em inglês.</p>
 
     <h2>Alterações e lei aplicável</h2>
-    <p>Podemos atualizar estes termos; a data acima mostra a versão mais recente. Estes termos são regidos pelas leis de Nova Gales do Sul (New South Wales), Austrália. Dúvidas: <a href="mailto:hello@bouldeer.com">hello@bouldeer.com</a>.</p>
+    <p>Podemos atualizar estes termos. Em alterações importantes, publicaremos um aviso no site pelo menos 14 dias antes de elas passarem a valer. Se você não concordar, pode parar de usar o Bouldeer e excluir sua conta. Estes termos são regidos pelas leis de Nova Gales do Sul, Austrália. Isso não retira nenhuma proteção que você tenha segundo as leis do país onde mora. Dúvidas: <a href="mailto:hello@bouldeer.com">hello@bouldeer.com</a>.</p>
+`,
+  },
+
+  delete: {
+    title: 'Excluir sua conta',
+    metaTitle: 'Excluir sua conta do Bouldeer',
+    description: 'Como excluir sua conta do Bouldeer, o que é excluído e o que permanece.',
+    updated: 'Última atualização: 26 de novembro de 2026',
+    body: `
+    <p>Você pode excluir sua conta do Bouldeer por conta própria a qualquer momento, pelo site ou pelo app. A exclusão vale na hora.</p>
+
+    <h2>Como excluir sua conta</h2>
+    <ol>
+      <li>Acesse <a href="https://www.bouldeer.com/">bouldeer.com</a> em qualquer navegador (ou abra o app do Bouldeer) e entre com o e-mail ou a conta do Google que você usa no Bouldeer.</li>
+      <li>Abra <strong>Eu</strong>.</li>
+      <li>No final da página, escolha <strong>Excluir conta</strong>, marque a caixa de confirmação e toque no botão.</li>
+    </ol>
+    <p>Você não precisa instalar nada: entrar pelo site funciona do mesmo jeito que no app.</p>
+
+    <h2>O que é excluído</h2>
+    <p>Seu e-mail e dados de login, nome de exibição, academias salvas e escaladas, check-ins, diário e pontos.</p>
+
+    <h2>O que permanece, e por quê</h2>
+    <p>As academias, edições e relatos de problemas que você enviou permanecem no mapa, inclusive qualquer texto que você escreveu, porque outros escaladores contam com eles. Eles deixam de estar vinculados a você. Os registros temporários dos nossos provedores expiram conforme os prazos de cada um (o Resend e o CARTO mantêm registros por 30 dias).</p>
+
+    <h2>Dúvidas</h2>
+    <p>Escreva para <a href="mailto:hello@bouldeer.com">hello@bouldeer.com</a>. Veja também a <a href="{privacy}">Política de Privacidade</a>.</p>
 `,
   },
 };

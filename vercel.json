@@ -141,7 +141,11 @@
       "destination": "/about.html"
     },
     {
-      "source": "/:lang(zh-cn|zh-tw|ja|ko|de|fr|es|pt-br)/:page(about|privacy|terms)",
+      "source": "/delete-account",
+      "destination": "/delete-account.html"
+    },
+    {
+      "source": "/:lang(zh-cn|zh-tw|ja|ko|de|fr|es|pt-br)/:page(about|privacy|terms|delete-account)",
       "destination": "/:lang/:page.html"
     }
   ],
