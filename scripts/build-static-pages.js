@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Builds About, Privacy and Terms for every language from scripts/static-pages/<code>.js (English is the source).
+// Builds About, Privacy, Terms and Delete account for every language from scripts/static-pages/<code>.js (English is the source).
 //   English:  /about.html /privacy.html /terms.html          (served as /about /privacy /terms, vercel.json)
 //   Others:   /<prefix>/about.html ...  e.g. /ja/about.html    (served as /ja/about ...)
 // Every page links its translations (hreflang + a language list), carries structured data (JSON-LD) for search engines and
@@ -24,7 +24,10 @@ const LANGS = [
   { code: 'es', prefix: 'es', html: 'es', hreflang: 'es', name: 'Español', og: 'es_ES' },
   { code: 'pt-BR', prefix: 'pt-br', html: 'pt-BR', hreflang: 'pt-BR', name: 'Português (Brasil)', og: 'pt_BR' },
 ];
-const PAGES = ['about', 'privacy', 'terms'];
+const PAGES = ['about', 'privacy', 'terms'];   // the pages linked from every page's footer
+const BUILT = [...PAGES, 'delete-account'];     // every page built; delete-account is linked from Privacy and Terms, not the footer
+const KEY = { 'delete-account': 'delete' };     // the key a page has in scripts/static-pages/<code>.js (default: the page name)
+const key = page => KEY[page] || page;
 
 const urlPath = (lang, page) => (lang.prefix ? '/' + lang.prefix : '') + '/' + page;   // clean URL
 const filePath = (lang, page) => path.join(ROOT, lang.prefix, page + '.html');
@@ -32,7 +35,7 @@ const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 const text = html => String(html).replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/&rsquo;/g, '’').replace(/&ldquo;/g, '“')
   .replace(/&rdquo;/g, '”').replace(/&hellip;/g, '…').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
 const jsonLd = obj => '<script type="application/ld+json">' + JSON.stringify(obj).replace(/</g, '\\u003c') + '</script>';
-const fill = (html, lang) => html.replace(/\{(about|privacy|terms)\}/g, (m, p) => urlPath(lang, p));
+const fill = (html, lang) => html.replace(/\{(about|privacy|terms|delete)\}/g, (m, p) => urlPath(lang, p === 'delete' ? 'delete-account' : p));
 
 function load(code){
   const file = path.join(__dirname, 'static-pages', code + '.js');
@@ -45,7 +48,7 @@ function structuredData(lang, page, c){
   const org = { '@type': 'Organization', '@id': SITE + '/#org', name: 'Bouldeer', url: SITE + '/', logo: SITE + '/icons/icon-512.png', email: 'hello@bouldeer.com' };
   const site = { '@type': 'WebSite', '@id': SITE + '/#website', name: 'Bouldeer', url: SITE + '/', publisher: { '@id': SITE + '/#org' },
     inLanguage: LANGS.map(l => l.hreflang), potentialAction: { '@type': 'SearchAction', target: SITE + '/?q={search_term_string}', 'query-input': 'required name=search_term_string' } };
-  const webPage = { '@type': page === 'about' ? 'AboutPage' : 'WebPage', '@id': url, url, name: c[page].metaTitle, description: c[page].description,
+  const webPage = { '@type': page === 'about' ? 'AboutPage' : 'WebPage', '@id': url, url, name: c[key(page)].metaTitle, description: c[key(page)].description,
     inLanguage: lang.hreflang, isPartOf: { '@id': SITE + '/#website' }, about: { '@id': SITE + '/#org' } };
   const graph = [org, site, webPage];
   if(page === 'about') graph.push({ '@type': 'FAQPage', '@id': url + '#faq', inLanguage: lang.hreflang,
@@ -54,7 +57,7 @@ function structuredData(lang, page, c){
 }
 
 function render(lang, page, c){
-  const p = c[page], ui = c.ui;
+  const p = c[key(page)], ui = c.ui;
   const alternates = LANGS.map(l => `<link rel="alternate" hreflang="${l.hreflang}" href="${SITE + urlPath(l, page)}">`).join('\n')
     + `\n<link rel="alternate" hreflang="x-default" href="${SITE + urlPath(LANGS[0], page)}">`;
   const faq = page === 'about'
@@ -132,7 +135,7 @@ function build({ check = false } = {}){
   for(const lang of LANGS){
     let c;
     try { c = load(lang.code); } catch(e){ if(lang.code === 'en') throw e; continue; }   // a language without a source yet
-    for(const page of PAGES){
+    for(const page of BUILT){
       const out = render(lang, page, c), file = filePath(lang, page);
       const now = fs.existsSync(file) ? fs.readFileSync(file, 'utf8').replace(/\r\n/g, '\n') : null;
       if(now === out) continue;
@@ -149,4 +152,4 @@ if(require.main === module){
   if(check && stale.length){ console.error('out of date (run node scripts/build-static-pages.js):\n  ' + stale.join('\n  ')); process.exit(1); }
   console.log(check ? 'static pages up to date' : stale.length ? 'wrote ' + stale.join(', ') : 'nothing to write');
 }
-module.exports = { LANGS, PAGES, urlPath, build, render, load, text };
+module.exports = { LANGS, PAGES, BUILT, urlPath, build, render, load, text };
