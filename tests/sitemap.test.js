@@ -35,7 +35,7 @@ test('builder: every URL the app routes to, absolute on www.bouldeer.com, no dup
   }
   // Suburb/area pages only with 2+ gyms (owner decision 2026-10-04): Marrickville and Sydney have two, Leeds one.
   assert.ok(!u.includes('https://www.bouldeer.com/in/gb/eng/ile-de-leeds-co'), 'a single-gym area page is left out');
-  assert.equal(counts.static, 5 + 8 * 3);   // home, /in, About/Privacy/Terms in English + 8 translations
+  assert.equal(counts.static, 6 + 8 * 4);   // home, /in, About/Privacy/Terms/Delete account in English + 8 translations
   assert.equal(counts.country, 3);   // AU, GB, JP (ZZ has no label: its place pages 404)
   assert.equal(counts.gym, 8);       // the row without a slug is skipped
   assert.deepEqual(skipped, { noSlug: 1, unknownCountry: 1, noRegion: 1, noCity: 2, singleGymArea: 1, duplicateRegion: 0 });

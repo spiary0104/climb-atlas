@@ -235,7 +235,7 @@ test('legal pages are real pages: dated, no "draft / not legal advice" banner, n
   for (const f of LEGAL_PAGES) {
     const html = read(f);
     assert.match(html, /<html lang="en">/, f);
-    assert.match(html, f === 'privacy.html' ? /Last updated: 22 November 2026/ : /Last updated: 21 November 2026/, f + ' carries the current date');
+    assert.match(html, /Last updated: 26 November 2026/, f + ' carries the current date');
     assert.ok(!/starting draft|not legal advice|legal-note/i.test(html), f + ' still presents itself as a draft');
     assert.match(html, /<h1[^>]*>(Privacy Policy|Terms of Service)<\/h1>/, f);
   }
@@ -329,4 +329,23 @@ test('desktop chip row wraps in the list pane instead of hiding chips off-screen
   assert.match(css, /\.chip-scroll\{display:flex;[^}]*overflow-x:auto;/, 'the base row still scrolls (phones, over the map)');
   assert.match(read('index.html'), /class="filter-slot" id="listFilterSlot"/, 'the list-pane slot carries .filter-slot');
   assert.match(read('index.html'), /class="map-filter-slot" id="mapFilterSlot"/, 'the map slot does not match .filter-slot');
+});
+
+test('Delete your account page: built in 9 languages, served clean, precached, linked from Privacy and Terms', () => {
+  const vercel = JSON.parse(read('vercel.json'));
+  assert.ok(vercel.rewrites.some(r => r.source === '/delete-account' && r.destination === '/delete-account.html'));
+  assert.ok(vercel.rewrites.some(r => /:page\([^)]*delete-account[^)]*\)/.test(r.source)), 'translated pages are rewritten too');
+  assert.ok(read('sw.js').includes("'delete-account.html'"), 'precached');
+  const unresolved = /\{(about|privacy|terms|delete)\}/;
+  for (const [dir, lang] of [['', 'en'], ['zh-cn/', 'zh-Hans-CN'], ['zh-tw/', 'zh-Hant-TW'], ['ja/', 'ja'], ['ko/', 'ko'], ['de/', 'de'], ['fr/', 'fr'], ['es/', 'es'], ['pt-br/', 'pt-BR']]) {
+    const del = read(dir + 'delete-account.html');
+    assert.match(del, new RegExp(`<html lang="${lang}">`));
+    assert.equal((del.match(/<link rel="alternate" hreflang=/g) || []).length, 10, dir + ' hreflang set');
+    assert.ok(!unresolved.test(del), dir + ' has an unresolved placeholder');
+    for (const f of ['privacy.html', 'terms.html']) {
+      const html = read(dir + f);
+      assert.ok(html.includes(`href="/${dir}delete-account"`), dir + f + ' links the delete page');
+      assert.ok(!unresolved.test(html), dir + f + ' has an unresolved placeholder');
+    }
+  }
 });
