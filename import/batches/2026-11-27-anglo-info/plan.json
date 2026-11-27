@@ -11,10 +11,10 @@
   "2026-10-12-cn-kunming-changsha"
  ],
  "counts": {
-  "records": 55,
+  "records": 53,
   "new": 0,
   "existing": 0,
-  "update": 55,
+  "update": 53,
   "probable-duplicate": 0,
   "invalid": 0,
   "rejected": 0,
@@ -26,7 +26,7 @@
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "bbd689c42f78dd2b6f7902a3c920177318f082c57902fe9e236a9d62ef70b45d",
+ "plan_sha256": "a088b2ff0e7de01e62a2b442a9fdaab80e58dba2cc0fbb6b1c9ea912ce227d97",
  "records": [
   {
    "line": 1,
@@ -60,8 +60,6 @@
      "field": "facilities",
      "before": null,
      "after": [
-      "cafe",
-      "training",
       "shoe-hire"
      ]
     },
@@ -116,8 +114,6 @@
      "field": "facilities",
      "before": null,
      "after": [
-      "cafe",
-      "training",
       "shoe-hire"
      ]
     },
@@ -172,8 +168,6 @@
      "field": "facilities",
      "before": null,
      "after": [
-      "cafe",
-      "training",
       "shoe-hire"
      ]
     },
@@ -198,116 +192,6 @@
   },
   {
    "line": 4,
-   "class": "update",
-   "id": "seed-480",
-   "changes": [
-    {
-     "field": "website",
-     "before": null,
-     "after": "https://www.extremeedge.co.nz/"
-    },
-    {
-     "field": "hours",
-     "before": null,
-     "after": {
-      "mon": "10:00–22:00",
-      "tue": "10:00–22:00",
-      "wed": "10:00–22:00",
-      "thu": "10:00–22:00",
-      "fri": "10:00–22:00",
-      "sat": "09:00–21:00",
-      "sun": "09:00–21:00"
-     }
-    },
-    {
-     "field": "day_pass",
-     "before": null,
-     "after": "Casual entry incl. harness: adult $30, child $25, pre-schooler $18"
-    },
-    {
-     "field": "facilities",
-     "before": null,
-     "after": [
-      "kids",
-      "shop"
-     ]
-    },
-    {
-     "field": "info_source",
-     "before": null,
-     "after": "https://www.extremeedge.co.nz/prices/"
-    },
-    {
-     "field": "info_source_kind",
-     "before": null,
-     "after": "official-site"
-    },
-    {
-     "field": "info_checked_on",
-     "before": null,
-     "after": "2026-11-27"
-    }
-   ],
-   "expect_h": "a7c7ecec423d2fb3",
-   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
-  },
-  {
-   "line": 5,
-   "class": "update",
-   "id": "seed-478",
-   "changes": [
-    {
-     "field": "website",
-     "before": null,
-     "after": "https://www.northernrocks.co.nz/"
-    },
-    {
-     "field": "hours",
-     "before": null,
-     "after": {
-      "mon": "10:00–22:00",
-      "tue": "10:00–22:00",
-      "wed": "10:00–22:00",
-      "thu": "10:00–22:00",
-      "fri": "10:00–22:00",
-      "sat": "08:00–20:00",
-      "sun": "08:00–20:00"
-     }
-    },
-    {
-     "field": "day_pass",
-     "before": null,
-     "after": "Day pass: adult $24, student $21, youth 6-12 $18.50, kids 4-5 $16"
-    },
-    {
-     "field": "facilities",
-     "before": null,
-     "after": [
-      "shoe-hire",
-      "shop"
-     ]
-    },
-    {
-     "field": "info_source",
-     "before": null,
-     "after": "https://www.northernrocks.co.nz/your-visit/"
-    },
-    {
-     "field": "info_source_kind",
-     "before": null,
-     "after": "official-site"
-    },
-    {
-     "field": "info_checked_on",
-     "before": null,
-     "after": "2026-11-27"
-    }
-   ],
-   "expect_h": "030a507035943cc5",
-   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
-  },
-  {
-   "line": 6,
    "class": "update",
    "id": "g-fd4da13330",
    "changes": [
@@ -349,7 +233,7 @@
    "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 7,
+   "line": 5,
    "class": "update",
    "id": "g-7d5b01519a",
    "changes": [
@@ -390,7 +274,7 @@
    "update_reason": "official website, day pass price, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 8,
+   "line": 6,
    "class": "update",
    "id": "g-51ca2c73d6",
    "changes": [
@@ -421,8 +305,7 @@
      "field": "facilities",
      "before": null,
      "after": [
-      "shoe-hire",
-      "parking"
+      "shoe-hire"
      ]
     },
     {
@@ -445,7 +328,7 @@
    "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 9,
+   "line": 7,
    "class": "update",
    "id": "g-f7aa31ce25",
    "changes": [
@@ -468,16 +351,10 @@
      }
     },
     {
-     "field": "day_pass",
-     "before": null,
-     "after": "Casual visit $26, $24 with student ID"
-    },
-    {
      "field": "facilities",
      "before": null,
      "after": [
       "training",
-      "shoe-hire",
       "parking"
      ]
     },
@@ -498,10 +375,10 @@
     }
    ],
    "expect_h": "875891782ef81d63",
-   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+   "update_reason": "official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 10,
+   "line": 8,
    "class": "update",
    "id": "g-8b059b0d5f",
    "changes": [
@@ -524,18 +401,6 @@
      }
     },
     {
-     "field": "day_pass",
-     "before": null,
-     "after": "Casual visit $26, $24 with student ID"
-    },
-    {
-     "field": "facilities",
-     "before": null,
-     "after": [
-      "shoe-hire"
-     ]
-    },
-    {
      "field": "info_source",
      "before": null,
      "after": "https://www.9degrees.com.au/locations"
@@ -552,10 +417,10 @@
     }
    ],
    "expect_h": "4d8fbaa8c6a7c039",
-   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 11,
+   "line": 9,
    "class": "update",
    "id": "g-6bcdf294bb",
    "changes": [
@@ -578,16 +443,10 @@
      }
     },
     {
-     "field": "day_pass",
-     "before": null,
-     "after": "Adult day pass $22, student day pass $20"
-    },
-    {
      "field": "facilities",
      "before": null,
      "after": [
-      "kids",
-      "shoe-hire"
+      "kids"
      ]
     },
     {
@@ -607,10 +466,10 @@
     }
    ],
    "expect_h": "c7f4e5cd97352e7c",
-   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+   "update_reason": "official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 12,
+   "line": 10,
    "class": "update",
    "id": "g-68345668f5",
    "changes": [
@@ -620,38 +479,18 @@
      "after": "https://boulderlab.com.au/"
     },
     {
-     "field": "day_pass",
-     "before": null,
-     "after": "Adult day pass $22, student day pass $20"
-    },
-    {
      "field": "facilities",
      "before": null,
      "after": [
       "shoe-hire"
      ]
-    },
-    {
-     "field": "info_source",
-     "before": null,
-     "after": "https://boulderlab.com.au/pricing"
-    },
-    {
-     "field": "info_source_kind",
-     "before": null,
-     "after": "official-site"
-    },
-    {
-     "field": "info_checked_on",
-     "before": null,
-     "after": "2026-11-27"
     }
    ],
    "expect_h": "a0e1db5133d93311",
-   "update_reason": "official website, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+   "update_reason": "official website, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 13,
+   "line": 11,
    "class": "update",
    "id": "g-67b4a1edee",
    "changes": [
@@ -671,8 +510,7 @@
      "after": [
       "cafe",
       "shoe-hire",
-      "shop",
-      "showers"
+      "shop"
      ]
     },
     {
@@ -695,7 +533,7 @@
    "update_reason": "official website, day pass price, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 14,
+   "line": 12,
    "class": "update",
    "id": "g-9ef74d79e9",
    "changes": [
@@ -745,7 +583,7 @@
    "update_reason": "official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 15,
+   "line": 13,
    "class": "update",
    "id": "g-f881cbcfbb",
    "changes": [
@@ -759,7 +597,7 @@
    "update_reason": "official website from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 16,
+   "line": 14,
    "class": "update",
    "id": "g-daa4827f2e",
    "changes": [
@@ -782,14 +620,6 @@
      }
     },
     {
-     "field": "facilities",
-     "before": null,
-     "after": [
-      "cafe",
-      "training"
-     ]
-    },
-    {
      "field": "info_source",
      "before": null,
      "after": "https://www.thecruxbouldering.com.au/contact-melbourne-bouldering-rock-climbing-gym"
@@ -806,10 +636,10 @@
     }
    ],
    "expect_h": "218983ead6877e88",
-   "update_reason": "official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 17,
+   "line": 15,
    "class": "update",
    "id": "g-03802d1aff",
    "changes": [
@@ -832,13 +662,6 @@
      }
     },
     {
-     "field": "facilities",
-     "before": null,
-     "after": [
-      "shoe-hire"
-     ]
-    },
-    {
      "field": "info_source",
      "before": null,
      "after": "https://adrenalinevault.com.au/locations/cockburn/"
@@ -855,10 +678,10 @@
     }
    ],
    "expect_h": "d1d821973b6301ab",
-   "update_reason": "official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 18,
+   "line": 16,
    "class": "update",
    "id": "g-9ed1081190",
    "changes": [
@@ -907,7 +730,7 @@
    "update_reason": "official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 19,
+   "line": 17,
    "class": "update",
    "id": "g-aed46bfd1f",
    "changes": [
@@ -925,7 +748,6 @@
      "field": "facilities",
      "before": null,
      "after": [
-      "training",
       "shoe-hire"
      ]
     },
@@ -949,7 +771,7 @@
    "update_reason": "official website, day pass price, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 20,
+   "line": 18,
    "class": "update",
    "id": "g-19a0e2d570",
    "changes": [
@@ -1003,7 +825,7 @@
    "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 21,
+   "line": 19,
    "class": "update",
    "id": "g-1f3e61433b",
    "changes": [
@@ -1034,8 +856,7 @@
      "field": "facilities",
      "before": null,
      "after": [
-      "shoe-hire",
-      "shop"
+      "shoe-hire"
      ]
     },
     {
@@ -1058,7 +879,7 @@
    "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 22,
+   "line": 20,
    "class": "update",
    "id": "g-93f1c3eee7",
    "changes": [
@@ -1089,12 +910,7 @@
      "field": "facilities",
      "before": null,
      "after": [
-      "cafe",
-      "training",
-      "kids",
-      "shoe-hire",
-      "shop",
-      "showers"
+      "shoe-hire"
      ]
     },
     {
@@ -1117,7 +933,7 @@
    "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 23,
+   "line": 21,
    "class": "update",
    "id": "g-ab649f812b",
    "changes": [
@@ -1166,7 +982,7 @@
    "update_reason": "official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 24,
+   "line": 22,
    "class": "update",
    "id": "g-c7b3a9fb57",
    "changes": [
@@ -1180,7 +996,7 @@
    "update_reason": "official website from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 25,
+   "line": 23,
    "class": "update",
    "id": "seed-60",
    "changes": [
@@ -1222,7 +1038,7 @@
    "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 26,
+   "line": 24,
    "class": "update",
    "id": "g-07d957a8e0",
    "changes": [
@@ -1245,11 +1061,6 @@
      }
     },
     {
-     "field": "day_pass",
-     "before": null,
-     "after": "Single entry: standard £16, concession £14, under 18s £12, under 7s £8.50"
-    },
-    {
      "field": "facilities",
      "before": null,
      "after": [
@@ -1259,7 +1070,7 @@
     {
      "field": "info_source",
      "before": null,
-     "after": "https://flashpointcardiff.com/prices/"
+     "after": "https://flashpointcardiff.com/opening-times/"
     },
     {
      "field": "info_source_kind",
@@ -1273,10 +1084,10 @@
     }
    ],
    "expect_h": "a5208d3534f435e6",
-   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+   "update_reason": "official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 27,
+   "line": 25,
    "class": "update",
    "id": "g-2ebcda8553",
    "changes": [
@@ -1299,11 +1110,6 @@
      }
     },
     {
-     "field": "day_pass",
-     "before": null,
-     "after": "Single entry: standard £16, concession £14, under 18s £12, under 7s £8.50"
-    },
-    {
      "field": "facilities",
      "before": null,
      "after": [
@@ -1313,7 +1119,7 @@
     {
      "field": "info_source",
      "before": null,
-     "after": "https://flashpointswansea.com/prices/"
+     "after": "https://flashpointswansea.com/opening-times/"
     },
     {
      "field": "info_source_kind",
@@ -1327,10 +1133,10 @@
     }
    ],
    "expect_h": "5377730a08d0bc57",
-   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+   "update_reason": "official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 28,
+   "line": 26,
    "class": "update",
    "id": "g-5f969ec7fc",
    "changes": [
@@ -1353,14 +1159,9 @@
      }
     },
     {
-     "field": "day_pass",
-     "before": null,
-     "after": "Single entry: standard £16, concession £14, under 18s £12, under 7s £8.50"
-    },
-    {
      "field": "info_source",
      "before": null,
-     "after": "https://flashpointeaston.com/prices/"
+     "after": "https://flashpointeaston.com/opening-times/"
     },
     {
      "field": "info_source_kind",
@@ -1374,10 +1175,10 @@
     }
    ],
    "expect_h": "b21b61b3073f479b",
-   "update_reason": "official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-27)"
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 29,
+   "line": 27,
    "class": "update",
    "id": "g-ace6844f69",
    "changes": [
@@ -1411,7 +1212,7 @@
    "update_reason": "official website, day pass price from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 30,
+   "line": 28,
    "class": "update",
    "id": "g-4f4476f87f",
    "changes": [
@@ -1453,7 +1254,7 @@
    "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 31,
+   "line": 29,
    "class": "update",
    "id": "g-88189f6154",
    "changes": [
@@ -1479,8 +1280,7 @@
      "field": "facilities",
      "before": null,
      "after": [
-      "cafe",
-      "shoe-hire"
+      "cafe"
      ]
     },
     {
@@ -1503,7 +1303,7 @@
    "update_reason": "official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 32,
+   "line": 30,
    "class": "update",
    "id": "g-4ab9b915c3",
    "changes": [
@@ -1544,7 +1344,7 @@
    "update_reason": "official website, day pass price, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 33,
+   "line": 31,
    "class": "update",
    "id": "g-93f568c4e0",
    "changes": [
@@ -1557,8 +1357,7 @@
      "field": "facilities",
      "before": null,
      "after": [
-      "shoe-hire",
-      "parking"
+      "shoe-hire"
      ]
     }
    ],
@@ -1566,7 +1365,7 @@
    "update_reason": "official website, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 34,
+   "line": 32,
    "class": "update",
    "id": "g-e70e0ce27b",
    "changes": [
@@ -1589,15 +1388,6 @@
      }
     },
     {
-     "field": "facilities",
-     "before": null,
-     "after": [
-      "cafe",
-      "shoe-hire",
-      "shop"
-     ]
-    },
-    {
      "field": "info_source",
      "before": null,
      "after": "https://www.bouldercentral.co.uk/faq-contact-us"
@@ -1614,10 +1404,10 @@
     }
    ],
    "expect_h": "f7b601205ef27da3",
-   "update_reason": "official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 35,
+   "line": 33,
    "class": "update",
    "id": "g-d3a32615f3",
    "changes": [
@@ -1640,15 +1430,6 @@
      }
     },
     {
-     "field": "facilities",
-     "before": null,
-     "after": [
-      "cafe",
-      "shoe-hire",
-      "yoga"
-     ]
-    },
-    {
      "field": "info_source",
      "before": null,
      "after": "https://www.boulderparc.com/hours-location"
@@ -1665,10 +1446,10 @@
     }
    ],
    "expect_h": "bcb14dad92158463",
-   "update_reason": "official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 36,
+   "line": 34,
    "class": "update",
    "id": "g-eda46f467d",
    "changes": [
@@ -1717,7 +1498,7 @@
    "update_reason": "official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 37,
+   "line": 35,
    "class": "update",
    "id": "g-c6bc623707",
    "changes": [
@@ -1771,7 +1552,7 @@
    "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 38,
+   "line": 36,
    "class": "update",
    "id": "g-bb9468f2fc",
    "changes": [
@@ -1789,8 +1570,7 @@
      "field": "facilities",
      "before": null,
      "after": [
-      "shoe-hire",
-      "parking"
+      "shoe-hire"
      ]
     },
     {
@@ -1813,7 +1593,7 @@
    "update_reason": "official website, day pass price, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 39,
+   "line": 37,
    "class": "update",
    "id": "g-322ef52012",
    "changes": [
@@ -1862,7 +1642,7 @@
    "update_reason": "official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 40,
+   "line": 38,
    "class": "update",
    "id": "g-8b16e12362",
    "changes": [
@@ -1885,16 +1665,9 @@
      }
     },
     {
-     "field": "facilities",
-     "before": null,
-     "after": [
-      "shoe-hire"
-     ]
-    },
-    {
      "field": "info_source",
      "before": null,
-     "after": "https://www.windsorrockgym.com/rates"
+     "after": "https://www.windsorrockgym.com/"
     },
     {
      "field": "info_source_kind",
@@ -1908,10 +1681,10 @@
     }
    ],
    "expect_h": "726538be7b7b5512",
-   "update_reason": "official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 41,
+   "line": 39,
    "class": "update",
    "id": "g-68887b81fd",
    "changes": [
@@ -1965,7 +1738,7 @@
    "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 42,
+   "line": 40,
    "class": "update",
    "id": "g-7adde14ca3",
    "changes": [
@@ -2007,7 +1780,7 @@
    "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 43,
+   "line": 41,
    "class": "update",
    "id": "g-b5493eef52",
    "changes": [
@@ -2049,7 +1822,7 @@
    "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 44,
+   "line": 42,
    "class": "update",
    "id": "g-6a18becc5d",
    "changes": [
@@ -2070,7 +1843,7 @@
    "update_reason": "official website, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 45,
+   "line": 43,
    "class": "update",
    "id": "g-e643fc0ec4",
    "changes": [
@@ -2101,7 +1874,6 @@
      "field": "facilities",
      "before": null,
      "after": [
-      "cafe",
       "shoe-hire"
      ]
     },
@@ -2125,7 +1897,7 @@
    "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 46,
+   "line": 44,
    "class": "update",
    "id": "g-0ddf34a7e1",
    "changes": [
@@ -2167,7 +1939,7 @@
    "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 47,
+   "line": 45,
    "class": "update",
    "id": "g-3ee5338026",
    "changes": [
@@ -2208,7 +1980,7 @@
    "update_reason": "official website, day pass price, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 48,
+   "line": 46,
    "class": "update",
    "id": "g-22fddaa09b",
    "changes": [
@@ -2262,7 +2034,7 @@
    "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 49,
+   "line": 47,
    "class": "update",
    "id": "g-03e5d51041",
    "changes": [
@@ -2283,7 +2055,7 @@
    "update_reason": "official website, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 50,
+   "line": 48,
    "class": "update",
    "id": "g-51a35f2f9a",
    "changes": [
@@ -2330,7 +2102,7 @@
    "update_reason": "official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 51,
+   "line": 49,
    "class": "update",
    "id": "g-fc7e00665b",
    "changes": [
@@ -2377,7 +2149,7 @@
    "update_reason": "official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 52,
+   "line": 50,
    "class": "update",
    "id": "g-778d964775",
    "changes": [
@@ -2400,18 +2172,6 @@
      }
     },
     {
-     "field": "day_pass",
-     "before": null,
-     "after": "Day pass $30"
-    },
-    {
-     "field": "facilities",
-     "before": null,
-     "after": [
-      "shoe-hire"
-     ]
-    },
-    {
      "field": "info_source",
      "before": null,
      "after": "https://www.ethosclimbing.ca/hours-location"
@@ -2428,10 +2188,10 @@
     }
    ],
    "expect_h": "baab3d1f603be666",
-   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 53,
+   "line": 51,
    "class": "update",
    "id": "g-32dd894582",
    "changes": [
@@ -2486,7 +2246,7 @@
    "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 54,
+   "line": 52,
    "class": "update",
    "id": "seed-1365",
    "changes": [
@@ -2509,16 +2269,10 @@
      }
     },
     {
-     "field": "day_pass",
-     "before": null,
-     "after": "Adult day pass €14, €12 students/under 18s (with experienced adult)"
-    },
-    {
      "field": "facilities",
      "before": null,
      "after": [
       "cafe",
-      "shoe-hire",
       "shop",
       "parking"
      ]
@@ -2526,7 +2280,7 @@
     {
      "field": "info_source",
      "before": null,
-     "after": "https://suasclimbing.ie/prices/"
+     "after": "https://suasclimbing.ie/"
     },
     {
      "field": "info_source_kind",
@@ -2540,10 +2294,10 @@
     }
    ],
    "expect_h": "bf31303959278860",
-   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+   "update_reason": "official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
-   "line": 55,
+   "line": 53,
    "class": "update",
    "id": "seed-1366",
    "changes": [
