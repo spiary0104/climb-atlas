@@ -12,7 +12,7 @@
 | Rejected by a human decision | 0 |
 | **Total records in batch** | 29 |
 
-Index: 3648 known gyms (sha256 266964b6c967…). Plan: 00c318a7b37f… Also compared against staged batches: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha.
+Index: 3648 known gyms (sha256 266964b6c967…). Plan: 985a16668f74… Also compared against staged batches: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha.
 
 ## Updates to existing gyms (29)
 
@@ -24,10 +24,10 @@ Index: 3648 known gyms (sha256 266964b6c967…). Plan: 00c318a7b37f… Also comp
   - FILLS gym information (only if empty in production; never overwrites): website granpared.com + hours mon,tue,wed,thu,fri,sat,sun + day pass + source official-site granpared.com 2026-11-27
 - line 4 `seed-1537` — Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)
   - FILLS gym information (only if empty in production; never overwrites): website zonadebloque.com + hours mon,tue,wed,thu,fri,sat,sun + facilities (2) + source official-site zonadebloque.com 2026-11-27
-- line 5 `seed-1402` — Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)
-  - FILLS gym information (only if empty in production; never overwrites): website motionboulder.com + hours mon,tue,wed,thu,fri,sat,sun + day pass + facilities (5) + source official-site motionboulder.com 2026-11-27
-- line 6 `seed-1403` — Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)
-  - FILLS gym information (only if empty in production; never overwrites): website motionboulder.com + hours mon,tue,wed,thu,fri,sat,sun + day pass + facilities (5) + source official-site motionboulder.com 2026-11-27
+- line 5 `seed-1402` — Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)
+  - FILLS gym information (only if empty in production; never overwrites): website motionboulder.com + hours mon,tue,wed,thu,fri,sat,sun + facilities (5) + source official-site motionboulder.com 2026-11-27
+- line 6 `seed-1403` — Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)
+  - FILLS gym information (only if empty in production; never overwrites): website motionboulder.com + hours mon,tue,wed,thu,fri,sat,sun + facilities (5) + source official-site motionboulder.com 2026-11-27
 - line 7 `seed-1722` — Official official website from the gym's own site (researched 2026-11-27)
   - FILLS gym information (only if empty in production; never overwrites): website basecampperu.com
 - line 8 `seed-1723` — Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-27)
@@ -58,8 +58,8 @@ Index: 3648 known gyms (sha256 266964b6c967…). Plan: 00c318a7b37f… Also comp
   - FILLS gym information (only if empty in production; never overwrites): website frixiona.com + hours tue,wed,thu,fri,sat,sun + facilities (2) + source official-site frixiona.com 2026-11-27
 - line 21 `seed-1397` — Official official website from the gym's own site (researched 2026-11-27)
   - FILLS gym information (only if empty in production; never overwrites): website madcomplex.mx
-- line 22 `seed-1396` — Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-27)
-  - FILLS gym information (only if empty in production; never overwrites): website adamanta.mx + hours mon,tue,wed,thu,fri,sat,sun + day pass + source official-site adamanta.mx 2026-11-27
+- line 22 `seed-1396` — Official official website, day pass price from the gym's own site (researched 2026-11-27)
+  - FILLS gym information (only if empty in production; never overwrites): website adamanta.mx + day pass + source official-site adamanta.mx 2026-11-27
 - line 23 `seed-1410` — Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)
   - FILLS gym information (only if empty in production; never overwrites): website evolucaoindoor.com.br + hours mon,tue,wed,thu,fri,sat,sun + day pass + facilities (1) + source official-site evolucaoindoor.com.br 2026-11-27
 - line 24 `g-36fb40b6c2` — Official official website, weekly opening hours from the gym's own site (researched 2026-11-27)

@@ -26,7 +26,7 @@
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "00c318a7b37fb3834c05e8173c0a7549d5f59bd9cb5672993eed2e891ab33eba",
+ "plan_sha256": "985a16668f74d37f56e5b0441940411be11e67d7aeba896ba52346fafb54ee34",
  "records": [
   {
    "line": 1,
@@ -257,11 +257,6 @@
      }
     },
     {
-     "field": "day_pass",
-     "before": null,
-     "after": "Visita regular, tiempo libre $220"
-    },
-    {
      "field": "facilities",
      "before": null,
      "after": [
@@ -289,7 +284,7 @@
     }
    ],
    "expect_h": "19ea8bdc18d2a3d0",
-   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
    "line": 6,
@@ -313,11 +308,6 @@
       "sat": "10:00–18:00",
       "sun": "10:00–18:00"
      }
-    },
-    {
-     "field": "day_pass",
-     "before": null,
-     "after": "Visita regular, tiempo libre $220"
     },
     {
      "field": "facilities",
@@ -347,7 +337,7 @@
     }
    ],
    "expect_h": "cdd3456411fed4c9",
-   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
   },
   {
    "line": 7,
@@ -1000,19 +990,6 @@
      "after": "https://www.adamanta.mx/sierra"
     },
     {
-     "field": "hours",
-     "before": null,
-     "after": {
-      "mon": "6am–11pm",
-      "tue": "6am–11pm",
-      "wed": "6am–11pm",
-      "thu": "6am–11pm",
-      "fri": "6am–10pm",
-      "sat": "8am–8pm",
-      "sun": "8am–8pm"
-     }
-    },
-    {
      "field": "day_pass",
      "before": null,
      "after": "Day Pass $320mxn, renta de equipo $50 adicional"
@@ -1034,7 +1011,7 @@
     }
    ],
    "expect_h": "44e59dfad97a7511",
-   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-27)"
+   "update_reason": "Official official website, day pass price from the gym's own site (researched 2026-11-27)"
   },
   {
    "line": 23,
