@@ -1,0 +1,152 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-28-owner-fixes",
+ "index": {
+  "sha256": "266964b6c967551eb95f947cfcd6cb3beeeeca985b2810fe3b13fcef9d5001fe",
+  "count": 3648,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha"
+ ],
+ "counts": {
+  "records": 5,
+  "new": 0,
+  "existing": 0,
+  "update": 1,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "retire": 4,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 1
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "7c508e338be029e2eb9ac01d177cfc5801ac63ce71473d12cff54c905c62fb9a",
+ "records": [
+  {
+   "line": 1,
+   "class": "retire",
+   "id": "g-179440d317",
+   "name": "Gravity Bear Bouldering Gym",
+   "country": "US",
+   "expect_h": "c22ed318407f7800",
+   "reason_code": "closed",
+   "retire_reason": "Closed: the gym's own site says \"we're closing\" with last day to climb 7 Nov 2026, which has passed.",
+   "entry": {
+    "id": "g-179440d317",
+    "name": "Gravity Bear Bouldering Gym",
+    "country": "US",
+    "state": "OK",
+    "suburb": "Tulsa",
+    "lat": 36.155902,
+    "lng": -95.983026,
+    "address": "618 E 3rd St, Tulsa, OK 74120",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "c22ed318407f7800"
+   }
+  },
+  {
+   "line": 2,
+   "class": "retire",
+   "id": "seed-1724",
+   "name": "Pirqa",
+   "country": "PE",
+   "expect_h": "359f502ee5c334ef",
+   "reason_code": "closed",
+   "retire_reason": "Pirqa's own site says the José Gálvez 360, Miraflores gym closed on 30 Aug 2026; a new location is only planned, no address given.",
+   "entry": {
+    "id": "seed-1724",
+    "name": "Pirqa",
+    "country": "PE",
+    "state": "LIMA",
+    "suburb": "Miraflores, Lima",
+    "lat": -12.1214565,
+    "lng": -77.0333256,
+    "address": "Calle José Gálvez 360, Miraflores, Lima, Peru",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "359f502ee5c334ef"
+   }
+  },
+  {
+   "line": 3,
+   "class": "retire",
+   "id": "g-8f44d0e169",
+   "name": "BoulderBase",
+   "country": "JP",
+   "expect_h": "9349d11080a22964",
+   "reason_code": "closed",
+   "retire_reason": "BoulderBase Izumo's own site shows 閉店しました (closed); it had announced in April 2026 that it would close by end of May without a buyer.",
+   "entry": {
+    "id": "g-8f44d0e169",
+    "name": "BoulderBase",
+    "country": "JP",
+    "state": "SHIMANE",
+    "suburb": "Izumo",
+    "lat": 35.38425,
+    "lng": 132.80803,
+    "address": "島根県出雲市斐川町上直江1263",
+    "types": [
+     "indoor-bouldering"
+    ],
+    "h": "9349d11080a22964"
+   }
+  },
+  {
+   "line": 4,
+   "class": "retire",
+   "id": "seed-141",
+   "name": "Crux Climbing Center",
+   "country": "US",
+   "expect_h": "bbc8d748102a41e8",
+   "reason_code": "closed",
+   "retire_reason": "Crux left 121 Pickle Rd (Austin Bouldering Project took the space) and moved South Austin to 220 Ralph Ablanedo Dr, already listed as g-13c6a3645d.",
+   "entry": {
+    "id": "seed-141",
+    "name": "Crux Climbing Center",
+    "country": "US",
+    "state": "TX",
+    "suburb": "Austin",
+    "lat": 30.227274,
+    "lng": -97.76306,
+    "address": "121 Pickle Rd Unit 100, Austin, TX 78704",
+    "types": [
+     "indoor-bouldering",
+     "top-rope"
+    ],
+    "h": "bbc8d748102a41e8"
+   }
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-1121",
+   "changes": [
+    {
+     "field": "name",
+     "before": "BOK Den Haag",
+     "after": "Klimmuur De Uithof"
+    }
+   ],
+   "expect_h": "74af8380cc9a7d3c",
+   "update_reason": "De Uithof's own climbing page names the wall Klimmuur De Uithof (roped routes and bouldering, Jaap Edenweg 10); BOK is a separate bootcamp club.",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"BOK Den Haag\" -> \"Klimmuur De Uithof\""
+    }
+   ]
+  }
+ ]
+}
