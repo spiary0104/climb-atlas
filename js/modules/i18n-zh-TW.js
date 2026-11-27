@@ -511,6 +511,7 @@ export default {
   'add.where': '它在哪裡？',
   'add.mapAria': '地圖。移動地圖，讓攀岩館位於十字準星下。',
   'add.locate': '使用我的位置',
+  'add.locationHint': '送出前請把標記移到岩館上：標記的位置會作為岩館的位置公開。',
   'add.dupTail': '已在地圖上，距離十字準星 {distance}。如果就是這間，請到它的頁面提出修改建議。',
   'add.filedUnder': '將歸入 {suburb}，{state}，{country}。你可以在第 2 步修改。',
   'add.noNear': '附近還沒有攀岩館，所以第 2 步需要填寫區域和地區。',

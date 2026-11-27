@@ -512,6 +512,7 @@ export default {
   'add.where': '어디에 있나요?',
   'add.mapAria': '지도. 클라이밍장이 십자선 아래에 오도록 움직여 주세요.',
   'add.locate': '내 위치 사용',
+  'add.locationHint': '보내기 전에 핀을 암장 위치로 옮겨 주세요. 핀 위치가 암장 위치로 공개돼요.',
   'add.dupTail': '은(는) 이미 지도에 있어요. 십자선에서 {distance} 떨어져 있어요. 같은 클라이밍장이라면 해당 페이지에서 수정을 제안해 주세요.',
   'add.filedUnder': '{suburb}, {state}, {country}(으)로 등록돼요. 2단계에서 바꿀 수 있어요.',
   'add.noNear': '근처에 등록된 클라이밍장이 아직 없어서 2단계에서 동네와 지역을 물어볼게요.',

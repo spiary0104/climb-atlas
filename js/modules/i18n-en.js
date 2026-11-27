@@ -511,6 +511,7 @@ export default {
   'add.where': 'Where is it?',
   'add.mapAria': 'Map. Move it so the gym is under the crosshair.',
   'add.locate': 'Use my location',
+  'add.locationHint': 'Move the pin onto the gym before sending: the pin is published as the gym’s location.',
   'add.dupTail': ' is already on the map, {distance} from the crosshair. If that is this gym, suggest an edit on its page instead.',
   'add.filedUnder': 'Filed under {suburb}, {state}, {country}. You can change this in step 2.',
   'add.noNear': 'No gyms nearby yet, so step 2 will ask for the suburb and region.',

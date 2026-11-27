@@ -59,6 +59,7 @@ export function addPageHtml(){
     + `<span class="add-crosshair" aria-hidden="true">${icon('crosshair-simple', {size:'lg'})}</span></div>`
     + `<div class="add-map-bar"><button type="button" class="btn btn-secondary btn-sm" data-add-action="locate">${icon('navigation-arrow', {size:'sm'})}${th('add.locate')}</button>`
     + `<span class="add-coords tnum" id="addCoords"></span></div>`
+    + `<p class="add-hint">${th('add.locationHint')}</p>`
     + `<div id="addNear" aria-live="polite"></div></section>`
     + `<form class="add-form" id="addForm" novalidate></form></div></article>`;
 }

@@ -49,3 +49,14 @@ function paintActionToast(t){
   t.append(text, btn);
   t.classList.add('toast--action', 'show');
 }
+
+// After account deletion: forget this device's Bouldeer data (drafts, recent searches, camera, welcome flags...).
+// The language is a device preference and stays. Service-worker caches hold only public data and are left alone.
+export function clearDeviceData(local, session){
+  try{
+    const keys = [];
+    for(let i = 0; i < local.length; i++){ const k = local.key(i); if(k && k.startsWith('bouldeer_') && k !== 'bouldeer_lang') keys.push(k); }
+    keys.forEach(k => local.removeItem(k));
+  }catch(e){ /* storage unavailable: nothing to clear */ }
+  try{ session.removeItem('bouldeer_milestone_shown'); }catch(e){ /* same */ }
+}

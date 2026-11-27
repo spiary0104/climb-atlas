@@ -512,6 +512,7 @@ export default {
   'add.where': 'Où est-elle\u00a0?',
   'add.mapAria': 'Carte. Déplacez-la pour placer la salle sous le réticule.',
   'add.locate': 'Utiliser ma position',
+  'add.locationHint': 'Placez l’épingle sur la salle avant d’envoyer : l’épingle est publiée comme position de la salle.',
   'add.dupTail': ' est déjà sur la carte, à {distance} du réticule. S’il s’agit de cette salle, suggérez plutôt une modification sur sa page.',
   'add.filedUnder': 'Classée sous {suburb}, {state}, {country}. Vous pouvez la modifier à l’étape 2.',
   'add.noNear': 'Aucune salle à proximité pour l’instant\u00a0: l’étape 2 demandera le quartier et la région.',
