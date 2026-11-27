@@ -1,0 +1,1326 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-27-latam-info",
+ "index": {
+  "sha256": "266964b6c967551eb95f947cfcd6cb3beeeeca985b2810fe3b13fcef9d5001fe",
+  "count": 3648,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha"
+ ],
+ "counts": {
+  "records": 29,
+  "new": 0,
+  "existing": 0,
+  "update": 29,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "985a16668f74d37f56e5b0441940411be11e67d7aeba896ba52346fafb54ee34",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "seed-1558",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://casaboulder.cl/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:15–22:00",
+      "tue": "07:15–22:00",
+      "wed": "07:15–22:00",
+      "thu": "07:15–22:00",
+      "fri": "07:15–22:00",
+      "sat": "09:00–21:00",
+      "sun": "09:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Ticket diario adulto $5.000 horario bajo, $7.000 horario alto"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://casaboulder.cl/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "337c30c894ca72e2",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "seed-1560",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://gimnasioelmuro.cl/larrain/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:30–22:00",
+      "tue": "09:30–22:00",
+      "wed": "09:30–22:00",
+      "thu": "09:30–22:00",
+      "fri": "09:30–22:00",
+      "sat": "09:30–19:30",
+      "sun": "09:30–19:30"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Escalada libre adulto $6.000 horario económico, $9.000 horario peak"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://gimnasioelmuro.cl/escalada-libre/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "e1fa7f46b2425966",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "seed-1535",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.granpared.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "14:00–22:00",
+      "tue": "06:00–22:00",
+      "wed": "06:00–22:00",
+      "thu": "06:00–22:00",
+      "fri": "14:00–22:00",
+      "sat": "09:00–19:00",
+      "sun": "09:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Turno sin equipo $35.000, turno con equipo $65.000"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.granpared.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "511d4adb9f1b41c4",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "seed-1537",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.zonadebloque.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–21:45",
+      "tue": "06:00–21:45",
+      "wed": "06:00–21:45",
+      "thu": "06:00–21:45",
+      "fri": "06:00–21:45",
+      "sat": "08:00–20:00",
+      "sun": "10:00–17:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.zonadebloque.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "f63f58c71c0f46e7",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "seed-1402",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.motionboulder.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–22:30",
+      "tue": "07:00–22:30",
+      "wed": "07:00–22:30",
+      "thu": "07:00–22:30",
+      "fri": "07:00–22:30",
+      "sat": "10:00–18:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.motionboulder.com/membresias"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "19ea8bdc18d2a3d0",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "seed-1403",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.motionboulder.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–22:30",
+      "tue": "07:00–22:30",
+      "wed": "07:00–22:30",
+      "thu": "07:00–22:30",
+      "fri": "07:00–22:30",
+      "sat": "10:00–18:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "kids",
+      "shop",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.motionboulder.com/membresias"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "cdd3456411fed4c9",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "seed-1722",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://basecampperu.com/"
+    }
+   ],
+   "expect_h": "4154538466b03037",
+   "update_reason": "Official official website from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "seed-1723",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://escaladavertical.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "09:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "1 pase S/ 35 público general, S/ 25 universitarios"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://escaladavertical.com/vertical-escalada-libre-lima/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "8eac748ace8869b5",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "seed-1806",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.tamarockscr.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–20:00",
+      "tue": "07:00–20:00",
+      "wed": "07:00–20:00",
+      "thu": "07:00–20:00",
+      "fri": "07:00–18:00",
+      "sat": "09:00–17:00",
+      "sun": "09:00–17:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "General admission $25, under 11 years $15 (IVA included)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.tamarockscr.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "2978c05467bc14a2",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "seed-1808",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://raccoonclimbingcr.com/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Visita 1 día ₡10000 con equipo del gimnasio, ₡7000 con equipo propio"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://raccoonclimbingcr.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "93c57d6f237c0c9d",
+   "update_reason": "Official official website, day pass price from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "seed-1859",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.tacanaclimbing.com/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Day pass Q85, zapatos de escalada incluidos"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids",
+      "shop",
+      "showers",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.tacanaclimbing.com/precios"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "bd83b265beb739cf",
+   "update_reason": "Official official website, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "g-6922e37b19",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.campobase.esp.br/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "08:30–22:00 boulder, 10:00–22:00 vias",
+      "tue": "08:30–22:00 boulder, 10:00–22:00 vias",
+      "wed": "08:30–22:00 boulder, 10:00–22:00 vias",
+      "thu": "08:30–22:00 boulder, 10:00–22:00 vias",
+      "fri": "14:30–22:00",
+      "sat": "10:00–19:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.campobase.esp.br/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "1c71c6baa03908d1",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "g-0555cd2aa8",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://ubtescalada.com.br/ubt-brasilia/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–22:00",
+      "tue": "07:00–22:00",
+      "wed": "07:00–22:00",
+      "thu": "07:00–22:00",
+      "fri": "07:00–22:00",
+      "sat": "10:00–18:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://ubtescalada.com.br/ubt-brasilia/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "217274f3020023e1",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "seed-1417",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://ubtescalada.com.br/ubt-curitiba/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–22:00",
+      "tue": "07:00–22:00",
+      "wed": "07:00–22:00",
+      "thu": "07:00–22:00",
+      "fri": "07:00–22:00",
+      "sat": "09:00–21:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "showers"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://ubtescalada.com.br/ubt-curitiba/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "68bd269bc89e2c7a",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "seed-1415",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://rokaz.com.br/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–22:00",
+      "tue": "07:00–22:00",
+      "wed": "07:00–22:00",
+      "thu": "07:00–22:00",
+      "fri": "07:00–22:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–19:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training",
+      "kids"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://rokaz.com.br/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "0104352c5a489d51",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "seed-1414",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://rokaz.com.br/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–22:00",
+      "tue": "07:00–22:00",
+      "wed": "07:00–22:00",
+      "thu": "07:00–22:00",
+      "fri": "07:00–22:00",
+      "sat": "09:00–20:00",
+      "sun": "09:00–19:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://rokaz.com.br/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "21d9381f0b9b8ac8",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "seed-1803",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://ascendcr.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "16:00–21:00",
+      "tue": "16:00–21:00",
+      "wed": "16:00–21:00",
+      "thu": "16:00–21:00",
+      "fri": "16:00–21:00",
+      "sat": "10:00–15:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pase diario con equipo ₡10 500, sin equipo ₡9 500"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://ascendcr.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "0c9e267d5d8d6e84",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "seed-1804",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://ascendcr.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "16:00–21:00",
+      "tue": "16:00–21:00",
+      "wed": "16:00–21:00",
+      "thu": "16:00–21:00",
+      "fri": "16:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pase diario con equipo ₡10 500, sin equipo ₡9 500"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "training"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://ascendcr.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "7a7acba22f09e27b",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "seed-1401",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.xkala.mx/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "tue": "10:00–20:00",
+      "wed": "10:00–20:00",
+      "thu": "10:00–20:00",
+      "fri": "10:00–20:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "1 hora $130, 2 horas $215, 3 horas $255"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.xkala.mx/tarifas-y-promociones"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "db321727ba55ff0a",
+   "update_reason": "Official official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "seed-1400",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://frixiona.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–18:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://frixiona.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "abbd91c4596a08c2",
+   "update_reason": "Official official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "seed-1397",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.madcomplex.mx/"
+    }
+   ],
+   "expect_h": "b060e4af413eea34",
+   "update_reason": "Official official website from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "seed-1396",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.adamanta.mx/sierra"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Day Pass $320mxn, renta de equipo $50 adicional"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.adamanta.mx/sierra"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "44e59dfad97a7511",
+   "update_reason": "Official official website, day pass price from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "seed-1410",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.evolucaoindoor.com.br/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "07:00–22:00",
+      "tue": "07:00–22:00",
+      "wed": "07:00–22:00",
+      "thu": "07:00–22:00",
+      "fri": "07:00–22:00",
+      "sat": "10:00–18:00",
+      "sun": "12:00–18:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Sessão avulsa R$50 seg-sex até 17h; R$80 após 17h e fins de semana"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.evolucaoindoor.com.br/precos"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "f637f28d44bca9d0",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "g-36fb40b6c2",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://powerbloc.com.br/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "15:00–22:00",
+      "tue": "15:00–22:00",
+      "wed": "15:00–22:00",
+      "thu": "15:00–22:00",
+      "fri": "15:00–22:00",
+      "sat": "08:00–19:00",
+      "sun": "10:00–16:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://powerbloc.com.br/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "7d1f2ecd69409ea4",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "g-a17ba67941",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://geometrikescalada.com.br/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "14:00–22:00",
+      "tue": "08:00–22:00",
+      "wed": "14:00–22:00",
+      "thu": "08:00–22:00",
+      "fri": "14:00–22:00",
+      "sat": "08:00–20:00",
+      "sun": "08:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Diária seg-sex (exceto feriados) R$ 55,00"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://geometrikescalada.com.br/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "cd1cfb441540c6ee",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "seed-1561",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://elmonos.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:00–21:30",
+      "tue": "09:00–21:00",
+      "wed": "09:00–21:30",
+      "thu": "09:00–21:00",
+      "fri": "09:00–22:00",
+      "sat": "09:00–12:00",
+      "sun": "Closed"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Pase diario $4.700; AM (9-11h, lun-vie) $3.000"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://elmonos.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "aada51fd024eab15",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 27,
+   "class": "update",
+   "id": "seed-1802",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://grupoeskalar.com/gimnasio-eskalar/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "06:00–12:00, 15:00–22:00",
+      "tue": "06:00–12:00, 15:00–22:00",
+      "wed": "06:00–12:00, 15:00–22:00",
+      "thu": "06:00–12:00, 15:00–22:00",
+      "fri": "06:00–12:00, 15:00–22:00",
+      "sat": "10:00–17:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://grupoeskalar.com/gimnasio-eskalar/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "492bb46e12ea0dcb",
+   "update_reason": "Official official website, weekly opening hours from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 28,
+   "class": "update",
+   "id": "seed-1862",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.vengaatitlan.com/adventures"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "09:30–12:00",
+      "wed": "09:30–12:00",
+      "fri": "09:30–12:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Entrance Q50, shoes Q25, chalk Q5"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.vengaatitlan.com/adventures"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "916362767c54dee1",
+   "update_reason": "Official official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 29,
+   "class": "update",
+   "id": "seed-1399",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://piconorte.mx/"
+    }
+   ],
+   "expect_h": "ffc53ef242dd418c",
+   "update_reason": "Official official website from the gym's own site (researched 2026-11-27)"
+  }
+ ]
+}
