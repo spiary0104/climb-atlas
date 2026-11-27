@@ -241,3 +241,24 @@ select t.try('deleting a user with nothing but a pending edit (D) succeeds', 'po
   $q$ delete from auth.users where id = '00000000-0000-0000-0000-0000000000dd' $q$, 'ok');
 select t.is_true('...and the edit stays', 'postgres', null,
   $q$ select submitted_by is null from public.pending_edits where id = 'e0000000-0000-0000-0000-00000000000d' $q$);
+
+-- =============== profiles are private (20261127000100_profiles_private) ===============
+insert into public.profiles (user_id, display_name) values
+  ('00000000-0000-0000-0000-00000000000a', 'Alpha'), ('00000000-0000-0000-0000-00000000000b', 'Bravo')
+  on conflict (user_id) do nothing;
+insert into public.spots (id, name, suburb, state, country, lat, lng, types, status, submitted_by) values
+  ('seed-pa', 'A Approved Gym', 'Perth', 'WA', 'AU', -31.9, 115.8, '{top-rope}', 'approved', '00000000-0000-0000-0000-00000000000a');
+select t.try('anon cannot read profiles', 'anon', null, $q$ select user_id, display_name from public.profiles $q$, 'permission denied');
+select t.is_true('a signed-in user sees only their own profile', 'authenticated', '00000000-0000-0000-0000-00000000000a',
+  $q$ select count(*) = 1 and bool_and(display_name = 'Alpha') from public.profiles $q$);
+select t.is_true('a signed-in user cannot read another profile', 'authenticated', '00000000-0000-0000-0000-00000000000a',
+  $q$ select count(*) = 0 from public.profiles where user_id = '00000000-0000-0000-0000-00000000000b' $q$);
+select t.is_true('a moderator can read other profiles', 'authenticated', '00000000-0000-0000-0000-0000000000ee',
+  $q$ select count(*) >= 2 from public.profiles where user_id in ('00000000-0000-0000-0000-00000000000a', '00000000-0000-0000-0000-00000000000b') $q$);
+select t.try('a user can still upsert their own profile', 'authenticated', '00000000-0000-0000-0000-00000000000a',
+  $q$ insert into public.profiles (user_id, display_name) values ('00000000-0000-0000-0000-00000000000a', 'Alpha2')
+      on conflict (user_id) do update set display_name = excluded.display_name $q$, 'ok');
+select t.try('a user cannot write someone else''s profile', 'authenticated', '00000000-0000-0000-0000-00000000000a',
+  $q$ insert into public.profiles (user_id, display_name) values ('00000000-0000-0000-0000-00000000000b', 'Hijack') $q$, 'row-level security');
+select t.is_true('spot_provenance still shows the adder name to anon (SECURITY DEFINER)', 'anon', null,
+  $q$ select added_by = 'Alpha2' from public.spot_provenance('seed-pa') $q$);

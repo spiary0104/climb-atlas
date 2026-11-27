@@ -164,6 +164,17 @@ Applied with `supabase db push --linked`; verified: listed as applied, the colum
 (China pilot: name_local, address_local, visitor, info_source/_kind/_checked_on; tested locally: test-rls-local.js 106/106 and constraint
 cases). Verified afterwards (read-only REST): all six columns readable, null on existing rows; the public gym list unchanged.
 
+## Profiles private, 2026-11-27 (NOT YET APPLIED)
+`20261127000100_profiles_private`: drops the public select policy on `profiles` ("display names are public", `using (true)`) and
+replaces it with "owner or moderator" (`auth.uid() = user_id or auth.uid() in (select user_id from moderators)`); `anon` loses
+its select grant. Insert/update policies unchanged. The public "added by" line keeps working because `spot_provenance()` is
+SECURITY DEFINER. Readers in the app: owner (community.js), moderators (mod-page.js). Test cases added to
+`scripts/migration-tests/20-tests.sql` (NOT yet run: Docker was not running when written; run `node scripts/migration-tests/run.js`
+before applying). Owner steps: (1) `supabase migration list --linked` (remote at 20261101000100 or later); (2) `supabase db push --linked --dry-run`
+(it also lists 20261114000100_gym_aliases if that is still unapplied: decide first); (3) `supabase db push --linked`;
+(4) verify read-only: anon `GET /rest/v1/profiles?select=user_id,display_name` returns an error 401/403 (permission denied) or `[]`,
+and a gym page still shows "added by". Rollback: `create policy "display names are public" on public.profiles for select using (true); grant select on public.profiles to anon;`.
+
 ## Edge Functions
 `supabase/functions/delete-account` (Me page > Delete account): deletes the caller's own auth user with the service role
 (Supabase provides SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY to functions; nothing to configure). The foreign keys of

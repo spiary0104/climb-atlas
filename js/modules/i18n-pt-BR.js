@@ -515,6 +515,7 @@ export default {
   'add.where': 'Onde fica?',
   'add.mapAria': 'Mapa. Mova-o até a academia ficar sob a mira.',
   'add.locate': 'Usar minha localização',
+  'add.locationHint': 'Mova o marcador até a academia antes de enviar: o marcador é publicado como a localização da academia.',
   'add.dupTail': ' já está no mapa, a {distance} da mira. Se for esta academia, sugira uma edição na página dela.',
   'add.filedUnder': 'Classificada em {suburb}, {state}, {country}. Você pode mudar isso na etapa 2.',
   'add.noNear': 'Ainda não há academias por perto, então a etapa 2 vai pedir o bairro e a região.',

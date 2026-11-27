@@ -514,6 +514,7 @@ export default {
   'add.where': '¿Dónde está?',
   'add.mapAria': 'Mapa. Muévelo para que el rocódromo quede bajo la cruz.',
   'add.locate': 'Usar mi ubicación',
+  'add.locationHint': 'Mueve el marcador hasta el gimnasio antes de enviar: el marcador se publica como la ubicación del gimnasio.',
   'add.dupTail': ' ya está en el mapa, a {distance} de la cruz. Si es este rocódromo, sugiere un cambio en su página.',
   'add.filedUnder': 'Se archivará en {suburb}, {state}, {country}. Puedes cambiarlo en el paso 2.',
   'add.noNear': 'Aún no hay rocódromos cerca, así que el paso 2 pedirá el barrio y la región.',

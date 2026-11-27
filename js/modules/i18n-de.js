@@ -511,6 +511,7 @@ export default {
   'add.where': 'Wo ist sie?',
   'add.mapAria': 'Karte. Verschiebe sie, bis die Halle unter dem Fadenkreuz liegt.',
   'add.locate': 'Meinen Standort nutzen',
+  'add.locationHint': 'Schiebe den Pin vor dem Absenden auf die Halle: Der Pin wird als Standort der Halle veröffentlicht.',
   'add.dupTail': ' ist schon in der Karte, {distance} vom Fadenkreuz entfernt. Falls das diese Halle ist, schlage stattdessen auf ihrer Seite eine Änderung vor.',
   'add.filedUnder': 'Eingeordnet unter {suburb}, {state}, {country}. Du kannst das in Schritt 2 ändern.',
   'add.noNear': 'Noch keine Hallen in der Nähe, deshalb fragt Schritt 2 nach Stadtteil und Region.',

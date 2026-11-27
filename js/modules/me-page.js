@@ -11,7 +11,7 @@ import { mePageHtml, pageSkeletonHtml } from './page-html.js';
 import { currentRoute, navigate, refreshPage, registerView, setPageTitle } from './router.js';
 import { gymPath } from './slug.js';
 import { appState } from './state.js';
-import { showToast } from './utils.js';
+import { showToast, clearDeviceData } from './utils.js';
 
 function gymsFor(ids){
   const byId = new Map(appState.spots.map(g => [g.id, g]));
@@ -106,6 +106,7 @@ async function deleteAccount(btn){
     return;
   }
   try{ await window.sb.auth.signOut({ scope: 'local' }); }catch(e){ /* the account is gone either way */ }
+  clearDeviceData(window.localStorage, window.sessionStorage);
   showToast(t('me.deleted'));
   navigate('/');
 }
