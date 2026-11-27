@@ -5,17 +5,23 @@
 | What would happen | Records |
 |---|---:|
 | Insert as NEW gyms | 0 |
-| Update existing gyms (explicit update records) | 0 |
-| Retire existing gyms (closed / duplicate: status becomes rejected, record kept) | 5 |
+| Update existing gyms (explicit update records) | 1 |
+| Retire existing gyms (closed / duplicate: status becomes rejected, record kept) | 4 |
 | Already exist — no action (identical content: 0; content differs, NOT applied: 0) | 0 |
 | Probable duplicates — need a human decision | 0 |
 | Invalid — rejected | 0 |
 | Rejected by a human decision | 0 |
 | **Total records in batch** | 5 |
 
-Index: 3648 known gyms (sha256 266964b6c967…). Plan: a4650a22b65f… Also compared against staged batches: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha.
+Index: 3648 known gyms (sha256 266964b6c967…). Plan: 7c508e338be0… Also compared against staged batches: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha.
 
-## Retirements of existing gyms (5)
+## Updates to existing gyms (1)
+
+- line 5 `seed-1121` — De Uithof's own climbing page names the wall Klimmuur De Uithof (roped routes and bouldering, Jaap Edenweg 10); BOK is a separate bootcamp club.
+  - CORRECTS identity (name; the stored slug and every other field stay as they are):
+  - name: "BOK Den Haag" → "Klimmuur De Uithof"
+
+## Retirements of existing gyms (4)
 
 Each gym is set to `rejected` with the reason below (the moderator UI's own decision format); the row is kept, never deleted. Listed apart from location changes.
 
@@ -23,7 +29,10 @@ Each gym is set to `rejected` with the reason below (the moderator UI's own deci
 - line 2 `seed-1724` "Pirqa" (PE) — closed: Pirqa's own site says the José Gálvez 360, Miraflores gym closed on 30 Aug 2026; a new location is only planned, no address given.
 - line 3 `g-8f44d0e169` "BoulderBase" (JP) — closed: BoulderBase Izumo's own site shows 閉店しました (closed); it had announced in April 2026 that it would close by end of May without a buyer.
 - line 4 `seed-141` "Crux Climbing Center" (US) — closed: Crux left 121 Pickle Rd (Austin Bouldering Project took the space) and moved South Austin to 220 Ralph Ablanedo Dr, already listed as g-13c6a3645d.
-- line 5 `seed-1121` "BOK Den Haag" (NL) — insufficient-evidence: BOK Den Haag is a bootcamp and obstacle-run club at De Uithof; the Uithof's own BOK page lists no climbing walls, so it is not a bouldering or climbing gym.
+
+## Warnings
+
+- `rename` × 1: lines 5
 
 
 ## Owner check list: decision for every gym (researched 2026-11-27, official evidence only)
@@ -46,11 +55,11 @@ Each gym is set to `rejected` with the reason below (the moderator UI's own deci
 | 13b | Elite Climbing, NJ | g-c8ad94eac7 | KEEP | Own site https://eliteclimbing.com/maple-shade-nj/ says "Open 7 Days a Week", 67 Old Kings Highway, footer 2026. Closure labels on MapQuest are stale. |
 | 13c | The Edge Rock Gym Miami | g-e5f92d09db | KEEP | Own site https://theedgerockgymmiami.com shows regular hours and news dated 13 Aug 2026. |
 | 13d | Aiguille, Longwood FL | g-86ba9680ae | KEEP | Own site https://aiguille.com shows hours and no closure notice (footer 2023). The Climbing Business Journal closure article is from Oct 2019 (it moved to a temporary site), so it is stale. Not verified as current beyond that. |
-| 13e | BOK Den Haag | seed-1121 | RETIRE insufficient-evidence | De Uithof's own page https://deuithof.nl/en/bok/ describes BOK as bootcamp and obstacle-run training, no climbing walls; operator listings agree (Bootcamp Obstacle Klub). Not a duplicate of any Den Haag gym record. |
+| 13e | BOK Den Haag | seed-1121 | RENAME to "Klimmuur De Uithof" | BOK itself (https://deuithof.nl/en/bok/) is bootcamp/obstacle training, but the same venue (Jaap Edenweg 10) has the public wall Klimmuur De Uithof: https://deuithof.nl/en/climbing-bouldering/ (roped, ~130 routes on 39 ropes, plus a bouldering area; beginner lessons and reservations linked, no day-pass or hours text on the page). The separate Topzone roped course (https://deuithof.nl/en/topzone/) is group-only (5-25 people), so it was not used as the name. `types` left unchanged: the page does not mention lead climbing, so it is not removed. Open point for the owner: public drop-in access is not spelled out on the page. |
 | 13f | Ethos Climbing, Toronto | g-778d964775 | KEEP | Only one Ethos record exists in the index (no duplicate found within the Queens Quay area; only Rock On Climbing nearby, a different gym). Open per Urban Toronto April 2026 photos and the Waterfront BIA listing; official site ethosclimbing.ca confirmed the name only. |
 | 13g | ClimbPro Alicante | g-8cd75fe6cc | HOLD (address) | Record address "Carrer de l'Ebenisteria 1, 03007 Alicante" could not be confirmed or refuted: no official page or directory found stating a street address (EP Climbing's project page only says Alicante). Address changes cannot be staged in an identity batch anyway. |
 | 13h | Arkose Canal, Bruxelles | seed-1159 | HOLD (address, for owner) | Arkose's own page (https://arkose.com/en/canal) gives "52 Willy de Bruyn Straat, 1000 Brussels"; the record says "Allée Verte 52". Allée Verte (FR) and Groendreef (NL) are a different street name for the same area, so this may be a street-name mismatch rather than a wrong pin. Not staged (identity updates allow only name/suburb/types); owner to decide on a location update batch. |
 
 ### Notes
-- Only 5 records are staged (all retirements); no identity updates were warranted by official evidence.
+- 5 records are staged: 4 retirements (closed) and 1 identity update (seed-1121 rename); no other identity updates were warranted by official evidence.
 - Batch not applied. Retirements need the service-role flow (apply-batch.ps1) after review.

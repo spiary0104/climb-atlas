@@ -14,20 +14,20 @@
   "records": 5,
   "new": 0,
   "existing": 0,
-  "update": 0,
+  "update": 1,
   "probable-duplicate": 0,
   "invalid": 0,
   "rejected": 0,
-  "retire": 5,
+  "retire": 4,
   "existing_identical": 0,
   "existing_content_differs": 0,
   "new_id_not_frozen": 0,
-  "warnings": 0
+  "warnings": 1
  },
  "importable": true,
  "blockers": [],
  "unused_decisions": [],
- "plan_sha256": "a4650a22b65f147b5a43d96b279444958fab1971f080b0c080deeef0fb147792",
+ "plan_sha256": "7c508e338be029e2eb9ac01d177cfc5801ac63ce71473d12cff54c905c62fb9a",
  "records": [
   {
    "line": 1,
@@ -129,29 +129,24 @@
   },
   {
    "line": 5,
-   "class": "retire",
+   "class": "update",
    "id": "seed-1121",
-   "name": "BOK Den Haag",
-   "country": "NL",
+   "changes": [
+    {
+     "field": "name",
+     "before": "BOK Den Haag",
+     "after": "Klimmuur De Uithof"
+    }
+   ],
    "expect_h": "74af8380cc9a7d3c",
-   "reason_code": "insufficient-evidence",
-   "retire_reason": "BOK Den Haag is a bootcamp and obstacle-run club at De Uithof; the Uithof's own BOK page lists no climbing walls, so it is not a bouldering or climbing gym.",
-   "entry": {
-    "id": "seed-1121",
-    "name": "BOK Den Haag",
-    "country": "NL",
-    "state": "ZUID_HOLLAND",
-    "suburb": "Den Haag",
-    "lat": 52.038528,
-    "lng": 4.2405895,
-    "address": "Jaap Edenweg 10, Den Haag, Netherlands",
-    "types": [
-     "indoor-bouldering",
-     "lead-climbing",
-     "top-rope"
-    ],
-    "h": "74af8380cc9a7d3c"
-   }
+   "update_reason": "De Uithof's own climbing page names the wall Klimmuur De Uithof (roped routes and bouldering, Jaap Edenweg 10); BOK is a separate bootcamp club.",
+   "warnings": [
+    {
+     "code": "rename",
+     "field": "name",
+     "message": "renames \"BOK Den Haag\" -> \"Klimmuur De Uithof\""
+    }
+   ]
   }
  ]
 }
