@@ -12,20 +12,20 @@
 | Rejected by a human decision | 0 |
 | **Total records in batch** | 48 |
 
-Index: 3648 known gyms (sha256 266964b6c967…). Plan: 6c34dce725ec… Also compared against staged batches: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha.
+Index: 3648 known gyms (sha256 266964b6c967…). Plan: b9218ee7a851… Also compared against staged batches: 2026-10-12-cn-beijing-chengdu, 2026-10-12-cn-kunming-changsha.
 
 ## Updates to existing gyms (48)
 
-- line 1 `g-652c2c75bf` — official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-27)
-  - FILLS gym information (only if empty in production; never overwrites): website cruxclimbingcenter.com + hours mon,tue,wed,thu,fri,sat,sun + day pass + source official-site cruxclimbingcenter.com 2026-11-27
-- line 2 `g-13c6a3645d` — official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-27)
-  - FILLS gym information (only if empty in production; never overwrites): website cruxclimbingcenter.com + hours mon,tue,wed,thu,fri,sat,sun + day pass + source official-site cruxclimbingcenter.com 2026-11-27
+- line 1 `g-652c2c75bf` — official website, weekly opening hours from the gym's own site (researched 2026-11-27)
+  - FILLS gym information (only if empty in production; never overwrites): website cruxclimbingcenter.com + hours mon,tue,wed,thu,fri,sat,sun + source official-site cruxclimbingcenter.com 2026-11-27
+- line 2 `g-13c6a3645d` — official website, weekly opening hours from the gym's own site (researched 2026-11-27)
+  - FILLS gym information (only if empty in production; never overwrites): website cruxclimbingcenter.com + hours mon,tue,wed,thu,fri,sat,sun + source official-site cruxclimbingcenter.com 2026-11-27
 - line 3 `g-83401ef7c6` — official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)
   - FILLS gym information (only if empty in production; never overwrites): website theblokclimbing.com + hours mon,tue,wed,thu,fri,sat,sun + facilities (1) + source official-site theblokclimbing.com 2026-11-27
-- line 4 `g-412805facb` — official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)
-  - FILLS gym information (only if empty in production; never overwrites): website mocobouldering.com + hours mon,tue,wed,thu,fri,sat,sun + day pass + facilities (1) + source official-site mocobouldering.com 2026-11-27
-- line 5 `seed-136` — official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)
-  - FILLS gym information (only if empty in production; never overwrites): website bouldersclimbing.com + hours mon,tue,wed,thu,fri,sat,sun + day pass + facilities (1) + source official-site bouldersclimbing.com 2026-11-27
+- line 4 `g-412805facb` — official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)
+  - FILLS gym information (only if empty in production; never overwrites): website mocobouldering.com + hours mon,tue,wed,thu,fri,sat,sun + facilities (1) + source official-site mocobouldering.com 2026-11-27
+- line 5 `seed-136` — official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)
+  - FILLS gym information (only if empty in production; never overwrites): website bouldersclimbing.com + hours mon,tue,wed,thu,fri,sat,sun + facilities (1) + source official-site bouldersclimbing.com 2026-11-27
 - line 6 `g-6e5b1b009b` — official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)
   - FILLS gym information (only if empty in production; never overwrites): website boulderingproject.com + hours mon,tue,wed,thu,fri,sat,sun + facilities (5) + source official-site boulderingproject.com 2026-11-27
 - line 7 `g-45cf121b23` — official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)
@@ -52,8 +52,8 @@ Index: 3648 known gyms (sha256 266964b6c967…). Plan: 6c34dce725ec… Also comp
   - FILLS gym information (only if empty in production; never overwrites): website climbiowa.com + hours mon,tue,wed,thu,fri,sat,sun + day pass + facilities (2) + source official-site climbiowa.com 2026-11-27
 - line 18 `g-58bf7a5e36` — official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)
   - FILLS gym information (only if empty in production; never overwrites): website climbiowa.com + hours mon,tue,wed,thu,fri,sat,sun + day pass + facilities (3) + source official-site climbiowa.com 2026-11-27
-- line 19 `g-c990216683` — official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)
-  - FILLS gym information (only if empty in production; never overwrites): website bluestemboulders.com + hours mon,tue,wed,thu,fri,sat,sun + day pass + facilities (1) + source official-site bluestemboulders.com 2026-11-27
+- line 19 `g-c990216683` — official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)
+  - FILLS gym information (only if empty in production; never overwrites): website bluestemboulders.com + hours mon,tue,wed,thu,fri,sat,sun + facilities (1) + source official-site bluestemboulders.com 2026-11-27
 - line 20 `g-01be56bf22` — official website, weekly opening hours from the gym's own site (researched 2026-11-27)
   - FILLS gym information (only if empty in production; never overwrites): website climbapeindex.com + hours mon,tue,wed,thu,fri,sat,sun + source official-site climbapeindex.com 2026-11-27
 - line 21 `g-4b5ca17980` — official website, weekly opening hours, facilities from the gym's own site (researched 2026-11-27)
@@ -73,13 +73,17 @@ Index: 3648 known gyms (sha256 266964b6c967…). Plan: 6c34dce725ec… Also comp
 
 Targets: 57 approved gyms in AZ SD MT MO AR TX OK LA KS MN ID NE NM IA AK HI OR NV with no website, hours or day pass in production on 2026-11-27. Staged 48.
 
-Not staged:
-- Gravity Bear Bouldering Gym (`g-179440d317`, Tulsa): its site says "Last day to climb - NOV 7, 2026" (closed for good). Owner decision needed.
-- Asana Climbing Gym (`g-e10b8d6c40`) is staged via asanaclimbinggym.com (asanaclimbing.com is the padding company, not used).
-- Ozark Climbing Gym (`g-ef6f0389e0`, Springdale): the site is now stoneyardclimbing.com (Stoneyard; its footer still says Ozark Climbing Gym, same address). Website and hours staged; the gym may need a name correction.
-- Crux Climbing Center, Austin (`seed-141`, 121 Pickle Rd): crux's site lists Central Austin (6015 Dillard Circle), South Austin (220 Ralph Ablanedo), Houston, Pflugerville; none at Pickle Rd. Possible old/duplicate record; nothing staged.
-- No official source found/verifiable: New Orleans Boulder Lounge (`g-d860013f2f`), North Peak (`seed-237`, site northpeakreno.com has a broken TLS certificate), The Mountain Project Bozeman (`g-df869f83d4`), Elevation Bouldering Gym Eugene (`g-72fddebc80`), Stoneworks Climbing Gym Beaverton (`g-d995198afe`).
-- Hours skipped: Rock Solid (seasonal "typical fall hours"), Uptown Climbing (page contradicts itself), Rockfish (home and rates pages disagree), Threshold (days not labelled), Steepworld day pass (not in page text).
-- Day pass skipped where the page did not name the price (e.g. The Blok: three labels and three prices in separate columns).
-- Southern Stone hours are given as "12:00 - 9:00" without am/pm on the site; staged as 12:00-21:00.
-- Rock Haven's page banner says "Open today until 8 PM" while its weekly table says 10 PM on Fridays; weekly table staged.
+Source fix (review of PR #167): `source`/`info_source` is now the page that states the values.
+- Source changed to a page that states both hours and day pass: Crux Rock Gym `g-b2238a7db5` (cruxrock.com/prices), The Rock Boxx `g-e0f3a1ce1f` (/rates), The Edge Ammon `g-68a450dc43` (/pricing), Hi-Line `g-07a8080825` (/rates-and-memberships), Ascension Rock Club `g-cf85fe4990` (/climbing-gym/day-passes/).
+- Day pass dropped (hours kept, cited page does not show the price): Crux Houston `g-652c2c75bf`, Crux South Austin `g-13c6a3645d`, MoCo `g-412805facb`, Boulders Harker Heights `seed-136`, Bluestem `g-c990216683`, RoKC Olathe `g-42a6cff062`, RoKC North KC `g-a3c56379d4`, Bliss `g-f7c96cfe74`, Stonetree `g-147274de77`, Rock Dump `g-6173fc3cf3`. Their day passes (Crux $26, MoCo $20, Boulders $20, Bluestem $18, RoKC $22, Bliss $22, Stonetree $15, Rock Dump $24) can go in a later batch citing the pricing page.
+- Unchanged because one page states both: Climb Tulsa, Rock Haven, Climb Iowa, Southern Stone, Black Hills Basecamp, Boulders and Brews, Vertical Horizons.
+
+Not staged (for the owner):
+- Gravity Bear Bouldering Gym (`g-179440d317`, Tulsa): site says "Last day to climb - NOV 7, 2026" (closed).
+- Crux Climbing Center Austin (`seed-141`, 121 Pickle Rd): not among the locations on Crux's site; possible old/duplicate record.
+- Ozark Climbing Gym (`g-ef6f0389e0`): site is now stoneyardclimbing.com (Stoneyard), same address; website and hours staged, name correction is the owner's call.
+- No official source verifiable: New Orleans Boulder Lounge (`g-d860013f2f`), North Peak (`seed-237`, broken TLS certificate), The Mountain Project Bozeman (`g-df869f83d4`), Elevation Bouldering Gym Eugene (`g-72fddebc80`), Stoneworks Beaverton (`g-d995198afe`).
+- Hours skipped: Rock Solid (seasonal), Uptown Climbing (page contradicts itself), Rockfish (pages disagree), Threshold (days unlabelled).
+- Asana: staged from asanaclimbinggym.com (asanaclimbing.com is the padding company).
+- Southern Stone hours are written "12:00 - 9:00" on the site without am/pm; staged as 12:00–21:00 (accepted).
+- Rock Haven: banner says "Open today until 8 PM", weekly table says 10 PM Friday; weekly table staged (accepted).
