@@ -1,0 +1,1317 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-27-jp-west-info",
+ "index": {
+  "sha256": "266964b6c967551eb95f947cfcd6cb3beeeeca985b2810fe3b13fcef9d5001fe",
+  "count": 3648,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha"
+ ],
+ "counts": {
+  "records": 32,
+  "new": 0,
+  "existing": 0,
+  "update": 32,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "6ddb70abebce598da8cbf1d406c71793dc85925167eccc4e72428745b0679e8e",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "g-f6d3bee65b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://bravoclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–21:00",
+      "tue": "13:00–21:00",
+      "wed": "13:00–21:00",
+      "thu": "13:00–21:00",
+      "fri": "Closed",
+      "sat": "11:00–20:00",
+      "sun": "11:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "Day pass ¥2,660 incl. rental shoes & chalk; ¥2,200 with own gear (tax incl.)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://bravoclimbing.com/visit/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "62a4c968eb04c2b0",
+   "update_reason": "Official site: hours and prices from the gym's English visit page (researched 2026-11-27)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "g-bd57e68e26",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://addict-climbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–23:00",
+      "tue": "13:00–23:00",
+      "wed": "10:00–23:00",
+      "thu": "13:00–23:00",
+      "fri": "10:00–23:00",
+      "sat": "10:00–22:00",
+      "sun": "10:00–22:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "一般 1日 平日 ¥2,250 / 休日 ¥2,500"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "training",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://addict-climbing.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "24cfa0d379a15b7a",
+   "update_reason": "Official site: hours on home page, 1-day price from /price page of the same site (researched 2026-11-27)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "g-4da23ca2de",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.omoshirock.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "13:30–22:00",
+      "wed": "13:30–22:00",
+      "thu": "13:30–22:00",
+      "fri": "13:30–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "一般 平日 ¥1,600 / 土日祝 ¥1,800（時間制限なし）"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "shop",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.omoshirock.com/gym"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "bd68d50d7c7a81b1",
+   "update_reason": "Official site: hours and facilities on /gym, price from /money page of the same site (researched 2026-11-27)"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "g-839ccd7028",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://pentagon-climbing.com/"
+    }
+   ],
+   "expect_h": "de851dcaf9856612",
+   "update_reason": "Official site: official site (page is http only, so website and facilities stated on it) (researched 2026-11-27)"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "g-49a2459647",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://ko-wall.jp/mie"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "15:00–23:00",
+      "wed": "15:00–23:00",
+      "thu": "15:00–23:00",
+      "fri": "15:00–23:00",
+      "sat": "13:00–20:00",
+      "sun": "13:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "ビジター 一般 通日 ¥3,300（3時間 ¥2,700）"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "shop",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://ko-wall.jp/mie"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "da4d016a8e395c73",
+   "update_reason": "Official site: branch page states hours, visitor prices and facilities (researched 2026-11-27)"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "g-29ca640867",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://ko-wall.jp/shiga"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "15:00–23:00",
+      "wed": "15:00–23:00",
+      "thu": "15:00–23:00",
+      "fri": "15:00–23:00",
+      "sat": "11:00–20:00",
+      "sun": "11:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "ビジター 一般 通日 ¥3,300（3時間 ¥2,700）"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "shop",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://ko-wall.jp/shiga"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "3999f3737b75fd20",
+   "update_reason": "Official site: branch page states hours, visitor prices and facilities (researched 2026-11-27)"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "g-74c1963d86",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://colors-climbing-gym.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "11:00–23:00",
+      "wed": "11:00–23:00",
+      "thu": "11:00–23:00",
+      "fri": "11:00–23:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "一般 1日利用 ¥2,400（税込）"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://colors-climbing-gym.com/businessinfo"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "12d4d0d38bf2c359",
+   "update_reason": "Official site: hours and prices page of the gym (researched 2026-11-27)"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "g-d8f4c67cfa",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://rockmate.jp/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:30",
+      "tue": "10:00–22:30",
+      "wed": "10:00–22:30",
+      "thu": "10:00–22:30",
+      "fri": "10:00–22:30",
+      "sat": "9:00–21:00",
+      "sun": "9:00–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://rockmate.jp/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "a8be4660ca9b6b20",
+   "update_reason": "Official site: Otsu store hours on the home page; kids park and rental on the site (researched 2026-11-27)"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "g-64ee1e4fa0",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://gym.goodbouldering.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "16:00–23:00",
+      "wed": "16:00–23:00",
+      "thu": "16:00–23:00",
+      "fri": "16:00–23:00",
+      "sat": "11:00–21:00",
+      "sun": "11:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "大人 1日利用 ¥2,420（税込）。初回登録 ¥1,100 別途"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "cafe",
+      "shoe-hire",
+      "shop"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://gym.goodbouldering.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "5bd630edd3603bdd",
+   "update_reason": "Official site: gym page lists hours, 1-day price, cafe, shop and rentals (researched 2026-11-27)"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "g-8f859d4315",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://noboriko.jp/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "14:00–23:00",
+      "tue": "Closed",
+      "wed": "14:00–23:00",
+      "thu": "14:00–23:00",
+      "fri": "14:00–23:00",
+      "sat": "12:00–23:00",
+      "sun": "12:00–23:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://noboriko.jp/access/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "296554d789f05158",
+   "update_reason": "Official site: access page states hours, closing day and parking (researched 2026-11-27)"
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "g-3c89f40f22",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://titan-wall.com/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "cee6bcfebdfd0956",
+   "update_reason": "Official site: official site (page is http only, so website and facilities stated on it) (researched 2026-11-27)"
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "g-72a2396ac2",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://waboclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "14:00–23:00",
+      "tue": "Closed",
+      "wed": "14:00–23:00",
+      "thu": "14:00–23:00",
+      "fri": "14:00–23:00",
+      "sat": "11:00–21:00",
+      "sun": "11:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "ビジター 一般 1DAY ¥2,200（税込）"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://waboclimbing.com/information/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "18b531b8d670dc29",
+   "update_reason": "Official site: usage guide page lists hours and visitor prices (researched 2026-11-27)"
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "g-396849a66f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://ubl-climbingpark.com/kikunan/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "showers"
+     ]
+    }
+   ],
+   "expect_h": "fa46cff820d79ec6",
+   "update_reason": "Official site: official site (page is http only, so website and facilities stated on it) (researched 2026-11-27)"
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "g-eb03d7e03e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://www.theranchgym.com/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shop"
+     ]
+    }
+   ],
+   "expect_h": "f2f5a6efd5851a3d",
+   "update_reason": "Official site: official site (page is http only, so website and facilities stated on it) (researched 2026-11-27)"
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "g-8c9f5fd47b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://rockbakka.jp/"
+    }
+   ],
+   "expect_h": "b0bf7bc92a7339a8",
+   "update_reason": "Official site: official site (opening hours mix staffed and unstaffed times) (researched 2026-11-27)"
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "g-821bcf1f2e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.q-block.jp/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "18:00–23:00",
+      "wed": "18:00–23:00",
+      "thu": "18:00–23:00",
+      "fri": "18:00–23:00",
+      "sat": "18:00–23:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.q-block.jp/info/profile/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "ddf054bfd8b1222a",
+   "update_reason": "Official site: store profile states hours and parking; rental on the price page (researched 2026-11-27)"
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "g-0e72a3430e",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.bouldergardensabo.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "14:00–23:00",
+      "wed": "14:00–23:00",
+      "thu": "14:00–23:00",
+      "fri": "14:00–23:00",
+      "sat": "12:00–21:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "デイパス（営業時間中いつでも）一般 ¥2,400"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.bouldergardensabo.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "64a04f6329da495e",
+   "update_reason": "Official site: home page lists hours, day pass, rental and parking (researched 2026-11-27)"
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "g-6065117d7a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.rocksclimbinggym.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–22:00",
+      "tue": "13:00–22:00",
+      "wed": "13:00–22:00",
+      "thu": "13:00–22:00",
+      "fri": "Closed",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.rocksclimbinggym.com/access/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "ac56fb8ef608ef07",
+   "update_reason": "Official site: rocks BOULDERING GYM block on the access page (researched 2026-11-27)"
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "g-daea7cebe9",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://lism-climb.lovepop.jp/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "13:00–22:00",
+      "wed": "13:00–22:00",
+      "thu": "13:00–22:00",
+      "fri": "13:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://lism-climb.lovepop.jp/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "00082f3a8927a26f",
+   "update_reason": "Official site: hours in the site footer (researched 2026-11-27)"
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "g-77b39d209b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.bonclimbinggym.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–22:00",
+      "tue": "Closed",
+      "wed": "13:00–22:00",
+      "thu": "13:00–22:00",
+      "fri": "13:00–22:00",
+      "sat": "11:00–20:00",
+      "sun": "11:00–20:00"
+     }
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.bonclimbinggym.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "6670ed1f8e7a6d8f",
+   "update_reason": "Official site: home page lists hours, rentals and parking (researched 2026-11-27)"
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "g-59b4395df0",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://k-climb.matsue-freeclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "15:00–22:00",
+      "tue": "15:00–22:00",
+      "wed": "15:00–22:00",
+      "thu": "Closed",
+      "fri": "15:00–22:00",
+      "sat": "12:00–19:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "一般 1回の利用料 ¥1,540（初回会員登録料 ¥1,100）"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://k-climb.matsue-freeclimbing.com/riyou.html"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "8f72eecee1332d84",
+   "update_reason": "Official site: usage guide page lists hours, prices and rentals (researched 2026-11-27)"
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "g-177c5a2f85",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://matsue-freeclimbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "16:00–22:30",
+      "wed": "16:00–22:30",
+      "thu": "16:00–22:30",
+      "fri": "16:00–22:30",
+      "sat": "13:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "一般 1回のご利用料金 ¥1,650（初回会員登録料 ¥1,100、レンタルシューズ込み）"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://matsue-freeclimbing.com/riyou.html"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "cbf09638980e9aed",
+   "update_reason": "Official site: usage guide page lists hours and prices (researched 2026-11-27)"
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "g-684391a35d",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://itte-climbing.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "17:00–23:00",
+      "wed": "17:00–23:00",
+      "thu": "17:00–23:00",
+      "fri": "17:00–23:00",
+      "sat": "13:00–23:00",
+      "sun": "13:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "一般 平日 ¥1,500 / 土日祝 ¥2,000（新規登録料 ¥1,500）"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://itte-climbing.com/price-and-hours.html"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "33fce54ed92e6a33",
+   "update_reason": "Official site: prices and hours page of the gym (researched 2026-11-27)"
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "g-5066b9c2e3",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://www.boulbaka.com/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "fd7c8ca769cfdbd9",
+   "update_reason": "Official site: official site (page is http only, so website and facilities stated on it) (researched 2026-11-27)"
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "g-13d8142df5",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://nakagaiclimbing.jp/soleil"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "13:00–22:30",
+      "wed": "13:00–22:30",
+      "thu": "13:00–22:30",
+      "fri": "13:00–22:30",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "ビジター 一般 終日 ¥2,310（税込）。初回登録料 ¥1,650"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://nakagaiclimbing.jp/soleil"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "a0e29298345c9e4e",
+   "update_reason": "Official site: branch page hours; visitor price from the branch /soleil/price page (researched 2026-11-27)"
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "g-3de670773a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://nakagaiclimbing.jp/kashiharagym"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "13:00–22:00",
+      "wed": "13:00–22:00",
+      "thu": "13:00–22:00",
+      "fri": "13:00–22:00",
+      "sat": "10:00–21:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "ビジター 一般 終日 ¥2,310（税込）。初回登録料 ¥1,650"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://nakagaiclimbing.jp/kashiharagym"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "4f22472a59c0119d",
+   "update_reason": "Official site: branch page hours; visitor price from the branch /kashiharagym/price page (researched 2026-11-27)"
+  },
+  {
+   "line": 27,
+   "class": "update",
+   "id": "g-f0fab4b902",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://suharagym.com/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "3b10399f87f57938",
+   "update_reason": "Official site: official site (page is http only, so website and facilities stated on it) (researched 2026-11-27)"
+  },
+  {
+   "line": 28,
+   "class": "update",
+   "id": "g-a2936cf7f9",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://suharagym.com/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    }
+   ],
+   "expect_h": "e34522f2a7c54d4a",
+   "update_reason": "Official site: official site (page is http only, so website and facilities stated on it) (researched 2026-11-27)"
+  },
+  {
+   "line": 29,
+   "class": "update",
+   "id": "g-8629fa45b1",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://kiaorabros.com/nishiakashi-top"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "shop",
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "4cb17244faadd2ea",
+   "update_reason": "Official site: official site (page is http only, so website and facilities stated on it) (researched 2026-11-27)"
+  },
+  {
+   "line": 30,
+   "class": "update",
+   "id": "g-080f51d78b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://cityrockgym.com/yamato_koriyama/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "10:00–22:00",
+      "tue": "10:00–22:00",
+      "wed": "10:00–22:00",
+      "thu": "10:00–22:00",
+      "fri": "10:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "ビジター ¥2,500（税込）。登録料無料"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://cityrockgym.com/yamato_koriyama/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "90ae151535ed00c2",
+   "update_reason": "Official site: branch page lists hours, visitor price and free parking (researched 2026-11-27)"
+  },
+  {
+   "line": 31,
+   "class": "update",
+   "id": "g-51bd31bc6f",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://mono-climbing.com/shopinfo/?id=shop2"
+    }
+   ],
+   "expect_h": "8603cb903cdca1eb",
+   "update_reason": "Official site: official branch page (Omura) (researched 2026-11-27)"
+  },
+  {
+   "line": 32,
+   "class": "update",
+   "id": "g-2f81b0e968",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://mono-climbing.com/shopinfo/?id=shop3"
+    }
+   ],
+   "expect_h": "97c730ae5c33f5df",
+   "update_reason": "Official site: official branch page (Sasebo) (researched 2026-11-27)"
+  }
+ ]
+}
