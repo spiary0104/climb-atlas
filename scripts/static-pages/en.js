@@ -58,7 +58,7 @@ module.exports = {
     title: 'Privacy Policy',
     metaTitle: 'Privacy Policy — Bouldeer',
     description: 'What Bouldeer stores, who can see it, where it is processed, and how to delete your account.',
-    updated: 'Last updated: 26 November 2026',
+    updated: 'Last updated: 27 November 2026',
     body: `
     <p>Bouldeer is a small, free map of climbing gyms for climbers who travel, run from New South Wales, Australia. We collect as little as we can. We don&rsquo;t show ads, we don&rsquo;t use analytics, and we don&rsquo;t sell or share your data for advertising.</p>
 
@@ -77,7 +77,7 @@ module.exports = {
 
     <h2>Who can see what</h2>
     <ul>
-      <li><strong>Everyone:</strong> approved gym details, and your display name if you set one. Display names are public. They appear as &ldquo;added by&nbsp;&hellip;&rdquo; on gyms you added, and are linked to an internal account number, never to your email. Don&rsquo;t put personal information in gym details.</li>
+      <li><strong>Everyone:</strong> approved gym details, and your display name on gyms you added (shown as &ldquo;added by&nbsp;&hellip;&rdquo;). Display names aren&rsquo;t listed anywhere else: only you and moderators can read your profile. Don&rsquo;t put personal information in gym details.</li>
       <li><strong>Moderators:</strong> what you send us, the display name of the account that sent it, and contribution points, so they can check submissions. They never see your email.</li>
       <li><strong>Only you:</strong> your email address, saved and climbed gyms, check-ins and logbook.</li>
     </ul>
