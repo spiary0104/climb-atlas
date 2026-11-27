@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-11-24-owner-fixes",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "1757589f1ab4e43920f0e7c8eb42c1aa9876329f7b578ab0fd9011d88580dd46",
+  "payload_sha256": "250f38fc5e67241d2ee4ff6b7e4d90b56f8457e766d4d5e263a7ab8dcb4b75d0",
+  "confirm_token": "99507e012cd64679",
+  "live_state_sha256": "5f80188d05672613ba2b210261af071d23f7de13f9c2200f8b60c9669401a72f",
+  "rows_updated": 0,
+  "approved_before": 3651,
+  "approved_after": 3648,
+  "changes": [],
+  "rows_identity_changed": 4,
+  "identity_changed": [
+    {
+      "id": "g-02f57d3060",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "01ce9ec31d962970",
+      "after_h": "b2a280374cb1fb65"
+    },
+    {
+      "id": "seed-1254",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "fd1a761f83e83d6c",
+      "after_h": "b71884fec223af9e"
+    },
+    {
+      "id": "seed-1060",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "6a6c3faf673695c6",
+      "after_h": "67d50238131a8b8a"
+    },
+    {
+      "id": "seed-1046",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "371a2d922e787cc5",
+      "after_h": "4c025ab0e4b855b4"
+    }
+  ],
+  "rows_retired": 3,
+  "retired": [
+    "g-5d90436009",
+    "seed-1845",
+    "seed-994"
+  ],
+  "retirements": [
+    {
+      "id": "g-5d90436009",
+      "reason_code": "closed",
+      "reason": "Closed permanently in mid-November 2026 (high rent, too few summer visitors); its website is offline and the space goes to a fitness studio.",
+      "expect_h": "ccd7951a0dceb63c"
+    },
+    {
+      "id": "seed-1845",
+      "reason_code": "duplicate",
+      "reason": "GoNature now gives only the Sha Tin address (Belair Gardens, 52 Tai Chung Kiu Road), the same as Hong Kong Climbing Park (seed-1847); Kwun Tong no longer listed.",
+      "duplicate_of": "seed-1847",
+      "expect_h": "fb2343c56698764a"
+    },
+    {
+      "id": "seed-994",
+      "reason_code": "closed",
+      "reason": "Climbing Factory closed in early 2026; DAV Nuernberg was still examining a takeover as of 05.08.2026 with no decision, so the hall is not open.",
+      "expect_h": "5d3ff3bf03b138a3"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 7,
+    "problems": []
+  },
+  "started_at": "2026-11-24T09:35:34.123Z",
+  "finished_at": "2026-11-24T09:35:39.732Z",
+  "ids": [
+    "g-5d90436009",
+    "seed-1845",
+    "seed-994",
+    "g-02f57d3060",
+    "seed-1254",
+    "seed-1060",
+    "seed-1046"
+  ]
+}
