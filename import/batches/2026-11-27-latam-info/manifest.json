@@ -1,0 +1,426 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-11-27-latam-info",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "985a16668f74d37f56e5b0441940411be11e67d7aeba896ba52346fafb54ee34",
+  "payload_sha256": "746294f2d1ff1ee41830c129bab213103d90e4c55a1cdaa66b32b9bf0547bf34",
+  "confirm_token": "b8678053e2d4eaaa",
+  "live_state_sha256": "205600eb0ed10a84dce2c4075c62e91b0ec2d37cbd48eb7cda3c761d2f61f189",
+  "rows_updated": 0,
+  "approved_before": 3648,
+  "approved_after": 3648,
+  "changes": [],
+  "rows_info_filled": 29,
+  "info_filled": [
+    {
+      "id": "seed-1558",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "337c30c894ca72e2",
+      "after_h": "337c30c894ca72e2"
+    },
+    {
+      "id": "seed-1560",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "e1fa7f46b2425966",
+      "after_h": "e1fa7f46b2425966"
+    },
+    {
+      "id": "seed-1535",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "511d4adb9f1b41c4",
+      "after_h": "511d4adb9f1b41c4"
+    },
+    {
+      "id": "seed-1537",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "f63f58c71c0f46e7",
+      "after_h": "f63f58c71c0f46e7"
+    },
+    {
+      "id": "seed-1402",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "19ea8bdc18d2a3d0",
+      "after_h": "19ea8bdc18d2a3d0"
+    },
+    {
+      "id": "seed-1403",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "cdd3456411fed4c9",
+      "after_h": "cdd3456411fed4c9"
+    },
+    {
+      "id": "seed-1722",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "4154538466b03037",
+      "after_h": "4154538466b03037"
+    },
+    {
+      "id": "seed-1723",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "8eac748ace8869b5",
+      "after_h": "8eac748ace8869b5"
+    },
+    {
+      "id": "seed-1806",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "2978c05467bc14a2",
+      "after_h": "2978c05467bc14a2"
+    },
+    {
+      "id": "seed-1808",
+      "fields": [
+        "website",
+        "day_pass",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "93c57d6f237c0c9d",
+      "after_h": "93c57d6f237c0c9d"
+    },
+    {
+      "id": "seed-1859",
+      "fields": [
+        "website",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "bd83b265beb739cf",
+      "after_h": "bd83b265beb739cf"
+    },
+    {
+      "id": "g-6922e37b19",
+      "fields": [
+        "website",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "1c71c6baa03908d1",
+      "after_h": "1c71c6baa03908d1"
+    },
+    {
+      "id": "g-0555cd2aa8",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "217274f3020023e1",
+      "after_h": "217274f3020023e1"
+    },
+    {
+      "id": "seed-1417",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "68bd269bc89e2c7a",
+      "after_h": "68bd269bc89e2c7a"
+    },
+    {
+      "id": "seed-1415",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "0104352c5a489d51",
+      "after_h": "0104352c5a489d51"
+    },
+    {
+      "id": "seed-1414",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "21d9381f0b9b8ac8",
+      "after_h": "21d9381f0b9b8ac8"
+    },
+    {
+      "id": "seed-1803",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "0c9e267d5d8d6e84",
+      "after_h": "0c9e267d5d8d6e84"
+    },
+    {
+      "id": "seed-1804",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "7a7acba22f09e27b",
+      "after_h": "7a7acba22f09e27b"
+    },
+    {
+      "id": "seed-1401",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "db321727ba55ff0a",
+      "after_h": "db321727ba55ff0a"
+    },
+    {
+      "id": "seed-1400",
+      "fields": [
+        "website",
+        "hours",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "abbd91c4596a08c2",
+      "after_h": "abbd91c4596a08c2"
+    },
+    {
+      "id": "seed-1397",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "b060e4af413eea34",
+      "after_h": "b060e4af413eea34"
+    },
+    {
+      "id": "seed-1396",
+      "fields": [
+        "website",
+        "day_pass",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "44e59dfad97a7511",
+      "after_h": "44e59dfad97a7511"
+    },
+    {
+      "id": "seed-1410",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "f637f28d44bca9d0",
+      "after_h": "f637f28d44bca9d0"
+    },
+    {
+      "id": "g-36fb40b6c2",
+      "fields": [
+        "website",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "7d1f2ecd69409ea4",
+      "after_h": "7d1f2ecd69409ea4"
+    },
+    {
+      "id": "g-a17ba67941",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "cd1cfb441540c6ee",
+      "after_h": "cd1cfb441540c6ee"
+    },
+    {
+      "id": "seed-1561",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "aada51fd024eab15",
+      "after_h": "aada51fd024eab15"
+    },
+    {
+      "id": "seed-1802",
+      "fields": [
+        "website",
+        "hours",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "492bb46e12ea0dcb",
+      "after_h": "492bb46e12ea0dcb"
+    },
+    {
+      "id": "seed-1862",
+      "fields": [
+        "website",
+        "hours",
+        "day_pass",
+        "facilities",
+        "info_source",
+        "info_source_kind",
+        "info_checked_on"
+      ],
+      "expect_h": "916362767c54dee1",
+      "after_h": "916362767c54dee1"
+    },
+    {
+      "id": "seed-1399",
+      "fields": [
+        "website"
+      ],
+      "expect_h": "ffc53ef242dd418c",
+      "after_h": "ffc53ef242dd418c"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 29,
+    "problems": []
+  },
+  "started_at": "2026-11-27T13:16:45.329Z",
+  "finished_at": "2026-11-27T13:16:54.276Z",
+  "ids": [
+    "seed-1558",
+    "seed-1560",
+    "seed-1535",
+    "seed-1537",
+    "seed-1402",
+    "seed-1403",
+    "seed-1722",
+    "seed-1723",
+    "seed-1806",
+    "seed-1808",
+    "seed-1859",
+    "g-6922e37b19",
+    "g-0555cd2aa8",
+    "seed-1417",
+    "seed-1415",
+    "seed-1414",
+    "seed-1803",
+    "seed-1804",
+    "seed-1401",
+    "seed-1400",
+    "seed-1397",
+    "seed-1396",
+    "seed-1410",
+    "g-36fb40b6c2",
+    "g-a17ba67941",
+    "seed-1561",
+    "seed-1802",
+    "seed-1862",
+    "seed-1399"
+  ]
+}
