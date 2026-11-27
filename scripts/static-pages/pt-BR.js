@@ -55,7 +55,7 @@ module.exports = {
     title: 'Política de Privacidade',
     metaTitle: 'Política de Privacidade — Bouldeer',
     description: 'O que o Bouldeer armazena, quem pode ver, onde os dados são processados e como excluir sua conta.',
-    updated: 'Última atualização: 26 de novembro de 2026',
+    updated: 'Última atualização: 27 de novembro de 2026',
     body: `
     <p>O Bouldeer é um mapa pequeno e gratuito de academias de escalada para escaladores que viajam, administrado a partir de Nova Gales do Sul, na Austrália. Coletamos o mínimo possível. Não exibimos anúncios, não usamos ferramentas de análise e não vendemos nem compartilhamos seus dados para fins de publicidade.</p>
 
@@ -74,7 +74,7 @@ module.exports = {
 
     <h2>Quem pode ver o quê</h2>
     <ul>
-      <li><strong>Todos:</strong> os detalhes aprovados das academias e seu nome de exibição, se você definiu um. Os nomes de exibição são públicos. Aparecem como &ldquo;adicionada por&nbsp;&hellip;&rdquo; nas academias que você adicionou e são vinculados a um número de conta interno, nunca ao seu e-mail. Não coloque informações pessoais nos detalhes de uma academia.</li>
+      <li><strong>Todos:</strong> os detalhes aprovados das academias e seu nome de exibição nas academias que você adicionou (mostrado como &ldquo;adicionada por&nbsp;&hellip;&rdquo;). Os nomes de exibição não aparecem listados em nenhum outro lugar: só você e os moderadores podem ler seu perfil. Não coloque informações pessoais nos detalhes de uma academia.</li>
       <li><strong>Moderadores:</strong> o que você nos envia, o nome de exibição da conta que enviou e os pontos de contribuição, para poderem verificar os envios. Eles nunca veem seu e-mail.</li>
       <li><strong>Somente você:</strong> seu e-mail, academias salvas e escaladas, check-ins e diário.</li>
     </ul>

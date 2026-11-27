@@ -55,7 +55,7 @@ module.exports = {
     title: 'Politique de confidentialité',
     metaTitle: 'Politique de confidentialité — Bouldeer',
     description: 'Ce que Bouldeer enregistre, qui peut le voir, où cela est traité et comment supprimer votre compte.',
-    updated: 'Dernière mise à jour : 26 novembre 2026',
+    updated: 'Dernière mise à jour : 27 novembre 2026',
     body: `
     <p>Bouldeer est une petite carte gratuite des salles d&rsquo;escalade pour les grimpeurs qui voyagent, gérée depuis la Nouvelle-Galles du Sud, en Australie. Nous collectons le moins possible. Nous n&rsquo;affichons pas de publicité, nous n&rsquo;utilisons pas d&rsquo;outil d&rsquo;analyse, et nous ne vendons ni ne partageons vos données à des fins publicitaires.</p>
 
@@ -74,7 +74,7 @@ module.exports = {
 
     <h2>Qui peut voir quoi</h2>
     <ul>
-      <li><strong>Tout le monde&nbsp;:</strong> les informations approuvées sur les salles, et votre nom d&rsquo;affichage si vous en avez défini un. Les noms d&rsquo;affichage sont publics. Ils apparaissent sous la forme &laquo;&nbsp;ajoutée par&nbsp;&hellip;&nbsp;&raquo; sur les salles que vous avez ajoutées, et sont liés à un numéro de compte interne, jamais à votre e-mail. Ne mettez pas d&rsquo;informations personnelles dans les informations d&rsquo;une salle.</li>
+      <li><strong>Tout le monde&nbsp;:</strong> les informations approuvées sur les salles, et votre nom d&rsquo;affichage sur les salles que vous avez ajoutées (affiché sous la forme &laquo;&nbsp;ajoutée par&nbsp;&hellip;&nbsp;&raquo;). Les noms d&rsquo;affichage ne sont listés nulle part ailleurs&nbsp;: seuls vous et les modérateurs pouvez lire votre profil. Ne mettez pas d&rsquo;informations personnelles dans les informations d&rsquo;une salle.</li>
       <li><strong>Les modérateurs&nbsp;:</strong> ce que vous nous envoyez, le nom d&rsquo;affichage du compte qui l&rsquo;a envoyé et les points de contribution, afin de pouvoir vérifier les envois. Ils ne voient jamais votre e-mail.</li>
       <li><strong>Vous seul&nbsp;:</strong> votre adresse e-mail, vos salles enregistrées et celles où vous avez grimpé, vos enregistrements sur place et votre carnet.</li>
     </ul>

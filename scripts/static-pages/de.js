@@ -55,7 +55,7 @@ module.exports = {
     title: 'Datenschutzerklärung',
     metaTitle: 'Datenschutzerklärung — Bouldeer',
     description: 'Was Bouldeer speichert, wer es sehen kann, wo es verarbeitet wird und wie du dein Konto löschst.',
-    updated: 'Stand: 26. November 2026',
+    updated: 'Stand: 27. November 2026',
     body: `
     <p>Bouldeer ist eine kleine, kostenlose Karte von Kletterhallen für Kletternde, die reisen, betrieben von New South Wales in Australien aus. Wir erheben so wenig wie möglich. Wir zeigen keine Werbung, nutzen keine Analysedienste und verkaufen oder teilen deine Daten nicht zu Werbezwecken.</p>
 
@@ -74,7 +74,7 @@ module.exports = {
 
     <h2>Wer was sehen kann</h2>
     <ul>
-      <li><strong>Alle:</strong> freigegebene Hallendaten und dein Anzeigename, falls du einen festgelegt hast. Anzeigenamen sind öffentlich. Sie erscheinen als &bdquo;hinzugefügt von&nbsp;&hellip;&ldquo; bei Hallen, die du hinzugefügt hast, und sind mit einer internen Kontonummer verknüpft, nie mit deiner E-Mail-Adresse. Gib in Hallendaten keine persönlichen Informationen an.</li>
+      <li><strong>Alle:</strong> freigegebene Hallendaten und dein Anzeigename bei Hallen, die du hinzugefügt hast (angezeigt als &bdquo;hinzugefügt von&nbsp;&hellip;&ldquo;). Anzeigenamen werden sonst nirgends aufgelistet: Nur du und die Moderation können dein Profil lesen. Gib in Hallendaten keine persönlichen Informationen an.</li>
       <li><strong>Moderation:</strong> was du uns schickst, der Anzeigename des Kontos, von dem es kommt, und Beitragspunkte, damit sie Einsendungen prüfen kann. Sie sieht nie deine E-Mail-Adresse.</li>
       <li><strong>Nur du:</strong> deine E-Mail-Adresse, gespeicherte und gekletterte Hallen, Check-ins und Logbuch.</li>
     </ul>
