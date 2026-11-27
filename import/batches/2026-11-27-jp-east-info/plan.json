@@ -1,0 +1,1043 @@
+{
+ "plan_version": 1,
+ "batch_id": "2026-11-27-jp-east-info",
+ "index": {
+  "sha256": "266964b6c967551eb95f947cfcd6cb3beeeeca985b2810fe3b13fcef9d5001fe",
+  "count": 3648,
+  "meta_matches": true
+ },
+ "staged_batches_compared": [
+  "2026-10-12-cn-beijing-chengdu",
+  "2026-10-12-cn-kunming-changsha"
+ ],
+ "counts": {
+  "records": 27,
+  "new": 0,
+  "existing": 0,
+  "update": 27,
+  "probable-duplicate": 0,
+  "invalid": 0,
+  "rejected": 0,
+  "existing_identical": 0,
+  "existing_content_differs": 0,
+  "new_id_not_frozen": 0,
+  "warnings": 0
+ },
+ "importable": true,
+ "blockers": [],
+ "unused_decisions": [],
+ "plan_sha256": "3e7d2bb1065f09384a3de11bb532c9db9acf2dc51d3a4817105b9efdf5cd7147",
+ "records": [
+  {
+   "line": 1,
+   "class": "update",
+   "id": "g-1eea804fa4",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/shin-koiwa/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "都度利用(終日・税込) 男性 平日¥2,210/土日祝¥2,310、女性 ¥1,980/¥2,090、学生 ¥1,760/¥1,870"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.d-b-c.jp/top/shin-koiwa/price/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "462b2fe376ded352",
+   "update_reason": "official website, day pass price from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 2,
+   "class": "update",
+   "id": "g-cf024bfc36",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.sunny-69.com/blue-canyon%E5%BA%97/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "15:00–22:00",
+      "tue": "15:00–22:00",
+      "wed": "15:00–22:00",
+      "thu": "13:00–22:00",
+      "fri": "Closed",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.sunny-69.com/blue-canyon%E5%BA%97/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "9ddf15ccaf9b1ab2",
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 3,
+   "class": "update",
+   "id": "g-862a181065",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.sunny-69.com/%E5%AF%8C%E5%A3%AB%E5%BA%97/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "15:00–23:00",
+      "wed": "15:00–23:00",
+      "thu": "15:00–23:00",
+      "fri": "15:00–23:00",
+      "sat": "11:00–20:00",
+      "sun": "11:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.sunny-69.com/%E5%AF%8C%E5%A3%AB%E5%BA%97/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "adcb4ef01780dd4c",
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 4,
+   "class": "update",
+   "id": "g-e3b3a523df",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.sunny-69.com/%E6%B2%BC%E6%B4%A5%E5%BA%97/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed",
+      "tue": "15:00–22:30",
+      "wed": "15:00–22:30",
+      "thu": "15:00–22:30",
+      "fri": "15:00–22:30",
+      "sat": "11:00–22:00",
+      "sun": "11:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.sunny-69.com/%E6%B2%BC%E6%B4%A5%E5%BA%97/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "80158f1105c7f4da",
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 5,
+   "class": "update",
+   "id": "g-334c558717",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://go-goofee.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed (open if public holiday)",
+      "tue": "12:00–23:00",
+      "wed": "12:00–23:00",
+      "thu": "12:00–23:00",
+      "fri": "12:00–23:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "1日フリータイム(税込) 大人¥1,800、学生¥1,600、高校生以下¥1,300"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://go-goofee.com/price"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "a29c23a1f7b46e43",
+   "update_reason": "official website, weekly opening hours, day pass price from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 6,
+   "class": "update",
+   "id": "g-232da60cf5",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbing-bluebird.jp/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "一般 1日利用¥2,200(2時間¥1,800)、学生 1日¥1,700、初回登録料¥1,100(税込)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://climbing-bluebird.jp/menu"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "ac4a9b106ebf7db9",
+   "update_reason": "official website, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 7,
+   "class": "update",
+   "id": "g-d09420ac73",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://www.j-wall.net/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "da05626e52e49e65",
+   "update_reason": "official website, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 8,
+   "class": "update",
+   "id": "g-87a2158e52",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://prob.pupu.jp/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "ビジター1日(税込) 一般¥2,600、大学・専門学生¥2,300、高校生以下¥2,100"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://prob.pupu.jp/price/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "82e6c70518cd24d2",
+   "update_reason": "official website, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 9,
+   "class": "update",
+   "id": "g-b96f50bf04",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://suncul.jp/wordpress/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–22:00",
+      "tue": "Closed (open if public holiday)",
+      "wed": "13:00–22:00",
+      "thu": "13:00–22:00",
+      "fri": "13:00–22:00",
+      "sat": "10:00–18:00",
+      "sun": "10:00–18:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://suncul.jp/wordpress/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "d6b8ca836b8c3404",
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 10,
+   "class": "update",
+   "id": "g-ba8002f8cc",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://wallst.jp/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "メンバーエリア1日(税込) 一般¥1,980、学生(中高大専)¥1,650、会員登録料¥660(2年)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://wallst.jp/%e3%81%94%e5%88%a9%e7%94%a8%e6%96%b9%e6%b3%95%e3%80%81%e6%96%99%e9%87%91/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "e86f5bc6e2b6bde8",
+   "update_reason": "official website, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 11,
+   "class": "update",
+   "id": "g-c38eeb9bc6",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.climbing-flash.jp/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed (open if public holiday)",
+      "tue": "14:00–23:00",
+      "wed": "14:00–23:00",
+      "thu": "13:00–23:00",
+      "fri": "17:00–23:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.climbing-flash.jp/%E5%96%B6%E6%A5%AD%E6%99%82%E9%96%93/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "c1463c92d4ae5e53",
+   "update_reason": "official website, weekly opening hours from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 12,
+   "class": "update",
+   "id": "g-bd4e4838e6",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://iwanchu.net/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–22:00",
+      "tue": "13:00–22:00",
+      "wed": "13:00–22:00",
+      "thu": "13:00–22:00",
+      "fri": "Closed (open if public holiday)",
+      "sat": "11:00–20:00",
+      "sun": "11:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "1日利用(税込) 一般男性¥2,600、女性・シニア¥2,400、学生¥2,200、小学生以下¥2,000"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://iwanchu.net/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "8b8422e9cf1c43b6",
+   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 13,
+   "class": "update",
+   "id": "g-d48ebec327",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://iwanchu.net/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed (open if public holiday)",
+      "tue": "13:00–22:00",
+      "wed": "13:00–22:00",
+      "thu": "13:00–22:00",
+      "fri": "13:00–22:00",
+      "sat": "11:00–20:00",
+      "sun": "11:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "1日利用(税込) 一般男性¥2,600、女性・シニア¥2,400、学生¥2,200、小学生以下¥2,000"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://iwanchu.net/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "5602bcf8888dec93",
+   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 14,
+   "class": "update",
+   "id": "g-84340b2366",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://nanashino.net/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:00–22:00",
+      "tue": "13:00–22:00",
+      "wed": "Closed",
+      "thu": "13:00–22:00",
+      "fri": "13:00–22:00",
+      "sat": "10:00–20:00",
+      "sun": "10:00–20:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "1日券(税込) 一般¥1,900、大学・専門学生¥1,800、高校生以下¥1,500、登録料¥1,200"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://nanashino.net/facility/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "af56b803e65ad23f",
+   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 15,
+   "class": "update",
+   "id": "g-3dc466613b",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://glideclimbing.jp/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "1日利用(税別) 一般¥1,750、中・高校生¥1,250、小学生以下¥800"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://glideclimbing.jp/price/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "d4d7d7534d017062",
+   "update_reason": "official website, day pass price from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 16,
+   "class": "update",
+   "id": "g-61ea19e555",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.north-rock.net/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed (next day if public holiday)",
+      "tue": "15:00–22:00",
+      "wed": "15:00–22:00",
+      "thu": "15:00–22:00",
+      "fri": "15:00–22:00",
+      "sat": "10:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "一般 一日料金¥1,600、学生¥1,300、高校生¥1,200、中小学生以下¥1,000、初回登録料¥1,100"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.north-rock.net/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "fb71ec5fead1872c",
+   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 17,
+   "class": "update",
+   "id": "g-1ca71a08ef",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://piglet-climb.com/"
+    }
+   ],
+   "expect_h": "8a1bc26a165fe38b",
+   "update_reason": "official website from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 18,
+   "class": "update",
+   "id": "g-044729335a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://bouldering358.com/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "1日(税込) 大人¥2,300、高校生以下¥1,800(平日・土日祝とも)、初回登録込み 大人¥3,300"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://bouldering358.com/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "6676003284240107",
+   "update_reason": "official website, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 19,
+   "class": "update",
+   "id": "g-27754ee295",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://ridgeline1.jp/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "Closed (open if public holiday)",
+      "tue": "13:00–22:00",
+      "wed": "13:00–22:00",
+      "thu": "13:00–22:00",
+      "fri": "13:00–22:00",
+      "sat": "10:00–19:00",
+      "sun": "10:00–19:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "終日 一般¥2,200、大学生¥1,890、中・高校生¥1,660、小学生・幼児¥1,450"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "parking"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://ridgeline1.jp/prices/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "edbcd257148a82a7",
+   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 20,
+   "class": "update",
+   "id": "g-803128669a",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://climbing-zero.com/gym/%e4%bc%8a%e5%8b%a2%e5%b4%8e%e5%ba%97/"
+    }
+   ],
+   "expect_h": "985b41127ed6a8f8",
+   "update_reason": "official website from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 21,
+   "class": "update",
+   "id": "g-b913082e70",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "http://avue.server-shared.com/"
+    }
+   ],
+   "expect_h": "38e194da320af659",
+   "update_reason": "official website from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 22,
+   "class": "update",
+   "id": "g-2e11b2d5d0",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://climbinggym-ray.com/"
+    },
+    {
+     "field": "hours",
+     "before": null,
+     "after": {
+      "mon": "13:30–22:30",
+      "tue": "13:30–22:30",
+      "wed": "13:30–22:30",
+      "thu": "10:00–22:30",
+      "fri": "13:30–22:30",
+      "sat": "11:00–21:00",
+      "sun": "10:00–21:00"
+     }
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "通日 大人¥2,600、シニア¥2,400、学生¥2,200、小学生¥2,000(土日祝・平日同額)"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "kids",
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://climbinggym-ray.com/fee"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "0c792ad0749d57ae",
+   "update_reason": "official website, weekly opening hours, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 23,
+   "class": "update",
+   "id": "g-4983e7ce49",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://wallysan.jimdofree.com/"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "利用料(終日) 一般¥2,100、シニア¥1,900、学生(小学生以上)¥1,700、会員登録料¥1,500"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "shoe-hire"
+     ]
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://wallysan.jimdofree.com/%E5%88%A9%E7%94%A8%E6%96%99%E9%87%91-1/"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "d8763f15887aee18",
+   "update_reason": "official website, day pass price, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 24,
+   "class": "update",
+   "id": "g-5735bc19a1",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.matsumoto-car.com/todoclimbing"
+    },
+    {
+     "field": "day_pass",
+     "before": null,
+     "after": "一般 1日¥2,000、専門・大学生 1日¥1,600、新規登録料¥1,500(税込)"
+    },
+    {
+     "field": "info_source",
+     "before": null,
+     "after": "https://www.matsumoto-car.com/tcprice"
+    },
+    {
+     "field": "info_source_kind",
+     "before": null,
+     "after": "official-site"
+    },
+    {
+     "field": "info_checked_on",
+     "before": null,
+     "after": "2026-11-27"
+    }
+   ],
+   "expect_h": "fa916d5f8fc8dcb1",
+   "update_reason": "official website, day pass price from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 25,
+   "class": "update",
+   "id": "g-175ba47b14",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.planet-climbing.net/"
+    }
+   ],
+   "expect_h": "69b82d6a5f67b244",
+   "update_reason": "official website from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 26,
+   "class": "update",
+   "id": "g-dfcd790cc1",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://freeclimbing.co.jp/"
+    },
+    {
+     "field": "facilities",
+     "before": null,
+     "after": [
+      "parking"
+     ]
+    }
+   ],
+   "expect_h": "50af19aa310e3798",
+   "update_reason": "official website, facilities from the gym's own site (researched 2026-11-27)"
+  },
+  {
+   "line": 27,
+   "class": "update",
+   "id": "g-dffcff5a6c",
+   "changes": [
+    {
+     "field": "website",
+     "before": null,
+     "after": "https://www.hann-hann2.com/"
+    }
+   ],
+   "expect_h": "436a86d7deca211c",
+   "update_reason": "official website from the gym's own site (researched 2026-11-27)"
+  }
+ ]
+}
