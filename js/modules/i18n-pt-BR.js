@@ -25,6 +25,11 @@ export default {
   'lang.pickerAria': 'Idioma',
   'lang.section': 'Idioma',
   'lang.help': 'Muda os botões e menus do app. Nomes e endereços das academias continuam no idioma original.',
+  'mapStyle.section': 'Mapa',
+  'mapStyle.label': 'Estilo do mapa',
+  'mapStyle.light': 'Claro',
+  'mapStyle.dark': 'Escuro',
+  'mapStyle.help': 'O escuro descansa a vista à noite; o claro é mais fácil de ler de dia. Fica salvo só neste aparelho.',
 
   'me.title': 'Eu',
   'me.signedOutIntro': 'Salve academias, marque as que você já escalou e mantenha um registro das suas sessões.',

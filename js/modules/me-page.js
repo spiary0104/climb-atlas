@@ -5,7 +5,7 @@ import { t } from './i18n.js';
 import { openAuthModal } from './auth-ui.js';
 import { loadMyCommunity, saveDisplayName } from './community.js';
 import { displayNameSaveMessage, isContributor, isMissingTable, levelFor, validDisplayName } from './provenance.js';
-import { stateLabel } from './map.js';
+import { mapStyle, stateLabel } from './map.js';
 import { startAddGym } from './modals.js';
 import { mePageHtml, pageSkeletonHtml } from './page-html.js';
 import { currentRoute, navigate, refreshPage, registerView, setPageTitle } from './router.js';
@@ -27,7 +27,7 @@ function communityCtx(){
 }
 
 function enter({ section }, view){
-  if(!window.auth.user){ setPageTitle(t('me.title')); view.innerHTML = mePageHtml({ signedIn: false }); return; }
+  if(!window.auth.user){ setPageTitle(t('me.title')); view.innerHTML = mePageHtml({ signedIn: false, mapStyle: mapStyle() }); return; }
   if(!appState.loaded){ setPageTitle(t('me.title')); view.innerHTML = pageSkeletonHtml(); return; }
   setPageTitle(t(section === 'climbed' ? 'me.climbed' : 'me.saved'));
   view.innerHTML = mePageHtml({
@@ -35,7 +35,7 @@ function enter({ section }, view){
     saved: gymsFor(appState.bookmarkedIds), climbed: gymsFor(appState.climbedIds),
     isModerator: appState.isModerator,
     pendingCount: appState.pendingSpots.length + appState.pendingEdits.length + appState.pendingReports.length,
-    community: communityCtx(),
+    community: communityCtx(), mapStyle: mapStyle(),
   });
   if(!appState.myCommunity && !loadingCommunity){
     loadingCommunity = true;

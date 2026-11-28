@@ -55,7 +55,7 @@ module.exports = {
     title: 'Datenschutzerklärung',
     metaTitle: 'Datenschutzerklärung — Bouldeer',
     description: 'Was Bouldeer speichert, wer es sehen kann, wo es verarbeitet wird und wie du dein Konto löschst.',
-    updated: 'Stand: 27. November 2026',
+    updated: 'Stand: 28. November 2026',
     body: `
     <p>Bouldeer ist eine kleine, kostenlose Karte von Kletterhallen für Kletternde, die reisen, betrieben von New South Wales in Australien aus. Wir erheben so wenig wie möglich. Wir zeigen keine Werbung, nutzen keine Analysedienste und verkaufen oder teilen deine Daten nicht zu Werbezwecken.</p>
 
@@ -92,7 +92,7 @@ module.exports = {
     <ul>
       <li>deine Anmeldesitzung;</li>
       <li>einen nicht gesendeten Entwurf für Halle hinzufügen, einschließlich der Position der Markierung;</li>
-      <li>dein Listenlayout, die zuletzt angezeigte Kartenansicht, letzte Suchen und die gewählte Sprache;</li>
+      <li>dein Listenlayout, den Kartenstil, die zuletzt angezeigte Kartenansicht, letzte Suchen und die gewählte Sprache;</li>
       <li>Vermerke, damit das Intro sowie Willkommens- und Meilensteinmeldungen nur einmal erscheinen;</li>
       <li>Offline-Kopien der Website, angesehener Kartenbilder und der öffentlichen Hallenliste.</li>
     </ul>

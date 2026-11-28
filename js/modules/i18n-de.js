@@ -21,6 +21,11 @@ export default {
   'lang.pickerAria': 'Sprache',
   'lang.section': 'Sprache',
   'lang.help': 'Ändert die Sprache der Buttons und Menüs. Namen und Adressen der Hallen bleiben in ihrer eigenen Sprache.',
+  'mapStyle.section': 'Karte',
+  'mapStyle.label': 'Kartenstil',
+  'mapStyle.light': 'Hell',
+  'mapStyle.dark': 'Dunkel',
+  'mapStyle.help': 'Dunkel schont nachts die Augen, Hell ist bei Tageslicht besser lesbar. Wird nur auf diesem Gerät gespeichert.',
 
   'me.title': 'Ich',
   'me.signedOutIntro': 'Speichere Hallen, markiere die, in denen du geklettert bist, und führe ein Logbuch deiner Sessions.',

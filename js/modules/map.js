@@ -51,9 +51,31 @@ export function worldZoom(){
   const side = Math.min(el.clientWidth, el.clientHeight) || 600;
   return Math.min(2.4, Math.max(0.6, 1.3 + Math.log2(side * 0.85 / 490)));
 }
-// One light basemap for every map in the app: CARTO's free, keyless "Positron" vector style, recoloured to the paper tokens
-// by paperBasemap (map readability decision 2026-10-31; the dark Dark Matter map it replaced was hard to read on phones).
-export const BASEMAP_STYLE = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
+// Basemap: CARTO's free, keyless vector styles. Light (default) = "Positron" recoloured to the paper tokens by paperBasemap
+// (readability decision 2026-10-31: the dark map was hard to read on phones). Dark (opt-in on the Me page, owner 2026-11-28)
+// = "Dark Matter" warmed by warmBasemap, the map used until 2026-10-31. The choice is stored on this device only.
+const STYLE_URLS = {
+  light: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
+  dark: 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',
+};
+const MAP_STYLE_KEY = 'bouldeer_map_style';
+export function mapStyle(){ try{ return localStorage.getItem(MAP_STYLE_KEY) === 'dark' ? 'dark' : 'light'; }catch(e){ return 'light'; } }
+// <html data-map-style> switches the --map-* tokens (tokens.css); set it before any map reads them.
+export function applyMapStyleAttr(){ const el = document.documentElement; if(el && el.dataset) el.dataset.mapStyle = mapStyle(); }
+// Each new map re-syncs the tokens first, so a choice made in another tab never pairs one style's tiles with the other's colours.
+export const basemapUrl = () => { applyMapStyleAttr(); return STYLE_URLS[mapStyle()]; };
+export function setMapStyle(style){
+  try{ if(style === 'dark') localStorage.setItem(MAP_STYLE_KEY, 'dark'); else localStorage.removeItem(MAP_STYLE_KEY); }catch(e){ /* storage blocked: this visit only */ }
+  applyMapStyleAttr();
+  if(gl) gl.setStyle(basemapUrl(), { diff: false });   // style.load runs styleBasemap again
+}
+// Recolour any map (Explore, mini maps, /add) to the chosen style's tokens.
+export function toneBasemap(target){
+  if(mapStyle() !== 'dark') return paperBasemap(target);
+  warmBasemap(target);
+  // CARTO's Dark Matter ships "roadname_major" near-black (#383838 on a #111 halo), unreadable: brightened to match the other tiers.
+  try{ target.setPaintProperty('roadname_major', 'text-color', cssToken('--map-road-label')); }catch(err){ /* layer renamed upstream */ }
+}
 
 let gl = null;                                   // the MapLibre map, once startMap has made it
 const listeners = [];                            // [type, fn] registered through map.on, attached to the real map too
@@ -343,7 +365,26 @@ function toHsla(colour){
   return {h: (h + 360) % 360, s, l, a};
 }
 
-// Paper-toned basemap, used by every map (Explore, mini maps, /add): Positron's light greys take the warm hue
+// Warm dark basemap (the dark map style): Dark Matter's neutral greys take the hue/saturation of --map-tint; nothing gets
+// darker than --map-canvas; labels are untouched.
+function warmBasemap(target){
+  const tint = toHsla(cssToken('--map-tint')), floor = toHsla(cssToken('--map-canvas')).l;
+  const warm = c => {
+    if(typeof c !== 'string' || c === 'transparent') return c;
+    const {l, a} = toHsla(c);
+    if(a === 0) return c;
+    return `hsla(${tint.h.toFixed(1)}, ${(tint.s * 100).toFixed(1)}%, ${(Math.max(l, floor) * 100).toFixed(1)}%, ${a})`;
+  };
+  for(const layer of target.getStyle().layers){
+    if(!['background', 'fill', 'line'].includes(layer.type)) continue;
+    const prop = layer.type + '-color';
+    const v = target.getPaintProperty(layer.id, prop);
+    if(typeof v === 'string') target.setPaintProperty(layer.id, prop, warm(v));
+    else if(v && Array.isArray(v.stops)) target.setPaintProperty(layer.id, prop, {...v, stops: v.stops.map(([z, c]) => [z, warm(c)])});
+  }
+}
+
+// Paper-toned basemap (the light map style), for every map (Explore, mini maps, /add): Positron's light greys take the warm hue
 // of --map-paper-tint and sit just under --map-paper-land; white roads become --map-paper-road, water --map-paper-water,
 // labels --map-paper-label on a land-coloured halo.
 export function paperBasemap(target){
@@ -409,7 +450,7 @@ export function startMap(){
     if(gl) return;
     gl = new lib.Map({
       container: 'map',
-      style: BASEMAP_STYLE,
+      style: basemapUrl(),
       center: [cam.lng, cam.lat],
       zoom: camZoom(),
       attributionControl: {compact: true},
@@ -431,9 +472,10 @@ function setUpMap(lib){
   locate.on('geolocate', (e)=> handlers.onLocate({lat: e.coords.latitude, lng: e.coords.longitude}));
   locate.on('error', ()=> handlers.onLocateError());
 
-  gl.once('style.load', ()=>{
+  // 'on', not 'once': a Map style change on the Me page swaps the style and this runs again.
+  gl.on('style.load', ()=>{
     gl.setProjection({type:'globe'});
-    try{ paperBasemap(gl); }catch(err){ console.warn('Could not tone the basemap colours', err); }
+    try{ toneBasemap(gl); }catch(err){ console.warn('Could not tone the basemap colours', err); }
     try{
       // Atmosphere tinted to the paper palette rather than the default sky blue.
       gl.setSky({

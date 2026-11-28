@@ -16,16 +16,17 @@ const ROOT = path.resolve(__dirname, '..');
 const CSS_FILE = path.join(ROOT, 'css', 'tokens.css');
 const JSON_FILE = path.join(ROOT, 'design', 'tokens.json');
 
-// ---- parse css/tokens.css into { base: {name: value}, paper: {...}, rock: {...} } -------------------------------------------
+// ---- parse css/tokens.css into { base: {name: value}, paper: {...}, rock: {...}, mapDark: {...} } -------------------------------------------
 function parseTokensCss(text) {
   const css = text.replace(/\/\*[\s\S]*?\*\//g, '');
-  const out = { base: {}, paper: {}, rock: {} };
+  const out = { base: {}, paper: {}, rock: {}, mapDark: {} };
   for (const m of css.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
     const selector = m[1].trim();
     let set;
     if (selector === ':root') set = 'base';
     else if (/^:root,\s*\[data-theme="paper"\]/.test(selector)) set = 'paper';
     else if (selector === '[data-theme="rock"]') set = 'rock';
+    else if (selector === ':root[data-map-style="dark"]') set = 'mapDark';   // the opt-in dark map (map tokens only)
     else throw new Error('unexpected selector in tokens.css: ' + selector);
     for (const d of m[2].split(';')) {
       const i = d.indexOf(':');
@@ -92,14 +93,14 @@ function buildJson(parsed) {
   };
   const leaf = (name, value) => ({ $type: typeOf(name, value), $value: jsonValue(name, value) });
   for (const [name, value] of Object.entries(parsed.base)) setPath(out, pathOf(name), leaf(name, value));
-  out.theme = { paper: {}, rock: {} };
-  for (const t of ['paper', 'rock']) for (const [name, value] of Object.entries(parsed[t])) setPath(out.theme[t], pathOf(name), leaf(name, value));
+  out.theme = { paper: {}, rock: {}, mapDark: {} };
+  for (const t of ['paper', 'rock', 'mapDark']) for (const [name, value] of Object.entries(parsed[t])) setPath(out.theme[t], pathOf(name), leaf(name, value));
   return out;
 }
 
 // ---- flatten JSON back to { set: {cssName: cssValue} } (used by the parity test) ----------------------------------------------
 function flattenJson(json) {
-  const res = { base: {}, paper: {}, rock: {} };
+  const res = { base: {}, paper: {}, rock: {}, mapDark: {} };
   const walk = (o, prefix, set) => {
     for (const [k, v] of Object.entries(o)) {
       if (k.startsWith('$')) continue;
@@ -115,7 +116,7 @@ function flattenJson(json) {
   };
   const { theme, ...base } = json;
   walk(base, [], 'base');
-  for (const t of ['paper', 'rock']) walk(theme[t], [], t);
+  for (const t of ['paper', 'rock', 'mapDark']) walk(theme[t] || {}, [], t);
   return res;
 }
 // CSS shadows written as "0 2px 8px rgba(...)" normalise to "0px 2px 8px 0px rgba(...)" for comparison.

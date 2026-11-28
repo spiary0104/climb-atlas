@@ -55,7 +55,7 @@ module.exports = {
     title: 'Política de privacidad',
     metaTitle: 'Política de privacidad — Bouldeer',
     description: 'Qué guarda Bouldeer, quién puede verlo, dónde se procesa y cómo eliminar tu cuenta.',
-    updated: 'Última actualización: 27 de noviembre de 2026',
+    updated: 'Última actualización: 28 de noviembre de 2026',
     body: `
     <p>Bouldeer es un pequeño mapa gratuito de rocódromos para escaladores que viajan, gestionado desde Nueva Gales del Sur, Australia. Recopilamos lo mínimo posible. No mostramos publicidad, no usamos analítica y no vendemos ni compartimos tus datos con fines publicitarios.</p>
 
@@ -92,7 +92,7 @@ module.exports = {
     <ul>
       <li>tu sesión;</li>
       <li>un borrador sin enviar de Añadir un rocódromo, incluida la posición del marcador;</li>
-      <li>el diseño de tu lista, la última vista del mapa, tus búsquedas recientes y el idioma que elegiste;</li>
+      <li>el diseño de tu lista, el estilo del mapa, la última vista del mapa, tus búsquedas recientes y el idioma que elegiste;</li>
       <li>notas para que la introducción y los mensajes de bienvenida y de hito se muestren una sola vez;</li>
       <li>copias sin conexión del sitio, de las imágenes del mapa que has visto y de la lista pública de rocódromos.</li>
     </ul>

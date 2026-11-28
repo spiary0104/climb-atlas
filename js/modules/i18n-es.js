@@ -24,6 +24,11 @@ export default {
   'lang.pickerAria': 'Idioma',
   'lang.section': 'Idioma',
   'lang.help': 'Cambia los botones y menús de la app. Los nombres y direcciones de los rocódromos se quedan en su propio idioma.',
+  'mapStyle.section': 'Mapa',
+  'mapStyle.label': 'Estilo del mapa',
+  'mapStyle.light': 'Claro',
+  'mapStyle.dark': 'Oscuro',
+  'mapStyle.help': 'El oscuro descansa la vista de noche; el claro se lee mejor de día. Se guarda solo en este dispositivo.',
 
   'me.title': 'Yo',
   'me.signedOutIntro': 'Guarda rocódromos, marca los que has escalado y lleva un diario de tus sesiones.',

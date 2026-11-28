@@ -22,6 +22,11 @@ export default {
   'lang.pickerAria': 'Langue',
   'lang.section': 'Langue',
   'lang.help': 'Change les boutons et les menus de l’app. Les noms et adresses des salles restent dans leur langue.',
+  'mapStyle.section': 'Carte',
+  'mapStyle.label': 'Style de carte',
+  'mapStyle.light': 'Clair',
+  'mapStyle.dark': 'Sombre',
+  'mapStyle.help': 'Le style sombre est plus doux la nuit, le clair se lit mieux en plein jour. Enregistré uniquement sur cet appareil.',
 
   'me.title': 'Moi',
   'me.signedOutIntro': 'Enregistrez des salles, marquez celles où vous avez grimpé et tenez un journal de vos séances.',

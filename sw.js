@@ -44,7 +44,7 @@
 // v42: a region page that lists exactly one city's gyms names that city page as its canonical (place-canonical.js).
 // v44: 16 more China city regions (regions.js) for the China research.
 // v60: Delete your account page (delete-account.html) joins the precached static pages; Privacy and Terms rewritten.
-const CACHE_VERSION = 'v62';
+const CACHE_VERSION = 'v63';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;

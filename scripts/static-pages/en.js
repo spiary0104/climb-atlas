@@ -58,7 +58,7 @@ module.exports = {
     title: 'Privacy Policy',
     metaTitle: 'Privacy Policy — Bouldeer',
     description: 'What Bouldeer stores, who can see it, where it is processed, and how to delete your account.',
-    updated: 'Last updated: 27 November 2026',
+    updated: 'Last updated: 28 November 2026',
     body: `
     <p>Bouldeer is a small, free map of climbing gyms for climbers who travel, run from New South Wales, Australia. We collect as little as we can. We don&rsquo;t show ads, we don&rsquo;t use analytics, and we don&rsquo;t sell or share your data for advertising.</p>
 
@@ -95,7 +95,7 @@ module.exports = {
     <ul>
       <li>your sign-in session;</li>
       <li>an unsent Add a gym draft, including the pin position;</li>
-      <li>your list layout, last map view, recent searches and chosen language;</li>
+      <li>your list layout, map style, last map view, recent searches and chosen language;</li>
       <li>notes so the intro, the welcome and milestone messages show only once;</li>
       <li>offline copies of the site, map images you&rsquo;ve viewed and the public gym list.</li>
     </ul>

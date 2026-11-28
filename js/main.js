@@ -6,7 +6,7 @@ import { checkModerator, loadMarks, loadPending, loadSpots } from './modules/dat
 import { applyLanding, initExplore, render } from './modules/explore.js';
 import { initGymPage } from './modules/gym-page.js';
 import { initLogbook } from './modules/logbook.js';
-import { initMap, startMap } from './modules/map.js';
+import { applyMapStyleAttr, initMap, setMapStyle, startMap } from './modules/map.js';
 import { initForms, initModalKeyboard } from './modules/modals.js';
 import { initModeration, renderPendingBadge } from './modules/moderation.js';
 import { initLogPage } from './modules/log-page.js';
@@ -42,6 +42,12 @@ document.addEventListener('change', (e) => {
   const inPage = !!s.closest('#view');
   // the /me page re-renders: give keyboard focus back to its (new) picker
   setLocale(s.value, { manual: true }).then(() => { if(inPage){ const n = document.querySelector('#view select[data-lang-picker]'); if(n) n.focus(); } });
+});
+// Map style (Me page > Map): light by default, dark on request; the token switch precedes any map.
+applyMapStyleAttr();
+document.addEventListener('change', (e) => {
+  const s = e.target && e.target.closest ? e.target.closest('select[data-map-style-picker]') : null;
+  if(s) setMapStyle(s.value);
 });
 window.addEventListener('bouldeer:locale', () => {
   syncLangPickers();

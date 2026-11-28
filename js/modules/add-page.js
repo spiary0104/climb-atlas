@@ -6,7 +6,7 @@ import { addDoneHtml, addPageHtml, addStepHtml, areaFor, areaMissing, countrySta
 import { openAuthModal } from './auth-ui.js';
 import { ALL_TYPES } from './geo.js';
 import { t } from './i18n.js';
-import { BASEMAP_STYLE, map as exploreMap, mapLibrary, mapLocale, paperBasemap } from './map.js';
+import { basemapUrl, map as exploreMap, mapLibrary, mapLocale, toneBasemap } from './map.js';
 import { currentRoute, registerView, setPageTitle } from './router.js';
 import { gymPath } from './slug.js';
 import { appState } from './state.js';
@@ -96,11 +96,11 @@ function makePinMap(maplibregl, el){
   const c = exploreMap.getCenter();
   const center = Number.isFinite(draft.lat) ? [draft.lng, draft.lat] : [c.lng, c.lat];
   const zoom = Number.isFinite(draft.zoom) ? draft.zoom : Math.max(exploreMap.getZoom(), 3);
-  pinMap = new maplibregl.Map({ container: el, style: BASEMAP_STYLE, center, zoom, dragRotate: false, pitchWithRotate: false,
+  pinMap = new maplibregl.Map({ container: el, style: basemapUrl(), center, zoom, dragRotate: false, pitchWithRotate: false,
     attributionControl: { compact: true }, fadeDuration: 0, locale: mapLocale() });
   pinMap.touchZoomRotate.disableRotation();
   pinMap.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
-  pinMap.once('style.load', () => { try{ paperBasemap(pinMap); }catch(err){ console.warn('Could not tone the pin map', err); } });
+  pinMap.once('style.load', () => { try{ toneBasemap(pinMap); }catch(err){ console.warn('Could not tone the pin map', err); } });
   pinMap.on('moveend', onMove);
   pinMap.once('load', onMove);
 }
