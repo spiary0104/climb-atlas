@@ -707,12 +707,14 @@ test('gym page metro link: "All N gyms in <metro>" (Both for two), only with a r
   }
 });
 
-test('me page: Map section offers Light / Dark, light by default, the stored choice selected (signed in and out)', async () => {
+test('me page: Map section is a Dark map on/off button, off by default, on when stored (signed in and out)', async () => {
   const { page } = await modules;
-  const pick = html => (/<select class="input" data-map-style-picker[^>]*>([\s\S]*?)<\/select>/.exec(html) || [])[1];
-  const signedOut = page.mePageHtml({ signedIn: false });
-  assert.match(pick(signedOut), /<option value="light" selected>Light<\/option><option value="dark">Dark<\/option>/);
-  assert.match(pick(page.mePageHtml({ signedIn: false, mapStyle: 'dark' })), /<option value="dark" selected>Dark<\/option>/);
-  assert.match(pick(page.mePageHtml({ signedIn: false, mapStyle: '"><script>' })), /value="light" selected/, 'unknown value falls back to light');
-  assert.match(page.mapStyleSectionHtml('light'), /aria-describedby="mapStyleHelp"/);
+  const btn = html => (/<button type="button" class="btn btn-secondary" data-map-style-toggle aria-pressed="(true|false)" aria-describedby="mapStyleHelp">[\s\S]*?Dark map<span class="btn-state" data-map-style-state aria-hidden="true">(?:On|Off)<\/span><\/button>/.exec(html) || [])[1];
+  assert.match(page.mePageHtml({ signedIn: false, mapStyle: 'dark' }), /data-map-style-state aria-hidden="true">On</, 'visible On when dark');
+  assert.match(page.mePageHtml({ signedIn: false }), /data-map-style-state aria-hidden="true">Off</, 'visible Off by default');
+  assert.equal(btn(page.mePageHtml({ signedIn: false })), 'false');
+  assert.equal(btn(page.mePageHtml({ signedIn: false, mapStyle: 'dark' })), 'true');
+  assert.equal(btn(page.mePageHtml({ signedIn: false, mapStyle: '"><script>' })), 'false', 'unknown value counts as off');
+  assert.ok(!/data-map-style-picker/.test(page.mePageHtml({ signedIn: false })), 'no select any more');
+  assert.match(fs.readFileSync('js/main.js', 'utf8'), /closest\('\[data-map-style-toggle\]'\)[\s\S]*?showActionToast\(t\(on \? 'mapStyle\.on' : 'mapStyle\.off'\), t\('mapStyle\.view'\)/);
 });
