@@ -45,7 +45,7 @@
 // v44: 16 more China city regions (regions.js) for the China research.
 // v60: Delete your account page (delete-account.html) joins the precached static pages; Privacy and Terms rewritten.
 // v65: high-five, rest-day and pin-drop deer poses (me, log, add pages; page.css, i18n).
-const CACHE_VERSION = 'v65';
+const CACHE_VERSION = 'v66';
 const SHELL_CACHE = 'climbatlas-shell-' + CACHE_VERSION;
 const RUNTIME_CACHE = 'climbatlas-runtime-' + CACHE_VERSION;
 const TILE_CACHE = 'climbatlas-tiles-' + CACHE_VERSION;

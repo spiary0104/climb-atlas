@@ -720,3 +720,17 @@ test('me page: Map section is a Dark map on/off button, off by default, on when 
   assert.ok(!/data-map-style-picker/.test(page.mePageHtml({ signedIn: false })), 'no select any more');
   assert.match(fs.readFileSync('js/main.js', 'utf8'), /closest\('\[data-map-style-toggle\]'\)[\s\S]*?showActionToast\(t\(on \? 'mapStyle\.on' : 'mapStyle\.off'\), t\('mapStyle\.view'\)/);
 });
+
+test('me page order: Me, Account, tabs, Language, Map, Delete account, then About/Privacy/Terms last (signed in and out)', async () => {
+  const { page } = await modules;
+  const order = (html, marks) => marks.map(m => html.indexOf(m));
+  const signedIn = page.mePageHtml({ signedIn: true, section: 'saved', saved: [], climbed: [], isModerator: false, pendingCount: 0 });
+  const at = order(signedIn, ['class="page-title"', 'id="accountTitle"', 'class="tabs me-tabs"', 'id="langTitle"', 'id="mapStyleTitle"', 'class="page-section me-delete"', 'id="aboutMeTitle"']);
+  assert.ok(at.every(i => i >= 0), 'every section is present');
+  assert.deepEqual([...at].sort((a, b) => a - b), at, 'sections appear in the agreed order');
+  const signedOut = page.mePageHtml({ signedIn: false });
+  const out = order(signedOut, ['data-page-action="sign-in"', 'id="langTitle"', 'id="mapStyleTitle"', 'id="aboutMeTitle"']);
+  assert.ok(out.every(i => i >= 0));
+  assert.deepEqual([...out].sort((a, b) => a - b), out, 'signed out: sign in, Language, Map, links last');
+  assert.ok(!/me-delete/.test(signedOut), 'no delete account when signed out');
+});

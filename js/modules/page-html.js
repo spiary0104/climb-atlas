@@ -292,13 +292,15 @@ export function mePageHtml(p){
   const highFive = !!p.signedIn && !!p.highFive && !!p.community;
   // The medal beside points (sec. 12.2 tier 3b) is this screen's character when shown: never with first-run art, and the seal steps aside.
   const medal = !firstRun && !highFive && !!p.community && p.community.points !== null && p.community.points !== undefined;
+  // Page order (owner 2026-11-28): Me, Account, Saved/Climbed/Passport, contributions, Language, Map, Delete account,
+  // and About / Privacy / Terms at the very bottom. Signed out: Me, sign in, Language, Map, About / Privacy / Terms.
+  const settings = languageSectionHtml() + mapStyleSectionHtml(p.mapStyle === 'dark' ? 'dark' : 'light');
   const links = `<section class="page-section me-brand" aria-labelledby="aboutMeTitle">${firstRun || medal || highFive ? '' : sealSvg()}<div><h2 class="section-title" id="aboutMeTitle">Bouldeer</h2><p class="me-links">`
     + `<a class="link link-quiet" href="${escapeHtml(pagePath('about'))}">${th('me.about')}</a><a class="link link-quiet" href="${escapeHtml(pagePath('privacy'))}">${th('me.privacy')}</a>`
-    + `<a class="link link-quiet" href="${escapeHtml(pagePath('terms'))}">${th('me.terms')}</a></p></div></section>`
-    + languageSectionHtml() + mapStyleSectionHtml(p.mapStyle === 'dark' ? 'dark' : 'light');
+    + `<a class="link link-quiet" href="${escapeHtml(pagePath('terms'))}">${th('me.terms')}</a></p></div></section>`;
   if(!p.signedIn) return `<article class="page me-page">${pageArtHtml('me-shelf')}<header class="place-header"><h1 class="page-title">${th('me.title')}</h1>`
     + `<p class="place-meta">${th('me.signedOutIntro')}</p></header>`
-    + `<p class="page-cta"><button type="button" class="btn btn-primary" data-page-action="sign-in">${th('auth.signIn')}</button></p>${links}</article>`;
+    + `<p class="page-cta"><button type="button" class="btn btn-primary" data-page-action="sign-in">${th('auth.signIn')}</button></p>` + settings + `${links}</article>`;
   const section = p.section === 'climbed' ? 'climbed' : 'saved';
   const items = section === 'climbed' ? p.climbed : p.saved;
   const tab = (key, label, n) => `<a class="tab" href="/me/${key}" data-link${key === section ? ' aria-current="page"' : ''}>${escapeHtml(label)} <span class="tnum">${Number(n)}</span></a>`;
@@ -308,13 +310,12 @@ export function mePageHtml(p){
   const pending = p.isModerator ? `<a class="btn btn-secondary" href="/mod" data-link>${th('me.pendingReview')}${p.pendingCount ? ` <span class="tnum">(${Number(p.pendingCount)})</span>` : ''}</a>` : '';
   const contributions = meContributionsHtml(p.community, { medal, highFive });
   return `<article class="page me-page"><header class="place-header"><h1 class="page-title">${th('me.title')}</h1></header>`
-    + `<nav class="tabs me-tabs" aria-label="${th('me.tabsAria')}">${tab('saved', t('me.saved'), p.saved.length)}${tab('climbed', t('me.climbed'), p.climbed.length)}<a class="tab" href="/me/passport" data-link>${th('me.passport')}</a></nav>`
-    + (items.length ? `<div class="page-list">${items.map(i => pageRowHtml(i.g, i.ctx)).join('')}</div>` : `<div class="empty-state me-empty">${art}<p>${escapeHtml(empty)}</p></div>`)
-    + contributions
-    + `<section class="page-section" aria-labelledby="accountTitle"><h2 class="section-title" id="accountTitle">${th('me.account')}</h2><div class="me-actions">`
+    + `<section class="page-section me-account" aria-labelledby="accountTitle"><h2 class="section-title" id="accountTitle">${th('me.account')}</h2><div class="me-actions">`
     + `<button type="button" class="btn btn-secondary" data-page-action="add-gym">${icon('plus', {size:'sm'})}${th('topbar.addGym')}</button>${pending}`
     + `<button type="button" class="btn btn-tertiary" data-page-action="sign-out">${th('auth.signOut')}</button></div></section>`
-    + deleteAccountHtml() + `${links}</article>`;
+    + `<nav class="tabs me-tabs" aria-label="${th('me.tabsAria')}">${tab('saved', t('me.saved'), p.saved.length)}${tab('climbed', t('me.climbed'), p.climbed.length)}<a class="tab" href="/me/passport" data-link>${th('me.passport')}</a></nav>`
+    + (items.length ? `<div class="page-list">${items.map(i => pageRowHtml(i.g, i.ctx)).join('')}</div>` : `<div class="empty-state me-empty">${art}<p>${escapeHtml(empty)}</p></div>`)
+    + contributions + settings + deleteAccountHtml() + `${links}</article>`;
 }
 
 // Delete account (Privacy Policy, "Deleting your account"): folded away, says exactly what goes and what stays, and the
