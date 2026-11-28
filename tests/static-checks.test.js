@@ -235,7 +235,7 @@ test('legal pages are real pages: dated, no "draft / not legal advice" banner, n
   for (const f of LEGAL_PAGES) {
     const html = read(f);
     assert.match(html, /<html lang="en">/, f);
-    assert.match(html, f === 'privacy.html' ? /Last updated: 27 November 2026/ : /Last updated: 26 November 2026/, f + ' carries the current date');
+    assert.match(html, f === 'privacy.html' ? /Last updated: 28 November 2026/ : /Last updated: 26 November 2026/, f + ' carries the current date');
     assert.ok(!/starting draft|not legal advice|legal-note/i.test(html), f + ' still presents itself as a draft');
     assert.match(html, /<h1[^>]*>(Privacy Policy|Terms of Service)<\/h1>/, f);
   }
@@ -254,7 +254,7 @@ test('privacy policy names every service the app contacts and what the app store
   assert.match(html, /30 days/);
   // The storage keys the app really uses, so the "Stored in your browser" list cannot drift from the code.
   const code = moduleFiles.map(read).join('\n');
-  for (const k of ['bouldeer_add_draft', 'bouldeer_list_view', 'bouldeer_last_camera', 'bouldeer_recent_searches', 'bouldeer_lang']) assert.ok(code.includes(k), k + ' is no longer used: update the policy');
+  for (const k of ['bouldeer_add_draft', 'bouldeer_list_view', 'bouldeer_last_camera', 'bouldeer_recent_searches', 'bouldeer_lang', 'bouldeer_map_style']) assert.ok(code.includes(k), k + ' is no longer used: update the policy');
   assert.ok(!/document\.cookie/.test(code), 'the app now sets cookies: update the policy');
   assert.ok(!/gtag|googletagmanager|plausible|posthog|mixpanel|hotjar|sentry/i.test(code + read('index.html')), 'analytics added: update the policy');
 });

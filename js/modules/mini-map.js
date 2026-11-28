@@ -1,9 +1,9 @@
-// Small non-interactive maps on pages (gym page Essentials thumbnail, region/city pages): paper-toned (Positron recoloured
-// to the paper tokens by paperBasemap; Brand Pass, sec. 8), centred on a point. Pages render a slot (page-html.js mapThumbHtml: data-mini-map + numeric data-lat/-lng/
+// Small non-interactive maps on pages (gym page Essentials thumbnail, region/city pages): in the chosen map style (light:
+// Positron in the paper tokens, Brand Pass sec. 8; dark: warm Dark Matter; map.js toneBasemap), centred on a point. Pages render a slot (page-html.js mapThumbHtml: data-mini-map + numeric data-lat/-lng/
 // -zoom); mountMiniMaps() fills every slot in a container. Region pages pass their gyms as `points`, drawn as the same
 // type-colour dots Explore uses at that zoom. Each map holds a WebGL context, so pages destroy them on leave and before
 // re-rendering. The page itself never waits for MapLibre: the maps appear once the library has loaded.
-import { BASEMAP_STYLE, mapLibrary, mapLocale, paperBasemap } from './map.js';
+import { basemapUrl, mapLibrary, mapLocale, toneBasemap } from './map.js';
 import { pinSvg } from './pin-html.js';
 
 let minis = [];
@@ -27,8 +27,8 @@ function mount(maplibregl, root, points){
   root.querySelectorAll('[data-mini-map]').forEach(el => {
     const lat = Number(el.dataset.lat), lng = Number(el.dataset.lng), zoom = Number(el.dataset.zoom);
     if(![lat, lng, zoom].every(Number.isFinite)) return;
-    const m = new maplibregl.Map({ container: el, style: BASEMAP_STYLE, center: [lng, lat], zoom, interactive: false, attributionControl: false, fadeDuration: 0, locale: mapLocale() });
-    m.once('style.load', () => { try{ paperBasemap(m); }catch(err){ console.warn('Could not tone the mini map', err); } });
+    const m = new maplibregl.Map({ container: el, style: basemapUrl(), center: [lng, lat], zoom, interactive: false, attributionControl: false, fadeDuration: 0, locale: mapLocale() });
+    m.once('style.load', () => { try{ toneBasemap(m); }catch(err){ console.warn('Could not tone the mini map', err); } });
     if('points' in el.dataset){
       for(const p of points){
         if(!Number.isFinite(p.lat) || !Number.isFinite(p.lng)) continue;

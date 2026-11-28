@@ -29,7 +29,7 @@ const decl = (body, prop) => { const m = new RegExp('(?:^|;)\\s*' + prop + '\\s*
 test('tokens: design/tokens.json is generated from css/tokens.css and round-trips exactly (native-app source cannot drift)', () => {
   assert.equal(read('design/tokens.json').split('\r\n').join('\n'), T.render(), 'design/tokens.json is stale: run node scripts/build-tokens-json.js');
   const back = T.flattenJson(JSON.parse(read('design/tokens.json')));
-  for (const set of ['base', 'paper', 'rock']) {
+  for (const set of ['base', 'paper', 'rock', 'mapDark']) {
     assert.deepEqual(Object.keys(back[set]).sort(), Object.keys(tokens[set]).sort(), set + ' token names differ');
     for (const k of Object.keys(tokens[set])) assert.equal(T.normaliseCss(k, back[set][k]), T.normaliseCss(k, tokens[set][k]), set + ' ' + k);
   }
@@ -385,4 +385,14 @@ test('companion art (sec. 12.2 tier 3b): four fixed poses, each the only charact
   assert.match(read('index.html'), /<div class="start-badge" id="startBadge" aria-hidden="true"><\/div>/, 'the START sheet holds an empty slot');
   assert.match(read('js/modules/checkin.js'), /companionArt\('wave', 72\)/);
   assert.ok(!/companionArt/.test(read('js/modules/auth-ui.js')), 'never in the sign-in dialog');
+});
+
+test('map style: the opt-in dark map overrides only --map-* tokens, every one of them a palette reference', () => {
+  const dark = tokens.mapDark;
+  assert.ok(Object.keys(dark).length > 0, 'dark map tokens exist');
+  for (const [k, v] of Object.entries(dark)) {
+    assert.match(k, /^--map-/, k + ' is not a map token');
+    assert.match(v, /^var\(--palette-[a-z]+(-alpha)?-\d+\)$/, k + ' must reference a palette primitive');
+  }
+  for (const k of ['--map-tint', '--map-road-label', '--map-canvas']) assert.ok(dark[k], k + ' is needed by warmBasemap / roadname fix');
 });

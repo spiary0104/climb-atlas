@@ -21,6 +21,11 @@ export default {
   'lang.pickerAria': '語言',
   'lang.section': '語言',
   'lang.help': '變更應用程式的按鈕和選單語言。岩館名稱和地址維持原文。',
+  'mapStyle.section': '地圖',
+  'mapStyle.label': '地圖樣式',
+  'mapStyle.light': '淺色',
+  'mapStyle.dark': '深色',
+  'mapStyle.help': '深色在夜間較柔和，淺色在白天較易閱讀。只儲存在這台裝置上。',
 
   'me.title': '我的',
   'me.signedOutIntro': '收藏岩館、標記去過的岩館，並記錄你的每次攀岩。',

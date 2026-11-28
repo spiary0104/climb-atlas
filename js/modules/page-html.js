@@ -260,6 +260,14 @@ export function languageSectionHtml(){
     + `<p class="place-meta" id="langHelp">${th('lang.help')}</p><label class="field lang-field"><span class="field-label">${th('lang.label')}</span>`
     + `<select class="input" data-lang-picker aria-describedby="langHelp">${languageOptionsHtml()}</select></label></section>`;
 }
+// /me "Map": light (default) or dark map style, stored on this device (main.js listens to select[data-map-style-picker]).
+export function mapStyleSectionHtml(style){
+  const dark = style === 'dark';
+  return `<section class="page-section" aria-labelledby="mapStyleTitle"><h2 class="section-title" id="mapStyleTitle">${th('mapStyle.section')}</h2>`
+    + `<p class="place-meta" id="mapStyleHelp">${th('mapStyle.help')}</p><label class="field lang-field"><span class="field-label">${th('mapStyle.label')}</span>`
+    + `<select class="input" data-map-style-picker aria-describedby="mapStyleHelp">`
+    + `<option value="light"${dark ? '' : ' selected'}>${th('mapStyle.light')}</option><option value="dark"${dark ? ' selected' : ''}>${th('mapStyle.dark')}</option></select></label></section>`;
+}
 
 export function mePageHtml(p){
   // One character appearance per screen (sec. 12.2): the seal steps aside while the first-run backpacker is shown.
@@ -269,7 +277,7 @@ export function mePageHtml(p){
   const links = `<section class="page-section me-brand" aria-labelledby="aboutMeTitle">${firstRun || medal ? '' : sealSvg()}<div><h2 class="section-title" id="aboutMeTitle">Bouldeer</h2><p class="me-links">`
     + `<a class="link link-quiet" href="${escapeHtml(pagePath('about'))}">${th('me.about')}</a><a class="link link-quiet" href="${escapeHtml(pagePath('privacy'))}">${th('me.privacy')}</a>`
     + `<a class="link link-quiet" href="${escapeHtml(pagePath('terms'))}">${th('me.terms')}</a></p></div></section>`
-    + languageSectionHtml();
+    + languageSectionHtml() + mapStyleSectionHtml(p.mapStyle === 'dark' ? 'dark' : 'light');
   if(!p.signedIn) return `<article class="page me-page">${pageArtHtml('me-shelf')}<header class="place-header"><h1 class="page-title">${th('me.title')}</h1>`
     + `<p class="place-meta">${th('me.signedOutIntro')}</p></header>`
     + `<p class="page-cta"><button type="button" class="btn btn-primary" data-page-action="sign-in">${th('auth.signIn')}</button></p>${links}</article>`;

@@ -55,7 +55,7 @@ function paintActionToast(t){
 export function clearDeviceData(local, session){
   try{
     const keys = [];
-    for(let i = 0; i < local.length; i++){ const k = local.key(i); if(k && k.startsWith('bouldeer_') && k !== 'bouldeer_lang') keys.push(k); }
+    for(let i = 0; i < local.length; i++){ const k = local.key(i); if(k && k.startsWith('bouldeer_') && k !== 'bouldeer_lang' && k !== 'bouldeer_map_style') keys.push(k); }
     keys.forEach(k => local.removeItem(k));
   }catch(e){ /* storage unavailable: nothing to clear */ }
   try{ session.removeItem('bouldeer_milestone_shown'); }catch(e){ /* same */ }

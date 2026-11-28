@@ -21,6 +21,11 @@ export default {
   'lang.pickerAria': 'Language',
   'lang.section': 'Language',
   'lang.help': 'Changes the app\'s buttons and menus. Gym names and addresses stay in their own language.',
+  'mapStyle.section': 'Map',
+  'mapStyle.label': 'Map style',
+  'mapStyle.light': 'Light',
+  'mapStyle.dark': 'Dark',
+  'mapStyle.help': 'Dark is easier on the eyes at night; light is easier to read in daylight. Saved on this device only.',
 
   'me.title': 'Me',
   'me.signedOutIntro': 'Save gyms, mark the ones you have climbed and keep a log of your sessions.',

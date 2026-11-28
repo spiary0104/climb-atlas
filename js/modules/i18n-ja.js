@@ -19,6 +19,11 @@ export default {
   'lang.pickerAria': '言語',
   'lang.section': '言語',
   'lang.help': 'アプリのボタンやメニューの言語を変更します。ジム名と住所は現地の言語のままです。',
+  'mapStyle.section': '地図',
+  'mapStyle.label': '地図のスタイル',
+  'mapStyle.light': 'ライト',
+  'mapStyle.dark': 'ダーク',
+  'mapStyle.help': 'ダークは夜に目にやさしく、ライトは日中に見やすくなります。この端末にのみ保存されます。',
 
   'me.title': 'マイページ',
   'me.signedOutIntro': 'ジムを保存したり、登ったジムをマークしたり、セッションを記録したりできます。',

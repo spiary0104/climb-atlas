@@ -22,13 +22,13 @@ function fakes({ user = { id: 'u-1' }, getError = null, delError = null } = {}){
   } };
 }
 
-test('delete-account: clearDeviceData removes bouldeer_* keys except the language, and the milestone session flag', async () => {
+test('delete-account: clearDeviceData removes bouldeer_* keys except the language and map style, and the milestone session flag', async () => {
   const { clearDeviceData } = await import('../js/modules/utils.js');
   const store = o => { const m = new Map(Object.entries(o)); return { get length(){ return m.size; }, key: i => [...m.keys()][i] ?? null, removeItem: k => m.delete(k), keys: () => [...m.keys()] }; };
-  const local = store({ bouldeer_lang: 'de', bouldeer_add_draft: '{}', bouldeer_welcomed_u1: '1', bouldeer_recent_searches: '[]', other_site_key: 'keep' });
+  const local = store({ bouldeer_lang: 'de', bouldeer_map_style: 'dark', bouldeer_add_draft: '{}', bouldeer_welcomed_u1: '1', bouldeer_recent_searches: '[]', other_site_key: 'keep' });
   const session = store({ bouldeer_milestone_shown: '1', other: 'keep' });
   clearDeviceData(local, session);
-  assert.deepEqual(local.keys().sort(), ['bouldeer_lang', 'other_site_key']);
+  assert.deepEqual(local.keys().sort(), ['bouldeer_lang', 'bouldeer_map_style', 'other_site_key']);
   assert.deepEqual(session.keys(), ['other']);
   assert.doesNotThrow(() => clearDeviceData(null, null));   // storage unavailable
   assert.match(read('js/modules/me-page.js'), /clearDeviceData\(window\.localStorage, window\.sessionStorage\)/);

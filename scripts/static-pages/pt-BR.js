@@ -55,7 +55,7 @@ module.exports = {
     title: 'Política de Privacidade',
     metaTitle: 'Política de Privacidade — Bouldeer',
     description: 'O que o Bouldeer armazena, quem pode ver, onde os dados são processados e como excluir sua conta.',
-    updated: 'Última atualização: 27 de novembro de 2026',
+    updated: 'Última atualização: 28 de novembro de 2026',
     body: `
     <p>O Bouldeer é um mapa pequeno e gratuito de academias de escalada para escaladores que viajam, administrado a partir de Nova Gales do Sul, na Austrália. Coletamos o mínimo possível. Não exibimos anúncios, não usamos ferramentas de análise e não vendemos nem compartilhamos seus dados para fins de publicidade.</p>
 
@@ -92,7 +92,7 @@ module.exports = {
     <ul>
       <li>sua sessão de login;</li>
       <li>um rascunho não enviado de Adicionar academia, incluindo a posição do marcador;</li>
-      <li>o layout da sua lista, a última visualização do mapa, buscas recentes e o idioma escolhido;</li>
+      <li>o layout da sua lista, o estilo do mapa, a última visualização do mapa, buscas recentes e o idioma escolhido;</li>
       <li>anotações para que a introdução e as mensagens de boas-vindas e de marco apareçam só uma vez;</li>
       <li>cópias offline do site, das imagens do mapa que você viu e da lista pública de academias.</li>
     </ul>
