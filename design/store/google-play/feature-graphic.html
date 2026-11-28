@@ -1,0 +1,45 @@
+<!doctype html>
+<!-- Google Play feature graphic (1024 x 500). Source for feature-graphic.png: open over http from the repo root and
+     screenshot the #graphic element at 1024 x 500 (see README.md). Uses the site's tokens, fonts and artwork only. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bouldeer feature graphic</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..600,50..100&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../../css/tokens.css">
+<style>
+  html, body { margin: 0; background: var(--palette-paper-2); }
+  #graphic {
+    width: 1024px; height: 500px; position: relative; overflow: hidden;
+    background: var(--palette-fawn-2);
+    display: grid; grid-template-columns: 470px 1fr; align-items: center;
+  }
+  .copy { padding: 0 0 0 64px; position: relative; z-index: 1; }
+  .lockup { display: flex; align-items: center; gap: 16px; margin: 0 0 22px; }
+  .lockup img { width: 76px; height: 76px; }
+  .wordmark {
+    font-family: var(--font-display); font-variation-settings: var(--font-display-soft);
+    font-weight: 600; font-size: 64px; line-height: 1; color: var(--palette-ink-12); letter-spacing: -0.5px;
+  }
+  .tagline {
+    font-family: var(--font-display); font-variation-settings: var(--font-display-soft);
+    font-weight: 500; font-size: 36px; line-height: 1.18; color: var(--palette-ink-12); margin: 0 0 18px;
+  }
+  .facts { font-family: var(--font-text); font-size: 18px; line-height: 1.4; color: var(--color-text-brand); margin: 0; font-weight: 500; white-space: nowrap; }
+  .art { position: absolute; right: -190px; top: 52px; width: 720px; }
+  .art img { width: 100%; display: block; }
+  .deer { position: absolute; right: 36px; bottom: 6px; width: 205px; z-index: 2; }
+</style>
+</head>
+<body>
+<div id="graphic">
+  <div class="copy">
+    <div class="lockup"><img src="../../../assets/mascot/head.svg" alt=""><span class="wordmark">Bouldeer</span></div>
+    <p class="tagline">Climbing gyms,<br>wherever you travel</p>
+    <p class="facts">3,600+ gyms · 80+ countries · free, no ads</p>
+  </div>
+  <div class="art"><img src="../../../assets/art/regions-wall.svg" alt=""></div>
+  <img class="deer" src="../../../assets/mascot/backpacker.svg" alt="">
+</div>
+</body>
+</html>
