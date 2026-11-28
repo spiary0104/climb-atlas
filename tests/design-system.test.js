@@ -274,7 +274,7 @@ test('mascot: brand marks only where sec. 12.2 allows (START, wordmark lockup, d
   assert.ok(!/firstRunArt|companionArt|mascot/.test(read('js/modules/welcome.js')), 'welcome.js takes its art from welcome-html.js');
   assert.match(read('js/modules/list.js'), /const show = appState\.exploreFirstRun && zoom < 4 && !appState\.placeFilter && !appState\.searchTerm;/, 'world/continent zoom, no place or search');
   assert.ok(!/mascot/.test(read('index.html').match(/<div class="empty-state explore-first-run"[^>]*><\/div>/)[0]), 'the shell holds only an empty slot; brand.js supplies the art');
-  assert.match(read('js/modules/page-html.js'), /const art = firstRun \? firstRunArt\('saved'\) : '';/, 'never on a repeat empty');
+  assert.match(read('js/modules/page-html.js'), /const art = firstRun && !highFive \? firstRunArt\('saved'\) : '';/, 'never on a repeat empty; the one-time high-five outranks it');
   assert.match(read('js/modules/auth-ui.js'), /<span class="avatar mascot mascot--avatar" aria-hidden="true"><img src="assets\/mascot\/head\.svg" alt=""><\/span>/);
   for (const f of ['assets/mascot/head.svg', 'assets/mascot/stamp-head.svg', 'assets/brand/antlers.svg', 'icons/favicon.svg', 'icons/icon.svg', 'icons/icon-maskable.svg']) {
     const svg = read(f);
@@ -361,9 +361,9 @@ test('START reads "Check in", never the Log tab\'s word; its visible label is in
   assert.match(read('css/style.css'), /\.maplibregl-ctrl-attrib\{[^}]*color:var\(--map-control-text\)/, 'attribution text uses the paper control token, not the rock secondary text');
 });
 
-test('companion art (sec. 12.2 tier 3b): four fixed poses, each the only character on its screen', async () => {
+test('companion art (sec. 12.2 tier 3b): seven fixed poses, each the only character on its screen', async () => {
   const brand = await import('../js/modules/brand.js');
-  for (const [k, f] of [['calendar', 'calendar-today'], ['map', 'city-map'], ['medal', 'medal'], ['wave', 'wave-badge']]) {
+  for (const [k, f] of [['calendar', 'calendar-today'], ['map', 'city-map'], ['medal', 'medal'], ['wave', 'wave-badge'], ['highfive', 'high-five'], ['rest', 'rest-day'], ['pin', 'pin-drop']]) {
     assert.match(brand.companionArt(k), new RegExp(`^<img class="mascot mascot--companion mascot--${f}" src="assets/mascot/${f}\.svg" alt="" width="96" height="96" loading="lazy">$`), k);
     const svg = read('assets/mascot/' + f + '.svg');
     assert.ok(!/<script|\son[a-z]+=|javascript:|href=|<image|<foreignObject/i.test(svg), f + ' is plain vector shapes');
@@ -381,6 +381,19 @@ test('companion art (sec. 12.2 tier 3b): four fixed poses, each the only charact
   assert.match(me, /medal\.svg/); assert.ok(!/class="seal/.test(me), 'the seal steps aside for the medal');
   const first = page.mePageHtml({ ...base, saved: [] });
   assert.ok(!/medal\.svg/.test(first) && /field-notes\.svg/.test(first), 'first run: field-notes only');
+  // High five (first approved contribution): the card is the one character; the medal, the seal and first-run art step aside.
+  const hf = page.mePageHtml({ ...base, highFive: true });
+  assert.match(hf, /high-five\.svg/); assert.ok(!/medal\.svg/.test(hf) && !/class="seal/.test(hf), 'high-five: no medal, no seal');
+  assert.equal((hf.match(/class="mascot /g) || []).length, 1, 'high-five: one character on /me');
+  const hfFirst = page.mePageHtml({ ...base, saved: [], highFive: true });
+  assert.ok(/high-five\.svg/.test(hfFirst) && !/field-notes\.svg/.test(hfFirst) && (hfFirst.match(/class="mascot /g) || []).length === 1, 'high-five outranks first-run art');
+  assert.ok(!/high-five/.test(me) && !/high-five/.test(page.mePageHtml({ ...base, highFive: true, community: null })), 'no card without the flag or the data');
+  // Rest day: replaces the calendar deer after a quiet week, current month only.
+  const rest = page.calendarHtml(2026, 10, new Map(), '2026-11-22', { companion: true, rest: true });
+  assert.ok(/rest-day\.svg/.test(rest) && !/calendar-today/.test(rest) && /calendar-rest/.test(rest), 'quiet week: rest-day replaces calendar-today');
+  assert.equal((rest.match(/class="mascot /g) || []).length, 1, 'rest-day: one character');
+  assert.ok(!/mascot|calendar-rest/.test(page.calendarHtml(2026, 9, new Map(), '2026-11-22', { companion: true, rest: true })), 'another month: none');
+  assert.ok(!/mascot|calendar-rest/.test(page.calendarHtml(2026, 10, new Map(), '2026-11-22', { rest: true })), 'no sessions: first-run art only');
   assert.match(page.regionsMapTileHtml(3674), /city-map\.svg[\s\S]*href|href="\/" data-link/);
   assert.match(read('index.html'), /<div class="start-badge" id="startBadge" aria-hidden="true"><\/div>/, 'the START sheet holds an empty slot');
   assert.match(read('js/modules/checkin.js'), /companionArt\('wave', 72\)/);

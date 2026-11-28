@@ -438,7 +438,9 @@ test('add: one primary (Submit for review) per step, sign-in note only when sign
   assert.ok(/<option value="NSW" selected>/.test(s2) && /<option value="AU" selected>Australia/.test(s2), 'area pre-filled');
   assert.ok(/data-add-field="stateOther"/.test(add.addStepHtml(draftOf('Crux', { step: 2, country: 'OTHER' }), {})), 'Other country: free text');
   assert.ok(/disabled>Submitting…/.test(add.addStepHtml(draftOf('Crux'), { busy: true })));
-  for (const html of [add.addPageHtml(), add.addDoneHtml(), s2]) assert.ok(!/mascot/.test(html));
+  for (const html of [add.addPageHtml(), s2]) assert.ok(!/mascot/.test(html), 'no character in the form or the page');
+  assert.match(add.addDoneHtml(), /^<div class="add-done"><img class="mascot mascot--companion mascot--pin-drop" src="assets\/mascot\/pin-drop\.svg" alt=""/, 'the confirmation carries the pin-drop deer, decorative');
+  assert.equal((add.addDoneHtml().match(/<img/g) || []).length, 1, 'one character on the confirmation');
   assert.ok(allText(add.addDoneHtml()).includes("Thanks — it’s in review."));
 });
 

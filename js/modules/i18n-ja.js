@@ -443,6 +443,7 @@ export default {
   'log.intro': 'セッションの日記をつけましょう。どこで登ったか、何を完登したか、どんな調子だったか。',
   'log.signInCta': 'ログインして記録を始める',
   'log.count': { one: '{count}回のセッション', other: '{count}回のセッション' },
+  'log.restDay': '静かな一週間。休む日も大切です。',
   'log.sessionsAria': 'セッション',
 
   'log.prevMonth': '前の月',
@@ -597,6 +598,8 @@ export default {
 
   'me.contributions': 'あなたの投稿',
   'me.pointsLevel': 'ポイント・レベル{level}',
+  'me.highFiveTitle': '最初の投稿が公開されました',
+  'me.highFiveBody': 'ありがとうございます。ほかのクライマーがあなたの追加した内容を見られるようになりました。',
   'me.contributor': '貢献者',
   'me.displayName': '表示名',
   'me.nameHint': '追加または編集したジムに「追加: …」として表示されます。メールアドレスは表示されません。',

@@ -163,6 +163,7 @@
 .calendar-head .mascot--companion{width:var(--size-mascot-companion);margin:calc(-1 * var(--space-2)) 0;}
 .calendar-head .mascot--companion + .panel-title{flex:1 1 auto;}
 .calendar-nav{display:flex;gap:var(--space-1);}
+.calendar-rest{margin:var(--space-2) 0 0;font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);color:var(--color-text-secondary);}
 .calendar-grid{width:100%;margin-top:var(--space-3);border-collapse:collapse;table-layout:fixed;font-feature-settings:var(--font-features-numeric);}
 .calendar-grid th{padding:var(--space-1) 0;font-size:var(--type-caption-size);line-height:var(--type-caption-line);font-weight:var(--font-weight-semibold);color:var(--color-text-secondary);}
 .calendar-grid td{padding:var(--space-1) 0;text-align:center;}
@@ -181,6 +182,11 @@
 .me-points-row{display:flex;align-items:center;gap:var(--space-3);}
 .me-points-row .mascot--companion{width:var(--size-mascot-companion);}
 .me-points-row .me-points{margin:0;}
+/* The one-time high-five card after a first approved contribution (2026-11-28): the screen's one character */
+.me-highfive{display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4);padding:var(--space-3) var(--space-4);border-radius:var(--radius-lg);background:var(--color-brand-fawn-subtle);border:var(--border-width) solid var(--color-brand-fawn-muted);}
+.me-highfive .mascot--companion{width:var(--size-mascot-badge);}
+.me-highfive-title{margin:0;font-weight:var(--font-weight-semibold);color:var(--color-text-primary);}
+.me-highfive-body{margin:var(--space-1) 0 0;font-size:var(--type-text-md-size);line-height:var(--type-text-md-line);color:var(--color-text-secondary);}
 /* Delete account: folded away under the account actions; the list says what goes and what stays */
 .me-delete-summary{display:list-item;padding:var(--space-3) 0;cursor:pointer;color:var(--color-text-secondary);}   /* list-item keeps the native disclosure arrow */
 .me-delete-summary:hover{color:var(--color-status-danger);}
@@ -224,6 +230,7 @@
 .add-actions{display:flex;flex-wrap:wrap;gap:var(--space-2);justify-content:flex-end;margin-top:var(--space-2);}
 .add-signin{margin:var(--space-3) 0 0;text-align:right;font-size:var(--type-caption-size);line-height:var(--type-caption-line);color:var(--color-text-secondary);}
 .add-done .section-note{margin-top:var(--space-2);}
+.add-done .mascot--companion{width:var(--size-mascot-spot);margin-bottom:var(--space-2);}   /* the pin-drop deer above the "sent for review" title */
 
 /* ===== Responsive (sec. 8.3) ========================================================================================= */
 @media (max-width:1023px){

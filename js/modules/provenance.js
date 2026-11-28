@@ -31,6 +31,9 @@ export function levelFor(points){
   return level;
 }
 export const isContributor = points => levelFor(points) >= 3;
+// The one-time high-five on /me: at least one APPROVED contribution (contribution_points counts only approved gyms and
+// approved edits: community.js loadMyCommunity gyms + edits) and the per-device "already shown" flag not set.
+export const showHighFive = (c, flagSet) => !!c && !flagSet && (Number(c.gyms) || 0) + (Number(c.edits) || 0) >= 1;
 
 // "today", "yesterday", "3 days ago", "2 weeks ago", "5 months ago", "2 years ago" (in the interface language, i18n.js
 // rel.* keys); '' for missing/invalid dates.

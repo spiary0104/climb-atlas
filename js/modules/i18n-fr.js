@@ -446,6 +446,7 @@ export default {
   'log.intro': 'Tenez un carnet de vos séances\u00a0: où vous avez grimpé, ce que vous avez réussi et comment c’était.',
   'log.signInCta': 'Connectez-vous pour démarrer votre journal',
   'log.count': { one: '{count} séance', many: '{count} séances', other: '{count} séances' },
+  'log.restDay': 'Une semaine tranquille. Les jours de repos comptent aussi.',
   'log.sessionsAria': 'Séances',
 
   'log.prevMonth': 'Mois précédent',
@@ -600,6 +601,8 @@ export default {
 
   'me.contributions': 'Vos contributions',
   'me.pointsLevel': 'points · niveau {level}',
+  'me.highFiveTitle': 'Votre première contribution est en ligne',
+  'me.highFiveBody': 'Merci : les autres grimpeurs peuvent maintenant voir ce que vous avez ajouté.',
   'me.contributor': 'Contributeur',
   'me.displayName': 'Nom affiché',
   'me.nameHint': 'Affiché comme «\u00a0ajouté par …\u00a0» sur les salles que vous ajoutez ou modifiez. Jamais votre e-mail.',

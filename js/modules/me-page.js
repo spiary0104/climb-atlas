@@ -4,7 +4,7 @@
 import { t } from './i18n.js';
 import { openAuthModal } from './auth-ui.js';
 import { loadMyCommunity, saveDisplayName } from './community.js';
-import { displayNameSaveMessage, isContributor, isMissingTable, levelFor, validDisplayName } from './provenance.js';
+import { displayNameSaveMessage, isContributor, isMissingTable, levelFor, showHighFive, validDisplayName } from './provenance.js';
 import { mapStyle, stateLabel } from './map.js';
 import { startAddGym } from './modals.js';
 import { mePageHtml, pageSkeletonHtml } from './page-html.js';
@@ -21,6 +21,21 @@ function gymsFor(ids){
 }
 
 let loadingCommunity = false;
+
+// The one-time high-five card after a first approved contribution: once per account on this device (localStorage, like the
+// welcome sheet). Unreadable or unwritable storage keeps it away rather than risk showing it every visit. hfShownFor keeps
+// the card while this visit's page re-renders (name saved, community loaded); leaving /me ends the visit.
+const HF_KEY = 'bouldeer_highfive_';
+let hfShownFor = null;
+function hfSeen(id){ try{ return localStorage.getItem(HF_KEY + id) === '1'; }catch(err){ return true; } }
+function hfMark(id){ try{ localStorage.setItem(HF_KEY + id, '1'); return true; }catch(err){ return false; } }
+function highFiveFor(user, c){
+  if(!user || !c) return false;
+  if(hfShownFor === user.id) return true;
+  if(!showHighFive(c, hfSeen(user.id)) || !hfMark(user.id)) return false;
+  hfShownFor = user.id;
+  return true;
+}
 function communityCtx(){
   const c = appState.myCommunity;
   return c ? { ...c, level: levelFor(c.points), contributor: isContributor(c.points) } : null;
@@ -30,12 +45,13 @@ function enter({ section }, view){
   if(!window.auth.user){ setPageTitle(t('me.title')); view.innerHTML = mePageHtml({ signedIn: false, mapStyle: mapStyle() }); return; }
   if(!appState.loaded){ setPageTitle(t('me.title')); view.innerHTML = pageSkeletonHtml(); return; }
   setPageTitle(t(section === 'climbed' ? 'me.climbed' : 'me.saved'));
+  const community = communityCtx();
   view.innerHTML = mePageHtml({
     signedIn: true, section,
     saved: gymsFor(appState.bookmarkedIds), climbed: gymsFor(appState.climbedIds),
     isModerator: appState.isModerator,
     pendingCount: appState.pendingSpots.length + appState.pendingEdits.length + appState.pendingReports.length,
-    community: communityCtx(), mapStyle: mapStyle(),
+    community, highFive: highFiveFor(window.auth.user, community), mapStyle: mapStyle(),
   });
   if(!appState.myCommunity && !loadingCommunity){
     loadingCommunity = true;
@@ -44,7 +60,7 @@ function enter({ section }, view){
 }
 
 export function initMePage(){
-  registerView('me', { enter });
+  registerView('me', { enter, leave(){ hfShownFor = null; } });
   document.getElementById('view').addEventListener('submit', async (e)=>{
     const form = e.target.closest('[data-page-form="display-name"]');
     if(!form) return;

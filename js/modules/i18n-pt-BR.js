@@ -449,6 +449,7 @@ export default {
   'log.intro': 'Mantenha um diário das suas sessões: onde você escalou, o que encadenou e como foi.',
   'log.signInCta': 'Entre para começar seu registro',
   'log.count': { one: '{count} sessão', many: '{count} sessões', other: '{count} sessões' },
+  'log.restDay': 'Uma semana tranquila. Dias de descanso também contam.',
   'log.sessionsAria': 'Sessões',
 
   'log.prevMonth': 'Mês anterior',
@@ -603,6 +604,8 @@ export default {
 
   'me.contributions': 'Suas contribuições',
   'me.pointsLevel': 'pontos · nível {level}',
+  'me.highFiveTitle': 'Sua primeira contribuição já está no ar',
+  'me.highFiveBody': 'Obrigado: outros escaladores já podem ver o que você adicionou.',
   'me.contributor': 'Colaborador',
   'me.displayName': 'Nome de exibição',
   'me.nameHint': 'Aparece como “adicionada por …” nas academias que você adiciona ou edita. Nunca seu e-mail.',

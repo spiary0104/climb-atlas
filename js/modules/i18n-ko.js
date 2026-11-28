@@ -446,6 +446,7 @@ export default {
   'log.intro': '어디서 클라이밍했고, 무엇을 완등했고, 어땠는지 세션 일지를 남겨 보세요.',
   'log.signInCta': '로그인하고 기록 시작하기',
   'log.count': { one: '세션 {count}회', other: '세션 {count}회' },
+  'log.restDay': '조용한 한 주였네요. 쉬는 날도 소중해요.',
   'log.sessionsAria': '세션',
 
   'log.prevMonth': '이전 달',
@@ -600,6 +601,8 @@ export default {
 
   'me.contributions': '내 기여',
   'me.pointsLevel': '포인트 · 레벨 {level}',
+  'me.highFiveTitle': '첫 기여가 공개됐어요',
+  'me.highFiveBody': '고마워요! 이제 다른 클라이머들이 추가한 내용을 볼 수 있어요.',
   'me.contributor': '기여자',
   'me.displayName': '표시 이름',
   'me.nameHint': '내가 추가하거나 수정한 클라이밍장에 “추가: …”로 표시돼요. 이메일은 공개되지 않아요.',
