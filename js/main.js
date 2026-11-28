@@ -19,7 +19,7 @@ import { initWelcome, maybeShowWelcome } from './modules/welcome.js';
 import { initPassportPage } from './modules/passport-page.js';
 import { initNavigation } from './modules/nav.js';
 import { initRegionPages } from './modules/region-page.js';
-import { initRouter, refreshPage } from './modules/router.js';
+import { initRouter, navigate, refreshPage } from './modules/router.js';
 import { currentLocale, initI18n, languageOptionsHtml, setLocale, t } from './modules/i18n.js';
 import { appState } from './modules/state.js';
 import { showActionToast } from './modules/utils.js';
@@ -45,9 +45,16 @@ document.addEventListener('change', (e) => {
 });
 // Map style (Me page > Map): light by default, dark on request; the token switch precedes any map.
 applyMapStyleAttr();
-document.addEventListener('change', (e) => {
-  const s = e.target && e.target.closest ? e.target.closest('select[data-map-style-picker]') : null;
-  if(s) setMapStyle(s.value);
+// The Me page "Dark map" on/off button. /me shows no map, so a toast confirms the change and links to Explore.
+document.addEventListener('click', (e) => {
+  const b = e.target && e.target.closest ? e.target.closest('[data-map-style-toggle]') : null;
+  if(!b) return;
+  const on = b.getAttribute('aria-pressed') !== 'true';
+  setMapStyle(on ? 'dark' : 'light');
+  b.setAttribute('aria-pressed', String(on));
+  const state = b.querySelector('[data-map-style-state]');
+  if(state) state.textContent = t(on ? 'mapStyle.stateOn' : 'mapStyle.stateOff');
+  showActionToast(t(on ? 'mapStyle.on' : 'mapStyle.off'), t('mapStyle.view'), () => navigate('/'));
 });
 window.addEventListener('bouldeer:locale', () => {
   syncLangPickers();

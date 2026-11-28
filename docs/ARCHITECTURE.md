@@ -115,7 +115,7 @@ Points (`contribution_points`, own row or moderator): 15 per approved gym, 5 per
 Pins: dots ≤ zoom 11, teardrops above (type colour: boulder > top rope > lead; rings selected > saved > climbed).
 Clusters: supercluster radius 48, maxZoom 15; identical coordinates get fixed pixel offsets (`stackOffsets`).
 Labels: continent < 3.5 ≤ country < 5 ≤ state/city < `HOLD_ICON_ZOOM` (9); basemap place labels suppressed below.
-Basemap: light by default everywhere (Explore, mini maps, /add): CARTO Positron recoloured by `paperBasemap` to `--map-paper-*`. Optional dark map (Me page > Map, `bouldeer_map_style`, this device only): CARTO Dark Matter warmed by `warmBasemap`; `<html data-map-style="dark">` swaps the `--map-*` tokens (tokens.css). `map.js` `basemapUrl()` / `toneBasemap()` pick per map; a change restyles the Explore map in place. `prefers-color-scheme` is not read.
+Basemap: light by default everywhere (Explore, mini maps, /add): CARTO Positron recoloured by `paperBasemap` to `--map-paper-*`. Optional dark map (Me page > Map: a "Dark map" on/off button with a toast linking to Explore; `bouldeer_map_style`, this device only): CARTO Dark Matter warmed by `warmBasemap`; `<html data-map-style="dark">` swaps the `--map-*` tokens (tokens.css). `map.js` `basemapUrl()` / `toneBasemap()` pick per map; a change restyles the Explore map in place. `prefers-color-scheme` is not read.
 
 ## Design system (docs/DESIGN.md)
 Components use semantic roles only (`--color-text-secondary`, `--radius-md`, `--shadow-overlay`), never

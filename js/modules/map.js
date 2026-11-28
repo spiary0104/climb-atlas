@@ -74,7 +74,8 @@ export function toneBasemap(target){
   if(mapStyle() !== 'dark') return paperBasemap(target);
   warmBasemap(target);
   // CARTO's Dark Matter ships "roadname_major" near-black (#383838 on a #111 halo), unreadable: brightened to match the other tiers.
-  try{ target.setPaintProperty('roadname_major', 'text-color', cssToken('--map-road-label')); }catch(err){ /* layer renamed upstream */ }
+  const roadLabel = cssToken('--map-road-label');   // empty only if the dark tokens are not applied: then leave the layer alone
+  if(roadLabel) try{ target.setPaintProperty('roadname_major', 'text-color', roadLabel); }catch(err){ /* layer renamed upstream */ }
 }
 
 let gl = null;                                   // the MapLibre map, once startMap has made it

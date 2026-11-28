@@ -260,13 +260,13 @@ export function languageSectionHtml(){
     + `<p class="place-meta" id="langHelp">${th('lang.help')}</p><label class="field lang-field"><span class="field-label">${th('lang.label')}</span>`
     + `<select class="input" data-lang-picker aria-describedby="langHelp">${languageOptionsHtml()}</select></label></section>`;
 }
-// /me "Map": light (default) or dark map style, stored on this device (main.js listens to select[data-map-style-picker]).
+// /me "Map": a Dark map on/off button (aria-pressed); light is the default. Stored on this device (main.js handles
+// [data-map-style-toggle] clicks and confirms with a toast that links to the map, since /me itself shows no map).
 export function mapStyleSectionHtml(style){
   const dark = style === 'dark';
   return `<section class="page-section" aria-labelledby="mapStyleTitle"><h2 class="section-title" id="mapStyleTitle">${th('mapStyle.section')}</h2>`
-    + `<p class="place-meta" id="mapStyleHelp">${th('mapStyle.help')}</p><label class="field lang-field"><span class="field-label">${th('mapStyle.label')}</span>`
-    + `<select class="input" data-map-style-picker aria-describedby="mapStyleHelp">`
-    + `<option value="light"${dark ? '' : ' selected'}>${th('mapStyle.light')}</option><option value="dark"${dark ? ' selected' : ''}>${th('mapStyle.dark')}</option></select></label></section>`;
+    + `<p class="place-meta" id="mapStyleHelp">${th('mapStyle.help')}</p>`
+    + `<button type="button" class="btn btn-secondary" data-map-style-toggle aria-pressed="${dark ? 'true' : 'false'}" aria-describedby="mapStyleHelp">${icon('map-trifold', {size:'sm'})}${th('mapStyle.toggle')}<span class="btn-state" data-map-style-state aria-hidden="true">${dark ? th('mapStyle.stateOn') : th('mapStyle.stateOff')}</span></button></section>`;
 }
 
 export function mePageHtml(p){
