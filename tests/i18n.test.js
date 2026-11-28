@@ -115,6 +115,9 @@ test('i18n: shell wiring: pickers in the top bar and on /me, the locale cached o
   const html = read('index.html');
   assert.match(html, /<select data-lang-picker aria-label="Language" data-i18n-attr="aria-label:lang.pickerAria">/);
   assert.match(read('js/modules/page-html.js'), /data-lang-picker aria-describedby="langHelp"/);
+  // The top-bar picker offers every enabled language: static options in the shell, rebuilt from LOCALES at boot.
+  for(const l of I.LOCALES.filter(x => x.enabled)) assert.ok(html.includes(`<option value="${l.code}" lang="${l.html}"`), l.code + ' in top-bar picker');
+  assert.match(read('js/main.js'), /data-lang-picker\]'\)\) s\.innerHTML = languageOptionsHtml\(\)/);
   const sw = read('sw.js');
   for(const f of ['js/modules/i18n.js', ...I.enabledLocales().map(l => `js/modules/i18n-${l.code}.js`)]) assert.ok(sw.includes(`'${f}'`), f + ' not in SHELL_FILES');
   assert.match(read('css/base.css'), /:lang\(zh-Hans\)\{--font-text:"Inter", var\(--font-cjk-hans\)/);
