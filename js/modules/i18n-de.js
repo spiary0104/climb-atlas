@@ -445,6 +445,7 @@ export default {
   'log.intro': 'Führe ein Tagebuch deiner Sessions: wo du geklettert bist, was du geschafft hast und wie es sich angefühlt hat.',
   'log.signInCta': 'Anmelden und Logbuch starten',
   'log.count': { one: '{count} Session', other: '{count} Sessions' },
+  'log.restDay': 'Eine ruhige Woche. Ruhetage zählen auch.',
   'log.sessionsAria': 'Sessions',
 
   'log.prevMonth': 'Voriger Monat',
@@ -599,6 +600,8 @@ export default {
 
   'me.contributions': 'Deine Beiträge',
   'me.pointsLevel': 'Punkte · Level {level}',
+  'me.highFiveTitle': 'Dein erster Beitrag ist online',
+  'me.highFiveBody': 'Danke: Andere Kletternde sehen jetzt, was du hinzugefügt hast.',
   'me.contributor': 'Mitwirkende:r',
   'me.displayName': 'Anzeigename',
   'me.nameHint': 'Wird als „hinzugefügt von …“ bei Hallen angezeigt, die du hinzufügst oder bearbeitest. Nie deine E-Mail-Adresse.',

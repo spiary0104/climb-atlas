@@ -2,9 +2,11 @@
 // (tests/render-html.test.js). Step 1 is the pin (the centre of a map with a crosshair), the name and the climb types;
 // step 2 is optional details. Both steps end in the same single insert of a pending spot (the RLS insert policy in
 // supabase/schema.sql: signed in, status 'pending', 10 a day). The area (suburb, region, country) is required by the
-// table, so it is taken from the nearest gym when there is one and stays editable in step 2. No character here.
+// table, so it is taken from the nearest gym when there is one and stays editable in step 2. No character in the form; the
+// "sent for review" confirmation carries the pin-drop deer (2026-11-28, sec. 12.2 tier 3b).
 import { COUNTRY_LABELS, TYPE_LABELS } from './constants.js';
 import { distanceKm, formatDistance, ALL_TYPES } from './geo.js';
+import { companionArt } from './brand.js';
 import { escapeHtml } from './html-safe.js';
 import { t, th } from './i18n.js';
 import { icon } from './icons.js';
@@ -129,7 +131,7 @@ export function addStepHtml(d, ctx = {}){
 }
 
 export function addDoneHtml(){
-  return `<div class="add-done"><h2 class="section-title">${th('add.doneTitle')}</h2>`
+  return `<div class="add-done">${companionArt('pin', 96)}<h2 class="section-title">${th('add.doneTitle')}</h2>`
     + `<p class="section-note">${th('add.doneBody')}</p>`
     + `<div class="add-actions"><a class="btn btn-secondary" href="/me" data-link>${th('me.contributions')}</a>`
     + `<button type="button" class="btn btn-primary" data-add-action="another">${th('add.another')}</button></div></div>`;

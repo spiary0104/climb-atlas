@@ -445,6 +445,7 @@ export default {
   'log.intro': '写下你的攀岩日记：在哪里爬、完攀了什么、感觉如何。',
   'log.signInCta': '登录后开始记录',
   'log.count': { other: '{count} 次攀岩' },
+  'log.restDay': '这周比较安静。休息日也算数。',
   'log.sessionsAria': '攀岩记录',
 
   'log.prevMonth': '上个月',
@@ -599,6 +600,8 @@ export default {
 
   'me.contributions': '你的贡献',
   'me.pointsLevel': '积分 · {level} 级',
+  'me.highFiveTitle': '你的第一次贡献已上线',
+  'me.highFiveBody': '谢谢你！其他攀岩者现在能看到你添加的内容了。',
   'me.contributor': '贡献者',
   'me.displayName': '显示名称',
   'me.nameHint': '会作为“添加者”显示在你添加或编辑的攀岩馆上，不会显示你的邮箱。',

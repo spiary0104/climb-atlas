@@ -24,7 +24,11 @@ export function firstRunArt(kind){
 //   map       the "see every gym on the map" tile on the Regions index          (city-map)
 //   medal     beside points and level on /me (the seal steps aside)             (medal)
 //   wave      heading the START sheet (not the sign-in dialog)                  (wave-badge)
-const COMPANION = { calendar: 'calendar-today', map: 'city-map', medal: 'medal', wave: 'wave-badge' };
+// Three more (owner decision 2026-11-28), same rules:
+//   highfive  the one-time card on /me after a first approved contribution (the medal and seal step aside)   (high-five)
+//   rest      the Log calendar's companion after a quiet week (replaces calendar-today)                      (rest-day)
+//   pin       the /add confirmation once a gym is sent for review                                            (pin-drop)
+const COMPANION = { calendar: 'calendar-today', map: 'city-map', medal: 'medal', wave: 'wave-badge', highfive: 'high-five', rest: 'rest-day', pin: 'pin-drop' };
 export function companionArt(kind, size = 96){
   const pose = Object.hasOwn(COMPANION, kind) ? COMPANION[kind] : null;
   const px = Math.min(96, Math.max(24, Number(size) || 96));

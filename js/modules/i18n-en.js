@@ -445,6 +445,7 @@ export default {
   'log.intro': 'Keep a diary of your sessions: where you climbed, what you sent and how it felt.',
   'log.signInCta': 'Sign in to start your log',
   'log.count': { one: '{count} session', other: '{count} sessions' },
+  'log.restDay': 'A quiet week. Rest days count too.',
   'log.sessionsAria': 'Sessions',
 
   'log.prevMonth': 'Previous month',
@@ -599,6 +600,8 @@ export default {
 
   'me.contributions': 'Your contributions',
   'me.pointsLevel': 'points · level {level}',
+  'me.highFiveTitle': 'Your first contribution is live',
+  'me.highFiveBody': 'Thanks: other climbers can now see what you added.',
   'me.contributor': 'Contributor',
   'me.displayName': 'Display name',
   'me.nameHint': 'Shown as “added by …” on gyms you add or edit. Never your email.',

@@ -68,9 +68,9 @@ EXTRAS = {
 # shading inside the figure can never be taken for the shadow.
 GROUND = []
 for name in (sys.argv[7].split(',') if len(sys.argv) > 7 and sys.argv[7] else []):
-    if name == 'ground': GROUND = [h2c(c) for c in ('#DBC8AE', '#DDC9B0', '#D9C8AC', '#DAC6AD', '#E2D2B8', '#D2BFA4')]
+    if name in ('ground', 'ground-high'): GROUND = [h2c(c) for c in ('#DBC8AE', '#DDC9B0', '#D9C8AC', '#DAC6AD', '#E2D2B8', '#D2BFA4')]
     else: BRAND = BRAND + EXTRAS[name]
-GROUND_ROW = int(SIZE * 0.86)
+GROUND_ROW = int(SIZE * (0.82 if 'ground-high' in (sys.argv[7].split(',') if len(sys.argv) > 7 else []) else 0.86))
 BG = -1
 if NCOL == 0:
     samples = [(h2c(a), h2c(b)) for a, b in BRAND]
@@ -93,6 +93,7 @@ if NCOL == 0:
       'backpacker': [(640, 680), (716, 680), (490, 854)],    # beside the suitcase, inside its handle, between the feet
       'calendar-today': [(510, 610)],                        # between the legs, above the calendar page
       'medal': [(490, 830)],                                 # between the knees
+      'pin-drop': [(600, 700)],                              # between hoodie sleeve, pin and thigh
     }
     def flood(starts):
         seen = set(starts); todo = list(starts)

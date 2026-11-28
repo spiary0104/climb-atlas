@@ -6,7 +6,7 @@ Requirements: Python 3, Pillow, and fontTools for the seal (`pip install --user 
 
 | Script | Makes | Command |
 |---|---|---|
-| `trace_mascot.py` | Flat-vector poses in `assets/mascot/` from the source renders in `design/mascot/deer/` (brand-palette snap, one fur shade step, traced and smoothed) | `python design/tools/trace_mascot.py design/mascot/deer/<pose>.png assets/mascot/<pose>.svg 512 0 12 1.1` |
+| `trace_mascot.py` | Flat-vector poses in `assets/mascot/` from the source renders in `design/mascot/deer/` (brand-palette snap, one fur shade step, traced and smoothed) | `python design/tools/trace_mascot.py design/mascot/deer/<pose>.png assets/mascot/<pose>.svg 512 0 12 1.1` (pin-drop: add `granite,ground,ground-high`) |
 | `build_seal.py` | `assets/brand/seal.svg`, `seal-mono.svg` (outlined Fraunces lettering, same geometry as `js/modules/brand.js`) | `python design/tools/build_seal.py` |
 
 Every committed pose was made with exactly the command above; re-running it reproduces the file byte for byte.
@@ -18,6 +18,8 @@ One exception adds an opt-in sample group (7th argument), so groups never change
 | `topped-out-flag` (Phase 5) | `granite` | the grey boulder needs granite + one shade, or its shadows snap to forest |
 | `field-notes`, `fresh-stamp` (2026-10-03) | `ground` | the source's soft beige ground shadow (bottom 14% of the image only) is background, not a cream ellipse |
 | `calendar-today`, `city-map`, `medal`, `wave-badge` (2026-11-22) | `ground` | same soft ground shadow |
+| `high-five`, `rest-day` (2026-11-28) | none | no ground shadow in the source |
+| `pin-drop` (2026-11-28) | `granite,ground,ground-high` | grey rock (granite) and a ground shadow that starts higher (above row 82%) than the usual 86% cut, so it must be set aside too (`ground-high` lowers the cut to 82%) |
 
 Background is only what is connected to the image edge: enclosed white inside the character (eye whites and highlights,
 chalk, socks, a map pin's hole) is traced as white. Real gaps between limbs are listed in `POCKETS` in the script as a
@@ -30,6 +32,7 @@ point inside each gap (source 1024px coordinates), so they stay transparent:
 | `backpacker` | beside the suitcase; inside its handle; between the feet |
 | `calendar-today` | between the legs, above the calendar page |
 | `medal` | between the knees |
+| `pin-drop` | between the hoodie sleeve, the pin and the thigh |
 
 All five poses were re-traced with this rule on 2026-09-29 (before it, every near-white pixel was dropped, so eye whites
 were holes that showed the dimmed page behind the milestone sheet).

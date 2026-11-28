@@ -448,6 +448,7 @@ export default {
   'log.intro': 'Lleva un diario de tus sesiones: dónde escalaste, qué completaste y cómo te sentiste.',
   'log.signInCta': 'Inicia sesión para empezar tu diario',
   'log.count': { one: '{count} sesión', many: '{count} sesiones', other: '{count} sesiones' },
+  'log.restDay': 'Una semana tranquila. Los días de descanso también cuentan.',
   'log.sessionsAria': 'Sesiones',
 
   'log.prevMonth': 'Mes anterior',
@@ -602,6 +603,8 @@ export default {
 
   'me.contributions': 'Tus contribuciones',
   'me.pointsLevel': 'puntos · nivel {level}',
+  'me.highFiveTitle': 'Tu primera contribución ya está publicada',
+  'me.highFiveBody': 'Gracias: otros escaladores ya pueden ver lo que añadiste.',
   'me.contributor': 'Colaborador',
   'me.displayName': 'Nombre visible',
   'me.nameHint': 'Se muestra como “añadido por …” en los rocódromos que añadas o edites. Nunca tu correo.',

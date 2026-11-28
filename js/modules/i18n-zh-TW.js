@@ -445,6 +445,7 @@ export default {
   'log.intro': '寫下你的攀岩日記：在哪裡爬、完攀了什麼、感覺如何。',
   'log.signInCta': '登入後開始記錄',
   'log.count': { one: '{count} 次攀岩', other: '{count} 次攀岩' },
+  'log.restDay': '這週比較安靜。休息日也算數。',
   'log.sessionsAria': '攀岩紀錄',
 
   'log.prevMonth': '上個月',
@@ -599,6 +600,8 @@ export default {
 
   'me.contributions': '你的貢獻',
   'me.pointsLevel': '積分 · {level} 級',
+  'me.highFiveTitle': '你的第一次貢獻已上線',
+  'me.highFiveBody': '謝謝你！其他攀岩者現在看得到你新增的內容了。',
   'me.contributor': '貢獻者',
   'me.displayName': '顯示名稱',
   'me.nameHint': '會作為「新增者」顯示在你新增或編輯的攀岩館上，不會顯示你的電子郵件。',
