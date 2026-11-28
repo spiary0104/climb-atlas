@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "updater_version": 1,
+  "kind": "update",
+  "batch_id": "2026-11-28-owner-fixes",
+  "status": "updated",
+  "target": {
+    "kind": "production",
+    "host": "thayxaampaelvntoaido.supabase.co"
+  },
+  "coverage": "FULL",
+  "plan_sha256": "7c508e338be029e2eb9ac01d177cfc5801ac63ce71473d12cff54c905c62fb9a",
+  "payload_sha256": "b960cf542c4a581a75cdccf38ec5fe13b08917ac5d7e047ce109472ed7b8c58e",
+  "confirm_token": "7c50d050aa8108cd",
+  "live_state_sha256": "205600eb0ed10a84dce2c4075c62e91b0ec2d37cbd48eb7cda3c761d2f61f189",
+  "rows_updated": 0,
+  "approved_before": 3648,
+  "approved_after": 3644,
+  "changes": [],
+  "rows_identity_changed": 1,
+  "identity_changed": [
+    {
+      "id": "seed-1121",
+      "fields": [
+        "name"
+      ],
+      "expect_h": "74af8380cc9a7d3c",
+      "after_h": "ca7b3565a80b39d0"
+    }
+  ],
+  "rows_retired": 4,
+  "retired": [
+    "g-179440d317",
+    "seed-1724",
+    "g-8f44d0e169",
+    "seed-141"
+  ],
+  "retirements": [
+    {
+      "id": "g-179440d317",
+      "reason_code": "closed",
+      "reason": "Closed: the gym's own site says \"we're closing\" with last day to climb 7 Nov 2026, which has passed.",
+      "expect_h": "c22ed318407f7800"
+    },
+    {
+      "id": "seed-1724",
+      "reason_code": "closed",
+      "reason": "Pirqa's own site says the José Gálvez 360, Miraflores gym closed on 30 Aug 2026; a new location is only planned, no address given.",
+      "expect_h": "359f502ee5c334ef"
+    },
+    {
+      "id": "g-8f44d0e169",
+      "reason_code": "closed",
+      "reason": "BoulderBase Izumo's own site shows 閉店しました (closed); it had announced in April 2026 that it would close by end of May without a buyer.",
+      "expect_h": "9349d11080a22964"
+    },
+    {
+      "id": "seed-141",
+      "reason_code": "closed",
+      "reason": "Crux left 121 Pickle Rd (Austin Bouldering Project took the space) and moved South Austin to 220 Ralph Ablanedo Dr, already listed as g-13c6a3645d.",
+      "expect_h": "bbc8d748102a41e8"
+    }
+  ],
+  "verification": {
+    "ok": true,
+    "checked": 5,
+    "problems": []
+  },
+  "started_at": "2026-11-27T23:18:42.594Z",
+  "finished_at": "2026-11-27T23:18:47.252Z",
+  "ids": [
+    "g-179440d317",
+    "seed-1724",
+    "g-8f44d0e169",
+    "seed-141",
+    "seed-1121"
+  ]
+}
