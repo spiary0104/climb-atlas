@@ -262,7 +262,8 @@
   .add-actions .btn{flex:1;}
 }
 @media (max-width:599px){
-  .gym-actions{padding-bottom:var(--space-2);}
+  /* The tab bar's START disc rises --size-start-raise above the bar; pad the sticky row by that so its buttons sit clear of it. */
+  .gym-actions{padding-bottom:calc(var(--space-2) + var(--size-start-raise));}
 }
 /* Visitor info and address actions (gym page): label above value, like the essentials rows. */
 .essentials-address-text{min-width:0;overflow-wrap:anywhere;}
