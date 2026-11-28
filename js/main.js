@@ -20,7 +20,7 @@ import { initPassportPage } from './modules/passport-page.js';
 import { initNavigation } from './modules/nav.js';
 import { initRegionPages } from './modules/region-page.js';
 import { initRouter, refreshPage } from './modules/router.js';
-import { currentLocale, initI18n, setLocale, t } from './modules/i18n.js';
+import { currentLocale, initI18n, languageOptionsHtml, setLocale, t } from './modules/i18n.js';
 import { appState } from './modules/state.js';
 import { showActionToast } from './modules/utils.js';
 
@@ -32,6 +32,8 @@ window.addEventListener('bouldeer:sw-updated', () => {
 // Interface language before anything renders (English needs no fetch). A picker change switches in place: the open
 // page and the Explore list re-render, while the URL, map camera, filters and selection stay exactly as they were.
 await initI18n();
+// The top-bar picker's options come from LOCALES (every enabled language), so a newly enabled language appears there too.
+for(const s of document.querySelectorAll('select[data-lang-picker]')) s.innerHTML = languageOptionsHtml();
 const syncLangPickers = () => { for(const s of document.querySelectorAll('select[data-lang-picker]')) s.value = currentLocale(); };
 syncLangPickers();
 document.addEventListener('change', (e) => {
